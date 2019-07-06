@@ -7,6 +7,8 @@
 using namespace std;
 
 string input_string;
+vector<char> temp_char;
+
 
 void Input_screen()
 {
@@ -23,6 +25,13 @@ void Input_screen()
 	return;
 }
 
+void split()
+{
+	for(int i = 0; i < input_string.size(); i++)
+		temp_char.push_back(input_string.at(i));
+	
+	return;
+}
 
 int main()
 {
@@ -32,15 +41,7 @@ int main()
 	{
 		Input_screen();
 
-		cout<<input_string<<endl;
-		
-		vector<char> temp_char;
-
-		for(int i = 0;i<input_string.size();i++)
-			temp_char.push_back(input_string.at(i));
-
-		for(int i = 0;i<temp_char.size();i++)
-			cout<<temp_char[i]<<endl;
+		split();
 
 		break;
 	}
