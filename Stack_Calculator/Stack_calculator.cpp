@@ -3,7 +3,6 @@
 #include <string>
 #include <sstream>
 #include <vector>
-#include <iterator>
 
 using namespace std;
 
@@ -24,24 +23,6 @@ void Input_screen()
 	return;
 }
 
-template<typename Out>
-
-void split(const string &s, char delim, Out result)
-{
-	stringstream ss(s);
-	string item;
-
-	while(getline(ss, item, delim))
-		*(result)++ = item;
-}
-
-vector<string> split(const string &s, const char delim)
-{
-	vector<string> elems;
-	split(s, delim, back_inserter(elems));
-
-	return elems;
-}
 
 int main()
 {
@@ -52,22 +33,15 @@ int main()
 		Input_screen();
 
 		cout<<input_string<<endl;
-		vector<string> x = split(input_string,' ');
+		
+		vector<char> temp_char;
 
-		for(int i=0;i<x.size();i++)
-			cout<<x[i]<<endl;
-		
-		
-		/*
-		istringstream iss(input_string);
-		
-		while(iss)
-		{
-			string test;
-			iss >> test;
-			cout<<test<<endl;
-		}
-*/
+		for(int i = 0;i<input_string.size();i++)
+			temp_char.push_back(input_string.at(i));
+
+		for(int i = 0;i<temp_char.size();i++)
+			cout<<temp_char[i]<<endl;
+
 		break;
 	}
 
