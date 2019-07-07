@@ -41,10 +41,43 @@ void infix_notation_change_to_postfix_notaion()
 {
 	for(int i = 0; i < temp_char.size(); i++)
 	{
-		if(temp_char[i] >= 48 && temp_char[i] <= 57)
+		if(temp_char[i] >= 48 && temp_char[i] <= 57)	//When the input value is numeric
 		{
-		//	if(postfix.back
+			cout<<"infix\t"<<temp_char[i]<<endl;
+			if(postfix[postfix.size()-1].first != 0)	//
+			{
+				int temp;
+
+				temp = postfix[postfix.size()-1].first;
+				postfix.pop_back();
+				postfix.push_back(make_pair((temp*10)+(temp_char[i]-48),'N'));
+			}
+			else
+			{
+				postfix.push_back(make_pair(temp_char[i]-48,'N'));
+			}
 		}
+		else if(temp_char[i] == '+' || temp_char[i] == '-' || temp_char[i] == '*' || temp_char[i] == '/' || temp_char[i] == ' ' || temp_char[i] == '(' || temp_char[i] == ')')
+		{	//When the input value is the four arithmetical operations
+			
+			if(temp_char[i] != ' ' && temp_char[i] != '(' && temp_char[i] != ')')
+			{
+				postfix.push_back(make_pair(0,temp_char[i]));
+			}
+		}
+		else	//Not the four arithmetical operations or number
+		{
+		
+			break;
+		}
+	}
+
+	for(int i = 0; i < postfix.size(); i++)
+	{
+		if(postfix[i].first != 0)
+			cout<<postfix[i].first<<endl;
+		else
+			cout<<postfix[i].second<<endl;
 	}
 
 	return;
@@ -61,7 +94,7 @@ int main()
 
 		split();
 
-
+		infix_notation_change_to_postfix_notaion();
 
 		break;
 	}
