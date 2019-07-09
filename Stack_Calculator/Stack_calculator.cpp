@@ -37,6 +37,31 @@ void split()
 	return;
 }
 
+int valid_formula_check()
+{
+	int num = 0;
+
+	for(int i = 0; i < temp_char.size(); i++)
+	{
+		if(temp_char[i] == '(')
+			num++;
+		
+		else if(temp_char[i] == ')')
+			num--;
+		
+		else if((temp_char[i] >= 48 && temp_char[i] <= 57) || temp_char[i] == '+' || temp_char[i] == '-' || temp_char[i] == '/' || temp_char[i] == '*' || temp_char[i] == ' ')
+			continue;	//A blank spcae, four arithmetical operations and number(ASCII code)
+
+		else	//Not the four aritimetical operations or number
+			return 0;
+	}
+
+	if(num == 0)	//Parentheses are paired
+		return 1;
+	if(num != 0)	//Parentheses are not paired
+		return 0;
+}
+
 void infix_notation_change_to_postfix_notaion()
 {
 	for(int i = 0; i < temp_char.size(); i++)
@@ -57,18 +82,12 @@ void infix_notation_change_to_postfix_notaion()
 				postfix.push_back(make_pair(temp_char[i]-48,'N'));
 			}
 		}
-		else if(temp_char[i] == '+' || temp_char[i] == '-' || temp_char[i] == '*' || temp_char[i] == '/' || temp_char[i] == ' ' || temp_char[i] == '(' || temp_char[i] == ')')
-		{	//When the input value is the four arithmetical operations
-			
+		else	//When the input value is the four arithmetical operations
+		{	
 			if(temp_char[i] != ' ' && temp_char[i] != '(' && temp_char[i] != ')')
 			{
 				postfix.push_back(make_pair(0,temp_char[i]));
 			}
-		}
-		else	//Not the four arithmetical operations or number
-		{
-		
-			break;
 		}
 	}
 
@@ -94,7 +113,12 @@ int main()
 
 		split();
 
-		infix_notation_change_to_postfix_notaion();
+		num = valid_formula_check();
+
+		if(num == 1)
+			infix_notation_change_to_postfix_notaion();
+		else if(num == 0)
+			printf("Parentheses do not match or are not math formula\n");
 
 		break;
 	}
