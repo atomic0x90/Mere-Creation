@@ -39,18 +39,39 @@ void split()
 
 int valid_formula_check()
 {
-	int num = 0;
+	int num = 0, check_duplicate_symbol = 0;	//Example duplicate symbol -> 1 + * 2,  1 / - 2, etc.
+	
 
 	for(int i = 0; i < temp_char.size(); i++)
 	{
 		if(temp_char[i] == '(')
+		{
 			num++;
-		
+			if(check_duplicate_symbol == 1)
+				check_duplicate_symbol--;
+		}
 		else if(temp_char[i] == ')')
+		{
 			num--;
+			if(check_duplicate_symbol == 1)
+				return 0;
+		}
 		
-		else if((temp_char[i] >= 48 && temp_char[i] <= 57) || temp_char[i] == '+' || temp_char[i] == '-' || temp_char[i] == '/' || temp_char[i] == '*' || temp_char[i] == ' ')
-			continue;	//A blank spcae, four arithmetical operations and number(ASCII code)
+		else if((temp_char[i] >= 48 && temp_char[i] <= 57) || temp_char[i] == ' ')
+		{	//A blank space and number(ASCII code)
+			if(temp_char[i] >= 48 && temp_char[i] <= 57 && check_duplicate_symbol == 1)
+				check_duplicate_symbol--;
+
+			continue;
+		}
+
+		else if(temp_char[i] == '+' || temp_char[i] == '-' || temp_char[i] == '/' || temp_char[i] == '*')
+		{	//Four arithmetical operations
+			check_duplicate_symbol++;
+
+			if(check_duplicate_symbol == 2)
+				return 0;
+		}
 
 		else	//Not the four aritimetical operations or number
 			return 0;
@@ -88,6 +109,7 @@ void infix_notation_change_to_postfix_notaion()
 			{
 				postfix.push_back(make_pair(0,temp_char[i]));
 			}
+
 		}
 	}
 
