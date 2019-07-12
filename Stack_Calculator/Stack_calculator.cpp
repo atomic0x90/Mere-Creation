@@ -7,8 +7,12 @@ using namespace std;
 string input_string;	//Save input values
 stack <char> temp_stack;
 vector <char> temp_char;	//Save input by letter
-vector <char> formula;
+vector <char> formula;	//Save formula using a postfix notation
 
+
+/*
+ * cin infix notation
+*/
 void Input_screen()
 {
 	cout<<"----------------------------------------------------------"<<endl;
@@ -24,17 +28,26 @@ void Input_screen()
 	return;
 }
 
+
+/*
+ * Divide a string into char
+*/
 void split()
 {
 	for(int i = 0; i < input_string.size(); i++)
 		temp_char.push_back(input_string.at(i));
 	
-/*	for(int i = 0; i < input_string.size(); i++)
-		cout<<temp_char[i]<<endl;
-*/
 	return;
 }
 
+
+/*
+ * Check list
+ *
+ * Parentheses paired -> ((1+2)*3
+ * Duplicated operator -> 1 +/ 3
+ * Using four aritimetical operations or number
+*/
 int valid_formula_check()
 {
 	int num = 0, check_duplicate_symbol = 0;	
@@ -84,17 +97,35 @@ int valid_formula_check()
 		return 0;
 }
 
+
+/*
+ * 1. If number, push postfix notation
+ * 
+ * 2. If left parenthesis, stack push
+ * 
+ * 3. If right parenthesis, stack pop until left parenthesis comes out
+ *  -> Push back the stack pop to the postfix notation
+ * 
+ * 4. If four aritimetical operator, stack pop until this is a higher priority than top of stack
+ *  -> Push back the stack pop to the postfix notation
+ *
+ * 5. Once you have read the entire input formula, push the operator remaining in the stack to postfix notation
+ *
+ *
+ * Priority
+ * '(' < '+','-' < '*','/'
+*/
 void infix_notation_change_to_postfix_notaion()
 {
 	for(int i = 0; i < temp_char.size(); i++)
 	{
-		if(temp_char[i] == ' ')
+		if(temp_char[i] == ' ')	//Ignore space
 			continue;
-		else if(temp_char[i] == '(')
+		else if(temp_char[i] == '(')	//(2) Push into stack if left parenthesis
 		{
 			temp_stack.push(temp_char[i]);
 		}
-		else if(temp_char[i] == ')')
+		else if(temp_char[i] == ')')	//(3) Pop stack until the left parenthesis comes out
 		{
 			while(1)
 			{
@@ -108,9 +139,12 @@ void infix_notation_change_to_postfix_notaion()
 				temp_stack.pop();
 			}
 		}
-		else if(temp_char[i] == '+' || temp_char[i] == '-')
+		else if(temp_char[i] == '+' || temp_char[i] == '-')	//(4)
 		{
 			formula.push_back(' ');
+			/*
+			 * Blank push to distinguish the number of digits
+			*/
 			if(temp_stack.top() == '(' || temp_stack.top() == 'b')
 				temp_stack.push(temp_char[i]);
 			else
@@ -123,9 +157,12 @@ void infix_notation_change_to_postfix_notaion()
 				temp_stack.push(temp_char[i]);
 			}
 		}
-		else if(temp_char[i] == '*' || temp_char[i] == '/')
+		else if(temp_char[i] == '*' || temp_char[i] == '/')	//(4)
 		{
 			formula.push_back(' ');
+			/*
+			 * Blank push to distinguish the number of digits
+			*/
 			if(temp_stack.top() == '+' || temp_stack.top() == '-')
 				temp_stack.push(temp_char[i]);
 			else
@@ -139,12 +176,12 @@ void infix_notation_change_to_postfix_notaion()
 			}
 		}
 		else
-		{	//number(ASCII code)
+		{	//(0) Number(ASCII code)
 			formula.push_back(temp_char[i]);
 		}
 	}
 
-	while(temp_stack.top() != 'b')
+	while(temp_stack.top() != 'b')		//(5)
 	{
 		formula.push_back(temp_stack.top());
 		temp_stack.pop();
@@ -163,10 +200,10 @@ int main()
 {
 	int num;
 	temp_stack.push('b');
-	/*
-		Why push 'b' into the stack?
-		-> Express the bottom of a stack
-       	*/
+/*
+ * Why push 'b' into the stack?
+ *  -> Express the bottom of a stack
+*/
 
 	while(1)
 	{
