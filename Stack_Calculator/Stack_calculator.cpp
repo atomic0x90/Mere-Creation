@@ -110,6 +110,7 @@ void infix_notation_change_to_postfix_notaion()
 		}
 		else if(temp_char[i] == '+' || temp_char[i] == '-')
 		{
+			formula.push_back(' ');
 			if(temp_stack.top() == '(' || temp_stack.top() == 'b')
 				temp_stack.push(temp_char[i]);
 			else
@@ -124,6 +125,7 @@ void infix_notation_change_to_postfix_notaion()
 		}
 		else if(temp_char[i] == '*' || temp_char[i] == '/')
 		{
+			formula.push_back(' ');
 			if(temp_stack.top() == '+' || temp_stack.top() == '-')
 				temp_stack.push(temp_char[i]);
 			else
