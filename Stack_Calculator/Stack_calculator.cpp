@@ -2,14 +2,11 @@
 #include <stack>
 #include <string>
 #include <vector>
-#include <utility>	//Use pair
 using namespace std;
 
 string input_string;	//Save input values
 stack <char> temp_stack;
 vector <char> temp_char;	//Save input by letter
-vector <pair<int,char>> postfix;
-
 vector <char> formula;
 
 void Input_screen()
@@ -101,7 +98,7 @@ void infix_notation_change_to_postfix_notaion()
 		{
 			while(1)
 			{
-				if(temp_stack.top() != '(')
+				if(temp_stack.top() == '(')
 				{
 					temp_stack.pop();
 					break;
@@ -113,17 +110,31 @@ void infix_notation_change_to_postfix_notaion()
 		}
 		else if(temp_char[i] == '+' || temp_char[i] == '-')
 		{
-			if(temp_stack.top() == '(')
+			if(temp_stack.top() == '(' || temp_stack.top() == 'b')
 				temp_stack.push(temp_char[i]);
 			else
-				formula.push_back(temp_char[i]);
+			{
+				while(!(temp_stack.top() == '(' || temp_stack.top() == 'b'))
+				{
+					formula.push_back(temp_stack.top());
+					temp_stack.pop();
+				}
+				temp_stack.push(temp_char[i]);
+			}
 		}
 		else if(temp_char[i] == '*' || temp_char[i] == '/')
 		{
 			if(temp_stack.top() == '+' || temp_stack.top() == '-')
 				temp_stack.push(temp_char[i]);
 			else
-				formula.push_back(temp_char[i]);
+			{
+				while(temp_stack.top() == '*' || temp_stack.top() == '/')
+				{
+					formula.push_back(temp_stack.top());
+					temp_stack.pop();
+				}
+				temp_stack.push(temp_char[i]);
+			}
 		}
 		else
 		{	//number(ASCII code)
@@ -131,10 +142,17 @@ void infix_notation_change_to_postfix_notaion()
 		}
 	}
 
+	while(temp_stack.top() != 'b')
+	{
+		formula.push_back(temp_stack.top());
+		temp_stack.pop();
+	}
+
 	for(int i = 0; i < formula.size(); i++)
 	{
-		cout<<formula[i]<<endl;
+		cout<<formula[i];
 	}
+	cout<<endl;
 
 	return;
 }
@@ -142,10 +160,14 @@ void infix_notation_change_to_postfix_notaion()
 int main()
 {
 	int num;
+	temp_stack.push('b');
+	/*
+		Why push 'b' into the stack?
+		-> Express the bottom of a stack
+       	*/
 
 	while(1)
 	{
-		postfix.push_back(make_pair(0,'N'));
 		Input_screen();
 
 		split();
