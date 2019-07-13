@@ -6,7 +6,7 @@ using namespace std;
 
 string input_string;	//Save input values
 stack <char> temp_stack;
-vector <char> temp_char;	//Save input by letter
+vector <char> temp_char;	//Save input by char
 vector <char> formula;	//Save formula using a postfix notation
 
 
@@ -52,9 +52,8 @@ int valid_formula_check()
 {
 	int num = 0, check_duplicate_symbol = 0;	
 /*
-  If 'check_duplicate_symbol >= 2' -> error 
-
-   Example duplicate symbol -> 1 + * 2,  1 / - 2, etc.
+ * If 'check_duplicate_symbol >= 2' -> error 
+ * Example duplicate symbol -> 1 + * 2,  1 / - 2, etc.
 */
 	for(int i = 0; i < temp_char.size(); i++)
 	{
@@ -147,6 +146,13 @@ void infix_notation_change_to_postfix_notaion()
 			*/
 			if(temp_stack.top() == '(' || temp_stack.top() == 'b')
 				temp_stack.push(temp_char[i]);
+			/*
+			 * Error found
+			 *  -> infix notation (-1+3) 
+			 *  -> postfix notation 1 -3+
+			 *
+			 *  Be to be revised..
+			*/
 			else
 			{
 				while(!(temp_stack.top() == '(' || temp_stack.top() == 'b'))
