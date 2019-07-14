@@ -7,7 +7,7 @@ using namespace std;
 string input_string;	//Save input values
 stack <char> temp_stack;
 vector <char> temp_char;	//Save input by char
-vector <char> formula;	//Save formula using a postfix notation
+vector <int> formula;	//Save formula using a postfix notation
 
 
 /*
@@ -195,7 +195,12 @@ void infix_notation_change_to_postfix_notaion()
 
 	for(int i = 0; i < formula.size(); i++)
 	{
-		cout<<formula[i];
+		if(formula[i] == 32)
+			continue;
+		else if(formula[i] >= 48 && formula[i] <= 57)
+			cout<<formula[i]-48<<" ";
+		else
+			cout<<char(formula[i])<<" ";
 	}
 	cout<<endl;
 
