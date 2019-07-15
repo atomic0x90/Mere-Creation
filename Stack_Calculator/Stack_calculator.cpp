@@ -8,7 +8,7 @@ string input_string;	//Save input values
 stack <char> temp_stack;
 vector <char> temp_char;	//Save input by char
 vector <int> formula;	//Save formula using a postfix notation
-
+vector <int> digits_formula;	//Distinguish between digits
 
 /*
  * cin infix notation
@@ -193,16 +193,35 @@ void infix_notation_change_to_postfix_notaion()
 		temp_stack.pop();
 	}
 
-	for(int i = 0; i < formula.size(); i++)
+	for(int i = 0; i <= formula.size(); i++)
 	{
-		if(formula[i] == 32)
-			continue;
-		else if(formula[i] >= 48 && formula[i] <= 57)
-			cout<<formula[i]-48<<" ";
-		else
-			cout<<char(formula[i])<<" ";
+		if(formula[i] >= 48 && formula[i] <= 57)
+		{
+			digits_formula.push_back(formula[i]-48);
+			i++;
+			while(formula[i] >= 48 && formula[i] <= 57)
+			{
+				int temp_num = 10 * digits_formula.back();
+				temp_num += formula[i] - 48;
+
+				digits_formula.pop_back();
+				digits_formula.push_back(temp_num);
+
+				i++;
+			}
+		}
+		else if(formula[i] == 42)	//ASCII code 42 -> '*'
+			digits_formula.push_back(-1);
+		else if(formula[i] == 43)	//ASCII code 43 -> '+'
+			digits_formula.push_back(-2);
+		else if(formula[i] == 45)	//ASCII code 45 -> '-'
+			digits_formula.push_back(-3);
+		else if(formula[i] == 47)	//ASCII code 47 -> '/'
+			digits_formula.push_back(-4);
 	}
-	cout<<endl;
+
+	for(int i = 0; i < digits_formula.size(); i++)
+		cout<<digits_formula[i]<<" ";
 
 	return;
 }
