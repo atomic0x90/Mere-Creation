@@ -204,9 +204,17 @@ void infix_notation_change_to_postfix_notaion()
 	return;
 }
 
+
+/*
+ * Increase the number of digits until the next operator appears when the number(formula)
+ * 
+ * Precautions
+ * If there is a space between numbers, it is recognized as a single number
+ * (Example) infix notation(input) 1  2 * 3 -4  -> postfix notation 12 3 * 4 -
+*/
 void distinguish_the_number_of_a_digit()
 {
-	cout<<endl<<"postfix notation"<<endl;
+	cout<<endl<<"Postfix Notation"<<endl;
 	for(int i = 0; i <= formula.size(); i++)
 	{
 		if(formula[i] >= 48 && formula[i] <= 57)
