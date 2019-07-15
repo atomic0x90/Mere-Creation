@@ -64,8 +64,17 @@ int valid_formula_check()
 */
 	for(int i = 0; i < temp_char.size(); i++)
 	{
+		if(i == 0)
+		{
+			if(temp_char[i] == '*' || temp_char[i] == '/')	//Example -> * 3 - (4 + 5)
+				return 0;
+		}
+
 		if(temp_char[i] == '(')
 		{
+			if(temp_char[i+1] == '*' || temp_char[i+1] == '/')	//Example -> 1 + (*2 - 3)
+				return 0;
+	
 			num++;
 			if(check_duplicate_symbol == 1)		//Example -> 3 + (-4)
 				check_duplicate_symbol--;
@@ -215,7 +224,7 @@ void infix_notation_change_to_postfix_notaion()
 void distinguish_the_number_of_a_digit()
 {
 	cout<<endl<<"Postfix Notation"<<endl;
-	for(int i = 0; i <= formula.size(); i++)
+	for(int i = 0; i < formula.size(); i++)
 	{
 		if(formula[i] >= 48 && formula[i] <= 57)
 		{
