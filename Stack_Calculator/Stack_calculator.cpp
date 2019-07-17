@@ -68,6 +68,15 @@ int valid_formula_check()
 		{
 			if(temp_char[i] == '*' || temp_char[i] == '/')	//Example -> * 3 - (4 + 5)
 				return 0;
+			else if(temp_char[i] == ' ')
+			{
+				int j = i;
+				while(temp_char[j] == ' ')
+					j++;
+			
+				if(temp_char[j] == '*' || temp_char[j] == '/')
+					return 0;
+			}
 		}
 
 		if(temp_char[i] == '(')
@@ -134,11 +143,30 @@ void infix_notation_change_to_postfix_notaion()
 {
 	for(int i = 0; i < temp_char.size(); i++)
 	{
+		if(formula.empty() && temp_char[i] == '+')
+			continue;
+		
+		else if(formula.empty() && temp_char[i] == '-')
+			formula.push_back(-2);
+
 		if(temp_char[i] == ' ')	//Ignore space
 			continue;
 		else if(temp_char[i] == '(')	//(2) Push into stack if left parenthesis
 		{
+			int j = i + 1;
+			
+			while(temp_char[j] == ' ')
+				j++;
+			
+			if(temp_char[j] == '-')		//Example -> 1*(-2)-3/4
+				formula.push_back(-1);
+			
+			else if(temp_char[j] == '*' || temp_char[j] == '/')	//Example -> 1*(*2)
+				return;
+
 			temp_stack.push(temp_char[i]);
+
+			i = j;
 		}
 		else if(temp_char[i] == ')')	//(3) Pop stack until the left parenthesis comes out
 		{
@@ -240,26 +268,57 @@ void distinguish_the_number_of_a_digit()
 			}
 		}
 		else if(formula[i] == 42)	//ASCII code 42 -> '*'
-			digits_formula.push_back(-1);
+			digits_formula.push_back(-10001);
 		else if(formula[i] == 43)	//ASCII code 43 -> '+'
-			digits_formula.push_back(-2);
+			digits_formula.push_back(-10003);
 		else if(formula[i] == 45)	//ASCII code 45 -> '-'
-			digits_formula.push_back(-3);
+			digits_formula.push_back(-10004);
 		else if(formula[i] == 47)	//ASCII code 47 -> '/'
-			digits_formula.push_back(-4);
+			digits_formula.push_back(-10007);
+		else if(formula[i] == -1)
+		{
+			digits_formula.push_back(0);
+			while(formula[i+1] >= 48 && formula[i+1] <= 57)
+			{
+				int temp_num = 10 * digits_formula.back();
+				temp_num += formula[i+1] - 48;
+
+				digits_formula.pop_back();
+				digits_formula.push_back(temp_num);
+				i++;
+			}
+			int change = digits_formula.back();
+			digits_formula.pop_back();
+			digits_formula.push_back((-1) * change);
+		}
+		else if(formula[i] == -2)
+		{
+			cout<<"test"<<endl;
+			digits_formula.push_back(formula[i+1]);
+			i++;
+			while(formula[i+1] >= 48 && formula[i+1] <= 57)
+			{
+				int temp_num = 10 * digits_formula.back();
+				temp_num += formula[i+1] - 48;
+
+				digits_formula.pop_back();
+				digits_formula.push_back(temp_num);
+				i++;
+			}
+		}
 	}
 
 	for(int i = 0; i < digits_formula.size(); i++)
 	{
-		if(digits_formula[i] == -1)
+		if(digits_formula[i] == -10001)
 			cout<<"* ";
-		else if(digits_formula[i] == -2)
+		else if(digits_formula[i] == -10003)
 			cout<<"+ ";
-		else if(digits_formula[i] == -3)
+		else if(digits_formula[i] == -10004)
 			cout<<"- ";
-		else if(digits_formula[i] == -4)
+		else if(digits_formula[i] == -10007)
 			cout<<"/ ";
-		else
+		else if(digits_formula[i] !=  0)
 			cout<<digits_formula[i]<<" ";
 	}
 	cout<<endl;
