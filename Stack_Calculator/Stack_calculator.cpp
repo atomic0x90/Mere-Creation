@@ -149,7 +149,7 @@ void infix_notation_change_to_postfix_notaion()
 		else if(formula.empty() && temp_char[i] == '-')
 			formula.push_back(-2);
 
-		if(temp_char[i] == ' ')	//Ignore space
+		else if(temp_char[i] == ' ')	//Ignore space
 			continue;
 		else if(temp_char[i] == '(')	//(2) Push into stack if left parenthesis
 		{
@@ -190,13 +190,7 @@ void infix_notation_change_to_postfix_notaion()
 			*/
 			if(temp_stack.top() == '(' || temp_stack.top() == 'b')
 				temp_stack.push(temp_char[i]);
-			/*
-			 * Error found
-			 *  -> infix notation (-1+3) 
-			 *  -> postfix notation 1 -3+
-			 *
-			 *  Be to be revised..
-			*/
+			
 			else
 			{
 				while(!(temp_stack.top() == '(' || temp_stack.top() == 'b'))
@@ -294,8 +288,10 @@ void distinguish_the_number_of_a_digit()
 		else if(formula[i] == -2)
 		{
 			cout<<"test"<<endl;
-			digits_formula.push_back(formula[i+1]);
-			i++;
+			while(formula[i+1] == ' ')
+				i++;
+
+			digits_formula.push_back(0);
 			while(formula[i+1] >= 48 && formula[i+1] <= 57)
 			{
 				int temp_num = 10 * digits_formula.back();
@@ -305,6 +301,11 @@ void distinguish_the_number_of_a_digit()
 				digits_formula.push_back(temp_num);
 				i++;
 			}
+			int change = digits_formula.back();
+			digits_formula.pop_back();
+			digits_formula.push_back((-1) * change);
+
+			cout<<"change"<<change<<endl;
 		}
 	}
 
