@@ -62,19 +62,20 @@ int valid_formula_check()
  * If 'check_duplicate_symbol >= 2' -> error 
  * Example duplicate symbol -> 1 + * 2,  1 / - 2, etc.
 */
+
 	for(int i = 0; i < temp_char.size(); i++)
 	{
+
 		if(i == 0)
 		{
 			if(temp_char[i] == '*' || temp_char[i] == '/')	//Example -> * 3 - (4 + 5)
 				return 0;
 			else if(temp_char[i] == ' ')
 			{
-				int j = i;
-				while(temp_char[j] == ' ')
-					j++;
+				while(temp_char[i] == ' ')
+					i++;
 			
-				if(temp_char[j] == '*' || temp_char[j] == '/')
+				if(temp_char[i] == '*' || temp_char[i] == '/')
 					return 0;
 			}
 		}
@@ -113,8 +114,9 @@ int valid_formula_check()
 
 		else	//Not the four aritimetical operations or number
 			return 0;
-	}
 
+	}
+	
 	if(num == 0)	//Parentheses are paired
 		return 1;
 	if(num != 0)	//Parentheses are not paired
@@ -153,20 +155,35 @@ void infix_notation_change_to_postfix_notaion()
 			continue;
 		else if(temp_char[i] == '(')	//(2) Push into stack if left parenthesis
 		{
-			int j = i + 1;
-			
-			while(temp_char[j] == ' ')
-				j++;
-			
-			if(temp_char[j] == '-')		//Example -> 1*(-2)-3/4
-				formula.push_back(-1);
-			
-			else if(temp_char[j] == '*' || temp_char[j] == '/')	//Example -> 1*(*2)
-				return;
-
-			temp_stack.push(temp_char[i]);
-
-			i = j;
+			while(1)
+			{
+				temp_stack.push(temp_char[i]);
+				i++;
+		
+				while(temp_char[i] == ' ')
+					i++;
+		
+				if(temp_char[i] == '-')		//Example -> 1*(-2)-3/4
+					formula.push_back(-1);
+				
+				else if(temp_char[i] == '*' || temp_char[i] == '/')	//Example -> 1*(*2)
+					return;
+	
+				else if(temp_char[i] == '+')
+				{
+					i++;
+					while(temp_char[i] == ' ')
+						i++;
+					formula.push_back(temp_char[i]);
+	
+				}
+				else if(temp_char[i] == '(')	//Example -> ((2+3/4)/(2+1)), etc.
+					continue;
+				else
+					formula.push_back(temp_char[i]);
+	
+				break;
+			}
 		}
 		else if(temp_char[i] == ')')	//(3) Pop stack until the left parenthesis comes out
 		{
@@ -272,6 +289,7 @@ void distinguish_the_number_of_a_digit()
 		else if(formula[i] == -1)
 		{
 			digits_formula.push_back(0);
+		
 			while(formula[i+1] >= 48 && formula[i+1] <= 57)
 			{
 				int temp_num = 10 * digits_formula.back();
@@ -281,17 +299,19 @@ void distinguish_the_number_of_a_digit()
 				digits_formula.push_back(temp_num);
 				i++;
 			}
+		
 			int change = digits_formula.back();
+		
 			digits_formula.pop_back();
 			digits_formula.push_back((-1) * change);
 		}
 		else if(formula[i] == -2)
 		{
-			cout<<"test"<<endl;
 			while(formula[i+1] == ' ')
 				i++;
 
 			digits_formula.push_back(0);
+		
 			while(formula[i+1] >= 48 && formula[i+1] <= 57)
 			{
 				int temp_num = 10 * digits_formula.back();
@@ -301,11 +321,11 @@ void distinguish_the_number_of_a_digit()
 				digits_formula.push_back(temp_num);
 				i++;
 			}
+		
 			int change = digits_formula.back();
+		
 			digits_formula.pop_back();
 			digits_formula.push_back((-1) * change);
-
-			cout<<"change"<<change<<endl;
 		}
 	}
 
