@@ -6,16 +6,19 @@ using namespace std;
 
 string input_string;	//Save input values
 stack <char> temp_stack;
+stack <double> calculation_stack;
 vector <char> temp_char;	//Save input by char
 vector <int> formula;	//Save formula using a postfix notation
 vector <int> digits_formula;	//Distinguish between digits
+
+double result;
 
 void Input_screen();
 void split();
 int valid_formula_check();
 void infix_notation_change_to_postfix_notaion();
 void distinguish_the_number_of_a_digit();
-
+void postfix_notation_calculation();
 
 /*
  * cin infix notation
@@ -347,6 +350,47 @@ void distinguish_the_number_of_a_digit()
 	return;
 }
 
+/**/
+void postfix_notation_calculation()
+{
+	result = 0;
+
+	double operand1,operand2;
+	for(int i = 0; i < digits_formula.size(); i++)
+	{
+		if(!calculation_stack.empty())
+		{
+			cout<<calculation_stack.top()<<endl;
+		}
+		if(digits_formula[i] == -10001 || digits_formula[i] == -10003 ||digits_formula[i] == -10004 || digits_formula[i] == -10007)
+		{
+			operand1 = calculation_stack.top();
+			calculation_stack.pop();
+
+			operand2 = calculation_stack.top();
+			calculation_stack.pop();
+
+			if(digits_formula[i] == -10001)
+				result = operand1 * operand2;
+			else if(digits_formula[i] == -10003)
+				result = operand1 + operand2;
+			else if(digits_formula[i] == -10004)
+				result = operand1 - operand2;
+			else if(digits_formula[i] == -10007)
+				result = operand2 / operand1;
+
+			calculation_stack.push(result);
+		}
+		else
+		{
+			calculation_stack.push(digits_formula[i]);
+		}
+	}
+
+	result = calculation_stack.top();
+
+	return;
+}
 
 int main()
 {
@@ -370,6 +414,9 @@ int main()
 		else if(num == 0)
 			printf("Parentheses do not match or are not math formula\n");
 
+		postfix_notation_calculation();
+
+		cout<<"result : "<<result<<endl;
 		break;
 	}
 
