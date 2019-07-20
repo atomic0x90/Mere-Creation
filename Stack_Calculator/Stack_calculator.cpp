@@ -358,10 +358,6 @@ void postfix_notation_calculation()
 	double operand1,operand2;
 	for(int i = 0; i < digits_formula.size(); i++)
 	{
-		if(!calculation_stack.empty())
-		{
-			cout<<calculation_stack.top()<<endl;
-		}
 		if(digits_formula[i] == -10001 || digits_formula[i] == -10003 ||digits_formula[i] == -10004 || digits_formula[i] == -10007)
 		{
 			operand1 = calculation_stack.top();
@@ -372,10 +368,13 @@ void postfix_notation_calculation()
 
 			if(digits_formula[i] == -10001)
 				result = operand1 * operand2;
+
 			else if(digits_formula[i] == -10003)
 				result = operand1 + operand2;
+
 			else if(digits_formula[i] == -10004)
-				result = operand1 - operand2;
+				result = operand2 - operand1;
+
 			else if(digits_formula[i] == -10007)
 				result = operand2 / operand1;
 
@@ -416,7 +415,7 @@ int main()
 
 		postfix_notation_calculation();
 
-		cout<<"result : "<<result<<endl;
+		cout<<endl<<"result : "<<result<<endl;
 		break;
 	}
 
