@@ -19,6 +19,7 @@ int valid_formula_check();
 void infix_notation_change_to_postfix_notaion();
 void distinguish_the_number_of_a_digit();
 void postfix_notation_calculation();
+int check_repetition();
 
 /*
  * cin infix notation
@@ -252,6 +253,7 @@ void infix_notation_change_to_postfix_notaion()
 	}
 
 	distinguish_the_number_of_a_digit();
+
 	return;
 }
 
@@ -388,9 +390,42 @@ void postfix_notation_calculation()
 
 	result = calculation_stack.top();
 
+	cout<<endl<<"result : "<<result<<endl;
+
 	return;
 }
 
+
+/**/
+int check_repetition()
+{
+	char check_re;
+	
+	while(1)
+	{
+		cout<<"Do you want to re-enter?"<<endl;
+		cout<<"\tPlease answer y/n"<<endl;
+
+		cin>>check_re;
+
+		if(check_re == 'y' || check_re == 'Y')
+			return 1;
+		
+		else if(check_re == 'n' || check_re == 'N')
+		{
+			cout<<"\t\tThank you for using it ! ! !"<<endl;
+			return 0;
+		}
+		else
+			cout<<"Please enter y or n"<<endl<<endl;
+	}
+}
+
+/*
+ * Error found
+ *  -> 1+2(-3*4)
+ *  -> If you attach parentheses immediately after the number, An exception arises
+*/
 int main()
 {
 	int num;
@@ -402,6 +437,8 @@ int main()
 
 	while(1)
 	{
+		input_string = ' ';
+
 		Input_screen();
 
 		split();
@@ -415,7 +452,12 @@ int main()
 
 		postfix_notation_calculation();
 
-		cout<<endl<<"result : "<<result<<endl;
+/*		num = check_repetition();
+
+		if(num == 0)
+			break;
+		else
+			continue;*/
 		break;
 	}
 
