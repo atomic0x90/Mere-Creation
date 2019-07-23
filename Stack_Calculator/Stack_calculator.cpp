@@ -384,9 +384,7 @@ void postfix_notation_calculation()
 			calculation_stack.push(result);
 		}
 		else
-		{
 			calculation_stack.push(digits_formula[i]);
-		}
 	}
 
 	result = calculation_stack.top();
@@ -404,11 +402,13 @@ int check_repetition()
 	
 	while(1)
 	{
-		cout<<"Do you want to re-enter?"<<endl;
-		cout<<"\tPlease answer y/n"<<endl;
+		cout<<"\nDo you want to re-enter?"<<endl;
+		cout<<"Please answer y/n"<<endl;
 
 		cin>>check_re;
 
+		getchar();				//
+		
 		if(check_re == 'y' || check_re == 'Y')
 			return 1;
 		
@@ -465,30 +465,23 @@ int main()
 	while(1)
 	{
 		initialize_data();
-
-		cout<<temp_char.size()<<endl;
-
+		
 		Input_screen();
-		cout<<"check input_screen"<<endl;
-
+		
 		split();
-		cout<<"check split"<<endl;
-
+		
 		num = valid_formula_check();
-		cout<<"check formula"<<input_string<<endl;
-		cout<<temp_char.size()<<" "<<formula.size()<<" "<<digits_formula.size()<<endl;
 
 		if(num == 1)
 			infix_notation_change_to_postfix_notaion();
 		else if(num == 0)
 			printf("Parentheses do not match or are not math formula\n");
 
-		cout<<"check num"<<input_string<<endl;
-
 		postfix_notation_calculation();
 
-//		num = check_repetition();
-//		if(num == 0)
+		num = check_repetition();
+
+		if(num == 0)
 			break;
 	}
 
