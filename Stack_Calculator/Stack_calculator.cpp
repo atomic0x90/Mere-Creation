@@ -20,6 +20,7 @@ void infix_notation_change_to_postfix_notaion();
 void distinguish_the_number_of_a_digit();
 void postfix_notation_calculation();
 int check_repetition();
+void initialize_data();
 
 /*
  * cin infix notation
@@ -421,44 +422,74 @@ int check_repetition()
 	}
 }
 
-/*
- * Error found
- *  -> 1+2(-3*4)
- *  -> If you attach parentheses immediately after the number, An exception arises
-*/
-int main()
+/**/
+void initialize_data()
 {
-	int num;
+	input_string = "";
+
+	while(!temp_stack.empty())
+		temp_stack.pop();
+
 	temp_stack.push('b');
 /*
  * Why push 'b' into the stack?
  *  -> Express the bottom of a stack
 */
+	while(!calculation_stack.empty())
+		calculation_stack.pop();
+
+	temp_char.clear();
+	temp_char.resize(0);
+
+	formula.clear();
+	formula.resize(0);
+
+	digits_formula.clear();
+	digits_formula.resize(0);
+
+	return;
+}
+
+/*
+ * Error found
+ *  -> 1+2(-3*4)
+ *  -> If you attach parentheses immediately after the number, An exception arises
+ *
+ *  -> 1+@
+ *  -> segmentation fault (core dumped)
+*/
+int main()
+{
+	int num;
 
 	while(1)
 	{
-		input_string = ' ';
+		initialize_data();
+
+		cout<<temp_char.size()<<endl;
 
 		Input_screen();
+		cout<<"check input_screen"<<endl;
 
 		split();
+		cout<<"check split"<<endl;
 
 		num = valid_formula_check();
+		cout<<"check formula"<<input_string<<endl;
+		cout<<temp_char.size()<<" "<<formula.size()<<" "<<digits_formula.size()<<endl;
 
 		if(num == 1)
 			infix_notation_change_to_postfix_notaion();
 		else if(num == 0)
 			printf("Parentheses do not match or are not math formula\n");
 
+		cout<<"check num"<<input_string<<endl;
+
 		postfix_notation_calculation();
 
-/*		num = check_repetition();
-
-		if(num == 0)
+//		num = check_repetition();
+//		if(num == 0)
 			break;
-		else
-			continue;*/
-		break;
 	}
 
 	return 0;
