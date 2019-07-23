@@ -452,11 +452,8 @@ void initialize_data()
 
 /*
  * Error found
- *  -> 1+2(-3*4)
+ *  -> 2(3+2) -> 25
  *  -> If you attach parentheses immediately after the number, An exception arises
- *
- *  -> 1+@
- *  -> segmentation fault (core dumped)
 */
 int main()
 {
@@ -473,11 +470,12 @@ int main()
 		num = valid_formula_check();
 
 		if(num == 1)
+		{
 			infix_notation_change_to_postfix_notaion();
+			postfix_notation_calculation();
+		}
 		else if(num == 0)
 			printf("Parentheses do not match or are not math formula\n");
-
-		postfix_notation_calculation();
 
 		num = check_repetition();
 
