@@ -105,8 +105,15 @@ int valid_formula_check()
 		{	//A blank space and number(ASCII code)
 			if(temp_char[i] >= 48 && temp_char[i] <= 57 && check_duplicate_symbol == 1)
 				check_duplicate_symbol--;
-
-			continue;
+			
+			while(temp_char[i+1] == ' ')
+				i++;
+			if(temp_char[i+1] == '(')
+			{
+				vector <char>::iterator it = temp_char.begin();
+				it = temp_char.insert(it+i+1,'*');
+				i++;
+			}
 		}
 
 		else if(temp_char[i] == '+' || temp_char[i] == '-' || temp_char[i] == '/' || temp_char[i] == '*')
@@ -451,9 +458,6 @@ void initialize_data()
 }
 
 /*
- * Error found
- *  -> 2(3+2) -> 25
- *  -> If you attach parentheses immediately after the number, An exception arises
 */
 int main()
 {
@@ -468,6 +472,7 @@ int main()
 		split();
 		
 		num = valid_formula_check();
+
 
 		if(num == 1)
 		{
