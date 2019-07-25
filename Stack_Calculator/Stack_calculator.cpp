@@ -458,6 +458,9 @@ void initialize_data()
 }
 
 /*
+ * Error found
+ * -> 2(3+4) -> 14 (o)
+ * -> (3+4)2 -> 2 (x)
 */
 int main()
 {
