@@ -99,6 +99,15 @@ int valid_formula_check()
 			num--;
 			if(check_duplicate_symbol == 1)
 				return 0;
+
+			while(temp_char[i+1] == ' ')
+				i++;
+			if(temp_char[i+1] >= 48 && temp_char[i+1] <= 57)	//Example -> (3+4)2
+			{
+				vector <char>::iterator it = temp_char.begin();
+				it = temp_char.insert(it+i+1,'*');
+				i++;
+			}
 		}
 		
 		else if((temp_char[i] >= 48 && temp_char[i] <= 57) || temp_char[i] == ' ')
@@ -108,7 +117,7 @@ int valid_formula_check()
 			
 			while(temp_char[i+1] == ' ')
 				i++;
-			if(temp_char[i+1] == '(')
+			if(temp_char[i+1] == '(')	//Example -> 2(3+4)
 			{
 				vector <char>::iterator it = temp_char.begin();
 				it = temp_char.insert(it+i+1,'*');
@@ -209,6 +218,7 @@ void infix_notation_change_to_postfix_notaion()
 				formula.push_back(temp_stack.top());
 	
 				temp_stack.pop();
+		
 			}
 		}
 		else if(temp_char[i] == '+' || temp_char[i] == '-')	//(4)
@@ -458,9 +468,6 @@ void initialize_data()
 }
 
 /*
- * Error found
- * -> 2(3+4) -> 14 (o)
- * -> (3+4)2 -> 2 (x)
 */
 int main()
 {
