@@ -311,6 +311,10 @@ void distinguish_the_number_of_a_digit()
 			digits_formula.push_back(-10007);
 		else if(formula[i] == -1)
 		{
+			/*
+			 * In case there is a symbol('-') in front of a number(the first in parentheses)
+			 * Example : 2*(-4+3)
+			*/
 			digits_formula.push_back(0);
 		
 			while(formula[i+1] >= 48 && formula[i+1] <= 57)
@@ -330,6 +334,10 @@ void distinguish_the_number_of_a_digit()
 		}
 		else if(formula[i] == -2)
 		{
+			/*
+			 * In case there is a symbol('-') in front of a number(front of calculation)
+			 * Example : -2+3
+			*/
 			while(formula[i+1] == ' ')
 				i++;
 
