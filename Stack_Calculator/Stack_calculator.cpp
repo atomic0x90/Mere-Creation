@@ -447,7 +447,13 @@ int check_repetition()
 	}
 }
 
-/**/
+/*
+ * Reasons for initialization
+ * - Calculating one formula and calculating a new one requires initialization
+ *
+ * Why do this resize of vector?
+ * - If you don`t do 'vector.resize(0)', the memory size will remain
+*/
 void initialize_data()
 {
 	input_string = "";
