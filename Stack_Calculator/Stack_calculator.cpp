@@ -420,7 +420,9 @@ void postfix_notation_calculation()
 }
 
 
-/**/
+/*
+ * The ability to ask if you want to re-enter the formula
+*/
 int check_repetition()
 {
 	char check_re;
@@ -432,7 +434,7 @@ int check_repetition()
 
 		cin>>check_re;
 
-		getchar();				//
+		getchar();		//Function to remove new line when entering
 		
 		if(check_re == 'y' || check_re == 'Y')
 			return 1;
