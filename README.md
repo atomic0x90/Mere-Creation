@@ -16,6 +16,12 @@ g++ "file name.cpp" -o "Executable file name"
 
 ---
 
+# Stack calculator
+
+Stack 을 이용한 계산기 입니다.
+
+---
+
 ## Development Environment
 
 1. OS : Linux / Ubuntu 18.04.2 LTS
@@ -23,6 +29,8 @@ g++ "file name.cpp" -o "Executable file name"
   * vim : version 8.0.1453
 1. COMPILER
   * g++ : version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04)
+
+---
 
 ## Information
 
