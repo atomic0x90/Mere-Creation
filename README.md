@@ -22,13 +22,13 @@ Stack 을 이용한 계산기 입니다.
 
 ---
 
-1. Development Environment
+1. **Development Environment**
 
-  2. OS : Linux / Ubuntu 18.04.2 LTS
-  2. TEXT EDITOR
-    * vim : version 8.0.1453
-  2. COMPILER
-    * g++ : version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04)
+  * OS : Linux / Ubuntu 18.04.2 LTS
+  * TEXT EDITOR
+    + vim : version 8.0.1453
+  * COMPILER
+    + g++ : version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04)
 
 ---
 
