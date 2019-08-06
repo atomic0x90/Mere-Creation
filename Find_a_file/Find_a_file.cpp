@@ -2,6 +2,7 @@
 #include <unistd.h>	//Using 'access(const char*, int)'
 #include <string>
 #include <cstdlib>	//Using 'c_str()'
+#include <errno.h>	//Using 'stderr(errno)'
 /*
  * int access(const char *path, int amode);
  *  - Header file(unistd.h)
@@ -38,5 +39,14 @@ int main()
 	num = access(path,0);
 
 	cout<<num<<endl;
+
+	getline(cin,a);
+	path = a.c_str();
+	num = unlink(path);
+
+	if(num == -1)
+		cout<<stderr<<endl;
+	cout<<num<<endl;
+
 	return 0;
 }
