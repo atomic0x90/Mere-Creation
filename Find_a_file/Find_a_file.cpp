@@ -1,6 +1,7 @@
 #include <iostream>
 #include <unistd.h>	//Using 'access(const char*, int)'
 #include <string>
+
 #include <cstdlib>	//Using 'c_str()'
 #include <errno.h>	//Using 'stderr(errno)'
 /*
@@ -23,8 +24,22 @@
 
 using namespace std;
 
-
 string a;
+
+void errorSet();
+
+void errorSet()
+{
+	if(errno == 2)
+		cout<<"No such file or directory"<<endl;
+	else if(errno == 13)
+		cout<<"Permission denied"<<endl;
+	else if(errno == 21)
+		cout<<"Is a directory"<<endl;
+
+	return;
+}
+
 int main()
 {
 	getline(cin,a);
@@ -45,8 +60,9 @@ int main()
 	num = unlink(path);
 
 	if(num == -1)
-		cout<<stderr<<endl;
-	cout<<num<<endl;
+		cerr<<EACCES<<"A "<<ENOENT<<" "<<errno<<" B "<<endl;
+	cout<<num<<" "<<a<<endl;
 
+	errorSet();
 	return 0;
 }
