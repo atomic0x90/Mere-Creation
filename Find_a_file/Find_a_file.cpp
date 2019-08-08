@@ -24,44 +24,46 @@
 
 using namespace std;
 
-string a;
+string inputString;
 
 void errorSet();
 
 void errorSet()
 {
-	if(errno == 2)
+	if(errno == 2)	//ENOENT
 		cout<<"No such file or directory"<<endl;
-	else if(errno == 13)
+	else if(errno == 13)	//EACCES
 		cout<<"Permission denied"<<endl;
-	else if(errno == 21)
+	else if(errno == 21)	//EISDIR
 		cout<<"Is a directory"<<endl;
+	else
+		cout<<"Error"<<endl;
 
 	return;
 }
 
 int main()
 {
-	getline(cin,a);
-	const char *path = a.c_str();
+	getline(cin,inputString);
+	const char *path = inputString.c_str();
 
 	int num = access(path,0);
 
 	cout<<num<<endl;
 	
-	getline(cin,a);
-	path = a.c_str();
+	getline(cin,inputString);
+	path = inputString.c_str();
 	num = access(path,0);
 
 	cout<<num<<endl;
 
-	getline(cin,a);
-	path = a.c_str();
+	getline(cin,inputString);
+	path = inputString.c_str();
 	num = unlink(path);
 
 	if(num == -1)
 		cerr<<EACCES<<"A "<<ENOENT<<" "<<errno<<" B "<<endl;
-	cout<<num<<" "<<a<<endl;
+	cout<<num<<" "<<inputString<<endl;
 
 	errorSet();
 	return 0;
