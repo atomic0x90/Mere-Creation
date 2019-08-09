@@ -25,8 +25,10 @@
 using namespace std;
 
 string inputString;
+const char *path;
 
 void errorSet();
+void inputScreen();
 
 void errorSet()
 {
@@ -42,10 +44,26 @@ void errorSet()
 	return;
 }
 
+void inputScreen()
+{
+	cout<<"----------------------------------------------------------"<<endl;
+	cout<<"\t\t"<<"-------------------------"<<endl;
+	cout<<"\t\t"<<"       Find a file"<<endl;
+	cout<<"\t\t"<<"-------------------------"<<"\n"<<endl;
+	cout<<"\t\t"<<"Please select an activity"<<endl;
+	cout<<"\t\t"<<"--Please enter a number--"<<endl;
+	cout<<"----------------------------------------------------------"<<endl;
+
+	getline(cin,inputString);
+	path = inputString.c_str();
+
+	return;
+}
+
 int main()
 {
-	getline(cin,inputString);
-	const char *path = inputString.c_str();
+	
+	inputScreen();
 
 	int num = access(path,0);
 
