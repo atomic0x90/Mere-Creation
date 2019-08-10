@@ -5,7 +5,9 @@
 #include <cstdlib>	//Using 'c_str()'
 #include <errno.h>	//Using 'stderr(errno)'
 
-#include <dirent.h>
+//#include <dirent.h>
+#include <stdio.h>
+#include <io.h>
 /*
  * int access(const char *path, int amode);
  *  - Header file(unistd.h)
@@ -70,8 +72,11 @@ void inputScreen()
 
 void findFile()
 {
+/*
 	path = inputString.c_str();
 	int num = findfirst(path,,);
+*/
+	struct _finddata_t fd;
 
 	return;
 }
