@@ -4,6 +4,8 @@
 
 #include <cstdlib>	//Using 'c_str()'
 #include <errno.h>	//Using 'stderr(errno)'
+
+#include <dirent.h>
 /*
  * int access(const char *path, int amode);
  *  - Header file(unistd.h)
@@ -29,6 +31,7 @@ const char *path;
 
 void errorSet();
 void inputScreen();
+void findFile();
 
 void errorSet()
 {
@@ -50,12 +53,25 @@ void inputScreen()
 	cout<<"\t\t"<<"-------------------------"<<endl;
 	cout<<"\t\t"<<"       Find a file"<<endl;
 	cout<<"\t\t"<<"-------------------------"<<"\n"<<endl;
-	cout<<"\t\t"<<"Please select an activity"<<endl;
-	cout<<"\t\t"<<"--Please enter a number--"<<endl;
+//	cout<<"\t\t"<<"Please select an activity"<<endl;
+//	cout<<"\t\t"<<"--Please enter a number--"<<endl;
+	cout<<"\t"<<"       --Please enter a file name--"<<endl;
 	cout<<"----------------------------------------------------------"<<endl;
 
+
 	getline(cin,inputString);
+	
+	findFile();
+
 	path = inputString.c_str();
+
+	return;
+}
+
+void findFile()
+{
+	path = inputString.c_str();
+	int num = findfirst(path,,);
 
 	return;
 }
