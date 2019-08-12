@@ -7,7 +7,7 @@
 
 //#include <dirent.h>
 #include <stdio.h>
-#include <io.h>
+//#include <io.h>	//This feature is not available on Linux
 /*
  * int access(const char *path, int amode);
  *  - Header file(unistd.h)
@@ -69,7 +69,12 @@ void inputScreen()
 
 	return;
 }
-
+/*
+struct _finddata_t
+{
+	char name[20];
+}
+*/
 void findFile()
 {
 /*
