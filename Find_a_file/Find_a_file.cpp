@@ -7,6 +7,8 @@
 
 //#include <dirent.h>
 #include <stdio.h>
+#include <sys/io.h>
+#include <time.h>
 //#include <io.h>	//This feature is not available on Linux
 /*
  * int access(const char *path, int amode);
@@ -81,8 +83,17 @@ void findFile()
 	path = inputString.c_str();
 	int num = findfirst(path,,);
 */
-	struct _finddata_t fd;
-
+	struct _finddata_t *file_data;
+	intptr_t file_intptr;
+/*
+	if((file_intptr = _findfirst("*.cpp",&file_data))==-1L)
+		cout<<"test"<<endl;
+	else
+	{
+		cout<<"TEST"<<endl;	
+		_findclose(file_intptr);
+	}
+*/
 	return;
 }
 
