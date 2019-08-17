@@ -14,6 +14,19 @@ g++ "file name.cpp" -o "Executable file name"
 ./"Executable file name"
 ```
 
+1. If the extension is kt
+  * Linux
+```bash
+sudo apt install openjdk-11-jre-headless
+
+(sudo apt install openjdk-8-jre-headless)
+
+kotlinc "file name.kt" -include-runtime -d "Executable file name.jar"
+
+java -jar "Executable file name.jar"
+```
+
+
 ---
 
 # Stack calculator
