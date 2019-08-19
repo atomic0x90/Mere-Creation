@@ -14,7 +14,7 @@ g++ "file name.cpp" -o "Executable file name"
 ./"Executable file name"
 ```
 
-1. If the extension is kt
+2. If the extension is kt
    * Linux
 ```bash
 sudo apt install openjdk-11-jre-headless
