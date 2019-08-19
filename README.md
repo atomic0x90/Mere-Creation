@@ -3,6 +3,8 @@
 ## Installation method
 
 1. If the extension is cpp
+
+1. Test
    * Linux
 ```bash
 sudo apt-get install vim
@@ -13,7 +15,8 @@ g++ "file name.cpp" -o "Executable file name"
 
 ./"Executable file name"
 ```
-
+1. Test
+2. Test
 2. If the extension is kt
    * Linux
 ```bash
