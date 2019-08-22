@@ -12,6 +12,9 @@ fun main()
 
 	println(b?.times(a))
 
+	if(b != null)		//a != null -> This is always 'true'
+		println(a*b)
+
 	b = null
 
 	println(b)
