@@ -112,5 +112,8 @@ int main()
 		testCase--;
 	}
 
+	fin.close();
+	fout.close();
+
 	return 0;
 }
