@@ -35,18 +35,67 @@ void finFunction()
 
 	checkNumber = palindromeCheckFunction(splitString);
 
+	foutFunction(checkNumber);
 	return;
 }
 
 int palindromeCheckFunction(char *value)
 {
-	int i = 0, j = strlen(value);
+	int i = 0, j = strlen(value) - 1;
+	int insertNumber = 0;
+
+	cout<<i<<" "<<j<<" "<<value[i]<<" "<<value[j]<<endl;
+
+	while(1)
+	{
+		cout<<value[i]<<" "<<value[j]<<endl;
+		if(value[i] == value[j])
+		{
+			i++;
+			j--;
+		}
+		else if(value[i] != value[j])
+		{
+			if(value[i+1] == value[j])
+			{
+				insertNumber++;
+				i += 2;
+				j--;
+			}
+			else if(value[i] == value[j-1])
+			{
+				insertNumber++;
+				j -= 2;
+				i++;
+			}
+			else if(value[i+1] != value[j] && value[i+2] == value[j])
+			{
+				insertNumber += 2;
+				i += 3;
+				j--;
+			}
+			else if(value[i] != value[j-1] && value[i] == value[j-2])
+			{
+				insertNumber += 2;
+				i++;
+				j -= 3;
+			}
+			else
+				insertNumber = 3;
+		}
+
+
+		if(i >= j || insertNumber > 2)
+			break;
+	}
 	
-	return 0;
+
+	return insertNumber;
 }
 
-void foutFuntion(int result)
+void foutFunction(int result)
 {
+	cout<<"insertNumber : "<<result<<endl;
 
 	return;
 }
