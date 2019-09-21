@@ -1,7 +1,8 @@
 #include <iostream>
 #include <fstream>
+#include <stack>
 
-#include <cstring>
+#include <cstring>	//c_str, string
 
 using namespace std;
 
@@ -10,6 +11,8 @@ ofstream fout("tree.out");
 
 int testCase, checkLength;
 int checkR;
+
+stack<int>saveR;
 
 string finString;
 
@@ -59,6 +62,7 @@ void treeConstruction()
 
 void preorder()
 {
+	cout<<"Preorder"<<endl;
 	int tmp = checkLength;
 	int i = 0;
 	while(tmp)
@@ -91,6 +95,48 @@ void preorder()
 
 void inorder()
 {
+	cout<<"Inorder"<<endl;
+	int tmp = checkLength;
+	int i = 0;
+	while(tmp)
+	{
+		if(splitString[i] == '(')
+		{
+			saveR.push(checkR++);
+		}
+		else if(splitString[i] == ')')
+		{
+			if(!saveR.empty())
+			{
+				cout<<'r'<<saveR.top()<<endl;
+				saveR.pop();
+			}
+		}
+		else if(splitString[i] == 'T')
+		{
+			cout<<'T';
+			int j = i + 1;
+			while(1)
+			{
+				if(splitString[j] == ' ')
+					break;
+				else 
+					cout<<splitString[j];
+				j++;
+			}
+			
+			cout<<endl;
+
+			if(!saveR.empty())
+			{
+				cout<<'r'<<saveR.top()<<endl;
+				saveR.pop();
+			}
+		}
+	
+		i++;
+		tmp--;
+	}
 
 	return;
 }
@@ -113,7 +159,7 @@ int main()
 		finFunction();
 		
 		treeConstruction();
-		
+	
 		foutFunction();
 
 		testCase--;
