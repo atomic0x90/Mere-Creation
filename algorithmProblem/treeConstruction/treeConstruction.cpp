@@ -32,7 +32,6 @@ void finFunction()
 	
 	checkLength = strlen(splitString);
 
-	cout<<checkLength<<endl;
 
 	int i = 0,tmp = checkLength;
 	while(tmp)
