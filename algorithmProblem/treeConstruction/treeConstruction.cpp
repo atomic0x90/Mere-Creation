@@ -28,6 +28,16 @@ void finFunction()
 
 	cout<<checkLength<<endl;
 
+	int i = 0;
+	while(checkLength)
+	{
+		cout<<splitString[i];
+	
+		i++;
+		checkLength--;
+	}
+	cout<<endl;
+
 	return;
 }
 
@@ -45,10 +55,13 @@ void foutFunction()
 
 int main()
 {
-	fin >> testCase;
+	string tempString;
+
+	getline(fin,tempString);
+	testCase = atoi(tempString.c_str());
 
 
-	while(testCase >= 0)
+	while(testCase)
 	{
 		finFunction();
 
