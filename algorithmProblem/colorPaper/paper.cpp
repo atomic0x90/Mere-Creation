@@ -19,7 +19,7 @@ int testCase;
 
 void vectorSet();
 void finFunction();
-void verifyOverlapFunction();
+void verifyOverlapFunction(int);
 void foutFunction();
 
 void vectorSet()
@@ -35,10 +35,10 @@ void finFunction()
 {
 	int x,y,w,h;
 	int i = 0;
+	
 	while(testCase)
 	{
 		fin >> x >> y >> w >> h;
-		cout << x <<" "<< y <<" "<< w <<" "<< h <<endl;
 		
 		xAxisCoordinates[i].first = x;
 		xAxisCoordinates[i].second = x + w;
@@ -48,11 +48,25 @@ void finFunction()
 
 		invisibleDegree[i] = 0;
 
+		if(i)
+			verifyOverlapFunction(i);
+
 		i++;
 		testCase--;
 	}
+	
+	return ;
+}
 
+void verifyOverlapFunction(int value)
+{
+	int i = 0;
 
+	while(value)
+	{
+	
+		value--;
+	}
 
 	return ;
 }
