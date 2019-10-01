@@ -31,6 +31,32 @@ void vectorSet()
 	return ;
 }
 
+void finFunction()
+{
+	int x,y,w,h;
+	int i = 0;
+	while(testCase)
+	{
+		fin >> x >> y >> w >> h;
+		cout << x <<" "<< y <<" "<< w <<" "<< h <<endl;
+		
+		xAxisCoordinates[i].first = x;
+		xAxisCoordinates[i].second = x + w;
+
+		yAxisCoordinates[i].first = y;
+		yAxisCoordinates[i].second = y + h;
+
+		invisibleDegree[i] = 0;
+
+		i++;
+		testCase--;
+	}
+
+
+
+	return ;
+}
+
 int main()
 {
 	fin >> testCase;
@@ -39,13 +65,9 @@ int main()
 
 	vectorSet();	
 
-	cout<<xAxisCoordinates.size()<<" "<<yAxisCoordinates.size()<<" "<<invisibleDegree.size()<<endl;
+	finFunction();
 
-	while(testCase)
-	{
-		
-		testCase--;
-	}
+
 
 	fin.close();
 	fout.close();
