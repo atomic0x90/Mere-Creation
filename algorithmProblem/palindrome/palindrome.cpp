@@ -97,12 +97,19 @@ void foutFunction(int result)
 {
 	cout<<"insertNumber : "<<result<<endl;
 
+	if(result < 3)
+		fout<<result<<endl;
+	else
+		fout<<"-1"<<endl;
 	return;
 }
 
 int main()
 {
-	fin >> testCase;
+	string tempString;
+
+	getline(fin,tempString);
+	testCase = atoi(tempString.c_str());
 
 	while(testCase >= 0)
 	{
