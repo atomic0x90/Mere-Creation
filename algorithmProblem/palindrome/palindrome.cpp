@@ -111,7 +111,7 @@ int main()
 	getline(fin,tempString);
 	testCase = atoi(tempString.c_str());
 
-	while(testCase >= 0)
+	while(testCase)
 	{
 		cout<<testCase;
 		finFunction();
