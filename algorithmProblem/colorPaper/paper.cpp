@@ -9,8 +9,8 @@ using namespace std;
 ifstream fin("paper.inp");
 ofstream fout("paper.out");
 
-vector < pair <int,int> > xAxisCoordinates;
-vector < pair <int,int> > yAxisCoordinates;
+vector < pair <int,int> > xCoordinates;
+vector < pair <int,int> > yCoordinates;
 
 vector <int> invisibleDegree;
 
@@ -19,13 +19,13 @@ int testCase;
 
 void vectorSet();
 void finFunction();
-void verifyOverlapFunction(int);
+void verifyOverlapFunction(int,int,int,int,int);
 void foutFunction();
 
 void vectorSet()
 {
-	xAxisCoordinates.reserve(testCase);
-	yAxisCoordinates.reserve(testCase);
+	xCoordinates.reserve(testCase);
+	yCoordinates.reserve(testCase);
 	invisibleDegree.reserve(testCase);
 
 	return ;
@@ -40,16 +40,16 @@ void finFunction()
 	{
 		fin >> x >> y >> w >> h;
 		
-		xAxisCoordinates[i].first = x;
-		xAxisCoordinates[i].second = x + w;
+		xCoordinates[i].first = x;
+		xCoordinates[i].second = x + w;
 
-		yAxisCoordinates[i].first = y;
-		yAxisCoordinates[i].second = y + h;
+		yCoordinates[i].first = y;
+		yCoordinates[i].second = y + h;
 
 		invisibleDegree[i] = 0;
 
 		if(i)
-			verifyOverlapFunction(i);
+			verifyOverlapFunction(i,x,x+w,y,y+h);
 
 		i++;
 		testCase--;
@@ -58,14 +58,17 @@ void finFunction()
 	return ;
 }
 
-void verifyOverlapFunction(int value)
+void verifyOverlapFunction(int value,int x,int w,int y,int h)
 {
-	int i = 0;
+	int i = 0, j = value;
 
-	while(value)
+	for(; i < j ; i++)
 	{
-	
-		value--;
+		if(invisibleDegree[i] != 2)
+		{
+			if( (xCoordinates[i].first > x && xCoordinates[i].second < w))
+			{}
+		}
 	}
 
 	return ;
