@@ -68,17 +68,24 @@ int palindromeCheckFunction(char *value)
 				j -= 2;
 				i++;
 			}
-			else if(value[i+1] != value[j] && value[i+2] == value[j])
+			
+			else if(value[i+1] != value[j] && value[i+2] == value[j] && value[i+3] == value[j-1])
 			{
 				insertNumber += 2;
 				i += 3;
 				j--;
 			}
-			else if(value[i] != value[j-1] && value[i] == value[j-2])
+			else if(value[i] != value[j-1] && value[i] == value[j-2] && value[i+1] == value[j-3])
 			{
 				insertNumber += 2;
 				i++;
 				j -= 3;
+			}
+			else if(value[i+1] == value[j-1])	//맨 앞, 맨 뒤
+			{
+				insertNumber += 2;
+				i++;
+				j--;
 			}
 			else
 				insertNumber = 3;
