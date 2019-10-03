@@ -56,6 +56,44 @@ int palindromeCheckFunction(char *value)
 		}
 		else if(value[i] != value[j])
 		{
+			if(i == 0)
+			{
+				if(value[i] == value[j-1] && value[i+1] == value[j-2] && value[i+2] == value[j-3])
+				{
+					cout<<"TT"<<endl;
+					insertNumber++;
+					j--;
+
+					continue;
+				}
+				else if(value[i] != value[j-1] && value[i] == value[j-2])
+				{
+					insertNumber += 2;
+					j -= 2;
+					continue;
+				}
+				else if(value[i+1] == value[j] && value[i+2] == value[j-1] && value[i+3] == value[j-2])
+				{
+					insertNumber++;
+					i++;
+
+					continue;
+				}
+				else if(value[i+1] != value[j] && value[i+2] == value[j])
+				{
+					insertNumber += 2;
+					i += 2;
+					j--;
+					continue;
+				}
+//				continue;
+/*
+				if(insertNumber > 3)
+					break;
+				else
+					continue;
+*/			}
+
 			if(value[i+1] == value[j])
 			{
 				insertNumber++;
@@ -90,6 +128,8 @@ int palindromeCheckFunction(char *value)
 			else
 				insertNumber = 3;
 		}
+		
+		cout<<"insertNumber: "<<insertNumber<<" "<<i<<" "<<j<<endl;
 
 
 		if(i >= j || insertNumber > 2)
