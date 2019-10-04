@@ -117,20 +117,29 @@ void inorder()
 	int i = 0, check = 0;
 	while(tmp >= 0)
 	{
+//		cout<<"check : "<<check<<" ";
 		if(splitString[i] == '(')
 		{
-			if(!saveR.empty() && check != 0)
+/*			if(!saveR.empty() && check != 0)
 			{
-				cout<<'r'<<saveR.top()<<endl;
+				cout<<'r'<<saveR.top()<<"TTtt"<<endl;
 				fout<<'r'<<saveR.top()<<endl;	//
 				saveR.pop();
 				check = 0;
-			}
+			}*/
 			saveR.push(checkR++);
 		}
 		else if(splitString[i] == ')')
 		{
 			check++;
+
+			if(!saveR.empty())
+			{
+				cout<<'r'<<saveR.top()<<endl;
+				fout<<'r'<<saveR.top()<<endl;
+
+				saveR.pop();
+			}
 
 			while(!(splitString[i] == '(') && tmp)
 			{
