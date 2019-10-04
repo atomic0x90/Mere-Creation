@@ -37,11 +37,15 @@ void finFunction()
 	while(tmp)
 	{
 		cout<<splitString[i];
-	
+		
+		fout<<splitString[i];	//
+
 		i++;
 		tmp--;
 	}
 	cout<<endl;
+
+	fout<<endl;	//
 
 	return;
 }
@@ -62,26 +66,39 @@ void treeConstruction()
 void preorder()
 {
 	cout<<"Preorder"<<endl;
+	
+	fout<<"Preorder"<<endl;	//
 	int tmp = checkLength;
 	int i = 0;
 	while(tmp)
 	{
 		if(splitString[i] == '(')
-			cout<<'r'<<checkR++<<endl;
-		
-		else if(splitString[i] == 'T')
 		{
-			cout<<'T';
-			int j = i + 1;
+			cout<<'r'<<checkR<<endl;
+			fout<<'r'<<checkR<<endl;	//
+			checkR++;
+		}
+		else if(splitString[i] != ' ' && splitString[i] != ')')//(splitString[i] == 'T')
+		{
+			cout<<splitString[i];
+			fout<<splitString[i];	//
+			int j = 1;
+			i++;
 			while(1)
 			{
-				if(splitString[j] == ' ')
+				if(splitString[i] == ' ')
 					break;
-				else
-					cout<<splitString[j];
+				else// if( !(atoi(&splitString[j]) >= 0 && atoi(&splitString[j]) < 10) )
+				{
+					cout<<splitString[i];
+					fout<<splitString[i];	//
+				}
+				i++;
 				j++;
 			}
+			tmp -= j;
 			cout<<endl;
+			fout<<endl;	//
 		}
 	
 		i++;
@@ -95,6 +112,7 @@ void preorder()
 void inorder()
 {
 	cout<<"Inorder"<<endl;
+	fout<<"Inorder"<<endl;	//
 	int tmp = checkLength;
 	int i = 0;
 	while(tmp)
@@ -108,27 +126,34 @@ void inorder()
 			if(!saveR.empty())
 			{
 				cout<<'r'<<saveR.top()<<endl;
+				fout<<'r'<<saveR.top()<<endl;	//
 				saveR.pop();
 			}
 		}
 		else if(splitString[i] == 'T')
 		{
 			cout<<'T';
+			fout<<'T';	//
 			int j = i + 1;
 			while(1)
 			{
 				if(splitString[j] == ' ')
 					break;
 				else 
+				{
 					cout<<splitString[j];
+					fout<<splitString[j];	//
+				}
 				j++;
 			}
 			
 			cout<<endl;
+			fout<<endl;	//
 
 			if(!saveR.empty())
 			{
 				cout<<'r'<<saveR.top()<<endl;
+				fout<<'r'<<saveR.top()<<endl;	//
 				saveR.pop();
 			}
 		}
