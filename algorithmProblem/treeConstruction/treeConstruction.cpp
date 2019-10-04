@@ -114,39 +114,50 @@ void inorder()
 	cout<<"Inorder"<<endl;
 	fout<<"Inorder"<<endl;	//
 	int tmp = checkLength;
-	int i = 0;
-	while(tmp)
+	int i = 0, check = 0;
+	while(tmp >= 0)
 	{
 		if(splitString[i] == '(')
 		{
-			saveR.push(checkR++);
-		}
-		else if(splitString[i] == ')')
-		{
-			if(!saveR.empty())
+			if(!saveR.empty() && check != 0)
 			{
 				cout<<'r'<<saveR.top()<<endl;
 				fout<<'r'<<saveR.top()<<endl;	//
 				saveR.pop();
+				check = 0;
 			}
+			saveR.push(checkR++);
 		}
-		else if(splitString[i] == 'T')
+		else if(splitString[i] == ')')
 		{
-			cout<<'T';
-			fout<<'T';	//
-			int j = i + 1;
+			check++;
+
+			while(!(splitString[i] == '(') && tmp)
+			{
+				i++;
+				tmp--;
+			}
+			saveR.push(checkR++);
+		}
+		else if(splitString[i] != ' ')
+		{
+			cout<<splitString[i];
+			fout<<splitString[i];	//
+			int j = 1;
+			i++;
 			while(1)
 			{
-				if(splitString[j] == ' ')
+				if(splitString[i] == ' ')
 					break;
 				else 
 				{
-					cout<<splitString[j];
-					fout<<splitString[j];	//
+					cout<<splitString[i];
+					fout<<splitString[i];	//
 				}
+				i++;
 				j++;
 			}
-			
+			tmp -= j;
 			cout<<endl;
 			fout<<endl;	//
 
