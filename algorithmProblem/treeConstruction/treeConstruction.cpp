@@ -114,72 +114,57 @@ void inorder()
 	cout<<"Inorder"<<endl;
 	fout<<"Inorder"<<endl;	//
 	int tmp = checkLength;
-	int i = 0, check = 0;
-	while(tmp >= 0)
+	int i = 0,check = 0;
+	while(tmp > 0)
 	{
-//		cout<<"check : "<<check<<" ";
 		if(splitString[i] == '(')
 		{
-/*			if(!saveR.empty() && check != 0)
-			{
-				cout<<'r'<<saveR.top()<<"TTtt"<<endl;
-				fout<<'r'<<saveR.top()<<endl;	//
-				saveR.pop();
-				check = 0;
-			}*/
-			saveR.push(checkR++);
+			saveR.push(check++);
 		}
 		else if(splitString[i] == ')')
 		{
-			check++;
-
-			if(!saveR.empty())
-			{
-				cout<<'r'<<saveR.top()<<endl;
-				fout<<'r'<<saveR.top()<<endl;
-
-				saveR.pop();
-			}
-
-			while(!(splitString[i] == '(') && tmp)
-			{
-				i++;
-				tmp--;
-			}
-			saveR.push(checkR++);
+			
 		}
 		else if(splitString[i] != ' ')
 		{
 			cout<<splitString[i];
-			fout<<splitString[i];	//
+			fout<<splitString[i];
 			int j = 1;
 			i++;
-			while(1)
+			while(i < checkLength)
 			{
 				if(splitString[i] == ' ')
 					break;
-				else 
+				else
 				{
 					cout<<splitString[i];
-					fout<<splitString[i];	//
+					fout<<splitString[i];
 				}
 				i++;
 				j++;
 			}
 			tmp -= j;
-			cout<<endl;
-			fout<<endl;	//
-
-			if(!saveR.empty())
+//			if(i < checkLength)
+//			{
+				cout<<endl;
+				fout<<endl;
+//			}
+			if(splitString[i+1] != '(' || splitString[i+1] != ')')
 			{
-				cout<<'r'<<saveR.top()<<endl;
-				fout<<'r'<<saveR.top()<<endl;	//
-				saveR.pop();
+				if(!saveR.empty())
+				{
+					cout<<'r'<<saveR.top();
+					fout<<'r'<<saveR.top();
+
+					saveR.pop();
+
+					cout<<endl;
+					fout<<endl;
+				}
 			}
 		}
-	
-		i++;
 		tmp--;
+		i++;
 	}
 
 	return;
