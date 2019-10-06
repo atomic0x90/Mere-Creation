@@ -64,9 +64,8 @@ int main()
 			if(i != 9)
 			{
 				if( (score[i][0] + score[i][1]) != 10)
-				{
 					result += score[i][0] + score[i][1];
-				}
+
 				else if(strikeCheck[i] != 0)
 				{
 					if(score[i][0] == 10)	//strike
@@ -75,8 +74,10 @@ int main()
 						{
 							if(score[i+1][1] == 0 && score[i+2][1] == 0)
 								result += 30;
+					
 							else if(score[i+1][1] == 0 && score[i+2][1] != 0)
 								result += 20 + score[i+2][0];
+					
 							else if(score[i+1][1] != 0)
 								result += 20;
 						}
@@ -84,6 +85,7 @@ int main()
 						{
 							if(score[i+1][1] == 0)
 								result += 20 + score[i+2][0];
+					
 							else if(score[i+1][1] != 0)
 								result += 20;
 						}
@@ -91,15 +93,11 @@ int main()
 							result += 10 + score[i+1][0] + score[i+1][1];
 					}
 					else	//spare
-					{
 						result += 10 + score[i+1][0];
-					}
 				}
 			}
 			else
-			{
 				result += score[i][0] + score[i][1] + score[i][2];
-			}
 
 		}
 
