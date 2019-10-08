@@ -13,6 +13,7 @@ string finString;
 char *splitString;
 char firstCube[7];
 char secondCube[7];
+char tmpCube[7];
 
 int finFunction();
 void foutFunction(int);
@@ -79,73 +80,76 @@ int checkPainting()
 	int check = 0;
 
 	firstCube[0] = secondCube[0] = ' ';
+	tmpCube[0] = ' ';
 
 	for(int i = 0;i < 6;i++)
 	{
 		firstCube[i+1] = splitString[i];
 		secondCube[i+1] = splitString[6+i];
+		tmpCube[i+1] = splitString[6+i];
 	}
 
-	while(check < 6)
+	for(int i = 1;i < 7;i++)
 	{
-		for(int j = 1;j < 4;j++)
+		check = 0;
+		if(firstCube[1] == tmpCube[i] && firstCube[6] == tmpCube[7-i])
 		{
-			int tmp = 0;
-			for(int i = check + 1; i < 7;i++)
-			{
-				if(firstCube[j] == secondCube[i] && firstCube[7-j] == secondCube[7-i])
-				{
-					tmp  = 1;
-					check = i;
-					break;
-				}
-			}
-			if(tmp == 1)
-				break;
+			check = i;
+//			break;
 		}
-	
-		if(check == 0)
-			return 0;
-		else
+//		if(check == 0)
+//			continue;
+//		else
+		if(check != 0)
 			cubeSpin(check);
-	
-		if(firstCube[2] == secondCube[2] && firstCube[5] == secondCube[5])
-		{
-			if(firstCube[3] == secondCube[3] && firstCube[4] == secondCube[4])
-				return 1;
-		}
-		else if(firstCube[2] == secondCube[5] && firstCube[5] == secondCube[2])
-		{
-			if(firstCube[3] == secondCube[4] && firstCube[4] == secondCube[3])
-				return 1;
-		}
-		else if(firstCube[2] == secondCube[4] && firstCube[5] == secondCube[3])
-		{
-			if(firstCube[3] == secondCube[5] && firstCube[4] == secondCube[5])
-				return 1;
-		}
-		else if(firstCube[2] == secondCube[3] && firstCube[5] == secondCube[4])
-		{
-			if(firstCube[3] == secondCube[5] && firstCube[4] == secondCube[5])
-				return 1;
-		}
+		else
+			continue;
 
-		for(int i = 1;i<7;i++)
-			cout<<firstCube[i];
-		cout<<"\t"<<check<<"\t";
-
-		for(int i = 1;i<7;i++)
-			cout<<secondCube[i];
 		cout<<endl;
-	
-		check++;
+		for(int j = 1;j<7;j++)
+                        cout<<secondCube[j];
+                cout<<endl;
+
+		for(int k = 0;k < 4;k++)
+		{
+			if(firstCube[2] == secondCube[2] && firstCube[5] == secondCube[5] && firstCube[3] == secondCube[3] && firstCube[4] == secondCube[4])
+					return 1;
+			else
+			{
+				char tmp2,tmp3,tmp4,tmp5;
+				tmp2 = secondCube[2];
+				tmp3 = secondCube[3];
+				tmp4 = secondCube[4];
+				tmp5 = secondCube[5];
+
+				secondCube[2] = tmp3;
+				secondCube[3] = tmp5;
+				secondCube[4] = tmp2;
+				secondCube[5] = tmp4;
+			}
+			for(int l = 1;l<7;l++)
+				cout<<secondCube[l];
+			cout<<endl;
+		}
+
+		cout<<endl;
+		for(int j = 1;j<7;j++)
+			cout<<firstCube[j];
+		cout<<"\ti check   "<<i<<" "<<check<<"\t";
+
+		for(int j = 1;j<7;j++)
+			cout<<secondCube[j];
+		cout<<endl;
 	}
 	return 0;
 }
 
 void cubeSpin(int check)
 {
-	int tmp1,tmp2;
+	for(int i = 1;i<7;i++)
+		secondCube[i] = tmpCube[i];
+
+	char tmp1,tmp2;
 
 	if(check == 1)
 		return;
