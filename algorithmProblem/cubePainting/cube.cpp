@@ -27,10 +27,33 @@ int finFunction()
 	checkNum = checkEOFFunction();
 
 	if(checkNum == 12)
+	{
+		cout<<"TRUE"<<endl;
+		fout<<"TRUE"<<endl;
 		return 1;
+	}
 
+	checkNum = checkPainting();
+
+	foutFunction(checkNum);
 
 	return 0;
+}
+
+void foutFunction(int num)
+{
+	if(num == 1)
+	{
+		cout<<"TRUE"<<endl;
+		fout<<"TRUE"<<endl;
+	}
+	else if(num == 0)
+	{
+		cout<<"FALSE"<<endl;
+		fout<<"FALSE"<<endl;
+	}
+
+	return ;
 }
 
 int checkEOFFunction()
@@ -46,6 +69,20 @@ int checkEOFFunction()
 	}
 	
 	return checkEOF;
+}
+
+int checkPainting()
+{
+	char firstCube[6];
+	char secondCube[6];
+
+	for(int i = 0;i < 6;i++)
+	{
+		firstCube[i] = splitString[i];
+		secondCube[i] = splitString[6+i];
+	}
+
+	return 0;
 }
 
 int main()
