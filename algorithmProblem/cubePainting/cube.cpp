@@ -32,11 +32,9 @@ int finFunction()
 
 	if(checkNum == 12)
 	{
-		cout<<"TRUE"<<endl;
 		fout<<"TRUE"<<endl;
 		return 1;
 	}
-
 	checkNum = checkPainting();
 
 	foutFunction(checkNum);
@@ -47,15 +45,9 @@ int finFunction()
 void foutFunction(int num)
 {
 	if(num == 1)
-	{
-		cout<<"TRUE"<<endl;
 		fout<<"TRUE"<<endl;
-	}
 	else if(num == 0)
-	{
-		cout<<"FALSE"<<endl;
 		fout<<"FALSE"<<endl;
-	}
 
 	return ;
 }
@@ -92,23 +84,14 @@ int checkPainting()
 	for(int i = 1;i < 7;i++)
 	{
 		check = 0;
+		
 		if(firstCube[1] == tmpCube[i] && firstCube[6] == tmpCube[7-i])
-		{
 			check = i;
-//			break;
-		}
-//		if(check == 0)
-//			continue;
-//		else
+		
 		if(check != 0)
 			cubeSpin(check);
 		else
 			continue;
-
-		cout<<endl;
-		for(int j = 1;j<7;j++)
-                        cout<<secondCube[j];
-                cout<<endl;
 
 		for(int k = 0;k < 4;k++)
 		{
@@ -127,19 +110,7 @@ int checkPainting()
 				secondCube[4] = tmp2;
 				secondCube[5] = tmp4;
 			}
-			for(int l = 1;l<7;l++)
-				cout<<secondCube[l];
-			cout<<endl;
 		}
-
-		cout<<endl;
-		for(int j = 1;j<7;j++)
-			cout<<firstCube[j];
-		cout<<"\ti check   "<<i<<" "<<check<<"\t";
-
-		for(int j = 1;j<7;j++)
-			cout<<secondCube[j];
-		cout<<endl;
 	}
 	return 0;
 }
@@ -190,6 +161,9 @@ int main()
 		if(checkEOF == 1)
 			break;
 	}
+
+	fin.close();
+	fout.close();
 
 	return 0;
 }
