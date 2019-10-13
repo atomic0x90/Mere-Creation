@@ -19,7 +19,7 @@ Node* insertNumber(Node* root,int data)
 		root = (Node*)malloc(sizeof(Node));
 		root->left = NULL;
 		root->right = NULL;
-		root->value = 0;
+		root->value = data;
 
 		return root;
 	}
@@ -41,9 +41,12 @@ int finPre[10000] = {0,};
 int finIn[10000] = {0,};
 int finPost[10000] = {0,};
 
+int checkRoot;
+
 void finFunction();
 void foutFunction();
 void constructionTree();
+
 
 //*root, int *,int fNum1,int sNum1,int *,Num
 Node* preIn(int,int,int *,int *,Node *);
@@ -65,6 +68,8 @@ Node* insertNumber(Node* root,int data)
 	return root;
 }
 */
+
+
 void finFunction()
 {
 	fin>>nodeNum;
@@ -114,7 +119,7 @@ void constructionTree()
 {
 	if( (orderType1 == -1 && orderType2 == 0) || (orderType1 == 0 && orderType2 == -1) )
 	{
-//		root = insertNumber(root,finPre[0]);
+		checkRoot = finPre[0];
 		root = preIn(finPre[0],0,finIn,finPre,root);
 	}
 	else if( (orderType1 == -1 && orderType2 == 1) || (orderType1 == 1 && orderType2 == -1) )
@@ -127,18 +132,12 @@ void constructionTree()
 
 Node* preIn(int checkCenter,int checkPreNum,int *in,int *pre,Node *root)
 {
-//	root = insertNumber(root,checkCenter);
+	root = insertNumber(root,checkCenter);
 
-	cout<<"inorderPrint"<<endl;
-	inorderPrint(root);
-	cout<<"end"<<endl;
+	int saveC = 0;
 
-	if(root == NULL)
-		cout<<"root is NULL "<<checkCenter<<" "<<checkPreNum<<endl;
-	else
-		cout<<root->value<<endl;
-	int tmpIn,tmpPre;
-	cout<<checkCenter<<" "<<checkPreNum<<" "<<in[3]<<" "<<pre[2]<<endl;
+	int tmpIn,tmpPre,tmpCenter = 0;
+	cout<<checkCenter<<" "<<root->value<<endl;
 
 	for(int i = checkPreNum;i < nodeNum;i++)
 	{
@@ -161,35 +160,80 @@ Node* preIn(int checkCenter,int checkPreNum,int *in,int *pre,Node *root)
 		}
 		else
 		{
-			if(pre[i] == in[tmpIn-1])
+			if(pre[i] == in[tmpIn])
 			{
-				tmpPre = i;
+				tmpPre = i+1;
 				break;
 			}
 		}
 	}
 
-	cout<<tmpIn<<" "<<in[tmpIn]<<" "<<tmpPre<<" "<<pre[tmpPre]<<endl;
+	cout<<tmpIn<<" "<<tmpPre<<endl;
 	
-	if(!(tmpIn+1 == tmpPre))
-	{
-		cout<<"In"<<endl;
-		if(root != NULL)
-			root = preIn(in[tmpIn-1],0,in,pre,root->left);
-		else if(root == NULL)
+	if(checkPreNum == 0)
+	{		//제일 위 root 제외
+		for(int i = 0;i < tmpIn;i++)
 		{
-			root = insertNumber(root,checkCenter);
-			root = preIn(in[tmpIn-1],0,in,pre,root->left);
+			if(pre[tmpPre+1] == in[i])
+			{
+				tmpCenter = in[i];
+				saveC = i;
+				break;
+			}
 		}
-		cout<<"Out"<<endl;
 	}
-	inorderPrint(root);
+	else
+	{		//root 이후
+		for(int i = 0;i < tmpIn;i++)
+		{
+			if(pre[tmpPre] == in[i])
+			{
+				tmpCenter = in[i];
+				saveC = i;
+				break;
+			}
+		}
+	}
 
-	cout<<"inserta "<<checkCenter<<" "<<endl;
-	root = insertNumber(root,checkCenter);
-	cout<<"insertb"<<endl;
+	cout<<endl<<" "<<checkCenter<<" "<<in[tmpIn+1]<<" "<<checkPreNum<<endl;
+	cout<<"tmpCenter "<<tmpCenter<<" "<<pre[tmpPre]<<endl;
 
+	if(tmpCenter == 0)
+		return root;
+
+	cout<<"In "<<tmpCenter<<endl;
+	
+	root->left = preIn(tmpCenter,0,in,pre,root->left);
+	
+	cout<<"Out ";
+	
 	inorderPrint(root);
+	cout<<endl<<"TEST "<<tmpIn<<" "<<in[tmpIn]<<" "<<tmpPre<<" "<<tmpCenter<<" "<<root->value<<" "<<checkCenter<<endl;
+	cout<<in[tmpIn-1]<<" "<<saveC<<endl;
+
+
+	int checkInsert = 0;
+	for(int i = 0;i <= tmpIn;i++)
+	{
+	
+		if(pre[i] == in[tmpIn+1])
+		{
+			checkInsert++;
+			break;
+		}
+	}
+	cout<<"checkInsert "<<checkInsert<<" "<<in[tmpIn+1]<<endl;
+	if(checkInsert)
+	{
+		cout<<checkRoot<<"eeeeeeeeeeeeeeeee"<<endl;
+//		root->right = preIn(,tmpIn,in,pre,root->right);
+	}
+
+	if(checkCenter == checkRoot)
+	{
+		root->right = preIn(pre[tmpIn+1],tmpIn+1,in,pre,root->right);
+	}
+
 
 	return root;
 }
@@ -209,7 +253,8 @@ int main()
 
 	constructionTree();
 
-//	inorderPrint(root);
+	cout<<endl;
+	inorderPrint(root);
 
 	fin.close();
 	fout.close();
