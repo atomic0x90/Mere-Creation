@@ -137,19 +137,20 @@ Node* preIn(int checkCenter,int checkPreNum,int *in,int *pre,Node *root)
 	int saveC = 0;
 
 	int tmpIn,tmpPre,tmpCenter = 0;
-	cout<<checkCenter<<" "<<root->value<<endl;
+	cout<<checkCenter<<" "<<root->value<<" "<<checkPreNum<<" "<<nodeNum<<endl;
 
 	for(int i = checkPreNum;i < nodeNum;i++)
 	{
 		if(in[i] == checkCenter)
 		{
+			cout<<"in[i] "<<in[i]<<" "<<checkCenter<<" "<<i<<endl;
 			tmpIn = i;
 			break;
 		}
 	}
-
 	for(int i = checkPreNum;i < nodeNum;i++)
 	{
+		cout<<"TTTTTT"<<endl;
 		if(checkPreNum == 0)
 		{
 			if(pre[i] == in[tmpIn])
@@ -160,8 +161,10 @@ Node* preIn(int checkCenter,int checkPreNum,int *in,int *pre,Node *root)
 		}
 		else
 		{
+			cout<<"SSSSSS "<<i<<" "<<tmpIn<<endl;
 			if(pre[i] == in[tmpIn])
 			{
+				cout<<"EEEEEEE"<<endl;
 				tmpPre = i+1;
 				break;
 			}
@@ -209,11 +212,11 @@ Node* preIn(int checkCenter,int checkPreNum,int *in,int *pre,Node *root)
 	
 	inorderPrint(root);
 	cout<<endl<<"TEST "<<tmpIn<<" "<<in[tmpIn]<<" "<<tmpPre<<" "<<tmpCenter<<" "<<root->value<<" "<<checkCenter<<endl;
-	cout<<in[tmpIn-1]<<" "<<saveC<<endl;
+	cout<<in[tmpIn+1]<<" "<<saveC<<endl;
 
 
 	int checkInsert = 0;
-	for(int i = 0;i <= tmpIn;i++)
+	for(int i = tmpPre;i < nodeNum;i++)
 	{
 	
 		if(pre[i] == in[tmpIn+1])
@@ -223,15 +226,25 @@ Node* preIn(int checkCenter,int checkPreNum,int *in,int *pre,Node *root)
 		}
 	}
 	cout<<"checkInsert "<<checkInsert<<" "<<in[tmpIn+1]<<endl;
-	if(checkInsert)
-	{
-		cout<<checkRoot<<"eeeeeeeeeeeeeeeee"<<endl;
-//		root->right = preIn(,tmpIn,in,pre,root->right);
-	}
 
 	if(checkCenter == checkRoot)
 	{
 		root->right = preIn(pre[tmpIn+1],tmpIn+1,in,pre,root->right);
+	}
+	else if(checkInsert)
+	{
+		int tmpNum = 0;
+		for(int i = 0;i<nodeNum;i++)
+		{
+			if(pre[tmpPre-1] == in[i])
+			{
+				tmpNum = i;
+				break;
+			}
+		}
+		cout<<"EEEE "<<tmpNum<<endl;
+
+		root->right = preIn(pre[tmpNum],tmpIn+1,in,pre,root->right);
 	}
 
 
