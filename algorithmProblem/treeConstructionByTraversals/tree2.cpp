@@ -14,15 +14,6 @@ Node* root = NULL;
 
 Node* insertNumber(Node* root,int data)
 {
-	if(root == NULL)
-	{
-		root = (Node*)malloc(sizeof(Node));
-		root->left = NULL;
-		root->right = NULL;
-		root->value = data;
-
-		return root;
-	}
 
 	root = (Node*)malloc(sizeof(Node));
 	root->left = NULL;
@@ -43,13 +34,16 @@ int finPost[10000] = {0,};
 
 int checkRoot;
 
+int maxPre = 0;
+int checkPre = 0;
+
 void finFunction();
 void foutFunction();
 void constructionTree();
 
 
 //*root, int *,int fNum1,int sNum1,int *,Num
-Node* preIn(int,int,int *,int *,Node *);
+Node* preIn(int,int,int,int *,int *,Node *,int);
 void prePost();
 void inPost();
 
@@ -68,7 +62,6 @@ Node* insertNumber(Node* root,int data)
 	return root;
 }
 */
-
 
 void finFunction()
 {
@@ -119,8 +112,17 @@ void constructionTree()
 {
 	if( (orderType1 == -1 && orderType2 == 0) || (orderType1 == 0 && orderType2 == -1) )
 	{
+		for(int i = 0;i<nodeNum;i++)
+		{
+			if(finPre[0] == finIn[i])
+			{
+				checkPre = i;
+				break;
+			}
+		}
 		checkRoot = finPre[0];
-		root = preIn(finPre[0],0,finIn,finPre,root);
+		maxPre = 0;
+		root = preIn(checkRoot,0,nodeNum,finIn,finPre,root,0);
 	}
 	else if( (orderType1 == -1 && orderType2 == 1) || (orderType1 == 1 && orderType2 == -1) )
 	{}
@@ -130,123 +132,113 @@ void constructionTree()
 	return;
 }
 
-Node* preIn(int checkCenter,int checkPreNum,int *in,int *pre,Node *root)
+Node* preIn(int checkCenter,int checkF,int checkL,int *in,int *pre,Node *root,int rootData)
 {
 	root = insertNumber(root,checkCenter);
 
-	int saveC = 0;
+	cout<<"checkCenter "<<checkCenter<<" checkF "<<checkF<<" checkL "<<checkL;
+	cout<<" rootData "<<rootData<<" root->value "<<root->value<<endl;
+	if(checkF == checkL)
+		return root;
 
 	int tmpIn,tmpPre,tmpCenter = 0;
-	cout<<checkCenter<<" "<<root->value<<" "<<checkPreNum<<" "<<nodeNum<<endl;
+	tmpIn = tmpPre = 0;
 
-	for(int i = checkPreNum;i < nodeNum;i++)
+	for(int i = checkF;i < checkL;i++)
 	{
 		if(in[i] == checkCenter)
 		{
-			cout<<"in[i] "<<in[i]<<" "<<checkCenter<<" "<<i<<endl;
 			tmpIn = i;
 			break;
 		}
 	}
-	for(int i = checkPreNum;i < nodeNum;i++)
+	for(int i = 0;i < nodeNum;i++)
 	{
-		cout<<"TTTTTT"<<endl;
-		if(checkPreNum == 0)
+		if(pre[i] == in[tmpIn])
 		{
-			if(pre[i] == in[tmpIn])
-			{
-				tmpPre = i;
-				break;
-			}
-		}
-		else
-		{
-			cout<<"SSSSSS "<<i<<" "<<tmpIn<<endl;
-			if(pre[i] == in[tmpIn])
-			{
-				cout<<"EEEEEEE"<<endl;
-				tmpPre = i+1;
-				break;
-			}
-		}
-	}
-
-	cout<<tmpIn<<" "<<tmpPre<<endl;
-	
-	if(checkPreNum == 0)
-	{		//제일 위 root 제외
-		for(int i = 0;i < tmpIn;i++)
-		{
-			if(pre[tmpPre+1] == in[i])
-			{
-				tmpCenter = in[i];
-				saveC = i;
-				break;
-			}
-		}
-	}
-	else
-	{		//root 이후
-		for(int i = 0;i < tmpIn;i++)
-		{
-			if(pre[tmpPre] == in[i])
-			{
-				tmpCenter = in[i];
-				saveC = i;
-				break;
-			}
-		}
-	}
-
-	cout<<endl<<" "<<checkCenter<<" "<<in[tmpIn+1]<<" "<<checkPreNum<<endl;
-	cout<<"tmpCenter "<<tmpCenter<<" "<<pre[tmpPre]<<endl;
-
-	if(tmpCenter == 0)
-		return root;
-
-	cout<<"In "<<tmpCenter<<endl;
-	
-	root->left = preIn(tmpCenter,0,in,pre,root->left);
-	
-	cout<<"Out ";
-	
-	inorderPrint(root);
-	cout<<endl<<"TEST "<<tmpIn<<" "<<in[tmpIn]<<" "<<tmpPre<<" "<<tmpCenter<<" "<<root->value<<" "<<checkCenter<<endl;
-	cout<<in[tmpIn+1]<<" "<<saveC<<endl;
-
-
-	int checkInsert = 0;
-	for(int i = tmpPre;i < nodeNum;i++)
-	{
-	
-		if(pre[i] == in[tmpIn+1])
-		{
-			checkInsert++;
+			tmpPre = i + 1;
 			break;
 		}
 	}
-	cout<<"checkInsert "<<checkInsert<<" "<<in[tmpIn+1]<<endl;
-
-	if(checkCenter == checkRoot)
+	for(int i = checkF;i < checkL;i++)
 	{
-		root->right = preIn(pre[tmpIn+1],tmpIn+1,in,pre,root->right);
+		if(pre[tmpPre] == in[i])
+		{
+			tmpCenter = i;
+			break;
+		}
 	}
-	else if(checkInsert)
+
+	cout<<"tmpIn "<<in[tmpIn]<<" "<<tmpIn<<" tmpPre "<<pre[tmpPre]<<" ";
+	cout<<tmpPre<<" tmpCenter "<<in[tmpCenter]<<" "<<tmpCenter<<endl<<endl;
+
+	if(maxPre < tmpPre)
+		maxPre = tmpPre;
+
+	if(tmpCenter == 0)
 	{
-		int tmpNum = 0;
+		root->left = insertNumber(root->left,in[tmpCenter]);
+	}
+/*	else if(tmpCenter == 0 && tmpIn != 1)
+	{
+		return root;
+	}
+*/	else
+	{
+		int checkMin = 0;
 		for(int i = 0;i<nodeNum;i++)
 		{
-			if(pre[tmpPre-1] == in[i])
+			if(pre[tmpPre] == in[i])
 			{
-				tmpNum = i;
+				checkMin = i;
 				break;
 			}
 		}
-		cout<<"EEEE "<<tmpNum<<endl;
-
-		root->right = preIn(pre[tmpNum],tmpIn+1,in,pre,root->right);
+		cout<<"checkMin "<<checkMin<<endl;	
+		if(checkMin < tmpIn)
+			root->left = preIn(in[tmpCenter],0,tmpIn,in,pre,root->left,checkCenter);
+		else
+			root->left = preIn(in[tmpCenter],checkMin,tmpIn,in,pre,root->left,checkCenter);
+		cout<<"outIn"<<endl<<endl;
 	}
+	inorderPrint(root);
+	cout<<endl<<"tmpIn "<<in[tmpIn]<<" "<<tmpIn<<" tmpPre "<<pre[tmpPre]<<" ";
+	cout<<tmpPre<<" tmpCenter "<<in[tmpCenter]<<" "<<tmpCenter<<endl;
+	int tmp = 0;
+	for(int i = 0;i<nodeNum;i++)
+	{
+		if(in[tmpIn+1] == pre[i])
+		{
+			tmp = i;
+			break;
+		}
+	}
+	cout<<"tmp "<<tmp<<" maxPre "<<maxPre<<endl<<endl;
+	if(tmp >= maxPre)
+	{
+		cout<<"right "<<maxPre;
+		cout<<endl<<"tmpIn "<<in[tmpIn]<<" "<<tmpIn<<" tmpPre "<<pre[tmpPre]<<" ";
+		cout<<tmpPre<<" tmpCenter "<<in[tmpCenter]<<" "<<tmpCenter<<endl;
+		cout<<"-----------"<<endl;
+		
+		int tmp1;
+		for(int i = 0;i<nodeNum;i++)
+		{
+			if(in[i] == rootData)
+			{
+				tmp1 = i;
+				break;
+			}
+		}
+		if(checkPre != tmpIn && tmp != maxPre)
+			root->right = preIn(pre[maxPre+1],tmpIn+1,tmp1,in,pre,root->right,checkCenter);
+		else if(checkPre != tmpIn && tmp == maxPre)
+			root->right = preIn(pre[maxPre],tmpIn+1,tmp1,in,pre,root->right,checkCenter);
+		else
+			root->right = preIn(pre[maxPre],tmpIn+1,nodeNum,in,pre,root->right,checkCenter);
+	}	
 
+//	root->right = preIn(,,in,pre,root->right,checkCenter);
 
 	return root;
 }
