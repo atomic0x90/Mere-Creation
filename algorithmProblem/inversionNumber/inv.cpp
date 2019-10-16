@@ -9,51 +9,90 @@ ifstream fin("inv.inp");
 ofstream fout("inv.out");
 
 
-int checkInversion[100000] = {0,};
 int finNum[100000] = {0,};
+int tmp[100000] = {0,};
+
+long long result = 0;
 
 clock_t start;
 double end_t;
 
-void checkInversionNumber(int);
 void init(int);
 void foutFunction(int);
+void merge(int,int);
+void mergeFunction(int,int,int);
 
 void foutFunction(int ln)
 {
-	long long sum = 0;
 	for(int i = 0;i<ln;i++)
-		sum += checkInversion[i];
+	{
+		cout<<finNum[i]<<" ";
+	}
+	cout<<endl<<result<<endl;
+}
 
-	fout<<sum<<endl;
+void merge(int start,int end)
+{
+	int mid = (start + end)/2;
+
+	if(start < mid)
+	{
+		merge(start,mid);
+		merge(mid,end);
+
+		cout<<"start "<<start<<" mid "<<mid<<" end "<<end<<endl;
+		
+		mergeFunction(start,mid,end);
+	}
 
 	return;
 }
 
-void checkInversionNumber(int ln)
+void mergeFunction(int start,int mid,int end)
 {
-	for(int i = 0;i<ln;i++)
+	int tmpS = start,tmpM = mid, tmpE = end;
+	int tmpIndex = 0;
+
+	while(tmpS < mid && tmpM < end)
 	{
-		for(int j = i;j < ln;j++)
+		if(finNum[tmpS] < finNum[tmpM])
 		{
-			if(finNum[i] > finNum[j])
-				checkInversion[j]++;
+			tmp[tmpIndex++] = finNum[tmpS++];
+		}
+		else if(finNum[tmpS] > finNum[tmpM])
+		{
+			tmp[tmpIndex++] = finNum[tmpM++];
+			result++;
 		}
 	}
-
+	while(tmpS < mid)
+	{
+		tmp[tmpIndex++] = finNum[tmpS++];
+	}
+	while(tmpM < tmpE)
+	{
+		tmp[tmpIndex++] = finNum[tmpM++];
+	}
+	
+	for(int i = 0;i < (end-start) ;i++)
+	{
+		finNum[start + i] = tmp[i];
+	}
 
 	return;
 }
 
 void init(int ln)
 {
-	for(int i = 0;i<ln;i++)
-	{
-		checkInversion[i] = 0;
+	result = 0;
+
+	for(int i = 0;i < ln;i++)
 		finNum[i] = 0;
-	}
+
+
 	return;
 }
+
 
 int main()
 {
@@ -71,14 +110,11 @@ int main()
 			fin>>num;
 			finNum[i] = num;
 		}
-		cout<<ln<<" ";
-
-		checkInversionNumber(ln);
-
+		
+		merge(0,ln);
 		foutFunction(ln);
 
 		init(ln);
-
 		testCase--;
 	}
 
