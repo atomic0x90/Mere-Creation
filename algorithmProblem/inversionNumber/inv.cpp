@@ -24,11 +24,7 @@ void mergeFunction(int,int,int);
 
 void foutFunction(int ln)
 {
-	for(int i = 0;i<ln;i++)
-	{
-		cout<<finNum[i]<<" ";
-	}
-	cout<<endl<<result<<endl;
+	fout<<result<<endl;
 }
 
 void merge(int start,int end)
@@ -39,8 +35,6 @@ void merge(int start,int end)
 	{
 		merge(start,mid);
 		merge(mid,end);
-
-		cout<<"start "<<start<<" mid "<<mid<<" end "<<end<<endl;
 		
 		mergeFunction(start,mid,end);
 	}
@@ -56,28 +50,23 @@ void mergeFunction(int start,int mid,int end)
 	while(tmpS < mid && tmpM < end)
 	{
 		if(finNum[tmpS] < finNum[tmpM])
-		{
 			tmp[tmpIndex++] = finNum[tmpS++];
-		}
+		
 		else if(finNum[tmpS] > finNum[tmpM])
 		{
 			tmp[tmpIndex++] = finNum[tmpM++];
-			result++;
+			result += mid - tmpS;
 		}
 	}
+
 	while(tmpS < mid)
-	{
 		tmp[tmpIndex++] = finNum[tmpS++];
-	}
+
 	while(tmpM < tmpE)
-	{
 		tmp[tmpIndex++] = finNum[tmpM++];
-	}
 	
 	for(int i = 0;i < (end-start) ;i++)
-	{
 		finNum[start + i] = tmp[i];
-	}
 
 	return;
 }
@@ -88,7 +77,6 @@ void init(int ln)
 
 	for(int i = 0;i < ln;i++)
 		finNum[i] = 0;
-
 
 	return;
 }
@@ -112,9 +100,11 @@ int main()
 		}
 		
 		merge(0,ln);
+
 		foutFunction(ln);
 
 		init(ln);
+
 		testCase--;
 	}
 
