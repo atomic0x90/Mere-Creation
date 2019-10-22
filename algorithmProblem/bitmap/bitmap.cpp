@@ -22,19 +22,55 @@ int checkL = 0;
 
 void finFunction();
 void foutFunction();
-void Btype();
+void Btype(int,int,int,int);
 void Dtype();
 void init(int,int);
 
 void init(int row,int col)
 {
+	int tmp = 0;
+	for(int i = 0;i<col;i++)
+	{
+		for(int j = 0;j<row;j++)
+		{
+			dimB[i][j] = ' ';
+			dimD[tmp] = ' ';
+			tmp++;
+		}
+	}
 
 	return;
 }
 
-void Btype()
+void Btype(int x,int xx,int y,int yy)
 {
-	return;
+	int checkD = 0;
+	for(int i = x;i<xx;i++)
+	{
+		for(int j = y;j<yy;j++)
+		{
+			if(dimB[x][y] != dimB[i][j])
+			{
+				checkD++;
+				break;
+			}
+		}
+		if(checkD != 0)
+			break;
+	}
+//	cout<<"checkD "<<checkD<<endl;
+	
+	if(checkD == 0)
+	{
+		cout<<dimB[x][y];
+	}
+	else
+	{
+		cout<<"D";
+//		int tmpx,tmpxx,tmpy,tmpyy;
+//		tmpx
+	}
+
 }
 
 void Dtype()
@@ -89,6 +125,7 @@ void finFunction()
 						}
 					}
 				}
+				Btype(0,rowSize,0,columnSize);
 			}
 			else if(splitString[0] == 'D' && splitString[1] == ' ')
 			{
@@ -131,6 +168,8 @@ void finFunction()
 			
 			}
 		}
+		
+		init(rowSize,columnSize);
 	}
 	return;
 }
