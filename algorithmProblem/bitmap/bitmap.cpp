@@ -17,6 +17,7 @@ int rowSize,columnSize;
 
 char type;
 
+int checkLine = 0;
 
 string finString;
 char *splitString;
@@ -31,6 +32,7 @@ void init(int,int);
 void init(int row,int col)
 {
 	int tmp = 0;
+	checkLine = 0;
 	for(int i = 0;i<col;i++)
 	{
 		for(int j = 0;j<row;j++)
@@ -80,6 +82,13 @@ void Btype(int x,int xx,int y,int yy)
 	{
 		cout<<"D";
 		fout<<"D";
+		checkLine++;
+		if(checkLine == 50)
+		{
+			cout<<endl;
+			fout<<endl;
+			checkLine = 0;
+		}
 		if(checkX == 0 && yy!=y)
 		{
 			if((xx+x+1)%2 == 0)
@@ -147,6 +156,13 @@ void Btype(int x,int xx,int y,int yy)
 	{
 		cout<<dimB[x][y];
 		fout<<dimB[x][y];
+		checkLine++;
+		if(checkLine == 50)
+		{
+			cout<<endl;
+			fout<<endl;
+			checkLine = 0;
+		}
 	}
 }
 
