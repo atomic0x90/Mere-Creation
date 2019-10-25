@@ -19,20 +19,22 @@ char type;
 
 int checkLine = 0;
 
+int checkIndex = 0;
+
 string finString;
 char *splitString;
 int checkL = 0;
 
 void finFunction();
-void foutFunction();
+void foutFunction(int,int);
 void Btype(int,int,int,int);
-void Dtype();
+void Dtype(int,int,int,int);
 void init(int,int);
 
 void init(int row,int col)
 {
 	int tmp = 0;
-	checkLine = 0;
+	checkIndex = checkLine = 0;
 	for(int i = 0;i<col;i++)
 	{
 		for(int j = 0;j<row;j++)
@@ -166,9 +168,118 @@ void Btype(int x,int xx,int y,int yy)
 	}
 }
 
-void Dtype()
+void Dtype(int x,int xx,int y,int yy)
 {
-	return;
+	cout<<x<<" "<<xx<<" "<<y<<" "<<yy<<" "<<checkIndex<<endl;
+
+	int checkX = 0;
+	int checkY = 0;
+	if(x > xx)
+	{
+		checkX++;
+		xx = x;
+	}
+	if(y > yy)
+	{
+		checkY++;
+		yy = y;
+	}
+	if(dimD[checkIndex] == 'D')
+	{
+		checkIndex++;
+		if(checkX == 0 && y != yy)
+		{
+			if((x+xx+1)%2 == 0)
+			{
+				if((y+yy+1)%2 == 0)
+				{
+					Dtype(x,(xx+x-1)/2,y,(y+yy-1)/2);
+					Dtype(x,(xx+x-1)/2,((y+yy-1)/2)+1,yy);
+				}
+				else
+				{
+					Dtype(x,(xx+x-1)/2,y,(yy+y)/2);
+					Dtype(x,(xx+x-1)/2,((y+yy)/2)+1,yy);
+				}
+			}
+			else if((x+xx+1)%2 != 0)
+			{
+				if((y+yy+1)%2 == 0)
+				{
+					Dtype(x,(xx+x)/2,y,(y+yy-1)/2);
+					Dtype(x,(xx+x)/2,((y+yy-1)/2)+1,yy);
+				}
+				else
+				{
+					Dtype(x,(xx+x)/2,y,(yy+y)/2);
+					Dtype(x,(xx+x)/2,((yy+y)/2)+1,yy);
+				}
+			}
+		}
+		if(checkY == 0 && x != xx)
+		{
+			if((x+xx+1)%2 == 0)
+			{
+				if((y+yy+1)%2 == 0)
+				{
+					Dtype(ceil((xx+x)/2.0),xx,y,(yy+y-1)/2);
+					Dtype(ceil((xx+x)/2.0),xx,((y+yy-1)/2)+1,yy);
+				}
+				else
+				{
+					Dtype(ceil((xx+x)/2.0),xx,y,(yy+y)/2);
+					Dtype(ceil((xx+x)/2.0),xx,((yy+y)/2)+1,yy);
+				}
+			}
+			else
+			{
+				if((y+yy+1)%2 == 0)
+				{
+					Dtype(ceil((xx+x)/2.0)+1,xx,y,(yy+y-1)/2);
+					Dtype(ceil((xx+x)/2.0)+1,xx,((y+yy-1)/2)+1,yy);
+				}
+				else
+				{
+					Dtype(ceil((xx+x)/2.0)+1,xx,y,(yy+y)/2);
+					Dtype(ceil((xx+x)/2.0)+1,xx,((yy+y)/2)+1,yy);
+				}
+			}
+		}
+
+	}
+	else
+	{
+		for(int i = x;i<=xx;i++)
+		{
+			for(int j = y;j<=yy;j++)
+			{
+				dimB[i][j] = dimD[checkIndex];
+			}
+		}
+		checkIndex++;
+	}
+	
+
+}
+
+void foutFunction(int x,int y)
+{
+	int tmp = 0;
+	for(int i = 1;i<=x;i++)
+	{
+		for(int j = 1;j<=y;j++)
+		{
+			cout<<dimB[i][j];
+			fout<<dimB[i][j];
+			tmp++;
+			if(tmp == 50)
+			{
+				cout<<endl;
+				fout<<endl;
+				tmp = 0;
+			}
+		}
+	}
 }
 
 void finFunction()
@@ -259,6 +370,8 @@ void finFunction()
 					if(checkL < 50)
 						break;
 				}
+				Dtype(1,rowSize,1,columnSize);
+				foutFunction(rowSize,columnSize);
 //				cout<<endl;
 			
 			}
