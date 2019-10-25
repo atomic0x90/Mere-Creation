@@ -27,6 +27,7 @@ int checkL = 0;
 
 void finFunction();
 void Dfout(int,int);
+void Bfout(int,int);
 void Btype(int,int,int,int);
 void Dtype(int,int,int,int);
 void init(int,int);
@@ -50,26 +51,92 @@ void init(int row,int col)
 
 void Btype(int x,int xx,int y,int yy)
 {
-	cout<<endl<<x<<" "<<xx<<" "<<y<<" "<<yy<<endl;
+	cout<<x<<" "<<xx<<" "<<y<<" "<<yy<<endl<<endl;
 
+	if(x == xx && y == yy)
+	{
+		dimD[checkIndex] = dimB[x][y];
+		checkIndex++;
+		return;
+	}
+	int checkD = 0;
+
+	for(int i = x;i <= xx;i++)
+	{
+		for(int j = y;j <= yy;j++)
+		{
+			if(dimB[x][y] != dimB[i][j])
+			{
+				checkD++;
+				break;
+			}
+		}
+		if(checkD != 0)
+			break;
+	}
+
+	if(checkD != 0)
+	{
+		dimD[checkIndex] = 'D';
+		checkIndex++;
+		if(x != xx && y != yy)
+		{
+			cout<<"1"<<endl;
+			Btype(x,(x+xx)/2,y,(y+yy)/2);		//1
+			cout<<"2"<<endl;
+			Btype(x,(x+xx)/2,((y+yy)/2)+1,yy);	//2
+			cout<<"3"<<endl;
+			Btype(((x+xx)/2)+1,xx,y,(y+yy)/2);	//3
+			cout<<"4"<<endl;
+			Btype(((x+xx)/2)+1,xx,((y+yy)/2)+1,yy);	//4
+		}
+		else if(x != xx && y == yy)
+		{
+			Btype(x,(x+xx)/2,y,y);		//1
+			Btype(((x+xx)/2)+1,xx,y,y);	//3
+		}
+		else if(x == xx && y != yy)
+		{
+			Btype(x,x,y,(y+yy)/2);		//1
+			Btype(x,x,((y+yy)/2)+1,yy);	//2
+		}
+	}
+	else
+	{
+		dimD[checkIndex] = dimB[x][y];
+		checkIndex++;
+	}
 }
+void Bfout(int x,int y)
+{
+	int tmp = 0;
 
+	fout<<"D";
+	fout.width(4);
+	fout<<x;
+	fout.width(4);
+	fout<<y<<endl;
+
+	int ln = strlen(dimD);
+	for(int i = 0;i<ln;i++)
+	{
+		if(dimD[i] == ' ')
+			break;
+		fout<<dimD[i];
+		tmp++;
+		if(tmp == 50)
+		{
+			tmp = 0;
+			fout<<endl;
+		}
+	}
+	if(tmp != 0)
+		fout<<endl;
+}
 
 void Dtype(int x,int xx,int y,int yy)
 {
 	cout<<x<<" "<<xx<<" "<<y<<" "<<yy<<endl;
-	int checkX = 0;
-	int checkY = 0;
-	if(x > xx)
-	{
-		checkX++;
-		xx = x;
-	}
-	if(y > yy)
-	{
-		checkY++;
-		yy = y;
-	}
 
 	if(x == xx && y == yy)
 	{
@@ -191,13 +258,8 @@ void finFunction()
 					}
 					cout<<endl;
 				}
-				fout<<"D";
-				fout.width(4);
-				fout<<rowSize;
-				fout.width(4);
-				fout<<columnSize<<endl;
 				Btype(1,rowSize,1,columnSize);
-				fout<<endl;
+				Bfout(rowSize,columnSize);
 			}
 			else if(splitString[0] == 'D' && splitString[1] == ' ')
 			{
