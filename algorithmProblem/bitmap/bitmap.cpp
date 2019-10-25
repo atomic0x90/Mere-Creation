@@ -170,24 +170,31 @@ void Btype(int x,int xx,int y,int yy)
 
 void Dtype(int x,int xx,int y,int yy)
 {
-	cout<<x<<" "<<xx<<" "<<y<<" "<<yy<<" "<<checkIndex<<endl;
+//	cout<<x<<" "<<xx<<" "<<y<<" "<<yy<<" "<<checkIndex<<" "<<dimD[checkIndex];
 
 	int checkX = 0;
 	int checkY = 0;
 	if(x > xx)
 	{
+//		cout<<" checkX "<<x;
 		checkX++;
 		xx = x;
 	}
 	if(y > yy)
 	{
+//		cout<<" checkY "<<y;
 		checkY++;
 		yy = y;
 	}
+//	cout<<"\t\t"<<checkX<<" "<<checkY<<endl;
+
+	if(checkY != 0 && x == xx)	//right top type
+		return;
+
 	if(dimD[checkIndex] == 'D')
 	{
 		checkIndex++;
-		if(checkX == 0 && y != yy)
+		if(checkX == 0)// && y != yy)
 		{
 			if((x+xx+1)%2 == 0)
 			{
@@ -195,6 +202,7 @@ void Dtype(int x,int xx,int y,int yy)
 				{
 					Dtype(x,(xx+x-1)/2,y,(y+yy-1)/2);
 					Dtype(x,(xx+x-1)/2,((y+yy-1)/2)+1,yy);
+				
 				}
 				else
 				{
@@ -213,6 +221,7 @@ void Dtype(int x,int xx,int y,int yy)
 				{
 					Dtype(x,(xx+x)/2,y,(yy+y)/2);
 					Dtype(x,(xx+x)/2,((yy+y)/2)+1,yy);
+				
 				}
 			}
 		}
@@ -264,6 +273,12 @@ void Dtype(int x,int xx,int y,int yy)
 
 void foutFunction(int x,int y)
 {
+	fout<<"B";
+//	fout<<splitString[0];
+	fout.width(4);
+	fout<<rowSize;
+	fout.width(4);
+	fout<<columnSize<<endl;
 	int tmp = 0;
 	for(int i = 1;i<=x;i++)
 	{
@@ -331,7 +346,14 @@ void finFunction()
 					}
 					cout<<endl;
 				}
+				fout<<"D";
+		//		fout<<splitString[0];
+				fout.width(4);
+				fout<<rowSize;
+				fout.width(4);
+				fout<<columnSize<<endl;
 				Btype(1,rowSize,1,columnSize);
+				fout<<endl;
 			}
 			else if(splitString[0] == 'D' && splitString[1] == ' ')
 			{
@@ -370,6 +392,7 @@ void finFunction()
 					if(checkL < 50)
 						break;
 				}
+
 				Dtype(1,rowSize,1,columnSize);
 				foutFunction(rowSize,columnSize);
 //				cout<<endl;
@@ -377,13 +400,11 @@ void finFunction()
 			}
 
 		}
-		cout<<endl;
-		fout<<endl;
+	//	cout<<endl;
+	//	fout<<endl;
 		init(rowSize,columnSize);
 	}
-	return;
 }
-
 int main()
 {
 	finFunction();
