@@ -26,7 +26,7 @@ char *splitString;
 int checkL = 0;
 
 void finFunction();
-void foutFunction(int,int);
+void Dfout(int,int);
 void Btype(int,int,int,int);
 void Dtype(int,int,int,int);
 void init(int,int);
@@ -52,209 +52,53 @@ void Btype(int x,int xx,int y,int yy)
 {
 	cout<<endl<<x<<" "<<xx<<" "<<y<<" "<<yy<<endl;
 
-	int checkD = 0;
-	int checkX = 0;
-	int checkY = 0;
-	if(x > xx)
-	{
-		checkX++;
-		xx = x;
-	}
-	if(y > yy)
-	{
-		checkY++;
-		yy = y;
-	}
-	cout<<"change "<<x<<" "<<xx<<" "<<y<<" "<<yy<<endl;
-
-	for(int i = x;i<=xx;i++)
-	{
-		for(int j = y;j<=yy;j++)
-		{
-			if(dimB[x][y] != dimB[i][j])
-			{
-				checkD++;
-				break;
-			}
-		}
-		if(checkD != 0)
-			break;
-	}
-	if(checkD != 0)
-	{
-		cout<<"D";
-		fout<<"D";
-		checkLine++;
-		if(checkLine == 50)
-		{
-			cout<<endl;
-			fout<<endl;
-			checkLine = 0;
-		}
-		if(checkX == 0 && yy!=y)
-		{
-			if((xx+x+1)%2 == 0)
-			{
-				if((yy+y+1)%2 == 0)
-				{
-					Btype(x,(x+xx-1)/2,y,(y+yy-1)/2);
-					Btype(x,(x+xx-1)/2,((y+yy-1)/2)+1,yy);
-				}
-				else if((yy+y+1)%2 != 0)
-				{
-					Btype(x,(x+xx-1)/2,y,(yy+y)/2);
-					Btype(x,(x+xx-1)/2,((yy+y)/2)+1,yy);
-				}
-			}
-			else if((xx+x+1)%2 != 0)
-			{
-				if((yy+y+1)%2 == 0)
-				{
-					Btype(x,(x+xx)/2,y,(y+yy-1)/2);
-					Btype(x,(x+xx)/2,((y+yy-1)/2)+1,yy);
-				}
-				else if((yy+y+1)%2 != 0)
-				{
-					Btype(x,(x+xx)/2,y,(yy+y)/2);
-					Btype(x,(x+xx)/2,((yy+y)/2)+1,yy);
-				}
-			}
-//			Btype(x,ceil((xx)/2.0),y,floor((yy+y)/2.0));
-//			Btype(x,ceil((xx)/2.0),ceil((yy+y)/2.0),yy);
-		}
-		if(checkY == 0 && xx!=x)
-		{
-			if((xx+x+1)%2 == 0)
-			{
-				if((yy+y+1)%2 == 0)
-				{
-					Btype(ceil((xx+x)/2.0),xx,y,(yy+y-1)/2);
-					Btype(ceil((xx+x)/2.0),xx,((y+yy-1)/2)+1,yy);
-				}
-				else if((yy+y+1)%2 != 0)
-				{
-					Btype(ceil((xx+x)/2.0),xx,y,(yy+y)/2);
-					Btype(ceil((xx+x)/2.0),xx,((yy+y)/2)+1,yy);
-				}
-			}
-			else if((xx+x+1)%2 != 0)
-			{
-				if((yy+y+1)%2 == 0)
-				{
-					Btype(ceil((xx+x)/2.0)+1,xx,y,(yy+y-1)/2);
-					Btype(ceil((xx+x)/2.0)+1,xx,((y+yy-1)/2)+1,yy);
-				}
-				else if((yy+y+1)%2 != 0)
-				{
-					Btype(ceil((xx+x)/2.0)+1,xx,y,(yy+y)/2);
-					Btype(ceil((xx+x)/2.0)+1,xx,((yy+y)/2)+1,yy);
-				}
-			}
-//			Btype(ceil((xx+x)/2.0),xx,y,floor((yy+y)/2.0));
-//			Btype(ceil((xx+x)/2.0),xx,ceil((yy+y)/2.0),yy);
-		}
-	}
-	else if(checkD == 0)
-	{
-		cout<<dimB[x][y];
-		fout<<dimB[x][y];
-		checkLine++;
-		if(checkLine == 50)
-		{
-			cout<<endl;
-			fout<<endl;
-			checkLine = 0;
-		}
-	}
 }
+
 
 void Dtype(int x,int xx,int y,int yy)
 {
-//	cout<<x<<" "<<xx<<" "<<y<<" "<<yy<<" "<<checkIndex<<" "<<dimD[checkIndex];
-
+	cout<<x<<" "<<xx<<" "<<y<<" "<<yy<<endl;
 	int checkX = 0;
 	int checkY = 0;
 	if(x > xx)
 	{
-//		cout<<" checkX "<<x;
 		checkX++;
 		xx = x;
 	}
 	if(y > yy)
 	{
-//		cout<<" checkY "<<y;
 		checkY++;
 		yy = y;
 	}
-//	cout<<"\t\t"<<checkX<<" "<<checkY<<endl;
 
-	if(checkY != 0 && x == xx)	//right top type
+	if(x == xx && y == yy)
+	{
+		dimB[x][y] = dimD[checkIndex];
+		checkIndex++;
 		return;
+	}
 
 	if(dimD[checkIndex] == 'D')
 	{
 		checkIndex++;
-		if(checkX == 0)// && y != yy)
-		{
-			if((x+xx+1)%2 == 0)
-			{
-				if((y+yy+1)%2 == 0)
-				{
-					Dtype(x,(xx+x-1)/2,y,(y+yy-1)/2);
-					Dtype(x,(xx+x-1)/2,((y+yy-1)/2)+1,yy);
-				
-				}
-				else
-				{
-					Dtype(x,(xx+x-1)/2,y,(yy+y)/2);
-					Dtype(x,(xx+x-1)/2,((y+yy)/2)+1,yy);
-				}
-			}
-			else if((x+xx+1)%2 != 0)
-			{
-				if((y+yy+1)%2 == 0)
-				{
-					Dtype(x,(xx+x)/2,y,(y+yy-1)/2);
-					Dtype(x,(xx+x)/2,((y+yy-1)/2)+1,yy);
-				}
-				else
-				{
-					Dtype(x,(xx+x)/2,y,(yy+y)/2);
-					Dtype(x,(xx+x)/2,((yy+y)/2)+1,yy);
-				
-				}
-			}
-		}
-		if(checkY == 0 && x != xx)
-		{
-			if((x+xx+1)%2 == 0)
-			{
-				if((y+yy+1)%2 == 0)
-				{
-					Dtype(ceil((xx+x)/2.0),xx,y,(yy+y-1)/2);
-					Dtype(ceil((xx+x)/2.0),xx,((y+yy-1)/2)+1,yy);
-				}
-				else
-				{
-					Dtype(ceil((xx+x)/2.0),xx,y,(yy+y)/2);
-					Dtype(ceil((xx+x)/2.0),xx,((yy+y)/2)+1,yy);
-				}
-			}
-			else
-			{
-				if((y+yy+1)%2 == 0)
-				{
-					Dtype(ceil((xx+x)/2.0)+1,xx,y,(yy+y-1)/2);
-					Dtype(ceil((xx+x)/2.0)+1,xx,((y+yy-1)/2)+1,yy);
-				}
-				else
-				{
-					Dtype(ceil((xx+x)/2.0)+1,xx,y,(yy+y)/2);
-					Dtype(ceil((xx+x)/2.0)+1,xx,((yy+y)/2)+1,yy);
-				}
-			}
-		}
 
+		if(x != xx && y != yy)
+		{
+			Dtype(x,(xx+x)/2,y,(y+yy)/2);		//1
+			Dtype(x,(xx+x)/2,((y+yy)/2)+1,yy);	//2
+			Dtype(((x+xx)/2)+1,xx,y,(y+yy)/2);	//3
+			Dtype(((x+xx)/2)+1,xx,((y+yy)/2)+1,yy);	//4
+		}
+		else if(x != xx && y == yy)
+		{
+			Dtype(x,(xx+x)/2,y,y);		//1
+			Dtype(((x+xx)/2)+1,xx,y,y);	//3
+		}
+		else if(x == xx && y != yy)
+		{
+			Dtype(x,x,y,(y+yy)/2);		//1
+			Dtype(x,x,((y+yy)/2)+1,yy);	//2
+		}
 	}
 	else
 	{
@@ -267,33 +111,34 @@ void Dtype(int x,int xx,int y,int yy)
 		}
 		checkIndex++;
 	}
-	
-
 }
-
-void foutFunction(int x,int y)
+void Dfout(int x,int y)
 {
-	fout<<"B";
-//	fout<<splitString[0];
-	fout.width(4);
-	fout<<rowSize;
-	fout.width(4);
-	fout<<columnSize<<endl;
 	int tmp = 0;
+
+	fout<<"B";
+	fout.width(4);
+	fout<<x;
+	fout.width(4);
+	fout<<y<<endl;
+
 	for(int i = 1;i<=x;i++)
 	{
 		for(int j = 1;j<=y;j++)
 		{
-			cout<<dimB[i][j];
-			fout<<dimB[i][j];
 			tmp++;
+			fout<<dimB[i][j];
 			if(tmp == 50)
 			{
-				cout<<endl;
-				fout<<endl;
 				tmp = 0;
+				fout<<endl;
 			}
 		}
+//		fout<<endl;
+	}
+	if(tmp != 0)
+	{
+		fout<<endl;
 	}
 }
 
@@ -347,7 +192,6 @@ void finFunction()
 					cout<<endl;
 				}
 				fout<<"D";
-		//		fout<<splitString[0];
 				fout.width(4);
 				fout<<rowSize;
 				fout.width(4);
@@ -394,14 +238,10 @@ void finFunction()
 				}
 
 				Dtype(1,rowSize,1,columnSize);
-				foutFunction(rowSize,columnSize);
-//				cout<<endl;
-			
+				Dfout(rowSize,columnSize);
 			}
 
 		}
-	//	cout<<endl;
-	//	fout<<endl;
 		init(rowSize,columnSize);
 	}
 }
