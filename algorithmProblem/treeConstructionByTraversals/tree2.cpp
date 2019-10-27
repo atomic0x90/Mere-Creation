@@ -27,6 +27,7 @@ ofstream fout("tree.out");
 
 int nodeNum;
 int maxPre = 0;
+int tmpPost = 0;
 int orderType1, orderType2;
 int finPre[10000] = {0,};
 int finIn[10000] = {0,};
@@ -124,10 +125,61 @@ int constructionTree()
 	}
 	else if( (orderType1 == 0 && orderType2 == 1) || (orderType1 == 1 && orderType2 == 0) )
 	{
+		tmpPost = nodeNum-1;
+		for(int i = 0;i<nodeNum;i++)
+		{
+			if(finIn[i] == finPost[nodeNum-1])
+			{
+				tmp = i;
+				break;
+			}
+		}
+
+		root = inPost(root,0,tmp,nodeNum-1);
 		return 3;
 	}
 	
 	return 0;
+}
+
+Node* inPost(Node* root,int le,int mi,int ri)
+{
+	root = insertNode(root,finIn[mi]);
+
+//	cout<<root->value<<" "<<le<<" "<<mi<<" "<<ri<<" "<<tmpPost<<endl;
+
+	int tmp;
+	if(ri - mi > 0)		//right
+	{
+		tmpPost--;
+		for(int i = mi;i <= ri;i++)
+		{
+			if(finPost[tmpPost] == finIn[i])
+			{
+				tmp = i;
+				break;
+			}
+		}
+
+		root->right = inPost(root->right,mi+1,tmp,ri);
+	}
+
+	if(mi - le > 0)		//left
+	{
+		cout<<root->value<<" "<<le<<" "<<mi<<" "<<ri<<" "<<tmpPost<<endl;
+		for(int i = 0;i < ri;i++)
+		{
+			if(finPost[tmpPost-1] == finIn[i])
+			{
+				tmpPost--;
+				tmp = i;
+				break;
+			}
+		}
+		root->left = inPost(root->left,le,tmp,mi-1);
+	}
+
+	return root;
 }
 
 Node* preIn(Node* root,int le,int mi,int ri)
@@ -138,7 +190,7 @@ Node* preIn(Node* root,int le,int mi,int ri)
 	if(mi - le > 0)		//left
 	{
 		maxPre++;
-		for(int i = 0;i<mi;i++)
+		for(int i = 0;i < mi;i++)
 		{
 			if(finPre[maxPre] == finIn[i])
 			{
