@@ -33,12 +33,26 @@ int finIn[10000] = {0,};
 int finPost[10000] = {0,};
 
 Node* preIn(Node*,int,int,int);
+Node* inPost(Node*,int,int,int);
+Node* prePost();
 
 void finFunction();
-void foutFunction();
-void constructionTree();
+void foutFunction(Node*,int);
+int constructionTree();
 
+void prePrint(Node*);
+void inPrint(Node*);
 void postPrint(Node*);
+
+void foutFunction(Node* root,int t)
+{
+	if(t == 1)
+		postPrint(root);
+	else if(t == 2)
+		inPrint(root);
+	else if(t == 3)
+		prePrint(root);
+}
 
 void finFunction()
 {
@@ -85,7 +99,7 @@ void finFunction()
 	return;
 }
 
-void constructionTree()
+int constructionTree()
 {
 	int tmp;
 	if( (orderType1 == -1 && orderType2 == 0) || (orderType1 == 0 && orderType2 == -1) )
@@ -100,13 +114,20 @@ void constructionTree()
 		}
 		//Node,left,middle,right,rrootI//,rrootP
 		root = preIn(root,0,tmp,nodeNum);
+
+		return 1;
 	}
 	else if( (orderType1 == -1 && orderType2 == 1) || (orderType1 == 1 && orderType2 == -1) )
-	{}
+	{
+	
+		return 2;
+	}
 	else if( (orderType1 == 0 && orderType2 == 1) || (orderType1 == 1 && orderType2 == 0) )
-	{}
-
-	return;
+	{
+		return 3;
+	}
+	
+	return 0;
 }
 
 Node* preIn(Node* root,int le,int mi,int ri)
@@ -148,6 +169,26 @@ Node* preIn(Node* root,int le,int mi,int ri)
 	return root;
 }
 
+void prePrint(Node* root)
+{
+	if(root == NULL)
+		return;
+	fout<<root->value<<endl;
+	cout<<root->value<<" ";
+	prePrint(root->left);
+	prePrint(root->right);
+}
+
+void inPrint(Node* root)
+{
+	if(root == NULL)
+		return;
+	inPrint(root->left);
+	fout<<root->value<<endl;
+	cout<<root->value<<" ";
+	inPrint(root->right);
+}
+
 void postPrint(Node* root)
 {
 	if(root == NULL)
@@ -160,12 +201,14 @@ void postPrint(Node* root)
 
 int main()
 {
+	int checkFout = 0;
 	finFunction();
 
-	constructionTree();
+	checkFout = constructionTree();
 
 	cout<<endl;
-	postPrint(root);
+
+	foutFunction(root,checkFout);
 
 	fin.close();
 	fout.close();
