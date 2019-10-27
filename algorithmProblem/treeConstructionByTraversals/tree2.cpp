@@ -28,6 +28,7 @@ ofstream fout("tree.out");
 int nodeNum;
 int maxPre = 0;
 int tmpPost = 0;
+int tmpPre = 0;
 int orderType1, orderType2;
 int finPre[10000] = {0,};
 int finIn[10000] = {0,};
@@ -35,7 +36,7 @@ int finPost[10000] = {0,};
 
 Node* preIn(Node*,int,int,int);
 Node* inPost(Node*,int,int,int);
-Node* prePost();
+Node* prePost(Node*,int,int,int);
 
 void finFunction();
 void foutFunction(Node*,int);
@@ -61,7 +62,7 @@ void finFunction()
 
 	fin>>orderType1;
 
-	cout<<orderType1<<endl;
+//	cout<<orderType1<<endl;
 	if(orderType1 == -1)
 	{
 		for(int i = 0;i < nodeNum;i++)
@@ -80,7 +81,7 @@ void finFunction()
 
 	fin>>orderType2;
 
-	cout<<orderType2<<endl;
+//	cout<<orderType2<<endl;
 	if(orderType2 == -1)
 	{
 		for(int i = 0;i < nodeNum;i++)
@@ -120,6 +121,7 @@ int constructionTree()
 	}
 	else if( (orderType1 == -1 && orderType2 == 1) || (orderType1 == 1 && orderType2 == -1) )
 	{
+		root = prePost(root,0,nodeNum-1,nodeNum-1);
 	
 		return 2;
 	}
@@ -140,6 +142,69 @@ int constructionTree()
 	}
 	
 	return 0;
+}
+
+Node* prePost(Node* root,int le,int mi,int ri)
+{
+	root = insertNode(root,finPost[mi]);	
+//	cout<<root->value<<" "<<le<<" "<<mi<<" "<<ri<<" "<<tmpPre<<endl;	
+	if(le == mi)
+		return root;
+
+	int tmp;
+	if(mi - le > 0)		//left
+	{
+		tmpPre++;
+		for(int i = 0;i < mi;i++)
+		{
+			if(finPost[i] == finPre[tmpPre])
+			{
+				tmp = i;
+				break;
+			}
+		}
+		root->left = prePost(root->left,le,tmp,mi);
+	}
+
+//	cout<<root->value<<" "<<le<<" "<<mi<<" "<<ri<<" "<<tmpPre<<endl;
+
+	if(le != mi && ri - mi > 0)		//right
+	{
+		tmpPre++;
+		for(int i = le;i < ri;i++)
+		{
+			if(finPost[i] == finPre[tmpPre])
+			{
+				tmp = i;
+				break;
+			}
+		}
+		root->right = prePost(root->right,mi,tmp,tmp);
+	}
+	else if(finPre[0] == finPost[mi] && ri > tmpPre)	//root
+	{
+		tmpPre++;
+		for(int i = le;i < ri;i++)
+		{
+			if(finPost[i] == finPre[tmpPre])
+			{
+				tmp = i;
+				break;
+			}
+		}
+		int tmp2;
+		for(int i = 0;i<ri;i++)
+		{
+			if(finPost[i] == finPre[1])
+			{
+				tmp2 = i;
+				break;
+			}
+		}
+		root->right = prePost(root->right,tmp2+1,tmp,ri);
+	}
+
+	return root;
 }
 
 Node* inPost(Node* root,int le,int mi,int ri)
@@ -166,7 +231,7 @@ Node* inPost(Node* root,int le,int mi,int ri)
 
 	if(mi - le > 0)		//left
 	{
-		cout<<root->value<<" "<<le<<" "<<mi<<" "<<ri<<" "<<tmpPost<<endl;
+//		cout<<root->value<<" "<<le<<" "<<mi<<" "<<ri<<" "<<tmpPost<<endl;
 		for(int i = 0;i < ri;i++)
 		{
 			if(finPost[tmpPost-1] == finIn[i])
@@ -203,7 +268,7 @@ Node* preIn(Node* root,int le,int mi,int ri)
 
 	if(ri - mi > 1)		//right
 	{
-		cout<<root->value<<" "<<le<<" "<<mi<<" "<<ri<<" "<<" "<<maxPre<<endl;
+//		cout<<root->value<<" "<<le<<" "<<mi<<" "<<ri<<" "<<" "<<maxPre<<endl;
 	
 		for(int i = mi+1 ;i < ri ;i++)
 		{
@@ -214,7 +279,7 @@ Node* preIn(Node* root,int le,int mi,int ri)
 				break;
 			}
 		}
-		cout<<root->value<<" "<<le<<" "<<mi<<" "<<ri<<" "<<" "<<maxPre<<endl;
+//		cout<<root->value<<" "<<le<<" "<<mi<<" "<<ri<<" "<<" "<<maxPre<<endl;
 		root->right = preIn(root->right,mi+1,tmp,ri);
 	}
 
@@ -226,7 +291,7 @@ void prePrint(Node* root)
 	if(root == NULL)
 		return;
 	fout<<root->value<<endl;
-	cout<<root->value<<" ";
+//	cout<<root->value<<" ";
 	prePrint(root->left);
 	prePrint(root->right);
 }
@@ -237,7 +302,7 @@ void inPrint(Node* root)
 		return;
 	inPrint(root->left);
 	fout<<root->value<<endl;
-	cout<<root->value<<" ";
+//	cout<<root->value<<" ";
 	inPrint(root->right);
 }
 
@@ -247,7 +312,7 @@ void postPrint(Node* root)
 		return;
 	postPrint(root->left);
 	postPrint(root->right);
-	cout<<root->value<<" ";
+//	cout<<root->value<<" ";
 	fout<<root->value<<endl;
 }
 
