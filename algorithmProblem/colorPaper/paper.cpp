@@ -1,109 +1,148 @@
 #include <iostream>
 #include <fstream>
 
-#include <vector>
-#include <utility>
-
 using namespace std;
 
 ifstream fin("paper.inp");
 ofstream fout("paper.out");
 
-vector < pair <int,int> > xCoordinates;
-vector < pair <int,int> > yCoordinates;
-
-vector <int> invisibleDegree;
-
 int testCase;
+int x[2000] = {0,},y[2000] = {0,},xx[2000] = {0,},yy[2000] = {0,};
+int checkOL[2000] = {0,};
 
-
-void vectorSet();
 void finFunction();
-void verifyOverlapFunction(int,int,int,int,int);
+void overlapCheck();
 void foutFunction();
-
-void vectorSet()
-{
-	xCoordinates.reserve(testCase * 2);
-	yCoordinates.reserve(testCase * 2);
-	invisibleDegree.reserve(testCase * 2);
-
-	return ;
-}
 
 void finFunction()
 {
-	int x,y,w,h;
-	int i = 0;
+	fin>>testCase;
 	
-	while(testCase)
+	int t1,t2,t3,t4;
+	int i = 0,tmp = testCase;
+	while(tmp)
 	{
-		fin >> x >> y >> w >> h;
+		fin>>t1>>t2>>t3>>t4;
 		
-		xCoordinates[i].first = x;
-		xCoordinates[i].second = x + w;
-
-		yCoordinates[i].first = y;
-		yCoordinates[i].second = y + h;
-
-		invisibleDegree[i] = 0;
-
-		if(i)
-			verifyOverlapFunction(i,x,x+w,y,y+h);
-
+		x[i] = t1;
+		y[i] = t2;
+		xx[i] = t1 + t3;
+		yy[i] = t2 + t4;
+		
 		i++;
-		testCase--;
+		tmp--;
 	}
 
-	for(int j = 0 ; j < i ; j++)
-		cout<< invisibleDegree[j]<<endl;
-	
-	return ;
+	return;
 }
 
-void verifyOverlapFunction(int value,int x,int w,int y,int h)
+void overlapCheck()
 {
-	int i = 0, j = value;
+	int tmp = testCase-1;
 
-	for(; i < j ; i++)
+	for(int i = tmp;i >= 0;i--)
 	{
-		bool xF = xCoordinates[i].first < x;	//입력된 x 좌표가 이미 있는 좌표보다 큰 경우 1
-		bool xFC = xCoordinates[i].first == x;	//x 좌표가 같은 경우 1
-		bool xS = xCoordinates[i].second < w;	//입력된 x+w 좌표가 이미 있는 좌표보다 큰 경우 1
-		bool xSC = xCoordinates[i].second == w;	//x+w 좌표가 같은 경우 1
-		bool yF = yCoordinates[i].first < y;
-		bool yFC = yCoordinates[i].first == y;
-		bool yS = yCoordinates[i].second < h;
-		bool ySC = yCoordinates[i].second == h;
-		cout<<x<<" "<<w<<" "<<y<<" "<<h<<" "<<xF<<endl;
-		if(invisibleDegree[i] != 2)
+		for(int j = tmp;j > i;j--)
 		{
-			if((!xF || xFC) && (!yF || yFC) && (xS || XSC) && (yS || ySC))
-			{	//아예 덮을때
-				invisibleDegree[i] = 2;
+			if(x[i] >= x[j] && y[i] >= y[j] && xx[i] <= xx[j] && yy[i] <= yy[j])
+			{	//전부 덮일 경우
+				x[i] = x[j];
+				y[i] = y[j];
+				xx[i] = xx[j];
+				yy[i] = yy[j];
+				checkOL[i] = 2;
+				break;
 			}
-			else if( (xCoordinates[i].first >= x && xCoordinates[i].second >= w) )
-			{}
-		}
-	}cout<<endl;
+			
+			if(x[i] == x[j] && xx[i] == xx[j])
+			{	//x좌표가 같을 경우
+				if(y[i] <= y[j] && y[j] <= yy[i] && yy[i] <= yy[j])
+				{
+					y[j] = y[i];
+					yy[i] = yy[j];
+					checkOL[i] = 1;
+				}
+				else if(y[i] >= y[j] && y[i] <= yy[j] && yy[i] >= yy[j])
+				{
+					y[i] = y[j];
+					yy[j] = yy[i];
+					checkOL[i] = 1;
+				}
+			}
+			else if(y[i] == y[j] && yy[i] == yy[j])
+			{	//y좌표가 같을 경우
+				if(x[i] <= x[j] && x[j] <= xx[i] && xx[i] <= xx[j])
+				{
+					x[j] = x[i];
+					xx[i] = xx[j];
+					checkOL[i] = 1;
+				}
+				else if(x[i] >= x[j] && x[i] <= xx[j] && xx[i] >= xx[j])
+				{
+					x[i] = x[j];
+					xx[j] = xx[i];
+					checkOL[i] = 1;
+				}
+			}
+			else if( ((xx[i] < x[j]) || (x[i] > xx[j])) && ((yy[i] < y[j]) || (y[i] > yy[j])) )
+			{	//겹치지 않는 경우
+//				if(checkOL[i] != 1)
+//					checkOL[i] = 0;
+			}
+			else if( (x[i] <= x[j] && xx[i] >= x[j]) || (x[i] <= xx[j] && xx[i] >= xx[j]) )
+			{
+				//모서리
+				if( (y[i] <= y[j] && yy[i] >= y[j]) || (y[i] <= yy[j] && yy[i] >= yy[j]) )
+					checkOL[i] = 1;
+				else if(y[i] >= y[j] && yy[i] <= yy[j])
+					checkOL[i] = 1;
+			}
+			else if( (y[i] <= y[j] && yy[i] >= y[j]) || (y[i] <= yy[j] && yy[i] >= yy[j]) )
+			{
+				//모서리
+				if( (x[i] <= x[j] && xx[i] >= x[j]) || (x[i] <= xx[j] && xx[i] >= xx[j]) )
+					checkOL[i] = 1;
+				else if(x[i] >= x[j] && xx[i] <= xx[j])
+					checkOL[i] = 1;
+			}
 
-	return ;
+//			else
+//				checkOL[i] = 1;
+
+		}
+	}
+
+	return;
+}
+
+void foutFunction()
+{
+	int t0,t1,t2;
+	t0 = t1 = t2 = 0;
+	for(int i = 0;i<testCase;i++)
+	{
+		if(checkOL[i] == 2)
+			t2++;
+		else if(checkOL[i] == 1)
+			t1++;
+		else
+			t0++;
+	}
+	cout<<t2<<" "<<t1<<" "<<t0<<endl;
+
+	return;
 }
 
 int main()
 {
-	fin >> testCase;
-
-	cout<<testCase<<endl;
-
-	vectorSet();	
-
 	finFunction();
-
-
-
-	fin.close();
-	fout.close();
+	overlapCheck();
+	cout<<"testCase "<<testCase<<endl;
+	for(int i = 0;i<testCase;i++)
+	{
+		cout<<x[i]<<" "<<y[i]<<" "<<xx[i]<<" "<<yy[i]<<" "<<checkOL[i]<<endl;
+	}
+	foutFunction();
 
 	return 0;
 }
