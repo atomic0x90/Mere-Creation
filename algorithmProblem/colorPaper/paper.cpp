@@ -11,7 +11,9 @@ int x[2000] = {0,},y[2000] = {0,},xx[2000] = {0,},yy[2000] = {0,};
 int checkOL[2000] = {0,};
 int tx[2000] = {0,},ty[2000] = {0,},txx[2000] = {0,},tyy[2000] = {0,};
 
-int tmpx[2000] = {0,},tmpy[2000] = {0,},tmpxx[2000] = {0,},tmpyy[2000] = {0,};
+int tmpx[40000] = {0,},tmpy[40000] = {0,},tmpxx[40000] = {0,},tmpyy[40000] = {0,};
+
+int checkin[40000] = {0,};
 
 int ti = 0;
 
@@ -41,6 +43,9 @@ void overlapCheck()
 		tmpx[0] = x[i],tmpy[0] = y[i],tmpxx[0] = xx[i],tmpyy[0] = yy[i];
 		
 		cout<<x[i]<<" "<<y[i]<<" "<<xx[i]<<" "<<yy[i]<<" "<<tmpv<<" "<<ti<<endl;
+		
+		for(int j = 0;j<40000;j++)
+			checkin[j] = 0;
 
 		for(int j = 0;j < tmpv;j++)
 		{	//나눠졌을 경우
@@ -53,6 +58,8 @@ void overlapCheck()
 
 					checkOL[i] = 2;
 					cout<<"A";
+
+					checkin[j] = 2;
 					break;	//Break mean's 'tmpInit(j)'
 				}
 				//o
@@ -68,6 +75,8 @@ void overlapCheck()
 					checkOL[i] = 1;
 					tmpv++;
 					cout<<"B";
+
+					checkin[j] = 1;
 					break;
 				}
 				//o
@@ -83,6 +92,8 @@ void overlapCheck()
 					checkOL[i] = 1;
 					tmpv++;
 					cout<<"C";
+
+					checkin[j] = 1;
 					break;
 				}
 				//o
@@ -98,6 +109,8 @@ void overlapCheck()
 					checkOL[i] = 1;
 					tmpv++;
 					cout<<"D";
+					
+					checkin[j] = 1;
 					break;
 				}
 				else if(tmpy[j] == ty[k] && tmpyy[j] == tyy[k] && tmpxx[j] > txx[k] && tmpx[j] >= tx[k] && tmpx[j] < txx[k])
@@ -112,6 +125,8 @@ void overlapCheck()
 					checkOL[i] = 1;
 					tmpv++;
 					cout<<"E";
+
+					checkin[j] = 1;
 					break;
 				}
 				//모서리
@@ -136,6 +151,8 @@ void overlapCheck()
 
 					checkOL[i] = 1;
 					cout<<"F";
+
+					checkin[j] = 1;
 					break;
 				}
 				//o
@@ -159,6 +176,8 @@ void overlapCheck()
 
 					checkOL[i] = 1;
 					cout<<"G";
+
+					checkin[j] = 1;
 					break;
 				}
 				//o
@@ -182,6 +201,8 @@ void overlapCheck()
 
 					checkOL[i] = 1;
 					cout<<"H";
+
+					checkin[j] = 1;
 					break;
 				}
 				//o
@@ -205,6 +226,8 @@ void overlapCheck()
 
 					checkOL[i] = 1;
 					cout<<"I";
+
+					checkin[j] = 1;
 					break;
 				}
 				//i 종이가 위의 종이보다 작을 경우 (통과)
@@ -223,6 +246,8 @@ void overlapCheck()
 
 					checkOL[i] = 1;
 					cout<<"J";
+
+					checkin[j] = 1;
 					break;
 				}
 				//o
@@ -246,6 +271,8 @@ void overlapCheck()
 
 					checkOL[i] = 1;
 					cout<<"K";
+
+					checkin[j] = 1;
 					break;
 				}
 				//o
@@ -261,6 +288,8 @@ void overlapCheck()
 
 					checkOL[i] = 1;
 					cout<<"L";
+
+					checkin[j] = 1;
 					break;
 				}
 				//i 종이가 x가 짧을 경우
@@ -277,6 +306,8 @@ void overlapCheck()
 
 					checkOL[i] = 1;
 					cout<<"M";
+
+					checkin[j] = 1;
 					break;
 				}
 				//o
@@ -300,6 +331,8 @@ void overlapCheck()
 
 					checkOL[i] = 1;
 					cout<<"N";
+
+					checkin[j] = 1;
 					break;
 				}
 				//o
@@ -315,6 +348,8 @@ void overlapCheck()
 					
 					checkOL[i] = 1;
 					cout<<"O";
+
+					checkin[j] = 1;
 					break;
 				}
 				//i 종이가 더 클 경우
@@ -369,6 +404,8 @@ void overlapCheck()
 
 					checkOL[i] = 1;
 					cout<<"P";
+
+					checkin[j] = 1;
 					break;
 				}
 				/*
@@ -407,7 +444,7 @@ void overlapCheck()
 					tmpx[tmpv] =  txx[k];
 					tmpxx[tmpv] = tmpxx[j];
 					tmpy[tmpv] = ty[k];
-					tmpy[tmpv] = tyy[k];
+					tmpyy[tmpv] = tyy[k];
 					tmpv++;
 
 					//아래 나눔
@@ -421,6 +458,8 @@ void overlapCheck()
 
 					checkOL[i] = 1;
 					cout<<"Q";
+
+					checkin[j] = 1;
 					break;
 				}
 				//o
@@ -458,6 +497,8 @@ void overlapCheck()
 
 					checkOL[i] = 1;
 					cout<<"R";
+
+					checkin[j] = 1;
 					break;
 				}
 				//o
@@ -488,6 +529,8 @@ void overlapCheck()
 
 					checkOL[i] = 1;
 					cout<<"S";
+
+					checkin[j] = 1;
 					break;
 				}
 				/*
@@ -533,13 +576,15 @@ void overlapCheck()
 					tmpx[tmpv] = txx[k];
 					tmpxx[tmpv] = tmpxx[j];
 					tmpy[tmpv] = tmpy[j];
-					tmpy[tmpv] = tmpyy[j];
+					tmpyy[tmpv] = tmpyy[j];
 					tmpv++;
 
 					tmpInit(j);
 
 					checkOL[i] = 1;
-					cout<<"T";
+					cout<<"T "<<j<<" "<<k<<" ";
+
+					checkin[j] = 1;
 					break;
 				}
 				/*
@@ -567,35 +612,11 @@ void overlapCheck()
 			}
 		}
 		cout<<"check "<<checkOL[i]<<" "<<tmpv<<" "<<ti<<endl<<endl;
-
-		//merge??
-		/*
-		for(int j = 0;j < tmpv;j++)
+		
+		for(int l = 0;l<tmpv;l++)
 		{
-			if(tmpxx[j] - tmpx[j] > 0 && tmpyy[j] - tmpy[j] > 0)
-			{
-				for(int k = 0;k < ti;k++)
-				{
-					if(tx[k] == tmpx[j] && txx[k] == tmpxx[j] && tyy[k] == tmpy[j])
-					{	//x ==, 위로 이어짐
-						tyy[k] = tmpyy[j];
-					}
-					else if(tx[k] == tmpx[j] && txx[k] == tmpxx[j] && ty[k] == tmpyy[j])
-					{	//x ==, 아래로 이어임
-						ty[k] = tmpyy[j];
-					}
-					else
-					{
-						tx[ti] = tmpx[j];
-						txx[ti] = tmpxx[j];
-						ty[ti] = tmpy[j];
-						tyy[ti] = tmpyy[j];
-	
-						ti++;
-					}
-				}
-			}
-		}*/
+			cout<<"\t"<<tmpx[l]<<" "<<tmpxx[l]<<" "<<tmpy[l]<<" "<<tmpyy[l]<<endl;
+		}
 
 		if(ti == 0)
 		{	//tx 처음 값
@@ -622,19 +643,25 @@ void merge(int ve,int in)
 {
 	int check = 0;
 	cout<<"ve in "<<ve<<" "<<in<<endl;
-	if(checkOL[in] != 0)
+	
+	int t1,t2,t3;
+	t1 = t2 = t3 = 0;
+	for(int i = 0;i < ve;i++)
 	{
-		for(int i = 1;i < ve;i++)
-		{	//tmpv 범위 조심
-			if(tmpx[i] == -1 && tmpxx[i] == -1 && tmpy[i] == -1 && tmpyy[i] == -1)
-				checkOL[in] = 2;
-			else
-			{
-				checkOL[in] = 1;
-				break;
-			}
-		}
+		if(checkin[i] == 0)
+			t1++;
+		else if(checkin[i] == 1)
+			t2++;
+		else
+			t3++;
 	}
+	if(t1 == ve)
+		checkOL[in] = 0;
+	else if(t1 == 0)
+		checkOL[in] = 2;
+	else
+		checkOL[in] = 1;
+	
 	
 	if(checkOL[in] == 2)
 		return;
@@ -642,7 +669,7 @@ void merge(int ve,int in)
 	for(int i = 0;i < ve;i++)
 	{
 //		cout<<"\t"<<tmpx[i]<<" "<<tmpy[i]<<" "<<tmpxx[i]<<" "<<tmpyy[i]<<endl;
-		if(tmpxx[i] - tmpx[i] > 0 && tmpyy[i] - tmpy[i] > 0)
+		if(tmpx[i] != -1 && tmpxx[i] != -1 && tmpy[i] != -1 && tmpyy[i] != -1)// && tmpxx[i] - tmpx[i] > 0 && tmpyy[i] - tmpy[i] > 0)
 		{
 			check = 0;
 /*			for(int j = 0;j < ti;j++)
@@ -696,7 +723,7 @@ void merge(int ve,int in)
 		}
 	}
 
-	if(checkOL[in] == 0)
+//	if(checkOL[in] == 0)
 	{
 		for(int i = 0;i<ti;i++)
 			cout<<tx[i]<<" "<<ty[i]<<" "<<txx[i]<<" "<<tyy[i]<<endl;
@@ -722,7 +749,7 @@ void finFunction()
 		xx[i] = t1 + t3;
 		yy[i] = t2 + t4;
 	
-		cout<<x[i]<<" "<<xx[i]<<" "<<y[i]<<" "<<yy[i]<<endl;
+		cout<<x[i]<<" "<<y[i]<<" "<<xx[i]<<" "<<yy[i]<<endl;
 
 		i++;
 		tmp--;
