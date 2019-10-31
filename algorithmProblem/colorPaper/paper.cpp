@@ -46,6 +46,7 @@ void overlapCheck()
 		{	//나눠졌을 경우
 			for(int k = 0;k < ti;k++)
 			{	//tx 검사
+				//o
 				if(tmpx[j] >= tx[k] && tmpxx[j]<= txx[k] && tmpy[j] >= ty[k] && tmpyy[j] <= tyy[k])
 				{	//전부 덮일경우
 					tmpInit(j);
@@ -54,6 +55,7 @@ void overlapCheck()
 					cout<<"A";
 					break;	//Break mean's 'tmpInit(j)'
 				}
+				//o
 				else if(tmpx[j] == tx[k] && tmpxx[j] == txx[k] && tmpy[j] >= ty[k] && tmpy[j] < tyy[k] && tmpyy[j] > tyy[k])
 				{	//x ==, y위로겹
 					tmpx[tmpv] = tx[k];
@@ -68,6 +70,7 @@ void overlapCheck()
 					cout<<"B";
 					break;
 				}
+				//o
 				else if(tmpx[j] == tx[k] && tmpxx[j] == txx[k] && tmpyy[j] <= tyy[k] && tmpyy[j] > ty[k] && tmpy[j] < ty[k])
 				{	//x ==, y아래로 겹
 					tmpx[tmpv] = tx[k];
@@ -82,6 +85,7 @@ void overlapCheck()
 					cout<<"C";
 					break;
 				}
+				//o
 				else if(tmpy[j] == ty[k] && tmpyy[j] == tyy[k] && tmpx[j] < tx[k] && tmpxx[j] <= txx[k] && tmpxx[j] > tx[k])
 				{	//y ==, 왼쪽으로 겹
 					tmpx[tmpv] = tmpx[j];
@@ -111,6 +115,7 @@ void overlapCheck()
 					break;
 				}
 				//모서리
+				//o
 				else if(tmpx[j] < tx[k] && tmpxx[j] > tx[k] && tmpxx[j] <= txx[k] && tmpy[j] >= ty[k] && tmpy[j] < tyy[k] && tmpyy[j] > tyy[k])
 				{	//i 종이 기준 right bottom
 					//아래 나눔
@@ -133,6 +138,7 @@ void overlapCheck()
 					cout<<"F";
 					break;
 				}
+				//o
 				else if(tmpx[j] < tx[k] && tmpxx[j] > tx[k] && tmpxx[j] <= txx[k] && tmpy[j] < ty[k] && tmpyy[j] > ty[k] && tmpyy[j] <= tyy[k])
 				{	//i 종이 기준 right top
 					//아래 나눔
@@ -155,6 +161,7 @@ void overlapCheck()
 					cout<<"G";
 					break;
 				}
+				//o
 				else if(tmpx[j] >= tx[k] && tmpx[j] < txx[k] && tmpxx[j] > txx[k] && tmpy[j] >= ty[k] && tmpy[j] < tyy[k] && tmpyy[j] > tyy[k])
 				{	//i 종이 기준 left bottom
 					//아래 나눔
@@ -177,6 +184,7 @@ void overlapCheck()
 					cout<<"H";
 					break;
 				}
+				//o
 				else if(tmpx[j] >= tx[k] && tmpx[j] < txx[k] && tmpxx[j] > txx[k] && tmpy[j] < ty[k] && tmpyy[j] > ty[k] && tmpyy[j] <= tyy[k])
 				{	//i 종이 기준 left top
 					//아래 나눔
@@ -202,6 +210,7 @@ void overlapCheck()
 				//i 종이가 위의 종이보다 작을 경우 (통과)
 				
 				//i 종이가 y가 짧을 경우
+				//o
 				else if(tmpx[j] < tx[k] && tmpxx[j] > tx[k] && tmpxx[j] <= txx[k] && tmpy[j] >= ty[k] && tmpyy[j] <= tyy[k])
 				{	//(1) 'ㅓ' 모양, i 종이가 '-'
 					tmpx[tmpv] = tmpx[j];
@@ -216,6 +225,7 @@ void overlapCheck()
 					cout<<"J";
 					break;
 				}
+				//o
 				else if(tmpx[j] < tx[k] && tmpxx[j] > txx[k] && tmpy[j] >= ty[k] && tmpyy[j] <= tyy[k])
 				{	//(2) '+' 모양, i 종이가 '-'
 					//왼쪽 나눔
@@ -238,6 +248,7 @@ void overlapCheck()
 					cout<<"K";
 					break;
 				}
+				//o
 				else if(tmpx[j] >= tx[k] && tmpx[j] < txx[k] && tmpxx[j] > txx[k] && tmpy[j] >= ty[k] && tmpyy[j] <= tyy[k])
 				{	//(3) 'ㅏ' 모양, i 종이가 '-'
 					tmpx[tmpv] = txx[k];
@@ -253,6 +264,7 @@ void overlapCheck()
 					break;
 				}
 				//i 종이가 x가 짧을 경우
+				//o
 				else if(tmpx[j] >= tx[k] && tmpxx[j] <= txx[k] && tmpy[j] >= ty[k] && tmpy[j] < tyy[k] && tmpyy[j] > tyy[k])
 				{	//(1) 'ㅗ' 모양, i 종이가 'ㅣ'
 					tmpx[tmpv] = tmpx[j];
@@ -267,6 +279,7 @@ void overlapCheck()
 					cout<<"M";
 					break;
 				}
+				//o
 				else if(tmpx[j] >= tx[k] && tmpxx[j] <= txx[k] && tmpy[j] < ty[k] && tmpyy[j] > tyy[k])
 				{	//(2) '+' 모양, i 종이가 'ㅣ'
 					//위 나눔
@@ -289,6 +302,7 @@ void overlapCheck()
 					cout<<"N";
 					break;
 				}
+				//o
 				else if(tmpx[j] >= tx[k] && tmpxx[j] <= txx[k] && tmpy[j] < ty[k] && tmpyy[j] > ty[k] && tmpyy[j] <= tyy[k])
 				{	//(3) 'ㅜ' 모양, i 종이가 'ㅣ'
 					tmpx[tmpv] = tmpx[j];
@@ -327,7 +341,8 @@ void overlapCheck()
 					checkOL[i] = 1;
 					break;
 				}*/
-				else if(tmpx[j] > tx[k] && tmpxx[j] < txx[k] && tmpy[j] > ty[k] && tmpyy[j] > ty[k] && tmpyy[j] <= tyy[k])
+				//o
+				else if(tmpx[j] < tx[k] && tmpxx[j] > txx[k] && tmpy[j] < ty[k] && tmpyy[j] > ty[k] && tmpyy[j] <= tyy[k])
 				{	//(2) (middle,top)
 					//왼쪽 나눔
 					tmpx[tmpv] = tmpx[j];
@@ -378,6 +393,7 @@ void overlapCheck()
 					checkOL[i] = 1;
 					break;
 				}*/
+				//o
 				else if(tmpx[j] >= tx[k] && tmpx[j] < txx[k] && tmpxx[j] > txx[k] && tmpy[j] < ty[k] && tmpyy[j] > tyy[k])
 				{	//(4) (left,middle)
 					//위 나눔
@@ -407,6 +423,7 @@ void overlapCheck()
 					cout<<"Q";
 					break;
 				}
+				//o
 				else if(tmpx[j] < tx[k] && tmpxx[j] > txx[k] && tmpy[j] < ty[k] && tmpyy[j] > tyy[k])
 				{	//(5) (middle,middle)
 					//왼쪽 나눔
@@ -443,8 +460,8 @@ void overlapCheck()
 					cout<<"R";
 					break;
 				}
-				//?
-				else if(tmpx[j] < tx[k] && tmpx[j] > tx[k] && tmpxx[j] <= txx[k] && tmpy[j] < ty[k] && tmpyy[j] > tyy[k])
+				//o
+				else if(tmpx[j] < tx[k] && tmpxx[j] > tx[k] && tmpxx[j] <= txx[k] && tmpy[j] < ty[k] && tmpyy[j] > tyy[k])
 				{	//(6) (right,middle)
 					//위 나눔
 					tmpx[tmpv] = tmpx[j];
@@ -495,6 +512,7 @@ void overlapCheck()
 					checkOL[i] = 1;
 					break;
 				}*/
+				//o
 				else if(tmpx[j] < tx[k] && tmpxx[j] > txx[k] && tmpy[j] >= ty[k] && tmpy[j] < tyy[k] && tmpyy[j] > tyy[k])
 				{	//(8) (middle,bottom)
 					//왼쪽 나눔
