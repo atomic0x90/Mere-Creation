@@ -1,6 +1,8 @@
 #include <iostream>
 #include <fstream>
 
+#include <time.h>
+
 using namespace std;
 
 ifstream fin("paper.inp");
@@ -16,6 +18,9 @@ int tmpx[40000] = {0,},tmpy[40000] = {0,},tmpxx[40000] = {0,},tmpyy[40000] = {0,
 int checkin[40000] = {0,};
 
 int ti = 0;
+
+clock_t start;
+double end_t;
 
 void finFunction();
 void overlapCheck();
@@ -42,11 +47,8 @@ void overlapCheck()
 		int tmpv = 1;
 		tmpx[0] = x[i],tmpy[0] = y[i],tmpxx[0] = xx[i],tmpyy[0] = yy[i];
 		
-		cout<<x[i]<<" "<<y[i]<<" "<<xx[i]<<" "<<yy[i]<<" "<<tmpv<<" "<<ti<<endl;
+//		cout<<x[i]<<" "<<y[i]<<" "<<xx[i]<<" "<<yy[i]<<" "<<tmpv<<" "<<ti<<endl;
 		
-		for(int j = 0;j<40000;j++)
-			checkin[j] = 0;
-
 		for(int j = 0;j < tmpv;j++)
 		{	//나눠졌을 경우
 			for(int k = 0;k < ti;k++)
@@ -56,8 +58,8 @@ void overlapCheck()
 				{	//전부 덮일경우
 					tmpInit(j);
 
-					checkOL[i] = 2;
-					cout<<"A";
+//					checkOL[i] = 2;
+			//		cout<<"A";
 
 					checkin[j] = 2;
 					break;	//Break mean's 'tmpInit(j)'
@@ -72,9 +74,9 @@ void overlapCheck()
 					
 					tmpInit(j);
 
-					checkOL[i] = 1;
+//					checkOL[i] = 1;
 					tmpv++;
-					cout<<"B";
+			//		cout<<"B";
 
 					checkin[j] = 1;
 					break;
@@ -89,9 +91,9 @@ void overlapCheck()
 
 					tmpInit(j);
 
-					checkOL[i] = 1;
+			//		checkOL[i] = 1;
 					tmpv++;
-					cout<<"C";
+			//		cout<<"C";
 
 					checkin[j] = 1;
 					break;
@@ -106,9 +108,9 @@ void overlapCheck()
 
 					tmpInit(j);
 
-					checkOL[i] = 1;
+			//		checkOL[i] = 1;
 					tmpv++;
-					cout<<"D";
+			//		cout<<"D";
 					
 					checkin[j] = 1;
 					break;
@@ -122,9 +124,9 @@ void overlapCheck()
 					
 					tmpInit(j);
 					
-					checkOL[i] = 1;
+			//		checkOL[i] = 1;
 					tmpv++;
-					cout<<"E";
+			//		cout<<"E";
 
 					checkin[j] = 1;
 					break;
@@ -149,8 +151,8 @@ void overlapCheck()
 
 					tmpInit(j);
 
-					checkOL[i] = 1;
-					cout<<"F";
+			//		checkOL[i] = 1;
+			//		cout<<"F";
 
 					checkin[j] = 1;
 					break;
@@ -174,8 +176,8 @@ void overlapCheck()
 					
 					tmpInit(j);
 
-					checkOL[i] = 1;
-					cout<<"G";
+			//		checkOL[i] = 1;
+			//		cout<<"G";
 
 					checkin[j] = 1;
 					break;
@@ -199,8 +201,8 @@ void overlapCheck()
 
 					tmpInit(j);
 
-					checkOL[i] = 1;
-					cout<<"H";
+			//		checkOL[i] = 1;
+			//		cout<<"H";
 
 					checkin[j] = 1;
 					break;
@@ -224,8 +226,8 @@ void overlapCheck()
 
 					tmpInit(j);
 
-					checkOL[i] = 1;
-					cout<<"I";
+			//		checkOL[i] = 1;
+			//		cout<<"I";
 
 					checkin[j] = 1;
 					break;
@@ -244,8 +246,8 @@ void overlapCheck()
 
 					tmpInit(j);
 
-					checkOL[i] = 1;
-					cout<<"J";
+			//		checkOL[i] = 1;
+			//		cout<<"J";
 
 					checkin[j] = 1;
 					break;
@@ -269,8 +271,8 @@ void overlapCheck()
 
 					tmpInit(j);
 
-					checkOL[i] = 1;
-					cout<<"K";
+			//		checkOL[i] = 1;
+			//		cout<<"K";
 
 					checkin[j] = 1;
 					break;
@@ -286,8 +288,8 @@ void overlapCheck()
 
 					tmpInit(j);
 
-					checkOL[i] = 1;
-					cout<<"L";
+			//		checkOL[i] = 1;
+			//		cout<<"L";
 
 					checkin[j] = 1;
 					break;
@@ -304,8 +306,8 @@ void overlapCheck()
 
 					tmpInit(j);
 
-					checkOL[i] = 1;
-					cout<<"M";
+			//		checkOL[i] = 1;
+			//		cout<<"M";
 
 					checkin[j] = 1;
 					break;
@@ -329,8 +331,8 @@ void overlapCheck()
 
 					tmpInit(j);
 
-					checkOL[i] = 1;
-					cout<<"N";
+			//		checkOL[i] = 1;
+			//		cout<<"N";
 
 					checkin[j] = 1;
 					break;
@@ -346,8 +348,8 @@ void overlapCheck()
 
 					tmpInit(j);
 					
-					checkOL[i] = 1;
-					cout<<"O";
+			//		checkOL[i] = 1;
+			//		cout<<"O";
 
 					checkin[j] = 1;
 					break;
@@ -402,8 +404,8 @@ void overlapCheck()
 
 					tmpInit(j);
 
-					checkOL[i] = 1;
-					cout<<"P";
+			//		checkOL[i] = 1;
+			//		cout<<"P";
 
 					checkin[j] = 1;
 					break;
@@ -456,8 +458,8 @@ void overlapCheck()
 
 					tmpInit(j);
 
-					checkOL[i] = 1;
-					cout<<"Q";
+			//		checkOL[i] = 1;
+			//		cout<<"Q";
 
 					checkin[j] = 1;
 					break;
@@ -495,8 +497,8 @@ void overlapCheck()
 
 					tmpInit(j);
 
-					checkOL[i] = 1;
-					cout<<"R";
+			//		checkOL[i] = 1;
+			//		cout<<"R";
 
 					checkin[j] = 1;
 					break;
@@ -527,8 +529,8 @@ void overlapCheck()
 
 					tmpInit(j);
 
-					checkOL[i] = 1;
-					cout<<"S";
+			//		checkOL[i] = 1;
+			//		cout<<"S";
 
 					checkin[j] = 1;
 					break;
@@ -581,8 +583,8 @@ void overlapCheck()
 
 					tmpInit(j);
 
-					checkOL[i] = 1;
-					cout<<"T "<<j<<" "<<k<<" ";
+			//		checkOL[i] = 1;
+			//		cout<<"T "<<j<<" "<<k<<" ";
 
 					checkin[j] = 1;
 					break;
@@ -611,12 +613,12 @@ void overlapCheck()
 				}*/
 			}
 		}
-		cout<<"check "<<checkOL[i]<<" "<<tmpv<<" "<<ti<<endl<<endl;
+//		cout<<"check "<<checkOL[i]<<" "<<tmpv<<" "<<ti<<endl<<endl;
 		
-		for(int l = 0;l<tmpv;l++)
+	/*	for(int l = 0;l<tmpv;l++)
 		{
 			cout<<"\t"<<tmpx[l]<<" "<<tmpxx[l]<<" "<<tmpy[l]<<" "<<tmpyy[l]<<endl;
-		}
+		}*/
 
 		if(ti == 0)
 		{	//tx 처음 값
@@ -630,19 +632,22 @@ void overlapCheck()
 		else 
 			merge(tmpv,i);
 	
-		cout<<checkOL[i]<<endl<<endl;
+	//	cout<<checkOL[i]<<endl<<endl;
+
+		for(int j = 0;j < tmpv;j++)
+			checkin[j] = 0;
 	}
 
-	for(int i = 0;i < ti;i++)
+/*	for(int i = 0;i < ti;i++)
 	{
 		cout<<tx[i]<<" "<<txx[i]<<" "<<ty[i]<<" "<<tyy[i]<<endl;
-	}
+	}*/
 }
 
 void merge(int ve,int in)
 {
 	int check = 0;
-	cout<<"ve in "<<ve<<" "<<in<<endl;
+//	cout<<"ve in "<<ve<<" "<<in<<endl;
 	
 	int t1,t2,t3;
 	t1 = t2 = t3 = 0;
@@ -672,7 +677,7 @@ void merge(int ve,int in)
 		if(tmpx[i] != -1 && tmpxx[i] != -1 && tmpy[i] != -1 && tmpyy[i] != -1)// && tmpxx[i] - tmpx[i] > 0 && tmpyy[i] - tmpy[i] > 0)
 		{
 			check = 0;
-/*			for(int j = 0;j < ti;j++)
+			for(int j = 0;j < ti;j++)
 			{
 				if(tx[j] >= tmpx[i] && txx[j] <= tmpxx[i] && ty[j] >= tmpy[i] && tyy[j] <= tmpyy[i])
 				{	//전부 겹침
@@ -681,37 +686,67 @@ void merge(int ve,int in)
 					ty[j] = tmpy[i];
 					tyy[j] = tmpyy[i];
 					check++;
+					break;
 				}
 				
 				if(tx[j] == tmpx[i] && txx[j] == tmpxx[i])
 				{	//x ==
 					if(ty[j] == tmpyy[i])
+					{
+						check++;
 						ty[j] = tmpy[i];
+						break;
+					}
 					else if(ty[j] > tmpy[i] && ty[j] < tmpyy[i])
+					{
+						check++;
 						ty[j] = tmpy[i];
+						break;
+					}
 
 					if(tyy[j] == tmpy[i])
+					{
+						check++;
 						tyy[j] = tmpyy[i];
+						break;
+					}
 					else if(tyy[j] > tmpy[i] && tyy[j] < tmpyy[i])
+					{
+						check++;
 						tyy[j] = tmpyy[i];
-
-					check++;
+						break;
+				
+					}
 				}
 				
 				if(ty[j] == tmpy[i] && tyy[j] == tmpyy[i])
 				{	//y ==
 					if(tx[j] == tmpxx[i])
+					{
+						check++;
 						tx[j] = tmpx[i];
+						break;
+					}
 					else if(tmpx[i] < tx[j] && tmpxx[i] > tx[j])
+					{
+						check++;
 						tx[j] = tmpx[i];
-
+						break;
+					}
 					if(txx[j] == tmpx[i])
+					{
+						check++;
 						txx[j] = tmpxx[i];
+						break;
+					}
 					else if(tmpxx[i] > txx[j] && tmpx[i] < txx[j])
+					{
+						check++;
 						txx[j] = tmpxx[i];
-					check++;
+						break;
+					}
 				}
-			}*/
+			}
 			if(check == 0)
 			{
 				tx[ti] = tmpx[i];
@@ -724,10 +759,10 @@ void merge(int ve,int in)
 	}
 
 //	if(checkOL[in] == 0)
-	{
-		for(int i = 0;i<ti;i++)
-			cout<<tx[i]<<" "<<ty[i]<<" "<<txx[i]<<" "<<tyy[i]<<endl;
-	}
+//	{
+//		for(int i = 0;i<ti;i++)
+//			cout<<tx[i]<<" "<<ty[i]<<" "<<txx[i]<<" "<<tyy[i]<<endl;
+//	}
 
 
 	return;
@@ -749,12 +784,12 @@ void finFunction()
 		xx[i] = t1 + t3;
 		yy[i] = t2 + t4;
 	
-		cout<<x[i]<<" "<<y[i]<<" "<<xx[i]<<" "<<yy[i]<<endl;
+//		cout<<x[i]<<" "<<y[i]<<" "<<xx[i]<<" "<<yy[i]<<endl;
 
 		i++;
 		tmp--;
 	}
-	cout<<endl;
+//	cout<<endl;
 
 	return;
 }
@@ -780,10 +815,19 @@ void foutFunction()
 
 int main()
 {
+	start = clock();
+
 	finFunction();
 
 	overlapCheck();
 
 	foutFunction();
+	
+	fin.close();
+	fout.close();
+	
+	end_t = clock();
+
+	cout<<endl<<(double)(end_t - start)/CLOCKS_PER_SEC<<endl;
 	return 0;
 }
