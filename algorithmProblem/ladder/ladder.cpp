@@ -4,6 +4,10 @@
 #include <vector>
 #include <tuple>
 
+#include <algorithm>	//sort
+
+#include <functional>	//내림차순 (greater<type>())
+
 #include <time.h>
 
 using namespace std;
@@ -35,7 +39,7 @@ void finFunction()
 	while(1)
 	{
 		fin>>t1>>t2>>t3>>t4;
-		cout<<t1<<" "<<t2<<" "<<t3<<" "<<t4<<endl;
+		
 		if(t1 == 0 && t2 == 0 && t3 == 0 && t4 == 0)
 			break;
 		
@@ -47,24 +51,71 @@ void finFunction()
 
 		v[t3].push_back(tmp);
 	}
+	
+	return;
+}
+
+void sortFunction()
+{
+	for(int i = 0;i < testCase;i++)
+		sort(v[i].begin(),v[i].end(),greater<tu>());
+
+	return;
+}
+
+void ladder()
+{
+	vector <int> num;
+
+	num.reserve(testCase);
 
 	for(int i = 0;i < testCase;i++)
 	{
-		for(int j = 0;j < v[i].size();j++)
+		int checkf = 0;
+		int d1,d2;
+		d1 = get<1>(v[i][0]);
+		d2 = get<2>(v[i][0]);
+		
+		while(1)
 		{
-			cout<<get<0>(v[i][j])<<" "<<get<1>(v[i][j])<<" "<<get<2>(v[i][j])<<endl;
+			for(int k = 0;k < v[d1].size();k++)
+			{
+				if( d2 > get<0>(v[d1][k]) )
+				{
+					int tmpd1 = d1;
+					
+					d1 = get<1>(v[tmpd1][k]);
+					d2 = get<2>(v[tmpd1][k]);
+					
+					break;
+				}
+				
+				if(k == v[d1].size() - 1)
+				{
+					checkf++;
+					break;
+				}
+			}
+			if(checkf != 0)
+				break;
 		}
 	
-		cout<<endl;
+		num[i] = d1;
 	}
+
 	return;
 }
+
 
 int main()
 {
 	start_t = clock();
 
 	finFunction();
+
+	sortFunction();
+
+	ladder();
 
 	fin.close();
 	fout.close();
