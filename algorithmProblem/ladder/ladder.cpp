@@ -19,6 +19,8 @@ double end_t;
 
 vector < vector <tu> > v;
 
+vector <int> num;
+
 ifstream fin("ladder.inp");
 ofstream fout("ladder.out");
 
@@ -65,8 +67,6 @@ void sortFunction()
 
 void ladder()
 {
-	vector <int> num;
-
 	num.reserve(testCase);
 
 	for(int i = 0;i < testCase;i++)
@@ -100,12 +100,21 @@ void ladder()
 				break;
 		}
 	
-		num[i] = d1;
+		num[d1] = i;
 	}
 
 	return;
 }
 
+void foutFunction()
+{
+	for(int i = 0;i < testCase;i++)
+		fout<<num[i]<<" ";
+
+	fout<<endl;
+
+	return;
+}
 
 int main()
 {
@@ -117,6 +126,8 @@ int main()
 
 	ladder();
 
+	foutFunction();
+	
 	fin.close();
 	fout.close();
 
