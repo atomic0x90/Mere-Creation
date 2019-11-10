@@ -92,7 +92,7 @@ int checkX(int ax,int f,int s,char check)
 {
 	for(int i = f;i <= s;i++)
 	{
-		if(finGo[i][ax] == 'x' || finGo[i][ax] != check)
+		if( (finGo[i][ax] == 'x' || finGo[i][ax] != check) && finGo[i][ax] != '.')
 			return 1;
 	}
 
@@ -147,6 +147,11 @@ void yaxis(int y,int f,int s)
 				for(int i = f+1;i < s;i++)
 					finGo[i][y] = 'x';
 			}
+			else
+			{
+				for(int i = f+1;i < s;i++)
+					finGo[i][y] = 'b';
+			}
 		}
 		else if(finGo[f][y] == 'W' && finGo[s][y] == 'W')
 		{
@@ -156,6 +161,11 @@ void yaxis(int y,int f,int s)
 			{
 				for(int i = f+1;i < s;i++)
 					finGo[i][y] = 'x';
+			}
+			else
+			{
+				for(int i = f+1;i < s;i++)
+					finGo[i][y] = 'w';
 			}
 		}
 		else if(finGo[s][y] == 'b')
@@ -182,6 +192,26 @@ void yaxis(int y,int f,int s)
 			{
 				for(int i = f+1;i <= s;i++)
 					finGo[i][y] = 'x';
+			}
+		}
+		else if(finGo[f][y] == '.')
+		{
+			for(int i = f;i < s;i++)
+			{
+				if(finGo[s][y] == 'B')
+					finGo[i][y] = 'b';
+				else
+					finGo[i][y] = 'w';
+			}
+		}
+		else if(finGo[s][y] == '.')
+		{
+			for(int i = s;i > f;i--)
+			{
+				if(finGo[f][y] == 'B')
+					finGo[i][y] = 'b';
+				else
+					finGo[i][y] = 'w';
 			}
 		}
 	}
@@ -223,19 +253,6 @@ void go()
 		}
 	}
 
-	for(int k = 0;k < size*size;k++)
-	{
-		for(int i = 1;i <= size;i++)
-		{
-			for(int j = 1;j <= size;j++)
-			{
-				if(finGo[i][j] == 'x')
-					insertx(i,j);
-			}
-		}
-	}
-
-
 	// y axis
 	for(int i = 1;i <= size;i++)
 	{
@@ -263,6 +280,17 @@ void go()
 
 				t2 = t1;
 			}
+		}
+	}
+
+
+	//1 ~ size '.'
+	for(int i =1;i <= size;i++)
+	{
+		for(int j = 1;j <= size;j++)
+		{
+			if(finGo[i][j] == '.')
+				finGo[i][j] = 'x';
 		}
 	}
 
@@ -352,6 +380,28 @@ void insertx(int y,int x)
 	return;
 }
 
+void foutFunction()
+{
+	int checkb,checkw;
+	checkb = checkw = 0;
+
+	for(int i = 1;i <= size;i++)
+	{
+		for(int j = 1;j <= size;j++)
+		{
+			if(finGo[i][j] == 'b')
+				checkb++;
+			else if(finGo[i][j] == 'w')
+				checkw++;
+		}
+	}
+
+	fout<<checkb<<" "<<checkw<<endl;
+	cout<<checkb<<" "<<checkw<<endl;
+
+	return;
+}
+
 int main()
 {
 	start_t = clock();
@@ -370,6 +420,7 @@ int main()
                 cout<<endl;
         }
 
+	foutFunction();
 
 	fin.close();
 	fout.close();
