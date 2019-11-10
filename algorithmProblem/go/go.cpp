@@ -18,8 +18,11 @@ char finGo[21][21];
 void finFunction();
 void foutFunction();
 void go();
-void xaxis(int,int);
-void yaxis(int,int);
+void xaxis(int,int,int);
+void yaxis(int,int,int);
+int checkX(int,int,int,char);
+
+void insertx(int,int);
 
 void finFunction()
 {
@@ -33,9 +36,7 @@ void finFunction()
 			fin>>tmp;
 
 			finGo[i][j] = tmp;
-			cout<<finGo[i][j];
 		}
-		cout<<endl;
 	}
 
 	return;
@@ -43,8 +44,6 @@ void finFunction()
 
 void xaxis(int x,int f,int s)
 {
-	cout<<f<<" "<<s<<endl;
-
 	if(f == s)
 		return;
 	else
@@ -89,10 +88,112 @@ void xaxis(int x,int f,int s)
 	return;
 }
 
+int checkX(int ax,int f,int s,char check)
+{
+	for(int i = f;i <= s;i++)
+	{
+		if(finGo[i][ax] == 'x' || finGo[i][ax] != check)
+			return 1;
+	}
+
+	return 0;
+}
+
+void yaxis(int y,int f,int s)
+{
+	int check = 0;
+
+	if(f == s)
+		return;
+	else
+	{
+		if(finGo[f][y] == 'b')
+		{
+			if(finGo[s][y] == 'B')
+				check = checkX(y,f,s-1,'b');
+			else
+				check = checkX(y,f,s-1,'w');
+				
+			if(check != 0)
+			{
+				for(int i = f;i < s;i++)
+					finGo[i][y] = 'x';
+			}
+		}
+		else if(finGo[f][y] == 'w')
+		{
+			if(finGo[s][y] == 'W')
+				check = checkX(y,f,s-1,'w');
+			else
+				check = checkX(y,f,s-1,'b');
+
+			if(check != 0)
+			{
+				for(int i = f;i < s;i++)
+					finGo[i][y] = 'x';
+			}
+		}
+		else if( (finGo[f][y] == 'B' && finGo[s][y] == 'W') || (finGo[f][y] == 'W' && finGo[s][y] == 'B') )
+		{
+			for(int i = f+1;i < s;i++)
+				finGo[i][y] = 'x';
+		}
+		else if(finGo[f][y] == 'B' && finGo[s][y] == 'B')
+		{
+			check = checkX(y,f+1,s-1,'b');
+
+			if(check != 0)
+			{
+				for(int i = f+1;i < s;i++)
+					finGo[i][y] = 'x';
+			}
+		}
+		else if(finGo[f][y] == 'W' && finGo[s][y] == 'W')
+		{
+			check = checkX(y,f+1,s-1,'w');
+
+			if(check != 0)
+			{
+				for(int i = f+1;i < s;i++)
+					finGo[i][y] = 'x';
+			}
+		}
+		else if(finGo[s][y] == 'b')
+		{
+			if(finGo[f][y] == 'B')
+				check = checkX(y,f+1,s,'b');
+			else
+				check = checkX(y,f+1,s,'w');
+
+			if(check != 0)
+			{
+				for(int i = f+1;i <= s;i++)
+					finGo[i][y] = 'x';
+			}
+		}
+		else if(finGo[s][y] == 'w')
+		{
+			if(finGo[f][y] == 'W')
+				check = checkX(y,f+1,s,'w');
+			else
+				check = checkX(y,f+1,s,'b');
+
+			if(check != 0)
+			{
+				for(int i = f+1;i <= s;i++)
+					finGo[i][y] = 'x';
+			}
+		}
+	}
+
+	return;
+}
+
 void go()
 {
 	int t1,t2;
 
+	// x axis
 	for(int i = 1;i <= size;i++)
 	{
 		t1 = t2 = 1;
@@ -120,9 +221,134 @@ void go()
 				t2 = t1;
 			}
 		}
-		cout<<endl;
+	}
+
+	for(int k = 0;k < size*size;k++)
+	{
+		for(int i = 1;i <= size;i++)
+		{
+			for(int j = 1;j <= size;j++)
+			{
+				if(finGo[i][j] == 'x')
+					insertx(i,j);
+			}
+		}
+	}
+
+
+	// y axis
+	for(int i = 1;i <= size;i++)
+	{
+		t1 = t2 = 1;
+		for(int j = 1;j <= size;j++)
+		{
+			if(finGo[j][i] == 'B' || finGo[j][i] == 'W')
+			{
+				t2 = j;
+
+				yaxis(i,t1,t2);
+
+				t1 = t2;
+			}
+		}
+
+		t1 = t2 = size;
+		for(int j = size;j > 0;j--)
+		{
+			if(finGo[j][i] == 'B' || finGo[j][i] == 'W')
+			{
+				t1 = j;
+
+				yaxis(i,t1,t2);
+
+				t2 = t1;
+			}
+		}
+	}
+
+	for(int k = 0;k < size*size;k++)
+	{
+		for(int i = 1;i <= size;i++)
+		{
+			for(int j = 1;j <= size;j++)
+			{
+				if(finGo[i][j] == 'x')
+					insertx(i,j);
+			}
+		}
+	}
+
+	return;
+}
+
+void insertx(int y,int x)
+{
+	int t1,t2;
+
+	//x
+	t1 = t2 = x;
+	for(int i = x;;i--)
+	{
+		if(finGo[y][i] == 'B' || finGo[y][i] == 'W')
+		{
+			t1 = i+1;
+			break;
+		}
+		else if(i == 1)
+		{
+			t1 = 1;
+			break;
+		}
+	}
+	for(int i = x;;i++)
+	{
+		if(finGo[y][i] == 'B' || finGo[y][i] == 'W')
+		{
+			t2 = i-1;
+			break;
+		}
+		else if(i == size)
+		{
+			t2 = size;
+			break;
+		}
 	}
 	
+	for(int i = t1;i <= t2;i++)
+		finGo[y][i] = 'x';
+
+	//y
+	t1 = t2 = y;
+	for(int i = y;;i--)
+	{
+		if(finGo[i][x] == 'B' || finGo[i][x] == 'W')
+		{
+			t1 = i+1;
+			break;
+		}
+		else if(i == 1)
+		{
+			t1 = 1;
+			break;
+		}
+	}
+	for(int i = y;;i++)
+	{
+		if(finGo[i][x] == 'B' || finGo[i][x] == 'W')
+		{
+			t2 = i-1;
+			break;
+		}
+		else if(i == size)
+		{
+			t2 = size;
+			break;
+		}
+	}
+
+	for(int i = t1;i <= t2;i++)
+		finGo[i][x] = 'x';
+
 	return;
 }
 
@@ -134,6 +360,15 @@ int main()
 
 
 	go();
+
+	for(int i = 1;i <= size;i++)
+        {
+                for(int j = 1;j <= size;j++)
+                {
+                        cout<<finGo[i][j];
+                }
+                cout<<endl;
+        }
 
 
 	fin.close();
