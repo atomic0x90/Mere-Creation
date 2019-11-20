@@ -81,6 +81,12 @@ clock_t start_t;
 double end_t;
 int screan[100] = {0,};
 
+int snakeData[30][30] = {0,};
+
+int score = 0;
+
+void init();
+
 void mainScrean();
 void gameExplanation();
 void gameScrean();
@@ -293,7 +299,7 @@ void mainScrean()
 
 			end_t = clock();
 			
-			if( ((end_t - start_t)/CLOCKS_PER_SEC) > 0.8)
+			if( ((end_t - start_t)/CLOCKS_PER_SEC) > 0.5)
 				break;
 			else
 			{
@@ -321,9 +327,92 @@ void mainScrean()
 	return;
 }
 
+void init()
+{
+	score = 0;
+
+	for(int i = 0;i < 30;i++)
+	{
+		snakeData[0][i] = 3;
+		snakeData[26][i] = 3;
+		snakeData[i][0] = 3;
+		snakeData[i][26] = 3;
+	}
+	return;
+}
+
+void gameScrean()
+{
+	cout<<"\033[40m";
+	system("clear");
+
+	double sp = 400000;
+
+	while(1)
+	{
+		for(int i = 0;i < 27;i++)
+		{
+			for(int j = 0;j < 27;j++)
+			{
+				if(snakeData[i][j] == 0)
+					cout<<"\033[40m  \033[49m";
+				else if(snakeData[i][j] == 1)
+					cout<<"\033[42m  \033[49m";
+				else if(snakeData[i][j] == 2)
+					cout<<"\033[41m  \033[49m";
+				else if(snakeData[i][j] == 3)
+					cout<<"\033[44m  \033[49m";
+			}
+		
+			if(i == 0)
+				cout<<"\t   \033[43m \033[49m \033[01m Help \033[22m \033[43m \033[49m";
+			else if(i == 2)
+				cout<<"\t     up : w";
+			else if(i == 3)
+				cout<<"\t   down : s";
+			else if(i == 4)
+				cout<<"\t  right : d";
+			else if(i == 5)
+				cout<<"\t   left : a";
+			else if(i == 7)
+				cout<<"\t   exit : x";
+			else if(i == 10)
+				cout<<"\t   \033[43m \033[49m \033[01m Score \033[22m \033[43m \033[49m";
+			else if(i == 12)
+				cout<<"\t        \033[33m\033[01m"<<score<<"\033[22m\033[39m";
+			else if(i == 15)
+				cout<<"\t   \033[43m \033[49m \033[01m Speed \033[22m \033[43m \033[49m";
+			else if(i == 17)
+				cout<<"\t    \033[33m\033[01mspeed * "<<400000.0/sp<<"\033[22m\033[39m";
+			
+			
+			cout<<endl;
+		}
+
+		cout<<endl;
+		creatorData();
+		usleep(sp);	
+	
+		system("clear");
+	}
+
+
+	return;
+}
+
+/*
+ * snakeData == 3 : wall
+ * snakeData == 2 : food
+ * snakeData == 1 : tail
+ * snakeData == 0 : null
+*/
 int main()
 {
 	mainScrean();
+
+	init();
+
+	gameScrean();
 
 	return 0;
 }
