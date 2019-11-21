@@ -83,6 +83,7 @@ double end_t;
 int screan[100] = {0,};
 
 int snakeData[30][30] = {0,};
+int arrdata[30][30] = {0,};
 
 int score = 0;
 
@@ -336,6 +337,10 @@ void mainScrean()
 
 void init()
 {
+	arrdata[1][1] = 3;
+	arrdata[1][2] = 2;
+	arrdata[1][3] = 1;
+
 	head.first = 1;
 	head.second = 3;
 
@@ -356,50 +361,34 @@ void init()
 
 void searchTail(int st)
 {
-	if(st == 1)
-		return;
-
-	int x,y;
-	x = head.first;
-	y = head.second;
+	int max = 0;
 	int p1,p2;
-	for(int i = 0;i < 27;i++)
+	p1 = p2 = 1;
+	if(st == 0)
 	{
-		int check = 0;
-		for(int j = 0;j < 27;j++)
+		for(int i = 1;i < 26;i++)
 		{
-			check = 0;
-			if(i == x && j == y)
+			for(int j = 1;j < 26;j++)
 			{
-				continue;
-			}
-			if(snakeData[i][j] == 1)
-			{
-				if(snakeData[i-1][j] == 1 || snakeData[i-1][j] == 4)
-					check++;
-				if(snakeData[i+1][j] == 1 || snakeData[i+1][j] == 4)
-					check++;
-				if(snakeData[i][j-1] == 1 || snakeData[i][j-1] == 4)
-					check++;
-				if(snakeData[i][j+1] == 1 || snakeData[i][j+1] == 4)
-					check++;
-			}
-			if(check == 1)
-			{
-				p2 = j;
-				break;
+				if(arrdata[i][j] > max)
+				{
+					max = arrdata[i][j];
+					p1 = i;
+					p2 = j;
+				}
 			}
 		}
-		if(check == 1)
-		{
-			p1 = i;
-			break;
-		}
+		arrdata[p1][p2] = 0;
+		snakeData[p1][p2] = 0;
+		return;
 	}
-	snakeData[p1][p2] = 0;
+	else if(st == 1)	//food
+	{
+		return;
+	}
 
-	return;
 }
+
 int setData()
 {
 	if(snakeData[head.first][head.second] == 2)	//food
@@ -409,9 +398,19 @@ int setData()
 	}
 	else if(snakeData[head.first][head.second] == 0)	//null
 	{
+		for(int i = 1;i < 26;i++)
+		{
+			for(int j = 1;j < 26;j++)
+			{
+				if(arrdata[i][j] > 0)
+					arrdata[i][j]++;
+			}
+		}
+		arrdata[head.first][head.second] = 1;
+
 		snakeData[head.first][head.second] = 1;
 		searchTail(0);
-	
+
 		return 0;
 	}
 	else	//collision
@@ -605,8 +604,8 @@ void gameScrean()
 		checkCollision = gameAlgorithm(input);
 		cout<<head.first<<" "<<head.second<<endl;
 
-		if(input == ' ')
-			usleep(sp);
+//		usleep(sp);
+		
 		system("clear");
 	}
 
