@@ -94,7 +94,7 @@ char direction;
 void init();
 
 void mainScrean();
-void gameScrean();
+char gameScrean();
 int setData();
 int gameAlgorithm();
 int collision();
@@ -337,6 +337,14 @@ void mainScrean()
 
 void init()
 {
+	for(int i = 0;i < 30;i++)
+	{
+		for(int j = 0;j < 30;j++)
+		{
+			snakeData[i][j] = 0;
+			arrdata[i][j] = 0;
+		}
+	}
 	arrdata[1][1] = 3;
 	arrdata[1][2] = 2;
 	arrdata[1][3] = 1;
@@ -564,14 +572,16 @@ int gameAlgorithm(char input)
 	return 0;
 }
 
-void gameScrean()
+char gameScrean()
 {
 	system("clear");
 
 	double sp = 1000000;
 	int checkCollision = 0;
+	char input = ' ';
 	while(1)
 	{
+		input = ' ';
 		for(int i = 0;i < 27;i++)
 		{
 			for(int j = 0;j < 27;j++)
@@ -617,9 +627,13 @@ void gameScrean()
 		creatorData();
 
 		if(checkCollision != 0)
+		{
+			cout<<"\033[40m\033[32m\033[01m     Game Over.. try again?      "<<endl;
+			cout<<"Enter any key to start (exit : x)\033[22m\033[39m\033[49m"<<endl;
+			cin>>input;
 			break;
+		}
 		/**/
-		char input = ' ';
 
 		start_t = clock();
 
@@ -651,14 +665,16 @@ void gameScrean()
 		close_keyboard();
 		/**/
 
+		if(input == 'x')
+			break;
+
 		checkCollision = gameAlgorithm(input);
 
 		
 		system("clear");
 	}
 
-
-	return;
+	return input;
 }
 
 /*
@@ -669,11 +685,18 @@ void gameScrean()
 */
 int main()
 {
-	mainScrean();
+	char check;
+	while(1)
+	{
+		mainScrean();
 
-	init();
+		init();
 
-	gameScrean();
+		check = gameScrean();
+	
+		if(check == 'x')
+			break;
+	}
 
 	return 0;
 }
