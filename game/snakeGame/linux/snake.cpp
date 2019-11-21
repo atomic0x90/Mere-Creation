@@ -1,9 +1,9 @@
 #include <iostream>
 #include <unistd.h>	//system
 
-#include <time.h>
+#include <time.h>	//clock
 
-#include <utility>
+#include <utility>	//pair
 
 #include <sys/select.h>		//kbhit
 #include <termios.h>		//kbhit
@@ -356,6 +356,22 @@ void init()
 		snakeData[i][26] = 3;
 	}
 	snakeData[1][1] = snakeData[1][2] = snakeData[1][3] = 1;
+
+	while(1)
+	{
+		srand((unsigned int)time(NULL));
+		int p1 = rand()%15+10;
+
+		srand((unsigned int)time(NULL));
+		int p2 = rand()%15+10;
+
+		if(snakeData[p1][p2] != 1)
+		{
+			snakeData[p1][p2] = 2;
+			break;
+		}
+	}
+
 	return;
 }
 
@@ -393,6 +409,34 @@ int setData()
 {
 	if(snakeData[head.first][head.second] == 2)	//food
 	{
+		for(int i = 1;i < 26;i++)
+		{
+			for(int j = 1;j < 26;j++)
+			{
+				if(arrdata[i][j] > 0)
+					arrdata[i][j]++;
+			}
+		}
+		arrdata[head.first][head.second] = 1;
+
+		snakeData[head.first][head.second] = 1;
+
+		score++;
+
+		while(1)
+		{
+			srand((unsigned int)time(NULL));
+			int p1 = rand()%25 + 1;
+
+//			srand((unsigned int)time(NULL));
+			int p2 = rand()%25 + 1;
+
+			if(snakeData[p1][p2] != 1)
+			{
+				snakeData[p1][p2] = 2;
+				break;
+			}
+		}
 	
 		return 0;
 	}
@@ -524,7 +568,7 @@ void gameScrean()
 {
 	system("clear");
 
-	double sp = 400000;
+	double sp = 1000000;
 	int checkCollision = 0;
 	while(1)
 	{
@@ -563,7 +607,7 @@ void gameScrean()
 			else if(i == 15)
 				cout<<"\t   \033[43m \033[49m \033[01m Speed \033[22m \033[43m \033[49m";
 			else if(i == 17)
-				cout<<"\t    \033[33m\033[01mspeed * "<<400000.0/sp<<"\033[22m\033[39m";
+				cout<<"\t    \033[33m\033[01mspeed * "<<sp/1000000.0<<"\033[22m\033[39m";
 			
 			
 			cout<<endl;
@@ -579,11 +623,18 @@ void gameScrean()
 
 		start_t = clock();
 
+		if(score <= 15 && score >= 7)
+			sp = 1100000.0;
+		else if(score > 15 && score <= 40)
+			sp = 1200000.0;
+		else if(score > 40)
+			sp = 1400000.0;
+
 		while(1)
 		{
 			init_keyboard();
 			end_t = clock();
-			if( ((end_t - start_t)/CLOCKS_PER_SEC) > sp/4000000.0)
+			if( ((end_t - start_t)/CLOCKS_PER_SEC) > 100000.0/sp)
 				break;
 			else
 			{
@@ -600,11 +651,8 @@ void gameScrean()
 		close_keyboard();
 		/**/
 
-		cout<<head.first<<" "<<head.second<<endl;
 		checkCollision = gameAlgorithm(input);
-		cout<<head.first<<" "<<head.second<<endl;
 
-//		usleep(sp);
 		
 		system("clear");
 	}
