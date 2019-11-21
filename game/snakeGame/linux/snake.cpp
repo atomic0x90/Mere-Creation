@@ -3,6 +3,7 @@
 
 #include <time.h>
 
+#include <utility>
 
 #include <sys/select.h>		//kbhit
 #include <termios.h>		//kbhit
@@ -85,12 +86,18 @@ int snakeData[30][30] = {0,};
 
 int score = 0;
 
+pair <int,int> head;
+
+char direction;
+
 void init();
 
 void mainScrean();
-void gameExplanation();
 void gameScrean();
-void gameAlgorithm();
+int setData();
+int gameAlgorithm();
+int collision();
+void searchTail(int);
 void creatorData();
 
 void l1();
@@ -329,6 +336,11 @@ void mainScrean()
 
 void init()
 {
+	head.first = 1;
+	head.second = 3;
+
+	direction = 'd';
+
 	score = 0;
 
 	for(int i = 0;i < 30;i++)
@@ -338,30 +350,199 @@ void init()
 		snakeData[i][0] = 3;
 		snakeData[i][26] = 3;
 	}
+	snakeData[1][1] = snakeData[1][2] = snakeData[1][3] = 1;
 	return;
+}
+
+void searchTail(int st)
+{
+	if(st == 1)
+		return;
+
+	int x,y;
+	x = head.first;
+	y = head.second;
+	int p1,p2;
+	for(int i = 0;i < 27;i++)
+	{
+		int check = 0;
+		for(int j = 0;j < 27;j++)
+		{
+			check = 0;
+			if(i == x && j == y)
+			{
+				continue;
+			}
+			if(snakeData[i][j] == 1)
+			{
+				if(snakeData[i-1][j] == 1 || snakeData[i-1][j] == 4)
+					check++;
+				if(snakeData[i+1][j] == 1 || snakeData[i+1][j] == 4)
+					check++;
+				if(snakeData[i][j-1] == 1 || snakeData[i][j-1] == 4)
+					check++;
+				if(snakeData[i][j+1] == 1 || snakeData[i][j+1] == 4)
+					check++;
+			}
+			if(check == 1)
+			{
+				p2 = j;
+				break;
+			}
+		}
+		if(check == 1)
+		{
+			p1 = i;
+			break;
+		}
+	}
+	snakeData[p1][p2] = 0;
+
+	return;
+}
+int setData()
+{
+	if(snakeData[head.first][head.second] == 2)	//food
+	{
+	
+		return 0;
+	}
+	else if(snakeData[head.first][head.second] == 0)	//null
+	{
+		snakeData[head.first][head.second] = 1;
+		searchTail(0);
+	
+		return 0;
+	}
+	else	//collision
+	{
+		snakeData[head.first][head.second] = 4;
+		searchTail(0);
+	
+		return 1;
+	}
+}
+int gameAlgorithm(char input)
+{
+
+	if(direction == 'w')
+	{
+		if(input == 'a')
+		{
+			direction = 'a';
+			head.second--;
+
+			return setData();
+		}
+		else if(input == 'd')
+		{
+			direction = 'd';
+			head.second++;
+
+			return setData();
+		}
+		else
+		{
+			head.first--;
+
+			return setData();
+		}
+	}
+	else if(direction == 's')
+	{
+		if(input == 'a')
+		{
+			direction = 'a';
+			head.second--;
+
+			return setData();
+		}
+		else if(input == 'd')
+		{
+			direction = 'd';
+			head.second++;
+
+			return setData();
+		}
+		else
+		{
+			head.first++;
+
+			return setData();
+		}
+	}
+	else if(direction == 'd')
+	{
+		if(input == 'w')
+		{
+			direction = 'w';
+			head.first--;
+			
+			return setData();
+		}
+		else if(input == 's')
+		{
+			direction = 's';
+			head.first++;
+		
+			return setData();
+		}
+		else
+		{
+			head.second++;
+			
+			return setData();
+		}
+	}
+	else if(direction == 'a')
+	{
+		if(input == 'w')
+		{
+			direction = 'w';
+			head.first--;
+
+			return setData();
+		}
+		else if(input == 's')
+		{
+			direction = 's';
+			head.first++;
+
+			return setData();
+		}
+		else
+		{
+			head.second--;
+		
+			return setData();
+		}
+	}
+
+	return 0;
 }
 
 void gameScrean()
 {
-	cout<<"\033[40m";
 	system("clear");
 
 	double sp = 400000;
-
+	int checkCollision = 0;
 	while(1)
 	{
 		for(int i = 0;i < 27;i++)
 		{
 			for(int j = 0;j < 27;j++)
 			{
-				if(snakeData[i][j] == 0)
+				if(snakeData[i][j] == 0)	//null
 					cout<<"\033[40m  \033[49m";
-				else if(snakeData[i][j] == 1)
+				else if(snakeData[i][j] == 1)	//tail
 					cout<<"\033[42m  \033[49m";
-				else if(snakeData[i][j] == 2)
+				else if(snakeData[i][j] == 2)	//food
 					cout<<"\033[41m  \033[49m";
-				else if(snakeData[i][j] == 3)
+				else if(snakeData[i][j] == 3)	//wall
 					cout<<"\033[44m  \033[49m";
+				else if(snakeData[i][j] == 4)	//collision
+					cout<<"\033[43m  \033[49m";
 			}
 		
 			if(i == 0)
@@ -391,8 +572,41 @@ void gameScrean()
 
 		cout<<endl;
 		creatorData();
-		usleep(sp);	
-	
+
+		if(checkCollision != 0)
+			break;
+		/**/
+		char input = ' ';
+
+		start_t = clock();
+
+		while(1)
+		{
+			init_keyboard();
+			end_t = clock();
+			if( ((end_t - start_t)/CLOCKS_PER_SEC) > sp/4000000.0)
+				break;
+			else
+			{
+				if(_kbhit())
+				{
+					close_keyboard();
+					input = _getch();
+					break;
+				}
+			}
+			close_keyboard();
+		}
+
+		close_keyboard();
+		/**/
+
+		cout<<head.first<<" "<<head.second<<endl;
+		checkCollision = gameAlgorithm(input);
+		cout<<head.first<<" "<<head.second<<endl;
+
+		if(input == ' ')
+			usleep(sp);
 		system("clear");
 	}
 
