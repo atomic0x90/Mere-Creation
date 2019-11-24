@@ -80,14 +80,14 @@ int _putch(int c)
 /**/
 clock_t start_t;
 double end_t;
-int screan[100] = {0,};
+int screan[100] = {0,};		//main screan snake
 
-int snakeData[30][30] = {0,};
-int arrdata[30][30] = {0,};
+int snakeData[30][30] = {0,};	//snake state
+int arrdata[30][30] = {0,};	//snake tile state
 
 int score = 0;
 
-pair <int,int> head;
+pair <int,int> head;	//snake head
 
 char direction;
 
@@ -95,14 +95,16 @@ void init();
 
 void mainScrean();
 char gameScrean();
-int setData();
+int setData();		//snake head -> null,food,collision
 int gameAlgorithm();
-int collision();
 void searchTail(int);
 void creatorData();
 
 char exitScrean();
 
+/*
+ * color screan
+ * */
 void l1();
 void l2();
 void l3();
@@ -409,10 +411,7 @@ void searchTail(int st)
 		return;
 	}
 	else if(st == 1)	//food
-	{
 		return;
-	}
-
 }
 
 int setData()
@@ -483,6 +482,7 @@ int setData()
 		return 1;
 	}
 }
+
 int gameAlgorithm(char input)
 {
 
@@ -711,6 +711,7 @@ char exitScrean()
  * snakeData == 1 : tail
  * snakeData == 0 : null
 */
+
 int main()
 {
 	char check;
