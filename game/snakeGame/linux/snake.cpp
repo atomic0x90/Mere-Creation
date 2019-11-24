@@ -431,21 +431,29 @@ int setData()
 
 		score++;
 
-		while(1)
+		//food set
+		srand((unsigned int)time(NULL));
+		
+		int tmp1,tmp2 = 0;
+		tmp1 = rand()%(621 - score) + 1;
+
+		for(int i = 1;i < 26;i++)
 		{
-			srand((unsigned int)time(NULL));
-			int p1 = rand()%25 + 1;
-
-//			srand((unsigned int)time(NULL));
-			int p2 = rand()%25 + 1;
-
-			if(snakeData[p1][p2] != 1)
+			for(int j = 1;j < 26;j++)
 			{
-				snakeData[p1][p2] = 2;
-				break;
+				if(snakeData[i][j] == 0 && tmp2 != tmp1)
+					tmp2++;
+				else if(snakeData[i][j] == 0 && tmp2 == tmp1)
+				{
+					snakeData[i][j] = 2;
+					tmp1 = -1;
+					break;
+				}
 			}
+			if(tmp1 == -1)
+				break;
 		}
-	
+
 		return 0;
 	}
 	else if(snakeData[head.first][head.second] == 0)	//null
@@ -577,6 +585,7 @@ char gameScrean()
 	system("clear");
 
 	double sp = 1000000;
+
 	int checkCollision = 0;
 	char input = ' ';
 	while(1)
