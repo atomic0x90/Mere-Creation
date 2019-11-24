@@ -101,6 +101,8 @@ int collision();
 void searchTail(int);
 void creatorData();
 
+char exitScrean();
+
 void l1();
 void l2();
 void l3();
@@ -618,7 +620,7 @@ char gameScrean()
 			else if(i == 5)
 				cout<<"\t   left : a";
 			else if(i == 7)
-				cout<<"\t   exit : x";
+				cout<<"\t   pause : t";
 			else if(i == 10)
 				cout<<"\t   \033[43m \033[49m \033[01m Score \033[22m \033[43m \033[49m";
 			else if(i == 12)
@@ -638,7 +640,7 @@ char gameScrean()
 		if(checkCollision != 0)
 		{
 			cout<<"\033[40m\033[32m\033[01m     Game Over.. try again?      "<<endl;
-			cout<<"Enter any key to start (exit : x)\033[22m\033[39m\033[49m"<<endl;
+			cout<<"Enter any key to start (exit : t)\033[22m\033[39m\033[49m"<<endl;
 			cin>>input;
 			break;
 		}
@@ -674,8 +676,13 @@ char gameScrean()
 		close_keyboard();
 		/**/
 
-		if(input == 'x')
-			break;
+		if(input == 't')
+		{
+			input = exitScrean();
+		
+			if(input == 't')
+				return input;
+		}
 
 		checkCollision = gameAlgorithm(input);
 
@@ -684,6 +691,18 @@ char gameScrean()
 	}
 
 	return input;
+}
+
+char exitScrean()
+{
+	char ch;
+
+	cout<<"\033[40m\033[32m\033[01m        EXIT SNAKE GMAE ?        "<<endl;
+	cout<<"Enter any key to start (exit : t)\033[22m\033[39m\033[49m"<<endl;
+	
+	cin>>ch;
+
+	return ch;
 }
 
 /*
@@ -703,8 +722,15 @@ int main()
 
 		check = gameScrean();
 	
-		if(check == 'x')
-			break;
+		if(check == 't')
+		{
+			system("clear");
+
+			check = exitScrean();
+
+			if(check == 't')
+				break;
+		}
 	}
 
 	return 0;
