@@ -102,7 +102,7 @@ void nextScrean(int);
 
 int gameAlgorithm(int);
 
-int collision();
+int collision(int);
 
 int nextSet();
 int nowSet(int);
@@ -223,7 +223,6 @@ int init()
 
 int nowSet(int type)
 {
-
 	int tmp = type;
 
 	if(tmp == 0)	//I
@@ -256,8 +255,8 @@ int nowSet(int type)
 	}
 	else if(tmp == 4)	//S
 	{
-		tetrisData[1][5] = 14;
 		tetrisData[1][6] = 14;
+		tetrisData[1][5] = 14;
 		tetrisData[2][5] = 14;
 		tetrisData[2][4] = 14;
 	}
@@ -275,6 +274,7 @@ int nowSet(int type)
 		tetrisData[2][5] = 16;
 		tetrisData[2][6] = 16;
 	}
+	
 
 	return tmp;
 }
@@ -289,25 +289,18 @@ int nextSet()
 
 	srand((unsigned int)time(NULL));
 
-	int tmp,tmp2;
+	int tmp;
 
-	tmp2 = rand()%3;
 
-	if(tmp2 == 0)
-		tmp = rand()%7;
-	else if(tmp2 == 1)
+	tmp = rand()%7;
+
+	if(nowData == tmp)
 	{
-		tmp2 = rand()%21+1;
-		tmp2 = tmp2 * 21 * 17 * 19 + 5;
-		tmp = tmp2 % 7;
+		if(tmp == 0)
+			tmp = 6;
+		else
+			tmp -= 1;
 	}
-	else if(tmp2 == 2)
-	{
-		tmp2 = rand()%21+1;
-		tmp2 = tmp2 * 21 * 17 - 3;
-		tmp = tmp2 % 7;
-	}
-
 
 	if(tmp == 0)	//I
 	{
@@ -398,12 +391,13 @@ void gameScrean(int initnext)
 	system("clear");
 
 	double sp = 1000000;
-	
+
+	int fblock = 0;
 	while(1)
 	{
-//		char input = ' ';
 		int input = 0;
 
+		start_t = clock();
 		for(int i = 0;i < 22;i++)
 		{
 			cout<<"\t\t";
@@ -435,6 +429,8 @@ void gameScrean(int initnext)
 
 				else if(tetrisData[i][j] == 16 || tetrisData[i][j] == 160)	//Z
 					cout<<"\033[41m  \033[49m";
+				else
+					cout<<tetrisData[i][j];
 			}
 
 			if(i == 0)
@@ -473,7 +469,9 @@ void gameScrean(int initnext)
 		cout<<endl;
 		creatorData();
 
-		start_t = clock();
+
+
+//		start_t = clock();
 
 		while(1)
 		{
@@ -495,7 +493,6 @@ void gameScrean(int initnext)
 						//72 : up, 75 : left, 77 : right, 80 : down
 						//68 : left, 67: right, 66 : down
 						input = _getch();
-						cout<<"TTT "<<input<<endl;
 					}
 					break;
 				}
@@ -504,43 +501,103 @@ void gameScrean(int initnext)
 		}
 		close_keyboard();
 
-		int fblock = 0;
+		int check = 0;
+		fblock = 0;
+
+
 
 		fblock = gameAlgorithm(input);
 		
-		if(fblock == 0)
+		if(fblock == 0)	//fix to the bottom
 		{
 			nowData = nowSet(tmpnext);
+				
 
 			tmpnext = nextSet();
 		}
+		else if(fblock == 2)
+		{
+			check = collision(tmpnext);
+			if(check == 1)
+				break;
+			else
+			{
+				nowData = nowSet(tmpnext);
+
+				tmpnext = nextSet();
+			}
+		}
+
 
 		system("clear");
 	}
 	return;
 }
 
+int collision(int type)
+{
+	int tmp = type;
+	if(tmp == 0)	//I
+	{
+		if(tetrisData[1][4] == 0 && tetrisData[1][5] == 0 && tetrisData[1][6] == 0 && tetrisData[1][7] == 0)
+			return 0;
+		else
+			return 1;
+	}
+	else if(tmp == 1)	//J
+	{
+		if(tetrisData[1][4] == 0 && tetrisData[2][4] == 0 && tetrisData[2][5] == 0 && tetrisData[2][6] == 0)
+			return 0;
+		else
+			return 1;
+	}
+	else if(tmp == 2)	//L
+	{
+		if(tetrisData[1][6] == 0 && tetrisData[2][6] == 0 && tetrisData[2][5] == 0 && tetrisData[2][4] == 0)
+			return 0;
+		else
+			return 1;
+	}
+	else if(tmp == 3)	//O
+	{
+		if(tetrisData[1][5] == 0 && tetrisData[1][6] == 0 && tetrisData[2][5] == 0 && tetrisData[2][6] == 0)
+			return 0;
+		else
+			return 1;
+	}
+	else if(tmp == 4)	//S
+	{
+		if(tetrisData[1][5] == 0 && tetrisData[1][6] == 0 && tetrisData[2][5] == 0 && tetrisData[2][4] == 0)
+			return 0;
+		else
+			return 1;
+	}
+	else if(tmp == 5)	//T
+	{
+		if(tetrisData[1][4] == 0 && tetrisData[1][5] == 0 && tetrisData[1][6] == 0 && tetrisData[2][5] == 0)
+			return 0;
+		else
+			return 1;
+	}
+	else if(tmp == 6)	//Z
+	{
+		if(tetrisData[1][4] == 0 && tetrisData[1][5] == 0 && tetrisData[2][5] == 0 && tetrisData[2][6] == 0)
+			return 0;
+		else
+			return 1;
+	}
+}
+
 int gameAlgorithm(int in)
 {
 	//collision
-	
-	int blocknum = 4;
 
+
+	int blocknum = 4;
+	int check = 0;
 
 	if(in == 75 || in == 68)	//left
 	{
-		
-		return 1;
-	}
-	else if(in == 77 || in == 67)	//right
-	{
-		
-		return 1;
-	}
-	else if(in == 80 || in == 66)	//down
-	{
-		int check = 0;
-		int tmp = 20;
 		for(int i = 1;i < 21;i++)
 		{
 			for(int j = 1;j < 11;j++)
@@ -549,27 +606,77 @@ int gameAlgorithm(int in)
 				{
 					save1[check] = i;
 					save2[check] = j;
-	
-					int nullnum = 0,checksame = 0;
-					for(int k = i+1;k < 21;k++)
-					{
-						if(tetrisData[k][j] == tetrisData[i][j])
-						{
-							checksame = 1;
-							break;
-						}
+					if( !(tetrisData[i][j-1] == tetrisData[i][j] || tetrisData[i][j-1] == 0) )
+						return 1;	//block on the left
 
-						if(tetrisData[k][j] != 0)
-							break;
+					check++;
+				}
+			}
+		}
+
+		for(int i = 0;i < check;i++)
+		{
+			tetrisData[save1[i]][save2[i] - 1] = tetrisData[save1[i]][save2[i]];
+
+			tetrisData[save1[i]][save2[i]] = 0;
+		}
+		
+		return 1;
+	}
+	else if(in == 77 || in == 67)	//right
+	{
+		for(int i = 1;i < 21;i++)
+		{
+			for(int j = 1;j < 11;j++)
+			{
+				if(tetrisData[i][j] >= 10 && tetrisData[i][j] <= 16)	//nowblock
+				{
+					save1[check] = i;
+					save2[check] = j;
+					if( !(tetrisData[i][j+1] == tetrisData[i][j] || tetrisData[i][j+1] == 0) )
+						return 1;
+
+					check++;
+				}
+			}
+		}
+
+		for(int i = check - 1;i >= 0;i--)
+		{
+			tetrisData[save1[i]][save2[i] + 1] = tetrisData[save1[i]][save2[i]];
+			tetrisData[save1[i]][save2[i]] = 0;
+		}
+		
+		return 1;
+	}
+	else if(in == 80 || in == 66)	//down
+	{
+		int tmp = 20,gap = 0;
+		for(int i = 1;i < 21;i++)
+		{
+			for(int j = 1;j < 11;j++)
+			{
+				if(tetrisData[i][j] >= 10 && tetrisData[i][j] <= 16)	//nowblock
+				{
+					save1[check] = i;
+					save2[check] = j;
+
+					gap = 0;
+
+					for(int k = i + 1;k < 21;k++)
+					{
+						if(tetrisData[k][j] == 0)
+							gap++;
 						else
-							nullnum++;
-						
+							break;
 					}
 
-					cout<<"nullnum "<<nullnum<<endl;
-		
-					if(tmp > nullnum && checksame == 0)
-						tmp = nullnum;
+					if(tetrisData[i+1][j] != tetrisData[i][j])
+					{
+						if(tmp > gap)
+							tmp = gap;
+					}
+
 					check++;
 				}
 				
@@ -583,14 +690,27 @@ int gameAlgorithm(int in)
 
 		cout<<"tmp "<<tmp<<" check "<<check<<endl;
 
-		for(int i = 0;i < blocknum;i++)
+		for(int i = 0;i < blocknum;i++)	//down block, fix to the bottom
 		{
-			tetrisData[save1[i] + tmp][save2[i]] = tetrisData[save1[i]][save2[i]] * 10;
-	
-			tetrisData[save1[i]][save2[i]] = 0;
+			if(tmp == 0)
+			{
+				tetrisData[save1[i]][save2[i]] *= 10;
+			}
+			else
+			{
+				if(tetrisData[save1[i]][save2[i]] < 100)
+				{
+					tetrisData[save1[i] + tmp][save2[i]] = tetrisData[save1[i]][save2[i]] * 10;
+					
+					tetrisData[save1[i]][save2[i]] = 0;
+				}
+				else
+					tetrisData[save1[i] + tmp][save2[i]] = tetrisData[save1[i]][save2[i]];
+			}
 		}
 
-
+		if(tmp == 0)
+			return 2;
 	
 		return 0;
 	}
