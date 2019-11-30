@@ -80,8 +80,8 @@ int _putch(int c)
 clock_t start_t;
 double end_t;
 
-int save1[5];
-int save2[5];
+int save1[4];
+int save2[4];
 
 
 int tetrisData[22][22];
@@ -97,6 +97,8 @@ int init();
 void mainScrean();
 void gameScrean(int);
 void creatorData();
+
+void downBlock();
 
 void nextScrean(int);
 
@@ -298,6 +300,8 @@ int nextSet()
 	{
 		if(tmp == 0)
 			tmp = 6;
+		else if(tmp % 2 == 0)
+			tmp -= 2;
 		else
 			tmp -= 1;
 	}
@@ -390,14 +394,19 @@ void gameScrean(int initnext)
 	int tmpnext = initnext;
 	system("clear");
 
+
 	double sp = 1000000;
 
 	int fblock = 0;
+
+//	clock_t check_down_time = clock();
+
 	while(1)
 	{
+		start_t = clock();
+		int checkDown = 0;
 		int input = 0;
 
-		start_t = clock();
 		for(int i = 0;i < 22;i++)
 		{
 			cout<<"\t\t";
@@ -478,7 +487,12 @@ void gameScrean(int initnext)
 			init_keyboard();
 			end_t = clock();
 			if( ((end_t - start_t)/CLOCKS_PER_SEC) > 1000000.0/sp)
+			{
+				checkDown++;
+				downBlock();
+
 				break;
+			}
 			else
 			{
 				if(_kbhit())
@@ -500,6 +514,12 @@ void gameScrean(int initnext)
 			close_keyboard();
 		}
 		close_keyboard();
+
+		if(checkDown == 1)
+		{
+			system("clear");
+			continue;
+		}
 
 		int check = 0;
 		fblock = 0;
@@ -531,6 +551,45 @@ void gameScrean(int initnext)
 
 		system("clear");
 	}
+	return;
+}
+
+void downBlock()
+{
+	int tmp = 0;
+	int check = 0;
+	for(int i = 1;i < 21;i++)
+	{
+		for(int j = 1;j < 11;j++)
+		{
+			if(tetrisData[i][j] >= 10 && tetrisData[i][j] <= 16)
+			{
+				save1[tmp] = i;
+				save2[tmp] = j;
+				tmp++;
+
+				if(tetrisData[i+1][j] >= 100 || tetrisData[i+1][j] == 1)
+					check++;
+			}
+		}
+	}
+
+	if(check != 0)	//When there's no space to go down
+	{
+		for(int i = 0;i < tmp;i++)
+		{
+			tetrisData[save1[i]][save2[i]] *= 10;
+		}
+	}
+	else	//When there's space to go down
+	{
+		for(int i = tmp - 1;i >= 0;i--)
+		{
+			tetrisData[save1[i] + 1][save2[i]] = tetrisData[save1[i]][save2[i]];
+			tetrisData[save1[i]][save2[i]] = 0;
+		}
+	}
+
 	return;
 }
 
