@@ -98,7 +98,7 @@ void mainScrean();
 void gameScrean(int);
 void creatorData();
 
-void downBlock();
+int downBlock();
 
 void nextScrean(int);
 
@@ -399,12 +399,14 @@ void gameScrean(int initnext)
 
 	int fblock = 0;
 
-//	clock_t check_down_time = clock();
+//	clock_t check_down_time = clock()
+//	start_t = clock();
 
 	while(1)
 	{
 		start_t = clock();
 		int checkDown = 0;
+		int checkDownSpace = 0;
 		int input = 0;
 
 		for(int i = 0;i < 22;i++)
@@ -489,7 +491,9 @@ void gameScrean(int initnext)
 			if( ((end_t - start_t)/CLOCKS_PER_SEC) > 1000000.0/sp)
 			{
 				checkDown++;
-				downBlock();
+				checkDownSpace = downBlock();
+				
+				close_keyboard();
 
 				break;
 			}
@@ -504,7 +508,7 @@ void gameScrean(int initnext)
 
 					if(input == 224)	//direction key ASCII
 					{
-						//72 : up, 75 : left, 77 : right, 80 : down
+						//72 : up, 75 : left, 77 : right, 80 : down    ???? not operation
 						//68 : left, 67: right, 66 : down
 						input = _getch();
 					}
@@ -515,13 +519,24 @@ void gameScrean(int initnext)
 		}
 		close_keyboard();
 
+		int check = 0;
+
 		if(checkDown == 1)
 		{
+			if(checkDownSpace == 1)
+				check = collision(tmpnext);
+
+			if(check == 1)
+				break;
+			else if(check == 0 && checkDownSpace == 1)
+			{
+				nowData = nowSet(tmpnext);
+				tmpnext = nextSet();
+			}
 			system("clear");
 			continue;
 		}
 
-		int check = 0;
 		fblock = 0;
 
 
@@ -554,7 +569,7 @@ void gameScrean(int initnext)
 	return;
 }
 
-void downBlock()
+int downBlock()
 {
 	int tmp = 0;
 	int check = 0;
@@ -580,6 +595,8 @@ void downBlock()
 		{
 			tetrisData[save1[i]][save2[i]] *= 10;
 		}
+
+		return 1;
 	}
 	else	//When there's space to go down
 	{
@@ -588,9 +605,9 @@ void downBlock()
 			tetrisData[save1[i] + 1][save2[i]] = tetrisData[save1[i]][save2[i]];
 			tetrisData[save1[i]][save2[i]] = 0;
 		}
+		
+		return 0;
 	}
-
-	return;
 }
 
 int collision(int type)
