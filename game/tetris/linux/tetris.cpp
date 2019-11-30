@@ -1,6 +1,7 @@
 #include <iostream>
 #include <unistd.h>	//system
 
+
 #include <time.h>	//clocks
 
 #include <sys/select.h>	//kbhit
@@ -79,22 +80,32 @@ int _putch(int c)
 clock_t start_t;
 double end_t;
 
+int save1[5];
+int save2[5];
+
+
 int tetrisData[22][22];
 int nextTetris[4][4];
 int nowTetris[4][4];
 
 int score;
 
-void init();
+int nowData;
+
+int init();
 
 void mainScrean();
-void gameScrean();
+void gameScrean(int);
 void creatorData();
 
 void nextScrean(int);
 
-void nextSet();
-void nowSet();
+int gameAlgorithm(int);
+
+int collision();
+
+int nextSet();
+int nowSet(int);
 
 void exitScrean();
 
@@ -173,7 +184,7 @@ void creatorData()
 	return;
 }
 
-void init()
+int init()
 {
 	score = 0;
 
@@ -200,39 +211,75 @@ void init()
 		}
 	}
 
-	nowSet();
-	nextSet();
+	srand((unsigned int)time(NULL));
+	int tmp = rand()%7;
 
-	return;
+	nowData = tmp;
+
+	nowSet(tmp);
+
+	return nextSet();
 }
 
-void nowSet()
+int nowSet(int type)
 {
-	srand((unsigned int)time(NULL));
 
-	int tmp;
-	
-	tmp = rand()%7;
+	int tmp = type;
 
 	if(tmp == 0)	//I
-	{}
+	{
+		tetrisData[1][4] = 10;
+		tetrisData[1][5] = 10;
+		tetrisData[1][6] = 10;
+		tetrisData[1][7] = 10;
+	}
 	else if(tmp == 1)	//J
-	{}
+	{
+		tetrisData[1][4] = 11;
+		tetrisData[2][4] = 11;
+		tetrisData[2][5] = 11;
+		tetrisData[2][6] = 11;
+	}
 	else if(tmp == 2)	//L
-	{}
+	{
+		tetrisData[1][6] = 12;
+		tetrisData[2][6] = 12;
+		tetrisData[2][5] = 12;
+		tetrisData[2][4] = 12;
+	}
 	else if(tmp == 3)	//O
-	{}
+	{
+		tetrisData[1][5] = 13;
+		tetrisData[1][6] = 13;
+		tetrisData[2][5] = 13;
+		tetrisData[2][6] = 13;
+	}
 	else if(tmp == 4)	//S
-	{}
+	{
+		tetrisData[1][5] = 14;
+		tetrisData[1][6] = 14;
+		tetrisData[2][5] = 14;
+		tetrisData[2][4] = 14;
+	}
 	else if(tmp == 5)	//T
-	{}
+	{
+		tetrisData[1][4] = 15;
+		tetrisData[1][5] = 15;
+		tetrisData[1][6] = 15;
+		tetrisData[2][5] = 15;
+	}
 	else if(tmp == 6)	//Z
-	{}
+	{
+		tetrisData[1][4] = 16;
+		tetrisData[1][5] = 16;
+		tetrisData[2][5] = 16;
+		tetrisData[2][6] = 16;
+	}
 
-	return;
+	return tmp;
 }
 
-void nextSet()
+int nextSet()
 {
 	for(int i = 0;i < 4;i++)
 	{
@@ -242,9 +289,25 @@ void nextSet()
 
 	srand((unsigned int)time(NULL));
 
-	int tmp;
+	int tmp,tmp2;
 
-	tmp = rand()%7;
+	tmp2 = rand()%3;
+
+	if(tmp2 == 0)
+		tmp = rand()%7;
+	else if(tmp2 == 1)
+	{
+		tmp2 = rand()%21+1;
+		tmp2 = tmp2 * 21 * 17 * 19 + 5;
+		tmp = tmp2 % 7;
+	}
+	else if(tmp2 == 2)
+	{
+		tmp2 = rand()%21+1;
+		tmp2 = tmp2 * 21 * 17 - 3;
+		tmp = tmp2 % 7;
+	}
+
 
 	if(tmp == 0)	//I
 	{
@@ -294,7 +357,7 @@ void nextSet()
 		nextTetris[2][2] = 8;
 	}
 
-	return;
+	return tmp;
 }
 
 void nextScrean(int x)
@@ -303,18 +366,25 @@ void nextScrean(int x)
 	{
 		if(nextTetris[x][i] == 0)
 			cout<<"\033[40m  \033[49m";
+
 		else if(nextTetris[x][i] == 2)	//I
 			cout<<"\033[46m  \033[49m";
+		
 		else if(nextTetris[x][i] == 3)	//J
 			cout<<"\033[44m  \033[49m";
+		
 		else if(nextTetris[x][i] == 4)	//L
 			cout<<"\033[43m  \033[49m";
+		
 		else if(nextTetris[x][i] == 5)	//O
 			cout<<"\033[43m  \033[49m";
+		
 		else if(nextTetris[x][i] == 6)	//S
 			cout<<"\033[42m  \033[49m";
+		
 		else if(nextTetris[x][i] == 7)	//T
 			cout<<"\033[45m  \033[49m";
+		
 		else if(nextTetris[x][i] == 8)	//Z
 			cout<<"\033[41m  \033[49m";
 	}
@@ -322,15 +392,17 @@ void nextScrean(int x)
 	return;
 }
 
-void gameScrean()
+void gameScrean(int initnext)
 {
+	int tmpnext = initnext;
 	system("clear");
 
 	double sp = 1000000;
 	
 	while(1)
 	{
-		char input = ' ';
+//		char input = ' ';
+		int input = 0;
 
 		for(int i = 0;i < 22;i++)
 		{
@@ -339,8 +411,30 @@ void gameScrean()
 			{
 				if(tetrisData[i][j] == 0)	//null
 					cout<<"\033[40m  \033[49m";
+				
 				else if(tetrisData[i][j] == 1)	//wall
 					cout<<"\033[47m  \033[49m";
+				
+				else if(tetrisData[i][j] == 10 || tetrisData[i][j] == 100)	//I
+					cout<<"\033[46m  \033[49m";
+				
+				else if(tetrisData[i][j] == 11 || tetrisData[i][j] == 110)	//J
+					cout<<"\033[44m  \033[49m";
+				
+				else if(tetrisData[i][j] == 12 || tetrisData[i][j] == 120)	//L
+					cout<<"\033[43m  \033[49m";
+
+				else if(tetrisData[i][j] == 13 || tetrisData[i][j] == 130)	//O
+					cout<<"\033[43m  \033[49m";
+
+				else if(tetrisData[i][j] == 14 || tetrisData[i][j] == 140)	//S
+					cout<<"\033[42m  \033[49m";
+
+				else if(tetrisData[i][j] == 15 || tetrisData[i][j] == 150)	//T
+					cout<<"\033[45m  \033[49m";
+
+				else if(tetrisData[i][j] == 16 || tetrisData[i][j] == 160)	//Z
+					cout<<"\033[41m  \033[49m";
 			}
 
 			if(i == 0)
@@ -379,15 +473,13 @@ void gameScrean()
 		cout<<endl;
 		creatorData();
 
-		nextSet();
-
 		start_t = clock();
 
 		while(1)
 		{
 			init_keyboard();
 			end_t = clock();
-			if( ((end_t - start_t)/CLOCKS_PER_SEC) > 10000000.0/sp)
+			if( ((end_t - start_t)/CLOCKS_PER_SEC) > 1000000.0/sp)
 				break;
 			else
 			{
@@ -395,6 +487,16 @@ void gameScrean()
 				{
 					close_keyboard();
 					input = _getch();
+
+					cout<<"input "<<input<<endl;
+
+					if(input == 224)	//direction key ASCII
+					{
+						//72 : up, 75 : left, 77 : right, 80 : down
+						//68 : left, 67: right, 66 : down
+						input = _getch();
+						cout<<"TTT "<<input<<endl;
+					}
 					break;
 				}
 			}
@@ -402,10 +504,98 @@ void gameScrean()
 		}
 		close_keyboard();
 
+		int fblock = 0;
+
+		fblock = gameAlgorithm(input);
+		
+		if(fblock == 0)
+		{
+			nowData = nowSet(tmpnext);
+
+			tmpnext = nextSet();
+		}
 
 		system("clear");
 	}
 	return;
+}
+
+int gameAlgorithm(int in)
+{
+	//collision
+	
+	int blocknum = 4;
+
+
+	if(in == 75 || in == 68)	//left
+	{
+		
+		return 1;
+	}
+	else if(in == 77 || in == 67)	//right
+	{
+		
+		return 1;
+	}
+	else if(in == 80 || in == 66)	//down
+	{
+		int check = 0;
+		int tmp = 20;
+		for(int i = 1;i < 21;i++)
+		{
+			for(int j = 1;j < 11;j++)
+			{
+				if(tetrisData[i][j] >= 10 && tetrisData[i][j] <= 16)	//nowblock
+				{
+					save1[check] = i;
+					save2[check] = j;
+	
+					int nullnum = 0,checksame = 0;
+					for(int k = i+1;k < 21;k++)
+					{
+						if(tetrisData[k][j] == tetrisData[i][j])
+						{
+							checksame = 1;
+							break;
+						}
+
+						if(tetrisData[k][j] != 0)
+							break;
+						else
+							nullnum++;
+						
+					}
+
+					cout<<"nullnum "<<nullnum<<endl;
+		
+					if(tmp > nullnum && checksame == 0)
+						tmp = nullnum;
+					check++;
+				}
+				
+				if(check == blocknum)
+					break;
+			}
+			if(check == blocknum)
+				break;
+
+		}
+
+		cout<<"tmp "<<tmp<<" check "<<check<<endl;
+
+		for(int i = 0;i < blocknum;i++)
+		{
+			tetrisData[save1[i] + tmp][save2[i]] = tetrisData[save1[i]][save2[i]] * 10;
+	
+			tetrisData[save1[i]][save2[i]] = 0;
+		}
+
+
+	
+		return 0;
+	}
+
+	return 1;
 }
 
 void mainScrean()
@@ -472,13 +662,16 @@ void mainScrean()
 int main()
 {
 	char check = ' ';
+	int initnext;
 //	while(1)
 	{
 		mainScrean();
 
-		init();
+		initnext = init();
 
-		gameScrean();
+//		nowSet(initnext);
+
+		gameScrean(initnext);
 
 //		if(check == 't')
 //			break;
