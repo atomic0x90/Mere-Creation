@@ -481,6 +481,7 @@ void gameScrean(int initnext)
 	{
 		start_t = clock();
 		int checkcoll = 0;
+		int checkDown = 0;
 		int input = 0;
 
 		for(int i = 0;i < 22;i++)
@@ -604,7 +605,23 @@ void gameScrean(int initnext)
 			checkLastPress = input;
 
 		if(checkPress == 0)	//Input value not exist
-		{}
+		{
+			checkDown = downBlock();
+
+			if(checkDown == 1)	//Fix block on bottom
+			{
+				checkcoll = collision(tmpnext);
+
+				if(checkcoll == 1)	//collision
+				{}
+				else	//Not collision
+				{
+					nowSet(tmpnext);
+
+					tmpnext = nextSet();
+				}
+			}
+		}
 		else	//Input value exist
 		{
 			if(repetition == 0)
@@ -617,7 +634,6 @@ void gameScrean(int initnext)
 					gameAlgorithm(input);
 				else if(input == 66)	//Press more than twice in a row down key
 				{
-					int checkDown = 0;
 					checkDown = downBlock();
 
 					if(checkDown == 1)	//Fix block on bottom
@@ -684,12 +700,14 @@ int downBlock()
 	}
 	else	//When there's space to go down
 	{
-		for(int i = tmp - 1;i >= 0;i--)
-		{
-			tetrisData[save1[i] + 1][save2[i]] = tetrisData[save1[i]][save2[i]];
+		int tmpcolor = tetrisData[save1[0]][save2[0]];
+	
+		for(int i = 0;i < tmp;i++)
 			tetrisData[save1[i]][save2[i]] = 0;
-		}
-		
+	
+		for(int i = 0;i < tmp;i++)
+			tetrisData[save1[i] + 1][save2[i]] = tmpcolor;
+
 		return 0;
 	}
 }
