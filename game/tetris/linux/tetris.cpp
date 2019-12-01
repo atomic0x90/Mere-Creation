@@ -281,29 +281,103 @@ int nowSet(int type)
 	return tmp;
 }
 
+int setBlock[7];
+int checkBlock = 6;
 int nextSet()
 {
+	int tmp;
+
 	for(int i = 0;i < 4;i++)
 	{
 		for(int j = 0;j < 4;j++)
 			nextTetris[i][j] = 0;
 	}
 
-	srand((unsigned int)time(NULL));
-
-	int tmp;
-
-
-	tmp = rand()%7;
-
-	if(nowData == tmp)
+	if(checkBlock == 6)
 	{
-		if(tmp == 0)
-			tmp = 6;
-		else if(tmp % 2 == 0)
-			tmp -= 2;
-		else
-			tmp -= 1;
+		tmp = setBlock[6];
+
+		checkBlock = 0;
+
+		srand((unsigned int)time(NULL));
+		
+		int randomBox = rand()%7;
+
+		if(randomBox == 0)
+		{
+			setBlock[0] = 0;
+			setBlock[1] = 1;
+			setBlock[2] = 2;
+			setBlock[3] = 3;
+			setBlock[4] = 4;
+			setBlock[5] = 5;
+			setBlock[6] = 6;
+		}
+		else if(randomBox == 1)
+		{
+			setBlock[0] = 6;
+			setBlock[1] = 5;
+			setBlock[2] = 4;
+			setBlock[3] = 3;
+			setBlock[4] = 2;
+			setBlock[5] = 1;
+			setBlock[6] = 0;
+		}
+		else if(randomBox == 2)
+		{
+			setBlock[0] = 6;
+			setBlock[1] = 1;
+			setBlock[2] = 4;
+			setBlock[3] = 3;
+			setBlock[4] = 2;
+			setBlock[5] = 5;
+			setBlock[6] = 0;
+		}
+		else if(randomBox == 3)
+		{
+			setBlock[0] = 1;
+			setBlock[1] = 0;
+			setBlock[2] = 3;
+			setBlock[3] = 2;
+			setBlock[4] = 5;
+			setBlock[5] = 4;
+			setBlock[6] = 6;
+		}
+		else if(randomBox == 4)
+		{
+			setBlock[0] = 2;
+			setBlock[1] = 0;
+			setBlock[2] = 1;
+			setBlock[3] = 6;
+			setBlock[4] = 3;
+			setBlock[5] = 4;
+			setBlock[6] = 5;
+		}
+		else if(randomBox == 5)
+		{
+			setBlock[0] = 1;
+			setBlock[1] = 2;
+			setBlock[2] = 3;
+			setBlock[3] = 0;
+			setBlock[4] = 5;
+			setBlock[5] = 6;
+			setBlock[6] = 4;
+		}
+		else if(randomBox == 6)
+		{
+			setBlock[0] = 2;
+			setBlock[1] = 5;
+			setBlock[2] = 0;
+			setBlock[3] = 1;
+			setBlock[4] = 6;
+			setBlock[5] = 3;
+			setBlock[6] = 4;
+		}
+	}
+	else
+	{
+		tmp = setBlock[checkBlock];
+		checkBlock++;
 	}
 
 	if(tmp == 0)	//I
