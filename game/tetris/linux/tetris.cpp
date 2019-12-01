@@ -399,14 +399,14 @@ void gameScrean(int initnext)
 
 	int fblock = 0;
 
-//	clock_t check_down_time = clock()
-//	start_t = clock();
+	int repetition = 0;
+
+	int checkLastPress = 0;
 
 	while(1)
 	{
 		start_t = clock();
-		int checkDown = 0;
-		int checkDownSpace = 0;
+		int checkcoll = 0;
 		int input = 0;
 
 		for(int i = 0;i < 22;i++)
@@ -482,7 +482,7 @@ void gameScrean(int initnext)
 
 
 
-//		start_t = clock();
+		int checkPress = 0;
 
 		while(1)
 		{
@@ -490,9 +490,6 @@ void gameScrean(int initnext)
 			end_t = clock();
 			if( ((end_t - start_t)/CLOCKS_PER_SEC) > 1000000.0/sp)
 			{
-				checkDown++;
-				checkDownSpace = downBlock();
-				
 				close_keyboard();
 
 				break;
@@ -503,15 +500,25 @@ void gameScrean(int initnext)
 				{
 					close_keyboard();
 					input = _getch();
-
-					cout<<"input "<<input<<endl;
-
-					if(input == 224)	//direction key ASCII
+						
+					checkPress++;
+					
+					if(input == 66 || input == 67 || input == 68)	//??? direction key
+//					if(input == 224)	//direction key ASCII ???
 					{
 						//72 : up, 75 : left, 77 : right, 80 : down    ???? not operation
 						//68 : left, 67: right, 66 : down
-						input = _getch();
+
+						cout<<"input "<<input<<endl;
+						if(checkLastPress == 66)
+							repetition = 1;
+					//	else if(checkLastPress == 66 && (input == 67 || input == 68))
+					//		repetition = 0;
+
+					cout<<"checkLast "<<checkLastPress<<" repe "<<repetition<<" in "<<input<<endl;
+					
 					}
+
 					break;
 				}
 			}
@@ -519,52 +526,53 @@ void gameScrean(int initnext)
 		}
 		close_keyboard();
 
-		int check = 0;
+		if(input == 68 || input == 67 || input == 66)
+			checkLastPress = input;
 
-		if(checkDown == 1)
+		if(checkPress == 0)	//Input value not exist
+		{}
+		else	//Input value exist
 		{
-			if(checkDownSpace == 1)
-				check = collision(tmpnext);
-
-			if(check == 1)
-				break;
-			else if(check == 0 && checkDownSpace == 1)
+			if(repetition == 0)
 			{
-				nowData = nowSet(tmpnext);
-				tmpnext = nextSet();
+				gameAlgorithm(input);
 			}
-			system("clear");
-			continue;
-		}
-
-		fblock = 0;
-
-
-
-		fblock = gameAlgorithm(input);
-		
-		if(fblock == 0)	//fix to the bottom
-		{
-			nowData = nowSet(tmpnext);
-				
-
-			tmpnext = nextSet();
-		}
-		else if(fblock == 2)
-		{
-			check = collision(tmpnext);
-			if(check == 1)
-				break;
-			else
+			else if(repetition == 1)
 			{
-				nowData = nowSet(tmpnext);
+				if(input == 68 || input == 67)
+					gameAlgorithm(input);
+				else if(input == 66)	//Press more than twice in a row down key
+				{
+					int checkDown = 0;
+					checkDown = downBlock();
 
-				tmpnext = nextSet();
+					if(checkDown == 1)	//Fix block on bottom
+					{
+						checkcoll = collision(tmpnext);
+
+						if(checkcoll == 1)	//collision
+						{}
+						else	//Not collision
+						{
+							nowSet(tmpnext);
+	
+							tmpnext = nextSet();
+	
+							checkLastPress = 0;
+						}
+
+						repetition = 0;
+					}
+					else	//Not yet fix block on bottom
+					{
+						gameAlgorithm(input);
+					}
+				}
 			}
 		}
 
 
-		system("clear");
+//		system("clear");
 	}
 	return;
 }
@@ -588,6 +596,8 @@ int downBlock()
 			}
 		}
 	}
+
+	cout<<"downBlock "<<check<<" "<<tmp<<endl;
 
 	if(check != 0)	//When there's no space to go down
 	{
@@ -669,6 +679,7 @@ int gameAlgorithm(int in)
 	//collision
 
 
+	int tmpcolor;
 	int blocknum = 4;
 	int check = 0;
 
@@ -690,13 +701,14 @@ int gameAlgorithm(int in)
 			}
 		}
 
-		for(int i = 0;i < check;i++)
-		{
-			tetrisData[save1[i]][save2[i] - 1] = tetrisData[save1[i]][save2[i]];
+		tmpcolor = tetrisData[save1[0]][save2[0]];
 
+		for(int i = 0;i < check;i++)
 			tetrisData[save1[i]][save2[i]] = 0;
-		}
-		
+	
+		for(int i = 0;i < check;i++)
+			tetrisData[save1[i]][save2[i] - 1] = tmpcolor;
+
 		return 1;
 	}
 	else if(in == 77 || in == 67)	//right
@@ -717,12 +729,14 @@ int gameAlgorithm(int in)
 			}
 		}
 
-		for(int i = check - 1;i >= 0;i--)
-		{
-			tetrisData[save1[i]][save2[i] + 1] = tetrisData[save1[i]][save2[i]];
+		tmpcolor = tetrisData[save1[0]][save2[0]];
+
+		for(int i = 0;i < check;i++)
 			tetrisData[save1[i]][save2[i]] = 0;
-		}
-		
+	
+		for(int i = 0;i < check ;i++)
+			tetrisData[save1[i]][save2[i] + 1] = tmpcolor;
+
 		return 1;
 	}
 	else if(in == 80 || in == 66)	//down
@@ -763,32 +777,19 @@ int gameAlgorithm(int in)
 				break;
 
 		}
-
+				//Need down block after move left, right, rotation
+				//
 		cout<<"tmp "<<tmp<<" check "<<check<<endl;
 
-		for(int i = 0;i < blocknum;i++)	//down block, fix to the bottom
-		{
-			if(tmp == 0)
-			{
-				tetrisData[save1[i]][save2[i]] *= 10;
-			}
-			else
-			{
-				if(tetrisData[save1[i]][save2[i]] < 100)
-				{
-					tetrisData[save1[i] + tmp][save2[i]] = tetrisData[save1[i]][save2[i]] * 10;
-					
-					tetrisData[save1[i]][save2[i]] = 0;
-				}
-				else
-					tetrisData[save1[i] + tmp][save2[i]] = tetrisData[save1[i]][save2[i]];
-			}
-		}
+		tmpcolor = tetrisData[save1[0]][save2[0]];
 
-		if(tmp == 0)
-			return 2;
-	
-		return 0;
+		for(int i = 0;i < blocknum;i++)	//down block, fix to the bottom
+			tetrisData[save1[i]][save2[i]] = 0;
+
+		for(int i = 0;i < blocknum;i++)
+			tetrisData[save1[i] + tmp][save2[i]] = tmpcolor;
+
+		return 1;
 	}
 
 	return 1;
