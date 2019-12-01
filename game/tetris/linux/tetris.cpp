@@ -80,6 +80,9 @@ int _putch(int c)
 clock_t start_t;
 double end_t;
 
+int setBlock[7];
+int checkBlock = 6;
+
 int save1[4];
 int save2[4];
 
@@ -87,8 +90,6 @@ int save2[4];
 int tetrisData[22][22];
 int nextTetris[4][4];
 int nowTetris[4][4];
-
-int score;
 
 int nowData;
 
@@ -105,6 +106,15 @@ void nextScrean(int);
 int gameAlgorithm(int);
 
 int collision(int);
+
+
+int rotationAlgorithm(int);
+int rotationState;
+
+int score;
+int maxscore;
+void scoreAlgorithm();
+
 
 int nextSet();
 int nowSet(int);
@@ -188,7 +198,9 @@ void creatorData()
 
 int init()
 {
-	score = 0;
+	score = maxscore = 0;
+
+	rotationState = 1;
 
 	for(int i = 0;i < 22;i++)
 	{
@@ -281,8 +293,6 @@ int nowSet(int type)
 	return tmp;
 }
 
-int setBlock[7];
-int checkBlock = 6;
 int nextSet()
 {
 	int tmp;
@@ -613,10 +623,12 @@ void gameScrean(int initnext)
 				checkcoll = collision(tmpnext);
 
 				if(checkcoll == 1)	//collision
-				{}
+				{
+					break;
+				}
 				else	//Not collision
 				{
-					nowSet(tmpnext);
+					nowData = nowSet(tmpnext);
 
 					tmpnext = nextSet();
 				}
@@ -641,10 +653,12 @@ void gameScrean(int initnext)
 						checkcoll = collision(tmpnext);
 
 						if(checkcoll == 1)	//collision
-						{}
+						{
+							break;
+						}
 						else	//Not collision
 						{
-							nowSet(tmpnext);
+							nowData = nowSet(tmpnext);
 	
 							tmpnext = nextSet();
 	
@@ -665,6 +679,83 @@ void gameScrean(int initnext)
 //		system("clear");
 	}
 	return;
+}
+
+
+/*
+ * That function(rotationAlgorithm) development goals
+ *
+ * If there is no space when rotating, move sideways to make it rotate
+ * */
+int rotationAlgorithm(int input)
+{
+	/*
+	 * Block number
+	 *
+	 * 1 | 2 | 3 | 4
+	 * 5 | 6 | 7 | 8
+	 * 9 | 10| 11| 12
+	 * 13| 14| 15| 16
+	 *
+	 * */
+
+	/*
+	 * I -> rotationState == 1 : 5.6.7.8
+	 * I -> rotationState == 2 : 2.6.10.14
+	 * */		
+	if(nowData == 0)
+	{
+	}
+
+	/*
+	 * J -> rotationState == 1 : 2.6.10.9
+	 * J -> rotationState == 2 : 1.5.6.7
+	 * J -> rotationState == 3 : 2.1.5.9
+	 * J -> rotationState == 4 : 1.2.3.7
+	 * */
+	else if(nowData == 1)	//J
+	{
+	
+	}
+
+	/*
+	 * L -> rotationState == 1 : 1.5.9.10
+	 * L -> rotationState == 2 : 3.2.1.5
+	 * L -> rotationState == 3 : 1.2.6.10
+	 * L -> rotationState == 4 : 5.6.7.3
+	 * */
+	else if(nowData == 2)	//L
+	{}
+
+	/*
+	 * O -> rotationState == 1 : 1.2.6.5
+	 * */
+	else if(nowData == 3)	//O
+	{}
+
+	/*
+	 * S -> rotationState == 1 : 5.6.2.3
+	 * S -> rotationState == 2 : 1.5.6.10
+	 * */
+	else if(nowData == 4)	//S
+	{}
+
+	/*
+	 * T -> rotationState == 1 : 5.6.7.10
+	 * T -> rotationState == 2 : 2.6.10.5
+	 * T -> rotationState == 3 : 2.5.6.7
+	 * T -> rotationState == 4 : 2.6.10.7
+	 * */
+	else if(nowData == 5)	//T
+	{}
+	/*
+	 * Z -> rotationState == 1 : 1.2.6.7
+	 * Z -> rotationState == 2 : 2.6.5.9
+	 * */
+	else if(nowData == 6)	//Z
+	{}
+
+
 }
 
 int downBlock()
@@ -775,7 +866,7 @@ int gameAlgorithm(int in)
 	int blocknum = 4;
 	int check = 0;
 
-	if(in == 75 || in == 68)	//left
+	if(in == 68)	//left
 	{
 		for(int i = 1;i < 21;i++)
 		{
@@ -803,7 +894,7 @@ int gameAlgorithm(int in)
 
 		return 1;
 	}
-	else if(in == 77 || in == 67)	//right
+	else if(in == 67)	//right
 	{
 		for(int i = 1;i < 21;i++)
 		{
@@ -831,7 +922,7 @@ int gameAlgorithm(int in)
 
 		return 1;
 	}
-	else if(in == 80 || in == 66)	//down
+	else if(in == 66)	//down
 	{
 		int tmp = 20,gap = 0;
 		for(int i = 1;i < 21;i++)
@@ -958,12 +1049,9 @@ int main()
 
 		initnext = init();
 
-//		nowSet(initnext);
 
 		gameScrean(initnext);
 
-//		if(check == 't')
-//			break;
 	}
 
 
