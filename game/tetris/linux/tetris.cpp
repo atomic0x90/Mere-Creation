@@ -295,7 +295,7 @@ int nowSet(int type)
 
 int nextSet()
 {
-	int tmp;
+	int tmpBlock;
 
 	for(int i = 0;i < 4;i++)
 	{
@@ -305,7 +305,7 @@ int nextSet()
 
 	if(checkBlock == 6)
 	{
-		tmp = setBlock[6];
+		tmpBlock = setBlock[6];
 
 		checkBlock = 0;
 
@@ -386,51 +386,51 @@ int nextSet()
 	}
 	else
 	{
-		tmp = setBlock[checkBlock];
+		tmpBlock = setBlock[checkBlock];
 		checkBlock++;
 	}
 
-	if(tmp == 0)	//I
+	if(tmpBlock == 0)	//I
 	{
 		for(int i = 0;i<4;i++)
 			nextTetris[1][i] = 2;
 	}
-	else if(tmp == 1)	//J
+	else if(tmpBlock == 1)	//J
 	{
 		nextTetris[1][2] = 3;
 		nextTetris[2][2] = 3;
 		nextTetris[3][1] = 3;
 		nextTetris[3][2] = 3;
 	}
-	else if(tmp == 2)	//L
+	else if(tmpBlock == 2)	//L
 	{
 		nextTetris[1][1] = 4;
 		nextTetris[2][1] = 4;
 		nextTetris[3][1] = 4;
 		nextTetris[3][2] = 4;
 	}
-	else if(tmp == 3)	//O
+	else if(tmpBlock == 3)	//O
 	{
 		nextTetris[1][1] = 5;
 		nextTetris[1][2] = 5;
 		nextTetris[2][1] = 5;
 		nextTetris[2][2] = 5;
 	}
-	else if(tmp == 4)	//S
+	else if(tmpBlock == 4)	//S
 	{
 		nextTetris[1][1] = 6;
 		nextTetris[1][2] = 6;
 		nextTetris[2][0] = 6;
 		nextTetris[2][1] = 6;
 	}
-	else if(tmp == 5)	//T
+	else if(tmpBlock == 5)	//T
 	{
 		nextTetris[1][2] = 7;
 		nextTetris[2][1] = 7;
 		nextTetris[2][2] = 7;
 		nextTetris[3][2] = 7;
 	}
-	else if(tmp == 6)	//Z
+	else if(tmpBlock == 6)	//Z
 	{
 		nextTetris[1][0] = 8;
 		nextTetris[1][1] = 8;
@@ -438,7 +438,7 @@ int nextSet()
 		nextTetris[2][2] = 8;
 	}
 
-	return tmp;
+	return tmpBlock;
 }
 
 void nextScrean(int x)
@@ -593,16 +593,14 @@ void gameScrean(int initnext)
 					{
 						//72 : up, 75 : left, 77 : right, 80 : down    ???? not operation
 						//68 : left, 67: right, 66 : down
-
+						//122 : z, 120 : x
 						cout<<"input "<<input<<endl;
 						if(checkLastPress == 66)
 							repetition = 1;
-					//	else if(checkLastPress == 66 && (input == 67 || input == 68))
-					//		repetition = 0;
-
+					}
 					cout<<"checkLast "<<checkLastPress<<" repe "<<repetition<<" in "<<input<<endl;
 					
-					}
+				
 
 					break;
 				}
@@ -638,7 +636,10 @@ void gameScrean(int initnext)
 		{
 			if(repetition == 0)
 			{
-				gameAlgorithm(input);
+				if(input == 68 || input == 67 || input == 66)
+					gameAlgorithm(input);
+				else if(input == 122 || input == 120)
+					rotationState = rotationAlgorithm(input);
 			}
 			else if(repetition == 1)
 			{
@@ -672,6 +673,10 @@ void gameScrean(int initnext)
 						gameAlgorithm(input);
 					}
 				}
+				else if(input == 122 || input == 120)
+				{
+					rotationState = rotationAlgorithm(input);
+				}
 			}
 		}
 
@@ -689,7 +694,33 @@ void gameScrean(int initnext)
  * */
 int rotationAlgorithm(int input)
 {
+	cout<<"In roatationAlgorithm"<<endl;
+	
+	int tmp = 0;
+	for(int i = 1;i < 21;i++)
+	{
+		for(int j = 1;j < 11;j++)
+		{
+			if(tetrisData[i][j] >= 10 && tetrisData[i][j] <= 16)
+			{
+				save1[tmp] = i;
+				save2[tmp] = j;
+				tmp++;
+			}
+			if(tmp == 4)
+				break;
+		}
+		if(tmp == 4)
+			break;
+	}
+
+	tmp = tetrisData[save1[0]][save2[0]];
+
 	/*
+	 * Input value
+	 * z : 122 : Counterclockwise
+	 * x : 120 : A clockwise direction
+	 *
 	 * Block number
 	 *
 	 * 1 | 2 | 3 | 4
@@ -703,8 +734,248 @@ int rotationAlgorithm(int input)
 	 * I -> rotationState == 1 : 5.6.7.8
 	 * I -> rotationState == 2 : 2.6.10.14
 	 * */		
-	if(nowData == 0)
+	if(nowData == 0)	//I
 	{
+		if(rotationState == 1)
+		{
+			if(input == 122)
+			{
+				if(tetrisData[save1[1]+1][save2[1]] == 0 && tetrisData[save1[1]+2][save2[1]] == 0 && tetrisData[save1[1]+3][save2[1]] == 0)
+				{	//A rotating shaft : 6, When there's space below
+					tetrisData[save1[0]][save2[0]] = 0;
+					tetrisData[save1[2]][save2[2]] = 0;
+					tetrisData[save1[3]][save2[3]] = 0;
+				
+					tetrisData[save1[1]+1][save2[1]] = tmp;
+					tetrisData[save1[1]+2][save2[1]] = tmp;
+					tetrisData[save1[1]+3][save2[1]] = tmp;
+
+					return 2;	//Rotation complete
+				}
+				else if(tetrisData[save1[1]-1][save2[1]] == 0 && tetrisData[save1[1]+1][save2[1]] == 0 && tetrisData[save1[1]+2][save2[1]] == 0)
+				{	//A rotating shaft : 6, When two space below is empty
+					tetrisData[save1[0]][save2[0]] = 0;
+					tetrisData[save1[2]][save2[2]] = 0;
+                                        tetrisData[save1[3]][save2[3]] = 0;
+
+					tetrisData[save1[1]-1][save2[1]] = tmp;
+                                        tetrisData[save1[1]+1][save2[1]] = tmp;
+                                        tetrisData[save1[1]+2][save2[1]] = tmp;
+
+					return 2;	//Rotation complete
+				}
+				else if(tetrisData[save1[1]-2][save2[1]] == 0 && tetrisData[save1[1]-1][save2[1]] == 0 && tetrisData[save1[1]+1][save2[1]] == 0)
+				{	//A rotating shaft : 6, When one space below is empty
+					tetrisData[save1[0]][save2[0]] = 0;
+                                        tetrisData[save1[2]][save2[2]] = 0;
+                                        tetrisData[save1[3]][save2[3]] = 0;
+				
+					tetrisData[save1[1]-2][save2[1]] = tmp;
+                                        tetrisData[save1[1]-1][save2[1]] = tmp;
+                                        tetrisData[save1[1]+1][save2[1]] = tmp;
+
+					return 2;	//Rotation complete
+				}
+				else if(tetrisData[save1[1]-3][save2[1]] == 0 && tetrisData[save1[1]-2][save2[1]] == 0 && tetrisData[save1[1]-1][save2[1]] == 0)
+                                {       //A rotating shaft : 6, When there's space on top
+                                        tetrisData[save1[0]][save2[0]] = 0;
+                                        tetrisData[save1[2]][save2[2]] = 0;
+                                        tetrisData[save1[3]][save2[3]] = 0;
+
+                                        tetrisData[save1[1]-3][save2[1]] = tmp;
+                                        tetrisData[save1[1]-2][save2[1]] = tmp;
+                                        tetrisData[save1[1]-1][save2[1]] = tmp;
+
+                                        return 2;       //Rotation complete
+                                }
+				else if(tetrisData[save1[2]+1][save2[2]] == 0 && tetrisData[save1[2]+2][save2[2]] == 0 && tetrisData[save1[2]+3][save2[2]] == 0)
+				{	//A rotating shaft : 7, When there's space below
+					tetrisData[save1[0]][save2[0]] = 0;
+					tetrisData[save1[1]][save2[1]] = 0;
+					tetrisData[save1[3]][save2[3]] = 0;
+
+					tetrisData[save1[2]+1][save2[2]] = tmp;
+					tetrisData[save1[2]+2][save2[2]] = tmp;
+					tetrisData[save1[2]+3][save2[2]] = tmp;
+
+					return 2;
+				}
+				else if(tetrisData[save1[2]-1][save2[2]] == 0 && tetrisData[save1[2]+1][save2[2]] == 0 && tetrisData[save1[2]+2][save2[2]] == 0)
+                                {       //A rotating shaft : 7, When two space below is empty
+                                        tetrisData[save1[0]][save2[0]] = 0;
+                                        tetrisData[save1[1]][save2[1]] = 0;
+                                        tetrisData[save1[3]][save2[3]] = 0;
+
+                                        tetrisData[save1[2]-1][save2[2]] = tmp;
+                                        tetrisData[save1[2]+1][save2[2]] = tmp;
+                                        tetrisData[save1[2]+2][save2[2]] = tmp;
+
+                                        return 2;       //Rotation complete
+                                }
+                                else if(tetrisData[save1[2]-2][save2[2]] == 0 && tetrisData[save1[2]-1][save2[2]] == 0 && tetrisData[save1[2]+1][save2[2]] == 0)
+                                {       //A rotating shaft : 7, When one space below is empty
+                                        tetrisData[save1[0]][save2[0]] = 0;
+                                        tetrisData[save1[1]][save2[1]] = 0;
+                                        tetrisData[save1[3]][save2[3]] = 0;
+
+                                        tetrisData[save1[2]-2][save2[2]] = tmp;
+                                        tetrisData[save1[2]-1][save2[2]] = tmp;
+                                        tetrisData[save1[2]+1][save2[2]] = tmp;
+
+                                        return 2;       //Rotation complete
+                                }
+                                else if(tetrisData[save1[2]-3][save2[2]] == 0 && tetrisData[save1[2]-2][save2[2]] == 0 && tetrisData[save1[2]-1][save2[2]] == 0)
+                                {       //A rotating shaft : 7, When there's space on top
+                                        tetrisData[save1[0]][save2[0]] = 0;
+                                        tetrisData[save1[1]][save2[1]] = 0;
+                                        tetrisData[save1[3]][save2[3]] = 0;
+
+                                        tetrisData[save1[2]-3][save2[2]] = tmp;
+                                        tetrisData[save1[2]-2][save2[2]] = tmp;
+                                        tetrisData[save1[2]-1][save2[2]] = tmp;
+
+                                        return 2;       //Rotation complete
+                                }
+				else	//Rotation fail
+					return 1;
+			}
+			else if(input == 120)
+			{
+				if(tetrisData[save1[2]+1][save2[2]] == 0 && tetrisData[save1[2]+2][save2[2]] == 0 && tetrisData[save1[2]+3][save2[2]] == 0)
+                                {       //A rotating shaft : 7, When there's space below
+                                        tetrisData[save1[0]][save2[0]] = 0;
+                                        tetrisData[save1[1]][save2[1]] = 0;
+                                        tetrisData[save1[3]][save2[3]] = 0;
+
+                                        tetrisData[save1[2]+1][save2[2]] = tmp;
+                                        tetrisData[save1[2]+2][save2[2]] = tmp;
+                                        tetrisData[save1[2]+3][save2[2]] = tmp;
+
+                                        return 2;
+                                }
+				else if(tetrisData[save1[2]-1][save2[2]] == 0 && tetrisData[save1[2]+1][save2[2]] == 0 && tetrisData[save1[2]+2][save2[2]] == 0)
+                                {       //A rotating shaft : 7, When two space below is empty
+                                        tetrisData[save1[0]][save2[0]] = 0;
+                                        tetrisData[save1[1]][save2[1]] = 0;
+                                        tetrisData[save1[3]][save2[3]] = 0;
+
+                                        tetrisData[save1[2]-1][save2[2]] = tmp;
+                                        tetrisData[save1[2]+1][save2[2]] = tmp;
+                                        tetrisData[save1[2]+2][save2[2]] = tmp;
+
+                                        return 2;       //Rotation complete
+                                }
+                                else if(tetrisData[save1[2]-2][save2[2]] == 0 && tetrisData[save1[2]-1][save2[2]] == 0 && tetrisData[save1[2]+1][save2[2]] == 0)
+                                {       //A rotating shaft : 7, When one space below is empty
+                                        tetrisData[save1[0]][save2[0]] = 0;
+                                        tetrisData[save1[1]][save2[1]] = 0;
+                                        tetrisData[save1[3]][save2[3]] = 0;
+
+                                        tetrisData[save1[2]-2][save2[2]] = tmp;
+                                        tetrisData[save1[2]-1][save2[2]] = tmp;
+                                        tetrisData[save1[2]+1][save2[2]] = tmp;
+
+                                        return 2;       //Rotation complete
+                                }
+                                else if(tetrisData[save1[2]-3][save2[2]] == 0 && tetrisData[save1[2]-2][save2[2]] == 0 && tetrisData[save1[2]-1][save2[2]] == 0)
+                                {       //A rotating shaft : 7, When there's space on top
+                                        tetrisData[save1[0]][save2[0]] = 0;
+                                        tetrisData[save1[1]][save2[1]] = 0;
+                                        tetrisData[save1[3]][save2[3]] = 0;
+
+                                        tetrisData[save1[2]-3][save2[2]] = tmp;
+                                        tetrisData[save1[2]-2][save2[2]] = tmp;
+                                        tetrisData[save1[2]-1][save2[2]] = tmp;
+
+                                        return 2;       //Rotation complete
+                                }
+				else if(tetrisData[save1[1]+1][save2[1]] == 0 && tetrisData[save1[1]+2][save2[1]] == 0 && tetrisData[save1[1]+3][save2[1]] == 0)
+                                {       //A rotating shaft : 6, When there's space below
+                                        tetrisData[save1[0]][save2[0]] = 0;
+                                        tetrisData[save1[2]][save2[2]] = 0;
+                                        tetrisData[save1[3]][save2[3]] = 0;
+
+                                        tetrisData[save1[1]+1][save2[1]] = tmp;
+                                        tetrisData[save1[1]+2][save2[1]] = tmp;
+                                        tetrisData[save1[1]+3][save2[1]] = tmp;
+
+                                        return 2;       //Rotation complete
+                                }
+				else if(tetrisData[save1[1]-1][save2[1]] == 0 && tetrisData[save1[1]+1][save2[1]] == 0 && tetrisData[save1[1]+2][save2[1]] == 0)
+                                {       //A rotating shaft : 6, When two space below is empty
+                                        tetrisData[save1[0]][save2[0]] = 0;
+                                        tetrisData[save1[2]][save2[2]] = 0;
+                                        tetrisData[save1[3]][save2[3]] = 0;
+
+                                        tetrisData[save1[1]-1][save2[1]] = tmp;
+                                        tetrisData[save1[1]+1][save2[1]] = tmp;
+                                        tetrisData[save1[1]+2][save2[1]] = tmp;
+
+                                        return 2;       //Rotation complete
+                                }
+                                else if(tetrisData[save1[1]-2][save2[1]] == 0 && tetrisData[save1[1]-1][save2[1]] == 0 && tetrisData[save1[1]+1][save2[1]] == 0)
+                                {       //A rotating shaft : 6, When one space below is empty
+                                        tetrisData[save1[0]][save2[0]] = 0;
+                                        tetrisData[save1[2]][save2[2]] = 0;
+                                        tetrisData[save1[3]][save2[3]] = 0;
+
+                                        tetrisData[save1[1]-2][save2[1]] = tmp;
+                                        tetrisData[save1[1]-1][save2[1]] = tmp;
+                                        tetrisData[save1[1]+1][save2[1]] = tmp;
+
+                                        return 2;       //Rotation complete
+                                }
+                                else if(tetrisData[save1[1]-3][save2[1]] == 0 && tetrisData[save1[1]-2][save2[1]] == 0 && tetrisData[save1[1]-1][save2[1]] == 0)
+                                {       //A rotating shaft : 6, When there's space on top
+                                        tetrisData[save1[0]][save2[0]] = 0;
+                                        tetrisData[save1[2]][save2[2]] = 0;
+                                        tetrisData[save1[3]][save2[3]] = 0;
+
+                                        tetrisData[save1[1]-3][save2[1]] = tmp;
+                                        tetrisData[save1[1]-2][save2[1]] = tmp;
+                                        tetrisData[save1[1]-1][save2[1]] = tmp;
+
+                                        return 2;       //Rotation complete
+                                }
+				else	//Rotation fail
+					return 1;
+			}
+		}
+		else if(rotationState == 2)
+		{
+			if(input == 122)
+			{
+				if(tetrisData[save1[3]][save2[3]-1] == 0 && tetrisData[save1[3]][save2[3]+1] == 0 && tetrisData[save1[3]][save2[3]+2] == 0)
+				{	//A rotating shaft : 14, When the bottom of a tetris block
+					tetrisData[save1[0]][save2[0]] = 0;
+					tetrisData[save1[1]][save2[1]] = 0;
+					tetrisData[save1[2]][save2[2]] = 0;
+
+					tetrisData[save1[3]][save2[3]-1] = tmp;
+					tetrisData[save1[3]][save2[3]+1] = tmp;
+					tetrisData[save1[3]][save2[3]+2] = tmp;
+
+					return 1;	//Rotation complete
+				}
+				else if(tetrisData[save1[2]][save2[2]-1] == 0 && tetrisData[save1[2]][save2[2]+1] == 0 && tetrisData[save1[2]][save2[2]+2] == 0)
+                                {       //A rotating shaft : 10, When the 3/4 of a tetris block
+                                        tetrisData[save1[0]][save2[0]] = 0;
+                                        tetrisData[save1[1]][save2[1]] = 0;
+                                        tetrisData[save1[3]][save2[3]] = 0;
+
+                                        tetrisData[save1[2]][save2[2]-1] = tmp;
+                                        tetrisData[save1[2]][save2[2]+1] = tmp;
+                                        tetrisData[save1[2]][save2[2]+2] = tmp;
+
+                                        return 1;       //Rotation complete
+                                }
+			
+				else
+					return 2;	//Rotation fail
+			}
+			else if(input == 120)
+			{}
+		}
 	}
 
 	/*
