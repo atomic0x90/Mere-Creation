@@ -111,10 +111,10 @@ int collision(int);
 int rotationAlgorithm(int);
 int rotationState;
 
-int score;
-int maxscore;
+double score;
+double maxscore = 0;
 void scoreAlgorithm();
-
+int combo;
 
 int nextSet();
 int nowSet(int);
@@ -126,6 +126,95 @@ void l2();
 void l3();
 void l4();
 void l5();
+
+
+void scoreAlgorithm()
+{
+	int clearLine = 0;
+	int checkdown = 0;
+	int downL[20];
+	double tmpsc = 0;
+
+	double comsc = 1;
+	int linesc = 100;
+
+	for(int i = 20;i > 0;i--)
+	{
+		int check = 0;
+		for(int j = 1;j < 11;j++)
+		{
+			if(tetrisData[i][j] == 0)
+			{
+				check++;
+				break;
+			}
+		}
+
+		if(check == 0)
+		{
+			cout<<"check "<<i<<" ";
+			downL[checkdown] = i;
+			
+			checkdown++;
+			clearLine++;
+		}
+	}
+
+	cout<<"score checkdown "<<checkdown<<" "<<downL[0]<<" "<<clearLine<<endl;
+
+	if(checkdown != 0)
+	{
+		for(int i = 0;i < checkdown;i++)
+		{
+			for(int j = 1;j < 11;j++)
+				tetrisData[downL[i]][j] = 0;
+	
+			for(int j = downL[i]-1;j > 0;j--)
+			{
+				for(int k = 1;k < 11;k++)
+				{
+					tetrisData[j+1][k] = tetrisData[j][k];
+				}
+			}
+		}
+	}
+
+
+	if(clearLine != 0)
+	{
+		if(combo == 0)
+			comsc = 1;
+		else if(combo == 1)
+			comsc = 1.2;
+		else if(combo == 2)
+			comsc = 1.3;
+		else if(combo == 3)
+			comsc = 1.4;
+		else
+			comsc = 1.5;
+
+		combo++;
+
+		if(clearLine == 1)
+			tmpsc += linesc * comsc;
+		else if(clearLine == 2)
+			tmpsc += linesc * comsc * 2;
+		else if(clearLine == 3)
+			tmpsc += linesc * comsc * 3;
+		else if(clearLine == 4)
+			tmpsc += linesc * comsc * 4;
+	}
+	else
+		combo = 0;
+
+
+	score += tmpsc;
+
+	if(maxscore < score)
+		maxscore = score;
+
+	return ;
+}
 
 void l1()
 {
@@ -198,7 +287,7 @@ void creatorData()
 
 int init()
 {
-	score = maxscore = 0;
+	score = combo = 0;
 
 	rotationState = 1;
 
@@ -631,9 +720,12 @@ void gameScrean(int initnext)
 
 			if(checkDown == 1)	//Fix block on bottom
 			{
+				scoreAlgorithm();
+
 				checkcoll = collision(tmpnext);
 
 				rotationState = 1;
+
 				if(checkcoll == 1)	//collision
 				{
 					break;
@@ -665,9 +757,12 @@ void gameScrean(int initnext)
 
 					if(checkDown == 1)	//Fix block on bottom
 					{
+						scoreAlgorithm();
+
 						checkcoll = collision(tmpnext);
 
 						rotationState = 1;
+
 						if(checkcoll == 1)	//collision
 						{
 							break;
@@ -694,6 +789,7 @@ void gameScrean(int initnext)
 				}
 			}
 		}
+
 
 
 //		system("clear");
@@ -1202,12 +1298,12 @@ int rotationAlgorithm(int input)
 				
 					return 3;
 				}
-				else if(tetrisData[save1[0]+1][save2[0]] == 0 && tetrisData[save1[0]-1][save2[1]] == 0 && tetrisData[save1[1]-1][save2[1]] == 0)
+				else if(tetrisData[save1[0]+1][save2[0]] == 0 && tetrisData[save1[0]-1][save2[0]] == 0 && tetrisData[save1[1]-1][save2[1]] == 0)
 				{	//Whne null 5 up.1 up.2
 					for(int i = 1;i < 4;i++)
 						tetrisData[save1[i]][save2[i]] = 0;
 
-					tetrisData[save1[0]+1][save2[0]] = tetrisData[save1[0]-1][save2[1]] = tetrisData[save1[1]-1][save2[1]] = tmp;
+					tetrisData[save1[0]+1][save2[0]] = tetrisData[save1[0]-1][save2[0]] = tetrisData[save1[1]-1][save2[1]] = tmp;
 				
 					return 3;
 				}
