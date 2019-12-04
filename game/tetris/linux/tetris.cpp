@@ -131,53 +131,51 @@ void l5();
 void scoreAlgorithm()
 {
 	int clearLine = 0;
-	int checkdown = 0;
-	int downL[20];
 	double tmpsc = 0;
 
 	double comsc = 1;
 	int linesc = 100;
 
-	for(int i = 20;i > 0;i--)
+	for(int l = 0;l < 20;l++)
 	{
-		int check = 0;
-		for(int j = 1;j < 11;j++)
+		for(int i = 20;i > 0;i--)
 		{
-			if(tetrisData[i][j] == 0)
-			{
-				check++;
-				break;
-			}
-		}
-
-		if(check == 0)
-		{
-			cout<<"check "<<i<<" ";
-			downL[checkdown] = i;
-			
-			checkdown++;
-			clearLine++;
-		}
-	}
-
-	cout<<"score checkdown "<<checkdown<<" "<<downL[0]<<" "<<clearLine<<endl;
-
-	if(checkdown != 0)
-	{
-		for(int i = 0;i < checkdown;i++)
-		{
+			int check = 0;
 			for(int j = 1;j < 11;j++)
-				tetrisData[downL[i]][j] = 0;
-	
-			for(int j = downL[i]-1;j > 0;j--)
 			{
-				for(int k = 1;k < 11;k++)
+				if(tetrisData[i][j] == 0)
 				{
-					tetrisData[j+1][k] = tetrisData[j][k];
+					check++;
+					break;
+				}
+			}
+	
+			if(check == 0)
+			{
+				cout<<"check "<<i<<" ";
+				
+				clearLine++;
+				
+				for(int j = 1;j < 11;j++)
+					tetrisData[i][j] = 0;
+	
+				for(int j = i-1;j > 0;j--)
+				{
+					if(j != 0)
+					{
+						for(int k = 1;k < 11;k++)
+							tetrisData[j+1][k] = tetrisData[j][k];
+					}
+					else
+					{
+						for(int k = 1;k < 11;k++)
+							tetrisData[1][k] = 0;
+					}
 				}
 			}
 		}
 	}
+	cout<<"score "<<clearLine<<endl;
 
 
 	if(clearLine != 0)
@@ -527,9 +525,9 @@ int nextSet()
 	}
 	else if(tmpBlock == 5)	//T
 	{
-		nextTetris[1][2] = 7;
 		nextTetris[2][1] = 7;
 		nextTetris[2][2] = 7;
+		nextTetris[2][3] = 7;
 		nextTetris[3][2] = 7;
 	}
 	else if(tmpBlock == 6)	//Z
@@ -634,9 +632,7 @@ void gameScrean(int initnext)
 			if(i == 0)
 				cout<<"\t\033[42m \033[49m\033[01m NEXT \033[22m\033[42m \033[49m";
 			else if(i == 1)
-			{
 				cout<<"       \033[9m          \033[29m";
-			}
 			else if(i == 2)
 			{
 				cout<<"        ";
@@ -657,9 +653,20 @@ void gameScrean(int initnext)
 				cout<<"        ";
 				nextScrean(3);
 			}
-			else if(i == 6)
+		//	else if(i == 6)
+		//		cout<<"       \033[9m          \033[29m";
+			else if(i == 7)
+				cout<<"       \033[01m S C O R E \033[22m";
+			else if(i == 8)
 				cout<<"       \033[9m          \033[29m";
-
+			else if(i == 9)
+				cout<<"          \033[01m\033[33m"<<score<<"\033[39m\033[22m";
+			else if(i == 11)
+				cout<<"        \033[01m B E S T \033[22m";
+			else if(i == 12)
+                                cout<<"       \033[9m          \033[29m";
+			else if(i == 13)
+                                cout<<"          \033[01m\033[33m"<<maxscore<<"\033[39m\033[22m";
 			cout<<endl;
 		}
 
@@ -720,7 +727,7 @@ void gameScrean(int initnext)
 
 			if(checkDown == 1)	//Fix block on bottom
 			{
-				scoreAlgorithm();
+		//		scoreAlgorithm();
 
 				checkcoll = collision(tmpnext);
 
@@ -757,7 +764,7 @@ void gameScrean(int initnext)
 
 					if(checkDown == 1)	//Fix block on bottom
 					{
-						scoreAlgorithm();
+			//			scoreAlgorithm();
 
 						checkcoll = collision(tmpnext);
 
@@ -789,7 +796,6 @@ void gameScrean(int initnext)
 				}
 			}
 		}
-
 
 
 //		system("clear");
@@ -1641,9 +1647,9 @@ int downBlock()
 	if(check != 0)	//When there's no space to go down
 	{
 		for(int i = 0;i < tmp;i++)
-		{
 			tetrisData[save1[i]][save2[i]] *= 10;
-		}
+
+		scoreAlgorithm();
 
 		return 1;
 	}
