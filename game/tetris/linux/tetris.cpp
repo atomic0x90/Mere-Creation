@@ -825,67 +825,119 @@ int rotationAlgorithm(int input)
 		}
 		else if(rotationState == 2)
 		{
-			int tmp1,tmp2;
-			if(input == 120)
-			{	//Priority : 4 3 2 1
-				tmp1 = save1[0];
-				tmp2 = save2[0];
-				save1[0] = save1[3];
-				save2[0] = save2[3];
-				save1[3] = tmp1;
-				save2[3] = tmp2;
-
-				tmp1 = save1[1];
-				tmp2 = save2[1];
-				save1[1] = save1[2];
-				save2[1] = save2[2];
-				save1[2] = tmp1;
-				save2[2] = tmp2;
-			}
-			/*
-			 * else priority : 1 2 3 4
-			 * */
-
-			for(int i = 0;i < 4;i++)
+			if(input == 122)	//Counterclockwise
 			{
-				
-			}
+				for(int i = 3;i >= 0;i--)
+				{
+					if(tetrisData[save1[i]][save2[i]+1] == 0 && tetrisData[save1[i]][save2[i]+2] == 0 && tetrisData[save1[i]][save2[i]+3] == 0)
+					{	//When left space == 0, right space == 3
+						for(int j = 0;j < 4;j++)
+							tetrisData[save1[j]][save2[j]] = 0;
+						
+						tetrisData[save1[i]][save2[i]] = tmp;
+						tetrisData[save1[i]][save2[i]+1] = tmp;
+						tetrisData[save1[i]][save2[i]+2] = tmp;
+						tetrisData[save1[i]][save2[i]+3] = tmp;
+					
+						return 1;	//Rotation complete
+					}
+					else if(tetrisData[save1[i]][save2[i]-1] == 0 && tetrisData[save1[i]][save2[i]+1] == 0 && tetrisData[save1[i]][save2[i]+2] == 0)
+					{	//When left space == 1, right space == 2
+						for(int j = 0;j < 4;j++)
+							tetrisData[save1[j]][save2[j]] = 0;
 
-			return 2;	//Rotation fail
-			/*
-			if(input == 122)
-			{
-				if(tetrisData[save1[3]][save2[3]-1] == 0 && tetrisData[save1[3]][save2[3]+1] == 0 && tetrisData[save1[3]][save2[3]+2] == 0)
-				{	//A rotating shaft : 14, When the bottom of a tetris block
-					tetrisData[save1[0]][save2[0]] = 0;
-					tetrisData[save1[1]][save2[1]] = 0;
-					tetrisData[save1[2]][save2[2]] = 0;
+						tetrisData[save1[i]][save2[i]] = tmp;
+						tetrisData[save1[i]][save2[i]-1] = tmp;
+						tetrisData[save1[i]][save2[i]+1] = tmp;
+						tetrisData[save1[i]][save2[i]+2] = tmp;
+					
+						return 1;	//Rotation complete
+					}
+					else if(tetrisData[save1[i]][save2[i]-2] == 0 && tetrisData[save1[i]][save2[i]-1] == 0 && tetrisData[save1[i]][save2[i]+1] == 0)
+					{	//When left space == 2, right space == 1
+						for(int j = 0;j < 4;j++)
+							tetrisData[save1[j]][save2[j]] = 0;
 
-					tetrisData[save1[3]][save2[3]-1] = tmp;
-					tetrisData[save1[3]][save2[3]+1] = tmp;
-					tetrisData[save1[3]][save2[3]+2] = tmp;
+						tetrisData[save1[i]][save2[i]] = tmp;
+						tetrisData[save1[i]][save2[i]-2] = tmp;
+						tetrisData[save1[i]][save2[i]-1] = tmp;
+						tetrisData[save1[i]][save2[i]+1] = tmp;
+					
+						return 1;	//Rotation complete
+					}
+					else if(tetrisData[save1[i]][save2[i]-3] == 0 && tetrisData[save1[i]][save2[i]-2] == 0 && tetrisData[save1[i]][save2[i]-1] == 0)
+					{	//When left space == 3, right space == 0
+						for(int j = 0;j < 4;j++)
+							tetrisData[save1[j]][save2[j]] = 0;
 
-					return 1;	//Rotation complete
+						tetrisData[save1[i]][save2[i]] = tmp;
+						tetrisData[save1[i]][save2[i]-3] = tmp;
+						tetrisData[save1[i]][save2[i]-2] = tmp;
+						tetrisData[save1[i]][save2[i]-1] = tmp;
+					
+						return 1;	//Rotation complete
+					}
 				}
-				else if(tetrisData[save1[2]][save2[2]-1] == 0 && tetrisData[save1[2]][save2[2]+1] == 0 && tetrisData[save1[2]][save2[2]+2] == 0)
-                                {       //A rotating shaft : 10, When the 3/4 of a tetris block
-                                        tetrisData[save1[0]][save2[0]] = 0;
-                                        tetrisData[save1[1]][save2[1]] = 0;
-                                        tetrisData[save1[3]][save2[3]] = 0;
 
-                                        tetrisData[save1[2]][save2[2]-1] = tmp;
-                                        tetrisData[save1[2]][save2[2]+1] = tmp;
-                                        tetrisData[save1[2]][save2[2]+2] = tmp;
-
-                                        return 1;       //Rotation complete
-                                }
-			
-				else
-					return 2;	//Rotation fail
+				return 2;	//Rotation fail
 			}
-			else if(input == 120)
-			{}
-			*/
+			else if(input == 120)	//Clockwise
+			{
+				for(int i = 3;i >= 0;i--)
+				{
+					if(tetrisData[save1[i]][save2[i]-3] == 0 && tetrisData[save1[i]][save2[i]-2] == 0 && tetrisData[save1[i]][save2[i]-1] == 0)
+                                        {       //When left space == 3, right space == 0
+                                                for(int j = 0;j < 4;j++)
+                                                        tetrisData[save1[j]][save2[j]] = 0;
+
+                                                tetrisData[save1[i]][save2[i]] = tmp;
+                                                tetrisData[save1[i]][save2[i]-3] = tmp;
+                                                tetrisData[save1[i]][save2[i]-2] = tmp;
+                                                tetrisData[save1[i]][save2[i]-1] = tmp;
+
+                                                return 1;	//Rotation complete
+                                        }
+					else if(tetrisData[save1[i]][save2[i]-2] == 0 && tetrisData[save1[i]][save2[i]-1] == 0 && tetrisData[save1[i]][save2[i]+1] == 0)
+                                        {       //When left space == 2, right space == 1
+                                                for(int j = 0;j < 4;j++)
+                                                        tetrisData[save1[j]][save2[j]] = 0;
+
+                                                tetrisData[save1[i]][save2[i]] = tmp;
+                                                tetrisData[save1[i]][save2[i]-2] = tmp;
+                                                tetrisData[save1[i]][save2[i]-1] = tmp;
+                                                tetrisData[save1[i]][save2[i]+1] = tmp;
+
+                                                return 1;	//Rotation complete
+                                        }
+					else if(tetrisData[save1[i]][save2[i]-1] == 0 && tetrisData[save1[i]][save2[i]+1] == 0 && tetrisData[save1[i]][save2[i]+2] == 0)
+                                        {       //When left space == 1, right space == 2
+                                                for(int j = 0;j < 4;j++)
+                                                        tetrisData[save1[j]][save2[j]] = 0;
+
+                                                tetrisData[save1[i]][save2[i]] = tmp;
+                                                tetrisData[save1[i]][save2[i]-1] = tmp;
+                                                tetrisData[save1[i]][save2[i]+1] = tmp;
+                                                tetrisData[save1[i]][save2[i]+2] = tmp;
+
+                                                return 1;	//Rotation complete
+                                        }
+					else if(tetrisData[save1[i]][save2[i]+1] == 0 && tetrisData[save1[i]][save2[i]+2] == 0 && tetrisData[save1[i]][save2[i]+3] == 0)
+                                        {       //When left space == 0, right space == 3
+                                                for(int j = 0;j < 4;j++)
+                                                        tetrisData[save1[j]][save2[j]] = 0;
+
+                                                tetrisData[save1[i]][save2[i]] = tmp;
+                                                tetrisData[save1[i]][save2[i]+1] = tmp;
+                                                tetrisData[save1[i]][save2[i]+2] = tmp;
+                                                tetrisData[save1[i]][save2[i]+3] = tmp;
+
+                                                return 1;	//Rotation complete
+                                        }
+				}
+
+				return 2;	//Rotation fail
+			}
+
 		}
 	}
 
