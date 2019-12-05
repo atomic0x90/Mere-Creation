@@ -107,6 +107,8 @@ int gameAlgorithm(int);
 
 int collision(int);
 
+void preview();
+void inpreview();
 
 int rotationAlgorithm(int);
 int rotationState;
@@ -318,6 +320,73 @@ int init()
 	nowSet(tmp);
 
 	return nextSet();
+}
+
+void preview()
+{
+	int check = 0;
+	for(int i = 1;i < 21;i++)
+	{
+		for(int j = 1;j < 11;j++)
+		{
+			if(tetrisData[i][j] >= 10 && tetrisData[i][j] <= 16)
+			{
+				save1[check] = i;
+				save2[check] = j;
+				check++;
+			}
+			if(check == 4)
+				break;
+		}
+		if(check == 4)
+			break;
+	}
+
+	int gap = 20;
+
+	for(int i = 0;i < 4;i++)
+	{
+		int tmpg = 0;
+		for(int j = save1[i]+1;j < 21;j++)
+		{
+			if(tetrisData[j][save2[i]] == 0)
+				tmpg++;
+			else if(tetrisData[j][save2[i]] == tetrisData[save1[0]][save2[0]])
+			{
+				tmpg = -1;
+				break;
+			}
+			else
+				break;
+		}
+
+		if(tmpg != -1 && tmpg < gap)
+			gap = tmpg;
+
+	}
+
+	if(gap > 5)
+	{
+		for(int i = 0;i < 4;i++)
+			tetrisData[save1[i]+gap][save2[i]] = 50;
+	}
+
+
+	return ;
+}
+
+void inpreview()
+{
+	for(int i = 1;i < 21;i++)
+	{
+		for(int j = 1;j < 11;j++)
+		{
+			if(tetrisData[i][j] == 50)
+				tetrisData[i][j] = 0;
+		}
+	}
+
+	return ;
 }
 
 int nowSet(int type)
@@ -587,6 +656,8 @@ void gameScrean(int initnext)
 
 	while(1)
 	{
+		preview();
+
 		start_t = clock();
 		int checkcoll = 0;
 		int checkDown = 0;
@@ -602,6 +673,9 @@ void gameScrean(int initnext)
 				
 				else if(tetrisData[i][j] == 1)	//wall
 					cout<<"\033[47m  \033[49m";
+
+				else if(tetrisData[i][j] == 50)	//preview
+					cout<<"\033[36m[]\033[39m";
 				
 				else if(tetrisData[i][j] == 10 || tetrisData[i][j] == 100)	//I
 					cout<<"\033[46m  \033[49m";
@@ -667,6 +741,8 @@ void gameScrean(int initnext)
                                 cout<<"          \033[01m\033[33m"<<maxscore<<"\033[39m\033[22m";
 			cout<<endl;
 		}
+
+		inpreview();
 
 
 		cout<<endl;
@@ -855,31 +931,21 @@ int rotationAlgorithm(int input)
 		if(rotationState == 1)
 		{
 			int tmp1,tmp2;
-			if(input == 122)
-			{	//Priority : 3 1 2 4
+			
+			if(input == 120)
+			{	//Priority : 4 3 2 1
 				tmp1 = save1[0];
 				tmp2 = save2[0];
-				save1[0] = save1[1];
-				save2[0] = save2[1];
-				save1[1] = save1[2];
-				save2[1] = save2[2];
-				save1[2] = tmp1;
-				save2[2] = tmp2;
-			}
-			else if(input == 120)
-			{	//Priority : 4 2 1 3
-				tmp1 = save1[2];
-				tmp2 = save2[2];
-				save1[2] = save1[0];
-				save2[2] = save2[0];
-				save1[0] = tmp1;
-				save2[0] = tmp2;
-				tmp1 = save1[2];
-				tmp2 = save2[2];
-				save1[2] = save1[3];
-				save2[2] = save2[3];
+				save1[0] = save1[3];
+				save2[0] = save2[3];
 				save1[3] = tmp1;
 				save2[3] = tmp2;
+				tmp1 = save1[2];
+				tmp2 = save2[2];
+				save1[2] = save1[1];
+				save2[2] = save2[1];
+				save1[1] = tmp1;
+				save2[1] = tmp2;
 			}
 			for(int i = 0;i < 4;i++)
 			{
