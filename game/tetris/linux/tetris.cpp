@@ -1704,6 +1704,24 @@ int rotationAlgorithm(int input)
 			
 				return 1;
 			}
+			else if(tetrisData[save1[0]][save2[0]+1] == 0 && tetrisData[save1[0]][save2[0]+2] == 0)
+			{	//When null 2.3
+				tetrisData[save1[0]][save2[0]] = 0;
+				tetrisData[save1[3]][save2[3]] = 0;
+			
+				tetrisData[save1[0]][save2[0]+1] = tetrisData[save1[0]][save2[0]+2] = tmp;
+			
+				return 1;
+			}
+			else if(tetrisData[save1[0]][save2[0]+1] == 0 && tetrisData[save1[1]][save2[1]-1] == 0)
+			{	//When null 2 left.5
+				tetrisData[save1[2]][save2[2]] = 0;
+				tetrisData[save1[3]][save2[3]] = 0;
+
+				tetrisData[save1[0]][save2[0]+1] = tetrisData[save1[1]][save2[1]-1] = tmp;
+			
+				return 1;
+			}
 		
 			return 2;	//Rotation fail
 		}
@@ -1722,7 +1740,132 @@ int rotationAlgorithm(int input)
 	 * Z -> rotationState == 2 : 2.6.5.9
 	 * */
 	else if(nowData == 6)	//Z
-	{}
+	{
+		if(rotationState == 1)
+		{
+			if(input == 120)	//Clockwise
+			{
+				if(tetrisData[save1[1]][save2[1]+1] == 0 && tetrisData[save1[2]+1][save2[2]] == 0)
+				{	//When null 3 10
+					tetrisData[save1[0]][save2[0]] = 0;
+					tetrisData[save1[1]][save2[1]] = 0;
+
+					tetrisData[save1[1]][save2[1]+1] = tetrisData[save1[2]+1][save2[2]] = tmp;
+				
+					return 2;
+				}
+				else if(tetrisData[save1[0]+1][save2[0]] == 0 && tetrisData[save1[0]+2][save2[0]] == 0)
+				{	//When null 5 9
+					tetrisData[save1[0]][save2[0]] = 0;
+					tetrisData[save1[3]][save2[3]] = 0;
+
+					tetrisData[save1[0]+1][save2[0]] = tetrisData[save1[0]+2][save2[0]] = tmp;
+				
+					return 2;
+				}
+				else if(tetrisData[save1[3]-1][save2[3]] == 0 && tetrisData[save1[3]-2][save2[3]] == 0)
+				{	//When null 3 up.3
+					tetrisData[save1[0]][save2[0]] = 0;
+					tetrisData[save1[3]][save2[3]] = 0;
+
+					tetrisData[save1[3]-1][save2[3]] = tetrisData[save1[3]-2][save2[3]] = tmp;
+				
+					return 2;
+				}
+				else if(tetrisData[save1[0]+1][save2[0]] == 0 && tetrisData[save1[1]-1][save2[1]] == 0)
+				{	//When null 5 up.2
+					tetrisData[save1[2]][save2[2]] = 0;
+					tetrisData[save1[3]][save2[3]] = 0;
+
+					tetrisData[save1[0]+1][save2[0]] = tetrisData[save1[1]-1][save2[1]] = tmp;
+				
+					return 2;
+				}
+			}
+			else if(input == 122)	//Counterclockwise
+			{
+				if(tetrisData[save1[0]+1][save2[0]] == 0 && tetrisData[save1[0]+2][save2[0]] == 0)
+                                {       //When null 5 9
+                                        tetrisData[save1[0]][save2[0]] = 0;
+                                        tetrisData[save1[3]][save2[3]] = 0;
+
+                                        tetrisData[save1[0]+1][save2[0]] = tetrisData[save1[0]+2][save2[0]] = tmp;
+
+                                        return 2;
+                                }
+				else if(tetrisData[save1[1]][save2[1]+1] == 0 && tetrisData[save1[2]+1][save2[2]] == 0)
+                                {       //When null 3 10
+                                        tetrisData[save1[0]][save2[0]] = 0;
+                                        tetrisData[save1[1]][save2[1]] = 0;
+
+                                        tetrisData[save1[1]][save2[1]+1] = tetrisData[save1[2]+1][save2[2]] = tmp;
+
+                                        return 2;
+                                }
+				else if(tetrisData[save1[0]+1][save2[0]] == 0 && tetrisData[save1[1]-1][save2[1]] == 0)
+                                {       //When null 5 up.2
+                                        tetrisData[save1[2]][save2[2]] = 0;
+                                        tetrisData[save1[3]][save2[3]] = 0;
+
+                                        tetrisData[save1[0]+1][save2[0]] = tetrisData[save1[1]-1][save2[1]] = tmp;
+
+                                        return 2;
+                                }
+				else if(tetrisData[save1[3]-1][save2[3]] == 0 && tetrisData[save1[3]-2][save2[3]] == 0)
+                                {       //When null 3 up.3
+                                        tetrisData[save1[0]][save2[0]] = 0;
+                                        tetrisData[save1[3]][save2[3]] = 0;
+
+                                        tetrisData[save1[3]-1][save2[3]] = tetrisData[save1[3]-2][save2[3]] = tmp;
+
+                                        return 2;
+                                }
+			}
+
+			return 1;	//Rotation fail
+		}
+		else if(rotationState == 2)
+		{
+			if(tetrisData[save1[3]][save2[3]+1] == 0 && tetrisData[save1[1]][save2[1]-1] == 0)
+			{	//When null 10 left.5
+				tetrisData[save1[0]][save2[0]] = 0;
+				tetrisData[save1[2]][save2[2]] = 0;
+
+				tetrisData[save1[3]][save2[3]+1] = tetrisData[save1[1]][save2[1]-1] = tmp;
+			
+				return 1;
+			}
+			else if(tetrisData[save1[3]][save2[3]+1] == 0 && tetrisData[save1[3]][save2[3]+2] == 0)
+			{	//When null 10.11
+				tetrisData[save1[0]][save2[0]] = 0;
+				tetrisData[save1[3]][save2[3]] = 0;
+
+				tetrisData[save1[3]][save2[3]+1] = tetrisData[save1[3]][save2[3]+2] = tmp;
+			
+				return 1;
+			}
+			else if(tetrisData[save1[0]][save2[0]-1] == 0 && tetrisData[save1[2]][save2[2]+1] == 0)
+			{	//When null 1 7
+				tetrisData[save1[1]][save2[1]] = 0;
+				tetrisData[save1[3]][save2[3]] = 0;
+
+				tetrisData[save1[0]][save2[0]-1] = tetrisData[save1[2]][save2[2]+1] = tmp;
+			
+				return 1;
+			}
+			else if(tetrisData[save1[0]][save2[0]-1] == 0 && tetrisData[save1[0]][save2[0]-2] == 0)
+			{	//When null 1 left.1
+				tetrisData[save1[1]][save2[1]] = 0;
+				tetrisData[save1[3]][save2[3]] = 0;
+
+				tetrisData[save1[0]][save2[0]-1] = tetrisData[save1[0]][save2[0]-2] = tmp;
+			
+				return 1;
+			}
+
+			return 2;	//Rotation fail
+		}
+	}
 
 
 }
