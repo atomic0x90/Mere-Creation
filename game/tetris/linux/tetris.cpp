@@ -1632,12 +1632,12 @@ int rotationAlgorithm(int input)
 				
 					return 2;
 				}
-				else if(tetrisData[save1[0]][save2[0-1]] == 0 && tetrisData[save1[0]-1][save2[0]-1] == 0)
+				else if(tetrisData[save1[0]][save2[0]-1] == 0 && tetrisData[save1[0]-1][save2[0]-1] == 0)
 				{	//When null 1 up.1
 					tetrisData[save1[1]][save2[1]] = 0;
 					tetrisData[save1[2]][save2[2]] = 0;
 
-					tetrisData[save1[0]][save2[0-1]] = tetrisData[save1[0]-1][save2[0]-1] = tmp;
+					tetrisData[save1[0]][save2[0]-1] = tetrisData[save1[0]-1][save2[0]-1] = tmp;
 				
 					return 2;
 				}
@@ -2038,7 +2038,7 @@ int rotationAlgorithm(int input)
 			}
 			else if(tetrisData[save1[0]][save2[0]-1] == 0 && tetrisData[save1[0]][save2[0]-2] == 0)
 			{	//When null 1 left.1
-				tetrisData[save1[1]][save2[1]] = 0;
+				tetrisData[save1[0]][save2[0]] = 0;
 				tetrisData[save1[3]][save2[3]] = 0;
 
 				tetrisData[save1[0]][save2[0]-1] = tetrisData[save1[0]][save2[0]-2] = tmp;
