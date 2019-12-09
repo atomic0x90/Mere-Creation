@@ -80,6 +80,8 @@ int _putch(int c)
 clock_t start_t;
 double end_t;
 
+int checkspace = 0;
+
 int setBlock[7];
 int checkBlock = 6;
 
@@ -285,6 +287,7 @@ void creatorData()
 
 int init()
 {
+	checkspace = 0;
 	score = combo = 0;
 
 	rotationState = 1;
@@ -391,22 +394,57 @@ void inpreview()
 
 int nowSet(int type)
 {
+	//checkspace == 1 : left
+	//checkspace == 2 : right
 	int tmp = type;
 
 	if(tmp == 0)	//I
 	{
-		tetrisData[1][4] = 10;
-		tetrisData[1][5] = 10;
-		tetrisData[1][6] = 10;
-		tetrisData[1][7] = 10;
+		if(checkspace == 0)
+		{
+			tetrisData[1][4] = 10;
+			tetrisData[1][5] = 10;
+			tetrisData[1][6] = 10;
+			tetrisData[1][7] = 10;
+		}
+		else if(checkspace == 1)
+		{
+			tetrisData[1][3] = 10;
+                        tetrisData[1][4] = 10;
+                        tetrisData[1][5] = 10;
+                        tetrisData[1][6] = 10;
+		}
+		else if(checkspace == 2)
+		{
+			tetrisData[1][5] = 10;
+                        tetrisData[1][6] = 10;
+                        tetrisData[1][7] = 10;
+                        tetrisData[1][8] = 10;
+		}
 	}
 	else if(tmp == 1)	//J
 	{
-		tetrisData[1][6] = 11;
-		tetrisData[2][6] = 11;
-		tetrisData[3][5] = 11;
-		tetrisData[3][6] = 11;
-
+		if(checkspace == 0)
+		{
+			tetrisData[1][6] = 11;
+			tetrisData[2][6] = 11;
+			tetrisData[3][5] = 11;
+			tetrisData[3][6] = 11;
+		}
+		else if(checkspace == 1)
+		{
+			tetrisData[1][5] = 11;
+                        tetrisData[2][5] = 11;
+                        tetrisData[3][4] = 11;
+                        tetrisData[3][5] = 11;
+		}
+		else if(checkspace == 2)
+		{
+			tetrisData[1][7] = 11;
+                        tetrisData[2][7] = 11;
+                        tetrisData[3][6] = 11;
+                        tetrisData[3][7] = 11;
+		}
 		/*
 		tetrisData[1][4] = 11;
 		tetrisData[2][4] = 11;
@@ -416,10 +454,27 @@ int nowSet(int type)
 	}
 	else if(tmp == 2)	//L
 	{
-		tetrisData[1][5] = 12;
-		tetrisData[2][5] = 12;
-		tetrisData[3][5] = 12;
-		tetrisData[3][6] = 12;
+		if(checkspace == 0)
+		{
+			tetrisData[1][5] = 12;
+			tetrisData[2][5] = 12;
+			tetrisData[3][5] = 12;
+			tetrisData[3][6] = 12;
+		}
+		else if(checkspace == 1)
+		{
+			tetrisData[1][4] = 12;
+                        tetrisData[2][4] = 12;
+                        tetrisData[3][4] = 12;
+                        tetrisData[3][5] = 12;
+		}
+		else if(checkspace == 2)
+		{
+			tetrisData[1][6] = 12;
+                        tetrisData[2][6] = 12;
+                        tetrisData[3][6] = 12;
+                        tetrisData[3][7] = 12;
+		}
 		/*
 		tetrisData[1][6] = 12;
 		tetrisData[2][6] = 12;
@@ -429,33 +484,102 @@ int nowSet(int type)
 	}
 	else if(tmp == 3)	//O
 	{
-		tetrisData[1][5] = 13;
-		tetrisData[1][6] = 13;
-		tetrisData[2][5] = 13;
-		tetrisData[2][6] = 13;
+		if(checkspace == 0)
+		{
+			tetrisData[1][5] = 13;
+			tetrisData[1][6] = 13;
+			tetrisData[2][5] = 13;
+			tetrisData[2][6] = 13;
+		}
+		else if(checkspace == 1)
+		{
+			tetrisData[1][4] = 13;
+                        tetrisData[1][5] = 13;
+                        tetrisData[2][4] = 13;
+                        tetrisData[2][5] = 13;
+		}
+		else if(checkspace == 2)
+		{
+			tetrisData[1][6] = 13;
+                        tetrisData[1][7] = 13;
+                        tetrisData[2][6] = 13;
+                        tetrisData[2][7] = 13;
+		}
 	}
 	else if(tmp == 4)	//S
 	{
-		tetrisData[1][6] = 14;
-		tetrisData[1][5] = 14;
-		tetrisData[2][5] = 14;
-		tetrisData[2][4] = 14;
+		if(checkspace == 0)
+		{
+			tetrisData[1][6] = 14;
+			tetrisData[1][5] = 14;
+			tetrisData[2][5] = 14;
+			tetrisData[2][4] = 14;
+		}
+		else if(checkspace == 1)
+		{
+			tetrisData[1][5] = 14;
+                        tetrisData[1][4] = 14;
+                        tetrisData[2][4] = 14;
+                        tetrisData[2][3] = 14;
+		}
+		else if(checkspace == 2)
+		{
+			tetrisData[1][7] = 14;
+                        tetrisData[1][6] = 14;
+                        tetrisData[2][6] = 14;
+                        tetrisData[2][5] = 14;
+		}
 	}
 	else if(tmp == 5)	//T
 	{
-		tetrisData[1][4] = 15;
-		tetrisData[1][5] = 15;
-		tetrisData[1][6] = 15;
-		tetrisData[2][5] = 15;
+		if(checkspace == 0)
+		{
+			tetrisData[1][4] = 15;
+			tetrisData[1][5] = 15;
+			tetrisData[1][6] = 15;
+			tetrisData[2][5] = 15;
+		}
+		else if(checkspace == 1)
+		{
+			tetrisData[1][3] = 15;
+                        tetrisData[1][4] = 15;
+                        tetrisData[1][5] = 15;
+                        tetrisData[2][4] = 15;
+		}
+		else if(checkspace == 2)
+		{
+			tetrisData[1][5] = 15;
+                        tetrisData[1][6] = 15;
+                        tetrisData[1][7] = 15;
+                        tetrisData[2][6] = 15;
+		}
 	}
 	else if(tmp == 6)	//Z
 	{
-		tetrisData[1][4] = 16;
-		tetrisData[1][5] = 16;
-		tetrisData[2][5] = 16;
-		tetrisData[2][6] = 16;
+		if(checkspace == 0)
+		{
+			tetrisData[1][4] = 16;
+			tetrisData[1][5] = 16;
+			tetrisData[2][5] = 16;
+			tetrisData[2][6] = 16;
+		}
+		else if(checkspace == 1)
+		{
+			tetrisData[1][3] = 16;
+                        tetrisData[1][4] = 16;
+                        tetrisData[2][4] = 16;
+                        tetrisData[2][5] = 16;
+		}
+		else if(checkspace == 2)
+		{
+			tetrisData[1][5] = 16;
+                        tetrisData[1][6] = 16;
+                        tetrisData[2][6] = 16;
+                        tetrisData[2][7] = 16;
+		}
 	}
 	
+	checkspace = 0;
 
 	return tmp;
 }
@@ -739,6 +863,20 @@ void gameScrean(int initnext)
                                 cout<<"       \033[9m          \033[29m";
 			else if(i == 13)
                                 cout<<"          \033[01m\033[33m"<<maxscore<<"\033[39m\033[22m";
+			else if(i == 15)
+				cout<<"\t\033[42m \033[49m\033[01m HELP \033[22m\033[42m \033[49m";
+			else if(i == 16)
+				cout<<"       \033[9m          \033[29m";
+			else if(i == 17)
+				cout<<"\tDown key : ↓";
+			else if(i == 18)
+				cout<<"\tLeft key : ←";
+			else if(i == 19)
+				cout<<"\tRight key : →";
+			else if(i == 20)
+				cout<<"\tClockwise : x";
+			else if(i == 21)
+				cout<<"\tCounterclockwise : z";
 			cout<<endl;
 		}
 
@@ -2171,6 +2309,18 @@ int collision(int type)
 	{
 		if(tetrisData[1][4] == 0 && tetrisData[1][5] == 0 && tetrisData[1][6] == 0 && tetrisData[1][7] == 0)
 			return 0;
+		else if(tetrisData[1][3] == 0 && tetrisData[1][4] == 0 && tetrisData[1][5] == 0 && tetrisData[1][6] == 0)
+		{
+			checkspace = 1;
+
+			return 0;
+		}
+		else if(tetrisData[1][8] == 0 && tetrisData[1][5] == 0 && tetrisData[1][6] == 0 && tetrisData[1][7] == 0)
+		{
+			checkspace = 2;
+
+			return 0;
+		}
 		else
 			return 1;
 	}
@@ -2178,6 +2328,18 @@ int collision(int type)
 	{
 		if(tetrisData[1][6] == 0 && tetrisData[2][6] == 0 && tetrisData[3][5] == 0 && tetrisData[3][6] == 0)
 			return 0;
+		else if(tetrisData[1][5] == 0 && tetrisData[2][5] == 0 && tetrisData[3][5] == 0 && tetrisData[3][4] == 0)
+		{
+			checkspace = 1;
+
+			return 0;
+		}
+		else if(tetrisData[1][7] == 0 && tetrisData[2][7] == 0 && tetrisData[3][7] == 0 && tetrisData[3][6] == 0)
+		{
+			checkspace = 2;
+
+			return 0;
+		}
 		else
 			return 1;
 	}
@@ -2185,6 +2347,18 @@ int collision(int type)
 	{
 		if(tetrisData[1][5] == 0 && tetrisData[2][5] == 0 && tetrisData[3][5] == 0 && tetrisData[3][6] == 0)
 			return 0;
+		else if(tetrisData[1][4] == 0 && tetrisData[2][4] == 0 && tetrisData[3][4] == 0 && tetrisData[3][5] == 0)
+		{
+			checkspace = 1;
+		
+			return 0;
+		}
+		else if(tetrisData[1][6] == 0 && tetrisData[2][6] == 0 && tetrisData[3][6] == 0 && tetrisData[3][7] == 0)
+		{
+			checkspace = 2;
+
+			return 0;
+		}
 		else
 			return 1;
 	}
@@ -2192,6 +2366,18 @@ int collision(int type)
 	{
 		if(tetrisData[1][5] == 0 && tetrisData[1][6] == 0 && tetrisData[2][5] == 0 && tetrisData[2][6] == 0)
 			return 0;
+		else if(tetrisData[1][4] == 0 && tetrisData[1][5] == 0 && tetrisData[2][4] == 0 && tetrisData[2][5] == 0)
+		{
+			checkspace = 1;
+
+			return 0;
+		}
+		else if(tetrisData[1][7] == 0 && tetrisData[1][6] == 0 && tetrisData[2][7] == 0 && tetrisData[2][6] == 0)
+		{
+			checkspace = 2;
+			
+			return 0;
+		}
 		else
 			return 1;
 	}
@@ -2199,6 +2385,18 @@ int collision(int type)
 	{
 		if(tetrisData[1][5] == 0 && tetrisData[1][6] == 0 && tetrisData[2][5] == 0 && tetrisData[2][4] == 0)
 			return 0;
+		else if(tetrisData[1][4] == 0 && tetrisData[1][5] == 0 && tetrisData[2][4] == 0 && tetrisData[2][3] == 0)
+		{
+			checkspace = 1;
+
+			return 0;
+		}
+		else if(tetrisData[1][6] == 0 && tetrisData[1][7] == 0 && tetrisData[2][6] == 0 && tetrisData[2][5] == 0)
+		{
+			checkspace = 2;
+
+			return 0;
+		}
 		else
 			return 1;
 	}
@@ -2206,6 +2404,18 @@ int collision(int type)
 	{
 		if(tetrisData[1][4] == 0 && tetrisData[1][5] == 0 && tetrisData[1][6] == 0 && tetrisData[2][5] == 0)
 			return 0;
+		else if(tetrisData[1][3] == 0 && tetrisData[1][4] == 0 && tetrisData[1][5] == 0 && tetrisData[2][4] == 0)
+		{
+			checkspace = 1;
+
+			return 0;
+		}
+		else if(tetrisData[1][5] == 0 && tetrisData[1][6] == 0 && tetrisData[1][7] == 0 && tetrisData[2][6] == 0)
+		{
+			checkspace = 2;
+
+			return 0;
+		}
 		else
 			return 1;
 	}
@@ -2213,6 +2423,18 @@ int collision(int type)
 	{
 		if(tetrisData[1][4] == 0 && tetrisData[1][5] == 0 && tetrisData[2][5] == 0 && tetrisData[2][6] == 0)
 			return 0;
+		else if(tetrisData[1][3] == 0 && tetrisData[1][4] == 0 && tetrisData[2][4] == 0 && tetrisData[2][5] == 0)
+		{
+			checkspace = 1;
+
+			return 0;
+		}
+		else if(tetrisData[1][5] == 0 && tetrisData[1][6] == 0 && tetrisData[2][6] == 0 && tetrisData[2][7] == 0)
+		{
+			checkspace = 2;
+
+			return 0;
+		}
 		else
 			return 1;
 	}
