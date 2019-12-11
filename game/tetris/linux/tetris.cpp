@@ -123,7 +123,7 @@ int combo;
 int nextSet();
 int nowSet(int);
 
-void exitScrean();
+char exitScrean();
 
 void l1();
 void l2();
@@ -154,7 +154,7 @@ void scoreAlgorithm()
 
 		if(check == 0)
 		{
-			cout<<"check "<<i<<" ";
+//			cout<<"check "<<i<<" ";
 			
 			clearLine++;
 			
@@ -177,7 +177,7 @@ void scoreAlgorithm()
 			i++;
 		}
 	}
-	cout<<"score "<<clearLine<<endl;
+//	cout<<"score "<<clearLine<<endl;
 
 
 	if(clearLine != 0)
@@ -915,11 +915,11 @@ void gameScrean(int initnext)
 						//72 : up, 75 : left, 77 : right, 80 : down    ???? not operation
 						//68 : left, 67: right, 66 : down
 						//122 : z, 120 : x
-						cout<<"input "<<input<<endl;
+//						cout<<"input "<<input<<endl;
 						if(checkLastPress == 66)
 							repetition = 1;
 					}
-					cout<<"checkLast "<<checkLastPress<<" repe "<<repetition<<" in "<<input<<endl;
+//					cout<<"checkLast "<<checkLastPress<<" repe "<<repetition<<" in "<<input<<endl;
 					
 				
 
@@ -1012,6 +1012,8 @@ void gameScrean(int initnext)
 
 		system("clear");
 	}
+
+
 	return;
 }
 
@@ -1023,7 +1025,7 @@ void gameScrean(int initnext)
  * */
 int rotationAlgorithm(int input)
 {
-	cout<<"In roatationAlgorithm"<<endl;
+//	cout<<"In roatationAlgorithm"<<endl;
 	
 	int tmp = 0;
 
@@ -2277,7 +2279,7 @@ int downBlock()
 		}
 	}
 
-	cout<<"downBlock "<<check<<" "<<tmp<<endl;
+//	cout<<"downBlock "<<check<<" "<<tmp<<endl;
 
 	if(check != 0)	//When there's no space to go down
 	{
@@ -2545,7 +2547,7 @@ int gameAlgorithm(int in)
 		}
 				//Need down block after move left, right, rotation
 				//
-		cout<<"tmp "<<tmp<<" check "<<check<<endl;
+//		cout<<"tmp "<<tmp<<" check "<<check<<endl;
 
 		tmpcolor = tetrisData[save1[0]][save2[0]];
 
@@ -2615,6 +2617,18 @@ void mainScrean()
 	return;
 }
 
+char exitScrean()
+{
+	char st;
+	cout<<"\033[01m\033[40m     Game Over.. try again?\t"<<endl;
+	cout<<"Enter any key to start (exit : x)\033[49m\033[22m"<<endl;
+
+	cin>>st;
+
+	return st;
+
+}
+
 /*
  * value means
  *
@@ -2622,12 +2636,15 @@ void mainScrean()
  * tetrisData : 0 -> null
  *
  * */
+
+
 int main()
 {
-	char check = ' ';
+	char check;
 	int initnext;
-//	while(1)
+	while(1)
 	{
+		check = ' ';
 		mainScrean();
 
 		initnext = init();
@@ -2635,6 +2652,10 @@ int main()
 
 		gameScrean(initnext);
 
+		check = exitScrean();
+
+		if(check == 'x')
+			break;
 	}
 
 
