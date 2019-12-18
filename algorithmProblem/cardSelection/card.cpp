@@ -15,18 +15,17 @@ int testCase;
 int cardLength;
 int cardLine[1001];
 
-int tmpl[8];
+int tmpl[1001];
 
 int result;
 
-int t2,t3,t4;
-int tmp;
 
 void finFunction();
 void foutFunction();
 void card();
+void algo();
+void init();
 
-void algo(int,int,int,int);
 
 void foutFunction()
 {
@@ -50,317 +49,183 @@ void finFunction()
 	return;
 }
 
-void algo(int len,int now,int t,int gap)	//gap 1 : x x o x o, gap 2 : x o x x o, o x x x o
+
+void card()
 {
-	if(len < 1)
-		return;
-//	cout<<"len "<<len<<" now "<<now<<" t "<<t<<" gap "<<gap<<"\t\t";
-//	cout<<cardLine[len+now-8]+tmp<<" "<<tmp<<" "<<cardLine[len+now-8]<<endl;
-	//'now' init data : 8
-	//
-/*	
-	if(t == 2)
+	for(int i = 1;i <= cardLength;i++)
 	{
-		if(tmp > t2)
-			t2 = tmp;
-	}
-	else if(t == 3)
-	{
-		if(tmp > t3)
-			t3 = tmp;
-	}
-	else if(t == 4)
-	{
-		if(tmp > t4)
-			t4 = tmp;
-	}
-*/
-	if(len <= 8)
-	{
-		cout<<"len "<<len<<" now "<<now<<" t "<<t<<" gap "<<gap<<"\t\t";
-       		cout<<cardLine[now]+tmp<<" "<<tmp<<" "<<cardLine[now]<<endl;
-
-		if(t == 2 && tmp != 0)
-        	{
-              		if(tmp > t2)
-                	        t2 = tmp;
-        	}
-        	else if(t == 3 && tmp != 0)
-        	{
-                	if(tmp > t3)
-        	                t3 = tmp;
-        	}	
-        	else if(t == 4 && tmp != 0)
-        	{
-               		if(tmp > t4)
-               	        	t4 = tmp;
-        	}
-//		tmp += cardLine[now];
-		if(gap == 1)
+		if(i <= 3 || i > cardLength - 2)
 		{
-			if(now > 3)
-			{
-				tmp += cardLine[now];
-				algo(len,now-3,t,2);
-				tmp -= cardLine[now];
-			}
-			
-			if(now > 4)
-			{
-				tmp += cardLine[now];
-				algo(len,now-4,t,2);
-				tmp -= cardLine[now];
-			}
-
-			if(now <= 3)
-			{
-				tmp += cardLine[now];
-				if(t == 2)
-                                {
-                                        if(tmp > t2)
-                                                t2 = tmp;
-                                }
-                                else if(t == 3)
-                                {
-                                        if(tmp > t3)
-                                                t3 = tmp;
-                                }
-                                else if(t == 4)
-                                {
-                                        if(tmp > t4)
-                                                t4 = tmp;
-                                }
-				tmp -= cardLine[now];
-			}
+			tmpl[i] = cardLine[i];
 		}
-		else if(gap == 2)
+		else if(i == cardLength - 2)
 		{
-			if(now > 2 && now != 3)
-			{
-				tmp += cardLine[now];
-				algo(len,now-2,t,1);
-				tmp -= cardLine[now];
-			}
+			for(int j = 1;j <= 3;j++)
+				tmpl[i] += cardLine[i-j];
 
-			if(now > 3)
-			{
-				tmp += cardLine[now];
-				algo(len,now-3,t,2);
-				tmp -= cardLine[now];
-			}
-
-			if(now > 4)
-			{
-				tmp += cardLine[now];
-				algo(len,now-4,t,2);
-				tmp -= cardLine[now];
-			}
-
-			if(now <= 3)
-			{
-				tmp += cardLine[now];
-				if(t == 2)
-				{
-					if(tmp > t2)
-						t2 = tmp;
-				}
-				else if(t == 3)
-				{
-					if(tmp > t3)
-						t3 = tmp;
-				}
-				else if(t == 4)
-				{
-					if(tmp > t4)
-						t4 = tmp;
-				}
-
-				tmp -= cardLine[now];
-			}
+			for(int j = 1;j <= 2;j++)
+				tmpl[i] += cardLine[i+j];
 		}
-	}
-	else
-	{
-		if(t == 2)
-                {
-                        if(tmp > t2 && tmp != 0)
-                                t2 = tmp;
-                }
-                else if(t == 3 && tmp != 0)
-                {
-                        if(tmp > t3)
-                                t3 = tmp;
-                }
-                else if(t == 4 && tmp != 0)
-                {
-                        if(tmp > t4)
-                                t4 = tmp;
-                }
-		cout<<"len "<<len<<" now "<<now<<" t "<<t<<" gap "<<gap<<"\t\t";
-        cout<<cardLine[len+now-8]+tmp<<" "<<tmp<<" "<<cardLine[len+now-8]<<endl;
-//		tmp += cardLine[len+now-8];
-		if(gap == 1)
+		else
 		{
-			if(now > 3)
-			{
-				tmp += cardLine[len+now-8];
-				algo(len,now-3,t,2);
-				tmp -= cardLine[len+now-8];
-			}
-			
-			if(now > 4)
-			{
-				tmp += cardLine[len+now-8];
-				algo(len,now-4,t,2);
-				tmp -= cardLine[len+now-8];
-			}
+			for(int j = 1;j <= 3;j++)
+				tmpl[i] += cardLine[i-j];
 
-			if(now <= 3)
-			{
-				tmp += cardLine[len+now-8];
-				if(t == 2)
-				{
-					if(tmp > t2)
-						t2 = tmp;
-				}
-				else if(t == 3)
-				{
-					if(tmp > t3)
-						t3 = tmp;
-				}
-				else if(t == 4)
-				{
-					if(tmp > t4)
-						t4 = tmp;
-				}
-				tmp -= cardLine[len+now-8];
-			}
-		}
-		else if(gap == 2)
-		{
-			if(now > 2)
-			{
-				tmp += cardLine[len+now-8];
-				algo(len,now-2,t,1);
-				tmp -= cardLine[len+now-8];
-			}
-			
-			if(now > 3)
-			{
-				tmp += cardLine[len+now-8];
-				algo(len,now-3,t,2);
-				tmp -= cardLine[len+now-8];
-			}
-			
-			if(now > 4)
-			{
-				tmp += cardLine[len+now-8];
-				algo(len,now-4,t,2);
-				tmp -= cardLine[len+now-8];
-			}
-
-			if(now <= 2)
-			{
-				tmp += cardLine[len+now-8];
-				if(t == 2)
-				{
-					if(tmp > t2)
-						t2 = tmp;
-				}
-				else if(t == 3)
-				{
-					if(tmp > t3)
-						t3 = tmp;
-				}
-				else if(t == 4)
-				{
-					if(tmp > t4)
-						t4 = tmp;
-				}
-				tmp -= cardLine[len+now-8];
-			}
+			for(int j = 1;j <= 3;j++)
+				tmpl[i] += cardLine[i+j];
 		}
 	}
 
 	return;
 }
 
-void card()
+void algo()
 {
-	int checkl = 2;
+	int range = 0;
 
-	result += cardLine[cardLength];
-
-	for(int i = cardLength;i > 3;)
+	for(int i = cardLength;i > 0;)
 	{
-		t2 = t3 = t4 = -10000;
-
-		if(checkl == 2)
+		int low = 10000;
+		int check = 0;
+		cout<<"i "<<i<<endl;
+		if(i == cardLength)
 		{
-			tmp = 0;
-			if(i-2 > 8)
-			{
-//				if(i != cardLength)
-//					algo(i-2,8,2,2);
-//				else
-					algo(i-2,8,2,1);
-			}
-			else
-				algo(i-2,i-2,2,1);
-		}
-
-
-		cout<<endl;
-
-		tmp = 0;
-		if(i-3 > 8)
-			algo(i-3,8,3,2);
-		else
-			algo(i-3,i-3,3,2);
-
-
-		cout<<endl;
-
-
-		tmp = 0;
-		if(i-4 > 8)
-			algo(i-4,8,4,2);
-		else
-			algo(i-4,i-4,4,2);
-
-
-		cout<<endl;
-
-
-		cout<<"t2 t3 t4 "<<t2<<" "<<t3<<" "<<t4<<endl;
-
-		if(t2 > t3 && t2 > t4)
-		{
-			cout<<"T2 "<<cardLine[i-2]<<endl;
-			checkl = 1;
-			result += cardLine[i-2];
+			cout<<"First "<<cardLine[i]<<endl;
+			result += cardLine[i];
 
 			i -= 2;
-		}
-		else if(t3 > t2 && t3 > t4)
-		{
-			cout<<"T3 "<<cardLine[i-3]<<endl;
-			checkl = 2;
-			result += cardLine[i-3];
 
-			i -= 3;
+			range = 2;
 		}
-		else if(t4 > t2 && t4 > t3)
+		else if(i < 7)
 		{
-			cout<<"T4 "<<cardLine[i-4]<<endl;
-			checkl = 2;
-			result += cardLine[i-4];
+			cout<<"in < 7 "<<i<<" "<<range<<endl;
+			if(i == 2)
+			{
+				if(tmpl[1] > tmpl[2])
+					result += tmpl[1];
+				else
+					result += tmpl[2];
+			
+				break;
+			}
+			else if(i == 3)
+			{
+				if(range == 2)	//1,2,3
+				{
+					if(tmpl[1] > tmpl[2] && tmpl[1] > tmpl[3])
+						result += tmpl[1];
+					else if(tmpl[2] > tmpl[1] && tmpl[2] > tmpl[3])
+						result += tmpl[2];
+					else if(tmpl[3] > tmpl[1] && tmpl[3] > tmpl[2])
+						result += tmpl[3];
+				}
+				else if(range == 1)	//2,3
+				{
+					if(tmpl[1] > tmpl[2])
+						result += tmpl[1];
+					else
+						result += tmpl[2];
+				}
+			
+				break;
+			}
+			for(int j = 4;j < 7;j++)
+			{
+				if(low > tmpl[j])
+				{
+					check = j;
+					low = tmpl[j];
+				}
+			}
 
-			i -= 4;
+			if(check == 4)
+			{
+				result += cardLine[4];
+
+				if(tmpl[1] > tmpl[2])
+					result += cardLine[1];
+				else
+					result += cardLine[2];
+			}
+			else if(check == 5)
+			{
+				result += cardLine[5];
+
+				if(tmpl[1] > tmpl[2] && tmpl[1] > tmpl[3])
+					result += tmpl[1];
+				else if(tmpl[2] > tmpl[1] && tmpl[2] > tmpl[3])
+					result += tmpl[2];
+				else if(tmpl[3] > tmpl[1] && tmpl[3] > tmpl[2])
+					result += tmpl[3];
+			}
+			else if(check == 6)
+			{
+				result += cardLine[6];
+
+				if(cardLine[4] + cardLine[1] > cardLine[3] && cardLine[4] + cardLine[1] > cardLine[2])
+				{
+					result += cardLine[4] + cardLine[1];
+				}
+				else if(cardLine[3] > cardLine[4] + cardLine[1] && cardLine[3] > cardLine[2])
+				{
+					result += cardLine[3];
+				}
+				else if(cardLine[2] > cardLine[4] + cardLine[1] && cardLine[2] > cardLine[3])
+				{
+					result += cardLine[2];
+				}
+			}
+
+
+			break;
 		}
-		cout<<"checkl "<<checkl<<endl<<endl;
-//		break;
+		else
+		{
+			cout<<"cardLine "<<cardLine[i]<<" "<<cardLine[i-1]<<" "<<cardLine[i-2]<<endl;
+			cout<<"tmp "<<result<<"\t\t"<<tmpl[i]<<" "<<tmpl[i-1]<<" "<<tmpl[i-2]<<endl;
+			for(int j = i;j >= i-range;j--)
+			{
+				if(low > tmpl[j])
+				{
+					check = j;
+					low = tmpl[j];
+				}
+			}
+
+			if(check == i)
+			{
+				result += cardLine[check];
+				i -= 3;
+
+				range = 1;
+			}
+			else if(check == i - 1)
+			{
+				result += cardLine[check];
+				i -= 3;
+
+				range = 2;
+			}
+			else if(check == i - 2)
+			{
+				result += cardLine[check];
+				i -= 4;
+
+				range = 2;
+			}
+			cout<<"select i "<<check<<endl<<endl;
+		}
 	}
+}
+
+void init()
+{
+	for(int i = 0;i < 1001;i++)
+		tmpl[i] = 0;
+
+	result = 0;
+
 	return;
 }
 
@@ -370,10 +235,13 @@ int main()
 
 	while(testCase)
 	{
-		result = 0;
+		init();
+		
 		finFunction();
 
 		card();
+
+		algo();
 
 		foutFunction();
 
