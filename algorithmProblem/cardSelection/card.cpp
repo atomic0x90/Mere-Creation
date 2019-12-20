@@ -16,6 +16,8 @@ int cardLength;
 int cardLine[1001];
 
 int tmpl[1001];
+int t2[1001];
+int tgap[1001];
 
 int result;
 
@@ -23,19 +25,25 @@ int result;
 void finFunction();
 void foutFunction();
 void card();
-void algo();
+void algo(int);
+//int algo(int,int);
 void init();
 
 
 void foutFunction()
 {
-	for(int i = 1;i <= cardLength;i++)
-		cout<<cardLine[i]<<" ";
+//	for(int i = 1;i <= cardLength;i++)
+//		cout<<cardLine[i]<<" ";
 
-	cout<<endl;
-	cout<<result<<endl;
+//	cout<<endl;
+//	for(int i = 1;i <= cardLength;i++)
+//		cout<<tmpl[i]<<" ";
+
+//	cout<<endl;
+//	cout<<result<<endl;
 
 	fout<<result<<endl;
+//	fout<<tmpl[cardLength]<<endl;
 	return;
 }
 
@@ -52,198 +60,103 @@ void finFunction()
 
 void card()
 {
+	tmpl[1] = cardLine[1];
+	tmpl[2] = cardLine[2];
+	tmpl[3] = cardLine[3];
+
+	tgap[1] = 3;
+	tgap[2] = 3;
+	tgap[3] = 3;
+
 	return;
 }
 
-/*
- * tmpl == 0 : Not decision
- * tmpl == 1 : Selected
- * tmpl == 2 : Not selected
- *
-*/
-void algo()
+//tgap 1 : oxoxxx
+//tgap 2 : oxxoxx
+//tgap 3 : oxxxox
+//tgap 5 : Same tgap 2, tgap 3 data
+void algo(int now)
 {
-	if(cardLength <= 5)
+//	cout<<"now "<<now<<endl;
+	if(now == 4)
 	{
-	
-		return;
-	}
-
-	for(int i = 0;i <= cardLength - 2;)
-	{
-		cout<<"i "<<i<<endl;
-		int se = 0;
-		int checkl;
-		int tlen = cardLength - i;
-		if(i == 0)
+		if(tmpl[1] > tmpl[2])
 		{
-			for(int j = 1;j <= 4;j++)
-			{
-				if(se < cardLine[i+j])
-				{
-					se = cardLine[i+j];
-					checkl = j;
-				}
-			}
-			
-			result += se;
-			tmpl[i+checkl] = 1;
-			tmpl[i+checkl-1] = tmpl[i+checkl+1] = 2;
-			i += checkl;
-
-			if(checkl == 1)
-			{
-				tmpl[3] = 2;
-			}
-			else if(checkl == 3)
-			{
-				tmpl[1] = 2;
-			}
+			tmpl[4] = tmpl[1] + cardLine[4];
+			tgap[4] = 2;
+			algo(now+1);
 		}
 		else
 		{
-			if(i == 1)
-			{
-				if(cardLength - i < 6)
-				{
-					result += cardLine[i+3] + cardLine[i+5];
-					return;
-				}
-				else
-				{
-					for(int j = 3;j < 5;j++)
-					{
-						if(se < cardLine[i+j])
-						{
-							se = cardLine[i+j];
-							checkl = j;
-						}
-					}
-
-					result += se;
-					tmpl[i+checkl] = 1;
-					tmpl[i+checkl-1] = tmpl[i+checkl+1] = 2;
-					i += checkl;
-				}
-			}
-			else if(i == 2)
-			{
-				if(cardLength - i < 6)
-				{
-
-					return;
-				}
-				else
-				{
-					for(int j = 2;j < 5;j++)
-					{
-						if(se < cardLine[i+j])
-						{
-							se = cardLine[i+j];
-							checkl = j;
-						}
-					}
-
-					result += se;
-					tmpl[i+checkl] = 1;
-					tmpl[i+checkl-1] = tmpl[i+checkl+1] = 2;
-					i += checkl;
-				}
-			}
-			else if(i == 3)
-			{
-				if(cardLength - i < 6)
-				{
-					return;
-				}
-				else
-				{
-					for(int j = 2;j < 5;j++)
-					{
-						if(se < cardLine[i+j])
-						{
-							se = cardLine[i+j];
-							checkl = j;
-						}
-					}
-
-					result += se;
-					tmpl[i+checkl] = 1;
-					tmpl[i+checkl-1] = tmpl[i+checkl+1] = 2;
-					i += checkl;
-				}
-			}
-			else
-			{
-				if(i == 4)
-				{
-					if(cardLine[1] > cardLine[2])
-					{
-						tmpl[1] = 1;
-						result += cardLine[1];
-					}
-					else
-					{
-						tmpl[2] = 1;
-						result += cardLine[2];
-					}
-				}
-
-				if(cardLength - i < 6)
-				{
-					if(tlen == 5)
-					{
-						if(tmpl[i-2] == 1)
-						{
-							result += cardLine[i+3] + cardLine[i+5];
-						}
-						else
-						{
-							if(cardLine[i+2] > cardLine[i+3])
-								result += cardLine[i+2] + cardLine[i+5];
-							else
-								result += cardLine[i+3] + cardLine[i+5];
-						}
-					}
-					else if(tlen == 4)
-					{
-						result += cardLine[i+4];
-					}
-					else if(tlen == 3)
-					{
-						result += cardLine[i+3];
-					}
-					else if(tlen == 2)
-					{
-						result += cardLine[i] + cardLine[i+2];
-					}
-					break;
-				}
-				else
-				{
-					int tmpj;
-					if(tmpl[i-2] == 1)
-						tmpj = 3;
-					else
-						tmpj = 2;
-
-					for(int j = tmpj;j < 5;j++)
-					{
-						if(se < cardLine[i+j])
-						{
-							se = cardLine[i+j];
-							checkl = j;
-						}
-					}
-
-					result += se;
-					tmpl[i+checkl] = 1;
-					tmpl[i+checkl-1] = tmpl[i+checkl+1] = 2;
-					i += checkl;
-				}
-			}
+			tmpl[4] = tmpl[2] + cardLine[4];
+			tgap[4] = 1;
+			t2[4] = tmpl[1] + cardLine[4];
+			algo(now+1);
 		}
 	}
+	else
+	{
+		int tt2,tt3,tt4;
+//		tt2 = tt3 = tt4 = -100000;
+		
+		if(tgap[now-2] == 1)
+		{
+			tt2 = t2[now-2];
+			tt3 = tmpl[now-3];
+			tt4 = tmpl[now-4];
+		}
+		else
+		{
+			tt2 = tmpl[now-2];
+			tt3 = tmpl[now-3];
+			tt4 = tmpl[now-4];
+		}
+
+
+//		cout<<" tt2 tt3 tt4 "<<tt2<<" "<<tt3<<" "<<tt4<<endl;
+
+		if(tt2 > tt3 && tt2 > tt4)
+		{
+			tmpl[now] = tt2 + cardLine[now];
+			tgap[now] = 1;
+
+			if(tt3 > tt4)
+				t2[now] = tt3 + cardLine[now];
+			else
+				t2[now] = tt4 + cardLine[now];
+
+
+			if(now != cardLength)
+				algo(now+1);
+		}
+		else if(tt3 >= tt2 && tt3 > tt4)
+		{
+			tmpl[now] = tt3 + cardLine[now];
+			tgap[now] = 2;
+			if(now != cardLength)
+				algo(now+1);
+		}
+		else if(tt4 >= tt2 && tt4 > tt3)
+		{
+			tmpl[now] = tt4 + cardLine[now];
+			tgap[now] = 3;
+			if(now != cardLength)
+		       		algo(now+1);
+		}
+		else if(tt3 == tt4 && tt3 > tt2)
+		{
+			tgap[now] = 5;
+			tmpl[now] = tt3 + cardLine[now];
+			
+			if(now != cardLength)
+				algo(now+1);
+		}
+
+
+		if(now == cardLength)
+			return;
+	}
+
 
 	return;
 }
@@ -251,7 +164,11 @@ void algo()
 void init()
 {
 	for(int i = 1;i <= 1000;i++)
+	{
+		tgap[i] = 0;
+		t2[i] = 0;
 		tmpl[i] = 0;
+	}
 
 	result = 0;
 
@@ -260,6 +177,8 @@ void init()
 
 int main()
 {
+	start_t = clock();
+
 	fin>>testCase;
 
 	while(testCase)
@@ -270,7 +189,9 @@ int main()
 
 		card();
 
-		algo();
+		algo(4);
+
+		result = tmpl[cardLength];
 
 		foutFunction();
 
@@ -279,6 +200,10 @@ int main()
 
 	fin.close();
 	fout.close();
+
+	end_t = clock();
+
+	cout<<(double)(end_t - start_t)/CLOCKS_PER_SEC<<endl;
 
 	return 0;
 }
