@@ -10,7 +10,7 @@ double end_t;
 
 int testCase;
 
-int card[1000];
+int card[1001];
 int front,rear;
 int result;
 
@@ -24,9 +24,11 @@ void init();
 
 void init()
 {
-	result = front = 0;
+	result = 0;
 
-	for(int i = 0;i < 1000;i++)
+	front = 1;
+
+	for(int i = 0;i < 1001;i++)
 		card[i] = 0;
 
 	return;
@@ -34,12 +36,104 @@ void init()
 
 void finFunction()
 {
+	fin>>rear;
+
+	for(int i = 1;i <= rear;i++)
+		fin>>card[i];
+
+	for(int i = 1;i <= rear;i++)
+		cout<<card[i]<<" ";
+
+	cout<<endl;
 
 	return;
 }
 
 void algo()
 {
+	int order = 1;
+	//order % 2 == 1 : Alice
+	//order % 2 == 0 : Computer
+
+	while(1)
+	{
+		cout<<"front "<<front<<" rear "<<rear<<endl;
+
+		if(rear - front <= 2)
+		{
+			for(int i = 0;i < 2;i++)
+			{
+				if(card[front] >= card[rear])
+				{
+					if(order % 2 == 1)
+						result += card[front];
+	
+					front++;
+				}
+				else
+				{
+					if(order % 2 == 1)
+						result += card[rear];
+	
+					rear--;
+				}
+
+				order++;
+			}
+
+			if(order % 2 == 1)
+				result += card[front];
+
+			break;
+		}
+
+		int tf,tr;
+
+		tf = card[front+1] + card[rear];
+		tr = card[front] + card[rear-1];
+
+		if(tf > tr)
+		{
+			if(order % 2 == 1)
+				result += card[rear];
+	
+			rear--;
+		}
+		else if(tf < tr)
+		{
+			if(order % 2 == 1)
+				result += card[front];
+	
+			front++;
+		}
+		else if(tf == tr)
+		{
+			if(card[front] > card[rear])
+			{
+				if(order % 2 == 1)
+					result += card[front];
+
+				front++;
+			}
+			else if(card[front] < card[rear])
+			{
+				if(order % 2 == 1)
+					result += card[rear];
+
+				rear--;
+			}
+			else if(card[front] == card[rear])
+			{
+				if(order % 2 == 1)
+					result += card[front];
+
+				front++;
+			}
+		}
+
+		
+		order++;
+	}
 
 	return;
 }
@@ -63,7 +157,9 @@ int main()
 		init();
 
 		finFunction();
-	
+
+		algo();
+
 		foutFunction();
 
 		testCase--;
