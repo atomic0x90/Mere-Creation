@@ -57,7 +57,8 @@ void algo()
 
 	while(1)
 	{
-		cout<<"front "<<front<<" rear "<<rear<<endl;
+		cout<<"front "<<front<<" "<<card[front]<<" rear "<<rear;
+		cout<<" "<<card[rear]<<" order "<<order%2<<endl;
 
 		if(rear - front <= 2)
 		{
@@ -87,52 +88,65 @@ void algo()
 			break;
 		}
 
+
 		int tf,tr;
 
-		tf = card[front+1] + card[rear];
-		tr = card[front] + card[rear-1];
+		tf = card[front] - card[front+1];
+		tr = card[rear] - card[rear-1];
 
-		if(tf > tr)
+		if(tf < 0 && tr < 0)
 		{
-			if(order % 2 == 1)
-				result += card[rear];
-	
-			rear--;
-		}
-		else if(tf < tr)
-		{
-			if(order % 2 == 1)
-				result += card[front];
-	
-			front++;
-		}
-		else if(tf == tr)
-		{
-			if(card[front] > card[rear])
+			if(tf >= tr)
 			{
 				if(order % 2 == 1)
 					result += card[front];
 
 				front++;
 			}
-			else if(card[front] < card[rear])
+			else
 			{
 				if(order % 2 == 1)
 					result += card[rear];
 
 				rear--;
 			}
-			else if(card[front] == card[rear])
+		}
+		else if(tf >= 0 && tr < 0)
+		{
+			if(order % 2 == 1)
+				result += card[front];
+
+			front++;
+		}
+		else if(tf < 0 && tr >= 0)
+		{
+			if(order % 2 == 1)
+				result += card[rear];
+
+			rear--;
+		}
+		else
+		{
+			if(card[front] >= card[rear])
 			{
 				if(order % 2 == 1)
 					result += card[front];
 
 				front++;
 			}
+			else
+			{
+				if(order % 2 == 1)
+					result += card[rear];
+
+				rear--;
+			}
 		}
 
-		
+
+		cout<<" result "<<result<<endl;
 		order++;
+
 	}
 
 	return;
