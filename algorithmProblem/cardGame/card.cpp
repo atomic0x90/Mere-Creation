@@ -5,6 +5,9 @@
 
 using namespace std;
 
+#define max(a,b) (a >= b ? a : b)
+#define min(a,b) (a >= b ? b : a)
+
 clock_t start_t;
 double end_t;
 
@@ -14,12 +17,15 @@ int card[1001];
 int front,rear;
 int result;
 
+int tmp[1001][1001];
+
+
 ifstream fin("card.inp");
 ofstream fout("card.out");
 
 void finFunction();
 void foutFunction();
-void algo();
+int algo(int,int,int);
 void init();
 
 void init()
@@ -28,8 +34,14 @@ void init()
 
 	front = 1;
 
+
+
 	for(int i = 0;i < 1001;i++)
+	{
 		card[i] = 0;
+		for(int j = 0;j < 1001;j++)
+			tmp[i][j] = 0;
+	}
 
 	return;
 }
@@ -41,120 +53,41 @@ void finFunction()
 	for(int i = 1;i <= rear;i++)
 		fin>>card[i];
 
-	for(int i = 1;i <= rear;i++)
-		cout<<card[i]<<" ";
-
-	cout<<endl;
-
 	return;
 }
 
-void algo()
+//order % 2 == 1 : Alice
+//order % 2 == 0 : Computer
+
+
+int algo(int start,int end,int flag)
 {
-	int order = 1;
-	//order % 2 == 1 : Alice
-	//order % 2 == 0 : Computer
+	if(tmp[start][end] != 0)
+		return tmp[start][end];
 
-	while(1)
+	if(start == end)
 	{
-		cout<<"front "<<front<<" "<<card[front]<<" rear "<<rear;
-		cout<<" "<<card[rear]<<" order "<<order%2<<endl;
-
-		if(rear - front <= 2)
+		if(flag % 2 == 1)
+			return card[start];
+		else
+			return 0;
+	}
+	else
+	{
+		if(flag % 2 == 1)
 		{
-			for(int i = 0;i < 2;i++)
-			{
-				if(card[front] >= card[rear])
-				{
-					if(order % 2 == 1)
-						result += card[front];
-	
-					front++;
-				}
-				else
-				{
-					if(order % 2 == 1)
-						result += card[rear];
-	
-					rear--;
-				}
-
-				order++;
-			}
-
-			if(order % 2 == 1)
-				result += card[front];
-
-			break;
-		}
-
-
-		int tf,tr;
-
-		tf = card[front] - card[front+1];
-		tr = card[rear] - card[rear-1];
-
-		if(tf < 0 && tr < 0)
-		{
-			if(tf >= tr)
-			{
-				if(order % 2 == 1)
-					result += card[front];
-
-				front++;
-			}
-			else
-			{
-				if(order % 2 == 1)
-					result += card[rear];
-
-				rear--;
-			}
-		}
-		else if(tf >= 0 && tr < 0)
-		{
-			if(order % 2 == 1)
-				result += card[front];
-
-			front++;
-		}
-		else if(tf < 0 && tr >= 0)
-		{
-			if(order % 2 == 1)
-				result += card[rear];
-
-			rear--;
+			tmp[start][end] = max( algo(start+1,end,flag+1) + card[start],algo(start,end-1,flag+1) + card[end] );
 		}
 		else
 		{
-			if(card[front] >= card[rear])
-			{
-				if(order % 2 == 1)
-					result += card[front];
-
-				front++;
-			}
-			else
-			{
-				if(order % 2 == 1)
-					result += card[rear];
-
-				rear--;
-			}
+			tmp[start][end] = min( algo(start+1,end,flag+1),algo(start,end-1,flag+1) );
 		}
-
-
-		cout<<" result "<<result<<endl;
-		order++;
-
 	}
-
-	return;
+	return tmp[start][end];
 }
 
 void foutFunction()
 {
-	cout<<result<<endl;
 	fout<<result<<endl;
 
 	return;
@@ -172,7 +105,7 @@ int main()
 
 		finFunction();
 
-		algo();
+		result = algo(1,rear,1);
 
 		foutFunction();
 
