@@ -4,6 +4,7 @@
 #include <time.h>
 
 #include <algorithm>
+
 using namespace std;
 
 ifstream fin("cube.inp");
@@ -56,7 +57,6 @@ void finFunction()
 
 void foutFunction()
 {
-	cout<<result<<endl;
 	fout<<result<<endl;
 
 	return;
@@ -64,6 +64,9 @@ void foutFunction()
 
 int algo(int w,int l,int h)
 {
+	if(w == l && l == h)
+		return 1;
+
 	if(w > l)
 		swap(w,l);
 	if(l > h)
@@ -74,6 +77,20 @@ int algo(int w,int l,int h)
 
 	if(cube[w][l][h] != 999999)
 		return cube[w][l][h];
+
+	
+	if(l == 1)
+	{
+		return cube[w][l][h] = h;
+	}
+	else if(w == 1)
+	{
+		return cube[w][l][h] = l*h;
+	}
+	else if(w == l && h % l == 0)
+	{
+		return cube[w][l][h] = h/l;
+	}
 	else
 	{
 		for(int i = 1;i <= w/2;i++)
