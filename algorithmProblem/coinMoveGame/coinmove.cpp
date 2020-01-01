@@ -14,12 +14,13 @@ double end_t;
 int P,K,S;
 int result;
 int testCase;
-int coin[8][1000000];
+int coin[1000000][8];
 
+int save;
 void finFunction();
 void foutFunction();
 void init();
-int algo(int,int);
+int algo();
 
 void finFunction()
 {
@@ -30,10 +31,11 @@ void finFunction()
 
 void init()
 {
+	save = 0;
 	result = -1;
-	for(int i = 0;i < 8;i++)
+	for(int i = 0;i <= S;i++)
 	{
-		for(int j = 0;j <= S;j++)
+		for(int j = 1;j < 8;j++)
 			coin[i][j] = 0;
 	}
 
@@ -42,19 +44,44 @@ void init()
 
 void foutFunction()
 {
-	cout<<result<<endl;
 	fout<<result<<endl;
 
 	return;
 }
 
-int algo(int lastmove,int now)
+int algo()
 {
-	if(now < 0)
-		return -1;
+	for(int i = 1;i <= K;i++)
+		coin[0][i] = -1;
 
-	if(coin[lastmove][now] != 0)
-		return coin[lastmove][now];
+	for(int i = 1;i <= S;i++)
+	{
+		for(int j = 1;j <= K;j++)
+		{
+			for(int l = 1;l <= K;l++)
+			{
+				if(j != l)
+				{
+					if( ( (i-j) % P == 0 && i-j != 0 ) || coin[i-j][l] == 1 || j > i)
+					{
+						coin[i][j] = -1;
+						break;
+					}
+				}
+				else
+					continue;
+			}
+
+			if(coin[i][j] == 0)
+				coin[i][j] = 1;
+		}
+	}
+
+	for(int i = 1;i <= K;i++)
+	{
+		if(coin[S][i] == 1)
+			return S-i;
+	}
 
 	return -1;
 }
@@ -69,8 +96,8 @@ int main()
 		finFunction();
 
 		init();
-	
-		result = algo(0,S);
+		
+		result = algo();
 
 		foutFunction();
 
