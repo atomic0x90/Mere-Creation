@@ -3,8 +3,6 @@
 
 #include <time.h>
 
-//#include <stdlib.h>	//abs
-
 #include <algorithm>
 
 #include <cstring>	//memset
@@ -26,27 +24,20 @@ int coor[501];
 int bin1[501][501];
 int sum[501][501];
 
+
 void init();
 void finFunction();
-void foutFunction();
 int algo();
-
-int split(int,int);	//start, remaining bins
+int slove(int,int);
 
 void finFunction()
 {
 	fin>>home>>bin;
 
-	cout<<home<<" "<<bin<<endl;
-
 	for(int i = 1;i <= home;i++)
 		fin>>coor[i];
 
 	sort(coor,coor+home+1);
-
-	for(int i = 1;i <= home;i++)
-                cout<<coor[i]<<" ";
-        cout<<endl;
 
 	return;
 }
@@ -56,19 +47,42 @@ int algo()
 	for(int i = 1;i <= home;i++)
 	{
 		for(int j = i;j <= home;j++)
-		{
 			bin1[i][j] = bin1[i][j-1] + coor[j] - coor[i + ((j-i)/2)];
-
-			cout<<bin1[i][j]<<" ";
-		}
-		cout<<endl;
 	}
+
+	return slove(1,bin);
+}
+
+int slove(int st,int b)
+{
+	if(st > home)
+	{
+		if(b == 0)
+			return 0;
+		else
+			return 9999999;
+	}
+	if(b == 0)
+		return 9999999;
+
+	if(sum[st][b] != -1)
+		return sum[st][b];
+
+	for(int i = st;i <= home;i++)
+	{
+		if(sum[st][b] == -1)
+			sum[st][b] = slove(i+1,b-1) + bin1[st][i];
+		else
+			sum[st][b] = min(sum[st][b], slove(i+1,b-1) + bin1[st][i]);
+	}
+
+	return sum[st][b];
 }
 
 void init()
 {
 	memset(bin1,0,sizeof(bin1));
-	memset(sum,0,sizeof(sum));
+	memset(sum,-1,sizeof(sum));
 
 	return;
 }
@@ -85,7 +99,7 @@ int main()
 	
 		init();
 
-		algo();
+		fout<<algo()<<endl;
 
 		testCase--;
 	}
