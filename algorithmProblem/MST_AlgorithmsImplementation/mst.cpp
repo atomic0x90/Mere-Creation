@@ -31,7 +31,6 @@ int sum;
 void finFunction();
 void prim(int);
 void kruskal();
-void init();
 void sortFunction();
 
 int find(int);
@@ -53,10 +52,33 @@ void unionParent(int x,int y)
 	p1 = find(x);
 	p2 = find(y);
 
+	if(p1 == p2)
+		return;
+
 	if(p1 < p2)
+	{
+//		visit[y] = p1;
+	
+		for(int i = 0;i < vertex;i++)
+		{
+			if(visit[i] != i)
+				visit[i] = p1;
+		}
+
 		visit[y] = p1;
+	}
 	else
+	{
+//		visit[x] = p2;
+	
+		for(int i = 0;i < vertex;i++)
+		{
+			if(visit[i] != i)
+				visit[i] = p2;
+		}
+
 		visit[x] = p2;
+	}
 
 	return;
 }
@@ -75,20 +97,16 @@ bool checkParent(int x,int y)
 
 }
 
-void init()
-{
-	return;
-}
-
-
 void sortFunction()
 {
 	sort(v.begin(),v.end());
-	cout<<"sort"<<endl;
+//	cout<<"sort"<<endl;
+	/*
 	for(int i = 0;i < edge;i++)
         {
                 cout<<get<0>(v[i])<<" "<<get<1>(v[i])<<" "<<get<2>(v[i])<<" "<<get<3>(v[i])<<endl;
         }
+	*/
 	return;
 }
 
@@ -120,6 +138,7 @@ void kruskal()
 
 	for(int i = 0;i < edge;i++)
 	{
+	//	cout<<!checkParent( get<2>(v[i]) , get<3>(v[i]) )<<endl;
 		if( !checkParent( get<2>(v[i]) , get<3>(v[i]) ) )
 		{
 			sum += get<0>(v[i]);
@@ -127,8 +146,13 @@ void kruskal()
 			save.push_back(get<1>(v[i]));
 			
 			unionParent( get<2>(v[i]) , get<3>(v[i]) );
+
+	//		cout<<find(3)<<" "<<find(6)<<" asdf "<<get<2>(v[i])<<" "<<get<3>(v[i])<<endl;
+	//		cout<<find(4)<<" "<<find(get<2>(v[i]))<<" "<<find(get<3>(v[i]))<<endl<<endl;
 		}
 	}
+
+//	cout<<find(3)<<" "<<find(6)<<endl;//<<" asdf "<<get<2>(v[i])<<" "<<get<3>(v[i])<<endl;
 
 //	cout<<save.size()<<" "<<sum<<endl;
 
