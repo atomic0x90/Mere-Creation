@@ -61,7 +61,7 @@ void unionParent(int x,int y)
 	
 		for(int i = 0;i < vertex;i++)
 		{
-			if(visit[i] != i)
+			if(visit[i] == visit[y])
 				visit[i] = p1;
 		}
 
@@ -73,7 +73,7 @@ void unionParent(int x,int y)
 	
 		for(int i = 0;i < vertex;i++)
 		{
-			if(visit[i] != i)
+			if(visit[i] == visit[x])
 				visit[i] = p2;
 		}
 
