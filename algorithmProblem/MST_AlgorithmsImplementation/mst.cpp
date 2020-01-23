@@ -29,7 +29,7 @@ int vertex,edge;
 int sum;
 
 void finFunction();
-int prim();
+void prim(int);
 void kruskal();
 void init();
 void sortFunction();
@@ -84,13 +84,11 @@ void init()
 void sortFunction()
 {
 	sort(v.begin(),v.end());
-
 	cout<<"sort"<<endl;
 	for(int i = 0;i < edge;i++)
         {
                 cout<<get<0>(v[i])<<" "<<get<1>(v[i])<<" "<<get<2>(v[i])<<" "<<get<3>(v[i])<<endl;
         }
-
 	return;
 }
 
@@ -132,7 +130,68 @@ void kruskal()
 		}
 	}
 
+//	cout<<save.size()<<" "<<sum<<endl;
+
 	fout<<"Tree edges by Kruskal algorithm: "<<sum<<endl;
+	for(int i = 0;i < save.size();i++)
+		fout<<save[i]<<endl;
+
+	save.clear();
+
+	return;
+}
+
+void prim(int start)
+{
+	sum = 0;
+	int check = 0;
+	int tweight,tnum,v1,v2;
+	memset(visit,0,sizeof(visit));
+	visit[start] = 1;
+
+	save.reserve(vertex-1);
+
+	while(1)
+	{
+		tweight = 9999999;
+		tnum = 9999999;
+
+		for(int i = 0;i < edge;i++)
+		{
+			if( visit[ get<2>(v[i]) ] + visit[ get<3>(v[i]) ] == 1)
+			{
+				if( get<0>(v[i]) == tweight)
+				{
+					if( get<1>(v[i]) < tnum)
+					{
+						tnum = get<1>(v[i]);
+						v1 = get<2>(v[i]);
+						v2 = get<3>(v[i]);
+					}
+				}
+				else if( get<0>(v[i]) < tweight)
+				{
+					tnum = get<1>(v[i]);
+					tweight = get<0>(v[i]);
+					v1 = get<2>(v[i]);
+					v2 = get<3>(v[i]);
+				}
+			}
+		}
+
+		sum += tweight;
+
+		visit[v1] = visit[v2] = 1;
+
+		save.push_back(tnum);
+
+		check++;
+	
+		if(check == vertex - 1)
+			break;
+	}
+
+	fout<<"Tree edges by Prim algorithm with starting vertex "<<start<<": "<<sum<<endl;
 	for(int i = 0;i < save.size();i++)
 		fout<<save[i]<<endl;
 
@@ -150,6 +209,12 @@ int main()
 	sortFunction();
 
 	kruskal();
+
+	prim(0);
+
+	prim(vertex/2);
+
+	prim(vertex-1);
 
 	fin.close();
 	fout.close();
