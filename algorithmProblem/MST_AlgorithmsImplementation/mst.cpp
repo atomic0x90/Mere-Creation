@@ -168,6 +168,9 @@ void prim(int start)
 						tnum = v[i].first.second;
 						v1 = v[i].second.first;
 						v2 = v[i].second.second;
+						break;
+						//break; means
+						//Sort weight of edge -> The fastest number of the same value
 					}
 				}
 				else if(v[i].first.first < tweight)
@@ -176,6 +179,9 @@ void prim(int start)
 					tweight = v[i].first.first;
 					v1 = v[i].second.first;
 					v2 = v[i].second.second;
+					break;
+					//braek; means
+					//Sort weight of edge -> The fastest number of the same value
 				}
 			}
 		}
