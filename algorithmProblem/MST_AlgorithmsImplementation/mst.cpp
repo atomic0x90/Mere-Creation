@@ -2,7 +2,7 @@
 #include <fstream>
 
 #include <vector>
-#include <tuple>
+#include <utility>
 #include <algorithm>
 
 #include <time.h>
@@ -14,12 +14,10 @@ using namespace std;
 ifstream fin("mst.inp");
 ofstream fout("mst.out");
 
-typedef tuple <int,int,int,int> tu;	// weighted of edge, edge number, v1, v2
-
 clock_t start_t;
 double end_t;
 
-vector < tu > v;
+vector < pair < pair<int,int> , pair<int,int> > > v;
 
 vector <int> save;
 
@@ -57,8 +55,6 @@ void unionParent(int x,int y)
 
 	if(p1 < p2)
 	{
-//		visit[y] = p1;
-	
 		for(int i = 0;i < vertex;i++)
 		{
 			if(visit[i] == visit[y])
@@ -69,8 +65,6 @@ void unionParent(int x,int y)
 	}
 	else
 	{
-//		visit[x] = p2;
-	
 		for(int i = 0;i < vertex;i++)
 		{
 			if(visit[i] == visit[x])
@@ -100,13 +94,7 @@ bool checkParent(int x,int y)
 void sortFunction()
 {
 	sort(v.begin(),v.end());
-//	cout<<"sort"<<endl;
-	/*
-	for(int i = 0;i < edge;i++)
-        {
-                cout<<get<0>(v[i])<<" "<<get<1>(v[i])<<" "<<get<2>(v[i])<<" "<<get<3>(v[i])<<endl;
-        }
-	*/
+	
 	return;
 }
 
@@ -122,8 +110,7 @@ void finFunction()
 	{
 		fin>>t1>>t2>>t3;
 
-		tu tmp = make_tuple(t3,i,t1,t2);
-		v.push_back(tmp);
+		v.push_back({{t3,i},{t1,t2}});
 	}
 
 	return;
@@ -138,23 +125,13 @@ void kruskal()
 
 	for(int i = 0;i < edge;i++)
 	{
-	//	cout<<!checkParent( get<2>(v[i]) , get<3>(v[i]) )<<endl;
-		if( !checkParent( get<2>(v[i]) , get<3>(v[i]) ) )
+		if( !checkParent(v[i].second.first , v[i].second.second) )
 		{
-			sum += get<0>(v[i]);
-			
-			save.push_back(get<1>(v[i]));
-			
-			unionParent( get<2>(v[i]) , get<3>(v[i]) );
-
-	//		cout<<find(3)<<" "<<find(6)<<" asdf "<<get<2>(v[i])<<" "<<get<3>(v[i])<<endl;
-	//		cout<<find(4)<<" "<<find(get<2>(v[i]))<<" "<<find(get<3>(v[i]))<<endl<<endl;
+			sum += v[i].first.first;
+			save.push_back(v[i].first.second);
+			unionParent(v[i].second.first, v[i].second.second);
 		}
 	}
-
-//	cout<<find(3)<<" "<<find(6)<<endl;//<<" asdf "<<get<2>(v[i])<<" "<<get<3>(v[i])<<endl;
-
-//	cout<<save.size()<<" "<<sum<<endl;
 
 	fout<<"Tree edges by Kruskal algorithm: "<<sum<<endl;
 	for(int i = 0;i < save.size();i++)
@@ -182,23 +159,23 @@ void prim(int start)
 
 		for(int i = 0;i < edge;i++)
 		{
-			if( visit[ get<2>(v[i]) ] + visit[ get<3>(v[i]) ] == 1)
+			if( visit[v[i].second.first] + visit[v[i].second.second] == 1)
 			{
-				if( get<0>(v[i]) == tweight)
+				if(v[i].first.first == tweight)
 				{
-					if( get<1>(v[i]) < tnum)
+					if(v[i].first.second < tnum)
 					{
-						tnum = get<1>(v[i]);
-						v1 = get<2>(v[i]);
-						v2 = get<3>(v[i]);
+						tnum = v[i].first.second;
+						v1 = v[i].second.first;
+						v2 = v[i].second.second;
 					}
 				}
-				else if( get<0>(v[i]) < tweight)
+				else if(v[i].first.first < tweight)
 				{
-					tnum = get<1>(v[i]);
-					tweight = get<0>(v[i]);
-					v1 = get<2>(v[i]);
-					v2 = get<3>(v[i]);
+					tnum = v[i].first.second;
+					tweight = v[i].first.first;
+					v1 = v[i].second.first;
+					v2 = v[i].second.second;
 				}
 			}
 		}
