@@ -3,13 +3,10 @@
 
 #include <time.h>
 
-#include <vector>
+#include <cstring>	//strlen
 
-#include <cstring>
+#include <algorithm>	//min
 
-#include <cstdio>
-
-#include <algorithm>
 using namespace std;
 
 ifstream fin("color.inp");
@@ -22,20 +19,18 @@ int l1,l2;	//Line lenght
 int testCase;
 char *c1,*c2;
 
-vector <char> mergel;
+int check1[5002][27],check2[5002][27];
 
-int checka[27];
-int gap[5000][5000];
-
-int minvalue;
+int gap[5002][5002];
 
 string finString;
 string finString2;
 
 void finFunction();
-int algo(int,int);
+int algo();
 void init();
-int sum();
+void sum();
+int checkmin(int,int,int);
 
 void finFunction()
 {
@@ -47,162 +42,78 @@ void finFunction()
 
 	c2 = (char*)finString2.c_str();
 
-	cout<<c1<<endl;
-	cout<<c2<<endl;
-
 	l1 = strlen(c1);
 	l2 = strlen(c2);
-
-	for(int i = 0;i < l1;i++)
-		checka[c1[i]-65]++;
-	
-	for(int i = 0;i < l2;i++)
-		checka[c2[i]-65]++;
-
-	mergel.reserve(l1+l2);
 
 	return;
 }
 
 void init()
 {
-	memset(checka,0,sizeof(checka));
-	memset(gap,-1,sizeof(gap));
-
-	minvalue = 999999999;
+	memset(gap,999999,sizeof(gap));
+	memset(check1,0,sizeof(check1));
+	memset(check2,0,sizeof(check2));
 
 	return;
 }
 
-int sum()
+int checkmin(int x1,int x2,int ap)
 {
-	int tmp[27];
-
-	for(int i = 0;i < 27;i++)
-	{
-		if(checka[i] <= 1)
-		{
-			tmp[i] = 0;
-			continue;
-		}
-
-		for(int j = mergel.size();j >= 0;j--)
-		{
-			if(mergel[j]-65 == i)
-			{
-				tmp[i] = j;
-				break;
-			}
-		}
-		for(int j = 0;j <= mergel.size();j++)
-		{
-			if(mergel[j]-65 == i)
-			{
-				tmp[i] -= j;
-				break;
-			}
-		}
-	}
-
 	int re = 0;
-	for(int i = 0;i < 27;i++)
-	{
-//		cout<<tmp[i]<<" ";
 
-		re += tmp[i];
+	if(check1[x1][ap] + check2[x2][ap] == check1[l1][ap] + check2[l2][ap])
+	{	//The last car of this color
+		re += x1 + x2;
 	}
-//	cout<<endl;
+	if(check1[x1][ap] + check2[x2][ap] == 1)
+	{	//The first car of this color
+		re -= x1 + x2;
+	}
 
 	return re;
 }
 
-int algo(int start,int end)
+void sum()
 {
-//	cout<<start<<" "<<end<<" "<<gap[start][end]<<endl;
+	gap[0][0] = 0;
 
-	if(gap[start][end] != -1)
-		return gap[start][end];
-
-	if(start == l1)
+	for(int i = 0;i <= l1;i++)
 	{
-		for(int i = end;i < l2;i++)
-			mergel.push_back(c2[i]);
-
-		for(int i = 0;i < mergel.size();i++)
-			cout<<mergel[i]<<" ";
-		cout<<endl;
-
-		int re = sum();
-
-//		cout<<"------------------ "<<re<<" ---------------"<<endl;
-
-		for(int i = end;i < l2;i++)
-			mergel.pop_back();
-
-		return re;
-	}
-	
-	if(end == l2)
-	{
-		for(int i = start;i < l2;i++)
-			mergel.push_back(c1[i]);
-
-		for(int i = 0;i < mergel.size();i++)
-			cout<<mergel[i]<<" ";
-		cout<<endl;
-
-		int re = sum();
-
-//		cout<<"------------------ "<<re<<" ---------------"<<endl;
-		for(int i = start;i < l2;i++)
-			mergel.pop_back();
-
-		return re;
+		for(int j = 0;j <= l2;j++)
+		{
+			if(i > 0)
+				gap[i][j] = min(gap[i-1][j] + checkmin(i,j,c1[i-1]-65), gap[i][j]);
+		
+			if(j > 0)
+				gap[i][j] = min(gap[i][j-1] + checkmin(i,j,c2[j-1]-65), gap[i][j]);
+		
+		}
 	}
 
-	for(int i = start;i < l1;i++)
-	{
-		for(int j = start;j <= i;j++)
-		       mergel.push_back(c1[j]);	
+	return;
+}
 
-		if(gap[i][end] == -1)
-		{
-			gap[i][end] = algo(i+1,end);
-			minvalue = gap[i][end];
-		}
-		else
-		{
-			gap[i][end] = min(gap[i][end], algo(i+1,end));
-			if(minvalue > gap[i][end])
-				minvalue = gap[i][end];
-		}
-		for(int j = start;j <= i;j++)
-			mergel.pop_back();
+int algo()
+{
+	for(int i = 1;i <= l1;i++)
+	{
+		check1[i][c1[i-1]-65]++;
+
+		for(int j = 0;j < 26;j++)
+			check1[i+1][j] = check1[i][j];
 	}
 
-//	cout<<endl;
-
-	for(int i = end;i < l2;i++)
+	for(int i = 1;i <= l2;i++)
 	{
-		for(int j = end;j <= i;j++)
-			mergel.push_back(c2[j]);
+		check2[i][c2[i-1]-65]++;
 
-		if(gap[start][i] == -1)
-		{
-			gap[start][i] = algo(start,i+1);
-			minvalue = gap[start][i];
-		}
-		else
-		{
-			gap[start][i] = min(gap[start][i], algo(start,i+1));
-			if(minvalue > gap[start][i])
-				minvalue = gap[start][i];
-		}
-		for(int j = end;j <= i;j++)
-			mergel.pop_back();
+		for(int j = 0;j < 26;j++)
+			check2[i+1][j] = check2[i][j];
 	}
 
-	return gap[start][end];
+	sum();
+
+	return gap[l1][l2];
 }
 
 int main()
@@ -221,9 +132,8 @@ int main()
 
 		finFunction();
 
-		cout<<algo(0,0)<<" "<<minvalue<<endl;
+		fout<<algo()<<endl;
 
-		fout<<minvalue<<endl;
 		testCase--;
 	}
 
