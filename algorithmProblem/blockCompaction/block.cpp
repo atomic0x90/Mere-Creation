@@ -87,7 +87,7 @@ void algo()
 
 			for(int j = 0;j < i;j++)
 			{
-				if( (x1 >= block[j].first.first && x1 < block[j].first.second) || (x2 > block[j].first.first && x2 <= block[j].first.second) )
+				if((x1 <= block[j].first.first && x2 >= block[j].first.second) || (x1 >= block[j].first.first && x1 < block[j].first.second) || (x2 > block[j].first.first && x2 <= block[j].first.second) )
 				{
 //					cout<<"a "<<x1<<" "<<x2<<" "<<y1<<" "<<y2<<endl;
 
@@ -123,7 +123,7 @@ void algo()
 
 			for(int j = 0;j < i;j++)
 			{
-				if( (y1 >= block[j].second.first && y1 < block[j].second.second) || (y2 > block[j].second.first && y2 <= block[j].second.second))
+				if((y1 <= block[j].second.first && y2 >= block[j].second.second)|| (y1 >= block[j].second.first && y1 < block[j].second.second) || (y2 > block[j].second.first && y2 <= block[j].second.second))
 				{
 //					cout<<"b "<<x1<<" "<<x2<<" "<<y1<<" "<<y2<<endl;
 
