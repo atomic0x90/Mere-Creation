@@ -26,12 +26,18 @@ void algo();
 
 bool xcompare(const pair< pair<int,int> , pair<int,int> > &a,const pair< pair<int,int> , pair<int,int> > &b)
 {
-	return a.first.first < b.first.first;
+	if(a.first.first != b.first.first)
+		return a.first.first < b.first.first;
+	else
+		return a.second.first < b.second.first;
 }
 
 bool ycompare(const pair< pair<int,int> , pair<int,int> > &a,const pair< pair<int,int> , pair<int,int> > &b)
 {
-	return a.second.first < b.second.first;
+	if(a.second.first != b.second.first)
+		return a.second.first < b.second.first;
+	else
+		return a.first.first < b.first.first;
 }
 
 void finFunction()
@@ -50,16 +56,6 @@ void finFunction()
 		num--;
 	}
 
-
-//	sort(block.begin(),block.end(),ycompare);
-
-	/*
-	for(int i = 0;i < block.size();i++)
-	{
-		cout<<block[i].first.first<<" "<<block[i].first.second<<" "<<block[i].second.first<<" "<<block[i].second.second<<endl;
-	}
-*/
-
 	return;
 }
 
@@ -69,8 +65,6 @@ void algo()
 	{
 		int flag = 0;
 
-		int x1,x2,y1,y2;
-
 		sort(block.begin(),block.end(),ycompare);
 
 		for(int i = 0;i < block.size();i++)
@@ -78,32 +72,27 @@ void algo()
 			if(block[i].second.first == 0)
 				continue;
 
-			x1 = block[i].first.first;
-			x2 = block[i].first.second;
-			y1 = block[i].second.first;
-			y2 = block[i].second.second;
-
-			int check = y1;
-
+	//		cout<<block[i].first.first<<" "<<block[i].first.second<<" "<<block[i].second.first<<" "<<block[i].second.second<<endl;
+			
+			int check = 0;
 			for(int j = 0;j < i;j++)
 			{
-				if((x1 <= block[j].first.first && x2 >= block[j].first.second) || (x1 >= block[j].first.first && x1 < block[j].first.second) || (x2 > block[j].first.first && x2 <= block[j].first.second) )
+				if(block[i].first.first < block[j].first.second && block[i].first.second > block[j].first.first)
 				{
-//					cout<<"a "<<x1<<" "<<x2<<" "<<y1<<" "<<y2<<endl;
-
-					if(y1 - block[j].second.second < check && y1 >= block[j].second.second)
-						check = y1 - block[j].second.second;
+					if(check < block[j].second.second)
+						check = block[j].second.second;
 				}
 			}
-		
-			if(check)
-			{
-//				cout<<"Y "<<block[i].second.first<<" "<<block[i].second.second<<" "<<check<<endl;
-				block[i].second.first -= check;
-				block[i].second.second -= check;
-				
+
+			int tmp = block[i].second.first - check;
+
+			block[i].second.first -= tmp;
+			block[i].second.second -= tmp;
+
+	//		cout<<block[i].first.first<<" "<<block[i].first.second<<" "<<block[i].second.first<<" "<<block[i].second.second<<endl<<endl;
+
+			if(tmp)
 				flag++;
-			}
 
 		}
 
@@ -114,32 +103,27 @@ void algo()
 			if(block[i].first.first == 0)
 				continue;
 
-			x1 = block[i].first.first;
-			x2 = block[i].first.second;
-			y1 = block[i].second.first;
-			y2 = block[i].second.second;
-
-			int check = x1;
-
+			int check = 0;
+	//		cout<<block[i].first.first<<" "<<block[i].first.second<<" "<<block[i].second.first<<" "<<block[i].second.second<<" "<<check<<endl;
+			
 			for(int j = 0;j < i;j++)
 			{
-				if((y1 <= block[j].second.first && y2 >= block[j].second.second)|| (y1 >= block[j].second.first && y1 < block[j].second.second) || (y2 > block[j].second.first && y2 <= block[j].second.second))
+				if(block[i].second.first < block[j].second.second && block[i].second.second > block[j].second.first)
 				{
-//					cout<<"b "<<x1<<" "<<x2<<" "<<y1<<" "<<y2<<endl;
-
-					if(x1 - block[j].first.second < check && x1 >= block[j].first.second)
-						check = x1 - block[j].first.second;
+					if(check < block[j].first.second)
+						check = block[j].first.second;
 				}
 			}
 
-			if(check)
-			{
-//				cout<<"X "<<block[i].first.first<<" "<<block[i].first.second<<" "<<check<<endl;
-				block[i].first.first -= check;
-				block[i].first.second -= check;
-			
+			int tmp = block[i].first.first - check;
+
+			block[i].first.first -= tmp;
+			block[i].first.second -= tmp;
+
+	//		cout<<block[i].first.first<<" "<<block[i].first.second<<" "<<block[i].second.first<<" "<<block[i].second.second<<endl;
+
+			if(tmp)
 				flag++;
-			}
 		}
 
 
@@ -149,18 +133,17 @@ void algo()
 	}
 
 	int maxX,maxY;
+
 	maxX = maxY = 0;
 	for(int i = 0;i < block.size();i++)
 	{
-		if(block[i].first.second > maxX)
+		if(maxX < block[i].first.second)
 			maxX = block[i].first.second;
-		if(block[i].second.second > maxY)
+		if(maxY < block[i].second.second)
 			maxY = block[i].second.second;
 	}
 
 	fout<<maxX<<" "<<maxY<<endl;
-
-//	cout<<endl;
 
 	block.clear();
 
