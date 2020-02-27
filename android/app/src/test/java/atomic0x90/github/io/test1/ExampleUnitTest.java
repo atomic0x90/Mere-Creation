@@ -1,4 +1,4 @@
-package atomic0x90.github.mathgame;
+package atomic0x90.github.io.test1;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package atomic0x90.github.mathgame;
+package atomic0x90.github.io.test1;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("atomic0x90.github.mathgame", appContext.getPackageName());
+        assertEquals("atomic0x90.github.io.test1", appContext.getPackageName());
     }
 }
