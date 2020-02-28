@@ -21,6 +21,25 @@ img = cv2.imread('tree.jpg', cv2.IMREAD_COLOR)
 cv2.namedWindow('test',cv2.WINDOW_NORMAL)
 cv2.imshow('test', img)
 
+(B,G,R) = cv2.split(img)
+
+cv2.namedWindow('t1',cv2.WINDOW_NORMAL)
+cv2.imshow('t1',B)
+
+cv2.namedWindow('t2',cv2.WINDOW_NORMAL)
+cv2.imshow('t2',G)
+
+cv2.namedWindow('t3',cv2.WINDOW_NORMAL)
+cv2.imshow('t3',R)
+
+cv2.namedWindow('t4',cv2.WINDOW_NORMAL)
+cv2.imshow('t4',img)
+
+'''print(img.channels())
+'''
+cv2.waitKey(0)
+
+'''
 img1 = cv2.imread('tree.jpg', cv2.IMREAD_GRAYSCALE)
 
 cv2.namedWindow('test1',cv2.WINDOW_NORMAL)
@@ -33,3 +52,4 @@ cv2.imshow('test2', img2)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+'''
