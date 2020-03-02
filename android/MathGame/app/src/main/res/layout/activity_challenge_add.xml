@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Challenge_add"
+
+    android:background="@color/background"
+    >
+
+
+    <Button
+        android:id="@+id/cadd1"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/button_style"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textColor="@color/text"
+        app:layout_constraintBottom_toTopOf="@+id/cadd3"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/cadd4"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="160dp"
+
+        android:background="@drawable/button_style"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textColor="@color/text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/cadd3"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+
+        android:layout_marginBottom="160dp"
+        android:background="@drawable/button_style"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textColor="@color/text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/cadd2"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+
+        android:background="@drawable/button_style"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textColor="@color/text"
+        app:layout_constraintBottom_toTopOf="@+id/cadd4"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/timeText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:text="sec"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/text"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/addproblemText1"
+        android:layout_width="wrap_content"
+        android:layout_height="75dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="100dp"
+        android:text="t1"
+
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textColor="@color/text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timeText1" />
+
+    <TextView
+        android:id="@+id/addPulsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="100dp"
+
+        android:text="+"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textColor="@color/text"
+        app:layout_constraintStart_toEndOf="@+id/addproblemText1"
+        app:layout_constraintTop_toBottomOf="@+id/timeText1" />
+
+    <TextView
+        android:id="@+id/addproblemText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="100dp"
+        android:text="t2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textColor="@color/text"
+
+        app:layout_constraintStart_toEndOf="@+id/addPulsText"
+        app:layout_constraintTop_toBottomOf="@+id/timeText1" />
+
+    <TextView
+        android:id="@+id/addendText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="100dp"
+        android:text="= ?"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textColor="@color/text"
+        app:layout_constraintStart_toEndOf="@+id/addproblemText2"
+
+        app:layout_constraintTop_toBottomOf="@+id/timeText1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

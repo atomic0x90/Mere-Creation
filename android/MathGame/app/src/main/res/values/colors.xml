@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--
     <color name="colorPrimary">#70e7ff</color>
     <color name="colorPrimaryDark">#54adbf</color>
     <color name="colorAccent">#32d99e</color>
     <color name="tmpbutton">#d9ffef</color>
+    -->
+
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#ffffff</color>
+    <color name="tmpbutton">#ffffff</color>
+    <color name="text">#fffca3</color>
+    <color name="background">#000000</color>
 </resources>

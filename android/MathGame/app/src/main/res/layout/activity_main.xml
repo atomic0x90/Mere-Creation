@@ -4,7 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+
+    android:background="@color/background"
+    >
+
 
     <Button
         android:id="@+id/exitButton"
@@ -19,20 +23,27 @@
         app:layout_constraintEnd_toEndOf="parent"
 
         android:background="@drawable/button_style"
+        android:textColor="@color/text"
 
         />
 
     <Button
-        android:id="@+id/exitButton2"
+        android:id="@+id/developerButton"
         android:layout_width="90dp"
         android:layout_height="70dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
         android:layout_marginBottom="20dp"
-        android:text="사용자 통계"
+        android:background="@drawable/button_style"
+        android:text="개발자 정보"
+
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/text"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/exitButton" />
+        app:layout_constraintEnd_toStartOf="@+id/exitButton"
+        app:layout_constraintStart_toEndOf="@+id/statsButton" />
 
     <Button
         android:id="@+id/infiaddButton"
@@ -49,7 +60,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
 
-        android:background="@color/tmpbutton"
+        android:background="@drawable/button_style"
+        android:textColor="@color/text"
         />
 
     <TextView
@@ -61,7 +73,10 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+
+        android:textColor="@color/text"
+        />
 
     <Button
         android:id="@+id/addButton"
@@ -75,7 +90,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
 
-        android:background="@color/colorPrimary"
+        android:background="@drawable/button_style"
+        android:textColor="@color/text"
         />
 
     <Button
@@ -90,7 +106,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
 
-        android:background="@color/colorPrimary"
+        android:background="@drawable/button_style"
+        android:textColor="@color/text"
         />
 
     <Button
@@ -105,7 +122,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addButton"
 
-        android:background="@color/colorPrimary"
+        android:background="@drawable/button_style"
+        android:textColor="@color/text"
         />
 
     <Button
@@ -120,7 +138,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/subButton"
 
-        android:background="@color/colorPrimary"
+        android:background="@drawable/button_style"
+        android:textColor="@color/text"
         />
 
     <Button
@@ -138,7 +157,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
 
-        android:background="@color/tmpbutton"
+        android:background="@drawable/button_style"
+        android:textColor="@color/text"
         />
 
     <Button
@@ -156,7 +176,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
 
-        android:background="@color/tmpbutton"
+        android:background="@drawable/button_style"
+        android:textColor="@color/text"
         />
 
     <Button
@@ -174,18 +195,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
 
-        android:background="@color/tmpbutton"
+        android:background="@drawable/button_style"
+        android:textColor="@color/text"
         />
 
     <Button
-        android:id="@+id/developerButton"
+        android:id="@+id/statsButton"
         android:layout_width="150dp"
         android:layout_height="70dp"
         android:layout_marginStart="30dp"
         android:layout_marginLeft="30dp"
         android:layout_marginBottom="20dp"
-        android:text="개발자 정보"
+        android:background="@drawable/button_style"
+        android:text="사용자 통계"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/text"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -198,5 +223,9 @@
         android:layout_marginRight="20dp"
         android:text="설정"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+
+        android:background="@drawable/button_style"
+        android:textColor="@color/text"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
