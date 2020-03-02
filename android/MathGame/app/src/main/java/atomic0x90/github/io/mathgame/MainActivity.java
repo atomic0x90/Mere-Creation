@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this,Challenge_add.class);
                 intent.putExtra("Number_of_time",0);
                 intent.putExtra("Answer_state",resultarr);
+                //intent.putExtra("Average_time",0);
                 startActivity(intent);
             }
         });

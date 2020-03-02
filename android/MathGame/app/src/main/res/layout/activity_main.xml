@@ -13,17 +13,17 @@
     <Button
         android:id="@+id/exitButton"
         android:layout_width="90dp"
-        android:layout_height="70dp"
+        android:layout_height="50dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="20dp"
+        android:background="@drawable/button_style"
         android:text="@string/exit"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/text"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-
-        android:background="@drawable/button_style"
-        android:textColor="@color/text"
 
         />
 
@@ -54,15 +54,14 @@
         android:layout_marginEnd="40dp"
         android:layout_marginRight="40dp"
         android:layout_marginBottom="7dp"
-        android:text="무한 더하기 도전"
+        android:background="@drawable/button_style"
+        android:text="1분 무한 더하기 도전"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/text"
+
         app:layout_constraintBottom_toTopOf="@+id/infisubButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-
-        android:background="@drawable/button_style"
-        android:textColor="@color/text"
-        />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView"
@@ -170,15 +169,14 @@
         android:layout_marginEnd="40dp"
         android:layout_marginRight="40dp"
         android:layout_marginBottom="7dp"
-        android:text="무한 빼기 도전"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toTopOf="@+id/maxminButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-
         android:background="@drawable/button_style"
+        android:text="1분 무한 빼기 도전"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/text"
-        />
+        app:layout_constraintBottom_toTopOf="@+id/maxminButton"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/multitableButton"
@@ -188,16 +186,15 @@
         android:layout_marginLeft="40dp"
         android:layout_marginEnd="40dp"
         android:layout_marginRight="40dp"
-        android:layout_marginBottom="130dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/button_style"
         android:text="곱셈표 보기(구구단)"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
 
-        android:background="@drawable/button_style"
         android:textColor="@color/text"
-        />
+        app:layout_constraintBottom_toTopOf="@+id/developerButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/statsButton"
@@ -221,11 +218,26 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
-        android:text="설정"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-
         android:background="@drawable/button_style"
+        android:text="설정"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+
         android:textColor="@color/text"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/evaluationButton"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="7dp"
+        android:background="@drawable/button_style"
+        android:text="평가하기"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
+        android:textColor="@color/text"
+        app:layout_constraintBottom_toTopOf="@+id/exitButton"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
