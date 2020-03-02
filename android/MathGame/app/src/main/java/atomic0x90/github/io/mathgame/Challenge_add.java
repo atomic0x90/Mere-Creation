@@ -20,6 +20,7 @@ import java.util.Random;
 
 public class Challenge_add extends AppCompatActivity {
 
+    double remainTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,11 +28,11 @@ public class Challenge_add extends AppCompatActivity {
         setContentView(R.layout.activity_challenge_add);
 
 
-
         final TextView timetextView = (TextView)findViewById(R.id.timeText1);
 
-        final CountDownTimer countDownTimer = new CountDownTimer(11000, 1000) {
+        final CountDownTimer countDownTimer = new CountDownTimer(10500, 1000) {
             public void onTick(long millisUntilFinished) {
+                remainTime = millisUntilFinished/1000L;
                 timetextView.setText(String.format(Locale.getDefault(), "%d sec", millisUntilFinished / 1000L));
             }
             public void onFinish() {
@@ -40,6 +41,7 @@ public class Challenge_add extends AppCompatActivity {
                 Intent Finishintent = getIntent();
                 int tmpNumber = Finishintent.getIntExtra("Number_of_time",0);
                 int[] tmparr = Finishintent.getIntArrayExtra("Answer_state");
+                double avtime = Finishintent.getDoubleExtra("Average_time",0);
                 if(tmpNumber == 10) {
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -52,8 +54,11 @@ public class Challenge_add extends AppCompatActivity {
 
                     tmparr[tmpNumber] = -1;
 
+                    avtime = ((avtime * tmpNumber) + (10))/(tmpNumber + 1);
+
                     intent.putExtra("Number_of_time",tmpNumber+1);
                     intent.putExtra("Answer_state",tmparr);
+                    intent.putExtra("Average_time",avtime);
 
                     startActivity(intent);
                     overridePendingTransition(0, 0);
@@ -65,10 +70,13 @@ public class Challenge_add extends AppCompatActivity {
 
         int tmpNumber = intent.getIntExtra("Number_of_time",0);
         int[] arr = intent.getIntArrayExtra("Answer_state");
-       // int avtime = intent.getIntExtra("Average_time",0);
+        double avtime = intent.getDoubleExtra("Average_time",0);
 
-       // TextView averageText = (TextView)findViewById(R.id.AverageText);
-        //averageText.setText(avtime);
+        TextView averageText = (TextView)findViewById(R.id.AverageText);
+
+        String tmpTime = String.format("%.1f",avtime);
+        averageText.setText(String.format(Locale.getDefault(),"Average Time\n        %s s",tmpTime));
+
 
 
         if(tmpNumber == 10)
@@ -306,9 +314,9 @@ public class Challenge_add extends AppCompatActivity {
 
                 int problemNumber = intent1.getIntExtra("Number_of_time", 0);
                 int[] answerResult = intent1.getIntArrayExtra("Answer_state");
-           //     double avtime = intent1.getIntExtra("Average_time",0);
+                double avtime = intent1.getDoubleExtra("Average_time",0);
 
-
+                avtime = ((avtime * problemNumber) + (10 - remainTime))/(problemNumber + 1);
 
                 countDownTimer.cancel();
                 Intent intent = new Intent(getApplicationContext(), Challenge_add.class);
@@ -325,7 +333,7 @@ public class Challenge_add extends AppCompatActivity {
 
                 intent.putExtra("Number_of_time",problemNumber+1);
                 intent.putExtra("Answer_state",answerResult);
-
+                intent.putExtra("Average_time",avtime);
 
                 startActivity(intent);
                 overridePendingTransition(0, 0);
@@ -339,6 +347,9 @@ public class Challenge_add extends AppCompatActivity {
 
                 int problemNumber = intent1.getIntExtra("Number_of_time", 0);
                 int[] answerResult = intent1.getIntArrayExtra("Answer_state");
+                double avtime = intent1.getDoubleExtra("Average_time",0);
+
+                avtime = ((avtime * problemNumber) + (10 - remainTime))/(problemNumber + 1);
 
                 countDownTimer.cancel();
                 Intent intent = new Intent(getApplicationContext(), Challenge_add.class);
@@ -353,6 +364,7 @@ public class Challenge_add extends AppCompatActivity {
 
                 intent.putExtra("Number_of_time",problemNumber+1);
                 intent.putExtra("Answer_state",answerResult);
+                intent.putExtra("Average_time",avtime);
 
                 startActivity(intent);
                 overridePendingTransition(0, 0);
@@ -366,6 +378,9 @@ public class Challenge_add extends AppCompatActivity {
 
                 int problemNumber = intent1.getIntExtra("Number_of_time", 0);
                 int[] answerResult = intent1.getIntArrayExtra("Answer_state");
+                double avtime = intent1.getDoubleExtra("Average_time",0);
+
+                avtime = ((avtime * problemNumber) + (10 - remainTime))/(problemNumber + 1);
 
                 countDownTimer.cancel();
                 Intent intent = new Intent(getApplicationContext(), Challenge_add.class);
@@ -380,6 +395,7 @@ public class Challenge_add extends AppCompatActivity {
 
                 intent.putExtra("Number_of_time",problemNumber+1);
                 intent.putExtra("Answer_state",answerResult);
+                intent.putExtra("Average_time",avtime);
 
                 startActivity(intent);
                 overridePendingTransition(0, 0);
@@ -393,6 +409,9 @@ public class Challenge_add extends AppCompatActivity {
 
                 int problemNumber = intent1.getIntExtra("Number_of_time", 0);
                 int[] answerResult = intent1.getIntArrayExtra("Answer_state");
+                double avtime = intent1.getDoubleExtra("Average_time",0);
+
+                avtime = ((avtime * problemNumber) + (10 - remainTime))/(problemNumber + 1);
 
                 countDownTimer.cancel();
                 Intent intent = new Intent(getApplicationContext(), Challenge_add.class);
@@ -407,6 +426,7 @@ public class Challenge_add extends AppCompatActivity {
 
                 intent.putExtra("Number_of_time",problemNumber+1);
                 intent.putExtra("Answer_state",answerResult);
+                intent.putExtra("Average_time",avtime);
 
                 startActivity(intent);
                 overridePendingTransition(0, 0);
