@@ -13,4 +13,5 @@
     <color name="tmpbutton">#ffffff</color>
     <color name="text">#fffca3</color>
     <color name="background">#000000</color>
+    <color name="dialogBackground">#303030</color>
 </resources>

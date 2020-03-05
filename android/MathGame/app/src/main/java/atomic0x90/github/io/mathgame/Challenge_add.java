@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import java.util.Locale;
@@ -43,6 +44,7 @@ public class Challenge_add extends AppCompatActivity {
                 int[] tmparr = Finishintent.getIntArrayExtra("Answer_state");
                 double avtime = Finishintent.getDoubleExtra("Average_time",0);
                 if(tmpNumber == 10) {
+                    //Need Fix
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
@@ -82,7 +84,18 @@ public class Challenge_add extends AppCompatActivity {
         if(tmpNumber == 10)
         {
             countDownTimer.cancel();
-            Intent Endintent = new Intent(Challenge_add.this, MainActivity.class);
+
+            int num = 0;
+            for(int i = 0;i < 10;i++)
+            {
+                if(arr[i] == 1)
+                    num++;
+            }
+
+            Intent Endintent = new Intent(Challenge_add.this, CustomDialog.class);
+            Endintent.putExtra("Result_type","Add");
+            Endintent.putExtra("Average_time",avtime);
+            Endintent.putExtra("Answer_num",num);
             Endintent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(Endintent);
         }
@@ -198,15 +211,16 @@ public class Challenge_add extends AppCompatActivity {
         int fakeResult2 = rand1 + rand2 + random.nextInt(8)+1;
         int fakeResult3 = rand1 + rand2 - random.nextInt(4)-5;
         int fakeResult4 = rand1 + rand2 - 10;
+        int fakeResult5 = rand1 + rand2 + 10;
 
         int[] tmpResult1 = {result,fakeResult1,fakeResult2,fakeResult3};
         int[] tmpResult2 = {fakeResult3,result,fakeResult2,fakeResult4};
-        int[] tmpResult3 = {fakeResult1,fakeResult3,result,fakeResult2};
+        int[] tmpResult3 = {fakeResult5,fakeResult3,result,fakeResult2};
         int[] tmpResult4 = {fakeResult4,fakeResult1,fakeResult3,result};
         int[] tmpResult5 = {result,fakeResult2,fakeResult1,fakeResult4};
-        int[] tmpResult6 = {fakeResult1,result,fakeResult2,fakeResult3};
+        int[] tmpResult6 = {fakeResult5,result,fakeResult2,fakeResult3};
         int[] tmpResult7 = {fakeResult4,fakeResult2,result,fakeResult3};
-        int[] tmpResult8 = {fakeResult3,fakeResult1,fakeResult2,result};
+        int[] tmpResult8 = {fakeResult3,fakeResult1,fakeResult5,result};
 
         random.setSeed(System.currentTimeMillis());
         int randValue = random.nextInt(8)+1;

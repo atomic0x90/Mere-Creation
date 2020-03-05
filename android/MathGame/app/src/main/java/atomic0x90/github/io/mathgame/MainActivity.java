@@ -2,32 +2,46 @@ package atomic0x90.github.io.mathgame;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 
-import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.File;
 
 
 public class MainActivity extends AppCompatActivity {
 
-
+    SQLiteDatabase sqliteDB ;
+    int nowCoin = 10;
+    String coinDateTime;
     int[] resultarr = {0,0,0,0,0,0,0,0,0,0};
-    int initNum = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //DB
+        sqliteDB = init_database() ;
+        init_tables();
+        load_coin();
+
+        //Coin
+        Button coinbutton = (Button) findViewById(R.id.coinNowButton);
+
+        coinbutton.setText(nowCoin + " " + coinDateTime);
+
         //더하기 도전 버튼
-        Button button = (Button) findViewById(R.id.addButton);
-        button.setOnClickListener(new View.OnClickListener() {
+        Button addbutton = (Button) findViewById(R.id.addButton);
+        addbutton.setOnClickListener(new View.OnClickListener() {
                 @Override
 
                 public void onClick (View v){
@@ -70,8 +84,84 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //DB
+    private SQLiteDatabase init_database() {
 
+        SQLiteDatabase db = null ;
+        // File file = getDatabasePath("contact.db") ;
+        File file = new File(getFilesDir(), "contact.db") ;
 
+        System.out.println("PATH : " + file.toString()) ;
+        try {
+            db = SQLiteDatabase.openOrCreateDatabase(file, null) ;
+        } catch (SQLiteException e) {
+            e.printStackTrace() ;
+        }
+
+        if (db == null) {
+            System.out.println("DB creation failed. " + file.getAbsolutePath()) ;
+        }
+
+        return db ;
+    }
+
+    private void init_tables() {
+
+        if (sqliteDB != null) {
+            //Coin table
+            String sqlCreateTbl = "CREATE TABLE IF NOT EXISTS Coin (" +
+                    "coin "           + "INTEGER NOT NULL," +
+                    "date_time "         + "TIMESTAMP NOT NULL default (datetime('now','localtime')" + "));" ;
+
+            System.out.println(sqlCreateTbl) ;
+
+            sqliteDB.execSQL(sqlCreateTbl) ;
+
+            String sqlQuery = "SELECT * FROM Coin";
+            Cursor cursor = null;
+            cursor = sqliteDB.rawQuery(sqlQuery,null);
+
+            try{
+            //coin 값이 없는 경우
+            if(!cursor.moveToNext()){
+                String sqlInsert = "INSERT INTO Coin " + "(coin)" + "VALUES (" + 0 +");";
+                System.out.println("TEST Insert : " + sqlInsert);
+                sqliteDB.execSQL(sqlInsert);
+            }}catch (Exception e){
+                System.out.println("FFFFFFFFFFFFFFFFFFFFFFFFFFFF "+e);
+            }
+
+            //Add table
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS ChAdd (" +
+                    "IDX " + "INTEGER PRIMARY KEY," +
+                    "result " + "INTEGER NOT NULL," +
+                    "AVtime " + "REAL NOT NULL," +
+                    "date_time " + "TIMESTAMP NOT NULL default (datetime('now','localtime')));";
+            System.out.println(sqlCreateTbl);
+
+            sqliteDB.execSQL(sqlCreateTbl);
+
+        }
+    }
+
+    private void load_coin(){
+        if(sqliteDB != null){
+            String sqlQuery = "SELECT * FROM Coin";
+            Cursor cursor = null;
+
+            cursor = sqliteDB.rawQuery(sqlQuery,null);
+
+            if(cursor.moveToNext()){
+                nowCoin = cursor.getInt(0);
+                System.out.println(nowCoin + "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa");
+
+                coinDateTime = cursor.getString(1);
+                System.out.println(coinDateTime);
+            }
+            else
+                System.out.println("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB");
+        }
+    }
 
 
     // 마지막으로 뒤로 가기 버튼을 눌렀던 시간 저장
