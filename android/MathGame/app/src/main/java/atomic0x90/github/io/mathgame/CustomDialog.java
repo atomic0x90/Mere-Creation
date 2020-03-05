@@ -33,9 +33,36 @@ public class CustomDialog extends AppCompatActivity {
 
         sqLiteDatabase = init_database();
 
+        TextView titleText = (TextView)findViewById(R.id.DialogTitle);
         TextView answerText = (TextView)findViewById(R.id.answerText);
         TextView avtimeText = (TextView)findViewById(R.id.AVtimeText);
         TextView coinText = (TextView)findViewById(R.id.CoinText);
+
+        if(DataType.equals("Add") || DataType.equals("Minus") || DataType.equals("Divide") || DataType.equals("Multiple")) {
+            if (answer == 10) {
+                if (avtime <= 2.0)
+                    titleText.setText("결과 : SSS\n우와~ 최고예요!");
+                else if (avtime <= 3.0)
+                    titleText.setText("결과 : SS\n엄청 대단해요!");
+                else if (avtime <= 4.0)
+                    titleText.setText("결과 : S\n대단해요!");
+                else
+                    titleText.setText("결과 : A+\n굉장해요!");
+            } else if (answer < 10 && answer >= 7) {
+                if (avtime <= 5.0)
+                    titleText.setText("결과 : A\n잘했어요!");
+                else
+                    titleText.setText("결과 : B+\n더 침착하게 해볼까요?");
+            } else {
+                if(avtime >= 1.0)
+                    titleText.setText("결과 : B\n괜찮아요 계속 연습하면 잘할 거예요!");
+                else
+                    titleText.setText("결과 : C\n천천히 풀어봐요!");
+            }
+        }
+        else{
+
+        }
 
 
         if(DataType.equals("Add") || DataType.equals("Minus") || DataType.equals("Divide") || DataType.equals("Multiple"))

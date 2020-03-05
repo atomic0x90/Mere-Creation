@@ -49,19 +49,15 @@
         android:id="@+id/infiaddButton"
         android:layout_width="220dp"
         android:layout_height="70dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginBottom="7dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/button_style"
         android:text="1분 무한 더하기 도전"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/text"
 
-        app:layout_constraintBottom_toTopOf="@+id/infisubButton"
+        android:textColor="@color/text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divideButton" />
 
     <TextView
         android:id="@+id/textView"
@@ -83,31 +79,29 @@
         android:layout_height="70dp"
         android:layout_marginStart="30dp"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="100dp"
-        android:text="더하기 도전"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-
+        android:layout_marginTop="10dp"
         android:background="@drawable/button_style"
+        android:text="더하기 도전"
+
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/text"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/subButton"
         android:layout_width="150dp"
         android:layout_height="70dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
-        android:text="빼기 도전"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-
         android:background="@drawable/button_style"
+        android:text="빼기 도전"
+
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/text"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/multiButton"
@@ -145,56 +139,43 @@
         android:id="@+id/maxminButton"
         android:layout_width="220dp"
         android:layout_height="70dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginBottom="7dp"
+        android:layout_marginTop="7dp"
+        android:background="@drawable/button_style"
         android:text="최대 최소 게임하기"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toTopOf="@+id/multitableButton"
+
+        android:textColor="@color/text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-
-        android:background="@drawable/button_style"
-        android:textColor="@color/text"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/infisubButton" />
 
     <Button
         android:id="@+id/infisubButton"
         android:layout_width="220dp"
         android:layout_height="70dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginBottom="7dp"
+        android:layout_marginTop="7dp"
         android:background="@drawable/button_style"
         android:text="1분 무한 빼기 도전"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/text"
-        app:layout_constraintBottom_toTopOf="@+id/maxminButton"
 
+        android:textColor="@color/text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/infiaddButton" />
 
     <Button
         android:id="@+id/multitableButton"
         android:layout_width="220dp"
         android:layout_height="70dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginTop="7dp"
         android:background="@drawable/button_style"
         android:text="곱셈표 보기(구구단)"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
 
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/text"
-        app:layout_constraintBottom_toTopOf="@+id/developerButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/maxminButton" />
 
     <Button
         android:id="@+id/statsButton"
