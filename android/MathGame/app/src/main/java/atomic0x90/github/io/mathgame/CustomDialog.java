@@ -17,7 +17,8 @@ import java.util.Locale;
 
 public class CustomDialog extends AppCompatActivity {
 
-    int saveCoin,rewardCoin;
+    int saveCoin,rewardCoin,insertResult;
+    double insertAVtime;
 
     SQLiteDatabase sqLiteDatabase;
 
@@ -30,6 +31,9 @@ public class CustomDialog extends AppCompatActivity {
         String DataType = intent.getStringExtra("Result_type");
         double avtime = intent.getDoubleExtra("Average_time",0);
         final int answer = intent.getIntExtra("Answer_num",0);
+
+        insertResult = answer;
+        insertAVtime = avtime;
 
         sqLiteDatabase = init_database();
 
@@ -81,6 +85,7 @@ public class CustomDialog extends AppCompatActivity {
             public void onClick(View v) {
                 rewardCoin = answer*10;
                 UpdateCoin();
+                insertChAdd();
                 Intent intent = new Intent(CustomDialog.this, MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
@@ -129,6 +134,13 @@ public class CustomDialog extends AppCompatActivity {
             if(cursor.moveToNext()) {
                 saveCoin = cursor.getInt(0);
             }
+        }
+    }
+
+    private void insertChAdd(){
+        if(sqLiteDatabase != null){
+            String sqlQuery = "INSERT INTO ChAdd" + "(result,AVtime)" + "VALUES (" + insertResult +"," + insertAVtime +");";
+            sqLiteDatabase.execSQL(sqlQuery);
         }
     }
 

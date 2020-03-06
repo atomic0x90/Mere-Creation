@@ -82,6 +82,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //사용자 통계 버튼
+        Button statsButton = (Button)findViewById(R.id.statsButton);
+        statsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this,UserStatistics.class);
+                startActivity(intent);
+                
+            }
+        });
     }
 
     //DB

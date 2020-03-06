@@ -70,7 +70,7 @@ public class Challenge_add extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        int tmpNumber = intent.getIntExtra("Number_of_time",0);
+        final int tmpNumber = intent.getIntExtra("Number_of_time",0);
         int[] arr = intent.getIntArrayExtra("Answer_state");
         double avtime = intent.getDoubleExtra("Average_time",0);
 
@@ -324,126 +324,133 @@ public class Challenge_add extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = getIntent();
+                if(tmpNumber != 10) {
+                    Intent intent1 = getIntent();
 
-                int problemNumber = intent1.getIntExtra("Number_of_time", 0);
-                int[] answerResult = intent1.getIntArrayExtra("Answer_state");
-                double avtime = intent1.getDoubleExtra("Average_time",0);
+                    int problemNumber = intent1.getIntExtra("Number_of_time", 0);
+                    int[] answerResult = intent1.getIntArrayExtra("Answer_state");
+                    double avtime = intent1.getDoubleExtra("Average_time", 0);
 
-                avtime = ((avtime * problemNumber) + (10 - remainTime))/(problemNumber + 1);
+                    avtime = ((avtime * problemNumber) + (10 - remainTime)) / (problemNumber + 1);
 
-                countDownTimer.cancel();
-                Intent intent = new Intent(getApplicationContext(), Challenge_add.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    countDownTimer.cancel();
+                    Intent intent = new Intent(getApplicationContext(), Challenge_add.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
-                TextView resultText = (TextView)findViewById(R.id.cadd1);
-                String tmp = resultText.getText().toString();
-                if(result == Integer.parseInt(tmp))
-                    answerResult[problemNumber] = 1;
-                else
-                    answerResult[problemNumber] = -1;
+                    TextView resultText = (TextView) findViewById(R.id.cadd1);
+                    String tmp = resultText.getText().toString();
+                    if (result == Integer.parseInt(tmp))
+                        answerResult[problemNumber] = 1;
+                    else
+                        answerResult[problemNumber] = -1;
 
 
+                    intent.putExtra("Number_of_time", problemNumber + 1);
+                    intent.putExtra("Answer_state", answerResult);
+                    intent.putExtra("Average_time", avtime);
 
-                intent.putExtra("Number_of_time",problemNumber+1);
-                intent.putExtra("Answer_state",answerResult);
-                intent.putExtra("Average_time",avtime);
-
-                startActivity(intent);
-                overridePendingTransition(0, 0);
+                    startActivity(intent);
+                    overridePendingTransition(0, 0);
+                }
             }
         });
 
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = getIntent();
+                if (tmpNumber != 10) {
+                    Intent intent1 = getIntent();
 
-                int problemNumber = intent1.getIntExtra("Number_of_time", 0);
-                int[] answerResult = intent1.getIntArrayExtra("Answer_state");
-                double avtime = intent1.getDoubleExtra("Average_time",0);
+                    int problemNumber = intent1.getIntExtra("Number_of_time", 0);
+                    int[] answerResult = intent1.getIntArrayExtra("Answer_state");
+                    double avtime = intent1.getDoubleExtra("Average_time", 0);
 
-                avtime = ((avtime * problemNumber) + (10 - remainTime))/(problemNumber + 1);
+                    avtime = ((avtime * problemNumber) + (10 - remainTime)) / (problemNumber + 1);
 
-                countDownTimer.cancel();
-                Intent intent = new Intent(getApplicationContext(), Challenge_add.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    countDownTimer.cancel();
+                    Intent intent = new Intent(getApplicationContext(), Challenge_add.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
-                TextView resultText = (TextView)findViewById(R.id.cadd2);
-                String tmp = resultText.getText().toString();
-                if(result == Integer.parseInt(tmp))
-                    answerResult[problemNumber] = 1;
-                else
-                    answerResult[problemNumber] = -1;
+                    TextView resultText = (TextView) findViewById(R.id.cadd2);
+                    String tmp = resultText.getText().toString();
+                    if (result == Integer.parseInt(tmp))
+                        answerResult[problemNumber] = 1;
+                    else
+                        answerResult[problemNumber] = -1;
 
-                intent.putExtra("Number_of_time",problemNumber+1);
-                intent.putExtra("Answer_state",answerResult);
-                intent.putExtra("Average_time",avtime);
+                    intent.putExtra("Number_of_time", problemNumber + 1);
+                    intent.putExtra("Answer_state", answerResult);
+                    intent.putExtra("Average_time", avtime);
 
-                startActivity(intent);
-                overridePendingTransition(0, 0);
+                    startActivity(intent);
+                    overridePendingTransition(0, 0);
+                }
             }
         });
 
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = getIntent();
+                if (tmpNumber != 10){
+                    Intent intent1 = getIntent();
 
-                int problemNumber = intent1.getIntExtra("Number_of_time", 0);
-                int[] answerResult = intent1.getIntArrayExtra("Answer_state");
-                double avtime = intent1.getDoubleExtra("Average_time",0);
+                    int problemNumber = intent1.getIntExtra("Number_of_time", 0);
+                    int[] answerResult = intent1.getIntArrayExtra("Answer_state");
+                    double avtime = intent1.getDoubleExtra("Average_time", 0);
 
-                avtime = ((avtime * problemNumber) + (10 - remainTime))/(problemNumber + 1);
+                    avtime = ((avtime * problemNumber) + (10 - remainTime)) / (problemNumber + 1);
 
-                countDownTimer.cancel();
-                Intent intent = new Intent(getApplicationContext(), Challenge_add.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    countDownTimer.cancel();
+                    Intent intent = new Intent(getApplicationContext(), Challenge_add.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
-                TextView resultText = (TextView)findViewById(R.id.cadd3);
-                String tmp = resultText.getText().toString();
-                if(result == Integer.parseInt(tmp))
-                    answerResult[problemNumber] = 1;
-                else
-                    answerResult[problemNumber] = -1;
+                    TextView resultText = (TextView) findViewById(R.id.cadd3);
+                    String tmp = resultText.getText().toString();
+                    if (result == Integer.parseInt(tmp))
+                        answerResult[problemNumber] = 1;
+                    else
+                        answerResult[problemNumber] = -1;
 
-                intent.putExtra("Number_of_time",problemNumber+1);
-                intent.putExtra("Answer_state",answerResult);
-                intent.putExtra("Average_time",avtime);
+                    intent.putExtra("Number_of_time", problemNumber + 1);
+                    intent.putExtra("Answer_state", answerResult);
+                    intent.putExtra("Average_time", avtime);
 
-                startActivity(intent);
-                overridePendingTransition(0, 0);
+                    startActivity(intent);
+                    overridePendingTransition(0, 0);
+                }
             }
         });
 
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = getIntent();
+                if(tmpNumber != 10) {
+                    Intent intent1 = getIntent();
 
-                int problemNumber = intent1.getIntExtra("Number_of_time", 0);
-                int[] answerResult = intent1.getIntArrayExtra("Answer_state");
-                double avtime = intent1.getDoubleExtra("Average_time",0);
+                    int problemNumber = intent1.getIntExtra("Number_of_time", 0);
+                    int[] answerResult = intent1.getIntArrayExtra("Answer_state");
+                    double avtime = intent1.getDoubleExtra("Average_time", 0);
 
-                avtime = ((avtime * problemNumber) + (10 - remainTime))/(problemNumber + 1);
+                    avtime = ((avtime * problemNumber) + (10 - remainTime)) / (problemNumber + 1);
 
-                countDownTimer.cancel();
-                Intent intent = new Intent(getApplicationContext(), Challenge_add.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    countDownTimer.cancel();
+                    Intent intent = new Intent(getApplicationContext(), Challenge_add.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
-                TextView resultText = (TextView)findViewById(R.id.cadd4);
-                String tmp = resultText.getText().toString();
-                if(result == Integer.parseInt(tmp))
-                    answerResult[problemNumber] = 1;
-                else
-                    answerResult[problemNumber] = -1;
+                    TextView resultText = (TextView) findViewById(R.id.cadd4);
+                    String tmp = resultText.getText().toString();
+                    if (result == Integer.parseInt(tmp))
+                        answerResult[problemNumber] = 1;
+                    else
+                        answerResult[problemNumber] = -1;
 
-                intent.putExtra("Number_of_time",problemNumber+1);
-                intent.putExtra("Answer_state",answerResult);
-                intent.putExtra("Average_time",avtime);
+                    intent.putExtra("Number_of_time", problemNumber + 1);
+                    intent.putExtra("Answer_state", answerResult);
+                    intent.putExtra("Average_time", avtime);
 
-                startActivity(intent);
-                overridePendingTransition(0, 0);
+                    startActivity(intent);
+                    overridePendingTransition(0, 0);
+                }
             }
         });
 
