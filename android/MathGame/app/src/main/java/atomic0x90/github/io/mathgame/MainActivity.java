@@ -8,6 +8,9 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
+import android.media.AudioManager;
+import android.media.SoundPool;
+import android.os.Build;
 import android.os.Bundle;
 
 import android.view.View;
@@ -24,10 +27,19 @@ public class MainActivity extends AppCompatActivity {
     String coinDateTime;
     int[] resultarr = {0,0,0,0,0,0,0,0,0,0};
 
+    //Sound
+    SoundPool soundPool;
+    int soundID;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Sound
+        soundPool = new SoundPool(5,AudioManager.STREAM_MUSIC,0);
+        soundID = soundPool.load(this,R.raw.click_sound01,1);
+
 
         //DB
         sqliteDB = init_database() ;
@@ -87,6 +99,9 @@ public class MainActivity extends AppCompatActivity {
         statsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
 
                 Intent intent = new Intent(MainActivity.this,UserStatistics.class);
                 startActivity(intent);

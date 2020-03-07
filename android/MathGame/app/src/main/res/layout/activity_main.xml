@@ -22,14 +22,16 @@
 
         android:layout_marginBottom="10dp"
 
-        android:background="@drawable/button_style"
+        android:background="@drawable/button_back"
         android:text="@string/exit"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/developerButton"
-        app:layout_constraintTop_toBottomOf="@+id/multitableButton" />
+        app:layout_constraintTop_toBottomOf="@+id/multitableButton"
+
+        android:soundEffectsEnabled="false"/>
 
     <Button
         android:id="@+id/developerButton"
@@ -40,27 +42,29 @@
         android:layout_marginTop="10dp"
 
         android:layout_marginBottom="10dp"
-        android:background="@drawable/button_style"
+        android:background="@drawable/button_back"
         android:text="개발자\n정보"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/statsButton"
-        app:layout_constraintTop_toBottomOf="@+id/multitableButton" />
+        app:layout_constraintTop_toBottomOf="@+id/multitableButton"
+        android:soundEffectsEnabled="false"/>
 
     <Button
         android:id="@+id/infiaddButton"
         android:layout_width="220dp"
         android:layout_height="70dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/button_style"
+        android:background="@drawable/button_back"
         android:text="1분 무한 더하기 도전"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
 
         android:textColor="@color/text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divideButton" />
+        app:layout_constraintTop_toBottomOf="@+id/divideButton"
+        android:soundEffectsEnabled="false"/>
 
     <TextView
         android:id="@+id/textView"
@@ -83,13 +87,14 @@
         android:layout_marginStart="30dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/button_style"
+        android:background="@drawable/button_back"
         android:text="더하기 도전"
 
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:soundEffectsEnabled="false"/>
 
     <Button
         android:id="@+id/subButton"
@@ -98,13 +103,14 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
-        android:background="@drawable/button_style"
+        android:background="@drawable/button_back"
         android:text="빼기 도전"
 
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:soundEffectsEnabled="false"/>
 
     <Button
         android:id="@+id/multiButton"
@@ -118,8 +124,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addButton"
 
-        android:background="@drawable/button_style"
+        android:background="@drawable/button_back"
         android:textColor="@color/text"
+        android:soundEffectsEnabled="false"
         />
 
     <Button
@@ -134,8 +141,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/subButton"
 
-        android:background="@drawable/button_style"
+        android:background="@drawable/button_back"
         android:textColor="@color/text"
+        android:soundEffectsEnabled="false"
         />
 
     <Button
@@ -143,42 +151,51 @@
         android:layout_width="220dp"
         android:layout_height="70dp"
         android:layout_marginTop="7dp"
-        android:background="@drawable/button_style"
+        android:background="@drawable/button_back"
         android:text="최대 최소 게임하기"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
 
         android:textColor="@color/text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/infisubButton" />
+        app:layout_constraintTop_toBottomOf="@+id/infisubButton"
+
+        android:soundEffectsEnabled="false"
+        />
 
     <Button
         android:id="@+id/infisubButton"
         android:layout_width="220dp"
         android:layout_height="70dp"
         android:layout_marginTop="7dp"
-        android:background="@drawable/button_style"
+        android:background="@drawable/button_back"
         android:text="1분 무한 빼기 도전"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
 
         android:textColor="@color/text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/infiaddButton" />
+        app:layout_constraintTop_toBottomOf="@+id/infiaddButton"
+
+        android:soundEffectsEnabled="false"
+        />
 
     <Button
         android:id="@+id/multitableButton"
         android:layout_width="220dp"
         android:layout_height="70dp"
         android:layout_marginTop="7dp"
-        android:background="@drawable/button_style"
+        android:background="@drawable/button_back"
         android:text="곱셈표 보기(구구단)"
 
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/maxminButton" />
+        app:layout_constraintTop_toBottomOf="@+id/maxminButton"
+
+        android:soundEffectsEnabled="false"
+        />
 
     <Button
         android:id="@+id/statsButton"
@@ -188,14 +205,17 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:background="@drawable/button_style"
+        android:background="@drawable/button_back"
 
         android:text="사용자 통계"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/multitableButton" />
+        app:layout_constraintTop_toBottomOf="@+id/multitableButton"
+
+        android:soundEffectsEnabled="false"
+        />
 
     <Button
         android:id="@+id/setButton"
@@ -204,13 +224,16 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
-        android:background="@drawable/button_style"
+        android:background="@drawable/button_back"
         android:text="설정"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
 
         android:textColor="@color/text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+
+        android:soundEffectsEnabled="false"
+        />
 
     <Button
         android:id="@+id/evaluationButton"
@@ -220,12 +243,15 @@
 
         android:layout_marginLeft="7dp"
         android:layout_marginTop="7dp"
-        android:background="@drawable/button_style"
+        android:background="@drawable/button_back"
         android:text="평가하기"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
         android:textColor="@color/text"
         app:layout_constraintStart_toEndOf="@+id/multitableButton"
-        app:layout_constraintTop_toBottomOf="@+id/maxminButton" />
+        app:layout_constraintTop_toBottomOf="@+id/maxminButton"
+
+        android:soundEffectsEnabled="false"
+        />
 
     <Button
         android:id="@+id/coinNowButton"
