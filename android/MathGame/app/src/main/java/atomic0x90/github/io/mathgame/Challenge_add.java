@@ -14,6 +14,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 import java.util.Locale;
 
 import java.util.Random;
@@ -23,15 +27,25 @@ public class Challenge_add extends AppCompatActivity {
 
     double remainTime;
 
+    //AD
+    private AdView mAdView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_challenge_add);
 
+        //AD
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+
 
         final TextView timetextView = (TextView)findViewById(R.id.timeText1);
 
-        final CountDownTimer countDownTimer = new CountDownTimer(10500, 1000) {
+        final CountDownTimer countDownTimer = new CountDownTimer(11000, 1000) {
             public void onTick(long millisUntilFinished) {
                 remainTime = millisUntilFinished/1000L;
                 timetextView.setText(String.format(Locale.getDefault(), "%d sec", millisUntilFinished / 1000L));

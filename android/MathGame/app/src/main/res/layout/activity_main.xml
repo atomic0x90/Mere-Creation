@@ -4,67 +4,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".MainActivity"
 
-    android:background="@color/background"
-    >
+    android:background="@color/background">
 
 
     <Button
         android:id="@+id/exitButton"
-        android:layout_width="70dp"
+        android:layout_width="120dp"
         android:layout_height="70dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
 
-        android:layout_marginBottom="10dp"
-
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="7dp"
         android:background="@drawable/button_back"
-        android:text="@string/exit"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/developerButton"
-        app:layout_constraintTop_toBottomOf="@+id/multitableButton"
+        android:soundEffectsEnabled="false"
 
-        android:soundEffectsEnabled="false"/>
+        android:text="@string/exit"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/text"
+        app:layout_constraintStart_toEndOf="@+id/multitableButton"
+        app:layout_constraintTop_toBottomOf="@+id/evaluationButton" />
 
     <Button
         android:id="@+id/developerButton"
-        android:layout_width="100dp"
+        android:layout_width="120dp"
         android:layout_height="70dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="10dp"
 
-        android:layout_marginBottom="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="7dp"
         android:background="@drawable/button_back"
+        android:soundEffectsEnabled="false"
         android:text="개발자\n정보"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/statsButton"
-        app:layout_constraintTop_toBottomOf="@+id/multitableButton"
-        android:soundEffectsEnabled="false"/>
+        app:layout_constraintStart_toEndOf="@+id/infisubButton"
+        app:layout_constraintTop_toBottomOf="@+id/statsButton" />
 
     <Button
         android:id="@+id/infiaddButton"
         android:layout_width="220dp"
         android:layout_height="70dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/button_back"
+
+        android:soundEffectsEnabled="false"
         android:text="1분 무한 더하기 도전"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-
         android:textColor="@color/text"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divideButton"
-        android:soundEffectsEnabled="false"/>
+        app:layout_constraintTop_toBottomOf="@+id/divideButton" />
 
     <TextView
         android:id="@+id/textView"
@@ -150,72 +143,69 @@
         android:id="@+id/maxminButton"
         android:layout_width="220dp"
         android:layout_height="70dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="7dp"
         android:background="@drawable/button_back"
+
+        android:soundEffectsEnabled="false"
         android:text="최대 최소 게임하기"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
 
         android:textColor="@color/text"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/infisubButton"
-
-        android:soundEffectsEnabled="false"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/infisubButton" />
 
     <Button
         android:id="@+id/infisubButton"
         android:layout_width="220dp"
         android:layout_height="70dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="7dp"
         android:background="@drawable/button_back"
+
+        android:soundEffectsEnabled="false"
         android:text="1분 무한 빼기 도전"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
 
         android:textColor="@color/text"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/infiaddButton"
-
-        android:soundEffectsEnabled="false"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/infiaddButton" />
 
     <Button
         android:id="@+id/multitableButton"
         android:layout_width="220dp"
         android:layout_height="70dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="7dp"
+
         android:background="@drawable/button_back"
-        android:text="곱셈표 보기(구구단)"
-
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/maxminButton"
-
         android:soundEffectsEnabled="false"
-        />
+        android:text="곱셈표 보기(구구단)"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+
+        android:textColor="@color/text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/maxminButton" />
 
     <Button
         android:id="@+id/statsButton"
-        android:layout_width="150dp"
+        android:layout_width="120dp"
         android:layout_height="70dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/button_back"
 
-        android:text="사용자 통계"
+        android:layout_marginStart="10dp"
+
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_back"
+        android:soundEffectsEnabled="false"
+        android:text="사용자\n통계"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/multitableButton"
-
-        android:soundEffectsEnabled="false"
-        />
+        app:layout_constraintStart_toEndOf="@+id/infiaddButton"
+        app:layout_constraintTop_toBottomOf="@+id/divideButton" />
 
     <Button
         android:id="@+id/setButton"
@@ -237,21 +227,20 @@
 
     <Button
         android:id="@+id/evaluationButton"
-        android:layout_width="50dp"
+        android:layout_width="120dp"
         android:layout_height="70dp"
-        android:layout_marginStart="7dp"
 
-        android:layout_marginLeft="7dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="7dp"
         android:background="@drawable/button_back"
-        android:text="평가하기"
-        android:textAppearance="@style/TextAppearance.AppCompat.Small"
-        android:textColor="@color/text"
-        app:layout_constraintStart_toEndOf="@+id/multitableButton"
-        app:layout_constraintTop_toBottomOf="@+id/maxminButton"
-
         android:soundEffectsEnabled="false"
-        />
+
+        android:text="평가하기"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/text"
+        app:layout_constraintStart_toEndOf="@+id/maxminButton"
+        app:layout_constraintTop_toBottomOf="@+id/developerButton" />
 
     <Button
         android:id="@+id/coinNowButton"
@@ -287,5 +276,17 @@
         app:layout_constraintTop_toTopOf="parent"
 
         app:srcCompat="@android:drawable/ic_input_add" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:adSize="SMART_BANNER"
+        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

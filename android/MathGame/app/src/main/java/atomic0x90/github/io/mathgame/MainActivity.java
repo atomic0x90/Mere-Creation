@@ -10,14 +10,20 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.media.AudioManager;
 import android.media.SoundPool;
-import android.os.Build;
+
 import android.os.Bundle;
 
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 import java.io.File;
+
 
 
 public class MainActivity extends AppCompatActivity {
@@ -27,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
     String coinDateTime;
     int[] resultarr = {0,0,0,0,0,0,0,0,0,0};
 
+    //AD
+    private AdView mAdView;
+
     //Sound
     SoundPool soundPool;
     int soundID;
@@ -35,6 +44,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //AD
+        MobileAds.initialize(this, String.valueOf(R.string.TEST_AD_BANNER_ID));
+        MobileAds.initialize(this, String.valueOf(R.string.TEST_AD_REWARD_ID));
+
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         //Sound
         soundPool = new SoundPool(5,AudioManager.STREAM_MUSIC,0);
@@ -49,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         //Coin
         Button coinbutton = (Button) findViewById(R.id.coinNowButton);
 
-        coinbutton.setText(nowCoin + " " + coinDateTime);
+        coinbutton.setText(String.valueOf(nowCoin));
 
         //더하기 도전 버튼
         Button addbutton = (Button) findViewById(R.id.addButton);
@@ -108,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
                 
             }
         });
+
     }
 
     //DB

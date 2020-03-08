@@ -1,16 +1,28 @@
 package atomic0x90.github.io.mathgame;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.ads.AdLoader;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.reward.RewardItem;
+import com.google.android.gms.ads.rewarded.RewardedAd;
+import com.google.android.gms.ads.rewarded.RewardedAdCallback;
+import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
 
 import java.io.File;
 import java.util.Locale;
@@ -22,13 +34,35 @@ public class CustomDialog extends AppCompatActivity {
 
     SQLiteDatabase sqLiteDatabase;
 
+    //Reward AD
+    private RewardedAd rewardedAd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_custom_dialog);
+
+        //Reward AD
+
+        rewardedAd = new RewardedAd(this,"ca-app-pub-3940256099942544/5224354917");
+        RewardedAdLoadCallback adLoadCallback = new RewardedAdLoadCallback() {
+            @Override
+            public void onRewardedAdLoaded() {
+                // Ad successfully loaded.
+                System.out.println("AD successfully");
+            }
+
+            @Override
+            public void onRewardedAdFailedToLoad(int errorCode) {
+                // Ad failed to load.
+                System.out.println("AD failed");
+            }
+        };
+        rewardedAd.loadAd(new AdRequest.Builder().build(), adLoadCallback);
+
+        //
         Intent intent = getIntent();
 
-        String DataType = intent.getStringExtra("Result_type");
+        final String DataType = intent.getStringExtra("Result_type");
         double avtime = intent.getDoubleExtra("Average_time",0);
         final int answer = intent.getIntExtra("Answer_num",0);
 
@@ -85,12 +119,63 @@ public class CustomDialog extends AppCompatActivity {
             public void onClick(View v) {
                 rewardCoin = answer*10;
                 UpdateCoin();
-                insertChAdd();
+                if(DataType.equals("Add"))
+                    insertChAdd();
+                Toast.makeText(getApplicationContext(),"보상 획득",Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(CustomDialog.this, MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
         });
+
+        //rewardedAd.loadAd(new AdRequest.Builder().build(), adLoadCallback);
+        AddRewardButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (rewardedAd.isLoaded()) {
+                    Activity activityContext = CustomDialog.this;
+                    RewardedAdCallback adCallback = new RewardedAdCallback() {
+                        @Override
+                        public void onUserEarnedReward(@NonNull com.google.android.gms.ads.rewarded.RewardItem rewardItem) {
+                            // User earned reward.
+                            rewardCoin = answer*10*2;
+                            UpdateCoin();
+                            if(DataType.equals("Add"))
+                                insertChAdd();
+                            Toast.makeText(getApplicationContext(),"보상X2 획득",Toast.LENGTH_LONG).show();
+                            Intent intent = new Intent(CustomDialog.this,MainActivity.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(intent);
+                        }
+
+                        public void onRewardedAdFailedToShow(int errcode){
+                            // Ad failed to display
+                        }
+
+                        public void onRewardedAdOpened(){
+                            // Ad opened.
+                        }
+
+                        public void onRewardedAdClosed(){
+                            // Ad closed.
+                        }
+                    };
+                    rewardedAd.show(activityContext, adCallback);
+                } else {
+                    rewardCoin = answer*10;
+                    UpdateCoin();
+                    if(DataType.equals("Add"))
+                        insertChAdd();
+                    Toast.makeText(getApplicationContext(),"보상 획득, 영상이 준비되지 않음. 나중에 다시 시도하세요.",Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(CustomDialog.this,MainActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                    Log.d("TAG", "The rewarded ad wasn't loaded yet.");
+                }
+
+            }
+        });
+
     }
 
     //DB
@@ -144,7 +229,30 @@ public class CustomDialog extends AppCompatActivity {
         }
     }
 
-    //화면 밖 touch 막음
+    //AD
+    public RewardedAd createAndLoadRewardedAd() {
+        RewardedAd rewardedAd = new RewardedAd(this,
+                "");
+        RewardedAdLoadCallback adLoadCallback = new RewardedAdLoadCallback() {
+            @Override
+            public void onRewardedAdLoaded() {
+                // Ad successfully loaded.
+            }
+
+            @Override
+            public void onRewardedAdFailedToLoad(int errorCode) {
+                // Ad failed to load.
+            }
+        };
+        rewardedAd.loadAd(new AdRequest.Builder().build(), adLoadCallback);
+        return rewardedAd;
+    }
+
+    public void onRewardedAdClosed() {
+        this.rewardedAd = createAndLoadRewardedAd();
+    }
+
+    //Touch
     @Override
     public boolean onTouchEvent(MotionEvent event){
         if(event.getAction() == MotionEvent.ACTION_OUTSIDE)

@@ -90,10 +90,13 @@
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="100dp"
-        android:text="t1"
+        android:layout_marginEnd="25dp"
 
+        android:layout_marginRight="25dp"
+        android:text="t1"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/text"
+        app:layout_constraintEnd_toStartOf="@+id/addPulsText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/timeText1" />
 
@@ -105,9 +108,12 @@
         android:layout_marginLeft="25dp"
         android:layout_marginTop="100dp"
 
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
         android:text="+"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/text"
+        app:layout_constraintEnd_toStartOf="@+id/addproblemText2"
         app:layout_constraintStart_toEndOf="@+id/addproblemText1"
         app:layout_constraintTop_toBottomOf="@+id/timeText1" />
 
@@ -118,10 +124,13 @@
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="100dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
         android:text="t2"
+
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/text"
-
+        app:layout_constraintEnd_toStartOf="@+id/addendText"
         app:layout_constraintStart_toEndOf="@+id/addPulsText"
         app:layout_constraintTop_toBottomOf="@+id/timeText1" />
 
@@ -132,11 +141,14 @@
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="100dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+
         android:text="= ?"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/text"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/addproblemText2"
-
         app:layout_constraintTop_toBottomOf="@+id/timeText1" />
 
     <ImageView
@@ -291,5 +303,17 @@
         android:textColor="@color/text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:adSize="SMART_BANNER"
+        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
