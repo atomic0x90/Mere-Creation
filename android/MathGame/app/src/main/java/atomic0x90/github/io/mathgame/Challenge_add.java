@@ -1,22 +1,19 @@
 package atomic0x90.github.io.mathgame;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
 
 import java.util.Locale;
 
@@ -27,6 +24,8 @@ public class Challenge_add extends AppCompatActivity {
 
     double remainTime;
 
+    //Double click check
+    private long mLastClickTime = 0;
     //AD
     private AdView mAdView;
 
@@ -34,6 +33,8 @@ public class Challenge_add extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_challenge_add);
+
+
 
         //AD
 
@@ -338,6 +339,11 @@ public class Challenge_add extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // mis-clicking prevention, using threshold of 1000 ms
+                if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
+                    return;
+                }
+                mLastClickTime = SystemClock.elapsedRealtime();
                 if(tmpNumber != 10) {
                     Intent intent1 = getIntent();
 
@@ -372,6 +378,11 @@ public class Challenge_add extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // mis-clicking prevention, using threshold of 1000 ms
+                if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
+                    return;
+                }
+
                 if (tmpNumber != 10) {
                     Intent intent1 = getIntent();
 
@@ -405,6 +416,10 @@ public class Challenge_add extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // mis-clicking prevention, using threshold of 1000 ms
+                if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
+                    return;
+                }
                 if (tmpNumber != 10){
                     Intent intent1 = getIntent();
 
@@ -438,6 +453,10 @@ public class Challenge_add extends AppCompatActivity {
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // mis-clicking prevention, using threshold of 1000 ms
+                if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
+                    return;
+                }
                 if(tmpNumber != 10) {
                     Intent intent1 = getIntent();
 

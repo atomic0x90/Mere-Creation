@@ -3,6 +3,7 @@ package atomic0x90.github.io.mathgame;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -13,6 +14,7 @@ import android.media.SoundPool;
 
 import android.os.Bundle;
 
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -35,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
 
     //AD
     private AdView mAdView;
+
+    //Double click check
+    private long mLastClickTime;
 
     //Sound
     SoundPool soundPool;
@@ -75,7 +80,10 @@ public class MainActivity extends AppCompatActivity {
                 @Override
 
                 public void onClick (View v){
-                //Intent intent = new Intent(getApplicationContext(), Challenge_add.class);
+                // mis-clicking prevention, using threshold of 1000 ms
+                if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
+                    return;
+                }
 
                 Intent intent = new Intent(MainActivity.this,Challenge_add.class);
                 intent.putExtra("Number_of_time",0);
@@ -90,6 +98,10 @@ public class MainActivity extends AppCompatActivity {
         exitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // mis-clicking prevention, using threshold of 1000 ms
+                if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
+                    return;
+                }
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setMessage("정말로 종료 하시겠습니까?");
                 builder.setTitle("종료 버튼");
@@ -117,6 +129,10 @@ public class MainActivity extends AppCompatActivity {
         statsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // mis-clicking prevention, using threshold of 1000 ms
+                if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
+                    return;
+                }
 
                 soundPool.play(soundID,1f,1f,0,0,1f);
 
@@ -127,6 +143,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //설정 버튼
     }
 
     //DB

@@ -9,6 +9,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -32,7 +33,11 @@ public class CustomDialog extends AppCompatActivity {
     int saveCoin,rewardCoin,insertResult;
     double insertAVtime;
 
+    //DB
     SQLiteDatabase sqLiteDatabase;
+
+    //Double click check
+    private long mLastClickTime;
 
     //Reward AD
     private RewardedAd rewardedAd;
@@ -117,6 +122,10 @@ public class CustomDialog extends AppCompatActivity {
         RewardButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // mis-clicking prevention, using threshold of 1000 ms
+                if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
+                    return;
+                }
                 rewardCoin = answer*10;
                 UpdateCoin();
                 if(DataType.equals("Add"))
@@ -132,6 +141,10 @@ public class CustomDialog extends AppCompatActivity {
         AddRewardButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // mis-clicking prevention, using threshold of 1000 ms
+                if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
+                    return;
+                }
                 if (rewardedAd.isLoaded()) {
                     Activity activityContext = CustomDialog.this;
                     RewardedAdCallback adCallback = new RewardedAdCallback() {
@@ -145,11 +158,13 @@ public class CustomDialog extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(),"보상X2 획득",Toast.LENGTH_LONG).show();
                             Intent intent = new Intent(CustomDialog.this,MainActivity.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
                             startActivity(intent);
                         }
 
                         public void onRewardedAdFailedToShow(int errcode){
                             // Ad failed to display
+
                         }
 
                         public void onRewardedAdOpened(){
@@ -161,6 +176,7 @@ public class CustomDialog extends AppCompatActivity {
                         }
                     };
                     rewardedAd.show(activityContext, adCallback);
+
                 } else {
                     rewardCoin = answer*10;
                     UpdateCoin();
@@ -231,8 +247,7 @@ public class CustomDialog extends AppCompatActivity {
 
     //AD
     public RewardedAd createAndLoadRewardedAd() {
-        RewardedAd rewardedAd = new RewardedAd(this,
-                "");
+        RewardedAd rewardedAd = new RewardedAd(this, "");
         RewardedAdLoadCallback adLoadCallback = new RewardedAdLoadCallback() {
             @Override
             public void onRewardedAdLoaded() {
