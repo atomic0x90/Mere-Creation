@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -18,6 +19,7 @@ public class SplashScreen extends AppCompatActivity {
 
     private Timer waitTimer;
 
+    String Ac;
 
     private boolean interstitialCanceled = false;
     @Override
@@ -25,6 +27,15 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
+        Intent Setintent = getIntent();
+        final String goActivity = Setintent.getStringExtra("Text");
+
+        Ac = goActivity;
+
+        TextView textView = (TextView)findViewById(R.id.middleText);
+
+        if(goActivity.equals("Statistics"))
+            textView.setText("통계 집계 중");
 
         interstitialAd = new InterstitialAd(this);
         interstitialAd.setAdUnitId("ca-app-pub-3940256099942544/8691691433");
@@ -39,11 +50,13 @@ public class SplashScreen extends AppCompatActivity {
             }
             @Override
             public void onAdFailedToLoad(int errorCode) {
-                startUserStatistics();
+                if(goActivity.equals("Statistics"))
+                    startUserStatistics();
             }
             @Override
             public void onAdClosed(){
-                startUserStatistics();
+                if(goActivity.equals("Statistics"))
+                    startUserStatistics();
                 finish();
             }
         });
@@ -58,7 +71,8 @@ public class SplashScreen extends AppCompatActivity {
                 SplashScreen.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        startUserStatistics();
+                        if(goActivity.equals("Statistics"))
+                            startUserStatistics();
                     }
                 });
             }
@@ -80,7 +94,8 @@ public class SplashScreen extends AppCompatActivity {
         if (interstitialAd.isLoaded()) {
             interstitialAd.show();
         } else if (interstitialCanceled) {
-            startUserStatistics();
+            if(Ac.equals("Statistics"))
+                startUserStatistics();
         }
     }
 

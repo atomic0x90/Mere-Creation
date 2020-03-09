@@ -95,7 +95,7 @@ public class CustomDialog extends AppCompatActivity {
                 if (avtime <= 5.0)
                     titleText.setText("결과 : A\n잘했어요!");
                 else
-                    titleText.setText("결과 : B+\n더 침착하게 해볼까요?");
+                    titleText.setText("결과 : B+\n잘했어요! 더 침착하게 해볼까요?");
             } else {
                 if(avtime >= 1.0)
                     titleText.setText("결과 : B\n괜찮아요 계속 연습하면 잘할 거예요!");

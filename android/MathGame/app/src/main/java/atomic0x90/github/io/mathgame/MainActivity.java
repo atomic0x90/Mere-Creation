@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     //Double click check
-    private long mLastClickTime;
+    private long mLastClickTime = 0;
 
     //Sound
     SoundPool soundPool;
@@ -83,8 +83,8 @@ public class MainActivity extends AppCompatActivity {
         coinbutton.setText(String.valueOf(nowCoin));
 
         //더하기 도전 버튼
-        Button addbutton = (Button) findViewById(R.id.addButton);
-        addbutton.setOnClickListener(new View.OnClickListener() {
+        Button addButton = (Button) findViewById(R.id.addButton);
+        addButton.setOnClickListener(new View.OnClickListener() {
                 @Override
 
                 public void onClick (View v){
@@ -92,12 +92,26 @@ public class MainActivity extends AppCompatActivity {
                 if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
                     return;
                 }
+                mLastClickTime = SystemClock.elapsedRealtime();
 
                 Intent intent = new Intent(MainActivity.this,Challenge_add.class);
                 intent.putExtra("Number_of_time",0);
                 intent.putExtra("Answer_state",resultarr);
                 intent.putExtra("Average_time",(double)0);
                 startActivity(intent);
+            }
+        });
+
+        //빼기 도전 버튼
+        Button subButton = (Button) findViewById(R.id.subButton);
+        subButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // mis-clicking prevention, using threshold of 1000 ms
+                if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
+                    return;
+                }
+                mLastClickTime = SystemClock.elapsedRealtime();
             }
         });
 
@@ -110,6 +124,8 @@ public class MainActivity extends AppCompatActivity {
                 if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
                     return;
                 }
+                mLastClickTime = SystemClock.elapsedRealtime();
+
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setMessage("정말로 종료 하시겠습니까?");
                 builder.setTitle("종료 버튼");
@@ -141,11 +157,13 @@ public class MainActivity extends AppCompatActivity {
                 if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
                     return;
                 }
+                mLastClickTime = SystemClock.elapsedRealtime();
 
                 soundPool.play(soundID,1f,1f,0,0,1f);
 
 
                 Intent intent = new Intent(MainActivity.this,SplashScreen.class);
+                intent.putExtra("Text","Statistics");
                 startActivity(intent);
 
                 //FULL_AD();

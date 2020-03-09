@@ -34,11 +34,11 @@
         app:srcCompat="@drawable/math_game_logo_black" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/middleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        android:text="통계 집계 중"
+        android:text="middle"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFFFFF"
 
