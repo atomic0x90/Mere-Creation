@@ -3,7 +3,6 @@ package atomic0x90.github.io.mathgame;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -14,14 +13,18 @@ import android.media.SoundPool;
 
 import android.os.Bundle;
 
+import android.os.Handler;
 import android.os.SystemClock;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 
 import java.io.File;
@@ -38,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
     //AD
     private AdView mAdView;
 
+
+
     //Double click check
     private long mLastClickTime;
 
@@ -53,11 +58,14 @@ public class MainActivity extends AppCompatActivity {
         //AD
         MobileAds.initialize(this, String.valueOf(R.string.TEST_AD_BANNER_ID));
         MobileAds.initialize(this, String.valueOf(R.string.TEST_AD_REWARD_ID));
-
+        MobileAds.initialize(this,String.valueOf(R.string.TEST_AD_FULL_ID));
 
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
+
+
+
 
         //Sound
         soundPool = new SoundPool(5,AudioManager.STREAM_MUSIC,0);
@@ -137,8 +145,10 @@ public class MainActivity extends AppCompatActivity {
                 soundPool.play(soundID,1f,1f,0,0,1f);
 
 
-                Intent intent = new Intent(MainActivity.this,UserStatistics.class);
+                Intent intent = new Intent(MainActivity.this,SplashScreen.class);
                 startActivity(intent);
+
+                //FULL_AD();
                 
             }
         });
@@ -226,6 +236,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
+
+
     // 마지막으로 뒤로 가기 버튼을 눌렀던 시간 저장
     private long backKeyPressedTime = 0;
     // 첫 번째 뒤로 가기 버튼을 누를 때 표시
@@ -241,7 +254,7 @@ public class MainActivity extends AppCompatActivity {
         // 2500 milliseconds = 2.5 seconds
         if (System.currentTimeMillis() > backKeyPressedTime + 2500) {
             backKeyPressedTime = System.currentTimeMillis();
-            toast = Toast.makeText(this, "뒤로 가기 버튼을 한 번 더 누르시면 종료됩니다.", Toast.LENGTH_LONG);
+            toast = Toast.makeText(this, "뒤로 가기 버튼을 한 번 더 누르시면 종료됩니다.", Toast.LENGTH_SHORT);
             toast.show();
             return;
         }
@@ -250,7 +263,7 @@ public class MainActivity extends AppCompatActivity {
         if (System.currentTimeMillis() <= backKeyPressedTime + 2500) {
             finish();
             toast.cancel();
-            toast = Toast.makeText(this,"이용해 주셔서 감사합니다.",Toast.LENGTH_LONG);
+            toast = Toast.makeText(this,"이용해 주셔서 감사합니다.",Toast.LENGTH_SHORT);
             toast.show();
         }
     }
