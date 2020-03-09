@@ -134,6 +134,7 @@ public class CustomDialog extends AppCompatActivity {
                 if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
                     return;
                 }
+                mLastClickTime = SystemClock.elapsedRealtime();
                 rewardCoin = answer*10;
                 UpdateCoin();
                 if(DataType.equals("Add"))
@@ -160,6 +161,7 @@ public class CustomDialog extends AppCompatActivity {
                 if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
                     return;
                 }
+                mLastClickTime = SystemClock.elapsedRealtime();
                 if (rewardedAd.isLoaded()) {
                     Activity activityContext = CustomDialog.this;
                     RewardedAdCallback adCallback = new RewardedAdCallback() {
@@ -182,7 +184,17 @@ public class CustomDialog extends AppCompatActivity {
 
                         public void onRewardedAdFailedToShow(int errcode){
                             // Ad failed to display
+                            rewardCoin = answer*10;
+                            UpdateCoin();
+                            if(DataType.equals("Add"))
+                                insertChAdd();
+                            else if(DataType.equals("Sub"))
+                                insertChSub();
 
+                            Toast.makeText(getApplicationContext(),"보상 획득, 영상이 준비되지 않음. 나중에 다시 시도하세요.",Toast.LENGTH_LONG).show();
+                            Intent intent = new Intent(CustomDialog.this,MainActivity.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(intent);
                         }
 
                         public void onRewardedAdOpened(){

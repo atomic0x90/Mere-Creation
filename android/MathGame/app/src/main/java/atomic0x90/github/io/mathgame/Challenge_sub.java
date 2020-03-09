@@ -360,6 +360,7 @@ public class Challenge_sub extends AppCompatActivity {
                 if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
                     return;
                 }
+                mLastClickTime = SystemClock.elapsedRealtime();
 
                 if (tmpNumber != 10) {
                     Intent intent1 = getIntent();
@@ -400,6 +401,7 @@ public class Challenge_sub extends AppCompatActivity {
                 if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
                     return;
                 }
+                mLastClickTime = SystemClock.elapsedRealtime();
                 if (tmpNumber != 10){
                     Intent intent1 = getIntent();
 
@@ -439,6 +441,7 @@ public class Challenge_sub extends AppCompatActivity {
                 if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
                     return;
                 }
+                mLastClickTime = SystemClock.elapsedRealtime();
                 if(tmpNumber != 10) {
                     Intent intent1 = getIntent();
 

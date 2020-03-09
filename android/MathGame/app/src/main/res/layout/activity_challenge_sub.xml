@@ -277,7 +277,10 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/text"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+
+        android:soundEffectsEnabled="false"
+        />
 
     <Button
         android:id="@+id/csub1"
@@ -292,6 +295,8 @@
 
         android:background="@drawable/button_back"
         android:textColor="@color/text"
+
+        android:soundEffectsEnabled="false"
         />
 
     <Button
@@ -307,6 +312,8 @@
 
         android:background="@drawable/button_back"
         android:textColor="@color/text"
+
+        android:soundEffectsEnabled="false"
         />
 
     <Button
@@ -321,6 +328,10 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/text"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+
+
+        android:soundEffectsEnabled="false"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

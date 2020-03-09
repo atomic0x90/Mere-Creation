@@ -22,7 +22,10 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/text"
         app:layout_constraintBottom_toTopOf="@+id/cadd3"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+
+        android:soundEffectsEnabled="false"
+        />
 
     <Button
         android:id="@+id/cadd4"
@@ -36,7 +39,10 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/text"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+
+        android:soundEffectsEnabled="false"
+        />
 
     <Button
         android:id="@+id/cadd3"
@@ -50,7 +56,10 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/text"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+
+        android:soundEffectsEnabled="false"
+        />
 
     <Button
         android:id="@+id/cadd2"
@@ -64,7 +73,10 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/text"
         app:layout_constraintBottom_toTopOf="@+id/cadd4"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+
+        android:soundEffectsEnabled="false"
+        />
 
     <TextView
         android:id="@+id/timeText1"
