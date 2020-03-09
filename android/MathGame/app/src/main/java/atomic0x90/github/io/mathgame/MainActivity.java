@@ -117,12 +117,12 @@ public class MainActivity extends AppCompatActivity {
 
                 soundPool.play(soundID,1f,1f,0,0,1f);
 
-                /*Intent intent = new Intent(MainActivity.this,Challenge_sub.class);
+                Intent intent = new Intent(MainActivity.this,Challenge_sub.class);
                 intent.putExtra("Number_of_time",0);
                 intent.putExtra("Answer_state",resultarr);
                 intent.putExtra("Average_time",(double)0);
                 startActivity(intent);
-            */}
+            }
         });
 
         //나가기 버튼
@@ -240,6 +240,15 @@ public class MainActivity extends AppCompatActivity {
                     "AVtime " + "REAL NOT NULL," +
                     "date_time " + "TIMESTAMP NOT NULL default (datetime('now','localtime')));";
             System.out.println(sqlCreateTbl);
+
+            sqliteDB.execSQL(sqlCreateTbl);
+
+            //Sub table
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS ChSub (" +
+                    "IDX " + "INTEGER PRIMARY KEY," +
+                    "result " + "INTEGER NOT NULL," +
+                    "AVtime " + "REAL NOT NULL," +
+                    "date_time " + "TIMESTAMP NOT NULL default (datetime('now','localtime')));";
 
             sqliteDB.execSQL(sqlCreateTbl);
 
