@@ -94,6 +94,8 @@ public class MainActivity extends AppCompatActivity {
                 }
                 mLastClickTime = SystemClock.elapsedRealtime();
 
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 Intent intent = new Intent(MainActivity.this,Challenge_add.class);
                 intent.putExtra("Number_of_time",0);
                 intent.putExtra("Answer_state",resultarr);
@@ -112,7 +114,15 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
                 mLastClickTime = SystemClock.elapsedRealtime();
-            }
+
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
+                /*Intent intent = new Intent(MainActivity.this,Challenge_sub.class);
+                intent.putExtra("Number_of_time",0);
+                intent.putExtra("Answer_state",resultarr);
+                intent.putExtra("Average_time",(double)0);
+                startActivity(intent);
+            */}
         });
 
         //나가기 버튼
@@ -125,6 +135,8 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
                 mLastClickTime = SystemClock.elapsedRealtime();
+
+                soundPool.play(soundID,1f,1f,0,0,1f);
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setMessage("정말로 종료 하시겠습니까?");

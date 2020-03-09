@@ -3,6 +3,8 @@ package atomic0x90.github.io.mathgame;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.SystemClock;
@@ -23,6 +25,9 @@ import java.util.Random;
 public class Challenge_add extends AppCompatActivity {
 
     double remainTime;
+    //Sound
+    SoundPool soundPool;
+    int soundID;
 
     //Double click check
     private long mLastClickTime = 0;
@@ -34,6 +39,9 @@ public class Challenge_add extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_challenge_add);
 
+        //Sound
+        soundPool = new SoundPool(5, AudioManager.STREAM_MUSIC,0);
+        soundID = soundPool.load(this,R.raw.click_sound01,1);
 
 
         //AD
@@ -364,6 +372,7 @@ public class Challenge_add extends AppCompatActivity {
                     else
                         answerResult[problemNumber] = -1;
 
+                    soundPool.play(soundID,1f,1f,0,0,1f);
 
                     intent.putExtra("Number_of_time", problemNumber + 1);
                     intent.putExtra("Answer_state", answerResult);
@@ -402,6 +411,8 @@ public class Challenge_add extends AppCompatActivity {
                         answerResult[problemNumber] = 1;
                     else
                         answerResult[problemNumber] = -1;
+
+                    soundPool.play(soundID,1f,1f,0,0,1f);
 
                     intent.putExtra("Number_of_time", problemNumber + 1);
                     intent.putExtra("Answer_state", answerResult);
@@ -444,6 +455,8 @@ public class Challenge_add extends AppCompatActivity {
                     intent.putExtra("Answer_state", answerResult);
                     intent.putExtra("Average_time", avtime);
 
+                    soundPool.play(soundID,1f,1f,0,0,1f);
+
                     startActivity(intent);
                     overridePendingTransition(0, 0);
                 }
@@ -480,6 +493,8 @@ public class Challenge_add extends AppCompatActivity {
                     intent.putExtra("Number_of_time", problemNumber + 1);
                     intent.putExtra("Answer_state", answerResult);
                     intent.putExtra("Average_time", avtime);
+
+                    soundPool.play(soundID,1f,1f,0,0,1f);
 
                     startActivity(intent);
                     overridePendingTransition(0, 0);

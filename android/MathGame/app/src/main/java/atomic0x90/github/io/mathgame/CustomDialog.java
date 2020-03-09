@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.util.Log;
@@ -33,6 +35,10 @@ public class CustomDialog extends AppCompatActivity {
     int saveCoin,rewardCoin,insertResult;
     double insertAVtime;
 
+    //Sound
+    SoundPool soundPool;
+    int soundID;
+
     //DB
     SQLiteDatabase sqLiteDatabase;
 
@@ -45,6 +51,10 @@ public class CustomDialog extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_custom_dialog);
+
+        //Sound
+        soundPool = new SoundPool(5, AudioManager.STREAM_MUSIC,0);
+        soundID = soundPool.load(this,R.raw.click_sound01,1);
 
         //Reward AD
 
@@ -131,6 +141,9 @@ public class CustomDialog extends AppCompatActivity {
                 if(DataType.equals("Add"))
                     insertChAdd();
                 Toast.makeText(getApplicationContext(),"보상 획득",Toast.LENGTH_LONG).show();
+
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 Intent intent = new Intent(CustomDialog.this, MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
@@ -141,6 +154,7 @@ public class CustomDialog extends AppCompatActivity {
         AddRewardButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
                 // mis-clicking prevention, using threshold of 1000 ms
                 if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
                     return;

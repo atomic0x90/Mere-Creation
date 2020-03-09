@@ -23,7 +23,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RewardButton" />
+        app:layout_constraintTop_toBottomOf="@+id/RewardButton"
+
+        android:soundEffectsEnabled="false"
+        />
 
     <TextView
         android:id="@+id/DialogsubTitle"
@@ -62,7 +65,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CoinText" />
+        app:layout_constraintTop_toBottomOf="@+id/CoinText"
+
+        android:soundEffectsEnabled="false"
+        />
 
     <ImageView
         android:id="@+id/CoinImg"

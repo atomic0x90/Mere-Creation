@@ -12,8 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashScreen"></activity>
-        <activity android:name=".UserStatistics"></activity>
+
+        <activity android:name=".SplashScreen" />
+        <activity android:name=".UserStatistics" />
         <activity
             android:name=".CustomDialog"
             android:screenOrientation="fullSensor"
