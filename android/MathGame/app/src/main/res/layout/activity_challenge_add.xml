@@ -103,7 +103,6 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="50dp"
         android:layout_marginRight="50dp"
-        android:text="sec"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/text"
 
