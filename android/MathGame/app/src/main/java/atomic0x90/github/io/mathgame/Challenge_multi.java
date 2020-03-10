@@ -113,7 +113,7 @@ public class Challenge_multi extends AppCompatActivity {
             }
 
             Intent Endintent = new Intent(Challenge_multi.this, CustomDialog.class);
-            Endintent.putExtra("Result_type","Multiple");
+            Endintent.putExtra("Result_type","Multipl");
             Endintent.putExtra("Average_time",avtime);
             Endintent.putExtra("Answer_num",num);
             Endintent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

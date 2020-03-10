@@ -27,6 +27,14 @@ public class UserStatistics extends AppCompatActivity {
     int subIDX = -1;
     double subResult = 0,subAVtime = 0,sub10Result = 0,sub10AVtime = 0;
 
+    //Mul
+    int mulIDX = -1;
+    double mulResult = 0,mulAVtime = 0,mul10Result = 0,mul10AVtime = 0;
+
+    //Divide
+    int divIDX = -1;
+    double divResult = 0,divAVtime = 0,div10Result = 0,div10AVtime = 0;
+
     //FULL AD
 
     @Override
@@ -93,6 +101,63 @@ public class UserStatistics extends AppCompatActivity {
             sub10Answer.setText(String.format(Locale.getDefault(),"%.2f %%",(sub10Result/(10*10) )*100 ));
             sub10Time.setText(String.format(Locale.getDefault(),"%.1f s",sub10AVtime/10));
         }
+
+        //Multiplication (3)
+        Button mulAnswer = (Button)findViewById(R.id.MulAnswer);
+        Button mulTime = (Button)findViewById(R.id.MulTime);
+        Button mul10Answer = (Button)findViewById(R.id.Mul10Answer);
+        Button mul10Time = (Button)findViewById(R.id.Mul10Time);
+        load_mul();
+
+        if(mulIDX == -1){
+            mulAnswer.setText("정보 없음");
+            mulTime.setText("정보 없음");
+            mul10Answer.setText("정보 없음");
+            mul10Time.setText("정보 없음");
+        }
+        else if(mulIDX >= 1 && mulIDX <= 10){
+            mulAnswer.setText(String.format(Locale.getDefault(),"%.2f %%",( mulResult/(mulIDX*10) )*100 ));
+            mulTime.setText(String.format(Locale.getDefault(),"%.1f s",mulAVtime/mulIDX));
+            mul10Answer.setText("정보 부족");
+            mul10Time.setText("정보 부족");
+        }
+        else{
+            pre_load_mul();
+            mulAnswer.setText(String.format(Locale.getDefault(),"%.2f %%",( mulResult/(mulIDX*10) )*100 ));
+            mulTime.setText(String.format(Locale.getDefault(),"%.1f s",mulAVtime/mulIDX));
+            mul10Answer.setText(String.format(Locale.getDefault(),"%.2f %%",(mul10Result/(10*10) )*100 ));
+            mul10Time.setText(String.format(Locale.getDefault(),"%.1f s",mul10AVtime/10));
+        }
+
+        //Divide (4)
+
+        Button divAnswer = (Button)findViewById(R.id.DivAnswer);
+        Button divTime = (Button)findViewById(R.id.DivTime);
+        Button div10Answer = (Button)findViewById(R.id.Div10Answer);
+        Button div10Time = (Button)findViewById(R.id.Div10Time);
+        load_div();
+
+        if(divIDX == -1){
+            divAnswer.setText("정보 없음");
+            divTime.setText("정보 없음");
+            div10Answer.setText("정보 없음");
+            div10Time.setText("정보 없음");
+        }
+        else if(divIDX >= 1 && divIDX <= 10){
+            divAnswer.setText(String.format(Locale.getDefault(),"%.2f %%",( divResult/(divIDX*10) )*100 ));
+            divTime.setText(String.format(Locale.getDefault(),"%.1f s",divAVtime/divIDX));
+            div10Answer.setText("정보 부족");
+            div10Time.setText("정보 부족");
+
+        }
+        else{
+            pre_load_div();
+            divAnswer.setText(String.format(Locale.getDefault(),"%.2f %%",( divResult/(divIDX*10) )*100 ));
+            divTime.setText(String.format(Locale.getDefault(),"%.1f s",divAVtime/divIDX));
+            div10Answer.setText(String.format(Locale.getDefault(),"%.2f %%",(div10Result/(10*10) )*100 ));
+            div10Time.setText(String.format(Locale.getDefault(),"%.1f s",div10AVtime/10));
+        }
+
     }
 
 
@@ -207,6 +272,95 @@ public class UserStatistics extends AppCompatActivity {
             }
         }
     }
+
+    //Multiplication
+    private void load_mul(){
+        if(sqLiteDatabase != null) {
+            String sqlQuery = "SELECT * FROM ChMul";
+            Cursor cursor = null;
+
+            cursor = sqLiteDatabase.rawQuery(sqlQuery, null);
+
+            if (cursor.moveToFirst()) {
+                do {
+                    mulIDX = cursor.getInt(0);
+                    mulResult += cursor.getInt(1);
+                    mulAVtime += cursor.getDouble(2);
+
+                    System.out.println("TEST " + mulIDX + " " + mulResult + " " + mulAVtime);
+                }while(cursor.moveToNext());
+            }
+        }
+    }
+
+    private void pre_load_mul(){
+        if(sqLiteDatabase != null){
+            String sqlQuery = "SELECT * FROM ChMul";
+            Cursor cursor = null;
+
+            cursor = sqLiteDatabase.rawQuery(sqlQuery,null);
+
+            int check = 0;
+            if(cursor.moveToLast()){
+                do {
+                    check++;
+
+
+                    mul10Result += cursor.getInt(1);
+                    mul10AVtime += cursor.getDouble(2);
+
+                    System.out.println("10 TEST "+mul10Result + " "+mul10AVtime + "check "+check);
+                    if(check == 10)
+                        break;
+                }while(cursor.moveToPrevious());
+            }
+        }
+    }
+
+    //Divide
+    private void load_div(){
+        if(sqLiteDatabase != null) {
+            String sqlQuery = "SELECT * FROM ChDiv";
+            Cursor cursor = null;
+
+            cursor = sqLiteDatabase.rawQuery(sqlQuery, null);
+
+            if (cursor.moveToFirst()) {
+                do {
+                    divIDX = cursor.getInt(0);
+                    divResult += cursor.getInt(1);
+                    divAVtime += cursor.getDouble(2);
+
+                    System.out.println("TEST " + divIDX + " " + divResult + " " + divAVtime);
+                }while(cursor.moveToNext());
+            }
+        }
+    }
+
+    private void pre_load_div(){
+        if(sqLiteDatabase != null){
+            String sqlQuery = "SELECT * FROM ChDiv";
+            Cursor cursor = null;
+
+            cursor = sqLiteDatabase.rawQuery(sqlQuery,null);
+
+            int check = 0;
+            if(cursor.moveToLast()){
+                do {
+                    check++;
+
+
+                    div10Result += cursor.getInt(1);
+                    div10AVtime += cursor.getDouble(2);
+
+                    System.out.println("10 TEST "+div10Result + " "+div10AVtime + "check "+check);
+                    if(check == 10)
+                        break;
+                }while(cursor.moveToPrevious());
+            }
+        }
+    }
+
 
     // 마지막으로 뒤로 가기 버튼을 눌렀던 시간 저장
     private long backKeyPressedTime = 0;

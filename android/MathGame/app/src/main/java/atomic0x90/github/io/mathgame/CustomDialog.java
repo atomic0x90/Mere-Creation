@@ -89,7 +89,7 @@ public class CustomDialog extends AppCompatActivity {
         TextView avtimeText = (TextView)findViewById(R.id.AVtimeText);
         TextView coinText = (TextView)findViewById(R.id.CoinText);
 
-        if(DataType.equals("Add") || DataType.equals("Sub") || DataType.equals("Divide") || DataType.equals("Multiple")) {
+        if(DataType.equals("Add") || DataType.equals("Sub") || DataType.equals("Divide") || DataType.equals("Multipl")) {
             if (answer == 10) {
                 if (avtime <= 2.0)
                     titleText.setText("결과 : SSS\n우와~ 최고예요!");
@@ -116,7 +116,7 @@ public class CustomDialog extends AppCompatActivity {
         }
 
 
-        if(DataType.equals("Add") || DataType.equals("Sub") || DataType.equals("Divide") || DataType.equals("Multiple"))
+        if(DataType.equals("Add") || DataType.equals("Sub") || DataType.equals("Divide") || DataType.equals("Multipl"))
             answerText.setText(String.format(Locale.getDefault(),"%d / 10",answer));
         else
             answerText.setText(String.format(Locale.getDefault(),"%d / 5",answer));
@@ -141,6 +141,10 @@ public class CustomDialog extends AppCompatActivity {
                     insertChAdd();
                 else if(DataType.equals("Sub"))
                     insertChSub();
+                else if(DataType.equals("Multipl"))
+                    insertChMul();
+                else if(DataType.equals("Divide"))
+                    insertChDiv();
 
                 Toast.makeText(getApplicationContext(),"보상 획득",Toast.LENGTH_LONG).show();
 
@@ -174,6 +178,10 @@ public class CustomDialog extends AppCompatActivity {
                                 insertChAdd();
                             else if(DataType.equals("Sub"))
                                 insertChSub();
+                            else if(DataType.equals("Multipl"))
+                                insertChMul();
+                            else if(DataType.equals("Divide"))
+                                insertChDiv();
 
                             Toast.makeText(getApplicationContext(),"보상X2 획득",Toast.LENGTH_LONG).show();
                             Intent intent = new Intent(CustomDialog.this,MainActivity.class);
@@ -190,6 +198,10 @@ public class CustomDialog extends AppCompatActivity {
                                 insertChAdd();
                             else if(DataType.equals("Sub"))
                                 insertChSub();
+                            else if(DataType.equals("Multipl"))
+                                insertChMul();
+                            else if(DataType.equals("Divide"))
+                                insertChDiv();
 
                             Toast.makeText(getApplicationContext(),"보상 획득, 영상이 준비되지 않음. 나중에 다시 시도하세요.",Toast.LENGTH_LONG).show();
                             Intent intent = new Intent(CustomDialog.this,MainActivity.class);
@@ -214,6 +226,10 @@ public class CustomDialog extends AppCompatActivity {
                         insertChAdd();
                     else if(DataType.equals("Sub"))
                         insertChSub();
+                    else if(DataType.equals("Multipl"))
+                        insertChMul();
+                    else if(DataType.equals("Divide"))
+                        insertChDiv();
 
                     Toast.makeText(getApplicationContext(),"보상 획득, 영상이 준비되지 않음. 나중에 다시 시도하세요.",Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(CustomDialog.this,MainActivity.class);
@@ -281,6 +297,20 @@ public class CustomDialog extends AppCompatActivity {
     private void insertChSub(){
         if(sqLiteDatabase != null){
             String sqlQuery = "INSERT INTO ChSub" + "(result,AVtime)" + "VALUES (" + insertResult + "," + insertAVtime +");";
+            sqLiteDatabase.execSQL(sqlQuery);
+        }
+    }
+
+    private void insertChMul(){
+        if(sqLiteDatabase != null){
+            String sqlQuery = "INSERT INTO ChMul" + "(result,AVtime)" + "VALUES (" + insertResult + "," + insertAVtime +");";
+            sqLiteDatabase.execSQL(sqlQuery);
+        }
+    }
+
+    private void insertChDiv(){
+        if(sqLiteDatabase != null){
+            String sqlQuery = "INSERT INTO ChDiv" + "(result,AVtime)" + "VALUES (" + insertResult + "," + insertAVtime +");";
             sqLiteDatabase.execSQL(sqlQuery);
         }
     }

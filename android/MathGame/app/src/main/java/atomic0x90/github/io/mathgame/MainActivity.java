@@ -303,6 +303,14 @@ public class MainActivity extends AppCompatActivity {
 
             sqliteDB.execSQL(sqlCreateTbl);
 
+            //Divide table
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS ChDiv (" +
+                    "IDX " + "INTEGER PRIMARY KEY," +
+                    "result " + "INTEGER NOT NULL," +
+                    "AVtime " + "REAL NOT NULL," +
+                    "date_time " + "TIMESTAMP NOT NULL default (datetime('now','localtime')));";
+
+            sqliteDB.execSQL(sqlCreateTbl);
         }
     }
 
