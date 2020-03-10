@@ -167,6 +167,25 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //1분 무한 더하기 도전 버튼
+        Button infinityPlusButton = (Button)findViewById(R.id.infiaddButton);
+        infinityPlusButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // mis-clicking prevention, using threshold of 1000 ms
+                if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
+                    return;
+                }
+                mLastClickTime = SystemClock.elapsedRealtime();
+
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
+                Intent intent = new Intent(MainActivity.this,InfinityPlusMenu.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+        });
+
         //나가기 버튼
         Button exitButton = (Button) findViewById(R.id.exitButton);
         exitButton.setOnClickListener(new View.OnClickListener() {
@@ -308,6 +327,297 @@ public class MainActivity extends AppCompatActivity {
                     "IDX " + "INTEGER PRIMARY KEY," +
                     "result " + "INTEGER NOT NULL," +
                     "AVtime " + "REAL NOT NULL," +
+                    "date_time " + "TIMESTAMP NOT NULL default (datetime('now','localtime')));";
+
+            sqliteDB.execSQL(sqlCreateTbl);
+
+            //Infinity Plus 6 lock check table
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS InfiP6 (" +
+                    "lock "           + "INTEGER NOT NULL," +
+                    "date_time "         + "TIMESTAMP NOT NULL default (datetime('now','localtime')" + "));" ;
+
+            sqliteDB.execSQL(sqlCreateTbl) ;
+
+            sqlQuery = "SELECT * FROM InfiP6";
+            cursor = null;
+            cursor = sqliteDB.rawQuery(sqlQuery,null);
+
+            try{
+                //lock 값이 없는 경우
+                if(!cursor.moveToNext()){
+                    String sqlInsert = "INSERT INTO InfiP6 " + "(lock)" + "VALUES (" + 0 +");";
+                    sqliteDB.execSQL(sqlInsert);
+                }
+            }
+            catch (Exception e){
+                System.out.println("InfiP6 table : "+e);
+            }
+
+            //Infinity Plus 6 table
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS InfiChP6 (" +
+                    "IDX " + "INTEGER PRIMARY KEY," +
+                    "result " + "INTEGER NOT NULL," +
+                    "date_time " + "TIMESTAMP NOT NULL default (datetime('now','localtime')));";
+
+            sqliteDB.execSQL(sqlCreateTbl);
+
+
+
+            //Infinity Plus 7 lock check table
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS InfiP7 (" +
+                    "lock "           + "INTEGER NOT NULL," +
+                    "date_time "         + "TIMESTAMP NOT NULL default (datetime('now','localtime')" + "));" ;
+
+            sqliteDB.execSQL(sqlCreateTbl) ;
+
+            sqlQuery = "SELECT * FROM InfiP7";
+            cursor = null;
+            cursor = sqliteDB.rawQuery(sqlQuery,null);
+
+            try{
+                //lock 값이 없는 경우
+                if(!cursor.moveToNext()){
+                    String sqlInsert = "INSERT INTO InfiP7 " + "(lock)" + "VALUES (" + 0 +");";
+                    sqliteDB.execSQL(sqlInsert);
+                }
+            }
+            catch (Exception e){
+                System.out.println("InfiP7 table : "+e);
+            }
+
+            //Infinity Plus 7 table
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS InfiChP7 (" +
+                    "IDX " + "INTEGER PRIMARY KEY," +
+                    "result " + "INTEGER NOT NULL," +
+                    "date_time " + "TIMESTAMP NOT NULL default (datetime('now','localtime')));";
+
+            sqliteDB.execSQL(sqlCreateTbl);
+
+
+
+            //Infinity Plus 8 lock check table
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS InfiP8 (" +
+                    "lock "           + "INTEGER NOT NULL," +
+                    "date_time "         + "TIMESTAMP NOT NULL default (datetime('now','localtime')" + "));" ;
+
+            sqliteDB.execSQL(sqlCreateTbl) ;
+
+            sqlQuery = "SELECT * FROM InfiP8";
+            cursor = null;
+            cursor = sqliteDB.rawQuery(sqlQuery,null);
+
+            try{
+                //lock 값이 없는 경우
+                if(!cursor.moveToNext()){
+                    String sqlInsert = "INSERT INTO InfiP8 " + "(lock)" + "VALUES (" + 0 +");";
+                    sqliteDB.execSQL(sqlInsert);
+                }
+            }
+            catch (Exception e){
+                System.out.println("InfiP8 table : "+e);
+            }
+
+            //Infinity Plus 8 table
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS InfiChP8 (" +
+                    "IDX " + "INTEGER PRIMARY KEY," +
+                    "result " + "INTEGER NOT NULL," +
+                    "date_time " + "TIMESTAMP NOT NULL default (datetime('now','localtime')));";
+
+            sqliteDB.execSQL(sqlCreateTbl);
+
+
+
+
+            //Infinity Plus 13 lock check table
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS InfiP13 (" +
+                    "lock "           + "INTEGER NOT NULL," +
+                    "date_time "         + "TIMESTAMP NOT NULL default (datetime('now','localtime')" + "));" ;
+
+            sqliteDB.execSQL(sqlCreateTbl) ;
+
+            sqlQuery = "SELECT * FROM InfiP13";
+            cursor = null;
+            cursor = sqliteDB.rawQuery(sqlQuery,null);
+
+            try{
+                //lock 값이 없는 경우
+                if(!cursor.moveToNext()){
+                    String sqlInsert = "INSERT INTO InfiP13 " + "(lock)" + "VALUES (" + 0 +");";
+                    sqliteDB.execSQL(sqlInsert);
+                }
+            }
+            catch (Exception e){
+                System.out.println("InfiP13 table : "+e);
+            }
+
+            //Infinity Plus 13 table
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS InfiChP13 (" +
+                    "IDX " + "INTEGER PRIMARY KEY," +
+                    "result " + "INTEGER NOT NULL," +
+                    "date_time " + "TIMESTAMP NOT NULL default (datetime('now','localtime')));";
+
+            sqliteDB.execSQL(sqlCreateTbl);
+
+
+
+
+            //Infinity Plus 16 lock check table
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS InfiP16 (" +
+                    "lock "           + "INTEGER NOT NULL," +
+                    "date_time "         + "TIMESTAMP NOT NULL default (datetime('now','localtime')" + "));" ;
+
+            sqliteDB.execSQL(sqlCreateTbl) ;
+
+            sqlQuery = "SELECT * FROM InfiP16";
+            cursor = null;
+            cursor = sqliteDB.rawQuery(sqlQuery,null);
+
+            try{
+                //lock 값이 없는 경우
+                if(!cursor.moveToNext()){
+                    String sqlInsert = "INSERT INTO InfiP16 " + "(lock)" + "VALUES (" + 0 +");";
+                    sqliteDB.execSQL(sqlInsert);
+                }
+            }
+            catch (Exception e){
+                System.out.println("InfiP16 table : "+e);
+            }
+
+            //Infinity Plus 16 table
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS InfiChP16 (" +
+                    "IDX " + "INTEGER PRIMARY KEY," +
+                    "result " + "INTEGER NOT NULL," +
+                    "date_time " + "TIMESTAMP NOT NULL default (datetime('now','localtime')));";
+
+            sqliteDB.execSQL(sqlCreateTbl);
+
+
+
+            //Infinity Plus 17 lock check table
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS InfiP17 (" +
+                    "lock "           + "INTEGER NOT NULL," +
+                    "date_time "         + "TIMESTAMP NOT NULL default (datetime('now','localtime')" + "));" ;
+
+            sqliteDB.execSQL(sqlCreateTbl) ;
+
+            sqlQuery = "SELECT * FROM InfiP17";
+            cursor = null;
+            cursor = sqliteDB.rawQuery(sqlQuery,null);
+
+            try{
+                //lock 값이 없는 경우
+                if(!cursor.moveToNext()){
+                    String sqlInsert = "INSERT INTO InfiP17 " + "(lock)" + "VALUES (" + 0 +");";
+                    sqliteDB.execSQL(sqlInsert);
+                }
+            }
+            catch (Exception e){
+                System.out.println("InfiP17 table : "+e);
+            }
+
+            //Infinity Plus 17 table
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS InfiChP17 (" +
+                    "IDX " + "INTEGER PRIMARY KEY," +
+                    "result " + "INTEGER NOT NULL," +
+                    "date_time " + "TIMESTAMP NOT NULL default (datetime('now','localtime')));";
+
+            sqliteDB.execSQL(sqlCreateTbl);
+
+
+
+
+            //Infinity Plus 6~9 lock check table
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS InfiPR6_9 (" +
+                    "lock "           + "INTEGER NOT NULL," +
+                    "date_time "         + "TIMESTAMP NOT NULL default (datetime('now','localtime')" + "));" ;
+
+            sqliteDB.execSQL(sqlCreateTbl) ;
+
+            sqlQuery = "SELECT * FROM InfiPR6_9";
+            cursor = null;
+            cursor = sqliteDB.rawQuery(sqlQuery,null);
+
+            try{
+                //lock 값이 없는 경우
+                if(!cursor.moveToNext()){
+                    String sqlInsert = "INSERT INTO InfiPR6_9 " + "(lock)" + "VALUES (" + 0 +");";
+                    sqliteDB.execSQL(sqlInsert);
+                }
+            }
+            catch (Exception e){
+                System.out.println("InfiPR6_9 table : "+e);
+            }
+
+            //Infinity Plus 6~9 table
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS InfiChPR6_9 (" +
+                    "IDX " + "INTEGER PRIMARY KEY," +
+                    "result " + "INTEGER NOT NULL," +
+                    "date_time " + "TIMESTAMP NOT NULL default (datetime('now','localtime')));";
+
+            sqliteDB.execSQL(sqlCreateTbl);
+
+
+
+            //Infinity Plus 13~17 lock check table
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS InfiPR13_17 (" +
+                    "lock "           + "INTEGER NOT NULL," +
+                    "date_time "         + "TIMESTAMP NOT NULL default (datetime('now','localtime')" + "));" ;
+
+            sqliteDB.execSQL(sqlCreateTbl) ;
+
+            sqlQuery = "SELECT * FROM InfiPR13_17";
+            cursor = null;
+            cursor = sqliteDB.rawQuery(sqlQuery,null);
+
+            try{
+                //lock 값이 없는 경우
+                if(!cursor.moveToNext()){
+                    String sqlInsert = "INSERT INTO InfiPR13_17 " + "(lock)" + "VALUES (" + 0 +");";
+                    sqliteDB.execSQL(sqlInsert);
+                }
+            }
+            catch (Exception e){
+                System.out.println("InfiPR13_17 table : "+e);
+            }
+
+            //Infinity Plus 13~17 table
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS InfiChPR13_17 (" +
+                    "IDX " + "INTEGER PRIMARY KEY," +
+                    "result " + "INTEGER NOT NULL," +
+                    "date_time " + "TIMESTAMP NOT NULL default (datetime('now','localtime')));";
+
+            sqliteDB.execSQL(sqlCreateTbl);
+
+
+
+
+
+            //Infinity Plus 6~17 lock check table
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS InfiPR6_17 (" +
+                    "lock "           + "INTEGER NOT NULL," +
+                    "date_time "         + "TIMESTAMP NOT NULL default (datetime('now','localtime')" + "));" ;
+
+            sqliteDB.execSQL(sqlCreateTbl) ;
+
+            sqlQuery = "SELECT * FROM InfiPR6_17";
+            cursor = null;
+            cursor = sqliteDB.rawQuery(sqlQuery,null);
+
+            try{
+                //lock 값이 없는 경우
+                if(!cursor.moveToNext()){
+                    String sqlInsert = "INSERT INTO InfiPR6_17 " + "(lock)" + "VALUES (" + 0 +");";
+                    sqliteDB.execSQL(sqlInsert);
+                }
+            }
+            catch (Exception e){
+                System.out.println("InfiPR6_17 table : "+e);
+            }
+
+            //Infinity Plus 6~17 table
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS InfiChPR6_17 (" +
+                    "IDX " + "INTEGER PRIMARY KEY," +
+                    "result " + "INTEGER NOT NULL," +
                     "date_time " + "TIMESTAMP NOT NULL default (datetime('now','localtime')));";
 
             sqliteDB.execSQL(sqlCreateTbl);
