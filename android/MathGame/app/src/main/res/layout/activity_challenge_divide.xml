@@ -4,25 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Challenge_sub"
+    tools:context=".Challenge_divide"
 
     android:background="@color/background"
     >
 
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/adView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-
-        app:adSize="SMART_BANNER"
-        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
-        />
-
     <TextView
-        android:id="@+id/subtimeText"
+        android:id="@+id/divideTimeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -40,7 +28,7 @@
         />
 
     <TextView
-        android:id="@+id/subAverageTime"
+        android:id="@+id/divideAverageTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -53,8 +41,20 @@
         android:textColor="@color/text"
         />
 
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:adSize="SMART_BANNER"
+        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        />
+
     <ImageView
-        android:id="@+id/subState0"
+        android:id="@+id/divideState0"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="40dp"
@@ -62,13 +62,13 @@
         android:layout_marginTop="120dp"
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/subState1"
+        app:layout_constraintEnd_toStartOf="@+id/divideState1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/gray_dot" />
 
     <ImageView
-        android:id="@+id/subState1"
+        android:id="@+id/divideState1"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="5dp"
@@ -76,13 +76,13 @@
         android:layout_marginTop="120dp"
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/subState2"
-        app:layout_constraintStart_toEndOf="@+id/subState0"
+        app:layout_constraintEnd_toStartOf="@+id/divideState2"
+        app:layout_constraintStart_toEndOf="@+id/divideState0"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/gray_dot" />
 
     <ImageView
-        android:id="@+id/subState2"
+        android:id="@+id/divideState2"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="5dp"
@@ -90,13 +90,13 @@
         android:layout_marginTop="120dp"
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/subState3"
-        app:layout_constraintStart_toEndOf="@+id/subState1"
+        app:layout_constraintEnd_toStartOf="@+id/divideState3"
+        app:layout_constraintStart_toEndOf="@+id/divideState1"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/gray_dot" />
 
     <ImageView
-        android:id="@+id/subState3"
+        android:id="@+id/divideState3"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="5dp"
@@ -104,13 +104,13 @@
         android:layout_marginTop="120dp"
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/subState4"
-        app:layout_constraintStart_toEndOf="@+id/subState2"
+        app:layout_constraintEnd_toStartOf="@+id/divideState4"
+        app:layout_constraintStart_toEndOf="@+id/divideState2"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/gray_dot" />
 
     <ImageView
-        android:id="@+id/subState4"
+        android:id="@+id/divideState4"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="5dp"
@@ -118,13 +118,13 @@
         android:layout_marginTop="120dp"
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/subState5"
-        app:layout_constraintStart_toEndOf="@+id/subState3"
+        app:layout_constraintEnd_toStartOf="@+id/divideState5"
+        app:layout_constraintStart_toEndOf="@+id/divideState3"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/gray_dot" />
 
     <ImageView
-        android:id="@+id/subState5"
+        android:id="@+id/divideState5"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="5dp"
@@ -132,13 +132,13 @@
         android:layout_marginTop="120dp"
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/subState6"
-        app:layout_constraintStart_toEndOf="@+id/subState4"
+        app:layout_constraintEnd_toStartOf="@+id/divideState6"
+        app:layout_constraintStart_toEndOf="@+id/divideState4"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/gray_dot" />
 
     <ImageView
-        android:id="@+id/subState6"
+        android:id="@+id/divideState6"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="5dp"
@@ -146,13 +146,13 @@
         android:layout_marginTop="120dp"
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/subState7"
-        app:layout_constraintStart_toEndOf="@+id/subState5"
+        app:layout_constraintEnd_toStartOf="@+id/divideState7"
+        app:layout_constraintStart_toEndOf="@+id/divideState5"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/gray_dot" />
 
     <ImageView
-        android:id="@+id/subState7"
+        android:id="@+id/divideState7"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="5dp"
@@ -160,13 +160,13 @@
         android:layout_marginTop="120dp"
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/subState8"
-        app:layout_constraintStart_toEndOf="@+id/subState6"
+        app:layout_constraintEnd_toStartOf="@+id/divideState8"
+        app:layout_constraintStart_toEndOf="@+id/divideState6"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/gray_dot" />
 
     <ImageView
-        android:id="@+id/subState8"
+        android:id="@+id/divideState8"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="5dp"
@@ -174,13 +174,13 @@
         android:layout_marginTop="120dp"
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/subState9"
-        app:layout_constraintStart_toEndOf="@+id/subState7"
+        app:layout_constraintEnd_toStartOf="@+id/divideState9"
+        app:layout_constraintStart_toEndOf="@+id/divideState7"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/gray_dot" />
 
     <ImageView
-        android:id="@+id/subState9"
+        android:id="@+id/divideState9"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="5dp"
@@ -189,12 +189,12 @@
         android:layout_marginEnd="40dp"
         android:layout_marginRight="40dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/subState8"
+        app:layout_constraintStart_toEndOf="@+id/divideState8"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/gray_dot" />
 
     <TextView
-        android:id="@+id/subProblemText1"
+        android:id="@+id/divideProblemText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
@@ -202,16 +202,16 @@
         android:layout_marginTop="100dp"
         android:layout_marginEnd="15dp"
         android:layout_marginRight="15dp"
-        android:text="T1"
+        android:text="t1"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/text"
-        app:layout_constraintEnd_toStartOf="@+id/subMinusText"
+        app:layout_constraintEnd_toStartOf="@+id/divideText"
         app:layout_constraintStart_toStartOf="parent"
 
-        app:layout_constraintTop_toBottomOf="@+id/subtimeText" />
+        app:layout_constraintTop_toBottomOf="@+id/divideTimeText" />
 
     <TextView
-        android:id="@+id/subMinusText"
+        android:id="@+id/divideText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
@@ -219,16 +219,16 @@
         android:layout_marginTop="100dp"
         android:layout_marginEnd="15dp"
         android:layout_marginRight="15dp"
-        android:text="-"
+        android:text="%"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/text"
-        app:layout_constraintEnd_toStartOf="@+id/subProblemText2"
-        app:layout_constraintStart_toEndOf="@+id/subProblemText1"
+        app:layout_constraintEnd_toStartOf="@+id/divideProblemText2"
+        app:layout_constraintStart_toEndOf="@+id/divideProblemText1"
 
-        app:layout_constraintTop_toBottomOf="@+id/subtimeText" />
+        app:layout_constraintTop_toBottomOf="@+id/divideTimeText" />
 
     <TextView
-        android:id="@+id/subProblemText2"
+        android:id="@+id/divideProblemText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
@@ -236,16 +236,16 @@
         android:layout_marginTop="100dp"
         android:layout_marginEnd="15dp"
         android:layout_marginRight="15dp"
-        android:text="T2"
+        android:text="t2"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/text"
-        app:layout_constraintEnd_toStartOf="@+id/subendText"
-        app:layout_constraintStart_toEndOf="@+id/subMinusText"
+        app:layout_constraintEnd_toStartOf="@+id/divideendText"
+        app:layout_constraintStart_toEndOf="@+id/divideText"
 
-        app:layout_constraintTop_toBottomOf="@+id/subtimeText" />
+        app:layout_constraintTop_toBottomOf="@+id/divideTimeText" />
 
     <TextView
-        android:id="@+id/subendText"
+        android:id="@+id/divideendText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
@@ -257,33 +257,12 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/subProblemText2"
+        app:layout_constraintStart_toEndOf="@+id/divideProblemText2"
 
-        app:layout_constraintTop_toBottomOf="@+id/subtimeText" />
-
-    <Button
-        android:id="@+id/csub3"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="15dp"
-
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="160dp"
-        android:background="@drawable/button_back"
-        android:soundEffectsEnabled="false"
-
-        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-        android:textColor="@color/text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/csub4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/csub1" />
+        app:layout_constraintTop_toBottomOf="@+id/divideTimeText" />
 
     <Button
-        android:id="@+id/csub1"
+        android:id="@+id/cdiv1"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -295,16 +274,16 @@
 
         android:background="@drawable/button_back"
         android:soundEffectsEnabled="false"
-
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/text"
-        app:layout_constraintBottom_toTopOf="@+id/csub3"
-        app:layout_constraintEnd_toStartOf="@+id/csub2"
+        app:layout_constraintBottom_toTopOf="@+id/cdiv3"
+
+        app:layout_constraintEnd_toStartOf="@+id/cdiv2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/subMinusText" />
+        app:layout_constraintTop_toBottomOf="@+id/divideText" />
 
     <Button
-        android:id="@+id/csub2"
+        android:id="@+id/cdiv2"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
@@ -316,34 +295,54 @@
 
         android:background="@drawable/button_back"
         android:soundEffectsEnabled="false"
-
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/text"
-        app:layout_constraintBottom_toTopOf="@+id/csub4"
+        app:layout_constraintBottom_toTopOf="@+id/cdiv4"
+
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/csub1"
-        app:layout_constraintTop_toBottomOf="@+id/subProblemText2" />
+        app:layout_constraintStart_toEndOf="@+id/cdiv1"
+        app:layout_constraintTop_toBottomOf="@+id/divideProblemText2" />
 
     <Button
-        android:id="@+id/csub4"
+        android:id="@+id/cdiv3"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="15dp"
-
         android:layout_marginEnd="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginBottom="160dp"
+
         android:background="@drawable/button_back"
         android:soundEffectsEnabled="false"
-
-
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/text"
         app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toStartOf="@+id/cdiv4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cdiv1" />
+
+    <Button
+        android:id="@+id/cdiv4"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="160dp"
+
+        android:background="@drawable/button_back"
+        android:soundEffectsEnabled="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textColor="@color/text"
+        app:layout_constraintBottom_toBottomOf="parent"
+
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/csub3"
-        app:layout_constraintTop_toBottomOf="@+id/csub2" />
+        app:layout_constraintStart_toEndOf="@+id/cdiv3"
+        app:layout_constraintTop_toBottomOf="@+id/cdiv2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -125,6 +125,48 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //곱하기 도전 버튼
+        Button mulButton = (Button) findViewById(R.id.multiButton);
+        mulButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // mis-clicking prevention, using threshold of 1000 ms
+                if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
+                    return;
+                }
+                mLastClickTime = SystemClock.elapsedRealtime();
+
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
+                Intent intent = new Intent(MainActivity.this,Challenge_multi.class);
+                intent.putExtra("Number_of_time",0);
+                intent.putExtra("Answer_state",resultarr);
+                intent.putExtra("Average_time",(double)0);
+                startActivity(intent);
+            }
+        });
+
+        //나누기 도전 버튼
+        Button divideButton = (Button) findViewById(R.id.divideButton);
+        divideButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // mis-clicking prevention, using threshold of 1000 ms
+                if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
+                    return;
+                }
+                mLastClickTime = SystemClock.elapsedRealtime();
+
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
+                Intent intent = new Intent(MainActivity.this,Challenge_divide.class);
+                intent.putExtra("Number_of_time",0);
+                intent.putExtra("Answer_state",resultarr);
+                intent.putExtra("Average_time",(double)0);
+                startActivity(intent);
+            }
+        });
+
         //나가기 버튼
         Button exitButton = (Button) findViewById(R.id.exitButton);
         exitButton.setOnClickListener(new View.OnClickListener() {
@@ -245,6 +287,15 @@ public class MainActivity extends AppCompatActivity {
 
             //Sub table
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS ChSub (" +
+                    "IDX " + "INTEGER PRIMARY KEY," +
+                    "result " + "INTEGER NOT NULL," +
+                    "AVtime " + "REAL NOT NULL," +
+                    "date_time " + "TIMESTAMP NOT NULL default (datetime('now','localtime')));";
+
+            sqliteDB.execSQL(sqlCreateTbl);
+
+            //Multi table
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS ChMul (" +
                     "IDX " + "INTEGER PRIMARY KEY," +
                     "result " + "INTEGER NOT NULL," +
                     "AVtime " + "REAL NOT NULL," +

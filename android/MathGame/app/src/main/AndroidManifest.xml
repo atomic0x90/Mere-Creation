@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Challenge_sub"></activity>
+        <activity android:name=".Challenge_divide" />
+        <activity android:name=".Challenge_multi" />
+        <activity android:name=".Challenge_sub" />
         <activity android:name=".SplashScreen" />
         <activity android:name=".UserStatistics" />
         <activity

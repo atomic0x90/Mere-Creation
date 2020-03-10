@@ -14,19 +14,18 @@
         android:id="@+id/AddRewardButton"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/button_back"
-        android:text="광고 보고 보상 X2 받기"
+        android:soundEffectsEnabled="false"
 
+        android:text="광고 보고 보상 X2 받기"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RewardButton"
 
-        android:soundEffectsEnabled="false"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/RewardButton" />
 
     <TextView
         android:id="@+id/DialogsubTitle"

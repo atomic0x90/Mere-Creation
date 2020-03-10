@@ -4,25 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Challenge_sub"
+    tools:context=".Challenge_multi"
 
     android:background="@color/background"
     >
 
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/adView2"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/cmul2"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="15dp"
 
-        app:adSize="SMART_BANNER"
-        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
-        />
+        android:background="@drawable/button_back"
+        android:soundEffectsEnabled="false"
+
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textColor="@color/text"
+        app:layout_constraintBottom_toTopOf="@+id/cmul4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cmul1"
+        app:layout_constraintTop_toBottomOf="@+id/multiProblemText2" />
 
     <TextView
-        android:id="@+id/subtimeText"
+        android:id="@+id/multiText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -40,7 +49,7 @@
         />
 
     <TextView
-        android:id="@+id/subAverageTime"
+        android:id="@+id/multiAverageTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -54,7 +63,7 @@
         />
 
     <ImageView
-        android:id="@+id/subState0"
+        android:id="@+id/multiState0"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="40dp"
@@ -62,13 +71,13 @@
         android:layout_marginTop="120dp"
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/subState1"
+        app:layout_constraintEnd_toStartOf="@+id/multiState1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/gray_dot" />
 
     <ImageView
-        android:id="@+id/subState1"
+        android:id="@+id/multiState1"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="5dp"
@@ -76,13 +85,13 @@
         android:layout_marginTop="120dp"
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/subState2"
-        app:layout_constraintStart_toEndOf="@+id/subState0"
+        app:layout_constraintEnd_toStartOf="@+id/multiState2"
+        app:layout_constraintStart_toEndOf="@+id/multiState0"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/gray_dot" />
 
     <ImageView
-        android:id="@+id/subState2"
+        android:id="@+id/multiState2"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="5dp"
@@ -90,13 +99,13 @@
         android:layout_marginTop="120dp"
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/subState3"
-        app:layout_constraintStart_toEndOf="@+id/subState1"
+        app:layout_constraintEnd_toStartOf="@+id/multiState3"
+        app:layout_constraintStart_toEndOf="@+id/multiState1"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/gray_dot" />
 
     <ImageView
-        android:id="@+id/subState3"
+        android:id="@+id/multiState3"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="5dp"
@@ -104,13 +113,13 @@
         android:layout_marginTop="120dp"
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/subState4"
-        app:layout_constraintStart_toEndOf="@+id/subState2"
+        app:layout_constraintEnd_toStartOf="@+id/multiState4"
+        app:layout_constraintStart_toEndOf="@+id/multiState2"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/gray_dot" />
 
     <ImageView
-        android:id="@+id/subState4"
+        android:id="@+id/multiState4"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="5dp"
@@ -118,13 +127,13 @@
         android:layout_marginTop="120dp"
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/subState5"
-        app:layout_constraintStart_toEndOf="@+id/subState3"
+        app:layout_constraintEnd_toStartOf="@+id/multiState5"
+        app:layout_constraintStart_toEndOf="@+id/multiState3"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/gray_dot" />
 
     <ImageView
-        android:id="@+id/subState5"
+        android:id="@+id/multiState5"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="5dp"
@@ -132,13 +141,13 @@
         android:layout_marginTop="120dp"
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/subState6"
-        app:layout_constraintStart_toEndOf="@+id/subState4"
+        app:layout_constraintEnd_toStartOf="@+id/multiState6"
+        app:layout_constraintStart_toEndOf="@+id/multiState4"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/gray_dot" />
 
     <ImageView
-        android:id="@+id/subState6"
+        android:id="@+id/multiState6"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="5dp"
@@ -146,13 +155,13 @@
         android:layout_marginTop="120dp"
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/subState7"
-        app:layout_constraintStart_toEndOf="@+id/subState5"
+        app:layout_constraintEnd_toStartOf="@+id/multiState7"
+        app:layout_constraintStart_toEndOf="@+id/multiState5"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/gray_dot" />
 
     <ImageView
-        android:id="@+id/subState7"
+        android:id="@+id/multiState7"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="5dp"
@@ -160,13 +169,13 @@
         android:layout_marginTop="120dp"
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/subState8"
-        app:layout_constraintStart_toEndOf="@+id/subState6"
+        app:layout_constraintEnd_toStartOf="@+id/multiState8"
+        app:layout_constraintStart_toEndOf="@+id/multiState6"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/gray_dot" />
 
     <ImageView
-        android:id="@+id/subState8"
+        android:id="@+id/multiState8"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="5dp"
@@ -174,13 +183,13 @@
         android:layout_marginTop="120dp"
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/subState9"
-        app:layout_constraintStart_toEndOf="@+id/subState7"
+        app:layout_constraintEnd_toStartOf="@+id/multiState9"
+        app:layout_constraintStart_toEndOf="@+id/multiState7"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/gray_dot" />
 
     <ImageView
-        android:id="@+id/subState9"
+        android:id="@+id/multiState9"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="5dp"
@@ -189,12 +198,24 @@
         android:layout_marginEnd="40dp"
         android:layout_marginRight="40dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/subState8"
+        app:layout_constraintStart_toEndOf="@+id/multiState8"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/gray_dot" />
 
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:adSize="SMART_BANNER"
+        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        />
+
     <TextView
-        android:id="@+id/subProblemText1"
+        android:id="@+id/multiProblemText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
@@ -202,16 +223,33 @@
         android:layout_marginTop="100dp"
         android:layout_marginEnd="15dp"
         android:layout_marginRight="15dp"
-        android:text="T1"
+        android:text="t1"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+
         android:textColor="@color/text"
-        app:layout_constraintEnd_toStartOf="@+id/subMinusText"
+        app:layout_constraintEnd_toStartOf="@+id/multiMulText"
         app:layout_constraintStart_toStartOf="parent"
-
-        app:layout_constraintTop_toBottomOf="@+id/subtimeText" />
+        app:layout_constraintTop_toBottomOf="@+id/multiText" />
 
     <TextView
-        android:id="@+id/subMinusText"
+        android:id="@+id/multiMulText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="100dp"
+
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:text="\X"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textColor="@color/text"
+        app:layout_constraintEnd_toStartOf="@+id/multiProblemText2"
+        app:layout_constraintStart_toEndOf="@+id/multiProblemText1"
+        app:layout_constraintTop_toBottomOf="@+id/multiText" />
+
+    <TextView
+        android:id="@+id/multiProblemText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
@@ -219,71 +257,33 @@
         android:layout_marginTop="100dp"
         android:layout_marginEnd="15dp"
         android:layout_marginRight="15dp"
-        android:text="-"
+        android:text="t2"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-        android:textColor="@color/text"
-        app:layout_constraintEnd_toStartOf="@+id/subProblemText2"
-        app:layout_constraintStart_toEndOf="@+id/subProblemText1"
 
-        app:layout_constraintTop_toBottomOf="@+id/subtimeText" />
+        android:textColor="@color/text"
+        app:layout_constraintEnd_toStartOf="@+id/multiendText"
+        app:layout_constraintStart_toEndOf="@+id/multiMulText"
+        app:layout_constraintTop_toBottomOf="@+id/multiText" />
 
     <TextView
-        android:id="@+id/subProblemText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
-        android:text="T2"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-        android:textColor="@color/text"
-        app:layout_constraintEnd_toStartOf="@+id/subendText"
-        app:layout_constraintStart_toEndOf="@+id/subMinusText"
-
-        app:layout_constraintTop_toBottomOf="@+id/subtimeText" />
-
-    <TextView
-        android:id="@+id/subendText"
+        android:id="@+id/multiendText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="60dp"
+
         android:layout_marginRight="60dp"
         android:text="= ?"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/subProblemText2"
-
-        app:layout_constraintTop_toBottomOf="@+id/subtimeText" />
-
-    <Button
-        android:id="@+id/csub3"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="15dp"
-
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="160dp"
-        android:background="@drawable/button_back"
-        android:soundEffectsEnabled="false"
-
-        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-        android:textColor="@color/text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/csub4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/csub1" />
+        app:layout_constraintStart_toEndOf="@+id/multiProblemText2"
+        app:layout_constraintTop_toBottomOf="@+id/multiText" />
 
     <Button
-        android:id="@+id/csub1"
+        android:id="@+id/cmul1"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -298,52 +298,51 @@
 
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/text"
-        app:layout_constraintBottom_toTopOf="@+id/csub3"
-        app:layout_constraintEnd_toStartOf="@+id/csub2"
+        app:layout_constraintBottom_toTopOf="@+id/cmul3"
+        app:layout_constraintEnd_toStartOf="@+id/cmul2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/subMinusText" />
+        app:layout_constraintTop_toBottomOf="@+id/multiMulText" />
 
     <Button
-        android:id="@+id/csub2"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="15dp"
-
-        android:background="@drawable/button_back"
-        android:soundEffectsEnabled="false"
-
-        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-        android:textColor="@color/text"
-        app:layout_constraintBottom_toTopOf="@+id/csub4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/csub1"
-        app:layout_constraintTop_toBottomOf="@+id/subProblemText2" />
-
-    <Button
-        android:id="@+id/csub4"
+        android:id="@+id/cmul3"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="15dp"
-
         android:layout_marginEnd="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginBottom="160dp"
+
         android:background="@drawable/button_back"
         android:soundEffectsEnabled="false"
 
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textColor="@color/text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cmul4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cmul1" />
+
+    <Button
+        android:id="@+id/cmul4"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="160dp"
+
+        android:background="@drawable/button_back"
+        android:soundEffectsEnabled="false"
 
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/csub3"
-        app:layout_constraintTop_toBottomOf="@+id/csub2" />
+        app:layout_constraintStart_toEndOf="@+id/cmul3"
+        app:layout_constraintTop_toBottomOf="@+id/cmul2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

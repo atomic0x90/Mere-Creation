@@ -26,11 +26,9 @@
     <androidx.gridlayout.widget.GridLayout
         android:layout_width="409dp"
         android:layout_height="689dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="1dp"
-        android:layout_marginEnd="3dp"
-        android:layout_marginRight="3dp"
         app:columnCount="5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,31 +38,29 @@
 
         <Button
             android:id="@+id/Sub10Time"
-            android:layout_width="80dp"
+            android:layout_width="75dp"
             android:layout_height="wrap_content"
-            android:text="Button"
-            app:layout_column="4"
-            app:layout_row="2"
-
             android:background="@drawable/button_style"
+            android:text="Button"
             android:textColor="@color/text"
-            />
+
+            app:layout_column="4"
+            app:layout_row="2" />
 
         <Button
             android:id="@+id/SubTime"
-            android:layout_width="80dp"
+            android:layout_width="75dp"
             android:layout_height="wrap_content"
-            android:text="Button"
-            app:layout_column="2"
-            app:layout_row="2"
-
             android:background="@drawable/button_style"
+            android:text="Button"
             android:textColor="@color/text"
-            />
+
+            app:layout_column="2"
+            app:layout_row="2" />
 
         <Button
             android:id="@+id/Plus10Answer"
-            android:layout_width="80dp"
+            android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"
             android:text="Button"
@@ -74,7 +70,7 @@
 
         <Button
             android:id="@+id/empty1"
-            android:layout_width="80dp"
+            android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:background="@color/background"
             android:textColor="@color/text"
@@ -83,7 +79,7 @@
 
         <Button
             android:id="@+id/AlltimeButton"
-            android:layout_width="80dp"
+            android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"
             android:text="전체\n평균 시간"
@@ -93,7 +89,7 @@
 
         <Button
             android:id="@+id/answer10Button"
-            android:layout_width="80dp"
+            android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"
             android:text="최근 10회\n정답률"
@@ -103,7 +99,7 @@
 
         <Button
             android:id="@+id/time10Button"
-            android:layout_width="80dp"
+            android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"
             android:text="최근 10회\n평균 시간"
@@ -114,7 +110,7 @@
 
         <Button
             android:id="@+id/AllanswerButton"
-            android:layout_width="80dp"
+            android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"
             android:text="전체\n정답률"
@@ -125,7 +121,7 @@
 
         <Button
             android:id="@+id/Plus"
-            android:layout_width="80dp"
+            android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"
             android:text="더하기"
@@ -135,7 +131,7 @@
 
         <Button
             android:id="@+id/PlusAnswer"
-            android:layout_width="80dp"
+            android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"
             android:text="Button"
@@ -145,7 +141,7 @@
 
         <Button
             android:id="@+id/Plus10Time"
-            android:layout_width="80dp"
+            android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"
             android:text="Button"
@@ -155,7 +151,7 @@
 
         <Button
             android:id="@+id/PlusTime"
-            android:layout_width="80dp"
+            android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"
             android:text="Button"
@@ -165,7 +161,7 @@
 
         <Button
             android:id="@+id/Minus"
-            android:layout_width="80dp"
+            android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:background="@drawable/button_style"
             android:text="빼기"
@@ -176,27 +172,25 @@
 
         <Button
             android:id="@+id/SubAnswer"
-            android:layout_width="80dp"
+            android:layout_width="75dp"
             android:layout_height="wrap_content"
-            android:text="Button"
-            app:layout_column="1"
-            app:layout_row="2"
-
             android:background="@drawable/button_style"
+            android:text="Button"
             android:textColor="@color/text"
-            />
+
+            app:layout_column="1"
+            app:layout_row="2" />
 
         <Button
             android:id="@+id/Sub10Answer"
-            android:layout_width="80dp"
+            android:layout_width="75dp"
             android:layout_height="wrap_content"
-            android:text="Button"
-            app:layout_column="3"
-            app:layout_row="2"
-
             android:background="@drawable/button_style"
+            android:text="Button"
             android:textColor="@color/text"
-            />
+
+            app:layout_column="3"
+            app:layout_row="2" />
 
     </androidx.gridlayout.widget.GridLayout>
 

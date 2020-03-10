@@ -18,12 +18,15 @@
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="7dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+
         android:background="@drawable/button_back"
         android:soundEffectsEnabled="false"
-
         android:text="@string/exit"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/text"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/multitableButton"
         app:layout_constraintTop_toBottomOf="@+id/evaluationButton" />
 
@@ -35,11 +38,14 @@
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="7dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
         android:background="@drawable/button_back"
         android:soundEffectsEnabled="false"
         android:text="개발자\n정보"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/text"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/infisubButton"
         app:layout_constraintTop_toBottomOf="@+id/statsButton" />
 
@@ -50,12 +56,15 @@
         android:layout_marginStart="30dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/button_back"
+        android:layout_marginEnd="10dp"
 
+        android:layout_marginRight="10dp"
+        android:background="@drawable/button_back"
         android:soundEffectsEnabled="false"
         android:text="1분 무한 더하기 도전"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/text"
+        app:layout_constraintEnd_toStartOf="@+id/statsButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divideButton" />
 
@@ -80,30 +89,36 @@
         android:layout_marginStart="30dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/button_back"
-        android:text="더하기 도전"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
 
+        android:background="@drawable/button_back"
+        android:soundEffectsEnabled="false"
+        android:text="더하기 도전"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/text"
+        app:layout_constraintEnd_toStartOf="@+id/subButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        android:soundEffectsEnabled="false"/>
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/subButton"
         android:layout_width="150dp"
         android:layout_height="70dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
-        android:background="@drawable/button_back"
-        android:text="빼기 도전"
 
+        android:background="@drawable/button_back"
+        android:soundEffectsEnabled="false"
+        android:text="빼기 도전"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        android:soundEffectsEnabled="false"/>
+        app:layout_constraintStart_toEndOf="@+id/addButton"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/multiButton"
@@ -112,32 +127,36 @@
         android:layout_marginStart="30dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/button_back"
+        android:soundEffectsEnabled="false"
+
         android:text="곱하기 도전"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addButton"
-
-        android:background="@drawable/button_back"
         android:textColor="@color/text"
-        android:soundEffectsEnabled="false"
-        />
+        app:layout_constraintEnd_toStartOf="@+id/divideButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addButton" />
 
     <Button
         android:id="@+id/divideButton"
         android:layout_width="150dp"
         android:layout_height="70dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
+        android:background="@drawable/button_back"
+        android:soundEffectsEnabled="false"
+
         android:text="나누기 도전"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/subButton"
-
-        android:background="@drawable/button_back"
         android:textColor="@color/text"
-        android:soundEffectsEnabled="false"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/multiButton"
+        app:layout_constraintTop_toBottomOf="@+id/subButton" />
 
     <Button
         android:id="@+id/maxminButton"
@@ -146,13 +165,16 @@
         android:layout_marginStart="30dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="7dp"
-        android:background="@drawable/button_back"
+        android:layout_marginEnd="10dp"
 
+        android:layout_marginRight="10dp"
+        android:background="@drawable/button_back"
         android:soundEffectsEnabled="false"
+
         android:text="최대 최소 게임하기"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-
         android:textColor="@color/text"
+        app:layout_constraintEnd_toStartOf="@+id/evaluationButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/infisubButton" />
 
@@ -163,13 +185,16 @@
         android:layout_marginStart="30dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="7dp"
-        android:background="@drawable/button_back"
+        android:layout_marginEnd="10dp"
 
+        android:layout_marginRight="10dp"
+        android:background="@drawable/button_back"
         android:soundEffectsEnabled="false"
+
         android:text="1분 무한 빼기 도전"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-
         android:textColor="@color/text"
+        app:layout_constraintEnd_toStartOf="@+id/developerButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/infiaddButton" />
 
@@ -181,12 +206,15 @@
         android:layout_marginLeft="30dp"
         android:layout_marginTop="7dp"
 
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
         android:background="@drawable/button_back"
         android:soundEffectsEnabled="false"
+
         android:text="곱셈표 보기(구구단)"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-
         android:textColor="@color/text"
+        app:layout_constraintEnd_toStartOf="@+id/exitButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/maxminButton" />
 
@@ -199,11 +227,14 @@
 
         android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
         android:background="@drawable/button_back"
         android:soundEffectsEnabled="false"
         android:text="사용자\n통계"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/text"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/infiaddButton"
         app:layout_constraintTop_toBottomOf="@+id/divideButton" />
 
@@ -233,12 +264,15 @@
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="7dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+
         android:background="@drawable/button_back"
         android:soundEffectsEnabled="false"
-
         android:text="평가하기"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/text"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/maxminButton"
         app:layout_constraintTop_toBottomOf="@+id/developerButton" />
 
