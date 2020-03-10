@@ -22,7 +22,7 @@
 
     <Button
         android:id="@+id/InfinityPlus6"
-        android:layout_width="110dp"
+        android:layout_width="100dp"
         android:layout_height="70dp"
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
@@ -41,7 +41,7 @@
 
     <Button
         android:id="@+id/InfinityPlus7"
-        android:layout_width="110dp"
+        android:layout_width="100dp"
         android:layout_height="70dp"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
@@ -60,7 +60,7 @@
 
     <Button
         android:id="@+id/InfinityPlus8"
-        android:layout_width="110dp"
+        android:layout_width="100dp"
         android:layout_height="70dp"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
@@ -92,7 +92,7 @@
 
     <TextView
         android:id="@+id/InfinityPlus7coinText"
-        android:layout_width="110dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
 
         android:layout_marginStart="15dp"
@@ -110,7 +110,7 @@
 
     <TextView
         android:id="@+id/InfinityPlus6coinText"
-        android:layout_width="110dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
@@ -127,7 +127,7 @@
 
     <TextView
         android:id="@+id/InfinityPlus8coinText"
-        android:layout_width="110dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
@@ -184,7 +184,7 @@
 
     <Button
         android:id="@+id/InfinityPlus13"
-        android:layout_width="110dp"
+        android:layout_width="100dp"
         android:layout_height="70dp"
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
@@ -202,7 +202,7 @@
 
     <Button
         android:id="@+id/InfinityPlusRandom6_9"
-        android:layout_width="110dp"
+        android:layout_width="100dp"
         android:layout_height="70dp"
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
@@ -220,45 +220,43 @@
 
     <Button
         android:id="@+id/InfinityPlus16"
-        android:layout_width="110dp"
+        android:layout_width="100dp"
         android:layout_height="70dp"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="15dp"
         android:layout_marginRight="15dp"
+        android:background="@drawable/button_back"
         android:text="+ 16"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        app:layout_constraintEnd_toStartOf="@+id/InfinityPlus17"
-        app:layout_constraintStart_toEndOf="@+id/InfinityPlus13"
-        app:layout_constraintTop_toBottomOf="@+id/InfinityPlus7coinText"
-
-        android:background="@drawable/button_back"
         android:textColor="@color/text"
-        />
+        app:layout_constraintEnd_toStartOf="@+id/InfinityPlus17"
+
+        app:layout_constraintStart_toEndOf="@+id/InfinityPlus13"
+        app:layout_constraintTop_toBottomOf="@+id/InfinityPlus7coinText" />
 
     <Button
         android:id="@+id/InfinityPlus17"
-        android:layout_width="110dp"
+        android:layout_width="100dp"
         android:layout_height="70dp"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="25dp"
         android:layout_marginRight="25dp"
+        android:background="@drawable/button_back"
         android:text="+ 17"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/InfinityPlus16"
-        app:layout_constraintTop_toBottomOf="@+id/InfinityPlus8coinText"
-
-        android:background="@drawable/button_back"
         android:textColor="@color/text"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toEndOf="@+id/InfinityPlus16"
+        app:layout_constraintTop_toBottomOf="@+id/InfinityPlus8coinText" />
 
     <TextView
         android:id="@+id/InfinityPlus13coinText"
-        android:layout_width="110dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
@@ -276,7 +274,7 @@
 
     <TextView
         android:id="@+id/InfinityPlus16coinText"
-        android:layout_width="110dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
@@ -294,7 +292,7 @@
 
     <TextView
         android:id="@+id/InfinityPlus17coinText"
-        android:layout_width="110dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
@@ -312,7 +310,7 @@
 
     <Button
         android:id="@+id/InfinityPlusRandom13_17"
-        android:layout_width="110dp"
+        android:layout_width="100dp"
         android:layout_height="70dp"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
@@ -330,7 +328,7 @@
 
     <Button
         android:id="@+id/InfinityPlusRandom6_17"
-        android:layout_width="110dp"
+        android:layout_width="100dp"
         android:layout_height="70dp"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
@@ -348,7 +346,7 @@
 
     <TextView
         android:id="@+id/InfinityPlus6_9coinText"
-        android:layout_width="110dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
@@ -364,7 +362,7 @@
 
     <TextView
         android:id="@+id/InfinityPlus13_17coinText"
-        android:layout_width="110dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
@@ -380,7 +378,7 @@
 
     <TextView
         android:id="@+id/InfinityPlus6_17coinText"
-        android:layout_width="110dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
