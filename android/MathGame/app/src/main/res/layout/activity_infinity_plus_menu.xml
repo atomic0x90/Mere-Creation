@@ -37,7 +37,10 @@
         app:layout_constraintBottom_toTopOf="@+id/InfinityPlus6coinText"
         app:layout_constraintEnd_toStartOf="@+id/InfinityPlus7"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/InfinityPlusMenuText" />
+        app:layout_constraintTop_toBottomOf="@+id/InfinityPlusMenuText"
+
+        android:soundEffectsEnabled="false"
+        />
 
     <Button
         android:id="@+id/InfinityPlus7"
@@ -56,7 +59,10 @@
         app:layout_constraintBottom_toTopOf="@+id/InfinityPlus7coinText"
         app:layout_constraintEnd_toStartOf="@+id/InfinityPlus8"
         app:layout_constraintStart_toEndOf="@+id/InfinityPlus6"
-        app:layout_constraintTop_toBottomOf="@+id/InfinityPlusMenuText" />
+        app:layout_constraintTop_toBottomOf="@+id/InfinityPlusMenuText"
+
+        android:soundEffectsEnabled="false"
+        />
 
     <Button
         android:id="@+id/InfinityPlus8"
@@ -75,7 +81,10 @@
         app:layout_constraintBottom_toTopOf="@+id/InfinityPlus8coinText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/InfinityPlus7"
-        app:layout_constraintTop_toBottomOf="@+id/InfinityPlusMenuText" />
+        app:layout_constraintTop_toBottomOf="@+id/InfinityPlusMenuText"
+
+        android:soundEffectsEnabled="false"
+        />
 
     <TextView
         android:id="@+id/InfinityPlusMenuText"
@@ -88,7 +97,9 @@
         android:textColor="@color/text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/coinPlusInfinityPlusButton"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
 
     <TextView
         android:id="@+id/InfinityPlus7coinText"
@@ -106,7 +117,9 @@
         app:layout_constraintBottom_toTopOf="@+id/InfinityPlus16"
         app:layout_constraintEnd_toStartOf="@+id/InfinityPlus8coinText"
         app:layout_constraintStart_toEndOf="@+id/InfinityPlus6coinText"
-        app:layout_constraintTop_toBottomOf="@+id/InfinityPlus7" />
+        app:layout_constraintTop_toBottomOf="@+id/InfinityPlus7"
+
+        />
 
     <TextView
         android:id="@+id/InfinityPlus6coinText"
@@ -156,6 +169,7 @@
         app:srcCompat="@drawable/coin"
 
         android:background="@drawable/button_back"
+        android:soundEffectsEnabled="false"
         />
 
     <Button
@@ -169,7 +183,10 @@
         app:layout_constraintEnd_toStartOf="@+id/coinPlusInfinityPlusButton"
 
         app:layout_constraintStart_toEndOf="@+id/coinInfinityPlusButton"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+
+        android:soundEffectsEnabled="false"
+        />
 
     <ImageButton
         android:id="@+id/coinPlusInfinityPlusButton"
@@ -180,7 +197,10 @@
 
         app:layout_constraintStart_toEndOf="@+id/coinNowInfinityPlusButton"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_input_add" />
+        app:srcCompat="@android:drawable/ic_input_add"
+
+        android:soundEffectsEnabled="false"
+        />
 
     <Button
         android:id="@+id/InfinityPlus13"
@@ -198,7 +218,10 @@
         android:textColor="@color/text"
         app:layout_constraintEnd_toStartOf="@+id/InfinityPlus16"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/InfinityPlus6coinText" />
+        app:layout_constraintTop_toBottomOf="@+id/InfinityPlus6coinText"
+
+        android:soundEffectsEnabled="false"
+        />
 
     <Button
         android:id="@+id/InfinityPlusRandom6_9"
@@ -216,7 +239,10 @@
         android:textColor="@color/text"
         app:layout_constraintEnd_toStartOf="@+id/InfinityPlusRandom13_17"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/InfinityPlus13coinText" />
+        app:layout_constraintTop_toBottomOf="@+id/InfinityPlus13coinText"
+
+        android:soundEffectsEnabled="false"
+        />
 
     <Button
         android:id="@+id/InfinityPlus16"
@@ -234,7 +260,10 @@
         app:layout_constraintEnd_toStartOf="@+id/InfinityPlus17"
 
         app:layout_constraintStart_toEndOf="@+id/InfinityPlus13"
-        app:layout_constraintTop_toBottomOf="@+id/InfinityPlus7coinText" />
+        app:layout_constraintTop_toBottomOf="@+id/InfinityPlus7coinText"
+
+        android:soundEffectsEnabled="false"
+        />
 
     <Button
         android:id="@+id/InfinityPlus17"
@@ -252,7 +281,10 @@
         app:layout_constraintEnd_toEndOf="parent"
 
         app:layout_constraintStart_toEndOf="@+id/InfinityPlus16"
-        app:layout_constraintTop_toBottomOf="@+id/InfinityPlus8coinText" />
+        app:layout_constraintTop_toBottomOf="@+id/InfinityPlus8coinText"
+
+        android:soundEffectsEnabled="false"
+        />
 
     <TextView
         android:id="@+id/InfinityPlus13coinText"
@@ -324,7 +356,10 @@
         android:textColor="@color/text"
         app:layout_constraintEnd_toStartOf="@+id/InfinityPlusRandom6_17"
         app:layout_constraintStart_toEndOf="@+id/InfinityPlusRandom6_9"
-        app:layout_constraintTop_toBottomOf="@+id/InfinityPlus16coinText" />
+        app:layout_constraintTop_toBottomOf="@+id/InfinityPlus16coinText"
+
+        android:soundEffectsEnabled="false"
+        />
 
     <Button
         android:id="@+id/InfinityPlusRandom6_17"
@@ -342,7 +377,10 @@
         app:layout_constraintEnd_toEndOf="parent"
 
         app:layout_constraintStart_toEndOf="@+id/InfinityPlusRandom13_17"
-        app:layout_constraintTop_toBottomOf="@+id/InfinityPlus17coinText" />
+        app:layout_constraintTop_toBottomOf="@+id/InfinityPlus17coinText"
+
+        android:soundEffectsEnabled="false"
+        />
 
     <TextView
         android:id="@+id/InfinityPlus6_9coinText"

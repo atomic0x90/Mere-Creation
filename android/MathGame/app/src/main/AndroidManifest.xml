@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".InfinityPlusMenu"></activity>
+        <activity android:name=".InfinityChallenge_Plus_6"></activity>
+        <activity android:name=".InfinityPlusMenu" />
         <activity android:name=".Challenge_divide" />
         <activity android:name=".Challenge_multi" />
         <activity android:name=".Challenge_sub" />

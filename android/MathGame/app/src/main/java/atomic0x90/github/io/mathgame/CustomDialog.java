@@ -112,15 +112,20 @@ public class CustomDialog extends AppCompatActivity {
             }
         }
         else{
-
+                titleText.setText("결과");
         }
 
 
-        if(DataType.equals("Add") || DataType.equals("Sub") || DataType.equals("Divide") || DataType.equals("Multipl"))
-            answerText.setText(String.format(Locale.getDefault(),"%d / 10",answer));
-        else
-            answerText.setText(String.format(Locale.getDefault(),"%d / 5",answer));
-        avtimeText.setText(String.format(Locale.getDefault(),"%.1f s",avtime));
+        if(DataType.equals("Add") || DataType.equals("Sub") || DataType.equals("Divide") || DataType.equals("Multipl")) {
+            answerText.setText(String.format(Locale.getDefault(), "%d / 10", answer));
+            avtimeText.setText(String.format(Locale.getDefault(),"%.1f s",avtime));
+        }
+        else {
+            answerText.setText(String.format(Locale.getDefault(), "%d", answer));
+            avtimeText.setText(String.format(Locale.getDefault(),""));
+            TextView Textavtime = (TextView)findViewById(R.id.AVtime);
+            Textavtime.setText(String.format(Locale.getDefault(),""));
+        }
         coinText.setText(String.format(Locale.getDefault()," %d",answer*10));
 
 
@@ -145,6 +150,8 @@ public class CustomDialog extends AppCompatActivity {
                     insertChMul();
                 else if(DataType.equals("Divide"))
                     insertChDiv();
+                else if(DataType.equals("InfiP6"))
+                    insertInfiChP6();
 
                 Toast.makeText(getApplicationContext(),"보상 획득",Toast.LENGTH_LONG).show();
 
@@ -182,6 +189,8 @@ public class CustomDialog extends AppCompatActivity {
                                 insertChMul();
                             else if(DataType.equals("Divide"))
                                 insertChDiv();
+                            else if(DataType.equals("InfiP6"))
+                                insertInfiChP6();
 
                             Toast.makeText(getApplicationContext(),"보상X2 획득",Toast.LENGTH_LONG).show();
                             Intent intent = new Intent(CustomDialog.this,MainActivity.class);
@@ -202,6 +211,8 @@ public class CustomDialog extends AppCompatActivity {
                                 insertChMul();
                             else if(DataType.equals("Divide"))
                                 insertChDiv();
+                            else if(DataType.equals("InfiP6"))
+                                insertInfiChP6();
 
                             Toast.makeText(getApplicationContext(),"보상 획득, 영상이 준비되지 않음. 나중에 다시 시도하세요.",Toast.LENGTH_LONG).show();
                             Intent intent = new Intent(CustomDialog.this,MainActivity.class);
@@ -230,6 +241,8 @@ public class CustomDialog extends AppCompatActivity {
                         insertChMul();
                     else if(DataType.equals("Divide"))
                         insertChDiv();
+                    else if(DataType.equals("InfiP6"))
+                        insertInfiChP6();
 
                     Toast.makeText(getApplicationContext(),"보상 획득, 영상이 준비되지 않음. 나중에 다시 시도하세요.",Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(CustomDialog.this,MainActivity.class);
@@ -311,6 +324,13 @@ public class CustomDialog extends AppCompatActivity {
     private void insertChDiv(){
         if(sqLiteDatabase != null){
             String sqlQuery = "INSERT INTO ChDiv" + "(result,AVtime)" + "VALUES (" + insertResult + "," + insertAVtime +");";
+            sqLiteDatabase.execSQL(sqlQuery);
+        }
+    }
+
+    private void insertInfiChP6(){
+        if(sqLiteDatabase != null){
+            String sqlQuery = "INSERT INTO InfiChP6" + "(result)" + "VALUES (" + insertResult + ");";
             sqLiteDatabase.execSQL(sqlQuery);
         }
     }

@@ -331,6 +331,7 @@ public class MainActivity extends AppCompatActivity {
 
             sqliteDB.execSQL(sqlCreateTbl);
 
+            /*
             //Infinity Plus 6 lock check table
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS InfiP6 (" +
                     "lock "           + "INTEGER NOT NULL," +
@@ -352,6 +353,7 @@ public class MainActivity extends AppCompatActivity {
             catch (Exception e){
                 System.out.println("InfiP6 table : "+e);
             }
+*/
 
             //Infinity Plus 6 table
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS InfiChP6 (" +

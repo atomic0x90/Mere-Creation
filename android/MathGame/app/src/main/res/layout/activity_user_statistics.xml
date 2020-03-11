@@ -24,8 +24,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.gridlayout.widget.GridLayout
-        android:layout_width="409dp"
-        android:layout_height="689dp"
+        android:layout_width="408dp"
+        android:layout_height="273dp"
         android:layout_marginStart="30dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="1dp"
@@ -40,49 +40,45 @@
             android:id="@+id/Div10Answer"
             android:layout_width="75dp"
             android:layout_height="wrap_content"
-            android:text="Button"
-            app:layout_column="3"
-            app:layout_row="4"
-
             android:background="@drawable/button_style"
+            android:text="Button"
             android:textColor="@color/text"
-            />
+
+            app:layout_column="3"
+            app:layout_row="4" />
 
         <Button
             android:id="@+id/DivTime"
             android:layout_width="75dp"
             android:layout_height="wrap_content"
-            android:text="Button"
-            app:layout_column="2"
-            app:layout_row="4"
-
             android:background="@drawable/button_style"
+            android:text="Button"
             android:textColor="@color/text"
-            />
+
+            app:layout_column="2"
+            app:layout_row="4" />
 
         <Button
             android:id="@+id/Mul10Answer"
             android:layout_width="75dp"
             android:layout_height="wrap_content"
-            android:text="Button"
-            app:layout_column="3"
-            app:layout_row="3"
-
             android:background="@drawable/button_style"
+            android:text="Button"
             android:textColor="@color/text"
-            />
+
+            app:layout_column="3"
+            app:layout_row="3" />
 
         <Button
             android:id="@+id/MulTime"
             android:layout_width="75dp"
             android:layout_height="wrap_content"
-            android:text="Button"
-            app:layout_column="2"
-            app:layout_row="3"
-
             android:background="@drawable/button_style"
+            android:text="Button"
             android:textColor="@color/text"
-            />
+
+            app:layout_column="2"
+            app:layout_row="3" />
 
         <Button
             android:id="@+id/Sub10Time"
@@ -246,73 +242,67 @@
             android:id="@+id/Multiplication"
             android:layout_width="75dp"
             android:layout_height="wrap_content"
-            android:text="곱하기"
-            app:layout_column="0"
-            app:layout_row="3"
-
             android:background="@drawable/button_style"
+            android:text="곱하기"
             android:textColor="@color/text"
-            />
+
+            app:layout_column="0"
+            app:layout_row="3" />
 
         <Button
             android:id="@+id/MulAnswer"
             android:layout_width="75dp"
             android:layout_height="wrap_content"
-            android:text="Button"
-            app:layout_column="1"
-            app:layout_row="3"
-
             android:background="@drawable/button_style"
+            android:text="Button"
             android:textColor="@color/text"
-            />
+
+            app:layout_column="1"
+            app:layout_row="3" />
 
         <Button
             android:id="@+id/Mul10Time"
             android:layout_width="75dp"
             android:layout_height="wrap_content"
-            android:text="Button"
-            app:layout_column="4"
-            app:layout_row="3"
-
             android:background="@drawable/button_style"
+            android:text="Button"
             android:textColor="@color/text"
-            />
+
+            app:layout_column="4"
+            app:layout_row="3" />
 
         <Button
             android:id="@+id/Divide"
             android:layout_width="75dp"
             android:layout_height="wrap_content"
-            android:text="나누기"
-            app:layout_column="0"
-            app:layout_row="4"
-
             android:background="@drawable/button_style"
+            android:text="나누기"
             android:textColor="@color/text"
-            />
+
+            app:layout_column="0"
+            app:layout_row="4" />
 
         <Button
             android:id="@+id/DivAnswer"
             android:layout_width="75dp"
             android:layout_height="wrap_content"
-            android:text="Button"
-            app:layout_column="1"
-            app:layout_row="4"
-
             android:background="@drawable/button_style"
+            android:text="Button"
             android:textColor="@color/text"
-            />
+
+            app:layout_column="1"
+            app:layout_row="4" />
 
         <Button
             android:id="@+id/Div10Time"
             android:layout_width="75dp"
             android:layout_height="wrap_content"
-            android:text="Button"
-            app:layout_column="4"
-            app:layout_row="4"
-
             android:background="@drawable/button_style"
+            android:text="Button"
             android:textColor="@color/text"
-            />
+
+            app:layout_column="4"
+            app:layout_row="4" />
 
     </androidx.gridlayout.widget.GridLayout>
 
