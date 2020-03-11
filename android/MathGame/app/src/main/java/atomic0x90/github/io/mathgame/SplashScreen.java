@@ -19,6 +19,8 @@ public class SplashScreen extends AppCompatActivity {
 
     private Timer waitTimer;
 
+    private Timer infiTimer;
+
     String Ac;
 
     private boolean interstitialCanceled = false;
@@ -29,6 +31,8 @@ public class SplashScreen extends AppCompatActivity {
 
         Intent Setintent = getIntent();
         final String goActivity = Setintent.getStringExtra("Text");
+
+        
 
         Ac = goActivity;
 

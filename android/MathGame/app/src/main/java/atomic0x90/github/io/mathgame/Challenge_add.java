@@ -505,15 +505,19 @@ public class Challenge_add extends AppCompatActivity {
             }
         });
 
+    }
 
+    @Override
+    protected void onUserLeaveHint() {
+        super.onUserLeaveHint();
+        System.exit(0);
+
+        //android.os.Process.killProcess(android.os.Process.myPid());
     }
 
     @Override
     public void onBackPressed() {
         //super.onBackPressed();
     }
-
-
-
 
 }

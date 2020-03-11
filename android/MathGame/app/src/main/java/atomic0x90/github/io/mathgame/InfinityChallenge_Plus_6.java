@@ -22,6 +22,7 @@ import java.util.Random;
 
 public class InfinityChallenge_Plus_6 extends AppCompatActivity {
 
+
     long checkTime;
 
     //Sound
@@ -69,6 +70,7 @@ public class InfinityChallenge_Plus_6 extends AppCompatActivity {
             }
             public void onFinish() {
                 infiP6Time.setText("Time Over");
+
 
                 Intent Endintent = new Intent(getApplicationContext(), CustomDialog.class);
                 Endintent.putExtra("Result_type","InfiP6");
@@ -304,20 +306,32 @@ public class InfinityChallenge_Plus_6 extends AppCompatActivity {
     private Toast toast;
 
     @Override
+    protected void onUserLeaveHint() {
+        super.onUserLeaveHint();
+        System.exit(0);
+
+        //android.os.Process.killProcess(android.os.Process.myPid());
+    }
+
+
+    @Override
     public void onBackPressed() {
         //super.onBackPressed();
 
         // 2500 milliseconds = 2.5 seconds
         if (System.currentTimeMillis() > backKeyPressedTime + 2500) {
             backKeyPressedTime = System.currentTimeMillis();
-            toast = Toast.makeText(this, "뒤로 가기 버튼을 한 번 더 누르시면 메인 화면으로 이동합니다.", Toast.LENGTH_SHORT);
+            toast = Toast.makeText(this, "뒤로 가기 버튼을 한 번 더 누르시면 메뉴 화면으로 이동합니다.", Toast.LENGTH_SHORT);
             toast.show();
             return;
         }
 
         if (System.currentTimeMillis() <= backKeyPressedTime + 2500) {
-            Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+            //countDownTimer.cancel();
+            Intent intent = new Intent(getApplicationContext(),InfinityPlusMenu.class);
+            System.exit(0);
+            //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         }
     }
