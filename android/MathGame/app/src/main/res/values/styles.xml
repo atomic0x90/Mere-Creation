@@ -16,4 +16,7 @@
 
     </style>
 
+    <style name="LodingTheme" parent="@android:style/Theme.Light.NoTitleBar">
+        <item name="android:windowBackground">@drawable/login_img</item>
+    </style>
 </resources>

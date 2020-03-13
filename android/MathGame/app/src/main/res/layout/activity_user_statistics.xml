@@ -40,67 +40,62 @@
         <Button
             android:id="@+id/InfiP6_17Answer"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
-            android:text="Button"
-            app:layout_column="4"
-            app:layout_row="8"
-
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
+            android:text="Button"
             android:textColor="@color/text"
-            />
+
+            app:layout_column="4"
+            app:layout_row="8" />
 
         <Button
             android:id="@+id/InfiP13_17Answer"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
-            android:text="Button"
-            app:layout_column="3"
-            app:layout_row="8"
-
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
+            android:text="Button"
             android:textColor="@color/text"
-            />
+
+            app:layout_column="3"
+            app:layout_row="8" />
 
         <Button
             android:id="@+id/InfiP17Answer"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
-            android:text="Button"
-            app:layout_column="1"
-            app:layout_row="8"
-
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
+            android:text="Button"
             android:textColor="@color/text"
-            />
+
+            app:layout_column="1"
+            app:layout_row="8" />
 
         <Button
             android:id="@+id/InfiP13_17"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
-            android:text="13 ~ 17"
-            app:layout_column="3"
-            app:layout_row="7"
-
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
+            android:text="13 ~ 17"
             android:textColor="@color/text"
-            />
+
+            app:layout_column="3"
+            app:layout_row="7" />
 
         <Button
             android:id="@+id/InfiP17"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
-            android:text="17"
-            app:layout_column="1"
-            app:layout_row="7"
-
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
+            android:text="17"
             android:textColor="@color/text"
-            />
+
+            app:layout_column="1"
+            app:layout_row="7" />
 
         <Button
             android:id="@+id/InfiP8Answer"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
             android:text="Button"
             android:textColor="@color/text"
@@ -114,7 +109,7 @@
         <Button
             android:id="@+id/InfiP13"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
             android:text="\13"
             android:textColor="@color/text"
@@ -125,7 +120,7 @@
         <Button
             android:id="@+id/InfiP7"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
             android:text="\7"
             android:textColor="@color/text"
@@ -136,7 +131,7 @@
         <Button
             android:id="@+id/empty"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:background="@color/background"
             android:text="무한 +"
             android:textColor="@color/text"
@@ -149,7 +144,7 @@
         <Button
             android:id="@+id/Div10Answer"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
             android:text="Button"
             android:textColor="@color/text"
@@ -160,7 +155,7 @@
         <Button
             android:id="@+id/DivTime"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
             android:text="Button"
             android:textColor="@color/text"
@@ -171,7 +166,7 @@
         <Button
             android:id="@+id/Mul10Answer"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
             android:text="Button"
             android:textColor="@color/text"
@@ -182,7 +177,7 @@
         <Button
             android:id="@+id/MulTime"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
             android:text="Button"
             android:textColor="@color/text"
@@ -193,7 +188,7 @@
         <Button
             android:id="@+id/Sub10Time"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
             android:text="Button"
             android:textColor="@color/text"
@@ -206,7 +201,7 @@
         <Button
             android:id="@+id/SubTime"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
             android:text="Button"
             android:textColor="@color/text"
@@ -217,21 +212,12 @@
         <Button
             android:id="@+id/Plus10Answer"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
             android:text="Button"
             android:textColor="@color/text"
             app:layout_column="3"
             app:layout_row="1" />
-
-        <Button
-            android:id="@+id/empty1"
-            android:layout_width="75dp"
-            android:layout_height="wrap_content"
-            android:background="@color/background"
-            android:textColor="@color/text"
-            app:layout_column="0"
-            app:layout_row="0" />
 
         <Button
             android:id="@+id/AlltimeButton"
@@ -278,7 +264,7 @@
         <Button
             android:id="@+id/Plus"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
             android:text="더하기"
             android:textColor="@color/text"
@@ -288,7 +274,7 @@
         <Button
             android:id="@+id/PlusAnswer"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
             android:text="Button"
             android:textColor="@color/text"
@@ -298,7 +284,7 @@
         <Button
             android:id="@+id/Plus10Time"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
             android:text="Button"
             android:textColor="@color/text"
@@ -308,7 +294,7 @@
         <Button
             android:id="@+id/PlusTime"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
             android:text="Button"
             android:textColor="@color/text"
@@ -318,7 +304,7 @@
         <Button
             android:id="@+id/Minus"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
             android:text="빼기"
             android:textColor="@color/text"
@@ -329,7 +315,7 @@
         <Button
             android:id="@+id/SubAnswer"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
             android:text="Button"
             android:textColor="@color/text"
@@ -340,7 +326,7 @@
         <Button
             android:id="@+id/Sub10Answer"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
             android:text="Button"
             android:textColor="@color/text"
@@ -351,7 +337,7 @@
         <Button
             android:id="@+id/Multiplication"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
             android:text="곱하기"
             android:textColor="@color/text"
@@ -362,7 +348,7 @@
         <Button
             android:id="@+id/MulAnswer"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
             android:text="Button"
             android:textColor="@color/text"
@@ -373,7 +359,7 @@
         <Button
             android:id="@+id/Mul10Time"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
             android:text="Button"
             android:textColor="@color/text"
@@ -384,7 +370,7 @@
         <Button
             android:id="@+id/Divide"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
             android:text="나누기"
             android:textColor="@color/text"
@@ -395,7 +381,7 @@
         <Button
             android:id="@+id/DivAnswer"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
             android:text="Button"
             android:textColor="@color/text"
@@ -406,7 +392,7 @@
         <Button
             android:id="@+id/Div10Time"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
             android:text="Button"
             android:textColor="@color/text"
@@ -417,7 +403,7 @@
         <Button
             android:id="@+id/InfiP6"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
             android:text="\6"
             android:textColor="@color/text"
@@ -428,7 +414,7 @@
         <Button
             android:id="@+id/InfiP8"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
             android:text="\8"
             android:textColor="@color/text"
@@ -439,7 +425,7 @@
         <Button
             android:id="@+id/InfiPAVAnswer"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:background="@color/background"
             android:text="평균 정답"
             android:textColor="@color/text"
@@ -450,7 +436,7 @@
         <Button
             android:id="@+id/InfiP6Answer"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
             android:text="Button"
             android:textColor="@color/text"
@@ -461,7 +447,7 @@
         <Button
             android:id="@+id/InfiP7Answer"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
             android:text="Button"
             android:textColor="@color/text"
@@ -472,7 +458,7 @@
         <Button
             android:id="@+id/InfiP13Answer"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
             android:text="Button"
             android:textColor="@color/text"
@@ -483,62 +469,57 @@
         <Button
             android:id="@+id/InfiP16"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
-            android:text="16"
-            app:layout_column="0"
-            app:layout_row="7"
-
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
+            android:text="16"
             android:textColor="@color/text"
-            />
+
+            app:layout_column="0"
+            app:layout_row="7" />
 
         <Button
             android:id="@+id/InfiP6_9"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
-            android:text="6 ~ 9"
-            app:layout_column="2"
-            app:layout_row="7"
-
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
+            android:text="6 ~ 9"
             android:textColor="@color/text"
-            />
+
+            app:layout_column="2"
+            app:layout_row="7" />
 
         <Button
             android:id="@+id/InfiP6_17"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
-            android:text="6 ~ 17"
-            app:layout_column="4"
-            app:layout_row="7"
-
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
+            android:text="6 ~ 17"
             android:textColor="@color/text"
-            />
+
+            app:layout_column="4"
+            app:layout_row="7" />
 
         <Button
             android:id="@+id/InfiP16Answer"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
-            android:text="Button"
-            app:layout_column="0"
-            app:layout_row="8"
-
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
+            android:text="Button"
             android:textColor="@color/text"
-            />
+
+            app:layout_column="0"
+            app:layout_row="8" />
 
         <Button
             android:id="@+id/InfiP6_9Answer"
             android:layout_width="75dp"
-            android:layout_height="wrap_content"
-            android:text="Button"
-            app:layout_column="2"
-            app:layout_row="8"
-
+            android:layout_height="40dp"
             android:background="@drawable/button_style"
+            android:text="Button"
             android:textColor="@color/text"
-            />
+
+            app:layout_column="2"
+            app:layout_row="8" />
 
     </androidx.gridlayout.widget.GridLayout>
 

@@ -13,7 +13,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".InfinityChallenge_Plus"></activity>
-        <activity android:name=".InfinityChallenge_Plus_7" />
+
+        <activity android:name=".loding_screen"
+            android:theme="@style/LodingTheme"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
         <activity android:name=".InfinityChallenge_Plus_6" />
         <activity android:name=".InfinityPlusMenu" />
         <activity android:name=".Challenge_divide" />
@@ -26,11 +37,7 @@
             android:screenOrientation="fullSensor"
             android:theme="@style/popupTheme" />
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".Challenge_add" />
 
