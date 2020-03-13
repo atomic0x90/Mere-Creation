@@ -1,7 +1,6 @@
 package atomic0x90.github.io.mathgame;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -21,9 +20,7 @@ import com.google.android.gms.ads.AdView;
 import java.util.Locale;
 import java.util.Random;
 
-public class InfinityChallenge_Plus_6 extends AppCompatActivity {
-
-
+public class InfinityChallenge_Plus extends AppCompatActivity {
     long checkTime;
 
     //Sound
@@ -38,43 +35,59 @@ public class InfinityChallenge_Plus_6 extends AppCompatActivity {
 
     //Double click check
     private long mLastClickTime = 0;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_infinity_challenge_plus_6);
-
+        setContentView(R.layout.activity_infinity_challenge_plus);
         //Sound
         soundPool = new SoundPool(5, AudioManager.STREAM_MUSIC,0);
         soundID = soundPool.load(this,R.raw.click_sound01,1);
 
 
         //AD
-        mAdView = findViewById(R.id.adView6);
+        mAdView = findViewById(R.id.adView8);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
-        final TextView infiP6Time = (TextView)findViewById(R.id.infiP6Time);
+        final TextView infiPTime = (TextView)findViewById(R.id.infiPTime);
 
         Intent initIntent = getIntent();
         final long nowMilli = initIntent.getLongExtra("Now_time", 61000);
         final int firstNum = initIntent.getIntExtra("Init_num",1);
         final int clearNum = initIntent.getIntExtra("Answer_state",0);
+        final String typeString = initIntent.getStringExtra("Type");
 
 
 
 
         final CountDownTimer countDownTimer = new CountDownTimer(nowMilli, 1000) {
             public void onTick(long millisUntilFinished) {
-                infiP6Time.setText(String.format(Locale.getDefault(), "%d sec", millisUntilFinished / 1000L));
+                infiPTime.setText(String.format(Locale.getDefault(), "%d sec", millisUntilFinished / 1000L));
                 checkTime = millisUntilFinished;
             }
             public void onFinish() {
-                infiP6Time.setText("Time Over");
+                infiPTime.setText("Time Over");
 
 
                 Intent Endintent = new Intent(getApplicationContext(), CustomDialog.class);
-                Endintent.putExtra("Result_type","InfiP6");
+
+                if(typeString.equals("Plus7"))
+                    Endintent.putExtra("Result_type","InfiP7");
+                else if(typeString.equals("Plus8"))
+                    Endintent.putExtra("Result_type","InfiP8");
+                else if(typeString.equals("Plus13"))
+                    Endintent.putExtra("Result_type","InfiP13");
+                else if(typeString.equals("Plus16"))
+                    Endintent.putExtra("Result_type","InfiP16");
+                else if(typeString.equals("Plus17"))
+                    Endintent.putExtra("Result_type","InfiP17");
+                else if(typeString.equals("Plus6_9"))
+                    Endintent.putExtra("Result_type","InfiP6_9");
+                else if(typeString.equals("Plus13_17"))
+                    Endintent.putExtra("Result_type","InfiP13_17");
+                else if(typeString.equals("Plus6_17"))
+                    Endintent.putExtra("Result_type","InfiP6_17");
+
                 Endintent.putExtra("Answer_num",clearNum);
                 Endintent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(Endintent);
@@ -82,29 +95,74 @@ public class InfinityChallenge_Plus_6 extends AppCompatActivity {
             }
         }.start();
 
-        TextView nowAnswer = (TextView) findViewById(R.id.infinityP6nowAnswerText);
+        TextView nowAnswer = (TextView) findViewById(R.id.infinityPnowAnswerText);
         nowAnswer.setText(String.format(Locale.getDefault(),"정답 개수 : %d",clearNum));
 
-        TextView firstText = (TextView) findViewById(R.id.infiP6ProblemText1);
+        TextView firstText = (TextView) findViewById(R.id.infiPProblemText1);
         firstText.setText(String.valueOf(firstNum));
 
+        TextView secondText = (TextView)findViewById(R.id.infiPProblemText2);
 
+        if(typeString.equals("Plus7"))
+            secondText.setText("7");
+        else if(typeString.equals("Plus8"))
+            secondText.setText("8");
+        else if(typeString.equals("Plus13"))
+            secondText.setText("13");
+        else if(typeString.equals("Plus16"))
+            secondText.setText("16");
+        else if(typeString.equals("Plus17"))
+            secondText.setText("17");
+        else if(typeString.equals("Plus6_9")){
+
+            long tmpSeed = System.currentTimeMillis();
+            Random tmpRandom = new Random(tmpSeed);
+            tmpRandom.setSeed(System.currentTimeMillis());
+
+            int tmpValue = tmpRandom.nextInt(4)+6;
+
+            secondText.setText(String.valueOf(tmpValue));
+        }
+        else if(typeString.equals("Plus13_17")){
+
+            long tmpSeed = System.currentTimeMillis();
+            Random tmpRandom = new Random(tmpSeed);
+            tmpRandom.setSeed(System.currentTimeMillis());
+
+            int tmpValue = tmpRandom.nextInt(5)+13;
+
+            secondText.setText(String.valueOf(tmpValue));
+        }
+        else if(typeString.equals("Plus6_17")){
+
+            long tmpSeed = System.currentTimeMillis();
+            Random tmpRandom = new Random(tmpSeed);
+            tmpRandom.setSeed(System.currentTimeMillis());
+
+            int tmpValue = tmpRandom.nextInt(11)+6;
+
+            secondText.setText(String.valueOf(tmpValue));
+        }
+
+        String stringValue = secondText.getText().toString();
+        int Textint = Integer.parseInt(stringValue);
 
         //Button text
-        final int result = firstNum + 6;
-        int fakeResult1 = firstNum + 6 - 1;
-        int fakeResult2 = firstNum + 6 + 1;
-        int fakeResult3 = firstNum + 6 + 2;
-        int fakeResult4 = firstNum + 6 - 2;
-        int fakeResult5 = firstNum + 6 + 6;
+        final int result = firstNum + Textint;
+        int fakeResult1 = firstNum + Textint - 1;
+        int fakeResult2 = firstNum + Textint + 1;
+        int fakeResult3 = firstNum + Textint + 2;
+        int fakeResult4 = firstNum + Textint - 2;
+        int fakeResult5 = firstNum + Textint + 10;
+        int fakeResult6 = firstNum + Textint - 10;
 
-        int[] tmpResult1 = {result,fakeResult1,fakeResult2,fakeResult3};
+        int[] tmpResult1 = {result,fakeResult1,fakeResult6,fakeResult3};
         int[] tmpResult2 = {fakeResult3,result,fakeResult2,fakeResult4};
         int[] tmpResult3 = {fakeResult5,fakeResult3,result,fakeResult2};
         int[] tmpResult4 = {fakeResult4,fakeResult1,fakeResult3,result};
         int[] tmpResult5 = {result,fakeResult2,fakeResult1,fakeResult4};
         int[] tmpResult6 = {fakeResult5,result,fakeResult2,fakeResult3};
-        int[] tmpResult7 = {fakeResult4,fakeResult2,result,fakeResult3};
+        int[] tmpResult7 = {fakeResult4,fakeResult2,result,fakeResult6};
         int[] tmpResult8 = {fakeResult3,fakeResult1,fakeResult5,result};
 
         //번호 랜덤 설정
@@ -113,10 +171,10 @@ public class InfinityChallenge_Plus_6 extends AppCompatActivity {
         random.setSeed(System.currentTimeMillis());
         int randValue = random.nextInt(8)+1;
 
-        final TextView resultText1 = (TextView)findViewById(R.id.inCP6_1);
-        final TextView resultText2 = (TextView)findViewById(R.id.inCP6_2);
-        final TextView resultText3 = (TextView)findViewById(R.id.inCP6_3);
-        final TextView resultText4 = (TextView)findViewById(R.id.inCP6_4);
+        final TextView resultText1 = (TextView)findViewById(R.id.InfiPlus_1);
+        final TextView resultText2 = (TextView)findViewById(R.id.InfiPlus_2);
+        final TextView resultText3 = (TextView)findViewById(R.id.InfiPlus_3);
+        final TextView resultText4 = (TextView)findViewById(R.id.InfiPlus_4);
 
         if(randValue == 1){
             resultText1.setText(String.valueOf(tmpResult1[0]));
@@ -168,10 +226,10 @@ public class InfinityChallenge_Plus_6 extends AppCompatActivity {
         }
 
         //Button
-        Button button1 = (Button)findViewById(R.id.inCP6_1);
-        Button button2 = (Button)findViewById(R.id.inCP6_2);
-        Button button3 = (Button)findViewById(R.id.inCP6_3);
-        Button button4 = (Button)findViewById(R.id.inCP6_4);
+        Button button1 = (Button)findViewById(R.id.InfiPlus_1);
+        Button button2 = (Button)findViewById(R.id.InfiPlus_2);
+        Button button3 = (Button)findViewById(R.id.InfiPlus_3);
+        Button button4 = (Button)findViewById(R.id.InfiPlus_4);
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -184,7 +242,7 @@ public class InfinityChallenge_Plus_6 extends AppCompatActivity {
 
                 soundPool.play(soundID,1f,1f,0,0,1f);
 
-                Intent intent = new Intent(getApplicationContext(),InfinityChallenge_Plus_6.class);
+                Intent intent = new Intent(getApplicationContext(), InfinityChallenge_Plus.class);
 
                 String tmp = resultText1.getText().toString();
                 if(result == Integer.parseInt(tmp)) {
@@ -192,11 +250,13 @@ public class InfinityChallenge_Plus_6 extends AppCompatActivity {
                     intent.putExtra("Now_time", nowMilli - (nowMilli - checkTime));
                     intent.putExtra("Init_num",result);
                     intent.putExtra("Answer_state",clearNum + 1);
+                    intent.putExtra("Type",typeString);
                 }
                 else{
                     intent.putExtra("Now_time",nowMilli - 5000 - (nowMilli - checkTime));
                     intent.putExtra("Init_num",firstNum);
                     intent.putExtra("Answer_state",clearNum);
+                    intent.putExtra("Type",typeString);
                 }
                 countDownTimer.cancel();
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -216,7 +276,7 @@ public class InfinityChallenge_Plus_6 extends AppCompatActivity {
 
                 soundPool.play(soundID,1f,1f,0,0,1f);
 
-                Intent intent = new Intent(getApplicationContext(),InfinityChallenge_Plus_6.class);
+                Intent intent = new Intent(getApplicationContext(), InfinityChallenge_Plus.class);
 
                 String tmp = resultText2.getText().toString();
                 if(result == Integer.parseInt(tmp)) {
@@ -224,11 +284,13 @@ public class InfinityChallenge_Plus_6 extends AppCompatActivity {
                     intent.putExtra("Now_time", nowMilli - (nowMilli - checkTime));
                     intent.putExtra("Init_num",result);
                     intent.putExtra("Answer_state",clearNum + 1);
+                    intent.putExtra("Type",typeString);
                 }
                 else{
                     intent.putExtra("Now_time",nowMilli - 5000 - (nowMilli - checkTime));
                     intent.putExtra("Init_num",firstNum);
                     intent.putExtra("Answer_state",clearNum);
+                    intent.putExtra("Type",typeString);
                 }
                 countDownTimer.cancel();
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -248,7 +310,7 @@ public class InfinityChallenge_Plus_6 extends AppCompatActivity {
 
                 soundPool.play(soundID,1f,1f,0,0,1f);
 
-                Intent intent = new Intent(getApplicationContext(),InfinityChallenge_Plus_6.class);
+                Intent intent = new Intent(getApplicationContext(), InfinityChallenge_Plus.class);
 
                 String tmp = resultText3.getText().toString();
                 if(result == Integer.parseInt(tmp)) {
@@ -256,11 +318,13 @@ public class InfinityChallenge_Plus_6 extends AppCompatActivity {
                     intent.putExtra("Now_time", nowMilli - (nowMilli - checkTime));
                     intent.putExtra("Init_num",result);
                     intent.putExtra("Answer_state",clearNum + 1);
+                    intent.putExtra("Type",typeString);
                 }
                 else{
                     intent.putExtra("Now_time",nowMilli - 5000 - (nowMilli - checkTime));
                     intent.putExtra("Init_num",firstNum);
                     intent.putExtra("Answer_state",clearNum);
+                    intent.putExtra("Type",typeString);
                 }
                 countDownTimer.cancel();
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -280,7 +344,7 @@ public class InfinityChallenge_Plus_6 extends AppCompatActivity {
 
                 soundPool.play(soundID,1f,1f,0,0,1f);
 
-                Intent intent = new Intent(getApplicationContext(),InfinityChallenge_Plus_6.class);
+                Intent intent = new Intent(getApplicationContext(), InfinityChallenge_Plus.class);
 
                 String tmp = resultText4.getText().toString();
                 if(result == Integer.parseInt(tmp)) {
@@ -288,11 +352,13 @@ public class InfinityChallenge_Plus_6 extends AppCompatActivity {
                     intent.putExtra("Now_time", nowMilli - (nowMilli - checkTime));
                     intent.putExtra("Init_num",result);
                     intent.putExtra("Answer_state",clearNum + 1);
+                    intent.putExtra("Type",typeString);
                 }
                 else{
                     intent.putExtra("Now_time",nowMilli - 5000 - (nowMilli - checkTime));
                     intent.putExtra("Init_num",firstNum);
                     intent.putExtra("Answer_state",clearNum);
+                    intent.putExtra("Type",typeString);
                 }
                 countDownTimer.cancel();
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

@@ -32,7 +32,7 @@ public class SplashScreen extends AppCompatActivity {
         Intent Setintent = getIntent();
         final String goActivity = Setintent.getStringExtra("Text");
 
-        
+
 
         Ac = goActivity;
 

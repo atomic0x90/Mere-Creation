@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".InfinityChallenge_Plus_6"></activity>
+        <activity android:name=".InfinityChallenge_Plus"></activity>
+        <activity android:name=".InfinityChallenge_Plus_7" />
+        <activity android:name=".InfinityChallenge_Plus_6" />
         <activity android:name=".InfinityPlusMenu" />
         <activity android:name=".Challenge_divide" />
         <activity android:name=".Challenge_multi" />
@@ -30,18 +32,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Challenge_add"
-            />
+        <activity android:name=".Challenge_add" />
 
         <meta-data
             android:name="com.google.android.gms.ads.AD_MANAGER_APP"
             android:value="true" />
-
     </application>
-
-
-
-
-
 
 </manifest>

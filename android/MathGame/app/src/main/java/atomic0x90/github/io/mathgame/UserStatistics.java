@@ -12,7 +12,6 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import java.io.File;
-import java.sql.BatchUpdateException;
 import java.util.Locale;
 
 public class UserStatistics extends AppCompatActivity {
@@ -34,6 +33,10 @@ public class UserStatistics extends AppCompatActivity {
     //Divide
     int divIDX = -1;
     double divResult = 0,divAVtime = 0,div10Result = 0,div10AVtime = 0;
+
+    //Infi Plus
+    int infiP6 = -1,infiP7 = -1,infiP8 = -1,infiP13 = -1,infiP16 = -1,infiP17 = -1,infiP6_9 = -1,infiP13_17 = -1,infiP6_17 = -1;
+    double infiPR6 = 0,infiPR7 = 0,infiPR8 = 0,infiPR13 = 0,infiPR16 = 0,infiPR17 = 0,infiPR6_9 = 0,infiPR13_17 = 0,infiPR6_17 = 0;
 
     //FULL AD
 
@@ -157,6 +160,76 @@ public class UserStatistics extends AppCompatActivity {
             div10Answer.setText(String.format(Locale.getDefault(),"%.2f %%",(div10Result/(10*10) )*100 ));
             div10Time.setText(String.format(Locale.getDefault(),"%.1f s",div10AVtime/10));
         }
+
+        //Infi Plus
+
+        Button infiP6B = (Button)findViewById(R.id.InfiP6Answer);
+        Button infiP7B = (Button)findViewById(R.id.InfiP7Answer);
+        Button infiP8B = (Button)findViewById(R.id.InfiP8Answer);
+        Button infiP13B = (Button)findViewById(R.id.InfiP13Answer);
+        Button infiP16B = (Button)findViewById(R.id.InfiP16Answer);
+        Button infiP17B = (Button)findViewById(R.id.InfiP17Answer);
+        Button infiP6_9B = (Button)findViewById(R.id.InfiP6_9Answer);
+        Button infiP13_17B = (Button)findViewById(R.id.InfiP13_17Answer);
+        Button infiP6_17B = (Button)findViewById(R.id.InfiP6_17Answer);
+
+        load_InfiP6();
+        load_InfiP7();
+        load_InfiP8();
+        load_InfiP13();
+        load_InfiP16();
+        load_InfiP17();
+        load_InfiP6_9();
+        load_InfiP13_17();
+        load_InfiP6_17();
+
+        if(infiP6 == -1)
+            infiP6B.setText("정보 없음");
+        else
+            infiP6B.setText(String.format(Locale.getDefault(),"%.2f",infiPR6/infiP6));
+
+        if(infiP7 == -1)
+            infiP7B.setText("정보 없음");
+        else
+            infiP7B.setText(String.format(Locale.getDefault(),"%.2f",infiPR7/infiP7));
+
+        if(infiP8 == -1)
+            infiP8B.setText("정보 없음");
+        else
+            infiP8B.setText(String.format(Locale.getDefault(),"%.2f",infiPR8/infiP8));
+
+        if(infiP13 == -1)
+            infiP13B.setText("정보 없음");
+        else
+            infiP13B.setText(String.format(Locale.getDefault(),"%.2f",infiPR13/infiP13));
+
+        if(infiP16 == -1)
+            infiP16B.setText("정보 없음");
+        else
+            infiP16B.setText(String.format(Locale.getDefault(),"%.2f",infiPR16/infiP16));
+
+        if(infiP17 == -1)
+            infiP17B.setText("정보 없음");
+        else
+            infiP17B.setText(String.format(Locale.getDefault(),"%.2f",infiPR17/infiP17));
+
+        if(infiP6_9 == -1)
+            infiP6_9B.setText("정보 없음");
+        else
+            infiP6_9B.setText(String.format(Locale.getDefault(),"%.2f",infiPR6_9/infiP6_9));
+
+        if(infiP13_17 == -1)
+            infiP13_17B.setText("정보 없음");
+        else
+            infiP13_17B.setText(String.format(Locale.getDefault(),"%.2f",infiPR13_17/infiP13_17));
+
+        if(infiP6_17 == -1)
+            infiP6_17B.setText("정보 없음");
+        else
+            infiP6_17B.setText(String.format(Locale.getDefault(),"%.2f",infiPR6_17/infiP6_17));
+
+
+
 
     }
 
@@ -361,6 +434,150 @@ public class UserStatistics extends AppCompatActivity {
         }
     }
 
+    //Infi Plus
+    private void load_InfiP6(){
+        if(sqLiteDatabase != null) {
+            String sqlQuery = "SELECT * FROM InfiChP6";
+            Cursor cursor = null;
+
+            cursor = sqLiteDatabase.rawQuery(sqlQuery, null);
+
+            if (cursor.moveToFirst()) {
+                do {
+                    infiP6 = cursor.getInt(0);
+                    infiPR6 += cursor.getInt(1);
+                }while(cursor.moveToNext());
+            }
+        }
+    }
+
+    private void load_InfiP7(){
+        if(sqLiteDatabase != null) {
+            String sqlQuery = "SELECT * FROM InfiChP7";
+            Cursor cursor = null;
+
+            cursor = sqLiteDatabase.rawQuery(sqlQuery, null);
+
+            if (cursor.moveToFirst()) {
+                do {
+                    infiP7 = cursor.getInt(0);
+                    infiPR7 += cursor.getInt(1);
+                }while(cursor.moveToNext());
+            }
+        }
+    }
+
+    private void load_InfiP8(){
+        if(sqLiteDatabase != null) {
+            String sqlQuery = "SELECT * FROM InfiChP8";
+            Cursor cursor = null;
+
+            cursor = sqLiteDatabase.rawQuery(sqlQuery, null);
+
+            if (cursor.moveToFirst()) {
+                do {
+                    infiP8 = cursor.getInt(0);
+                    infiPR8 += cursor.getInt(1);
+                }while(cursor.moveToNext());
+            }
+        }
+    }
+
+    private void load_InfiP13(){
+        if(sqLiteDatabase != null) {
+            String sqlQuery = "SELECT * FROM InfiChP13";
+            Cursor cursor = null;
+
+            cursor = sqLiteDatabase.rawQuery(sqlQuery, null);
+
+            if (cursor.moveToFirst()) {
+                do {
+                    infiP13 = cursor.getInt(0);
+                    infiPR13 += cursor.getInt(1);
+                }while(cursor.moveToNext());
+            }
+        }
+    }
+
+    private void load_InfiP16(){
+        if(sqLiteDatabase != null) {
+            String sqlQuery = "SELECT * FROM InfiChP16";
+            Cursor cursor = null;
+
+            cursor = sqLiteDatabase.rawQuery(sqlQuery, null);
+
+            if (cursor.moveToFirst()) {
+                do {
+                    infiP16 = cursor.getInt(0);
+                    infiPR16 += cursor.getInt(1);
+                }while(cursor.moveToNext());
+            }
+        }
+    }
+
+    private void load_InfiP17(){
+        if(sqLiteDatabase != null) {
+            String sqlQuery = "SELECT * FROM InfiChP17";
+            Cursor cursor = null;
+
+            cursor = sqLiteDatabase.rawQuery(sqlQuery, null);
+
+            if (cursor.moveToFirst()) {
+                do {
+                    infiP17 = cursor.getInt(0);
+                    infiPR17 += cursor.getInt(1);
+                }while(cursor.moveToNext());
+            }
+        }
+    }
+
+    private void load_InfiP6_9(){
+        if(sqLiteDatabase != null) {
+            String sqlQuery = "SELECT * FROM InfiChPR6_9";
+            Cursor cursor = null;
+
+            cursor = sqLiteDatabase.rawQuery(sqlQuery, null);
+
+            if (cursor.moveToFirst()) {
+                do {
+                    infiP6_9 = cursor.getInt(0);
+                    infiPR6_9 += cursor.getInt(1);
+                }while(cursor.moveToNext());
+            }
+        }
+    }
+
+    private void load_InfiP13_17(){
+        if(sqLiteDatabase != null) {
+            String sqlQuery = "SELECT * FROM InfiChPR13_17";
+            Cursor cursor = null;
+
+            cursor = sqLiteDatabase.rawQuery(sqlQuery, null);
+
+            if (cursor.moveToFirst()) {
+                do {
+                    infiP13_17 = cursor.getInt(0);
+                    infiPR13_17 += cursor.getInt(1);
+                }while(cursor.moveToNext());
+            }
+        }
+    }
+
+    private void load_InfiP6_17(){
+        if(sqLiteDatabase != null) {
+            String sqlQuery = "SELECT * FROM InfiChPR6_17";
+            Cursor cursor = null;
+
+            cursor = sqLiteDatabase.rawQuery(sqlQuery, null);
+
+            if (cursor.moveToFirst()) {
+                do {
+                    infiP6_17 = cursor.getInt(0);
+                    infiPR6_17 += cursor.getInt(1);
+                }while(cursor.moveToNext());
+            }
+        }
+    }
 
     // 마지막으로 뒤로 가기 버튼을 눌렀던 시간 저장
     private long backKeyPressedTime = 0;

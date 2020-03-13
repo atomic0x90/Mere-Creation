@@ -112,7 +112,14 @@ public class CustomDialog extends AppCompatActivity {
             }
         }
         else{
-                titleText.setText("결과");
+            if(answer <= 5)
+                titleText.setText("결과 : C\n천천히 풀어봐요!");
+            else if(answer <= 10)
+                titleText.setText("결과 : B\n잘했어요! 더 침학하게 해볼까요?");
+            else if(answer <= 20)
+                titleText.setText("결과 : A\n잘했어요!!");
+            else
+                titleText.setText("결과 : S\n엄청 대단해요!!");
         }
 
 
@@ -152,6 +159,22 @@ public class CustomDialog extends AppCompatActivity {
                     insertChDiv();
                 else if(DataType.equals("InfiP6"))
                     insertInfiChP6();
+                else if(DataType.equals("InfiP7"))
+                    insertInfiChP7();
+                else if(DataType.equals("InfiP8"))
+                    insertInfiChP8();
+                else if(DataType.equals("InfiP13"))
+                    insertInfiChP13();
+                else if(DataType.equals("InfiP16"))
+                    insertInfiChP16();
+                else if(DataType.equals("InfiP17"))
+                    insertInfiChP17();
+                else if(DataType.equals("InfiP6_9"))
+                    insertInfiChP6_9();
+                else if(DataType.equals("InfiP13_17"))
+                    insertInfiChP13_17();
+                else if(DataType.equals("InfiP6_17"))
+                    insertInfiChP6_17();
 
                 Toast.makeText(getApplicationContext(),"보상 획득",Toast.LENGTH_LONG).show();
 
@@ -191,6 +214,22 @@ public class CustomDialog extends AppCompatActivity {
                                 insertChDiv();
                             else if(DataType.equals("InfiP6"))
                                 insertInfiChP6();
+                            else if(DataType.equals("InfiP7"))
+                                insertInfiChP7();
+                            else if(DataType.equals("InfiP8"))
+                                insertInfiChP8();
+                            else if(DataType.equals("InfiP13"))
+                                insertInfiChP13();
+                            else if(DataType.equals("InfiP16"))
+                                insertInfiChP16();
+                            else if(DataType.equals("InfiP17"))
+                                insertInfiChP17();
+                            else if(DataType.equals("InfiP6_9"))
+                                insertInfiChP6_9();
+                            else if(DataType.equals("InfiP13_17"))
+                                insertInfiChP13_17();
+                            else if(DataType.equals("InfiP6_17"))
+                                insertInfiChP6_17();
 
                             Toast.makeText(getApplicationContext(),"보상X2 획득",Toast.LENGTH_LONG).show();
                             Intent intent = new Intent(CustomDialog.this,MainActivity.class);
@@ -213,6 +252,22 @@ public class CustomDialog extends AppCompatActivity {
                                 insertChDiv();
                             else if(DataType.equals("InfiP6"))
                                 insertInfiChP6();
+                            else if(DataType.equals("InfiP7"))
+                                insertInfiChP7();
+                            else if(DataType.equals("InfiP8"))
+                                insertInfiChP8();
+                            else if(DataType.equals("InfiP13"))
+                                insertInfiChP13();
+                            else if(DataType.equals("InfiP16"))
+                                insertInfiChP16();
+                            else if(DataType.equals("InfiP17"))
+                                insertInfiChP17();
+                            else if(DataType.equals("InfiP6_9"))
+                                insertInfiChP6_9();
+                            else if(DataType.equals("InfiP13_17"))
+                                insertInfiChP13_17();
+                            else if(DataType.equals("InfiP6_17"))
+                                insertInfiChP6_17();
 
                             Toast.makeText(getApplicationContext(),"보상 획득, 영상이 준비되지 않음. 나중에 다시 시도하세요.",Toast.LENGTH_LONG).show();
                             Intent intent = new Intent(CustomDialog.this,MainActivity.class);
@@ -243,6 +298,22 @@ public class CustomDialog extends AppCompatActivity {
                         insertChDiv();
                     else if(DataType.equals("InfiP6"))
                         insertInfiChP6();
+                    else if(DataType.equals("InfiP7"))
+                        insertInfiChP7();
+                    else if(DataType.equals("InfiP8"))
+                        insertInfiChP8();
+                    else if(DataType.equals("InfiP13"))
+                        insertInfiChP13();
+                    else if(DataType.equals("InfiP16"))
+                        insertInfiChP16();
+                    else if(DataType.equals("InfiP17"))
+                        insertInfiChP17();
+                    else if(DataType.equals("InfiP6_9"))
+                        insertInfiChP6_9();
+                    else if(DataType.equals("InfiP13_17"))
+                        insertInfiChP13_17();
+                    else if(DataType.equals("InfiP6_17"))
+                        insertInfiChP6_17();
 
                     Toast.makeText(getApplicationContext(),"보상 획득, 영상이 준비되지 않음. 나중에 다시 시도하세요.",Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(CustomDialog.this,MainActivity.class);
@@ -331,6 +402,62 @@ public class CustomDialog extends AppCompatActivity {
     private void insertInfiChP6(){
         if(sqLiteDatabase != null){
             String sqlQuery = "INSERT INTO InfiChP6" + "(result)" + "VALUES (" + insertResult + ");";
+            sqLiteDatabase.execSQL(sqlQuery);
+        }
+    }
+
+    private void insertInfiChP7(){
+        if(sqLiteDatabase != null){
+            String sqlQuery = "INSERT INTO InfiChP7" + "(result)" + "VALUES (" + insertResult + ");";
+            sqLiteDatabase.execSQL(sqlQuery);
+        }
+    }
+
+    private void insertInfiChP8(){
+        if(sqLiteDatabase != null){
+            String sqlQuery = "INSERT INTO InfiChP8" + "(result)" + "VALUES (" + insertResult + ");";
+            sqLiteDatabase.execSQL(sqlQuery);
+        }
+    }
+
+    private void insertInfiChP13(){
+        if(sqLiteDatabase != null){
+            String sqlQuery = "INSERT INTO InfiChP13" + "(result)" + "VALUES (" + insertResult + ");";
+            sqLiteDatabase.execSQL(sqlQuery);
+        }
+    }
+
+    private void insertInfiChP16(){
+        if(sqLiteDatabase != null){
+            String sqlQuery = "INSERT INTO InfiChP16" + "(result)" + "VALUES (" + insertResult + ");";
+            sqLiteDatabase.execSQL(sqlQuery);
+        }
+    }
+
+    private void insertInfiChP17(){
+        if(sqLiteDatabase != null){
+            String sqlQuery = "INSERT INTO InfiChP17" + "(result)" + "VALUES (" + insertResult + ");";
+            sqLiteDatabase.execSQL(sqlQuery);
+        }
+    }
+
+    private void insertInfiChP6_9(){
+        if(sqLiteDatabase != null){
+            String sqlQuery = "INSERT INTO InfiChPR6_9" + "(result)" + "VALUES (" + insertResult + ");";
+            sqLiteDatabase.execSQL(sqlQuery);
+        }
+    }
+
+    private void insertInfiChP13_17(){
+        if(sqLiteDatabase != null){
+            String sqlQuery = "INSERT INTO InfiChPR13_17" + "(result)" + "VALUES (" + insertResult + ");";
+            sqLiteDatabase.execSQL(sqlQuery);
+        }
+    }
+
+    private void insertInfiChP6_17(){
+        if(sqLiteDatabase != null){
+            String sqlQuery = "INSERT INTO InfiChPR6_17" + "(result)" + "VALUES (" + insertResult + ");";
             sqLiteDatabase.execSQL(sqlQuery);
         }
     }

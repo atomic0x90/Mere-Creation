@@ -24,17 +24,127 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.gridlayout.widget.GridLayout
-        android:layout_width="408dp"
-        android:layout_height="273dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
+        android:id="@+id/gridLayout"
+        android:layout_width="401dp"
+        android:layout_height="721dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
         android:layout_marginTop="1dp"
         app:columnCount="5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
 
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:orientation="horizontal">
+
+        <Button
+            android:id="@+id/InfiP6_17Answer"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            app:layout_column="4"
+            app:layout_row="8"
+
+            android:background="@drawable/button_style"
+            android:textColor="@color/text"
+            />
+
+        <Button
+            android:id="@+id/InfiP13_17Answer"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            app:layout_column="3"
+            app:layout_row="8"
+
+            android:background="@drawable/button_style"
+            android:textColor="@color/text"
+            />
+
+        <Button
+            android:id="@+id/InfiP17Answer"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            app:layout_column="1"
+            app:layout_row="8"
+
+            android:background="@drawable/button_style"
+            android:textColor="@color/text"
+            />
+
+        <Button
+            android:id="@+id/InfiP13_17"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:text="13 ~ 17"
+            app:layout_column="3"
+            app:layout_row="7"
+
+            android:background="@drawable/button_style"
+            android:textColor="@color/text"
+            />
+
+        <Button
+            android:id="@+id/InfiP17"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:text="17"
+            app:layout_column="1"
+            app:layout_row="7"
+
+            android:background="@drawable/button_style"
+            android:textColor="@color/text"
+            />
+
+        <Button
+            android:id="@+id/InfiP8Answer"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_style"
+            android:text="Button"
+            android:textColor="@color/text"
+
+            app:layout_column="3"
+            app:layout_row="6"
+
+
+            />
+
+        <Button
+            android:id="@+id/InfiP13"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_style"
+            android:text="\13"
+            android:textColor="@color/text"
+
+            app:layout_column="4"
+            app:layout_row="5" />
+
+        <Button
+            android:id="@+id/InfiP7"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_style"
+            android:text="\7"
+            android:textColor="@color/text"
+
+            app:layout_column="2"
+            app:layout_row="5" />
+
+        <Button
+            android:id="@+id/empty"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:text="무한 +"
+            android:textColor="@color/text"
+            app:layout_column="0"
+            app:layout_row="5"
+
+
+            />
 
         <Button
             android:id="@+id/Div10Answer"
@@ -303,6 +413,132 @@
 
             app:layout_column="4"
             app:layout_row="4" />
+
+        <Button
+            android:id="@+id/InfiP6"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_style"
+            android:text="\6"
+            android:textColor="@color/text"
+
+            app:layout_column="1"
+            app:layout_row="5" />
+
+        <Button
+            android:id="@+id/InfiP8"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_style"
+            android:text="\8"
+            android:textColor="@color/text"
+
+            app:layout_column="3"
+            app:layout_row="5" />
+
+        <Button
+            android:id="@+id/InfiPAVAnswer"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:text="평균 정답"
+            android:textColor="@color/text"
+
+            app:layout_column="0"
+            app:layout_row="6" />
+
+        <Button
+            android:id="@+id/InfiP6Answer"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_style"
+            android:text="Button"
+            android:textColor="@color/text"
+
+            app:layout_column="1"
+            app:layout_row="6" />
+
+        <Button
+            android:id="@+id/InfiP7Answer"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_style"
+            android:text="Button"
+            android:textColor="@color/text"
+
+            app:layout_column="2"
+            app:layout_row="6" />
+
+        <Button
+            android:id="@+id/InfiP13Answer"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_style"
+            android:text="Button"
+            android:textColor="@color/text"
+
+            app:layout_column="4"
+            app:layout_row="6" />
+
+        <Button
+            android:id="@+id/InfiP16"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:text="16"
+            app:layout_column="0"
+            app:layout_row="7"
+
+            android:background="@drawable/button_style"
+            android:textColor="@color/text"
+            />
+
+        <Button
+            android:id="@+id/InfiP6_9"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:text="6 ~ 9"
+            app:layout_column="2"
+            app:layout_row="7"
+
+            android:background="@drawable/button_style"
+            android:textColor="@color/text"
+            />
+
+        <Button
+            android:id="@+id/InfiP6_17"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:text="6 ~ 17"
+            app:layout_column="4"
+            app:layout_row="7"
+
+            android:background="@drawable/button_style"
+            android:textColor="@color/text"
+            />
+
+        <Button
+            android:id="@+id/InfiP16Answer"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            app:layout_column="0"
+            app:layout_row="8"
+
+            android:background="@drawable/button_style"
+            android:textColor="@color/text"
+            />
+
+        <Button
+            android:id="@+id/InfiP6_9Answer"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            app:layout_column="2"
+            app:layout_row="8"
+
+            android:background="@drawable/button_style"
+            android:textColor="@color/text"
+            />
 
     </androidx.gridlayout.widget.GridLayout>
 
