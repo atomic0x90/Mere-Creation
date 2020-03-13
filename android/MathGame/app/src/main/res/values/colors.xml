@@ -13,6 +13,6 @@
     <color name="tmpbutton">#ffffff</color>
     <!--<color name="text">#fffca3</color>-->
     <color name="text">#000000</color>
-    <color name="background">#cccccc</color>
+    <color name="background">#fff</color>
     <color name="dialogBackground">#303030</color>
 </resources>
