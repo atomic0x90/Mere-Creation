@@ -50,6 +50,11 @@ public class SplashScreen extends AppCompatActivity {
                 if(!interstitialCanceled) {
                     waitTimer.cancel();
                     interstitialAd.show();
+/*
+                    if(goActivity.equals("Statistics")){
+                        startUserStatistics();
+                        finish();
+                    }*/
                 }
             }
             @Override
@@ -108,5 +113,7 @@ public class SplashScreen extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
+
 
 }

@@ -168,7 +168,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/coin"
 
-        android:background="@drawable/button_back"
+        android:background="@drawable/button_style"
         android:soundEffectsEnabled="false"
         />
 
@@ -177,7 +177,7 @@
         android:layout_width="60dp"
         android:layout_height="35dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/button_back"
+        android:background="@drawable/button_style"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@color/text"
         app:layout_constraintEnd_toStartOf="@+id/coinPlusInfinityPlusButton"

@@ -45,5 +45,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/login_img" />
+        app:srcCompat="@drawable/test_white_logo" />
 </androidx.constraintlayout.widget.ConstraintLayout>
