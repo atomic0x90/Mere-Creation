@@ -143,7 +143,7 @@ public class InfinityChallenge_Minus extends AppCompatActivity {
             Random tmpRandom = new Random(tmpSeed);
             tmpRandom.setSeed(System.currentTimeMillis());
 
-            int tmpValue = tmpRandom.nextInt(11)+6;
+            int tmpValue = tmpRandom.nextInt(12)+6;
 
             secondText.setText(String.valueOf(tmpValue));
         }
