@@ -263,6 +263,25 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //구구단 버튼
+        Button multiplicationTableButton = (Button)findViewById(R.id.multitableButton);
+        multiplicationTableButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // mis-clicking prevention, using threshold of 1000 ms
+                if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
+                    return;
+                }
+                mLastClickTime = SystemClock.elapsedRealtime();
+
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
+
+                Intent intent = new Intent(MainActivity.this,Multiplication_table.class);
+                startActivity(intent);
+            }
+        });
+
         //설정 버튼
     }
 

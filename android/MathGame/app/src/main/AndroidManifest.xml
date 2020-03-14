@@ -12,9 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".InfinityChallenge_Minus"
-            android:screenOrientation="portrait"
-            ></activity>
+        <activity android:name=".Multiplication_table"
+            android:screenOrientation="portrait" ></activity>
+        <activity
+            android:name=".InfinityChallenge_Minus"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".InfinityMinusMenu"
             android:screenOrientation="portrait" />
@@ -31,9 +33,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".InfinityChallenge_Plus_6"
-            android:screenOrientation="portrait" />
         <activity
             android:name=".InfinityPlusMenu"
             android:screenOrientation="portrait" />
