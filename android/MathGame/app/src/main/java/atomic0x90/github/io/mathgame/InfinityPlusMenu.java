@@ -133,11 +133,12 @@ public class InfinityPlusMenu extends AppCompatActivity {
                 Random random = new Random(seed);
                 int rand = random.nextInt(5)+1;
 
-                Intent intent = new Intent(getApplicationContext(),InfinityChallenge_Plus_6.class);
+                Intent intent = new Intent(getApplicationContext(),InfinityChallenge_Plus.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 intent.putExtra("Answer_state",0);
                 intent.putExtra("Init_num",rand);
                 intent.putExtra("Now_time",61000);
+                intent.putExtra("Type","Plus6");
                 startActivity(intent);
 
             }

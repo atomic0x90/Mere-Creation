@@ -115,7 +115,7 @@ public class CustomDialog extends AppCompatActivity {
             if(answer <= 5)
                 titleText.setText("결과 : C\n천천히 풀어봐요!");
             else if(answer <= 10)
-                titleText.setText("결과 : B\n잘했어요! 더 침학하게 해볼까요?");
+                titleText.setText("결과 : B\n잘했어요! 더 침착하게 해볼까요?");
             else if(answer <= 20)
                 titleText.setText("결과 : A\n잘했어요!!");
             else

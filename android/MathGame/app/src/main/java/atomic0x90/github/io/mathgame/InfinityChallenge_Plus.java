@@ -71,7 +71,9 @@ public class InfinityChallenge_Plus extends AppCompatActivity {
 
                 Intent Endintent = new Intent(getApplicationContext(), CustomDialog.class);
 
-                if(typeString.equals("Plus7"))
+                if(typeString.equals("Plus6"))
+                    Endintent.putExtra("Result_type","InfiP6");
+                else if(typeString.equals("Plus7"))
                     Endintent.putExtra("Result_type","InfiP7");
                 else if(typeString.equals("Plus8"))
                     Endintent.putExtra("Result_type","InfiP8");
@@ -103,7 +105,9 @@ public class InfinityChallenge_Plus extends AppCompatActivity {
 
         TextView secondText = (TextView)findViewById(R.id.infiPProblemText2);
 
-        if(typeString.equals("Plus7"))
+        if(typeString.equals("Plus6"))
+            secondText.setText("6");
+        else if(typeString.equals("Plus7"))
             secondText.setText("7");
         else if(typeString.equals("Plus8"))
             secondText.setText("8");
