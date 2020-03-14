@@ -40,6 +40,8 @@ public class SplashScreen extends AppCompatActivity {
 
         if(goActivity.equals("Statistics"))
             textView.setText("통계 집계 중");
+        else if(goActivity.equals("multiTable"))
+            textView.setText("");
 
         interstitialAd = new InterstitialAd(this);
         interstitialAd.setAdUnitId("ca-app-pub-3940256099942544/8691691433");
@@ -61,11 +63,18 @@ public class SplashScreen extends AppCompatActivity {
             public void onAdFailedToLoad(int errorCode) {
                 if(goActivity.equals("Statistics"))
                     startUserStatistics();
+                else if(goActivity.equals("multiTable"))
+                    startMultiTable();
+
+                finish();
+
             }
             @Override
             public void onAdClosed(){
                 if(goActivity.equals("Statistics"))
                     startUserStatistics();
+                else if(goActivity.equals("multiTable"))
+                    startMultiTable();
                 finish();
             }
         });
@@ -82,6 +91,9 @@ public class SplashScreen extends AppCompatActivity {
                     public void run() {
                         if(goActivity.equals("Statistics"))
                             startUserStatistics();
+                        else if(goActivity.equals("multiTable"))
+                            startMultiTable();
+                        finish();
                     }
                 });
             }
@@ -110,6 +122,12 @@ public class SplashScreen extends AppCompatActivity {
 
     private void startUserStatistics() {
         Intent intent = new Intent(this, UserStatistics.class);
+        startActivity(intent);
+        finish();
+    }
+
+    private void startMultiTable(){
+        Intent intent = new Intent(this,Multiplication_table.class);
         startActivity(intent);
         finish();
     }

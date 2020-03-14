@@ -277,7 +277,8 @@ public class MainActivity extends AppCompatActivity {
                 soundPool.play(soundID,1f,1f,0,0,1f);
 
 
-                Intent intent = new Intent(MainActivity.this,Multiplication_table.class);
+                Intent intent = new Intent(MainActivity.this,SplashScreen.class);
+                intent.putExtra("Text","multiTable");
                 startActivity(intent);
             }
         });
