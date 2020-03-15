@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MaxMinGameMenu">
+
+    <ImageButton
+        android:id="@+id/coinMaxMinButton"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/coin"
+
+        android:background="@drawable/button_style"
+
+        android:soundEffectsEnabled="false"
+        />
+
+    <ImageButton
+        android:id="@+id/coinPlusMaxMinButton"
+        android:layout_width="20dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@+id/coinNowMaxMinButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_input_add"
+
+        android:background="@drawable/button_back"
+        android:soundEffectsEnabled="false"
+        />
+
+    <Button
+        android:id="@+id/coinNowMaxMinButton"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_style"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/text"
+
+        app:layout_constraintStart_toEndOf="@+id/coinMaxMinButton"
+        app:layout_constraintTop_toTopOf="parent"
+        android:soundEffectsEnabled="false"
+        />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:adSize="SMART_BANNER"
+        app:adUnitId="ca-app-pub-3940256099942544/6300978111"/>
+
+    <TextView
+        android:id="@+id/MaxMinMenuText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="최대 최소 게임"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/coinPlusMaxMinButton"
+        app:layout_constraintTop_toTopOf="parent"
+
+        android:textColor="@color/text"
+        />
+
+    <Button
+        android:id="@+id/MaxMin1_10"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:text="1 ~ 10"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toStartOf="@+id/MaxMin10_20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MaxMinMenuText"
+
+        android:textColor="@color/text"
+        android:background="@drawable/button_back"
+        android:soundEffectsEnabled="false"
+        />
+
+    <Button
+        android:id="@+id/MaxMin10_20"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:text="10 ~ 20"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toStartOf="@+id/MaxMin20_30"
+        app:layout_constraintStart_toEndOf="@+id/MaxMin1_10"
+        app:layout_constraintTop_toBottomOf="@+id/MaxMinMenuText"
+
+        android:textColor="@color/text"
+        android:background="@drawable/button_back"
+        android:soundEffectsEnabled="false"
+        />
+
+    <Button
+        android:id="@+id/MaxMin20_30"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:text="20 ~ 30"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/MaxMin10_20"
+        app:layout_constraintTop_toBottomOf="@+id/MaxMinMenuText"
+
+        android:textColor="@color/text"
+        android:background="@drawable/button_back"
+        android:soundEffectsEnabled="false"
+        />
+
+    <TextView
+        android:id="@+id/MaxMin1_10coinText"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toStartOf="@+id/MaxMin10_20coinText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MaxMin1_10" />
+
+    <TextView
+        android:id="@+id/MaxMin10_20coinText"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:text="   3000 Coin"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toStartOf="@+id/MaxMin20_30coinText"
+        app:layout_constraintStart_toEndOf="@+id/MaxMin1_10coinText"
+        app:layout_constraintTop_toBottomOf="@+id/MaxMin10_20"
+
+        android:textColor="@color/text"/>
+
+    <TextView
+        android:id="@+id/MaxMin20_30coinText"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:text="   3000 Coin"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/MaxMin10_20coinText"
+        app:layout_constraintTop_toBottomOf="@+id/MaxMin20_30"
+
+        android:textColor="@color/text"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

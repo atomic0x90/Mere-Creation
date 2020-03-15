@@ -15,16 +15,18 @@
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="160dp"
         android:background="@drawable/button_back"
-        android:soundEffectsEnabled="false"
 
+        android:soundEffectsEnabled="false"
         android:text="광고 보고 보상 X2 받기"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/text"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-
         app:layout_constraintTop_toBottomOf="@+id/RewardButton" />
 
     <TextView
@@ -161,5 +163,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/AVtime"
         app:layout_constraintTop_toBottomOf="@+id/answerText" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:adSize="SMART_BANNER"
+        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

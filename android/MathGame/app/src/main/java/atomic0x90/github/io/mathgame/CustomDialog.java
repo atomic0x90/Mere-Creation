@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 
+import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.rewarded.RewardedAd;
 import com.google.android.gms.ads.rewarded.RewardedAdCallback;
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
@@ -45,6 +46,8 @@ public class CustomDialog extends AppCompatActivity {
 
     //Reward AD
     private RewardedAd rewardedAd;
+    //AD
+    private AdView mAdView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +57,10 @@ public class CustomDialog extends AppCompatActivity {
         soundPool = new SoundPool(5, AudioManager.STREAM_MUSIC,0);
         soundID = soundPool.load(this,R.raw.click_sound01,1);
 
+        //AD
+        mAdView = findViewById(R.id.adView11);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
         //Reward AD
 
         rewardedAd = new RewardedAd(this,"ca-app-pub-3940256099942544/5224354917");

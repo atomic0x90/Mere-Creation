@@ -12,8 +12,14 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Multiplication_table"
-            android:screenOrientation="portrait" ></activity>
+        <activity android:name=".MaxMinGame"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".MaxMinGameMenu"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Multiplication_table"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".InfinityChallenge_Minus"
             android:screenOrientation="portrait" />
@@ -54,7 +60,8 @@
         <activity
             android:name=".CustomDialog"
             android:screenOrientation="portrait"
-            android:theme="@style/popupTheme" />
+            />
+        <!--android:theme="@style/popupTheme" -->
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait" />
