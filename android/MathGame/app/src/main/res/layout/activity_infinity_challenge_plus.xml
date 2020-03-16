@@ -29,6 +29,7 @@
         android:textColor="@color/text"
 
         android:soundEffectsEnabled="false"
+        android:fontFamily="@font/custom_font_1"
         />
 
     <Button
@@ -51,6 +52,7 @@
         android:textColor="@color/text"
 
         android:soundEffectsEnabled="false"
+        android:fontFamily="@font/custom_font_1"
         />
 
     <Button
@@ -63,17 +65,17 @@
         android:layout_marginEnd="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginBottom="15dp"
+        android:background="@drawable/button_back"
+        android:soundEffectsEnabled="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+
+        android:textColor="@color/text"
         app:layout_constraintBottom_toTopOf="@+id/InfiPlus_4"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/InfiPlus_1"
-        app:layout_constraintTop_toBottomOf="@+id/infiPProblemText2"
-
-        android:background="@drawable/button_back"
-        android:textColor="@color/text"
-
-        android:soundEffectsEnabled="false"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/infiPPlusText"
+        android:fontFamily="@font/custom_font_1"/>
 
     <TextView
         android:id="@+id/infinityPnowAnswerText"
@@ -87,6 +89,7 @@
         app:layout_constraintTop_toTopOf="parent"
 
         android:textColor="@color/text"
+        android:fontFamily="@font/custom_font_1"
         />
 
     <com.google.android.gms.ads.AdView
@@ -113,7 +116,8 @@
         android:textColor="@color/text"
         app:layout_constraintEnd_toEndOf="parent"
 
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="@font/custom_font_1"/>
 
     <TextView
         android:id="@+id/infiPTime"
@@ -130,6 +134,7 @@
         app:layout_constraintTop_toTopOf="parent"
 
         android:textColor="@color/text"
+        android:fontFamily="@font/custom_font_1"
         />
 
     <TextView
@@ -148,6 +153,7 @@
         app:layout_constraintTop_toBottomOf="@+id/infiPTime"
 
         android:textColor="@color/text"
+        android:fontFamily="@font/custom_font_1"
         />
 
     <TextView
@@ -166,6 +172,7 @@
         app:layout_constraintTop_toBottomOf="@+id/infiPTime"
 
         android:textColor="@color/text"
+        android:fontFamily="@font/custom_font_2"
         />
 
     <TextView
@@ -184,6 +191,7 @@
         app:layout_constraintTop_toBottomOf="@+id/infiPTime"
 
         android:textColor="@color/text"
+        android:fontFamily="@font/custom_font_1"
         />
 
     <TextView
@@ -202,6 +210,7 @@
         app:layout_constraintTop_toBottomOf="@+id/infiPTime"
 
         android:textColor="@color/text"
+        android:fontFamily="@font/custom_font_2"
         />
 
     <Button
@@ -224,6 +233,7 @@
         android:textColor="@color/text"
 
         android:soundEffectsEnabled="false"
+        android:fontFamily="@font/custom_font_1"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

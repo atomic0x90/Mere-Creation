@@ -26,6 +26,7 @@
         app:layout_constraintTop_toBottomOf="@+id/MaxMinB2"
 
         android:soundEffectsEnabled="false"
+        android:fontFamily="@font/custom_font_1"
         />
 
     <TextView
@@ -43,6 +44,7 @@
         app:layout_constraintTop_toTopOf="parent"
 
         android:textColor="@color/text"
+        android:fontFamily="@font/custom_font_1"
         />
 
     <ImageView
@@ -126,6 +128,7 @@
         app:layout_constraintTop_toBottomOf="@+id/MaxMinState2"
 
         android:textColor="@color/text"
+        android:fontFamily="@font/custom_font_1"
         />
 
     <com.google.android.gms.ads.AdView
@@ -160,6 +163,7 @@
         app:layout_constraintTop_toBottomOf="@+id/MaxMinMiddleText"
 
         android:soundEffectsEnabled="false"
+        android:fontFamily="@font/custom_font_1"
         />
 
     <Button
@@ -182,6 +186,7 @@
         app:layout_constraintTop_toBottomOf="@+id/MaxMinMiddleText"
 
         android:soundEffectsEnabled="false"
+        android:fontFamily="@font/custom_font_1"
         />
 
     <Button
@@ -204,5 +209,6 @@
         app:layout_constraintTop_toBottomOf="@+id/MaxMinB1"
 
         android:soundEffectsEnabled="false"
+        android:fontFamily="@font/custom_font_1"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

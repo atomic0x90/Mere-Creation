@@ -35,7 +35,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
 
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+
+        android:fontFamily="@font/custom_font_1"/>
 
     <TextView
         android:id="@+id/subAverageTime"
@@ -49,6 +51,7 @@
         app:layout_constraintTop_toTopOf="parent"
 
         android:textColor="@color/text"
+        android:fontFamily="@font/custom_font_1"
         />
 
     <ImageView
@@ -206,7 +209,9 @@
         app:layout_constraintEnd_toStartOf="@+id/subMinusText"
         app:layout_constraintStart_toStartOf="parent"
 
-        app:layout_constraintTop_toBottomOf="@+id/subtimeText" />
+        app:layout_constraintTop_toBottomOf="@+id/subtimeText"
+
+        android:fontFamily="@font/custom_font_1"/>
 
     <TextView
         android:id="@+id/subMinusText"
@@ -223,7 +228,9 @@
         app:layout_constraintEnd_toStartOf="@+id/subProblemText2"
         app:layout_constraintStart_toEndOf="@+id/subProblemText1"
 
-        app:layout_constraintTop_toBottomOf="@+id/subtimeText" />
+        app:layout_constraintTop_toBottomOf="@+id/subtimeText"
+
+        android:fontFamily="@font/custom_font_2"/>
 
     <TextView
         android:id="@+id/subProblemText2"
@@ -240,7 +247,9 @@
         app:layout_constraintEnd_toStartOf="@+id/subendText"
         app:layout_constraintStart_toEndOf="@+id/subMinusText"
 
-        app:layout_constraintTop_toBottomOf="@+id/subtimeText" />
+        app:layout_constraintTop_toBottomOf="@+id/subtimeText"
+
+        android:fontFamily="@font/custom_font_1"/>
 
     <TextView
         android:id="@+id/subendText"
@@ -257,7 +266,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/subProblemText2"
 
-        app:layout_constraintTop_toBottomOf="@+id/subtimeText" />
+        app:layout_constraintTop_toBottomOf="@+id/subtimeText"
+
+        android:fontFamily="@font/custom_font_2"/>
 
     <Button
         android:id="@+id/csub3"
@@ -278,7 +289,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/csub4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/csub1" />
+        app:layout_constraintTop_toBottomOf="@+id/csub1"
+
+        android:fontFamily="@font/custom_font_1"/>
 
     <Button
         android:id="@+id/csub1"
@@ -299,7 +312,9 @@
         app:layout_constraintBottom_toTopOf="@+id/csub3"
         app:layout_constraintEnd_toStartOf="@+id/csub2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/subMinusText" />
+        app:layout_constraintTop_toBottomOf="@+id/subMinusText"
+
+        android:fontFamily="@font/custom_font_1"/>
 
     <Button
         android:id="@+id/csub2"
@@ -310,17 +325,19 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
+
         android:layout_marginBottom="15dp"
-
         android:background="@drawable/button_back"
-        android:soundEffectsEnabled="false"
 
+        android:soundEffectsEnabled="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/text"
         app:layout_constraintBottom_toTopOf="@+id/csub4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/csub1"
-        app:layout_constraintTop_toBottomOf="@+id/subProblemText2" />
+        app:layout_constraintTop_toBottomOf="@+id/subMinusText"
+
+        android:fontFamily="@font/custom_font_1"/>
 
     <Button
         android:id="@+id/csub4"
@@ -342,6 +359,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/csub3"
-        app:layout_constraintTop_toBottomOf="@+id/csub2" />
+        app:layout_constraintTop_toBottomOf="@+id/csub2"
+
+        android:fontFamily="@font/custom_font_1"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

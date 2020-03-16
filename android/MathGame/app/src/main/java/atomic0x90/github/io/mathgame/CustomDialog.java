@@ -110,10 +110,34 @@ public class CustomDialog extends AppCompatActivity {
                 if (avtime <= 5.0)
                     titleText.setText("결과 : A\n잘했어요!");
                 else
-                    titleText.setText("결과 : B+\n잘했어요! 더 침착하게 해볼까요?");
+                    titleText.setText("결과 : B+\n잘했어요!\n더 침착하게 해볼까요?");
             } else {
                 if(avtime >= 1.0)
-                    titleText.setText("결과 : B\n괜찮아요 계속 연습하면 잘할 거예요!");
+                    titleText.setText("결과 : B\n괜찮아요 계속 연습하면\n잘할 거예요!");
+                else
+                    titleText.setText("결과 : C\n천천히 풀어봐요!");
+            }
+        }
+        else if(DataType.equals("MaxMin1_10") || DataType.equals("MaxMin10_20") || DataType.equals("MaxMin20_30")){
+            if(answer == 5){
+                if(avtime <= 15.0)
+                    titleText.setText("결과 : SSS\n우와~ 최고예요!");
+                else if (avtime <= 25.0)
+                    titleText.setText("결과 : SS\n엄청 대단해요!");
+                else if (avtime <= 35.0)
+                    titleText.setText("결과 : S\n대단해요!");
+                else
+                    titleText.setText("결과 : A+\n굉장해요!");
+            }
+            else if(answer >= 3){
+                if (avtime <= 35.0)
+                    titleText.setText("결과 : A\n잘했어요!");
+                else
+                    titleText.setText("결과 : B+\n잘했어요!\n더 침착하게 해볼까요?");
+            }
+            else{
+                if(avtime >= 1.0)
+                    titleText.setText("결과 : B\n괜찮아요 계속 연습하면\n잘할 거예요!");
                 else
                     titleText.setText("결과 : C\n천천히 풀어봐요!");
             }
@@ -122,7 +146,7 @@ public class CustomDialog extends AppCompatActivity {
             if(answer <= 5)
                 titleText.setText("결과 : C\n천천히 풀어봐요!");
             else if(answer <= 10)
-                titleText.setText("결과 : B\n잘했어요! 더 침착하게 해볼까요?");
+                titleText.setText("결과 : B\n잘했어요!\n더 침착하게 해볼까요?");
             else if(answer <= 20)
                 titleText.setText("결과 : A\n잘했어요!!");
             else
@@ -132,6 +156,10 @@ public class CustomDialog extends AppCompatActivity {
 
         if(DataType.equals("Add") || DataType.equals("Sub") || DataType.equals("Divide") || DataType.equals("Multipl")) {
             answerText.setText(String.format(Locale.getDefault(), "%d / 10", answer));
+            avtimeText.setText(String.format(Locale.getDefault(),"%.1f s",avtime));
+        }
+        else if(DataType.equals("MaxMin1_10") || DataType.equals("MaxMin10_20") || DataType.equals("MaxMin20_30")){
+            answerText.setText(String.format(Locale.getDefault(),"%d / 5",answer));
             avtimeText.setText(String.format(Locale.getDefault(),"%.1f s",avtime));
         }
         else {
@@ -200,6 +228,12 @@ public class CustomDialog extends AppCompatActivity {
                     insertInfiChM13_17();
                 else if(DataType.equals("InfiM6_17"))
                     insertInfiChM6_17();
+                else if(DataType.equals("MaxMin1_10"))
+                    insertMaxMin1_10();
+                else if(DataType.equals("MaxMin10_20"))
+                    insertMaxMin10_20();
+                else if(DataType.equals("MaxMin20_30"))
+                    insertMaxMin20_30();
 
                 Toast.makeText(getApplicationContext(),"보상 획득",Toast.LENGTH_LONG).show();
 
@@ -273,6 +307,12 @@ public class CustomDialog extends AppCompatActivity {
                                 insertInfiChM13_17();
                             else if(DataType.equals("InfiM6_17"))
                                 insertInfiChM6_17();
+                            else if(DataType.equals("MaxMin1_10"))
+                                insertMaxMin1_10();
+                            else if(DataType.equals("MaxMin10_20"))
+                                insertMaxMin10_20();
+                            else if(DataType.equals("MaxMin20_30"))
+                                insertMaxMin20_30();
 
                             Toast.makeText(getApplicationContext(),"보상X2 획득",Toast.LENGTH_LONG).show();
                             Intent intent = new Intent(CustomDialog.this,MainActivity.class);
@@ -329,6 +369,12 @@ public class CustomDialog extends AppCompatActivity {
                                 insertInfiChM13_17();
                             else if(DataType.equals("InfiM6_17"))
                                 insertInfiChM6_17();
+                            else if(DataType.equals("MaxMin1_10"))
+                                insertMaxMin1_10();
+                            else if(DataType.equals("MaxMin10_20"))
+                                insertMaxMin10_20();
+                            else if(DataType.equals("MaxMin20_30"))
+                                insertMaxMin20_30();
 
                             Toast.makeText(getApplicationContext(),"보상 획득, 영상이 준비되지 않음. 나중에 다시 시도하세요.",Toast.LENGTH_LONG).show();
                             Intent intent = new Intent(CustomDialog.this,MainActivity.class);
@@ -393,6 +439,12 @@ public class CustomDialog extends AppCompatActivity {
                         insertInfiChM13_17();
                     else if(DataType.equals("InfiM6_17"))
                         insertInfiChM6_17();
+                    else if(DataType.equals("MaxMin1_10"))
+                        insertMaxMin1_10();
+                    else if(DataType.equals("MaxMin10_20"))
+                        insertMaxMin10_20();
+                    else if(DataType.equals("MaxMin20_30"))
+                        insertMaxMin20_30();
 
                     Toast.makeText(getApplicationContext(),"보상 획득, 영상이 준비되지 않음. 나중에 다시 시도하세요.",Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(CustomDialog.this,MainActivity.class);
@@ -600,6 +652,27 @@ public class CustomDialog extends AppCompatActivity {
     private void insertInfiChM6_17(){
         if(sqLiteDatabase != null){
             String sqlQuery = "INSERT INTO InfiChMR6_17" + "(result)" + "VALUES (" + insertResult + ");";
+            sqLiteDatabase.execSQL(sqlQuery);
+        }
+    }
+
+    private void insertMaxMin1_10(){
+        if(sqLiteDatabase != null){
+            String sqlQuery = "INSERT INTO MaxMin1_10" + "(result,AVtime)" + "VALUES (" + insertResult + "," + insertAVtime +");";
+            sqLiteDatabase.execSQL(sqlQuery);
+        }
+    }
+
+    private void insertMaxMin10_20(){
+        if(sqLiteDatabase != null){
+            String sqlQuery = "INSERT INTO MaxMin10_20" + "(result,AVtime)" + "VALUES (" + insertResult + "," + insertAVtime +");";
+            sqLiteDatabase.execSQL(sqlQuery);
+        }
+    }
+
+    private void insertMaxMin20_30(){
+        if(sqLiteDatabase != null){
+            String sqlQuery = "INSERT INTO MaxMin20_30" + "(result,AVtime)" + "VALUES (" + insertResult + "," + insertAVtime +");";
             sqLiteDatabase.execSQL(sqlQuery);
         }
     }

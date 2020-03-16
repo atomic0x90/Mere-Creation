@@ -23,7 +23,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
 
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+
+        android:fontFamily="@font/custom_font_1"
+        />
 
     <TextView
         android:id="@+id/divideAverageTime"
@@ -37,6 +40,7 @@
         app:layout_constraintTop_toTopOf="parent"
 
         android:textColor="@color/text"
+        android:fontFamily="@font/custom_font_1"
         />
 
     <com.google.android.gms.ads.AdView
@@ -206,7 +210,10 @@
         app:layout_constraintEnd_toStartOf="@+id/divideText"
         app:layout_constraintStart_toStartOf="parent"
 
-        app:layout_constraintTop_toBottomOf="@+id/divideTimeText" />
+        app:layout_constraintTop_toBottomOf="@+id/divideTimeText"
+
+        android:fontFamily="@font/custom_font_1"
+        />
 
     <TextView
         android:id="@+id/divideText"
@@ -223,7 +230,10 @@
         app:layout_constraintEnd_toStartOf="@+id/divideProblemText2"
         app:layout_constraintStart_toEndOf="@+id/divideProblemText1"
 
-        app:layout_constraintTop_toBottomOf="@+id/divideTimeText" />
+        app:layout_constraintTop_toBottomOf="@+id/divideTimeText"
+
+        android:fontFamily="@font/custom_font_2"
+        />
 
     <TextView
         android:id="@+id/divideProblemText2"
@@ -240,7 +250,10 @@
         app:layout_constraintEnd_toStartOf="@+id/divideendText"
         app:layout_constraintStart_toEndOf="@+id/divideText"
 
-        app:layout_constraintTop_toBottomOf="@+id/divideTimeText" />
+        app:layout_constraintTop_toBottomOf="@+id/divideTimeText"
+
+        android:fontFamily="@font/custom_font_1"
+        />
 
     <TextView
         android:id="@+id/divideendText"
@@ -257,7 +270,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/divideProblemText2"
 
-        app:layout_constraintTop_toBottomOf="@+id/divideTimeText" />
+        app:layout_constraintTop_toBottomOf="@+id/divideTimeText"
+
+        android:fontFamily="@font/custom_font_2"
+        />
 
     <Button
         android:id="@+id/cdiv1"
@@ -278,7 +294,10 @@
 
         app:layout_constraintEnd_toStartOf="@+id/cdiv2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divideText" />
+        app:layout_constraintTop_toBottomOf="@+id/divideText"
+
+        android:fontFamily="@font/custom_font_1"
+        />
 
     <Button
         android:id="@+id/cdiv2"
@@ -289,17 +308,20 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="15dp"
 
+        android:layout_marginBottom="15dp"
         android:background="@drawable/button_back"
         android:soundEffectsEnabled="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/text"
-        app:layout_constraintBottom_toTopOf="@+id/cdiv4"
 
+        app:layout_constraintBottom_toTopOf="@+id/cdiv4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/cdiv1"
-        app:layout_constraintTop_toBottomOf="@+id/divideProblemText2" />
+        app:layout_constraintTop_toBottomOf="@+id/divideText"
+
+        android:fontFamily="@font/custom_font_1"
+        />
 
     <Button
         android:id="@+id/cdiv3"
@@ -320,7 +342,10 @@
 
         app:layout_constraintEnd_toStartOf="@+id/cdiv4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cdiv1" />
+        app:layout_constraintTop_toBottomOf="@+id/cdiv1"
+
+        android:fontFamily="@font/custom_font_1"
+        />
 
     <Button
         android:id="@+id/cdiv4"
@@ -341,6 +366,9 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/cdiv3"
-        app:layout_constraintTop_toBottomOf="@+id/cdiv2" />
+        app:layout_constraintTop_toBottomOf="@+id/cdiv2"
+
+        android:fontFamily="@font/custom_font_1"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

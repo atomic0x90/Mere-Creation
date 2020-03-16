@@ -958,6 +958,79 @@ public class MainActivity extends AppCompatActivity {
             sqliteDB.execSQL(sqlCreateTbl);
 
 
+
+            //MaxMin 1_10 table
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS MaxMin1_10 (" +
+                    "IDX " + "INTEGER PRIMARY KEY," +
+                    "result " + "INTEGER NOT NULL," +
+                    "AVtime " + "REAL NOT NULL," +
+                    "date_time " + "TIMESTAMP NOT NULL default (datetime('now','localtime')));";
+
+            sqliteDB.execSQL(sqlCreateTbl);
+
+
+            //MaxMin 10_20 lock check table
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS MaxMinLock10_20 (" +
+                    "lock "           + "INTEGER NOT NULL," +
+                    "date_time "         + "TIMESTAMP NOT NULL default (datetime('now','localtime')" + "));" ;
+
+            sqliteDB.execSQL(sqlCreateTbl) ;
+
+            sqlQuery = "SELECT * FROM MaxMinLock10_20";
+            cursor = null;
+            cursor = sqliteDB.rawQuery(sqlQuery,null);
+
+            try{
+                //lock 값이 없는 경우
+                if(!cursor.moveToNext()){
+                    String sqlInsert = "INSERT INTO MaxMinLock10_20 " + "(lock)" + "VALUES (" + 0 +");";
+                    sqliteDB.execSQL(sqlInsert);
+                }
+            }
+            catch (Exception e){
+                System.out.println("MaxMinLock10_20 table : "+e);
+            }
+
+            //MaxMin 10_20 table
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS MAxMin10_20 (" +
+                    "IDX " + "INTEGER PRIMARY KEY," +
+                    "result " + "INTEGER NOT NULL," +
+                    "AVtime " + "REAL NOT NULL," +
+                    "date_time " + "TIMESTAMP NOT NULL default (datetime('now','localtime')));";
+
+            sqliteDB.execSQL(sqlCreateTbl);
+
+
+            //MaxMin 20_30 lock check table
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS MaxMinLock20_30 (" +
+                    "lock "           + "INTEGER NOT NULL," +
+                    "date_time "         + "TIMESTAMP NOT NULL default (datetime('now','localtime')" + "));" ;
+
+            sqliteDB.execSQL(sqlCreateTbl) ;
+
+            sqlQuery = "SELECT * FROM MaxMinLock20_30";
+            cursor = null;
+            cursor = sqliteDB.rawQuery(sqlQuery,null);
+
+            try{
+                //lock 값이 없는 경우
+                if(!cursor.moveToNext()){
+                    String sqlInsert = "INSERT INTO MaxMinLock20_30 " + "(lock)" + "VALUES (" + 0 +");";
+                    sqliteDB.execSQL(sqlInsert);
+                }
+            }
+            catch (Exception e){
+                System.out.println("MaxMinLock20_30 table : "+e);
+            }
+
+            //MaxMin 20_30 table
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS MAxMin20_30 (" +
+                    "IDX " + "INTEGER PRIMARY KEY," +
+                    "result " + "INTEGER NOT NULL," +
+                    "AVtime " + "REAL NOT NULL," +
+                    "date_time " + "TIMESTAMP NOT NULL default (datetime('now','localtime')));";
+
+            sqliteDB.execSQL(sqlCreateTbl);
         }
     }
 

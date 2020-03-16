@@ -18,17 +18,18 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
+
         android:layout_marginBottom="15dp"
-
         android:background="@drawable/button_back"
-        android:soundEffectsEnabled="false"
 
+        android:soundEffectsEnabled="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/text"
         app:layout_constraintBottom_toTopOf="@+id/cmul4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/cmul1"
-        app:layout_constraintTop_toBottomOf="@+id/multiProblemText2" />
+        app:layout_constraintTop_toBottomOf="@+id/multiMulText"
+        android:fontFamily="@font/custom_font_1"/>
 
     <TextView
         android:id="@+id/multiText"
@@ -44,7 +45,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
 
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+
+        android:fontFamily="@font/custom_font_1"
+        />
 
     <TextView
         android:id="@+id/multiAverageTime"
@@ -58,6 +62,7 @@
         app:layout_constraintTop_toTopOf="parent"
 
         android:textColor="@color/text"
+        android:fontFamily="@font/custom_font_1"
         />
 
     <ImageView
@@ -227,7 +232,9 @@
         android:textColor="@color/text"
         app:layout_constraintEnd_toStartOf="@+id/multiMulText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/multiText" />
+        app:layout_constraintTop_toBottomOf="@+id/multiText"
+        android:fontFamily="@font/custom_font_1"
+        />
 
     <TextView
         android:id="@+id/multiMulText"
@@ -244,7 +251,9 @@
         android:textColor="@color/text"
         app:layout_constraintEnd_toStartOf="@+id/multiProblemText2"
         app:layout_constraintStart_toEndOf="@+id/multiProblemText1"
-        app:layout_constraintTop_toBottomOf="@+id/multiText" />
+        app:layout_constraintTop_toBottomOf="@+id/multiText"
+
+        android:fontFamily="@font/custom_font_2"/>
 
     <TextView
         android:id="@+id/multiProblemText2"
@@ -261,7 +270,8 @@
         android:textColor="@color/text"
         app:layout_constraintEnd_toStartOf="@+id/multiendText"
         app:layout_constraintStart_toEndOf="@+id/multiMulText"
-        app:layout_constraintTop_toBottomOf="@+id/multiText" />
+        app:layout_constraintTop_toBottomOf="@+id/multiText"
+        android:fontFamily="@font/custom_font_1"/>
 
     <TextView
         android:id="@+id/multiendText"
@@ -278,7 +288,10 @@
         android:textColor="@color/text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/multiProblemText2"
-        app:layout_constraintTop_toBottomOf="@+id/multiText" />
+        app:layout_constraintTop_toBottomOf="@+id/multiText"
+
+        android:fontFamily="@font/custom_font_2"
+        />
 
     <Button
         android:id="@+id/cmul1"
@@ -299,7 +312,8 @@
         app:layout_constraintBottom_toTopOf="@+id/cmul3"
         app:layout_constraintEnd_toStartOf="@+id/cmul2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/multiMulText" />
+        app:layout_constraintTop_toBottomOf="@+id/multiMulText"
+        android:fontFamily="@font/custom_font_1"/>
 
     <Button
         android:id="@+id/cmul3"
@@ -320,7 +334,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/cmul4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cmul1" />
+        app:layout_constraintTop_toBottomOf="@+id/cmul1"
+        android:fontFamily="@font/custom_font_1"/>
 
     <Button
         android:id="@+id/cmul4"
@@ -341,6 +356,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/cmul3"
-        app:layout_constraintTop_toBottomOf="@+id/cmul2" />
+        app:layout_constraintTop_toBottomOf="@+id/cmul2"
+        android:fontFamily="@font/custom_font_1"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

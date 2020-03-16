@@ -28,7 +28,10 @@
         android:textColor="@color/text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/multitableButton"
-        app:layout_constraintTop_toBottomOf="@+id/evaluationButton" />
+        app:layout_constraintTop_toBottomOf="@+id/evaluationButton"
+
+        android:fontFamily="@font/custom_font_1"
+        />
 
     <Button
         android:id="@+id/developerButton"
@@ -41,12 +44,14 @@
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
         android:background="@drawable/button_back"
+        android:fontFamily="@font/custom_font_1"
         android:soundEffectsEnabled="false"
-        android:text="개발자\n정보"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:text="개발자 정보"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/infisubButton"
+
         app:layout_constraintTop_toBottomOf="@+id/statsButton" />
 
     <Button
@@ -66,21 +71,24 @@
         android:textColor="@color/text"
         app:layout_constraintEnd_toStartOf="@+id/statsButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divideButton" />
+        app:layout_constraintTop_toBottomOf="@+id/divideButton"
+
+        android:fontFamily="@font/custom_font_1"
+        />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:fontFamily="@font/custom_font_1"
         android:text="    수학 게임\n두뇌 트레이닝"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-
         android:textColor="@color/text"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/addButton"
@@ -99,7 +107,10 @@
         android:textColor="@color/text"
         app:layout_constraintEnd_toStartOf="@+id/subButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+
+        android:fontFamily="@font/custom_font_1"
+        />
 
     <Button
         android:id="@+id/subButton"
@@ -118,7 +129,9 @@
         android:textColor="@color/text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/addButton"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+
+        android:fontFamily="@font/custom_font_1"/>
 
     <Button
         android:id="@+id/multiButton"
@@ -137,7 +150,8 @@
         android:textColor="@color/text"
         app:layout_constraintEnd_toStartOf="@+id/divideButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addButton" />
+        app:layout_constraintTop_toBottomOf="@+id/addButton"
+        android:fontFamily="@font/custom_font_1"/>
 
     <Button
         android:id="@+id/divideButton"
@@ -156,7 +170,10 @@
         android:textColor="@color/text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/multiButton"
-        app:layout_constraintTop_toBottomOf="@+id/subButton" />
+        app:layout_constraintTop_toBottomOf="@+id/subButton"
+
+        android:fontFamily="@font/custom_font_1"
+        />
 
     <Button
         android:id="@+id/maxminButton"
@@ -176,7 +193,10 @@
         android:textColor="@color/text"
         app:layout_constraintEnd_toStartOf="@+id/evaluationButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/infisubButton" />
+        app:layout_constraintTop_toBottomOf="@+id/infisubButton"
+
+        android:fontFamily="@font/custom_font_1"
+        />
 
     <Button
         android:id="@+id/infisubButton"
@@ -196,7 +216,10 @@
         android:textColor="@color/text"
         app:layout_constraintEnd_toStartOf="@+id/developerButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/infiaddButton" />
+        app:layout_constraintTop_toBottomOf="@+id/infiaddButton"
+
+        android:fontFamily="@font/custom_font_1"
+        />
 
     <Button
         android:id="@+id/multitableButton"
@@ -216,7 +239,10 @@
         android:textColor="@color/text"
         app:layout_constraintEnd_toStartOf="@+id/exitButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/maxminButton" />
+        app:layout_constraintTop_toBottomOf="@+id/maxminButton"
+
+        android:fontFamily="@font/custom_font_1"
+        />
 
     <Button
         android:id="@+id/statsButton"
@@ -230,12 +256,14 @@
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
         android:background="@drawable/button_back"
+        android:fontFamily="@font/custom_font_1"
         android:soundEffectsEnabled="false"
-        android:text="사용자\n통계"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:text="사용자 통계"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/infiaddButton"
+
         app:layout_constraintTop_toBottomOf="@+id/divideButton" />
 
     <Button
@@ -254,6 +282,8 @@
         app:layout_constraintTop_toTopOf="parent"
 
         android:soundEffectsEnabled="false"
+
+        android:fontFamily="@font/custom_font_1"
         />
 
     <Button
@@ -274,7 +304,10 @@
         android:textColor="@color/text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/maxminButton"
-        app:layout_constraintTop_toBottomOf="@+id/developerButton" />
+        app:layout_constraintTop_toBottomOf="@+id/developerButton"
+
+        android:fontFamily="@font/custom_font_1"
+        />
 
     <Button
         android:id="@+id/coinNowButton"
@@ -287,7 +320,9 @@
         android:textColor="@color/text"
         app:layout_constraintEnd_toStartOf="@+id/coinPlusButton"
         app:layout_constraintStart_toEndOf="@+id/coinImgButton"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="@font/custom_font_1"
+        />
 
     <ImageButton
         android:id="@+id/coinImgButton"

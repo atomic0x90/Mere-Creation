@@ -29,7 +29,10 @@
         app:layout_constraintBottom_toTopOf="@+id/cadd3"
         app:layout_constraintEnd_toStartOf="@+id/cadd2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AddPlusText" />
+        app:layout_constraintTop_toBottomOf="@+id/AddPlusText"
+
+        android:fontFamily="@font/custom_font_1"
+        />
 
     <Button
         android:id="@+id/cadd4"
@@ -50,7 +53,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/cadd3"
-        app:layout_constraintTop_toBottomOf="@+id/cadd2" />
+        app:layout_constraintTop_toBottomOf="@+id/cadd2"
+
+        android:fontFamily="@font/custom_font_1"
+        />
 
     <Button
         android:id="@+id/cadd3"
@@ -71,7 +77,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/cadd4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cadd1" />
+        app:layout_constraintTop_toBottomOf="@+id/cadd1"
+
+        android:fontFamily="@font/custom_font_1"
+        />
 
     <Button
         android:id="@+id/cadd2"
@@ -79,20 +88,23 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="50dp"
 
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="15dp"
         android:background="@drawable/button_back"
-        android:soundEffectsEnabled="false"
 
+        android:soundEffectsEnabled="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/text"
         app:layout_constraintBottom_toTopOf="@+id/cadd4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/cadd1"
-        app:layout_constraintTop_toBottomOf="@+id/addproblemText2" />
+        app:layout_constraintTop_toBottomOf="@+id/AddPlusText"
+
+        android:fontFamily="@font/custom_font_1"
+        />
 
     <TextView
         android:id="@+id/timeText1"
@@ -108,7 +120,10 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+
+        android:fontFamily="@font/custom_font_1"
+        />
 
     <TextView
         android:id="@+id/addproblemText1"
@@ -125,7 +140,10 @@
         android:textColor="@color/text"
         app:layout_constraintEnd_toStartOf="@+id/AddPlusText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/timeText1" />
+        app:layout_constraintTop_toBottomOf="@+id/timeText1"
+
+        android:fontFamily="@font/custom_font_1"
+        />
 
     <TextView
         android:id="@+id/AddPlusText"
@@ -142,7 +160,10 @@
         android:textColor="@color/text"
         app:layout_constraintEnd_toStartOf="@+id/addproblemText2"
         app:layout_constraintStart_toEndOf="@+id/addproblemText1"
-        app:layout_constraintTop_toBottomOf="@+id/timeText1" />
+        app:layout_constraintTop_toBottomOf="@+id/timeText1"
+
+        android:fontFamily="@font/custom_font_2"
+        />
 
     <TextView
         android:id="@+id/addproblemText2"
@@ -159,7 +180,10 @@
         android:textColor="@color/text"
         app:layout_constraintEnd_toStartOf="@+id/addendText"
         app:layout_constraintStart_toEndOf="@+id/AddPlusText"
-        app:layout_constraintTop_toBottomOf="@+id/timeText1" />
+        app:layout_constraintTop_toBottomOf="@+id/timeText1"
+
+        android:fontFamily="@font/custom_font_1"
+        />
 
     <TextView
         android:id="@+id/addendText"
@@ -176,7 +200,10 @@
         android:textColor="@color/text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/addproblemText2"
-        app:layout_constraintTop_toBottomOf="@+id/timeText1" />
+        app:layout_constraintTop_toBottomOf="@+id/timeText1"
+
+        android:fontFamily="@font/custom_font_2"
+        />
 
     <ImageView
         android:id="@+id/state0"
@@ -329,7 +356,10 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+
+        android:fontFamily="@font/custom_font_1"
+        />
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"

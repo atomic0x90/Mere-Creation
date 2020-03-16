@@ -22,7 +22,8 @@
         app:layout_constraintEnd_toStartOf="@+id/InfinityMinusRandom6_17"
 
         app:layout_constraintStart_toEndOf="@+id/InfinityMinusRandom6_9"
-        app:layout_constraintTop_toBottomOf="@+id/InfinityMinus16coinText" />
+        app:layout_constraintTop_toBottomOf="@+id/InfinityMinus16coinText"
+        android:fontFamily="@font/custom_font_1"/>
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView7"
@@ -62,7 +63,8 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
 
         app:layout_constraintStart_toEndOf="@+id/coinInfinityMinusButton"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="@font/custom_font_1"/>
 
     <ImageButton
         android:id="@+id/coinPlusInfinityMinusButton"
@@ -89,6 +91,7 @@
         app:layout_constraintTop_toTopOf="parent"
 
         android:textColor="@color/text"
+        android:fontFamily="@font/custom_font_1"
         />
 
     <Button
@@ -109,6 +112,7 @@
 
         android:background="@drawable/button_back"
         android:textColor="@color/text"
+        android:fontFamily="@font/custom_font_1"
         />
 
     <TextView
@@ -144,6 +148,7 @@
 
         android:background="@drawable/button_back"
         android:textColor="@color/text"
+        android:fontFamily="@font/custom_font_1"
         />
 
     <Button
@@ -164,6 +169,7 @@
 
         android:background="@drawable/button_back"
         android:textColor="@color/text"
+        android:fontFamily="@font/custom_font_1"
         />
 
     <TextView
@@ -182,7 +188,8 @@
 
         app:layout_constraintEnd_toStartOf="@+id/InfinityMinus8coinText"
         app:layout_constraintStart_toEndOf="@+id/InfinityMinus6coinText"
-        app:layout_constraintTop_toBottomOf="@+id/InfinityMinus7" />
+        app:layout_constraintTop_toBottomOf="@+id/InfinityMinus7"
+        />
 
     <TextView
         android:id="@+id/InfinityMinus8coinText"
@@ -219,6 +226,7 @@
 
         android:background="@drawable/button_back"
         android:textColor="@color/text"
+        android:fontFamily="@font/custom_font_1"
         />
 
     <Button
@@ -238,6 +246,7 @@
 
         android:background="@drawable/button_back"
         android:textColor="@color/text"
+        android:fontFamily="@font/custom_font_1"
         />
 
     <Button
@@ -257,6 +266,7 @@
 
         android:background="@drawable/button_back"
         android:textColor="@color/text"
+        android:fontFamily="@font/custom_font_1"
         />
 
     <TextView
@@ -327,6 +337,7 @@
 
         android:background="@drawable/button_back"
         android:textColor="@color/text"
+        android:fontFamily="@font/custom_font_1"
         />
 
     <Button
@@ -346,6 +357,7 @@
 
         android:textColor="@color/text"
         android:background="@drawable/button_back"
+        android:fontFamily="@font/custom_font_1"
         />
 
     <TextView

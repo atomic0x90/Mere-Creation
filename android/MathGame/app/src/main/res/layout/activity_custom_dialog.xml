@@ -14,8 +14,8 @@
         android:id="@+id/AddRewardButton"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="160dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="140dp"
         android:background="@drawable/button_back"
 
         android:soundEffectsEnabled="false"
@@ -27,22 +27,25 @@
 
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RewardButton" />
+        app:layout_constraintTop_toBottomOf="@+id/RewardButton"
+        android:fontFamily="@font/custom_font_3"/>
 
     <TextView
         android:id="@+id/DialogsubTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
         android:text="보상"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/text"
+        app:layout_constraintBottom_toTopOf="@+id/CoinText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/AVtime"
-
-        />
+        android:fontFamily="@font/custom_font_1"/>
 
     <TextView
         android:id="@+id/CoinText"
@@ -56,14 +59,15 @@
         app:layout_constraintBottom_toTopOf="@+id/RewardButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/DialogsubTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/DialogsubTitle"
+        android:fontFamily="@font/custom_font_1"/>
 
     <Button
         android:id="@+id/RewardButton"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/button_back"
         android:soundEffectsEnabled="false"
         android:text="보상 받기"
@@ -74,7 +78,8 @@
 
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CoinText" />
+        app:layout_constraintTop_toBottomOf="@+id/CoinText"
+        android:fontFamily="@font/custom_font_1"/>
 
     <ImageView
         android:id="@+id/CoinImg"
@@ -83,6 +88,8 @@
         android:layout_marginTop="25dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/RewardButton"
         app:layout_constraintEnd_toStartOf="@+id/CoinText"
         app:layout_constraintTop_toBottomOf="@+id/DialogsubTitle"
         app:srcCompat="@drawable/coin" />
@@ -97,7 +104,11 @@
         android:textColor="@color/text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+
+        android:gravity="center"
+        android:fontFamily="@font/custom_font_1"
+        />
 
     <TextView
         android:id="@+id/resultNum"
@@ -113,7 +124,9 @@
         app:layout_constraintBottom_toTopOf="@+id/AVtime"
         app:layout_constraintEnd_toStartOf="@+id/answerText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/DialogTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/DialogTitle"
+
+        android:fontFamily="@font/custom_font_1"/>
 
     <TextView
         android:id="@+id/answerText"
@@ -129,7 +142,8 @@
         app:layout_constraintBottom_toTopOf="@+id/AVtimeText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/resultNum"
-        app:layout_constraintTop_toBottomOf="@+id/DialogTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/DialogTitle"
+        android:fontFamily="@font/custom_font_1"/>
 
     <TextView
         android:id="@+id/AVtime"
@@ -146,7 +160,8 @@
         app:layout_constraintBottom_toTopOf="@+id/DialogsubTitle"
         app:layout_constraintEnd_toStartOf="@+id/AVtimeText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resultNum" />
+        app:layout_constraintTop_toBottomOf="@+id/resultNum"
+        android:fontFamily="@font/custom_font_1"/>
 
     <TextView
         android:id="@+id/AVtimeText"
@@ -155,14 +170,15 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="40dp"
         android:text="TextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/text"
         app:layout_constraintBottom_toTopOf="@+id/DialogsubTitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/AVtime"
-        app:layout_constraintTop_toBottomOf="@+id/answerText" />
+        app:layout_constraintTop_toBottomOf="@+id/answerText"
+        android:fontFamily="@font/custom_font_1"/>
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView11"

@@ -19,6 +19,7 @@
         app:layout_constraintTop_toTopOf="parent"
 
         android:textColor="@color/text"
+        android:fontFamily="@font/custom_font_1"
         />
 
     <TextView
@@ -33,6 +34,7 @@
         app:layout_constraintTop_toTopOf="parent"
 
         android:textColor="@color/text"
+        android:fontFamily="@font/custom_font_1"
         />
 
     <TextView
@@ -50,6 +52,7 @@
         app:layout_constraintTop_toTopOf="parent"
 
         android:textColor="@color/text"
+        android:fontFamily="@font/custom_font_1"
         />
 
     <TextView
@@ -68,6 +71,7 @@
         app:layout_constraintTop_toBottomOf="@+id/infiMTime"
 
         android:textColor="@color/text"
+        android:fontFamily="@font/custom_font_1"
         />
 
     <TextView
@@ -86,6 +90,7 @@
         app:layout_constraintTop_toBottomOf="@+id/infiMTime"
 
         android:textColor="@color/text"
+        android:fontFamily="@font/custom_font_2"
         />
 
     <TextView
@@ -104,6 +109,7 @@
         app:layout_constraintTop_toBottomOf="@+id/infiMTime"
 
         android:textColor="@color/text"
+        android:fontFamily="@font/custom_font_1"
         />
 
     <TextView
@@ -122,6 +128,7 @@
         app:layout_constraintTop_toBottomOf="@+id/infiMTime"
 
         android:textColor="@color/text"
+        android:fontFamily="@font/custom_font_2"
         />
 
     <com.google.android.gms.ads.AdView
@@ -154,6 +161,7 @@
 
         android:background="@drawable/button_back"
         android:textColor="@color/text"
+        android:fontFamily="@font/custom_font_1"
         />
 
     <Button
@@ -167,13 +175,14 @@
         android:layout_marginRight="15dp"
         android:layout_marginBottom="15dp"
         android:background="@drawable/button_back"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
 
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/text"
         app:layout_constraintBottom_toTopOf="@+id/InfiMinus_4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/InfiMinus_1"
-        app:layout_constraintTop_toBottomOf="@+id/infiMProblemText2" />
+        app:layout_constraintTop_toBottomOf="@+id/infiMMinusText"
+        android:fontFamily="@font/custom_font_1"/>
 
     <Button
         android:id="@+id/InfiMinus_3"
@@ -193,6 +202,7 @@
 
         android:background="@drawable/button_back"
         android:textColor="@color/text"
+        android:fontFamily="@font/custom_font_1"
         />
 
     <Button
@@ -213,5 +223,6 @@
 
         android:background="@drawable/button_back"
         android:textColor="@color/text"
+        android:fontFamily="@font/custom_font_1"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>
