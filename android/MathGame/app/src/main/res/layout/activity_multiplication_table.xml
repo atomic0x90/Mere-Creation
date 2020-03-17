@@ -50,6 +50,12 @@
                 android:textColor="@color/text"
                 android:fontFamily="@font/custom_font_2"/>
 
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
             <TextView
                 android:id="@+id/mulTable2"
                 android:layout_width="match_parent"
@@ -72,6 +78,18 @@
                 android:textColor="@color/text"
                 android:fontFamily="@font/custom_font_2"/>
 
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <View
+                android:id="@+id/divider4"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
             <TextView
                 android:id="@+id/mulTable3"
                 android:layout_width="match_parent"
@@ -93,6 +111,12 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textColor="@color/text"
                 android:fontFamily="@font/custom_font_2"/>
+
+            <View
+                android:id="@+id/divider5"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
 
             <TextView
                 android:id="@+id/mulTable4"
@@ -118,6 +142,12 @@
                 android:textColor="@color/text"
                 android:fontFamily="@font/custom_font_2"/>
 
+            <View
+                android:id="@+id/divider6"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
             <TextView
                 android:id="@+id/mulTable5"
                 android:layout_width="match_parent"
@@ -141,6 +171,12 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textColor="@color/text"
                 android:fontFamily="@font/custom_font_2"/>
+
+            <View
+                android:id="@+id/divider7"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
 
             <TextView
                 android:id="@+id/mulTable6"
@@ -166,6 +202,12 @@
                 android:textColor="@color/text"
                 android:fontFamily="@font/custom_font_2"/>
 
+            <View
+                android:id="@+id/divider8"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
             <TextView
                 android:id="@+id/mulTable7"
                 android:layout_width="match_parent"
@@ -190,6 +232,12 @@
                 android:textColor="@color/text"
                 android:fontFamily="@font/custom_font_2"/>
 
+            <View
+                android:id="@+id/divider9"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
             <TextView
                 android:id="@+id/mulTable8"
                 android:layout_width="match_parent"
@@ -213,6 +261,12 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textColor="@color/text"
                 android:fontFamily="@font/custom_font_2"/>
+
+            <View
+                android:id="@+id/divider10"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
 
             <TextView
                 android:id="@+id/mulTable9"

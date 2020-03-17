@@ -84,7 +84,7 @@ public class MaxMinGameMenu extends AppCompatActivity {
         final int[] stateArr = {0,0,0,0,0};
 
         //1_10
-        Button button1_10 = (Button)findViewById(R.id.MaxMin1_10);
+        Button button1_10 = (Button)findViewById(R.id.MaxMin1_10ListView);
         button1_10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
