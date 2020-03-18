@@ -36,7 +36,7 @@
                 android:text="1단"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
 
-                android:textColor="@color/text"
+                android:textColor="@color/bluewhitedrak"
                 android:fontFamily="@font/custom_font_2"/>
 
             <TextView
@@ -64,7 +64,7 @@
                 android:text="2단"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
 
-                android:textColor="@color/text"
+                android:textColor="@color/bluewhite"
                 android:fontFamily="@font/custom_font_2"/>
 
             <TextView
@@ -97,7 +97,7 @@
                 android:text="3단"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
 
-                android:textColor="@color/text"
+                android:textColor="@color/pinkred"
                 android:gravity="center"
                 android:fontFamily="@font/custom_font_2"
                 />
@@ -125,7 +125,7 @@
                 android:text="4단"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
 
-                android:textColor="@color/text"
+                android:textColor="@color/orange"
                 android:gravity="center"
                 android:fontFamily="@font/custom_font_2"
                 />
@@ -155,7 +155,7 @@
                 android:text="5단"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
 
-                android:textColor="@color/text"
+                android:textColor="@color/bluewhitedrak"
                 android:gravity="center"
                 android:fontFamily="@font/custom_font_2"
                 />
@@ -185,7 +185,7 @@
                 android:text="6단"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
 
-                android:textColor="@color/text"
+                android:textColor="@color/bluewhite"
                 android:gravity="center"
                 android:fontFamily="@font/custom_font_2"
                 />
@@ -215,7 +215,7 @@
                 android:text="7단"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
 
-                android:textColor="@color/text"
+                android:textColor="@color/pinkred"
                 android:gravity="center"
                 android:fontFamily="@font/custom_font_2"
                 />
@@ -245,7 +245,7 @@
                 android:text="8단"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
 
-                android:textColor="@color/text"
+                android:textColor="@color/orange"
                 android:gravity="center"
                 android:fontFamily="@font/custom_font_2"
                 />
@@ -275,7 +275,7 @@
                 android:text="9단"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
 
-                android:textColor="@color/text"
+                android:textColor="@color/bluewhitedrak"
                 android:gravity="center"
                 android:fontFamily="@font/custom_font_2"
                 />

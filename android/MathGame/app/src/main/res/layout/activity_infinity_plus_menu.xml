@@ -97,7 +97,7 @@
         android:text="1분 무한 더하기"
 
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/text"
+        android:textColor="@color/pinkred"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/coinPlusInfinityPlusButton"
         app:layout_constraintTop_toTopOf="parent"
@@ -116,7 +116,7 @@
         android:layout_marginBottom="30dp"
         android:text="   3000 Coin"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/text"
+        android:textColor="@color/orange"
         app:layout_constraintBottom_toTopOf="@+id/InfinityPlus16"
         app:layout_constraintEnd_toStartOf="@+id/InfinityPlus8coinText"
         app:layout_constraintStart_toEndOf="@+id/InfinityPlus6coinText"
@@ -152,7 +152,7 @@
         android:layout_marginBottom="30dp"
         android:text="   3000 Coin"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/text"
+        android:textColor="@color/orange"
         app:layout_constraintBottom_toTopOf="@+id/InfinityPlus17"
 
         app:layout_constraintEnd_toEndOf="parent"
@@ -305,7 +305,7 @@
         android:layout_marginBottom="30dp"
         android:text="   4000 Coin"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/text"
+        android:textColor="@color/orange"
         app:layout_constraintBottom_toTopOf="@+id/InfinityPlusRandom6_9"
 
         app:layout_constraintEnd_toStartOf="@+id/InfinityPlus16coinText"
@@ -323,7 +323,7 @@
         android:layout_marginBottom="30dp"
         android:text="   4000 Coin"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/text"
+        android:textColor="@color/orange"
         app:layout_constraintBottom_toTopOf="@+id/InfinityPlusRandom13_17"
 
         app:layout_constraintEnd_toStartOf="@+id/InfinityPlus17coinText"
@@ -341,7 +341,7 @@
         android:layout_marginBottom="30dp"
         android:text="   4000 Coin"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/text"
+        android:textColor="@color/orange"
         app:layout_constraintBottom_toTopOf="@+id/InfinityPlusRandom6_17"
 
         app:layout_constraintEnd_toEndOf="parent"
@@ -402,7 +402,7 @@
         android:layout_marginRight="15dp"
         android:text="   5500 Coin"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/text"
+        android:textColor="@color/orange"
         app:layout_constraintEnd_toStartOf="@+id/InfinityPlus13_17coinText"
 
         app:layout_constraintStart_toStartOf="parent"
@@ -418,7 +418,7 @@
         android:layout_marginRight="15dp"
         android:text="   5500 Coin"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/text"
+        android:textColor="@color/orange"
         app:layout_constraintEnd_toStartOf="@+id/InfinityPlus6_17coinText"
 
         app:layout_constraintStart_toEndOf="@+id/InfinityPlus6_9coinText"
@@ -434,7 +434,7 @@
         android:layout_marginRight="25dp"
         android:text="   5500 Coin"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/text"
+        android:textColor="@color/orange"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/InfinityPlus13_17coinText"

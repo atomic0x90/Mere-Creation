@@ -21,7 +21,7 @@
         android:soundEffectsEnabled="false"
         android:text="광고 보고 보상 X2 받기"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@color/text"
+        android:textColor="@color/bluewhitedrak"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
 
@@ -38,7 +38,7 @@
         android:layout_marginBottom="30dp"
         android:text="보상"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@color/text"
+        android:textColor="@color/bluewhitedrak"
         app:layout_constraintBottom_toTopOf="@+id/CoinText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -72,7 +72,7 @@
         android:soundEffectsEnabled="false"
         android:text="보상 받기"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@color/text"
+        android:textColor="@color/bluewhite"
         app:layout_constraintBottom_toTopOf="@+id/AddRewardButton"
         app:layout_constraintEnd_toEndOf="parent"
 

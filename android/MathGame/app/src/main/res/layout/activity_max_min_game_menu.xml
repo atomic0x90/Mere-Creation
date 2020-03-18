@@ -72,7 +72,7 @@
         app:layout_constraintStart_toEndOf="@+id/coinPlusMaxMinButton"
         app:layout_constraintTop_toTopOf="parent"
 
-        android:textColor="@color/text"
+        android:textColor="@color/bluewhitedrak"
         android:fontFamily="@font/custom_font_1"
         />
 
@@ -166,7 +166,7 @@
         app:layout_constraintStart_toEndOf="@+id/MaxMin1_10coinText"
         app:layout_constraintTop_toBottomOf="@+id/MaxMin10_20"
 
-        android:textColor="@color/text"/>
+        android:textColor="@color/orange"/>
 
     <TextView
         android:id="@+id/MaxMin20_30coinText"
@@ -182,6 +182,6 @@
         app:layout_constraintStart_toEndOf="@+id/MaxMin10_20coinText"
         app:layout_constraintTop_toBottomOf="@+id/MaxMin20_30"
 
-        android:textColor="@color/text"
+        android:textColor="@color/orange"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

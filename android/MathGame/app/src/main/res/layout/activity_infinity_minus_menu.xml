@@ -90,7 +90,7 @@
         app:layout_constraintStart_toEndOf="@+id/coinPlusInfinityMinusButton"
         app:layout_constraintTop_toTopOf="parent"
 
-        android:textColor="@color/text"
+        android:textColor="@color/bluewhite"
         android:fontFamily="@font/custom_font_1"
         />
 
@@ -183,7 +183,7 @@
         android:layout_marginBottom="30dp"
         android:text="   3000 Coin"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/text"
+        android:textColor="@color/orange"
         app:layout_constraintBottom_toTopOf="@+id/InfinityMinus16"
 
         app:layout_constraintEnd_toStartOf="@+id/InfinityMinus8coinText"
@@ -202,7 +202,7 @@
         android:layout_marginBottom="30dp"
         android:text="   3000 Coin"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/text"
+        android:textColor="@color/orange"
         app:layout_constraintBottom_toTopOf="@+id/InfinityMinus17"
 
         app:layout_constraintEnd_toEndOf="parent"
@@ -283,7 +283,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/InfinityMinus13"
 
-        android:textColor="@color/text"
+        android:textColor="@color/orange"
         />
 
     <TextView
@@ -300,7 +300,7 @@
         app:layout_constraintStart_toEndOf="@+id/InfinityMinus13coinText"
         app:layout_constraintTop_toBottomOf="@+id/InfinityMinus16"
 
-        android:textColor="@color/text"
+        android:textColor="@color/orange"
         />
 
     <TextView
@@ -317,7 +317,7 @@
         app:layout_constraintStart_toEndOf="@+id/InfinityMinus16coinText"
         app:layout_constraintTop_toBottomOf="@+id/InfinityMinus17"
 
-        android:textColor="@color/text"
+        android:textColor="@color/orange"
         />
 
     <Button
@@ -374,7 +374,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/InfinityMinusRandom6_9"
 
-        android:textColor="@color/text"
+        android:textColor="@color/orange"
         />
 
     <TextView
@@ -391,7 +391,7 @@
         app:layout_constraintStart_toEndOf="@+id/InfinityMinus6_9coinText"
         app:layout_constraintTop_toBottomOf="@+id/InfinityMinusRandom13_17"
 
-        android:textColor="@color/text"
+        android:textColor="@color/orange"
         />
 
     <TextView
@@ -408,7 +408,7 @@
         app:layout_constraintStart_toEndOf="@+id/InfinityMinus13_17coinText"
         app:layout_constraintTop_toBottomOf="@+id/InfinityMinusRandom6_17"
 
-        android:textColor="@color/text"
+        android:textColor="@color/orange"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

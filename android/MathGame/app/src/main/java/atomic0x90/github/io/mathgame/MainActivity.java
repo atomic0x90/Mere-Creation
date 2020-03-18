@@ -389,29 +389,7 @@ public class MainActivity extends AppCompatActivity {
 
             sqliteDB.execSQL(sqlCreateTbl);
 
-            /*
-            //Infinity Plus 6 lock check table
-            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS InfiP6 (" +
-                    "lock "           + "INTEGER NOT NULL," +
-                    "date_time "         + "TIMESTAMP NOT NULL default (datetime('now','localtime')" + "));" ;
 
-            sqliteDB.execSQL(sqlCreateTbl) ;
-
-            sqlQuery = "SELECT * FROM InfiP6";
-            cursor = null;
-            cursor = sqliteDB.rawQuery(sqlQuery,null);
-
-            try{
-                //lock 값이 없는 경우
-                if(!cursor.moveToNext()){
-                    String sqlInsert = "INSERT INTO InfiP6 " + "(lock)" + "VALUES (" + 0 +");";
-                    sqliteDB.execSQL(sqlInsert);
-                }
-            }
-            catch (Exception e){
-                System.out.println("InfiP6 table : "+e);
-            }
-*/
 
             //Infinity Plus 6 table
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS InfiChP6 (" +
