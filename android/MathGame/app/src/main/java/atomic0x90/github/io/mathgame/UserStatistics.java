@@ -434,7 +434,7 @@ public class UserStatistics extends AppCompatActivity {
             infiChallengeM6_9Text.setText("전체 평균 정답 개수 : 정보 없음\n최근 10회 평균 정답 개수: 정보 없음");
         }
         else if(infiM6_9 >= 1 && infiM6_9 <= 10){
-            infiChallengeM13Text.setText(String.format(Locale.getDefault(),"전체 평균 정답 개수 : %.1f 개\n" +
+            infiChallengeM6_9Text.setText(String.format(Locale.getDefault(),"전체 평균 정답 개수 : %.1f 개\n" +
                     "최근 10회 평균 정답 개수 : 정보 부족",infiMR6_9/infiM6_9));
         }
         else{
