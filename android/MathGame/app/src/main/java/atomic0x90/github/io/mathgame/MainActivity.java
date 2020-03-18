@@ -992,7 +992,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             //MaxMin 10_20 table
-            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS MAxMin10_20 (" +
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS MaxMin10_20 (" +
                     "IDX " + "INTEGER PRIMARY KEY," +
                     "result " + "INTEGER NOT NULL," +
                     "AVtime " + "REAL NOT NULL," +
@@ -1024,7 +1024,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             //MaxMin 20_30 table
-            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS MAxMin20_30 (" +
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS MaxMin20_30 (" +
                     "IDX " + "INTEGER PRIMARY KEY," +
                     "result " + "INTEGER NOT NULL," +
                     "AVtime " + "REAL NOT NULL," +

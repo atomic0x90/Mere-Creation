@@ -11,517 +11,680 @@
 
     >
 
+    <ScrollView
+        android:id="@+id/scrollView4"
+        android:layout_width="401dp"
+        android:layout_height="500dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/plusChallengeText1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/custom_font_1"
+                android:gravity="center"
+
+                android:text="더하기 도전"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/pinkred" />
+
+            <TextView
+                android:id="@+id/plusChallengeText2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+
+                android:textColor="@color/text"
+                android:fontFamily="@font/custom_font_1"
+                android:gravity="center"/>
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/minusChallengeText1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="빼기 도전"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/bluewhite"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <TextView
+                android:id="@+id/minusChallengeText2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/custom_font_1"
+                android:gravity="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/text" />
+
+            <View
+                android:id="@+id/divider11"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/mulChallengeText1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="곱하기 도전"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/orange"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <TextView
+                android:id="@+id/mulChallengeText2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/text"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <View
+                android:id="@+id/divider12"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/divideChallengeText1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="나누기 도전"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/bluewhitedrak"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <TextView
+                android:id="@+id/divideChallengeText2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/text"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <View
+                android:id="@+id/divider13"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/infiChallengeP6Text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1분 무한 +6"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/pinkred"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <TextView
+                android:id="@+id/infiChallengeP6Text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/text"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <View
+                android:id="@+id/divider14"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/infiChallengeP7Text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1분 무한 +7"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/pinkred"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <TextView
+                android:id="@+id/infiChallengeP7Text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/custom_font_1"
+                android:gravity="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/text" />
+
+            <View
+                android:id="@+id/divider15"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/infiChallengeP8Text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1분 무한 +8"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/pinkred"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <TextView
+                android:id="@+id/infiChallengeP8Text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/text"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <View
+                android:id="@+id/divider16"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/infiChallengeP13Text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1분 무한 +13"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/pinkred"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <TextView
+                android:id="@+id/infiChallengeP13Text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/text"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <View
+                android:id="@+id/divider17"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/infiChallengeP16Text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1분 무한 +16"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/pinkred"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <TextView
+                android:id="@+id/infiChallengeP16Text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/custom_font_1"
+                android:gravity="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/text" />
+
+            <View
+                android:id="@+id/divider18"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/infiChallengeP17Text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/custom_font_1"
+                android:gravity="center"
+                android:text="1분 무한 +17"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/pinkred" />
+
+            <TextView
+                android:id="@+id/infiChallengeP17Text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/text"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <View
+                android:id="@+id/divider19"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/infiChallengeP6_9Text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1분 무한 +6~9"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/pinkred"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <TextView
+                android:id="@+id/infiChallengeP6_9Text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/text"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <View
+                android:id="@+id/divider20"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/infiChallengeP13_17Text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1분 무한 +13~17"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/pinkred"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <TextView
+                android:id="@+id/infiChallengeP13_17Text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/text"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <View
+                android:id="@+id/divider21"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/infiChallengeP6_17Text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1분 무한 +6~17"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/pinkred"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <TextView
+                android:id="@+id/infiChallengeP6_17Text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/text"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <View
+                android:id="@+id/divider22"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/infiChallengeM6Text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1분 무한 -6"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/bluewhite"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <TextView
+                android:id="@+id/infiChallengeM6Text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/text"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <View
+                android:id="@+id/divider23"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/infiChallengeM7Text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1분 무한 -7"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/bluewhite"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <TextView
+                android:id="@+id/infiChallengeM7Text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/text"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <View
+                android:id="@+id/divider24"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/infiChallengeM8Text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1분 무한 -8"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/bluewhite"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <TextView
+                android:id="@+id/infiChallengeM8Text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/text"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <View
+                android:id="@+id/divider25"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/infiChallengeM13Text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1분 무한 -13"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/bluewhite"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <TextView
+                android:id="@+id/infiChallengeM13Text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/text"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <View
+                android:id="@+id/divider26"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/infiChallengeM16Text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1분 무한 -16"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/bluewhite"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <TextView
+                android:id="@+id/infiChallengeM16Text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/text"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <View
+                android:id="@+id/divider27"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/infiChallengeM17Text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1분 무한 -17"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/bluewhite"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <TextView
+                android:id="@+id/infiChallengeM17Text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/text"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <View
+                android:id="@+id/divider28"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/infiChallengeM6_9Text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/custom_font_1"
+                android:gravity="center"
+                android:text="1분 무한 -6~9"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/bluewhite" />
+
+            <TextView
+                android:id="@+id/infiChallengeM6_9Text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/text"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <View
+                android:id="@+id/divider29"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/infiChallengeM13_17Text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1분 무한 -13~17"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/bluewhite"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <TextView
+                android:id="@+id/infiChallengeM13_17Text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/text"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <View
+                android:id="@+id/divider30"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/infiChallengeM6_17Text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1분 무한 -6~17"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/bluewhite"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <TextView
+                android:id="@+id/infiChallengeM6_17Text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/text"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <View
+                android:id="@+id/divider31"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/MaxMin1_10Text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="최대 최소 1~10"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/bluewhitedrak"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <TextView
+                android:id="@+id/MaxMin1_10Text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/text"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <View
+                android:id="@+id/divider32"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/MaxMin10_20Text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="최대 최소 10~20"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/bluewhitedrak"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <TextView
+                android:id="@+id/MaxMin10_20Text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/text"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <View
+                android:id="@+id/divider33"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/MaxMin20_30Text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="최대 최소 20~30"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/bluewhitedrak"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <TextView
+                android:id="@+id/MaxMin20_30Text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/text"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_1"/>
+
+            <View
+                android:id="@+id/divider34"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/nullText1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+        </LinearLayout>
+    </ScrollView>
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/custom_font_1"
         android:text="통계"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/text"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:fontFamily="@font/custom_font_1"/>
-
-    <androidx.gridlayout.widget.GridLayout
-        android:id="@+id/gridLayout"
-        android:layout_width="401dp"
-        android:layout_height="721dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="1dp"
-        app:columnCount="5"
-        app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:orientation="horizontal">
-
-        <Button
-            android:id="@+id/InfiP6_17Answer"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="Button"
-            android:textColor="@color/text"
-
-            app:layout_column="4"
-            app:layout_row="8" />
-
-        <Button
-            android:id="@+id/InfiP13_17Answer"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="Button"
-            android:textColor="@color/text"
-
-            app:layout_column="3"
-            app:layout_row="8" />
-
-        <Button
-            android:id="@+id/InfiP17Answer"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="Button"
-            android:textColor="@color/text"
-
-            app:layout_column="1"
-            app:layout_row="8" />
-
-        <Button
-            android:id="@+id/InfiP13_17"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="13 ~ 17"
-            android:textColor="@color/text"
-
-            app:layout_column="3"
-            app:layout_row="7" />
-
-        <Button
-            android:id="@+id/InfiP17"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="17"
-            android:textColor="@color/text"
-
-            app:layout_column="1"
-            app:layout_row="7" />
-
-        <Button
-            android:id="@+id/InfiP8Answer"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="Button"
-            android:textColor="@color/text"
-
-            app:layout_column="3"
-            app:layout_row="6"
-
-
-            />
-
-        <Button
-            android:id="@+id/InfiP13"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="\13"
-            android:textColor="@color/text"
-
-            app:layout_column="4"
-            app:layout_row="5" />
-
-        <Button
-            android:id="@+id/InfiP7"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="\7"
-            android:textColor="@color/text"
-
-            app:layout_column="2"
-            app:layout_row="5" />
-
-        <Button
-            android:id="@+id/empty"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@color/background"
-            android:text="무한 +"
-            android:textColor="@color/text"
-            app:layout_column="0"
-            app:layout_row="5"
-
-
-            />
-
-        <Button
-            android:id="@+id/Div10Answer"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="Button"
-            android:textColor="@color/text"
-
-            app:layout_column="3"
-            app:layout_row="4" />
-
-        <Button
-            android:id="@+id/DivTime"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="Button"
-            android:textColor="@color/text"
-
-            app:layout_column="2"
-            app:layout_row="4" />
-
-        <Button
-            android:id="@+id/Mul10Answer"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="Button"
-            android:textColor="@color/text"
-
-            app:layout_column="3"
-            app:layout_row="3" />
-
-        <Button
-            android:id="@+id/MulTime"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="Button"
-            android:textColor="@color/text"
-
-            app:layout_column="2"
-            app:layout_row="3" />
-
-        <Button
-            android:id="@+id/Sub10Time"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="Button"
-            android:textColor="@color/text"
-
-            app:layout_column="4"
-            app:layout_row="2"
-
-            />
-
-        <Button
-            android:id="@+id/SubTime"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="Button"
-            android:textColor="@color/text"
-
-            app:layout_column="2"
-            app:layout_row="2" />
-
-        <Button
-            android:id="@+id/Plus10Answer"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="Button"
-            android:textColor="@color/text"
-            app:layout_column="3"
-            app:layout_row="1" />
-
-        <Button
-            android:id="@+id/AlltimeButton"
-            android:layout_width="75dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_style"
-            android:text="전체\n평균 시간"
-            android:textColor="@color/text"
-            app:layout_column="2"
-            app:layout_row="0" />
-
-        <Button
-            android:id="@+id/answer10Button"
-            android:layout_width="75dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_style"
-            android:text="최근 10회\n정답률"
-            android:textColor="@color/text"
-            app:layout_column="3"
-            app:layout_row="0" />
-
-        <Button
-            android:id="@+id/time10Button"
-            android:layout_width="75dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_style"
-            android:text="최근 10회\n평균 시간"
-            android:textColor="@color/text"
-
-            app:layout_column="4"
-            app:layout_row="0" />
-
-        <Button
-            android:id="@+id/AllanswerButton"
-            android:layout_width="75dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_style"
-            android:text="전체\n정답률"
-            android:textColor="@color/text"
-
-            app:layout_column="1"
-            app:layout_row="0" />
-
-        <Button
-            android:id="@+id/Plus"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="더하기"
-            android:textColor="@color/text"
-            app:layout_column="0"
-            app:layout_row="1" />
-
-        <Button
-            android:id="@+id/PlusAnswer"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="Button"
-            android:textColor="@color/text"
-            app:layout_column="1"
-            app:layout_row="1" />
-
-        <Button
-            android:id="@+id/Plus10Time"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="Button"
-            android:textColor="@color/text"
-            app:layout_column="4"
-            app:layout_row="1" />
-
-        <Button
-            android:id="@+id/PlusTime"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="Button"
-            android:textColor="@color/text"
-            app:layout_column="2"
-            app:layout_row="1" />
-
-        <Button
-            android:id="@+id/Minus"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="빼기"
-            android:textColor="@color/text"
-
-            app:layout_column="0"
-            app:layout_row="2" />
-
-        <Button
-            android:id="@+id/SubAnswer"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="Button"
-            android:textColor="@color/text"
-
-            app:layout_column="1"
-            app:layout_row="2" />
-
-        <Button
-            android:id="@+id/Sub10Answer"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="Button"
-            android:textColor="@color/text"
-
-            app:layout_column="3"
-            app:layout_row="2" />
-
-        <Button
-            android:id="@+id/Multiplication"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="곱하기"
-            android:textColor="@color/text"
-
-            app:layout_column="0"
-            app:layout_row="3" />
-
-        <Button
-            android:id="@+id/MulAnswer"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="Button"
-            android:textColor="@color/text"
-
-            app:layout_column="1"
-            app:layout_row="3" />
-
-        <Button
-            android:id="@+id/Mul10Time"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="Button"
-            android:textColor="@color/text"
-
-            app:layout_column="4"
-            app:layout_row="3" />
-
-        <Button
-            android:id="@+id/Divide"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="나누기"
-            android:textColor="@color/text"
-
-            app:layout_column="0"
-            app:layout_row="4" />
-
-        <Button
-            android:id="@+id/DivAnswer"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="Button"
-            android:textColor="@color/text"
-
-            app:layout_column="1"
-            app:layout_row="4" />
-
-        <Button
-            android:id="@+id/Div10Time"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="Button"
-            android:textColor="@color/text"
-
-            app:layout_column="4"
-            app:layout_row="4" />
-
-        <Button
-            android:id="@+id/InfiP6"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="\6"
-            android:textColor="@color/text"
-
-            app:layout_column="1"
-            app:layout_row="5" />
-
-        <Button
-            android:id="@+id/InfiP8"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="\8"
-            android:textColor="@color/text"
-
-            app:layout_column="3"
-            app:layout_row="5" />
-
-        <Button
-            android:id="@+id/InfiPAVAnswer"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@color/background"
-            android:text="평균 정답"
-            android:textColor="@color/text"
-
-            app:layout_column="0"
-            app:layout_row="6" />
-
-        <Button
-            android:id="@+id/InfiP6Answer"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="Button"
-            android:textColor="@color/text"
-
-            app:layout_column="1"
-            app:layout_row="6" />
-
-        <Button
-            android:id="@+id/InfiP7Answer"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="Button"
-            android:textColor="@color/text"
-
-            app:layout_column="2"
-            app:layout_row="6" />
-
-        <Button
-            android:id="@+id/InfiP13Answer"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="Button"
-            android:textColor="@color/text"
-
-            app:layout_column="4"
-            app:layout_row="6" />
-
-        <Button
-            android:id="@+id/InfiP16"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="16"
-            android:textColor="@color/text"
-
-            app:layout_column="0"
-            app:layout_row="7" />
-
-        <Button
-            android:id="@+id/InfiP6_9"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="6 ~ 9"
-            android:textColor="@color/text"
-
-            app:layout_column="2"
-            app:layout_row="7" />
-
-        <Button
-            android:id="@+id/InfiP6_17"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="6 ~ 17"
-            android:textColor="@color/text"
-
-            app:layout_column="4"
-            app:layout_row="7" />
-
-        <Button
-            android:id="@+id/InfiP16Answer"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="Button"
-            android:textColor="@color/text"
-
-            app:layout_column="0"
-            app:layout_row="8" />
-
-        <Button
-            android:id="@+id/InfiP6_9Answer"
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_style"
-            android:text="Button"
-            android:textColor="@color/text"
-
-            app:layout_column="2"
-            app:layout_row="8" />
-
-    </androidx.gridlayout.widget.GridLayout>
+        app:adSize="SMART_BANNER"
+        app:adUnitId="ca-app-pub-3940256099942544/6300978111"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

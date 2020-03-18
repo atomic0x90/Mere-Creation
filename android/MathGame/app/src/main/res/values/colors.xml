@@ -15,4 +15,8 @@
     <color name="text">#000000</color>
     <color name="background">#fff</color>
     <color name="dialogBackground">#303030</color>
+    <color name="pinkred">#ff5c5c</color>
+    <color name="orange">#ffa05c</color>
+    <color name="bluewhite">#59c5ff</color>
+    <color name="bluewhitedrak">#5762ff</color>
 </resources>
