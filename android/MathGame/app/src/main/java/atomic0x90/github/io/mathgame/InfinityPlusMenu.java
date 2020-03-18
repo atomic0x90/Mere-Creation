@@ -189,6 +189,7 @@ public class InfinityPlusMenu extends AppCompatActivity {
                                 Update_lock7();
 
                                 toast = Toast.makeText(getApplicationContext(),"잠금 해제 완료",Toast.LENGTH_SHORT);
+                                toast.show();
                                 Intent intent = new Intent(getApplicationContext(),InfinityPlusMenu.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
@@ -262,6 +263,7 @@ public class InfinityPlusMenu extends AppCompatActivity {
                                 Update_lock8();
 
                                 toast = Toast.makeText(getApplicationContext(),"잠금 해제 완료",Toast.LENGTH_SHORT);
+                                toast.show();
                                 Intent intent = new Intent(getApplicationContext(),InfinityPlusMenu.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
@@ -335,6 +337,7 @@ public class InfinityPlusMenu extends AppCompatActivity {
                                 Update_lock13();
 
                                 toast = Toast.makeText(getApplicationContext(),"잠금 해제 완료",Toast.LENGTH_SHORT);
+                                toast.show();
                                 Intent intent = new Intent(getApplicationContext(),InfinityPlusMenu.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
@@ -407,6 +410,7 @@ public class InfinityPlusMenu extends AppCompatActivity {
                                 Update_lock16();
 
                                 toast = Toast.makeText(getApplicationContext(),"잠금 해제 완료",Toast.LENGTH_SHORT);
+                                toast.show();
                                 Intent intent = new Intent(getApplicationContext(),InfinityPlusMenu.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
@@ -479,6 +483,7 @@ public class InfinityPlusMenu extends AppCompatActivity {
                                 Update_lock17();
 
                                 toast = Toast.makeText(getApplicationContext(),"잠금 해제 완료",Toast.LENGTH_SHORT);
+                                toast.show();
                                 Intent intent = new Intent(getApplicationContext(),InfinityPlusMenu.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
@@ -552,6 +557,7 @@ public class InfinityPlusMenu extends AppCompatActivity {
                                 Update_lock6_9();
 
                                 toast = Toast.makeText(getApplicationContext(),"잠금 해제 완료",Toast.LENGTH_SHORT);
+                                toast.show();
                                 Intent intent = new Intent(getApplicationContext(),InfinityPlusMenu.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
@@ -624,6 +630,7 @@ public class InfinityPlusMenu extends AppCompatActivity {
                                 Update_lock13_17();
 
                                 toast = Toast.makeText(getApplicationContext(),"잠금 해제 완료",Toast.LENGTH_SHORT);
+                                toast.show();
                                 Intent intent = new Intent(getApplicationContext(),InfinityPlusMenu.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
@@ -696,6 +703,7 @@ public class InfinityPlusMenu extends AppCompatActivity {
                                 Update_lock6_17();
 
                                 toast = Toast.makeText(getApplicationContext(),"잠금 해제 완료",Toast.LENGTH_SHORT);
+                                toast.show();
                                 Intent intent = new Intent(getApplicationContext(),InfinityPlusMenu.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);

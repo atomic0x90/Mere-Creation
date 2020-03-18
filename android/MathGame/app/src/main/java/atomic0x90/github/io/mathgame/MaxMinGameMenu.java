@@ -147,6 +147,7 @@ public class MaxMinGameMenu extends AppCompatActivity {
                                 Update_lock10_20();
 
                                 toast = Toast.makeText(getApplicationContext(),"잠금 해제 완료",Toast.LENGTH_SHORT);
+                                toast.show();
                                 Intent intent = new Intent(getApplicationContext(),MaxMinGameMenu.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
@@ -213,6 +214,7 @@ public class MaxMinGameMenu extends AppCompatActivity {
                                 Update_lock20_30();
 
                                 toast = Toast.makeText(getApplicationContext(),"잠금 해제 완료",Toast.LENGTH_SHORT);
+                                toast.show();
                                 Intent intent = new Intent(getApplicationContext(),MaxMinGameMenu.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
