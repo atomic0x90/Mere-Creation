@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingMenu">
+
+    <TextView
+        android:id="@+id/settingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/custom_font_1"
+        android:text="통계 설정"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/coinPlusButtonSet"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/coinImgButtonSet"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/coinNowButtonSet"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/coin"
+        android:background="@drawable/button_style"
+
+        android:soundEffectsEnabled="false"/>
+
+    <Button
+        android:id="@+id/coinNowButtonSet"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/coinPlusButtonSet"
+        app:layout_constraintStart_toEndOf="@+id/coinImgButtonSet"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/button_style"
+        android:textColor="@color/text"
+        android:fontFamily="@font/custom_font_1"
+        android:soundEffectsEnabled="false"/>
+
+    <ImageButton
+        android:id="@+id/coinPlusButtonSet"
+        android:layout_width="20dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@+id/coinNowButtonSet"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_input_add"
+        android:background="@drawable/button_back"
+        android:soundEffectsEnabled="false"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settingText">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/addInitTable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_back"
+                android:fontFamily="@font/custom_font_1"
+
+                android:soundEffectsEnabled="false"
+                android:text="더하기 도전 통계 초기화"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/pinkred" />
+
+            <View
+                android:id="@+id/setDivideLine"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@android:color/background_light" />
+
+            <Button
+                android:id="@+id/subInitTable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_back"
+                android:fontFamily="@font/custom_font_1"
+                android:soundEffectsEnabled="false"
+                android:text="빼기 도전 통계 초기화"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/bluewhite" />
+
+            <View
+                android:id="@+id/setDivideLine2"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@android:color/background_light" />
+
+            <Button
+                android:id="@+id/mulInitTable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_back"
+                android:fontFamily="@font/custom_font_1"
+                android:soundEffectsEnabled="false"
+                android:text="곱하기 도전 통계 초기화"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/orange" />
+
+            <View
+                android:id="@+id/setDivideLine3"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@android:color/background_light" />
+
+            <Button
+                android:id="@+id/divInitTable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_back"
+                android:fontFamily="@font/custom_font_1"
+                android:soundEffectsEnabled="false"
+                android:text="나누기 도전 통계 초기화"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/bluewhitedrak" />
+
+            <View
+                android:id="@+id/setDivideLine4"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@android:color/background_light" />
+
+            <Button
+                android:id="@+id/infiP6InitTable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_back"
+                android:fontFamily="@font/custom_font_1"
+                android:soundEffectsEnabled="false"
+                android:text="1분 무한 +6 통계 초기화"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/pinkred" />
+
+            <View
+                android:id="@+id/setDivideLine5"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@android:color/background_light" />
+
+            <Button
+                android:id="@+id/infiP7InitTable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_back"
+                android:fontFamily="@font/custom_font_1"
+                android:soundEffectsEnabled="false"
+                android:text="1분 무한 +7 통계 초기화"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/pinkred" />
+
+            <View
+                android:id="@+id/setDivideLine6"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@android:color/background_light" />
+
+            <Button
+                android:id="@+id/infiP8InitTable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_back"
+                android:fontFamily="@font/custom_font_1"
+                android:soundEffectsEnabled="false"
+                android:text="1분 무한 +8 통계 초기화"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/pinkred" />
+
+            <View
+                android:id="@+id/setDivideLine7"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@android:color/background_light" />
+
+            <Button
+                android:id="@+id/infiP13InitTable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_back"
+                android:fontFamily="@font/custom_font_1"
+                android:soundEffectsEnabled="false"
+                android:text="1분 무한 +13 통계 초기화"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/pinkred" />
+
+            <View
+                android:id="@+id/setDivideLine8"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@android:color/background_light" />
+
+            <Button
+                android:id="@+id/infiP16InitTable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_back"
+                android:fontFamily="@font/custom_font_1"
+                android:soundEffectsEnabled="false"
+                android:text="1분 무한 +16 통계 초기화"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/pinkred" />
+
+            <View
+                android:id="@+id/setDivideLine9"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@android:color/background_light" />
+
+            <Button
+                android:id="@+id/infiP17InitTable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_back"
+                android:fontFamily="@font/custom_font_1"
+                android:soundEffectsEnabled="false"
+                android:text="1분 무한 +17 통계 초기화"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/pinkred" />
+
+            <View
+                android:id="@+id/setDivideLine10"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@android:color/background_light" />
+
+            <Button
+                android:id="@+id/infiP6_9InitTable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_back"
+                android:fontFamily="@font/custom_font_1"
+                android:soundEffectsEnabled="false"
+                android:text="1분 무한 +6~9 통계 초기화"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/pinkred" />
+
+            <View
+                android:id="@+id/setDivideLine11"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@android:color/background_light" />
+
+            <Button
+                android:id="@+id/infiP13_17InitTable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_back"
+                android:fontFamily="@font/custom_font_1"
+                android:soundEffectsEnabled="false"
+                android:text="1분 무한 +13~17 통계 초기화"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/pinkred" />
+
+            <View
+                android:id="@+id/setDivideLine12"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@android:color/background_light" />
+
+            <Button
+                android:id="@+id/infiP6_17InitTable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_back"
+                android:fontFamily="@font/custom_font_1"
+                android:soundEffectsEnabled="false"
+                android:text="1분 무한 +6~17 통계 초기화"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/pinkred" />
+
+            <View
+                android:id="@+id/setDivideLine13"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@android:color/background_light" />
+
+            <Button
+                android:id="@+id/infiM6InitTable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_back"
+                android:text="1분 무한 -6 통계 초기화"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:soundEffectsEnabled="false"
+                android:fontFamily="@font/custom_font_1"
+                android:textColor="@color/bluewhite"/>
+
+            <View
+                android:id="@+id/setDivideLine14"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@android:color/background_light" />
+
+            <Button
+                android:id="@+id/infiM7InitTable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_back"
+                android:text="1분 무한 -7 통계 초기화"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:soundEffectsEnabled="false"
+                android:fontFamily="@font/custom_font_1"
+                android:textColor="@color/bluewhite"/>
+
+            <View
+                android:id="@+id/setDivideLine15"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@android:color/background_light" />
+
+            <Button
+                android:id="@+id/infiM8InitTable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_back"
+                android:text="1분 무한 -8 통계 초기화"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:soundEffectsEnabled="false"
+                android:fontFamily="@font/custom_font_1"
+                android:textColor="@color/bluewhite"/>
+
+            <View
+                android:id="@+id/setDivideLine16"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@android:color/background_light" />
+
+            <Button
+                android:id="@+id/infiM13InitTable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_back"
+                android:text="1분 무한 -13 통계 초기화"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:soundEffectsEnabled="false"
+                android:fontFamily="@font/custom_font_1"
+                android:textColor="@color/bluewhite"/>
+
+            <View
+                android:id="@+id/setDivideLine17"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@android:color/background_light" />
+
+            <Button
+                android:id="@+id/infiM16InitTable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_back"
+                android:text="1분 무한 -16 통계 초기화"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:soundEffectsEnabled="false"
+                android:fontFamily="@font/custom_font_1"
+                android:textColor="@color/bluewhite"/>
+
+            <View
+                android:id="@+id/setDivideLine18"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@android:color/background_light" />
+
+            <Button
+                android:id="@+id/infiM17InitTable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_back"
+                android:text="1분 무한 -17 통계 초기화"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:soundEffectsEnabled="false"
+                android:fontFamily="@font/custom_font_1"
+                android:textColor="@color/bluewhite"/>
+
+            <View
+                android:id="@+id/setDivideLine19"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@android:color/background_light" />
+
+            <Button
+                android:id="@+id/infiM6_9InitTable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_back"
+                android:text="1분 무한 -6~9 통계 초기화"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:soundEffectsEnabled="false"
+                android:fontFamily="@font/custom_font_1"
+                android:textColor="@color/bluewhite"/>
+
+            <View
+                android:id="@+id/setDivideLine20"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@android:color/background_light" />
+
+            <Button
+                android:id="@+id/infiM13_17InitTable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_back"
+                android:text="1분 무한 -13~17 통계 초기화"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:soundEffectsEnabled="false"
+                android:fontFamily="@font/custom_font_1"
+                android:textColor="@color/bluewhite"/>
+
+            <View
+                android:id="@+id/setDivideLine21"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@android:color/background_light" />
+
+            <Button
+                android:id="@+id/infiM6_17InitTable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_back"
+                android:text="1분 무한 -6~17 통계 초기화"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:soundEffectsEnabled="false"
+                android:fontFamily="@font/custom_font_1"
+                android:textColor="@color/bluewhite"/>
+
+            <View
+                android:id="@+id/setDivideLine22"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@android:color/background_light" />
+
+            <Button
+                android:id="@+id/mm1_10InitTable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_back"
+                android:text="최대 최소 1~10 통계 초기화"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+
+                android:fontFamily="@font/custom_font_1"
+                android:textColor="@color/bluewhitedrak"
+                android:soundEffectsEnabled="false"/>
+
+            <View
+                android:id="@+id/setDivideLine23"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@android:color/background_light" />
+
+            <Button
+                android:id="@+id/mm10_20InitTable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_back"
+                android:text="최대 최소 10~20 통계 초기화"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:fontFamily="@font/custom_font_1"
+                android:textColor="@color/bluewhitedrak"
+                android:soundEffectsEnabled="false"/>
+
+            <View
+                android:id="@+id/setDivideLine24"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@android:color/background_light" />
+
+            <Button
+                android:id="@+id/mm20_30InitTable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_back"
+                android:text="최대 최소 20~30 통계 초기화"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:fontFamily="@font/custom_font_1"
+                android:textColor="@color/bluewhitedrak"
+                android:soundEffectsEnabled="false"/>
+
+            <View
+                android:id="@+id/setDivideLine25"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@android:color/background_light" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

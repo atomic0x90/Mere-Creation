@@ -274,17 +274,16 @@
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/button_back"
-        android:text="설정"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-
-        android:textColor="@color/text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-
+        android:fontFamily="@font/custom_font_1"
         android:soundEffectsEnabled="false"
 
-        android:fontFamily="@font/custom_font_1"
-        />
+        android:text="통계 설정"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/text"
+
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/evaluationButton"

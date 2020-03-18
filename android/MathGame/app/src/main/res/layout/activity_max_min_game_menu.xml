@@ -160,13 +160,13 @@
         android:layout_marginLeft="15dp"
         android:layout_marginEnd="15dp"
         android:layout_marginRight="15dp"
-        android:text="   3000 Coin"
+        android:text="   4000 Coin"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/orange"
         app:layout_constraintEnd_toStartOf="@+id/MaxMin20_30coinText"
         app:layout_constraintStart_toEndOf="@+id/MaxMin1_10coinText"
-        app:layout_constraintTop_toBottomOf="@+id/MaxMin10_20"
 
-        android:textColor="@color/orange"/>
+        app:layout_constraintTop_toBottomOf="@+id/MaxMin10_20" />
 
     <TextView
         android:id="@+id/MaxMin20_30coinText"
@@ -176,12 +176,11 @@
         android:layout_marginLeft="15dp"
         android:layout_marginEnd="25dp"
         android:layout_marginRight="25dp"
-        android:text="   3000 Coin"
+        android:text="   5000 Coin"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/orange"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/MaxMin10_20coinText"
-        app:layout_constraintTop_toBottomOf="@+id/MaxMin20_30"
 
-        android:textColor="@color/orange"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/MaxMin20_30" />
 </androidx.constraintlayout.widget.ConstraintLayout>

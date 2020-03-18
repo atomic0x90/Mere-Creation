@@ -187,7 +187,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //1분 무한 빼기 도전 버튼
-        Button infinityMinusButton = (Button)findViewById(R.id.infisubButton);
+        final Button infinityMinusButton = (Button)findViewById(R.id.infisubButton);
         infinityMinusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -303,6 +303,23 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //설정 버튼
+        Button setButton = (Button)findViewById(R.id.setButton);
+        setButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // mis-clicking prevention, using threshold of 1000 ms
+                if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
+                    return;
+                }
+                mLastClickTime = SystemClock.elapsedRealtime();
+
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
+                Intent intent = new Intent(MainActivity.this,SettingMenu.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+        });
     }
 
     //DB

@@ -134,15 +134,15 @@ public class MaxMinGameMenu extends AppCompatActivity {
                     AlertDialog.Builder alertBuilder = new AlertDialog.Builder(MaxMinGameMenu.this);
                     alertBuilder.setIcon(R.drawable.math_game_logo_black);
                     alertBuilder.setTitle("잠겨있음");
-                    alertBuilder.setMessage("3000 Coin을 소모하여 '10 ~ 20' 잠금 해제를 하시겠습니까?");
+                    alertBuilder.setMessage("4000 Coin을 소모하여 '10 ~ 20' 잠금 해제를 하시겠습니까?");
 
 
 
                     alertBuilder.setPositiveButton("예", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            if(nowCoin >= 3000){
-                                nowUpDateCoin = 3000;
+                            if(nowCoin >= 4000){
+                                nowUpDateCoin = 4000;
                                 UpdateCoin();
                                 Update_lock10_20();
 
@@ -201,15 +201,15 @@ public class MaxMinGameMenu extends AppCompatActivity {
                     AlertDialog.Builder alertBuilder = new AlertDialog.Builder(MaxMinGameMenu.this);
                     alertBuilder.setIcon(R.drawable.math_game_logo_black);
                     alertBuilder.setTitle("잠겨있음");
-                    alertBuilder.setMessage("3000 Coin을 소모하여 '20 ~ 30' 잠금 해제를 하시겠습니까?");
+                    alertBuilder.setMessage("5000 Coin을 소모하여 '20 ~ 30' 잠금 해제를 하시겠습니까?");
 
 
 
                     alertBuilder.setPositiveButton("예", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            if(nowCoin >= 3000){
-                                nowUpDateCoin = 3000;
+                            if(nowCoin >= 5000){
+                                nowUpDateCoin = 5000;
                                 UpdateCoin();
                                 Update_lock20_30();
 
