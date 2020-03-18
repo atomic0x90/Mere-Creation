@@ -12,8 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SettingMenu"
+        <activity android:name=".DeveloperInformation"
             android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".SettingMenu"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MaxMinGame"
             android:screenOrientation="portrait" />
