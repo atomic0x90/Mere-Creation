@@ -13,5 +13,5 @@
 .externalNativeBuild
 .cxx
 
-/strings.xml
+/src/main/res/values/strings.xml
 
