@@ -63,7 +63,8 @@ public class CustomDialog extends AppCompatActivity {
         mAdView.loadAd(adRequest);
         //Reward AD
 
-        rewardedAd = new RewardedAd(this,"ca-app-pub-3940256099942544/5224354917");
+        rewardedAd = new RewardedAd(this,getResources().getString(R.string.TEST_AD_REWARD_ID));
+
         RewardedAdLoadCallback adLoadCallback = new RewardedAdLoadCallback() {
             @Override
             public void onRewardedAdLoaded() {

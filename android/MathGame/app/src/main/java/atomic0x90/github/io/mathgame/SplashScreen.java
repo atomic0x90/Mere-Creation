@@ -44,7 +44,7 @@ public class SplashScreen extends AppCompatActivity {
             textView.setText("");
 
         interstitialAd = new InterstitialAd(this);
-        interstitialAd.setAdUnitId("ca-app-pub-3940256099942544/8691691433");
+        interstitialAd.setAdUnitId(getResources().getString(R.string.TEST_AD_FULL_ID));
         interstitialAd.loadAd(new AdRequest.Builder().build());
         interstitialAd.setAdListener(new AdListener(){
             @Override
