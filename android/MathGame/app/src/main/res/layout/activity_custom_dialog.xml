@@ -15,52 +15,52 @@
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+
         android:layout_marginBottom="140dp"
         android:background="@drawable/button_back"
-
+        android:fontFamily="@font/custom_font_3"
         android:soundEffectsEnabled="false"
         android:text="광고 보고 보상 X2 받기"
+
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/bluewhitedrak"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RewardButton"
-        android:fontFamily="@font/custom_font_3"/>
+        app:layout_constraintTop_toBottomOf="@+id/RewardButton" />
 
     <TextView
         android:id="@+id/DialogsubTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/custom_font_1"
         android:text="보상"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/bluewhitedrak"
         app:layout_constraintBottom_toTopOf="@+id/CoinText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
 
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AVtime"
-        android:fontFamily="@font/custom_font_1"/>
+        app:layout_constraintTop_toBottomOf="@+id/AVtime" />
 
     <TextView
         android:id="@+id/CoinText"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="35dp"
+        android:fontFamily="@font/custom_font_1"
         android:text="TextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/text"
         app:layout_constraintBottom_toTopOf="@+id/RewardButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/DialogsubTitle"
-        android:fontFamily="@font/custom_font_1"/>
+        app:layout_constraintTop_toBottomOf="@+id/DialogsubTitle" />
 
     <Button
         android:id="@+id/RewardButton"
@@ -85,10 +85,10 @@
         android:id="@+id/CoinImg"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="25dp"
+        android:layout_marginBottom="50dp"
         app:layout_constraintBottom_toTopOf="@+id/RewardButton"
         app:layout_constraintEnd_toStartOf="@+id/CoinText"
         app:layout_constraintTop_toBottomOf="@+id/DialogsubTitle"
@@ -99,16 +99,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:fontFamily="@font/custom_font_1"
+        android:gravity="center"
         android:text="결과"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/text"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-
-        android:gravity="center"
-        android:fontFamily="@font/custom_font_1"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/resultNum"
@@ -116,34 +115,34 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="40dp"
         android:layout_marginBottom="5dp"
+        android:fontFamily="@font/custom_font_1"
         android:text="정답 개수 : "
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/text"
         app:layout_constraintBottom_toTopOf="@+id/AVtime"
         app:layout_constraintEnd_toStartOf="@+id/answerText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/DialogTitle"
 
-        android:fontFamily="@font/custom_font_1"/>
+        app:layout_constraintTop_toBottomOf="@+id/DialogTitle" />
 
     <TextView
         android:id="@+id/answerText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="5dp"
+        android:fontFamily="@font/custom_font_1"
         android:text="TextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/text"
         app:layout_constraintBottom_toTopOf="@+id/AVtimeText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/resultNum"
-        app:layout_constraintTop_toBottomOf="@+id/DialogTitle"
-        android:fontFamily="@font/custom_font_1"/>
+        app:layout_constraintTop_toBottomOf="@+id/DialogTitle" />
 
     <TextView
         android:id="@+id/AVtime"
@@ -151,46 +150,44 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
 
         android:layout_marginBottom="20dp"
+        android:fontFamily="@font/custom_font_1"
         android:text="평균 시간 : "
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/text"
         app:layout_constraintBottom_toTopOf="@+id/DialogsubTitle"
         app:layout_constraintEnd_toStartOf="@+id/AVtimeText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resultNum"
-        android:fontFamily="@font/custom_font_1"/>
+        app:layout_constraintTop_toBottomOf="@+id/resultNum" />
 
     <TextView
         android:id="@+id/AVtimeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="40dp"
+        android:fontFamily="@font/custom_font_1"
         android:text="TextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/text"
         app:layout_constraintBottom_toTopOf="@+id/DialogsubTitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/AVtime"
-        app:layout_constraintTop_toBottomOf="@+id/answerText"
-        android:fontFamily="@font/custom_font_1"/>
+        app:layout_constraintTop_toBottomOf="@+id/answerText" />
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         app:adSize="SMART_BANNER"
 
-        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        app:adUnitId="@string/TEST_AD_BANNER_ID"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AddRewardButton" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

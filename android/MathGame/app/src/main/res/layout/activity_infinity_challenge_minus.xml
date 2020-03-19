@@ -140,7 +140,7 @@
         app:layout_constraintStart_toStartOf="parent"
 
         app:adSize="SMART_BANNER"
-        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        app:adUnitId="@string/TEST_AD_BANNER_ID"
         />
 
     <Button
@@ -161,7 +161,8 @@
 
         app:layout_constraintEnd_toStartOf="@+id/InfiMinus_2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/infiMMinusText" />
+        app:layout_constraintTop_toBottomOf="@+id/infiMMinusText"
+        android:soundEffectsEnabled="false"/>
 
     <Button
         android:id="@+id/InfiMinus_2"
@@ -181,7 +182,8 @@
         app:layout_constraintBottom_toTopOf="@+id/InfiMinus_4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/InfiMinus_1"
-        app:layout_constraintTop_toBottomOf="@+id/infiMMinusText" />
+        app:layout_constraintTop_toBottomOf="@+id/infiMMinusText"
+        android:soundEffectsEnabled="false"/>
 
     <Button
         android:id="@+id/InfiMinus_3"
@@ -201,7 +203,8 @@
 
         app:layout_constraintEnd_toStartOf="@+id/InfiMinus_4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/InfiMinus_1" />
+        app:layout_constraintTop_toBottomOf="@+id/InfiMinus_1"
+        android:soundEffectsEnabled="false"/>
 
     <Button
         android:id="@+id/InfiMinus_4"
@@ -221,5 +224,6 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/InfiMinus_3"
-        app:layout_constraintTop_toBottomOf="@+id/InfiMinus_2" />
+        app:layout_constraintTop_toBottomOf="@+id/InfiMinus_2"
+        android:soundEffectsEnabled="false"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

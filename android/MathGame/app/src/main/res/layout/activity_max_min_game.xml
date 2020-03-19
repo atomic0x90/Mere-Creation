@@ -20,7 +20,7 @@
         android:background="@drawable/button_back"
         android:fontFamily="@font/custom_font_1"
         android:soundEffectsEnabled="false"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -139,7 +139,7 @@
         app:layout_constraintStart_toStartOf="parent"
 
         app:adSize="SMART_BANNER"
-        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        app:adUnitId="@string/TEST_AD_BANNER_ID"
         />
 
     <Button
@@ -156,7 +156,7 @@
         android:background="@drawable/button_back"
         android:fontFamily="@font/custom_font_1"
         android:soundEffectsEnabled="false"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/text"
         app:layout_constraintBottom_toTopOf="@+id/MaxMinB3"
         app:layout_constraintEnd_toStartOf="@+id/MaxMinB2"
@@ -178,7 +178,7 @@
         android:background="@drawable/button_back"
         android:fontFamily="@font/custom_font_1"
         android:soundEffectsEnabled="false"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/text"
         app:layout_constraintBottom_toTopOf="@+id/MaxMinB4"
         app:layout_constraintEnd_toEndOf="parent"
@@ -200,7 +200,7 @@
         android:background="@drawable/button_back"
         android:fontFamily="@font/custom_font_1"
         android:soundEffectsEnabled="false"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/MaxMinB4"

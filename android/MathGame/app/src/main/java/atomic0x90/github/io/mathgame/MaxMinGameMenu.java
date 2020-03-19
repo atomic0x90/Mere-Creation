@@ -187,7 +187,7 @@ public class MaxMinGameMenu extends AppCompatActivity {
 
                 soundPool.play(soundID,1f,1f,0,0,1f);
 
-                if(lock20_30 == 1||true) {
+                if(lock20_30 == 1) {
                     Intent intent = new Intent(getApplicationContext(), MaxMinGame.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     intent.putExtra("Number_of_time", 0);
