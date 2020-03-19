@@ -13,18 +13,13 @@ import android.media.SoundPool;
 
 import android.os.Bundle;
 
-import android.os.Handler;
 import android.os.SystemClock;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 
 import java.io.File;
@@ -60,10 +55,10 @@ public class MainActivity extends AppCompatActivity {
         MobileAds.initialize(this, String.valueOf(R.string.TEST_AD_REWARD_ID));
         MobileAds.initialize(this,String.valueOf(R.string.TEST_AD_FULL_ID));
 
-        mAdView = findViewById(R.id.adView);
+        /*mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
-
+*/
 
 
 

@@ -11,7 +11,7 @@ public class loding_screen extends Activity {
         super.onCreate(savedIntanceState);
 
         try{
-            Thread.sleep(2000);
+            Thread.sleep(1500);
         }catch (InterruptedException e){
             e.printStackTrace();
         }

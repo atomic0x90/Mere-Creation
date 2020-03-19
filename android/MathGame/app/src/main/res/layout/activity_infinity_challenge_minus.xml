@@ -153,16 +153,15 @@
         android:layout_marginEnd="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginBottom="15dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:background="@drawable/button_back"
+        android:fontFamily="@font/custom_font_1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="@color/text"
         app:layout_constraintBottom_toTopOf="@+id/InfiMinus_3"
+
         app:layout_constraintEnd_toStartOf="@+id/InfiMinus_2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/infiMMinusText"
-
-        android:background="@drawable/button_back"
-        android:textColor="@color/text"
-        android:fontFamily="@font/custom_font_1"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/infiMMinusText" />
 
     <Button
         android:id="@+id/InfiMinus_2"
@@ -176,13 +175,13 @@
         android:layout_marginBottom="15dp"
         android:background="@drawable/button_back"
 
-        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:fontFamily="@font/custom_font_1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="@color/text"
         app:layout_constraintBottom_toTopOf="@+id/InfiMinus_4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/InfiMinus_1"
-        app:layout_constraintTop_toBottomOf="@+id/infiMMinusText"
-        android:fontFamily="@font/custom_font_1"/>
+        app:layout_constraintTop_toBottomOf="@+id/infiMMinusText" />
 
     <Button
         android:id="@+id/InfiMinus_3"
@@ -194,16 +193,15 @@
         android:layout_marginEnd="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginBottom="160dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:background="@drawable/button_back"
+        android:fontFamily="@font/custom_font_1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="@color/text"
         app:layout_constraintBottom_toBottomOf="parent"
+
         app:layout_constraintEnd_toStartOf="@+id/InfiMinus_4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/InfiMinus_1"
-
-        android:background="@drawable/button_back"
-        android:textColor="@color/text"
-        android:fontFamily="@font/custom_font_1"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/InfiMinus_1" />
 
     <Button
         android:id="@+id/InfiMinus_4"
@@ -215,14 +213,13 @@
         android:layout_marginEnd="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginBottom="160dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:background="@drawable/button_back"
+        android:fontFamily="@font/custom_font_1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="@color/text"
         app:layout_constraintBottom_toBottomOf="parent"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/InfiMinus_3"
-        app:layout_constraintTop_toBottomOf="@+id/InfiMinus_2"
-
-        android:background="@drawable/button_back"
-        android:textColor="@color/text"
-        android:fontFamily="@font/custom_font_1"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/InfiMinus_2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

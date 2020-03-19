@@ -287,17 +287,16 @@
         android:layout_marginBottom="15dp"
 
         android:background="@drawable/button_back"
+        android:fontFamily="@font/custom_font_1"
         android:soundEffectsEnabled="false"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="@color/text"
-        app:layout_constraintBottom_toTopOf="@+id/cdiv3"
 
+        app:layout_constraintBottom_toTopOf="@+id/cdiv3"
         app:layout_constraintEnd_toStartOf="@+id/cdiv2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divideText"
 
-        android:fontFamily="@font/custom_font_1"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/divideText" />
 
     <Button
         android:id="@+id/cdiv2"
@@ -311,17 +310,16 @@
 
         android:layout_marginBottom="15dp"
         android:background="@drawable/button_back"
+        android:fontFamily="@font/custom_font_1"
         android:soundEffectsEnabled="false"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-        android:textColor="@color/text"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
 
+        android:textColor="@color/text"
         app:layout_constraintBottom_toTopOf="@+id/cdiv4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/cdiv1"
-        app:layout_constraintTop_toBottomOf="@+id/divideText"
 
-        android:fontFamily="@font/custom_font_1"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/divideText" />
 
     <Button
         android:id="@+id/cdiv3"
@@ -335,17 +333,16 @@
         android:layout_marginBottom="160dp"
 
         android:background="@drawable/button_back"
+        android:fontFamily="@font/custom_font_1"
         android:soundEffectsEnabled="false"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="@color/text"
-        app:layout_constraintBottom_toBottomOf="parent"
 
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/cdiv4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cdiv1"
 
-        android:fontFamily="@font/custom_font_1"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/cdiv1" />
 
     <Button
         android:id="@+id/cdiv4"
@@ -359,16 +356,15 @@
         android:layout_marginBottom="160dp"
 
         android:background="@drawable/button_back"
+        android:fontFamily="@font/custom_font_1"
         android:soundEffectsEnabled="false"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="@color/text"
-        app:layout_constraintBottom_toBottomOf="parent"
 
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/cdiv3"
-        app:layout_constraintTop_toBottomOf="@+id/cdiv2"
 
-        android:fontFamily="@font/custom_font_1"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/cdiv2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
