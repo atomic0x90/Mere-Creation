@@ -394,64 +394,7 @@ public class CustomDialog extends AppCompatActivity {
                     rewardedAd.show(activityContext, adCallback);
 
                 } else {
-                    rewardCoin = answer*10;
-                    UpdateCoin();
-                    if(DataType.equals("Add"))
-                        insertChAdd();
-                    else if(DataType.equals("Sub"))
-                        insertChSub();
-                    else if(DataType.equals("Multipl"))
-                        insertChMul();
-                    else if(DataType.equals("Divide"))
-                        insertChDiv();
-                    else if(DataType.equals("InfiP6"))
-                        insertInfiChP6();
-                    else if(DataType.equals("InfiP7"))
-                        insertInfiChP7();
-                    else if(DataType.equals("InfiP8"))
-                        insertInfiChP8();
-                    else if(DataType.equals("InfiP13"))
-                        insertInfiChP13();
-                    else if(DataType.equals("InfiP16"))
-                        insertInfiChP16();
-                    else if(DataType.equals("InfiP17"))
-                        insertInfiChP17();
-                    else if(DataType.equals("InfiP6_9"))
-                        insertInfiChP6_9();
-                    else if(DataType.equals("InfiP13_17"))
-                        insertInfiChP13_17();
-                    else if(DataType.equals("InfiP6_17"))
-                        insertInfiChP6_17();
-                    else if(DataType.equals("InfiM6"))
-                        insertInfiChM6();
-                    else if(DataType.equals("InfiM7"))
-                        insertInfiChM7();
-                    else if(DataType.equals("InfiM8"))
-                        insertInfiChM8();
-                    else if(DataType.equals("InfiM13"))
-                        insertInfiChM13();
-                    else if(DataType.equals("InfiM16"))
-                        insertInfiChM16();
-                    else if(DataType.equals("InfiM17"))
-                        insertInfiChM17();
-                    else if(DataType.equals("InfiM6_9"))
-                        insertInfiChM6_9();
-                    else if(DataType.equals("InfiM13_17"))
-                        insertInfiChM13_17();
-                    else if(DataType.equals("InfiM6_17"))
-                        insertInfiChM6_17();
-                    else if(DataType.equals("MaxMin1_10"))
-                        insertMaxMin1_10();
-                    else if(DataType.equals("MaxMin10_20"))
-                        insertMaxMin10_20();
-                    else if(DataType.equals("MaxMin20_30"))
-                        insertMaxMin20_30();
-
-                    Toast.makeText(getApplicationContext(),"보상 획득, 영상이 준비되지 않음. 나중에 다시 시도하세요.",Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(CustomDialog.this,MainActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
-                    Log.d("TAG", "The rewarded ad wasn't loaded yet.");
+                    Toast.makeText(getApplicationContext(),"영상이 준비되지 않음. 잠시(3초) 후에 다시 시도하세요.",Toast.LENGTH_LONG).show();
                 }
 
             }
