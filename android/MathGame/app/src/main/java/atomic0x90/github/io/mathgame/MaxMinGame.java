@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -1260,6 +1261,9 @@ public class MaxMinGame extends AppCompatActivity {
         });
 
     }
+    // 마지막으로 뒤로 가기 버튼을 눌렀던 시간 저장
+    private long backKeyPressedTime = 0;
+    private Toast toast;
 
     @Override
     protected void onUserLeaveHint() {
@@ -1274,5 +1278,21 @@ public class MaxMinGame extends AppCompatActivity {
         //Intent intent = new Intent(getApplicationContext(),MainActivity.class);
         //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         //startActivity(intent);
+        // 2500 milliseconds = 2.5 seconds
+        if (System.currentTimeMillis() > backKeyPressedTime + 2500) {
+            backKeyPressedTime = System.currentTimeMillis();
+            toast = Toast.makeText(this, "뒤로 가기 버튼을 한 번 더 누르시면 메뉴 화면으로 이동합니다.", Toast.LENGTH_SHORT);
+            toast.show();
+            return;
+        }
+
+        if (System.currentTimeMillis() <= backKeyPressedTime + 2500) {
+
+            //countDownTimer.cancel();
+            Intent intent = new Intent(getApplicationContext(),MaxMinGameMenu.class);
+            System.exit(0);
+            //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        }
     }
 }

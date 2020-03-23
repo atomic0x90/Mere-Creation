@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.google.android.gms.ads.AdRequest;
@@ -507,6 +508,10 @@ public class Challenge_add extends AppCompatActivity {
 
     }
 
+    // 마지막으로 뒤로 가기 버튼을 눌렀던 시간 저장
+    private long backKeyPressedTime = 0;
+    private Toast toast;
+
     @Override
     protected void onUserLeaveHint() {
         super.onUserLeaveHint();
@@ -518,6 +523,18 @@ public class Challenge_add extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         //super.onBackPressed();
+        if (System.currentTimeMillis() > backKeyPressedTime + 2500) {
+            backKeyPressedTime = System.currentTimeMillis();
+            toast = Toast.makeText(this, "뒤로 가기 버튼을 한 번 더 누르시면 메뉴 화면으로 이동합니다.", Toast.LENGTH_SHORT);
+            toast.show();
+            return;
+        }
+
+        if (System.currentTimeMillis() <= backKeyPressedTime + 2500) {
+            Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+            System.exit(0);
+            startActivity(intent);
+        }
     }
 
 }
