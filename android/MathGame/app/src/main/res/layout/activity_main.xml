@@ -321,6 +321,7 @@
         app:layout_constraintStart_toEndOf="@+id/coinImgButton"
         app:layout_constraintTop_toTopOf="parent"
         android:fontFamily="@font/custom_font_1"
+        android:soundEffectsEnabled="false"
         />
 
     <ImageButton
@@ -334,7 +335,8 @@
         app:layout_constraintEnd_toStartOf="@+id/coinNowButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/coin" />
+        app:srcCompat="@drawable/coin"
+        android:soundEffectsEnabled="false"/>
 
     <ImageButton
         android:id="@+id/coinPlusButton"
@@ -345,7 +347,8 @@
         app:layout_constraintStart_toEndOf="@+id/coinNowButton"
         app:layout_constraintTop_toTopOf="parent"
 
-        app:srcCompat="@android:drawable/ic_input_add" />
+        app:srcCompat="@android:drawable/ic_input_add"
+        android:soundEffectsEnabled="false"/>
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"

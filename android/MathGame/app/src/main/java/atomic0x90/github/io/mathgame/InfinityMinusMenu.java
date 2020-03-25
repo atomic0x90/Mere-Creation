@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.os.SystemClock;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -111,6 +112,62 @@ public class InfinityMinusMenu extends AppCompatActivity {
         Button coinNowButton = (Button)findViewById(R.id.coinNowInfinityMinusButton);
         load_coin();
         coinNowButton.setText(String.valueOf(nowCoin));
+
+        //Coin 버튼
+        ImageButton MainCoinPlusButton = (ImageButton)findViewById(R.id.coinPlusInfinityMinusButton);
+        MainCoinPlusButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // mis-clicking prevention, using threshold of 1000 ms
+                if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
+                    return;
+                }
+                mLastClickTime = SystemClock.elapsedRealtime();
+
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
+                Intent intent = new Intent(InfinityMinusMenu.this,Inapp.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+
+            }
+        });
+
+        Button MainCoinNowButton = (Button)findViewById(R.id.coinNowInfinityMinusButton);
+        MainCoinNowButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // mis-clicking prevention, using threshold of 1000 ms
+                if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
+                    return;
+                }
+                mLastClickTime = SystemClock.elapsedRealtime();
+
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
+                Intent intent = new Intent(InfinityMinusMenu.this,Inapp.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton MainCoinImgButton = (ImageButton)findViewById(R.id.coinInfinityMinusButton);
+        MainCoinImgButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // mis-clicking prevention, using threshold of 1000 ms
+                if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
+                    return;
+                }
+                mLastClickTime = SystemClock.elapsedRealtime();
+
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
+                Intent intent = new Intent(InfinityMinusMenu.this,Inapp.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+        });
 
         //6
         Button Minus6Button = (Button)findViewById(R.id.InfinityMinus6);

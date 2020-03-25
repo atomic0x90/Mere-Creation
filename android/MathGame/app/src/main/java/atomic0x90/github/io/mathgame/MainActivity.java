@@ -16,7 +16,9 @@ import android.os.Bundle;
 import android.os.SystemClock;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
+
 
 
 import com.google.android.gms.ads.AdView;
@@ -36,7 +38,8 @@ public class MainActivity extends AppCompatActivity {
     //AD
     private AdView mAdView;
 
-
+    //Inapp
+    //BillingModule billingModule;
 
     //Double click check
     private long mLastClickTime = 0;
@@ -330,6 +333,68 @@ public class MainActivity extends AppCompatActivity {
                 soundPool.play(soundID,1f,1f,0,0,1f);
 
                 Intent intent = new Intent(MainActivity.this,DeveloperInformation.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+        });
+
+        //Coin 버튼
+        ImageButton MainCoinPlusButton = (ImageButton)findViewById(R.id.coinPlusButton);
+        MainCoinPlusButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // mis-clicking prevention, using threshold of 1000 ms
+                if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
+                    return;
+                }
+                mLastClickTime = SystemClock.elapsedRealtime();
+
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
+                Intent intent = new Intent(MainActivity.this,Inapp.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+
+                /*billingModule = new BillingModule(getApplicationContext());
+                billingModule.initBillingProcessor();
+                mBillingProcessor = billingModule.getBillingProcessor();
+                */
+                //Intent intent = new Intent(MainActivity.this,Inapp.class);
+                //startActivity(intent);
+            }
+        });
+
+        Button MainCoinNowButton = (Button)findViewById(R.id.coinNowButton);
+        MainCoinNowButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // mis-clicking prevention, using threshold of 1000 ms
+                if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
+                    return;
+                }
+                mLastClickTime = SystemClock.elapsedRealtime();
+
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
+                Intent intent = new Intent(MainActivity.this,Inapp.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton MainCoinImgButton = (ImageButton)findViewById(R.id.coinImgButton);
+        MainCoinImgButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // mis-clicking prevention, using threshold of 1000 ms
+                if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
+                    return;
+                }
+                mLastClickTime = SystemClock.elapsedRealtime();
+
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
+                Intent intent = new Intent(MainActivity.this,Inapp.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
@@ -1063,8 +1128,29 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    //Inapp
+    /*
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        billingModule.releaseBillingProcessor();
+    }
 
+    private void purchaseProduct() { // 아이템 구매 요청
+        billingModule.purchaseProduct();
+    }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(mBillingProcessor.handleActivityResult(requestCode, resultCode, data)) {
+            if(resultCode == RESULT_OK) {
+     //           아이템 구매가 성공했을 경우 처리
+            }
+        }
+    }
+
+*/
 
     // 마지막으로 뒤로 가기 버튼을 눌렀던 시간 저장
     private long backKeyPressedTime = 0;
