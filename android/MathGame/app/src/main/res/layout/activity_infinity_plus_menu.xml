@@ -242,8 +242,8 @@
         android:background="@drawable/button_back"
         android:fontFamily="@font/custom_font_1"
         android:soundEffectsEnabled="false"
-        android:text="6~9"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:text="+6~9"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/text"
         app:layout_constraintEnd_toStartOf="@+id/InfinityPlusRandom13_17"
 
@@ -361,8 +361,8 @@
         android:background="@drawable/button_back"
         android:fontFamily="@font/custom_font_1"
         android:soundEffectsEnabled="false"
-        android:text="13~17"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:text="+13~17"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/text"
         app:layout_constraintEnd_toStartOf="@+id/InfinityPlusRandom6_17"
 
@@ -381,8 +381,8 @@
         android:background="@drawable/button_back"
         android:fontFamily="@font/custom_font_1"
         android:soundEffectsEnabled="false"
-        android:text="6~17"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:text="+6~17"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
 
         android:textColor="@color/text"
         app:layout_constraintEnd_toEndOf="parent"

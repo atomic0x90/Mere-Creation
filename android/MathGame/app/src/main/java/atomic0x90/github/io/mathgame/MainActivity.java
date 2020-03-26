@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //AD
+        MobileAds.initialize(this, getResources().getString(R.string.App_ID));
         MobileAds.initialize(this, String.valueOf(R.string.TEST_AD_BANNER_ID));
         MobileAds.initialize(this, String.valueOf(R.string.TEST_AD_REWARD_ID));
         MobileAds.initialize(this,String.valueOf(R.string.TEST_AD_FULL_ID));

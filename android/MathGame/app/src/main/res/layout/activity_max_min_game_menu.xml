@@ -89,7 +89,7 @@
         android:fontFamily="@font/custom_font_1"
         android:soundEffectsEnabled="false"
         android:text="1~10"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
 
         android:textColor="@color/text"
         app:layout_constraintEnd_toStartOf="@+id/MaxMin10_20"
@@ -109,7 +109,7 @@
         android:fontFamily="@font/custom_font_1"
         android:soundEffectsEnabled="false"
         android:text="10~20"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
 
         android:textColor="@color/text"
         app:layout_constraintEnd_toStartOf="@+id/MaxMin20_30"
@@ -129,7 +129,7 @@
         android:fontFamily="@font/custom_font_1"
         android:soundEffectsEnabled="false"
         android:text="20~30"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
 
         android:textColor="@color/text"
         app:layout_constraintEnd_toEndOf="parent"
