@@ -107,7 +107,7 @@
     <TextView
         android:id="@+id/InfinityPlus7coinText"
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_height="24dp"
 
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
@@ -127,13 +127,14 @@
     <TextView
         android:id="@+id/InfinityPlus6coinText"
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_height="24dp"
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
 
         android:layout_marginEnd="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginBottom="30dp"
+        android:text="&#160;"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/text"
         app:layout_constraintBottom_toTopOf="@+id/InfinityPlus13"
@@ -144,7 +145,7 @@
     <TextView
         android:id="@+id/InfinityPlus8coinText"
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_height="24dp"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginEnd="25dp"
@@ -239,16 +240,15 @@
 
         android:layout_marginRight="15dp"
         android:background="@drawable/button_back"
-        android:text="+ 6~9"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:fontFamily="@font/custom_font_1"
+        android:soundEffectsEnabled="false"
+        android:text="6~9"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/text"
         app:layout_constraintEnd_toStartOf="@+id/InfinityPlusRandom13_17"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/InfinityPlus13coinText"
 
-        android:soundEffectsEnabled="false"
-        android:fontFamily="@font/custom_font_1"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/InfinityPlus13coinText" />
 
     <Button
         android:id="@+id/InfinityPlus16"
@@ -297,7 +297,7 @@
     <TextView
         android:id="@+id/InfinityPlus13coinText"
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_height="24dp"
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
         android:layout_marginEnd="15dp"
@@ -315,7 +315,7 @@
     <TextView
         android:id="@+id/InfinityPlus16coinText"
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_height="24dp"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginEnd="15dp"
@@ -333,7 +333,7 @@
     <TextView
         android:id="@+id/InfinityPlus17coinText"
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_height="24dp"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginEnd="25dp"
@@ -359,16 +359,15 @@
 
         android:layout_marginRight="15dp"
         android:background="@drawable/button_back"
-        android:text="+ 13~17"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:fontFamily="@font/custom_font_1"
+        android:soundEffectsEnabled="false"
+        android:text="13~17"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/text"
         app:layout_constraintEnd_toStartOf="@+id/InfinityPlusRandom6_17"
-        app:layout_constraintStart_toEndOf="@+id/InfinityPlusRandom6_9"
-        app:layout_constraintTop_toBottomOf="@+id/InfinityPlus16coinText"
 
-        android:soundEffectsEnabled="false"
-        android:fontFamily="@font/custom_font_1"
-        />
+        app:layout_constraintStart_toEndOf="@+id/InfinityPlusRandom6_9"
+        app:layout_constraintTop_toBottomOf="@+id/InfinityPlus16coinText" />
 
     <Button
         android:id="@+id/InfinityPlusRandom6_17"
@@ -380,22 +379,21 @@
         android:layout_marginEnd="25dp"
         android:layout_marginRight="25dp"
         android:background="@drawable/button_back"
-        android:text="+ 6~17"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:fontFamily="@font/custom_font_1"
+        android:soundEffectsEnabled="false"
+        android:text="6~17"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+
         android:textColor="@color/text"
         app:layout_constraintEnd_toEndOf="parent"
 
         app:layout_constraintStart_toEndOf="@+id/InfinityPlusRandom13_17"
-        app:layout_constraintTop_toBottomOf="@+id/InfinityPlus17coinText"
-
-        android:soundEffectsEnabled="false"
-        android:fontFamily="@font/custom_font_1"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/InfinityPlus17coinText" />
 
     <TextView
         android:id="@+id/InfinityPlus6_9coinText"
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_height="24dp"
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
         android:layout_marginEnd="15dp"
@@ -411,7 +409,7 @@
     <TextView
         android:id="@+id/InfinityPlus13_17coinText"
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_height="24dp"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginEnd="15dp"
@@ -427,7 +425,7 @@
     <TextView
         android:id="@+id/InfinityPlus6_17coinText"
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_height="24dp"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginEnd="25dp"

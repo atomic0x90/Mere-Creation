@@ -124,82 +124,66 @@
     <TextView
         android:id="@+id/addproblemText1"
         android:layout_width="wrap_content"
-        android:layout_height="75dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="100dp"
-        android:layout_marginEnd="15dp"
 
-        android:layout_marginRight="15dp"
+        android:fontFamily="@font/custom_font_1"
         android:text="t1"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/text"
         app:layout_constraintEnd_toStartOf="@+id/AddPlusText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/timeText1"
 
-        android:fontFamily="@font/custom_font_1"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/timeText1" />
 
     <TextView
         android:id="@+id/AddPlusText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
         android:layout_marginTop="100dp"
 
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
+        android:fontFamily="@font/custom_font_2"
         android:text="+"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/text"
         app:layout_constraintEnd_toStartOf="@+id/addproblemText2"
         app:layout_constraintStart_toEndOf="@+id/addproblemText1"
-        app:layout_constraintTop_toBottomOf="@+id/timeText1"
 
-        android:fontFamily="@font/custom_font_2"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/timeText1" />
 
     <TextView
         android:id="@+id/addproblemText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
         android:layout_marginTop="100dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
-        android:text="t2"
+        android:fontFamily="@font/custom_font_1"
 
+        android:text="t2"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/text"
         app:layout_constraintEnd_toStartOf="@+id/addendText"
         app:layout_constraintStart_toEndOf="@+id/AddPlusText"
-        app:layout_constraintTop_toBottomOf="@+id/timeText1"
 
-        android:fontFamily="@font/custom_font_1"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/timeText1" />
 
     <TextView
         android:id="@+id/addendText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginLeft="25dp"
         android:layout_marginTop="100dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginRight="60dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
 
+        android:fontFamily="@font/custom_font_2"
         android:text="= ?"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/addproblemText2"
-        app:layout_constraintTop_toBottomOf="@+id/timeText1"
 
-        android:fontFamily="@font/custom_font_2"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/timeText1" />
 
     <ImageView
         android:id="@+id/state0"

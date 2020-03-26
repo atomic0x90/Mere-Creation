@@ -85,17 +85,16 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="15dp"
         android:layout_marginRight="15dp"
-        android:text="1 ~ 10"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintEnd_toStartOf="@+id/MaxMin10_20"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/MaxMinMenuText"
+        android:background="@drawable/button_back"
+        android:fontFamily="@font/custom_font_1"
+        android:soundEffectsEnabled="false"
+        android:text="1~10"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
 
         android:textColor="@color/text"
-        android:background="@drawable/button_back"
-        android:soundEffectsEnabled="false"
-        android:fontFamily="@font/custom_font_1"
-        />
+        app:layout_constraintEnd_toStartOf="@+id/MaxMin10_20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MaxMinMenuText" />
 
     <Button
         android:id="@+id/MaxMin10_20"
@@ -106,17 +105,16 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="15dp"
         android:layout_marginRight="15dp"
-        android:text="10 ~ 20"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintEnd_toStartOf="@+id/MaxMin20_30"
-        app:layout_constraintStart_toEndOf="@+id/MaxMin1_10ListView"
-        app:layout_constraintTop_toBottomOf="@+id/MaxMinMenuText"
+        android:background="@drawable/button_back"
+        android:fontFamily="@font/custom_font_1"
+        android:soundEffectsEnabled="false"
+        android:text="10~20"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
 
         android:textColor="@color/text"
-        android:background="@drawable/button_back"
-        android:soundEffectsEnabled="false"
-        android:fontFamily="@font/custom_font_1"
-        />
+        app:layout_constraintEnd_toStartOf="@+id/MaxMin20_30"
+        app:layout_constraintStart_toEndOf="@+id/MaxMin1_10ListView"
+        app:layout_constraintTop_toBottomOf="@+id/MaxMinMenuText" />
 
     <Button
         android:id="@+id/MaxMin20_30"
@@ -127,26 +125,26 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="25dp"
         android:layout_marginRight="25dp"
-        android:text="20 ~ 30"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/MaxMin10_20"
-        app:layout_constraintTop_toBottomOf="@+id/MaxMinMenuText"
+        android:background="@drawable/button_back"
+        android:fontFamily="@font/custom_font_1"
+        android:soundEffectsEnabled="false"
+        android:text="20~30"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
 
         android:textColor="@color/text"
-        android:background="@drawable/button_back"
-        android:soundEffectsEnabled="false"
-        android:fontFamily="@font/custom_font_1"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/MaxMin10_20"
+        app:layout_constraintTop_toBottomOf="@+id/MaxMinMenuText" />
 
     <TextView
         android:id="@+id/MaxMin1_10coinText"
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_height="24dp"
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
         android:layout_marginEnd="15dp"
         android:layout_marginRight="15dp"
+        android:text="&#160;"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintEnd_toStartOf="@+id/MaxMin10_20coinText"
         app:layout_constraintStart_toStartOf="parent"
@@ -155,7 +153,7 @@
     <TextView
         android:id="@+id/MaxMin10_20coinText"
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_height="24dp"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginEnd="15dp"
@@ -171,7 +169,7 @@
     <TextView
         android:id="@+id/MaxMin20_30coinText"
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_height="24dp"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginEnd="25dp"

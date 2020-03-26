@@ -139,77 +139,61 @@
         android:id="@+id/infiPProblemText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="70dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
+        android:fontFamily="@font/custom_font_1"
         android:text="t1"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-        app:layout_constraintEnd_toStartOf="@+id/infiPPlusText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/infiPTime"
-
         android:textColor="@color/text"
-        android:fontFamily="@font/custom_font_1"
-        />
+        app:layout_constraintEnd_toStartOf="@+id/infiPPlusText"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/infiPTime" />
 
     <TextView
         android:id="@+id/infiPPlusText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
         android:layout_marginTop="70dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
+        android:fontFamily="@font/custom_font_2"
         android:text="+"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-        app:layout_constraintEnd_toStartOf="@+id/infiPProblemText2"
-        app:layout_constraintStart_toEndOf="@+id/infiPProblemText1"
-        app:layout_constraintTop_toBottomOf="@+id/infiPTime"
-
         android:textColor="@color/text"
-        android:fontFamily="@font/custom_font_2"
-        />
+        app:layout_constraintEnd_toStartOf="@+id/infiPProblemText2"
+
+        app:layout_constraintStart_toEndOf="@+id/infiPProblemText1"
+        app:layout_constraintTop_toBottomOf="@+id/infiPTime" />
 
     <TextView
         android:id="@+id/infiPProblemText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
         android:layout_marginTop="70dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
+        android:fontFamily="@font/custom_font_1"
         android:text="t2"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-        app:layout_constraintEnd_toStartOf="@+id/infiPendText"
-        app:layout_constraintStart_toEndOf="@+id/infiPPlusText"
-        app:layout_constraintTop_toBottomOf="@+id/infiPTime"
-
         android:textColor="@color/text"
-        android:fontFamily="@font/custom_font_1"
-        />
+        app:layout_constraintEnd_toStartOf="@+id/infiPendText"
+
+        app:layout_constraintStart_toEndOf="@+id/infiPPlusText"
+        app:layout_constraintTop_toBottomOf="@+id/infiPTime" />
 
     <TextView
         android:id="@+id/infiPendText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
         android:layout_marginTop="70dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginRight="60dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:fontFamily="@font/custom_font_2"
         android:text="= ?"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/infiPProblemText2"
-        app:layout_constraintTop_toBottomOf="@+id/infiPTime"
-
         android:textColor="@color/text"
-        android:fontFamily="@font/custom_font_2"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toEndOf="@+id/infiPProblemText2"
+        app:layout_constraintTop_toBottomOf="@+id/infiPTime" />
 
     <Button
         android:id="@+id/InfiPlus_1"

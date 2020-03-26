@@ -221,77 +221,63 @@
         android:id="@+id/multiProblemText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="100dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
+        android:fontFamily="@font/custom_font_1"
         android:text="t1"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
 
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/text"
         app:layout_constraintEnd_toStartOf="@+id/multiMulText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/multiText"
-        android:fontFamily="@font/custom_font_1"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/multiText" />
 
     <TextView
         android:id="@+id/multiMulText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
         android:layout_marginTop="100dp"
 
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
+        android:fontFamily="@font/custom_font_2"
         android:text="\X"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/text"
         app:layout_constraintEnd_toStartOf="@+id/multiProblemText2"
         app:layout_constraintStart_toEndOf="@+id/multiProblemText1"
-        app:layout_constraintTop_toBottomOf="@+id/multiText"
 
-        android:fontFamily="@font/custom_font_2"/>
+        app:layout_constraintTop_toBottomOf="@+id/multiText" />
 
     <TextView
         android:id="@+id/multiProblemText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
         android:layout_marginTop="100dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
+        android:fontFamily="@font/custom_font_1"
         android:text="t2"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
 
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/text"
         app:layout_constraintEnd_toStartOf="@+id/multiendText"
         app:layout_constraintStart_toEndOf="@+id/multiMulText"
-        app:layout_constraintTop_toBottomOf="@+id/multiText"
-        android:fontFamily="@font/custom_font_1"/>
+        app:layout_constraintTop_toBottomOf="@+id/multiText" />
 
     <TextView
         android:id="@+id/multiendText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
         android:layout_marginTop="100dp"
-        android:layout_marginEnd="60dp"
+        android:layout_marginEnd="30dp"
 
-        android:layout_marginRight="60dp"
+        android:layout_marginRight="30dp"
+        android:fontFamily="@font/custom_font_2"
         android:text="= ?"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/multiProblemText2"
-        app:layout_constraintTop_toBottomOf="@+id/multiText"
 
-        android:fontFamily="@font/custom_font_2"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/multiText" />
 
     <Button
         android:id="@+id/cmul1"
