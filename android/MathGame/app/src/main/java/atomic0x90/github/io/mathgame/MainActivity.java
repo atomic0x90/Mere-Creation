@@ -11,6 +11,7 @@ import android.database.sqlite.SQLiteException;
 import android.media.AudioManager;
 import android.media.SoundPool;
 
+import android.net.Uri;
 import android.os.Bundle;
 
 import android.os.SystemClock;
@@ -335,6 +336,28 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this,DeveloperInformation.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
+            }
+        });
+
+        //평가하기 버튼
+        Button evaluationButton = (Button)findViewById(R.id.evaluationButton);
+        evaluationButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // mis-clicking prevention, using threshold of 1000 ms
+                if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
+                    return;
+                }
+                mLastClickTime = SystemClock.elapsedRealtime();
+
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
+                final String appPackageName = getPackageName(); // getPackageName() from Context or Activity object
+                try {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
+                } catch (android.content.ActivityNotFoundException anfe) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
+                }
             }
         });
 
