@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".JJGame">
+
+    <TextView
+        android:id="@+id/TopText"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="TextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/inputText"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TopText" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/button_style"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputText" />
+
+    <Button
+        android:id="@+id/DelButton"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="5dp"
+
+        android:background="@drawable/button_pink"
+        android:fontFamily="@font/custom_font_1"
+        android:text="←"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/pinkred"
+        app:layout_constraintBottom_toTopOf="@+id/TextButton11"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toEndOf="@+id/TextButton5" />
+
+    <Button
+        android:id="@+id/InputButton"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/button_blue"
+        android:fontFamily="@font/custom_font_1"
+        android:text="제출"
+
+        android:textColor="@color/bluewhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/TextButton22" />
+
+    <Button
+        android:id="@+id/TextButton1"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/button_gray"
+        android:fontFamily="@font/custom_font_1"
+
+        android:text="게"
+
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/TextButton6"
+        app:layout_constraintEnd_toStartOf="@+id/TextButton2"
+
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/TextButton2"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/button_gray"
+        android:fontFamily="@font/custom_font_1"
+        android:text="있"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/TextButton7"
+        app:layout_constraintEnd_toStartOf="@+id/TextButton3"
+        app:layout_constraintStart_toEndOf="@+id/TextButton1" />
+
+    <Button
+        android:id="@+id/TextButton3"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/button_gray"
+        android:fontFamily="@font/custom_font_1"
+        android:text="잠"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/TextButton8"
+        app:layout_constraintEnd_toStartOf="@+id/TextButton4"
+        app:layout_constraintStart_toEndOf="@+id/TextButton2" />
+
+    <Button
+        android:id="@+id/TextButton4"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/button_gray"
+        android:fontFamily="@font/custom_font_1"
+
+        android:text="셔"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/TextButton9"
+        app:layout_constraintEnd_toStartOf="@+id/TextButton5"
+        app:layout_constraintStart_toEndOf="@+id/TextButton3" />
+
+    <Button
+        android:id="@+id/TextButton5"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/button_gray"
+        android:fontFamily="@font/custom_font_1"
+        android:text="텡"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/TextButton10"
+        app:layout_constraintEnd_toStartOf="@+id/DelButton"
+        app:layout_constraintStart_toEndOf="@+id/TextButton4" />
+
+    <Button
+        android:id="@+id/TextButton6"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/button_gray"
+        android:fontFamily="@font/custom_font_1"
+        android:text="Button"
+        android:textColor="@color/black"
+
+        app:layout_constraintBottom_toTopOf="@+id/TextButton12"
+        app:layout_constraintEnd_toStartOf="@+id/TextButton7"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/TextButton7"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/button_gray"
+        android:fontFamily="@font/custom_font_1"
+        android:text="Button"
+        android:textColor="@color/black"
+
+        app:layout_constraintBottom_toTopOf="@+id/TextButton13"
+        app:layout_constraintEnd_toStartOf="@+id/TextButton8"
+        app:layout_constraintStart_toEndOf="@+id/TextButton6" />
+
+    <Button
+        android:id="@+id/TextButton8"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/button_gray"
+        android:fontFamily="@font/custom_font_1"
+        android:text="Button"
+        android:textColor="@color/black"
+
+        app:layout_constraintBottom_toTopOf="@+id/TextButton14"
+        app:layout_constraintEnd_toStartOf="@+id/TextButton9"
+        app:layout_constraintStart_toEndOf="@+id/TextButton7" />
+
+    <Button
+        android:id="@+id/TextButton9"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/button_gray"
+        android:fontFamily="@font/custom_font_1"
+        android:text="Button"
+        android:textColor="@color/black"
+
+        app:layout_constraintBottom_toTopOf="@+id/TextButton15"
+        app:layout_constraintEnd_toStartOf="@+id/TextButton10"
+        app:layout_constraintStart_toEndOf="@+id/TextButton8" />
+
+    <Button
+        android:id="@+id/TextButton10"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/button_gray"
+        android:fontFamily="@font/custom_font_1"
+        android:text="Button"
+        android:textColor="@color/black"
+
+        app:layout_constraintBottom_toTopOf="@+id/TextButton16"
+        app:layout_constraintEnd_toStartOf="@+id/TextButton11"
+        app:layout_constraintStart_toEndOf="@+id/TextButton9" />
+
+    <Button
+        android:id="@+id/TextButton11"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/button_gray"
+        android:fontFamily="@font/custom_font_1"
+        android:text="Button"
+        android:textColor="@color/black"
+
+        app:layout_constraintBottom_toTopOf="@+id/TextButton17"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/TextButton10" />
+
+    <Button
+        android:id="@+id/TextButton12"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/button_gray"
+        android:fontFamily="@font/custom_font_1"
+        android:text="Button"
+        android:textColor="@color/black"
+
+        app:layout_constraintBottom_toTopOf="@+id/TextButton18"
+        app:layout_constraintEnd_toStartOf="@+id/TextButton13"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/TextButton13"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/button_gray"
+        android:fontFamily="@font/custom_font_1"
+        android:text="Button"
+        android:textColor="@color/black"
+
+        app:layout_constraintBottom_toTopOf="@+id/TextButton19"
+        app:layout_constraintEnd_toStartOf="@+id/TextButton14"
+        app:layout_constraintStart_toEndOf="@+id/TextButton12" />
+
+    <Button
+        android:id="@+id/TextButton14"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/button_gray"
+        android:fontFamily="@font/custom_font_1"
+        android:text="Button"
+        android:textColor="@color/black"
+
+        app:layout_constraintBottom_toTopOf="@+id/TextButton20"
+        app:layout_constraintEnd_toStartOf="@+id/TextButton15"
+        app:layout_constraintStart_toEndOf="@+id/TextButton13" />
+
+    <Button
+        android:id="@+id/TextButton15"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/button_gray"
+        android:fontFamily="@font/custom_font_1"
+        android:text="Button"
+        android:textColor="@color/black"
+
+        app:layout_constraintBottom_toTopOf="@+id/TextButton21"
+        app:layout_constraintEnd_toStartOf="@+id/TextButton16"
+        app:layout_constraintStart_toEndOf="@+id/TextButton14" />
+
+    <Button
+        android:id="@+id/TextButton16"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/button_gray"
+        android:fontFamily="@font/custom_font_1"
+        android:text="Button"
+        android:textColor="@color/black"
+
+        app:layout_constraintBottom_toTopOf="@+id/TextButton22"
+        app:layout_constraintEnd_toStartOf="@+id/TextButton17"
+        app:layout_constraintStart_toEndOf="@+id/TextButton15" />
+
+    <Button
+        android:id="@+id/TextButton17"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/button_gray"
+        android:fontFamily="@font/custom_font_1"
+        android:text="Button"
+        android:textColor="@color/black"
+
+        app:layout_constraintBottom_toTopOf="@+id/InputButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/TextButton16" />
+
+    <Button
+        android:id="@+id/TextButton18"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/button_gray"
+        android:fontFamily="@font/custom_font_1"
+        android:text="Button"
+
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/TextButton19"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/TextButton19"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/button_gray"
+        android:fontFamily="@font/custom_font_1"
+        android:text="Button"
+
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/TextButton20"
+        app:layout_constraintStart_toEndOf="@+id/TextButton18" />
+
+    <Button
+        android:id="@+id/TextButton20"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/button_gray"
+        android:fontFamily="@font/custom_font_1"
+        android:text="Button"
+
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/TextButton21"
+        app:layout_constraintStart_toEndOf="@+id/TextButton19" />
+
+    <Button
+        android:id="@+id/TextButton21"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/button_gray"
+        android:fontFamily="@font/custom_font_1"
+        android:text="Button"
+
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/TextButton22"
+        app:layout_constraintStart_toEndOf="@+id/TextButton20" />
+
+    <Button
+        android:id="@+id/TextButton22"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/button_gray"
+        android:fontFamily="@font/custom_font_1"
+        android:text="Button"
+
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/InputButton"
+        app:layout_constraintStart_toEndOf="@+id/TextButton21" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
