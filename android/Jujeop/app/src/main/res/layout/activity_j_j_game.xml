@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".JJGame">
+    tools:context=".JJGame"
+    >
 
     <TextView
         android:id="@+id/TopText"
@@ -14,25 +15,53 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+
+        android:textColor="@color/black"
+        android:fontFamily="@font/custom_font_1"/>
 
     <TextView
         android:id="@+id/inputText"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
+        android:fontFamily="@font/custom_font_1"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/black"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TopText" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TopText"
+        app:srcCompat="@drawable/speech_bubble" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:src="@drawable/button_style"
+        android:layout_height="150dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputText" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:srcCompat="@drawable/game_img" />
+
+    <TextView
+        android:id="@+id/idea_endText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputText"
+
+        android:textColor="@color/black"
+        android:fontFamily="@font/custom_font_1"/>
 
     <Button
         android:id="@+id/DelButton"
@@ -59,6 +88,7 @@
         android:fontFamily="@font/custom_font_1"
         android:text="제출"
 
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/bluewhite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -149,8 +179,9 @@
         android:background="@drawable/button_gray"
         android:fontFamily="@font/custom_font_1"
         android:text="Button"
-        android:textColor="@color/black"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
 
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/TextButton12"
         app:layout_constraintEnd_toStartOf="@+id/TextButton7"
         app:layout_constraintStart_toStartOf="parent" />
@@ -163,8 +194,9 @@
         android:background="@drawable/button_gray"
         android:fontFamily="@font/custom_font_1"
         android:text="Button"
-        android:textColor="@color/black"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
 
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/TextButton13"
         app:layout_constraintEnd_toStartOf="@+id/TextButton8"
         app:layout_constraintStart_toEndOf="@+id/TextButton6" />
@@ -177,8 +209,9 @@
         android:background="@drawable/button_gray"
         android:fontFamily="@font/custom_font_1"
         android:text="Button"
-        android:textColor="@color/black"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
 
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/TextButton14"
         app:layout_constraintEnd_toStartOf="@+id/TextButton9"
         app:layout_constraintStart_toEndOf="@+id/TextButton7" />
@@ -191,8 +224,9 @@
         android:background="@drawable/button_gray"
         android:fontFamily="@font/custom_font_1"
         android:text="Button"
-        android:textColor="@color/black"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
 
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/TextButton15"
         app:layout_constraintEnd_toStartOf="@+id/TextButton10"
         app:layout_constraintStart_toEndOf="@+id/TextButton8" />
@@ -205,8 +239,9 @@
         android:background="@drawable/button_gray"
         android:fontFamily="@font/custom_font_1"
         android:text="Button"
-        android:textColor="@color/black"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
 
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/TextButton16"
         app:layout_constraintEnd_toStartOf="@+id/TextButton11"
         app:layout_constraintStart_toEndOf="@+id/TextButton9" />
@@ -219,8 +254,9 @@
         android:background="@drawable/button_gray"
         android:fontFamily="@font/custom_font_1"
         android:text="Button"
-        android:textColor="@color/black"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
 
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/TextButton17"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/TextButton10" />
@@ -233,8 +269,9 @@
         android:background="@drawable/button_gray"
         android:fontFamily="@font/custom_font_1"
         android:text="Button"
-        android:textColor="@color/black"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
 
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/TextButton18"
         app:layout_constraintEnd_toStartOf="@+id/TextButton13"
         app:layout_constraintStart_toStartOf="parent" />
@@ -247,8 +284,9 @@
         android:background="@drawable/button_gray"
         android:fontFamily="@font/custom_font_1"
         android:text="Button"
-        android:textColor="@color/black"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
 
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/TextButton19"
         app:layout_constraintEnd_toStartOf="@+id/TextButton14"
         app:layout_constraintStart_toEndOf="@+id/TextButton12" />
@@ -261,8 +299,9 @@
         android:background="@drawable/button_gray"
         android:fontFamily="@font/custom_font_1"
         android:text="Button"
-        android:textColor="@color/black"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
 
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/TextButton20"
         app:layout_constraintEnd_toStartOf="@+id/TextButton15"
         app:layout_constraintStart_toEndOf="@+id/TextButton13" />
@@ -275,8 +314,9 @@
         android:background="@drawable/button_gray"
         android:fontFamily="@font/custom_font_1"
         android:text="Button"
-        android:textColor="@color/black"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
 
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/TextButton21"
         app:layout_constraintEnd_toStartOf="@+id/TextButton16"
         app:layout_constraintStart_toEndOf="@+id/TextButton14" />
@@ -289,8 +329,9 @@
         android:background="@drawable/button_gray"
         android:fontFamily="@font/custom_font_1"
         android:text="Button"
-        android:textColor="@color/black"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
 
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/TextButton22"
         app:layout_constraintEnd_toStartOf="@+id/TextButton17"
         app:layout_constraintStart_toEndOf="@+id/TextButton15" />
@@ -303,8 +344,9 @@
         android:background="@drawable/button_gray"
         android:fontFamily="@font/custom_font_1"
         android:text="Button"
-        android:textColor="@color/black"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
 
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/InputButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/TextButton16" />
@@ -318,6 +360,7 @@
         android:fontFamily="@font/custom_font_1"
         android:text="Button"
 
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/TextButton19"
@@ -332,6 +375,7 @@
         android:fontFamily="@font/custom_font_1"
         android:text="Button"
 
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/TextButton20"
@@ -346,6 +390,7 @@
         android:fontFamily="@font/custom_font_1"
         android:text="Button"
 
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/TextButton21"
@@ -360,6 +405,7 @@
         android:fontFamily="@font/custom_font_1"
         android:text="Button"
 
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/TextButton22"
@@ -374,9 +420,19 @@
         android:fontFamily="@font/custom_font_1"
         android:text="Button"
 
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/InputButton"
         app:layout_constraintStart_toEndOf="@+id/TextButton21" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idea_endText"
+        app:srcCompat="@drawable/idea_bubble" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

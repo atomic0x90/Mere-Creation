@@ -11,4 +11,6 @@
     <color name="bluewhite">#59c5ff</color>
     <color name="bluewhitedrak">#5762ff</color>
     <color name="greenTest">#00b000</color>
+    <color name="gray">#808080</color>
+    <color name="transparent">#00ff0000</color>
 </resources>

@@ -52,6 +52,23 @@
                 android:background="@drawable/button_green"
                 android:fontFamily="@font/custom_font_1"/>
 
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:background="@color/transparent" />
+
+            <Button
+                android:id="@+id/jjLV2Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_green"
+
+                android:fontFamily="@font/custom_font_1"
+                android:text="주접 LV.2"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/greenTest" />
+
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
