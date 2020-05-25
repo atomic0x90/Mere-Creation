@@ -292,6 +292,317 @@
                 android:textColor="@color/text"
                 android:fontFamily="@font/custom_font_2"/>
 
+            <View
+                android:id="@+id/divider11"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/mulTable10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="10단"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+
+                android:textColor="@color/bluewhite"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_2"
+                />
+
+            <TextView
+                android:id="@+id/tableAnswer10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="10 X 1 = 10\n10 X 2 = 20\n10 X 3 = 30\n10 X 4 = 40\n
+                    10 X 5 = 50\n
+                    10 X 6 = 60\n
+                    10 X 7 = 70\n
+                    10 X 8 = 80\n
+                    10 X 9 = 90\n"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+
+                android:gravity="center"
+                android:textColor="@color/text"
+                android:fontFamily="@font/custom_font_2"
+                />
+
+            <View
+                android:id="@+id/divider12"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/mulTable11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+
+                android:textColor="@color/pinkred"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_2"
+                />
+
+            <TextView
+                android:id="@+id/tableAnswer11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+
+                android:gravity="center"
+                android:textColor="@color/text"
+                android:fontFamily="@font/custom_font_2"
+                />
+
+            <View
+                android:id="@+id/divider13"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/mulTable12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+
+                android:textColor="@color/orange"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_2"
+                />
+
+            <TextView
+                android:id="@+id/tableAnswer12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+
+                android:gravity="center"
+                android:textColor="@color/text"
+                android:fontFamily="@font/custom_font_2"
+                />
+
+            <View
+                android:id="@+id/divider14"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/mulTable13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+
+                android:textColor="@color/bluewhitedrak"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_2"
+                />
+
+            <TextView
+                android:id="@+id/tableAnswer13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+
+                android:gravity="center"
+                android:textColor="@color/text"
+                android:fontFamily="@font/custom_font_2"
+                />
+
+            <View
+                android:id="@+id/divider15"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/mulTable14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+
+                android:textColor="@color/bluewhite"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_2"
+                />
+
+            <TextView
+                android:id="@+id/tableAnswer14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+
+                android:gravity="center"
+                android:textColor="@color/text"
+                android:fontFamily="@font/custom_font_2"
+                />
+
+            <View
+                android:id="@+id/divider16"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/mulTable15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+
+                android:textColor="@color/pinkred"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_2"
+                />
+
+            <TextView
+                android:id="@+id/tableAnswer15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+
+                android:gravity="center"
+                android:textColor="@color/text"
+                android:fontFamily="@font/custom_font_2"
+                />
+
+            <View
+                android:id="@+id/divider17"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/mulTable16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+
+                android:textColor="@color/orange"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_2"
+                />
+
+            <TextView
+                android:id="@+id/tableAnswer16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+
+                android:gravity="center"
+                android:textColor="@color/text"
+                android:fontFamily="@font/custom_font_2"
+                />
+
+            <View
+                android:id="@+id/divider18"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/mulTable17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+
+                android:textColor="@color/bluewhitedrak"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_2"
+                />
+
+            <TextView
+                android:id="@+id/tableAnswer17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+
+                android:gravity="center"
+                android:textColor="@color/text"
+                android:fontFamily="@font/custom_font_2"
+                />
+
+            <View
+                android:id="@+id/divider19"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/mulTable18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+
+                android:textColor="@color/bluewhite"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_2"
+                />
+
+            <TextView
+                android:id="@+id/tableAnswer18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+
+                android:gravity="center"
+                android:textColor="@color/text"
+                android:fontFamily="@font/custom_font_2"
+                />
+
+            <View
+                android:id="@+id/divider20"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/mulTable19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+
+                android:textColor="@color/pinkred"
+                android:gravity="center"
+                android:fontFamily="@font/custom_font_2"
+                />
+
+            <TextView
+                android:id="@+id/tableAnswer19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+
+                android:gravity="center"
+                android:textColor="@color/text"
+                android:fontFamily="@font/custom_font_2"
+                />
+
+            <View
+                android:id="@+id/divider21"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
         </LinearLayout>
     </ScrollView>
 
