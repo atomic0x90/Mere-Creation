@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let f1 = function(){
+            console.log("AAA");
+        }
+        f1();
+
+        let f2 = function () {
+            console.log("BBB");
+        }();
+
+        let f3 = f1;
+
+        f3();
+        console.log(f3()+" s");
+    </script>
+</body>
+</html>

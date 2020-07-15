@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        console.log(x); //초기화 안해서(어휘적 바인딩) 사용 불가
+        const x = 'hey';
+        */
+
+        //let 과 const는 차례대로 호이스팅
+        /*
+        const x = 'outer scope'
+        console.log(x);
+        (function () {
+            console.log(x); // 함수 안의 x를 출력해야하는데 아직 초기화가 안됨
+            const x = 'inner scope';
+        }());
+        */
+        //const는 선언과 동시에 값을 넣어야함
+        //let은 실행 시에 값을 대입해도 됨 선언시에는(undefined)
+        /*
+        let x;
+        console.log(x);
+        */
+        //let은 function이 먼저가 아니라 let const는 순서대로 호이스팅
+        /*
+        let x;
+        //var x;
+        console.log(x);
+        function x(){
+            console.log("function");
+        }
+        x();
+        */
+        console.log('hey');
+        function x(){
+            console.log('function');
+        }
+        //let x;
+        var x;  // 호이스팅 안됨 이미 x가 값이 함수로 들어가있기 때문에
+        //var x=3;
+        x();
+        //var은 중복해서 값을 변경, 선언 가능, let은 실행도 전에 호이스팅에서 오류
+    
+        //var로 변수 호이스팅 순서는 선언적 함수, 변수 선언
+        //let은 중복 안됨
+        /*console.log(typeof(test));
+        console.log('abcd');
+        var test = 'TEST1';
+        console.log('ABCD');
+        console.log(test);
+        console.log(typeof(test));
+        function test(){
+            console.log('TEST2');
+        }
+        test();
+    */console.log('start');
+    const test = 'ABCD';
+        console.log(test);
+        (function () {
+            console.log(test); // 함수 안의 x를 출력해야하는데 아직 초기화가 안됨
+            const test = 'DCBA';
+        }());
+        console.log(test);
+    </script>
+</body>
+</html>

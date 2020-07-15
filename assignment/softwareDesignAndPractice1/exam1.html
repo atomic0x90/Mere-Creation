@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Student(name,korean,english,math,science)
+        {
+            this.name = name;
+            this.korean = korean;
+            this.english = english;
+            this.math = math;
+            this.science = science;
+        }
+        Student.prototype.sum = function(){
+            let tmp1 = 0;
+            tmp1 = this.korean + this.english + this.math + this.science;
+            return tmp1;
+        }
+        Student.prototype.ave = function(){
+            return (this.sum())/4;
+        }
+
+        let class1 = 
+        [
+            new Student("",100,90,95,95),
+            new Student("",90,80,70,60),
+            new Student("",12,100,100,67),
+            new Student("",81,92,92,96)
+        ];
+
+        for(let i of class1){
+            while(true){
+                let tmpName = prompt("이름을 입력하시오","");
+                if(tmpName != null){
+                    if(tmpName.length != 0){
+                        i.name = tmpName;
+                        break;
+                    }
+                    else{
+                        alert("이름을 확인하고 입력하시오");
+                        continue;
+                    }
+                }
+                else{
+                    alert("이름을 입력하시오(취소 불가능)");
+                    continue;
+                }
+            }
+        }
+
+        let Max = -1;
+        let MaxName;
+        let Min = 999999;
+        let MinName;
+
+        for(let i of class1){
+            if(i.sum() < Min){
+                Min = i.sum();
+                MinName = i.name;
+            }
+        }
+
+        for(let i of class1){
+            if(i.sum() > Max){
+                Max = i.sum();
+                MaxName = i.name;
+            }
+        }
+
+        console.log("전체 과목 합이 최대인 사람 이름 : " + MaxName);
+        console.log("전체 과목 합이 최소인 사람 이름 : " + MinName);
+    </script>
+</head>
+<body>
+</body>
+</html>

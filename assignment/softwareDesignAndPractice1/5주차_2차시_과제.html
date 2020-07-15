@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let IDArray = [];
+        let tmpEmail;
+        
+        let checkEmail1 = /^([a-z]|[A-Z]|[0-9]){4,12}@[a-z]{2,10}.[a-z]{2,3}$/;
+        let checkEmail2 = /^([a-z]|[A-Z]|[0-9]){4,12}@[a-z]{2,10}.[a-z]{2,5}.[a-z]{1,4}$/;
+        let checkPW = /^[a-zA-Z]{1}[a-zA-Z0-9]{5,}/;
+        //let checkPW2 = /[a-z]/ig;
+        let checkPW3 = /[0-9]/;
+
+        while(true)
+        {
+            tmpEmail = prompt("e-mail을 입력하세요","");
+            
+            if(tmpEmail == null)
+                break;
+            else
+            {
+                if(checkEmail1.test(tmpEmail) || checkEmail2.test(tmpEmail))
+                {
+                    let splitID = tmpEmail.substring(0,tmpEmail.search('@'));
+
+                    IDArray.push({
+                        ID : splitID
+                    });
+
+                    let tmpPW;
+
+                    while(true)
+                    {           //PW 입력은 취소해도 종료 안됨
+                        tmpPW = prompt("PW를 입력하세요","");
+                        
+                        if(tmpPW == null)
+                            continue;
+                        else if(checkPW.test(tmpPW) == true && checkPW3.test(tmpPW) == true)
+                        {
+                            for(let i of IDArray)
+                            {
+                                if(i.ID == splitID)
+                                {
+                                    i.PWD = tmpPW;
+                                    break;
+                                }
+                            }
+                            break;
+                        }
+                        else
+                        {
+                            alert("잘못된 형식(처음 문자는 영어로, 다음은 영어, 숫자로 최소 6글자)");
+                            continue;
+                        }
+                    }
+                }
+                else
+                    alert("잘못된 형식");
+            }
+        }
+        //출력
+        for(let i of IDArray)
+            console.log(i);
+
+        //추가 정렬
+        IDArray.sort((A,B) => {
+            if(A.ID < B.ID)
+                return -1;
+            else if(A.ID > B.ID)
+                return 1;
+            else
+                return 0;
+        });
+
+        console.log("정렬 후");
+
+        //출력
+        for(let i of IDArray)
+            console.log(i);
+
+    </script>
+</body>
+</html>

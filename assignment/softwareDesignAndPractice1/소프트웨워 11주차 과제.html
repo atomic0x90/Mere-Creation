@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <!-- <script src="C:\js\jquery-3.5.1.min.js"></script>
+    <script src="C:\js\jquery-migrate-1.4.1.min.js"></script>
+   -->
+   <script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+  <script
+  src="https://code.jquery.com/jquery-migrate-3.3.0.js"
+  integrity="sha256-LHirvf0Kdg641fjejw4QdlIPPYKtSqHoDUpUUeTnHMs="
+  crossorigin="anonymous"></script>
+    <script>
+            $(document).ready(function(){
+                let $all = $('#all');
+                let $list1 = $('#geometry_and_vector');
+                let $list2 = $('#list2');
+                let $list3 = $('#list3');
+                let $list4 = $('.listFirst');
+
+                $all.parent().css("border","blue 2px solid");
+                
+                $all.children().css("border","red 2px dotted");
+
+                $list1.children().css("border","pink 2px dashed");
+
+                $list2.prev().css("border","green 2px solid");
+
+                $list3.children().first().css("border","blue 5px double");
+
+                $list4.next().css("border","red 2px solid");
+           });
+    </script>
+</head>
+<body>
+    <h1>수학</h1>
+    <div id = 'all'>
+        <div id = 'geometry_and_vector'>
+            <h2 id = 'title1'>기하와 벡터</h2>
+            <ol id = 'list1'>
+                <li class = 'listFirst'>이차곡선</li>
+                <li>평면 곡선의 접선</li>
+                <li>벡터의 연산</li>
+                <li>평면벡터의 성분과 내적</li>
+                <li>평면 운동</li>
+                <li>공간도형</li>
+                <li>공간좌표</li>
+                <li>공간벡터</li>
+                <li>도형의 방정식</li>
+            </ol>
+        </div>
+        <div id = 'differentiation_and_integral'>
+            <h2 id = 'title2'>미적분</h2>
+            <ol id = 'list2'>
+                <li class = 'listFirst'>지수함수와 로그함수의 뜻과 그래프</li>
+                <li>지수함수와 로그함수의 미분</li>
+                <li>삼각함수의 뜻과 그래프</li>
+                <li>삼각함수의 미분</li>
+                <li>여러 가지 미분법</li>
+                <li>도함수의 활용</li>
+                <li>여러가지 적분법</li>
+                <li>정적분의 활용</li>
+            </ol>
+        </div>
+        <div id = 'probability_and_statistics'>
+            <h2 id = 'title3'>확률과 통계</h2>
+            <ol id = 'list3'>
+                <li class = 'listFirst'>순열</li>
+                <li>조합</li>
+                <li>분할과 이항정리</li>
+                <li>확률</li>
+                <li>조건부확률</li>
+                <li>이산확률분포</li>
+                <li>정규분포</li>
+                <li>통계적 추정</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>

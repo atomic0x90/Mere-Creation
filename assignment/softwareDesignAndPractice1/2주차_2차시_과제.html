@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = new Array();
+        let check = "";
+
+        for(let i = 0;;i++)
+        {
+            check = prompt("양수를 입력하시오, 멈추고 싶으면 취소를 누르시오","0");
+
+            if(check != null)
+                arr[i] = check;
+            else
+            {
+                for(let j of arr)
+                    console.log(j);
+                break;
+            }
+        }
+    </script>
+</body>
+</html>

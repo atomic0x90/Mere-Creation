@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function submit_chk(myform){
+            let Syntax1 = /^(010)\d{3,4}\d{4}$/;
+            let Syntax2 = /^[가-힣]{3,4}$/;
+
+            var  sbtn = document.getElementById('user_name');
+            var sbtn2 = document.getElementById('user_tel');
+            if(Syntax2.test(sbtn.value) == false){
+                alert("이름이 잘못 입력되었습니다.");
+                sbtn.value = "";
+                sbtn.focus();
+                return false;
+            }
+            else{
+                if(Syntax1.test(sbtn2.value) == false){
+                    alert("연락처가 잘못 입력되었습니다.");
+                    sbtn2.value = "";
+                    sbtn2.focus();
+                    return false;
+                }
+                else{
+                    alert("입력되었습니다.");
+                    return true;
+                }
+            }
+        }
+        function reset_chk(myform){
+            var result = confirm("정말로 취소하시겠습니까?");
+            if(result == true){
+                document.getElementById('user_name').value = "";
+                document.getElementById('user_tel').value = "";
+                document.getElementById('user_name').focus();
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+    </script>
+</head>
+<body onload="document.f1.user_name.focus();">
+    <form action="#" method="POST" name="f1" onsubmit="return submit_chk(this);"
+    onreset="return reset_chk(this);">
+
+    <fieldset>
+        <legend>회원 가입</legend>
+        <p>
+            <label for="user_name">이름</label>
+            <input type="text" name="user_name" id="user_name">
+        </p>
+        <p>
+            <label for="user_tel">연락처</label>
+            <input type="text" name="user_tel" id="user_tel">
+        </p>
+        <p>
+            <input type="submit" value="회원가입">
+            <input type="reset" value="가입취소">
+        </p>
+    </fieldset>
+    </form>
+</body>
+</html>

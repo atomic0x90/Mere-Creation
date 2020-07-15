@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+   <script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+  <script
+  src="https://code.jquery.com/jquery-migrate-3.3.0.js"
+  integrity="sha256-LHirvf0Kdg641fjejw4QdlIPPYKtSqHoDUpUUeTnHMs="
+  crossorigin="anonymous"></script>
+    <script>
+      var i = 1;
+      function change1(tmp){
+        var sp = tmp.split('n');
+
+        var tsp = "text"+sp[1];
+
+        $('.'+tsp+'').text(Number($('.'+tsp+'').text())+1);
+      }
+
+      function change2(tmp){
+        var sp = tmp.split('e');
+
+        var tsp = "text"+sp[1];
+        
+        $('.'+tsp+'').text(Number($('.'+tsp+'').text())-1);
+      }
+      $(document).ready(function(){
+        
+        $('input').on('click',function(event){
+          var str ="";
+          var str2 = "";
+          var str3 = "";
+          str += 'text'+i;
+          str2 += 'in'+i;
+          str3 += 'de'+i;
+          $('<p>').appendTo('body');
+          $('<h3></h3>').attr(type='class',name=str).text(0).appendTo('body');
+
+          $('<input type=\'button\' value=\'increase\' onclick=change1($(this).attr("class"))>')
+          .attr(type='class',name=str2)
+          .appendTo('body');
+          $('<input type=\'button\' value=\'decrease\' onclick=change2($(this).attr("class"))>')
+          .attr(type='class',name=str3)
+          .appendTo('body');
+
+          i = i + 1;
+        });
+        
+      });
+    </script>
+</head>
+<body>
+  <script>
+    
+  </script>
+  <input type='button' value='버튼 추가하기'>
+
+  
+</body>
+</html>

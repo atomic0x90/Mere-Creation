@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Student(name,korean,english,math,science)
+        {
+            this.name = name;
+            this.korean = korean;
+            this.english = english;
+            this.math = math;
+            this.science = science;
+        }
+        Student.prototype.sum = function(){
+            let num = 0;
+            num = this.korean + this.english + this.math + this.science;
+            return num;
+        }
+        Student.prototype.ave = function(){
+            return (this.sum())/4;
+        }
+        Student.prototype.print_info = function(){
+            console.log(this.name + "의 총합 " + this.sum() + " 평균 :" + this.ave());
+        }
+        
+        let class1 =
+            [new Student("편미분",100,90,100,90),
+            new Student("Ads",100,90,100,95),
+            new Student("아보카도",12,12,49,88),
+            new Student("미적분",99,70,100,100)
+        ];
+
+        for(let i of class1)
+            i.print_info();
+        
+    </script>
+</body>
+</html>

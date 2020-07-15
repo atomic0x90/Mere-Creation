@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log("first");
+        /*
+        //test(3);    //test = function 이 호이스팅 됨
+        //아직 어휘적 바인딩이 일어나지 않아 실행 단계에서 오류가 발생함
+        (test = function (x){
+            console.log(x*x);
+        })(12);
+        test(3);
+        */
+
+        /*
+        //console.log(test);
+        //test = function 이 호이스팅 됨
+        //아직 어휘적 바인딩이 일어나지 않아 실행 단계에서 오류가 발생함
+        test = function (x){
+            //console.log(x*x);
+            return x*x;
+        }(12);
+        //즉시 실행 함수의 return 값도 저장이 된다. 
+        console.log(test);
+        //test();   //test는 함수가 아니라서 오류
+        */
+        
+        let a = 10;
+        //test(2);
+        console.log("a" + a);
+        console.log(test(1));
+        (test = function (x){
+            let a = x;
+            console.log(x*x + " a "+ a);
+            return x*x;
+        })(12);
+        //전체 괄호를 하고 실행하면 실행 되면서 변수에 함수가 저장되고
+        //전체 괄호를 안하고 실행하면 실행 되면서 변수에 return 값이 저장된다
+        console.log(typeof(test));
+        console.log(test);
+        test(3);
+        console.log("a " + a);
+        //함수 표현식은 호이스팅이 안되고, 함수 선언으로 선언된 함수는 호이스팅 된다.
+        //즉시 실행 함수는 일반 함수와 마찬가지로 함수가 호이스팅 되고 나중에 실행 단계에서 어휘적 바인딩이 일어난 후 접근이 가능하다
+
+        console.log("end");
+    </script>
+</head>
+<body>
+</body>
+</html>

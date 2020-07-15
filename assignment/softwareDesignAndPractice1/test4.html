@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Product (name,price){
+            this.name = name;
+            this.price = price;
+            this.print_price=function(){
+                console.log("price = "+this.price);
+            }
+            this.print_name=function(){
+                console.log("name = "+this.name);
+            }
+        }
+        let pr = new Product('바나나',2000);
+        let pr1 = new Product('사과',1500);
+        console.log(pr.name +" "+ pr.price + " "+pr);
+        console.log(pr);
+        console.log(pr1.name +" "+ pr1.price + " "+pr1);
+
+        pr.print_name();
+        pr1.print_price(); 
+    </script>
+</body>
+</html>
