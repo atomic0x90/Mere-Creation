@@ -2,75 +2,105 @@ package atomic0x90.github.io.numberpuzzlegame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.ServiceConnection;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.io.File;
+
+import static android.content.Intent.FLAG_ACTIVITY_NO_USER_ACTION;
 
 public class MainActivity extends AppCompatActivity {
 
     SQLiteDatabase sqliteDB ;
 
-    SQLiteDatabase sqLiteDatabase;
-    int loadBGM = 0;
+    int loadBGMi = 0;
 
     private static MediaPlayer bgm;
     //private int bgmSet = 0;
 
+    //
+    private boolean mIsBound;
+    private BGMService.ReturnBinder mBGMService;
+
+    private final ServiceConnection mConnection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            try{
+            mBGMService = ((BGMService.ReturnBinder)service).getService();
+            Toast.makeText(MainActivity.this,"service connected",Toast.LENGTH_SHORT).show();
+            }catch (Exception e){
+                Toast.makeText(MainActivity.this,"IBinder error",Toast.LENGTH_SHORT).show();
+            }
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+            Toast.makeText(MainActivity.this,"service disconnected",Toast.LENGTH_SHORT).show();
+        }
+    };
+
+    //
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         //DB
         sqliteDB = init_database() ;
         init_tables();
 
         loadBGM();
-        bgm = MediaPlayer.create(this,R.raw.bgm);
 
-        System.out.println(loadBGM);
+        if(loadBGMi == 0)
+            mIsBound = bindService(new Intent(MainActivity.this,BGMService.class),mConnection, Context.BIND_AUTO_CREATE);
 
-        if(loadBGM == 1) {
-            bgm.setLooping(true);
-            bgm.start();
-        }
-        else {
 
-            System.out.println(loadBGM + " " + bgm.isPlaying());
-            if(bgm.isPlaying()){
-                bgm.pause();
-                bgm.seekTo(0);
-            }
-        }
-
-        System.out.println(loadBGM);
         Button sound = (Button) findViewById(R.id.button);
         sound.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(loadBGM == 0) {
+                System.out.println("onclick 0 " + loadBGMi);
+                if(loadBGMi == 0){
+                    System.out.println("onclick 1 "+loadBGMi);
                     updateBGMstart();
-                    try {
-                        bgm.start();
-                    }catch (Exception e){
-                        System.out.println("aaaaaaaa "+e);
-                    };
-                    System.out.println(loadBGM + "a");
+                    loadBGM();
+                    unbindService(mConnection);
+                    mIsBound = false;
+
                 }
                 else {
+                    System.out.println("onclick 2 " + loadBGMi);
                     updateBGMstop();
-                    bgm.pause();
-                    bgm.seekTo(0);
-                    System.out.println(loadBGM + "b");
+                    loadBGM();
+                    loadBGMi = 0;
+                    mIsBound = bindService(new Intent(MainActivity.this, BGMService.class), mConnection, Context.BIND_AUTO_CREATE);
                 }
             }
         });
+
+        Button developerInformation = (Button) findViewById(R.id.button2);
+        developerInformation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, DeveloperInformation.class);
+                intent.addFlags(FLAG_ACTIVITY_NO_USER_ACTION);
+                startActivity(intent);
+            }
+        });
+
+
     }
 
     //DB
@@ -146,52 +176,77 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void loadBGM(){
-        if(sqLiteDatabase != null){
+        if(sqliteDB != null){
             String sqlQuery = "SELECT * FROM BGM";
             Cursor cursor = null;
 
-            cursor = sqLiteDatabase.rawQuery(sqlQuery,null);
+            cursor = sqliteDB.rawQuery(sqlQuery,null);
+            if(cursor != null && cursor.moveToNext()){
+                System.out.println("BGM cursor "+cursor.getInt(0)+" "+loadBGMi);
 
-            if(cursor.moveToNext()){
-                loadBGM = cursor.getInt(0);
+                loadBGMi = cursor.getInt(0);
             }
+
+            System.out.println("load BGM1 " + loadBGMi);
         }
+        System.out.println("load BGM2 " + loadBGMi);
     }
 
     private void updateBGMstart(){
-        if(sqLiteDatabase != null){
+        if(sqliteDB != null){
             String sqlQuery = "UPDATE BGM SET BGM = " + 1;
-            sqLiteDatabase.execSQL(sqlQuery);
-            loadBGM = 1;
+            sqliteDB.execSQL(sqlQuery);
+            loadBGMi = 1;
+
+            System.out.println("update BGM start " + loadBGMi);
+            Toast.makeText(this,"update BGM start",Toast.LENGTH_SHORT).show();
         }
     }
 
     private void updateBGMstop(){
-        if(sqLiteDatabase != null){
+        if(sqliteDB != null){
             String sqlQuery = "UPDATE BGM SET BGM = " + 0;
-            sqLiteDatabase.execSQL(sqlQuery);
-            loadBGM = 0;
+            sqliteDB.execSQL(sqlQuery);
+            loadBGMi = 0;
+
+            System.out.println("update BGM stop " + loadBGMi);
+            Toast.makeText(this,"update BGM stop",Toast.LENGTH_SHORT).show();
+
         }
     }
 
     @Override
     protected void onUserLeaveHint(){
         //홈버튼
-        bgm.pause();
         super.onUserLeaveHint();
+        if(mIsBound){
+            unbindService(mConnection);
+            mIsBound = false;
+        }
+        Toast.makeText(this,"홈버튼",Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onResume(){
         //
-        bgm.start();
         super.onResume();
+        System.out.println("onResume "+loadBGMi);
+        if(loadBGMi == 0)
+            mIsBound = bindService(new Intent(MainActivity.this,BGMService.class),mConnection, Context.BIND_AUTO_CREATE);
+
+        Toast.makeText(this,"resume",Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onDestroy(){
-        bgm.stop();
         super.onDestroy();
+        if(mIsBound){
+            unbindService(mConnection);
+            mIsBound = false;
+
+        }
+
+        Toast.makeText(this,"디스트로이",Toast.LENGTH_SHORT).show();
     }
 
 
