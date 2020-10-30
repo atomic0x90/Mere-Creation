@@ -1873,7 +1873,7 @@ int rotationAlgorithm(int input)
                                         tetrisData[save1[1]][save2[1]] = 0;
                                         tetrisData[save1[2]][save2[2]] = 0;
 
-                                        tetrisData[save1[0]][save2[0-1]] = tetrisData[save1[0]-1][save2[0]-1] = tmp;
+                                        tetrisData[save1[0]][save2[0]-1] = tetrisData[save1[0]-1][save2[0]-1] = tmp;
 
                                         return 2;
                                 }
