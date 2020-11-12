@@ -14,6 +14,8 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -29,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
     private static MediaPlayer bgm;
     //private int bgmSet = 0;
 
+    //
+
+    ImageView imageView = null;
     //
     private boolean mIsBound;
     private BGMService.ReturnBinder mBGMService;
@@ -67,7 +72,18 @@ public class MainActivity extends AppCompatActivity {
             mIsBound = bindService(new Intent(MainActivity.this,BGMService.class),mConnection, Context.BIND_AUTO_CREATE);
 
 
-        Button sound = (Button) findViewById(R.id.button);
+        ImageButton sound = (ImageButton) findViewById(R.id.soundSetButton);
+        imageView = (ImageView) findViewById(R.id.soundSetButton);
+
+        if(loadBGMi == 0){
+            //on
+            imageView.setImageResource(R.drawable.sound_on);
+        }
+        else{
+            //off
+            imageView.setImageResource(R.drawable.sound_off);
+        }
+
         sound.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
                     unbindService(mConnection);
                     mIsBound = false;
 
+                    imageView.setImageResource(R.drawable.sound_off);
                 }
                 else {
                     System.out.println("onclick 2 " + loadBGMi);
@@ -86,6 +103,8 @@ public class MainActivity extends AppCompatActivity {
                     loadBGM();
                     loadBGMi = 0;
                     mIsBound = bindService(new Intent(MainActivity.this, BGMService.class), mConnection, Context.BIND_AUTO_CREATE);
+
+                    imageView.setImageResource(R.drawable.sound_on);
                 }
             }
         });
@@ -96,6 +115,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, DeveloperInformation.class);
                 intent.addFlags(FLAG_ACTIVITY_NO_USER_ACTION);
+                startActivity(intent);
+            }
+        });
+
+        Button gameStartButton = (Button) findViewById(R.id.GameStartButton);
+        gameStartButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, StepSelection.class);
                 startActivity(intent);
             }
         });
@@ -225,6 +253,7 @@ public class MainActivity extends AppCompatActivity {
         }
         Toast.makeText(this,"홈버튼",Toast.LENGTH_SHORT).show();
     }
+
 
     @Override
     public void onResume(){

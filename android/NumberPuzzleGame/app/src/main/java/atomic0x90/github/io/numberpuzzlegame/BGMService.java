@@ -50,42 +50,10 @@ public class BGMService extends Service {
         mp.start();
         return mBinder;
     }
-/*
-    public BGMService() {
-    }
-
     @Override
-    public IBinder onBind(Intent intent) {
-        // TODO: Return the communication channel to the service.
-        throw new UnsupportedOperationException("Not yet implemented");
+    public void onTaskRemoved(Intent rootIntent) {
+        super.onTaskRemoved(rootIntent);
+        Log.e("Error","onTaskRemoved - 강제 종료 " + rootIntent);
+        stopSelf();
     }
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        // 서비스에서 가장 먼저 호출됨(최초에 한번만)
-        Log.d("test", "서비스의 onCreate");
-        mp = MediaPlayer.create(this, R.raw.bgm);
-        mp.setLooping(true); // 반복재생
-
-    }
-    @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
-        // 서비스가 호출될 때마다 실행
-        Log.d("test", "서비스의 onStartCommand " + flags+" "+startId);
-        mp.start(); // 노래 시작
-        mp.setLooping(true); // 반복재생
-        return super.onStartCommand(intent, flags, startId);
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        // 서비스가 종료될 때 실행
-        if(mp.isPlaying()) {
-            mp.stop(); // 음악 종료
-        }
-        Log.d("test", "서비스의 onDestroy");
-    }
- */
 }

@@ -6,33 +6,150 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
+        android:text="개발자 정보"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="@color/orange"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button3"
+    <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="133dp"
-        android:layout_marginLeft="133dp"
-        android:layout_marginTop="259dp"
-        android:text="Button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="이름 : 한유준"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/text"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
 
-    <Button
-        android:id="@+id/button4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="133dp"
-        android:layout_marginLeft="133dp"
-        android:layout_marginTop="56dp"
-        android:text="Button"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="5dp"
+        android:text="E-mail"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/bluewhite"
+        app:layout_constraintBottom_toTopOf="@+id/DeveloperEmailadd"
+
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/DeveloperEmailadd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:text="hanyujun.study@gmail.com"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/text"
+        app:layout_constraintBottom_toTopOf="@+id/textView6"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="5dp"
+        android:text="Web Page"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/bluewhitedrak"
+        app:layout_constraintBottom_toTopOf="@+id/textView8"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DeveloperEmailadd" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:text="https://atomic0x90.github.io"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/text"
+        app:layout_constraintBottom_toTopOf="@+id/textView10"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+
+        android:autoLink="web"
+        android:textColorLink="@color/bluewhitedrak"
+        />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="30dp"
+        android:gravity="center"
+        android:text="https://play.google.com/store/apps/developer?id=atomic0x90"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/text"
+
+        app:layout_constraintBottom_toTopOf="@+id/textView12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+
+        android:autoLink="web"
+        />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="5dp"
+        android:text="개발자의 다른 앱 보기"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintBottom_toTopOf="@+id/textView9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+
+        android:textColor="@color/bluewhite"
+        />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="100dp"
+        android:text="문의사항이 있으면\n위의 이메일로 언제든지 연락 주세요"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+
+        android:textColor="@color/text"
+        android:gravity="center"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
