@@ -31,6 +31,7 @@
         android:layout_marginBottom="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/StepSelectionTitleText">
 
@@ -44,7 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Button" />
+                android:text="튜토리얼" />
 
             <View
                 android:id="@+id/divider"
@@ -57,7 +58,87 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Button" />
+                android:text="1" />
+
+            <LinearLayout
+                android:id="@+id/Step1Ver"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/Step1Hor1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/Step1-1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="1-1" />
+
+                    <Button
+                        android:id="@+id/Step1-2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="1-2" />
+
+                    <Button
+                        android:id="@+id/Step1-3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="1-3" />
+
+                    <Button
+                        android:id="@+id/Step1-4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="1-4" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Step1Hor2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/Step1-5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="1-5" />
+
+                    <Button
+                        android:id="@+id/Step1-6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="1-6" />
+
+                    <Button
+                        android:id="@+id/Step1-7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="1-7" />
+
+                    <Button
+                        android:id="@+id/Step1-8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="1-8" />
+                </LinearLayout>
+
+            </LinearLayout>
 
             <View
                 android:id="@+id/divider2"
@@ -69,11 +150,9 @@
                 android:id="@+id/Step2Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button"
-
                 android:layout_gravity="center"
-                android:visibility="gone"
-                />
+
+                android:text="Button" />
 
             <View
                 android:id="@+id/divider3"
@@ -85,10 +164,9 @@
                 android:id="@+id/Step3Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button"
-
                 android:layout_gravity="center"
-                />
+
+                android:text="Button" />
         </LinearLayout>
     </ScrollView>
 

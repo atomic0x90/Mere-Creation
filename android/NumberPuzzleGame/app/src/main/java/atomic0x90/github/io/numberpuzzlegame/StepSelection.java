@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 public class StepSelection extends AppCompatActivity {
 
@@ -16,13 +17,16 @@ public class StepSelection extends AppCompatActivity {
 
         Button Step1Button = (Button) findViewById(R.id.Step1Button);
         final Button Step2Button = (Button) findViewById(R.id.Step2Button);
+
+        final LinearLayout Step1Ver = (LinearLayout) findViewById(R.id.Step1Ver);
+
         Step1Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                if(Step2Button.getVisibility() == View.GONE)
-                    Step2Button.setVisibility(View.VISIBLE);
+                if(Step1Ver.getVisibility() == View.GONE)
+                    Step1Ver.setVisibility(View.VISIBLE);
                 else
-                    Step2Button.setVisibility(View.GONE);
+                    Step1Ver.setVisibility(View.GONE);
             }
         });
     }
