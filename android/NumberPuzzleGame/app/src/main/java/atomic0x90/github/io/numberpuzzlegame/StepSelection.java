@@ -45,6 +45,8 @@ public class StepSelection extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(StepSelection.this,GameLine2.class);
+                intent.putExtra("Max",4);
+                intent.putExtra("Answer","1_1");
                 startActivity(intent);
             }
         });
