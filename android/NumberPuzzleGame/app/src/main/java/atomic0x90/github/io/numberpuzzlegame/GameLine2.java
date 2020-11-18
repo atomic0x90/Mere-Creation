@@ -2,6 +2,9 @@ package atomic0x90.github.io.numberpuzzlegame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -13,7 +16,11 @@ import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 public class GameLine2 extends AppCompatActivity {
 
@@ -29,7 +36,7 @@ public class GameLine2 extends AppCompatActivity {
 
         Intent nowIntent = getIntent();
         final int MaxNum = nowIntent.getIntExtra("Max",0);    //최대 숫자
-        String StrAnswer = nowIntent.getStringExtra("Answer");  //어떤 stage
+        final String StrAnswer = nowIntent.getStringExtra("Answer");  //어떤 stage
 
         //int MaxNum = Integer.parseInt(SMaxNum);
         int[] IntAnswer = null;
@@ -239,33 +246,34 @@ public class GameLine2 extends AppCompatActivity {
 
                             BottomButton.setText(spannableString);
 
-                            System.out.println("SPAAAAAAAAAAAAAAAAAAAAAN : "+content+" , "+nowAnswer+" , "+start+" , "+end);
                             //다 맞을 경우 AnswerNow[0]++ == MaxNum
-                            if(AnswerNow[0] == MaxNum)
-                                finish();
+                            if(AnswerNow[0] == MaxNum){
+                                CostomDialog costomDialog = new CostomDialog(GameLine2.this);
+                                costomDialog.setCancelable(false);
+                                costomDialog.show();
+                            }
                         }
 
                         //숫자가 틀린 경우
                     }
                     else{
                         //2번 줄에서 내려온 경우
-                        if(Mid2Arr[0] == finalIntAnswer[AnswerNow[0]]){
+                        if(Mid2Arr[0] == finalIntAnswer[AnswerNow[0]]) {
                             //숫자가 맞을 경우
                             //text
                             String nowAnswer = String.valueOf(finalIntAnswer[AnswerNow[0]]);
 
 
                             //
-                            for(int i = 0;i < Mid2Tail[0];i++)
-                            {
-                                Mid2Arr[i] = Mid2Arr[i+1];
+                            for (int i = 0; i < Mid2Tail[0]; i++) {
+                                Mid2Arr[i] = Mid2Arr[i + 1];
                             }
                             Mid2Arr[Mid2Tail[0]] = 0;
 
                             Mid2Tail[0]--;
 
                             String tmpString = "";
-                            for(int i = Mid2Tail[0]-1 ;i >= 0; i--){
+                            for (int i = Mid2Tail[0] - 1; i >= 0; i--) {
                                 tmpString += "\n" + Mid2Arr[i];
                             }
                             MiddleButton2.setText(tmpString);
@@ -286,15 +294,62 @@ public class GameLine2 extends AppCompatActivity {
 
                             int start = content.indexOf(nowAnswer);
                             int end = start + nowAnswer.length();
-                            spannableString.setSpan(new ForegroundColorSpan(Color.parseColor("#FBAC33")),0,end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                            spannableString.setSpan(new StyleSpan(Typeface.BOLD),0,end,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                            spannableString.setSpan(new ForegroundColorSpan(Color.parseColor("#FBAC33")), 0, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                            spannableString.setSpan(new StyleSpan(Typeface.BOLD), 0, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
                             BottomButton.setText(spannableString);
 
-                            System.out.println("SPAAAAAAAAAAAAAAAAAAAAAN : "+content+" , "+nowAnswer+" , "+start+" , "+end);
                             //다 맞을 경우 AnswerNow[0]++ == MaxNum
-                            if(AnswerNow[0] == MaxNum)
-                                finish();
+                            if (AnswerNow[0] == MaxNum) {
+
+                                CostomDialog costomDialog = new CostomDialog(GameLine2.this);
+                                costomDialog.setCancelable(false);
+                                costomDialog.show();
+                                /*
+                                AlertDialog.Builder builder = new AlertDialog.Builder(GameLine2.this);
+                                builder
+                                        .setTitle(StrAnswer+" 단계 성공!")
+                                        .setMessage("계속해서 다음 단계도 성공하세요!")
+                                        .setPositiveButton("예", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialogInterface, int i) {
+                                                finish();
+                                            }
+                                        });
+
+                                AlertDialog alertDialog = builder.create();
+                                alertDialog.show();
+                                */
+
+                                /*
+                                final View dialogView = getLayoutInflater().inflate(R.layout.costom_dialog,null);
+                                TextView dialogTitleText = (TextView) dialogView.findViewById(R.id.costomDialogTitle);
+                                TextView dialogContentText = (TextView) dialogView.findViewById(R.id.costomDialogContent);
+                                final Button dialogButton = (Button) dialogView.findViewById(R.id.costomDialogButton);
+
+                                final AlertDialog.Builder builder = new AlertDialog.Builder(GameLine2.this);
+                                builder.setView(dialogView);
+
+                                String tmp = StrAnswer;
+                                int tmpindex = tmp.indexOf("_");
+                                String frontTmp = tmp.substring(0,tmpindex);
+                                String tailTmp = tmp.substring(tmpindex+1,tmp.length());
+
+                                dialogTitleText.setText(frontTmp+"-"+tailTmp+" 단계 성공!");
+                                dialogContentText.setText("계속해서 다음 단계도 성공하세요!");
+
+                                dialogButton.setText("알겠어요!");
+                                dialogButton.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+
+                                    }
+                                });
+
+                                AlertDialog alertDialog = builder.create();
+                                alertDialog.show();
+*/
+                            }
                         }
 
                         //숫자가 틀린 경우
