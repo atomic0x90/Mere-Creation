@@ -153,7 +153,87 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
 
-                android:text="Button" />
+                android:text="2"
+                />
+
+            <LinearLayout
+                android:id="@+id/Step2Ver"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/Step2Hor1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/Step2_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="2-1" />
+
+                    <Button
+                        android:id="@+id/Step2_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="2-2" />
+
+                    <Button
+                        android:id="@+id/Step2_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="2-3" />
+
+                    <Button
+                        android:id="@+id/Step2_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="2-4" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Step2Hor2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/Step2_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="2-5" />
+
+                    <Button
+                        android:id="@+id/Step2_6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="2-6" />
+
+                    <Button
+                        android:id="@+id/Step2_7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="2-7" />
+
+                    <Button
+                        android:id="@+id/Step2_8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="2-8" />
+                </LinearLayout>
+            </LinearLayout>
 
             <View
                 android:id="@+id/divider3"

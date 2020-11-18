@@ -205,6 +205,222 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println("AdsFree table : "+e);
             }
 
+            //Game Lock table 1-1
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock1_1 (" +
+                    "Lock " + "INTEGER NOT NULL)";
+            sqliteDB.execSQL(sqlCreateTbl);
+
+            sqlQuery = "SELECT * FROM GameLock1_1";
+            cursor = null;
+            cursor = sqliteDB.rawQuery(sqlQuery,null);
+
+            try{
+                if(!cursor.moveToNext()){
+                    String sqlInsert = "INSERT INTO GameLock1_1" + "(Lock)" + "VALUES (" + 0 + ");";
+                    sqliteDB.execSQL(sqlInsert);
+                }
+            }catch (Exception e){
+                System.out.println("Error GameLock tbl : " + e);
+            }
+
+            //Game Lock table 1-2
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock1_2 (" +
+                    "Lock " + "INTEGER NOT NULL)";
+            sqliteDB.execSQL(sqlCreateTbl);
+
+            sqlQuery = "SELECT * FROM GameLock1_2";
+            cursor = null;
+            cursor = sqliteDB.rawQuery(sqlQuery,null);
+
+            try{
+                if(!cursor.moveToNext()){
+                    String sqlInsert = "INSERT INTO GameLock1_2" + "(Lock)" + "VALUES (" + 1 + ");";
+                    sqliteDB.execSQL(sqlInsert);
+                }
+            }catch (Exception e){
+                System.out.println("Error GameLock tbl : " + e);
+            }
+
+            //Game Lock table 1-3
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock1_3 (" +
+                    "Lock " + "INTEGER NOT NULL)";
+            sqliteDB.execSQL(sqlCreateTbl);
+
+            sqlQuery = "SELECT * FROM GameLock1_3";
+            cursor = null;
+            cursor = sqliteDB.rawQuery(sqlQuery,null);
+
+            try{
+                if(!cursor.moveToNext()){
+                    String sqlInsert = "INSERT INTO GameLock1_3" + "(Lock)" + "VALUES (" + 1 + ");";
+                    sqliteDB.execSQL(sqlInsert);
+                }
+            }catch (Exception e){
+                System.out.println("Error GameLock tbl : " + e);
+            }
+
+            //Game Lock table 1-4
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock1_4 (" +
+                    "Lock " + "INTEGER NOT NULL)";
+            sqliteDB.execSQL(sqlCreateTbl);
+
+            sqlQuery = "SELECT * FROM GameLock1_4";
+            cursor = null;
+            cursor = sqliteDB.rawQuery(sqlQuery,null);
+
+            try{
+                if(!cursor.moveToNext()){
+                    String sqlInsert = "INSERT INTO GameLock1_4" + "(Lock)" + "VALUES (" + 1 + ");";
+                    sqliteDB.execSQL(sqlInsert);
+                }
+            }catch (Exception e){
+                System.out.println("Error GameLock tbl : " + e);
+            }
+
+            //Game Lock table 1-5
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock1_5 (" +
+                    "Lock " + "INTEGER NOT NULL)";
+            sqliteDB.execSQL(sqlCreateTbl);
+
+            sqlQuery = "SELECT * FROM GameLock1_5";
+            cursor = null;
+            cursor = sqliteDB.rawQuery(sqlQuery,null);
+
+            try{
+                if(!cursor.moveToNext()){
+                    String sqlInsert = "INSERT INTO GameLock1_5" + "(Lock)" + "VALUES (" + 1 + ");";
+                    sqliteDB.execSQL(sqlInsert);
+                }
+            }catch (Exception e){
+                System.out.println("Error GameLock tbl : " + e);
+            }
+
+            //Game Lock table 1-6
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock1_6 (" +
+                    "Lock " + "INTEGER NOT NULL)";
+            sqliteDB.execSQL(sqlCreateTbl);
+
+            sqlQuery = "SELECT * FROM GameLock1_6";
+            cursor = null;
+            cursor = sqliteDB.rawQuery(sqlQuery,null);
+
+            try{
+                if(!cursor.moveToNext()){
+                    String sqlInsert = "INSERT INTO GameLock1_6" + "(Lock)" + "VALUES (" + 1 + ");";
+                    sqliteDB.execSQL(sqlInsert);
+                }
+            }catch (Exception e){
+                System.out.println("Error GameLock tbl : " + e);
+            }
+
+            //Game Lock table 1-7
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock1_7 (" +
+                    "Lock " + "INTEGER NOT NULL)";
+            sqliteDB.execSQL(sqlCreateTbl);
+
+            sqlQuery = "SELECT * FROM GameLock1_7";
+            cursor = null;
+            cursor = sqliteDB.rawQuery(sqlQuery,null);
+
+            try{
+                if(!cursor.moveToNext()){
+                    String sqlInsert = "INSERT INTO GameLock1_7" + "(Lock)" + "VALUES (" + 1 + ");";
+                    sqliteDB.execSQL(sqlInsert);
+                }
+            }catch (Exception e){
+                System.out.println("Error GameLock tbl : " + e);
+            }
+
+            //Game Lock table 1-8
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock1_8 (" +
+                    "Lock " + "INTEGER NOT NULL)";
+            sqliteDB.execSQL(sqlCreateTbl);
+
+            sqlQuery = "SELECT * FROM GameLock1_8";
+            cursor = null;
+            cursor = sqliteDB.rawQuery(sqlQuery,null);
+
+            try{
+                if(!cursor.moveToNext()){
+                    String sqlInsert = "INSERT INTO GameLock1_8" + "(Lock)" + "VALUES (" + 1 + ");";
+                    sqliteDB.execSQL(sqlInsert);
+                }
+            }catch (Exception e){
+                System.out.println("Error GameLock tbl : " + e);
+            }
+
+            //Game Lock table 2-1
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock2_1 (" +
+                    "Lock " + "INTEGER NOT NULL)";
+            sqliteDB.execSQL(sqlCreateTbl);
+
+            sqlQuery = "SELECT * FROM GameLock2_1";
+            cursor = null;
+            cursor = sqliteDB.rawQuery(sqlQuery,null);
+
+            try{
+                if(!cursor.moveToNext()){
+                    String sqlInsert = "INSERT INTO GameLock2_1" + "(Lock)" + "VALUES (" + 1 + ");";
+                    sqliteDB.execSQL(sqlInsert);
+                }
+            }catch (Exception e){
+                System.out.println("Error GameLock tbl : " + e);
+            }
+
+            //Game Lock table 2-2
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock2_2 (" +
+                    "Lock " + "INTEGER NOT NULL)";
+            sqliteDB.execSQL(sqlCreateTbl);
+
+            sqlQuery = "SELECT * FROM GameLock2_2";
+            cursor = null;
+            cursor = sqliteDB.rawQuery(sqlQuery,null);
+
+            try{
+                if(!cursor.moveToNext()){
+                    String sqlInsert = "INSERT INTO GameLock2_2" + "(Lock)" + "VALUES (" + 1 + ");";
+                    sqliteDB.execSQL(sqlInsert);
+                }
+            }catch (Exception e){
+                System.out.println("Error GameLock tbl : " + e);
+            }
+
+            //Game Lock table 2-3
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock2_3 (" +
+                    "Lock " + "INTEGER NOT NULL)";
+            sqliteDB.execSQL(sqlCreateTbl);
+
+            sqlQuery = "SELECT * FROM GameLock2_3";
+            cursor = null;
+            cursor = sqliteDB.rawQuery(sqlQuery,null);
+
+            try{
+                if(!cursor.moveToNext()){
+                    String sqlInsert = "INSERT INTO GameLock2_3" + "(Lock)" + "VALUES (" + 1 + ");";
+                    sqliteDB.execSQL(sqlInsert);
+                }
+            }catch (Exception e){
+                System.out.println("Error GameLock tbl : " + e);
+            }
+
+            //Game Lock table 2-4
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock2_4 (" +
+                    "Lock " + "INTEGER NOT NULL)";
+            sqliteDB.execSQL(sqlCreateTbl);
+
+            sqlQuery = "SELECT * FROM GameLock2_4";
+            cursor = null;
+            cursor = sqliteDB.rawQuery(sqlQuery,null);
+
+            try{
+                if(!cursor.moveToNext()){
+                    String sqlInsert = "INSERT INTO GameLock2_4" + "(Lock)" + "VALUES (" + 1 + ");";
+                    sqliteDB.execSQL(sqlInsert);
+                }
+            }catch (Exception e){
+                System.out.println("Error GameLock tbl : " + e);
+            }
+
         }
     }
 
@@ -247,6 +463,11 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+
+
+
+
+
 
     @Override
     protected void onUserLeaveHint(){

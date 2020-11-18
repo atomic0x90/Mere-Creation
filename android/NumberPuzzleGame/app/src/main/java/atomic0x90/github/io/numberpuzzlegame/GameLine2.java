@@ -3,7 +3,14 @@ package atomic0x90.github.io.numberpuzzlegame;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.StyleSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -192,7 +199,11 @@ public class GameLine2 extends AppCompatActivity {
                         //1번 줄에서 내려온 경우
                         if(Mid1Arr[0] == finalIntAnswer[AnswerNow[0]]){
                             //숫자가 맞을 경우
+                            //text
+                            String nowAnswer = String.valueOf(finalIntAnswer[AnswerNow[0]]);
 
+
+                            //
                             for(int i = 0;i < Mid1Tail[0];i++)
                             {
                                 Mid1Arr[i] = Mid1Arr[i+1];
@@ -215,8 +226,21 @@ public class GameLine2 extends AppCompatActivity {
 
                             TopButton.setEnabled(true);
                             MiddleButton2.setEnabled(true);
-                            //다 맞을 경우 AnswerNow[0]++ == MaxNum
 
+                            //text 설정
+                            String content = BottomButton.getText().toString();
+
+                            SpannableStringBuilder spannableString = new SpannableStringBuilder(content);
+
+                            int start = content.indexOf(nowAnswer);
+                            int end = start + nowAnswer.length();
+                            spannableString.setSpan(new ForegroundColorSpan(Color.RED),0,end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                            spannableString.setSpan(new StyleSpan(Typeface.BOLD),0,end,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                            BottomButton.setText(spannableString);
+
+                            System.out.println("SPAAAAAAAAAAAAAAAAAAAAAN : "+content+" , "+nowAnswer+" , "+start+" , "+end);
+                            //다 맞을 경우 AnswerNow[0]++ == MaxNum
                             if(AnswerNow[0] == MaxNum)
                                 finish();
                         }
@@ -227,7 +251,11 @@ public class GameLine2 extends AppCompatActivity {
                         //2번 줄에서 내려온 경우
                         if(Mid2Arr[0] == finalIntAnswer[AnswerNow[0]]){
                             //숫자가 맞을 경우
+                            //text
+                            String nowAnswer = String.valueOf(finalIntAnswer[AnswerNow[0]]);
 
+
+                            //
                             for(int i = 0;i < Mid2Tail[0];i++)
                             {
                                 Mid2Arr[i] = Mid2Arr[i+1];
@@ -250,6 +278,20 @@ public class GameLine2 extends AppCompatActivity {
 
                             TopButton.setEnabled(true);
                             MiddleButton1.setEnabled(true);
+
+                            //text 설정
+                            String content = BottomButton.getText().toString();
+
+                            SpannableString spannableString = new SpannableString(content);
+
+                            int start = content.indexOf(nowAnswer);
+                            int end = start + nowAnswer.length();
+                            spannableString.setSpan(new ForegroundColorSpan(Color.parseColor("#FBAC33")),0,end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                            spannableString.setSpan(new StyleSpan(Typeface.BOLD),0,end,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                            BottomButton.setText(spannableString);
+
+                            System.out.println("SPAAAAAAAAAAAAAAAAAAAAAN : "+content+" , "+nowAnswer+" , "+start+" , "+end);
                             //다 맞을 경우 AnswerNow[0]++ == MaxNum
                             if(AnswerNow[0] == MaxNum)
                                 finish();
