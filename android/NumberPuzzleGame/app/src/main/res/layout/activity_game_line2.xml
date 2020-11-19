@@ -63,6 +63,8 @@
 
         app:layout_constraintStart_toStartOf="parent"
 
+        android:textColor="@color/textcw"
+
         android:inputType="textEmailAddress|textNoSuggestions"
         android:stateListAnimator="@null"
         />

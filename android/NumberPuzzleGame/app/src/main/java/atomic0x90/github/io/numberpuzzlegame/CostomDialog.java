@@ -22,6 +22,7 @@ public class CostomDialog extends Dialog{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.costom_dialog);
 
+
         Button costomButton = (Button) findViewById(R.id.costomDialogButton);
         costomButton.setOnClickListener(new View.OnClickListener() {
             @Override

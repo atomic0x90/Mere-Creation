@@ -4,7 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StepSelection">
+    tools:context=".StepSelection"
+
+    android:background="@color/bgc"
+    >
 
     <TextView
         android:id="@+id/StepSelectionTitleText"
@@ -14,6 +17,7 @@
         android:layout_marginBottom="10dp"
         android:text="단계선택"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/textc"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,23 +46,32 @@
 
             <Button
                 android:id="@+id/TutorialButton"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="튜토리얼" />
+                android:background="@drawable/costom_menu_button1"
+
+                android:stateListAnimator="@null"
+                android:text="튜토리얼"
+                android:textColor="@color/textc" />
 
             <View
                 android:id="@+id/divider"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:background="?android:attr/listDivider" />
+                android:background="@color/bg2"
+
+                />
 
             <Button
                 android:id="@+id/Step1Button"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="1" />
+                android:background="@drawable/costom_menu_button1"
+                android:stateListAnimator="@null"
+                android:text="1"
+                android:textColor="@color/textc" />
 
             <LinearLayout
                 android:id="@+id/Step1Ver"
@@ -80,28 +93,40 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1-1" />
+                        android:text="1-1"
+                        android:background="@drawable/costom_menu_button1"
+                        android:textColor="@color/textc"
+                        android:stateListAnimator="@null"/>
 
                     <Button
                         android:id="@+id/Step1_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1-2" />
+                        android:text="1-2"
+                        android:background="@drawable/costom_menu_button1"
+                        android:textColor="@color/textc"
+                        android:stateListAnimator="@null"/>
 
                     <Button
                         android:id="@+id/Step1_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1-3" />
+                        android:text="1-3"
+                        android:background="@drawable/costom_menu_button1"
+                        android:textColor="@color/textc"
+                        android:stateListAnimator="@null"/>
 
                     <Button
                         android:id="@+id/Step1_4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1-4" />
+                        android:text="1-4"
+                        android:background="@drawable/costom_menu_button1"
+                        android:textColor="@color/textc"
+                        android:stateListAnimator="@null"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -115,28 +140,40 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1-5" />
+                        android:text="1-5"
+                        android:background="@drawable/costom_menu_button1"
+                        android:textColor="@color/textc"
+                        android:stateListAnimator="@null"/>
 
                     <Button
                         android:id="@+id/Step1_6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1-6" />
+                        android:text="1-6"
+                        android:background="@drawable/costom_menu_button1"
+                        android:textColor="@color/textc"
+                        android:stateListAnimator="@null"/>
 
                     <Button
                         android:id="@+id/Step1_7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1-7" />
+                        android:text="1-7"
+                        android:background="@drawable/costom_menu_button1"
+                        android:textColor="@color/textc"
+                        android:stateListAnimator="@null"/>
 
                     <Button
                         android:id="@+id/Step1_8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1-8" />
+                        android:text="1-8"
+                        android:background="@drawable/costom_menu_button1"
+                        android:textColor="@color/textc"
+                        android:stateListAnimator="@null"/>
                 </LinearLayout>
 
             </LinearLayout>
@@ -145,16 +182,18 @@
                 android:id="@+id/divider2"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:background="?android:attr/listDivider" />
+                android:background="@color/bg2" />
 
             <Button
                 android:id="@+id/Step2Button"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
 
+                android:background="@drawable/costom_menu_button2"
+                android:stateListAnimator="@null"
                 android:text="2"
-                />
+                android:textColor="@color/textcw" />
 
             <LinearLayout
                 android:id="@+id/Step2Ver"
@@ -175,28 +214,40 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="2-1" />
+                        android:text="2-1"
+                        android:background="@drawable/costom_menu_button2"
+                        android:textColor="@color/textcw"
+                        android:stateListAnimator="@null"/>
 
                     <Button
                         android:id="@+id/Step2_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="2-2" />
+                        android:text="2-2"
+                        android:background="@drawable/costom_menu_button2"
+                        android:textColor="@color/textcw"
+                        android:stateListAnimator="@null"/>
 
                     <Button
                         android:id="@+id/Step2_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="2-3" />
+                        android:text="2-3"
+                        android:background="@drawable/costom_menu_button2"
+                        android:textColor="@color/textcw"
+                        android:stateListAnimator="@null"/>
 
                     <Button
                         android:id="@+id/Step2_4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="2-4" />
+                        android:text="2-4"
+                        android:background="@drawable/costom_menu_button2"
+                        android:textColor="@color/textcw"
+                        android:stateListAnimator="@null"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -210,28 +261,40 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="2-5" />
+                        android:text="2-5"
+                        android:background="@drawable/costom_menu_button2"
+                        android:textColor="@color/textcw"
+                        android:stateListAnimator="@null"/>
 
                     <Button
                         android:id="@+id/Step2_6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="2-6" />
+                        android:text="2-6"
+                        android:background="@drawable/costom_menu_button2"
+                        android:textColor="@color/textcw"
+                        android:stateListAnimator="@null"/>
 
                     <Button
                         android:id="@+id/Step2_7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="2-7" />
+                        android:text="2-7"
+                        android:background="@drawable/costom_menu_button2"
+                        android:textColor="@color/textcw"
+                        android:stateListAnimator="@null"/>
 
                     <Button
                         android:id="@+id/Step2_8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="2-8" />
+                        android:text="2-8"
+                        android:background="@drawable/costom_menu_button2"
+                        android:textColor="@color/textcw"
+                        android:stateListAnimator="@null"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -239,15 +302,18 @@
                 android:id="@+id/divider3"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:background="?android:attr/listDivider" />
+                android:background="@color/bg3" />
 
             <Button
                 android:id="@+id/Step3Button"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
 
-                android:text="Button" />
+                android:background="@drawable/costom_menu_button2"
+                android:stateListAnimator="@null"
+                android:text="3"
+                android:textColor="@color/textcw" />
         </LinearLayout>
     </ScrollView>
 

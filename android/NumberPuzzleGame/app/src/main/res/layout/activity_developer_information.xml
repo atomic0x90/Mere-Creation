@@ -4,7 +4,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+
+    android:background="@color/bgc"
+    >
 
 
     <TextView
@@ -30,7 +33,7 @@
         android:layout_marginBottom="10dp"
         android:text="이름 : 한유준"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@color/text"
+        android:textColor="@color/textc"
         app:layout_constraintBottom_toTopOf="@+id/textView3"
 
         app:layout_constraintEnd_toEndOf="parent"
@@ -60,7 +63,7 @@
         android:layout_marginBottom="10dp"
         android:text="hanyujun.study@gmail.com"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/text"
+        android:textColor="@color/textc"
         app:layout_constraintBottom_toTopOf="@+id/textView6"
 
         app:layout_constraintEnd_toEndOf="parent"
@@ -90,7 +93,7 @@
         android:layout_marginBottom="10dp"
         android:text="https://atomic0x90.github.io"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/text"
+        android:textColor="@color/textc"
         app:layout_constraintBottom_toTopOf="@+id/textView10"
 
         app:layout_constraintEnd_toEndOf="parent"
@@ -110,7 +113,7 @@
         android:gravity="center"
         android:text="https://play.google.com/store/apps/developer?id=atomic0x90"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/text"
+        android:textColor="@color/textc"
 
         app:layout_constraintBottom_toTopOf="@+id/textView12"
         app:layout_constraintEnd_toEndOf="parent"
@@ -149,7 +152,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9"
 
-        android:textColor="@color/text"
+        android:textColor="@color/textc"
         android:gravity="center"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

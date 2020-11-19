@@ -4,13 +4,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+
+    android:background="@color/bgc"
+    >
 
     <TextView
         android:id="@+id/costomDialogTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="성공했어요!"
+        android:textColor="@color/textc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -20,6 +24,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="알겠어요!"
+        android:textColor="@color/textcw"
+        android:background="@drawable/costom_menu_button3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -31,6 +37,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="50dp"
         android:text="계속해서 다음 단계도 성공하세요!"
+        android:textColor="@color/textc"
         app:layout_constraintBottom_toTopOf="@+id/costomDialogButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
