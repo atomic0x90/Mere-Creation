@@ -2,9 +2,6 @@ package atomic0x90.github.io.numberpuzzlegame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -16,11 +13,7 @@ import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import org.w3c.dom.Text;
+import android.widget.ImageButton;
 
 public class GameLine2 extends AppCompatActivity {
 
@@ -33,6 +26,8 @@ public class GameLine2 extends AppCompatActivity {
         final Button MiddleButton1 = (Button) findViewById(R.id.Line2MiddleButton1);
         final Button MiddleButton2 = (Button) findViewById(R.id.Line2MiddleButton2);
         final Button BottomButton = (Button) findViewById(R.id.Line2BottomButton);
+
+        Button RetryButton = (Button) findViewById(R.id.Line2RetryButton);
 
         Intent nowIntent = getIntent();
         final int MaxNum = nowIntent.getIntExtra("Max",0);    //최대 숫자
@@ -78,6 +73,30 @@ public class GameLine2 extends AppCompatActivity {
         MiddleButton1.setText("");
         MiddleButton2.setText("");
 
+        RetryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TopButton.setText("1");
+                MiddleButton1.setText("");
+                MiddleButton2.setText("");
+                //bottom button 색깔 돌려놓기
+                AnswerNow[0] = 0;
+                Mid1Tail[0] = 0;
+                Mid2Tail[0] = 0;
+                for(int i = 0;i < 100;i++){
+                    Mid1Arr[i] = 0;
+                    Mid2Arr[i] = 0;
+                }
+                String content = BottomButton.getText().toString();
+
+                SpannableStringBuilder spannableString = new SpannableStringBuilder(content);
+
+                spannableString.setSpan(new ForegroundColorSpan(Color.parseColor("#fbac33")),0,content.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                spannableString.setSpan(new StyleSpan(Typeface.NORMAL),0,content.length(),Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                BottomButton.setText(spannableString);
+            }
+        });
 
         TopButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -305,50 +324,6 @@ public class GameLine2 extends AppCompatActivity {
                                 CostomDialog costomDialog = new CostomDialog(GameLine2.this);
                                 costomDialog.setCancelable(false);
                                 costomDialog.show();
-                                /*
-                                AlertDialog.Builder builder = new AlertDialog.Builder(GameLine2.this);
-                                builder
-                                        .setTitle(StrAnswer+" 단계 성공!")
-                                        .setMessage("계속해서 다음 단계도 성공하세요!")
-                                        .setPositiveButton("예", new DialogInterface.OnClickListener() {
-                                            @Override
-                                            public void onClick(DialogInterface dialogInterface, int i) {
-                                                finish();
-                                            }
-                                        });
-
-                                AlertDialog alertDialog = builder.create();
-                                alertDialog.show();
-                                */
-
-                                /*
-                                final View dialogView = getLayoutInflater().inflate(R.layout.costom_dialog,null);
-                                TextView dialogTitleText = (TextView) dialogView.findViewById(R.id.costomDialogTitle);
-                                TextView dialogContentText = (TextView) dialogView.findViewById(R.id.costomDialogContent);
-                                final Button dialogButton = (Button) dialogView.findViewById(R.id.costomDialogButton);
-
-                                final AlertDialog.Builder builder = new AlertDialog.Builder(GameLine2.this);
-                                builder.setView(dialogView);
-
-                                String tmp = StrAnswer;
-                                int tmpindex = tmp.indexOf("_");
-                                String frontTmp = tmp.substring(0,tmpindex);
-                                String tailTmp = tmp.substring(tmpindex+1,tmp.length());
-
-                                dialogTitleText.setText(frontTmp+"-"+tailTmp+" 단계 성공!");
-                                dialogContentText.setText("계속해서 다음 단계도 성공하세요!");
-
-                                dialogButton.setText("알겠어요!");
-                                dialogButton.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View view) {
-
-                                    }
-                                });
-
-                                AlertDialog alertDialog = builder.create();
-                                alertDialog.show();
-*/
                             }
                         }
 
