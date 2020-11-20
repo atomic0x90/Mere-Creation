@@ -5,24 +5,29 @@ import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
 import androidx.annotation.NonNull;
 
-public class CostomDialog extends Dialog{
+public class CostomDialogBackKey extends Dialog {
     private Context mContext;
 
-    public CostomDialog(@NonNull Context context) {
+    public CostomDialogBackKey(@NonNull Context context) {
         super(context);
         mContext = context;
-    }
 
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.costom_dialog);
+        setContentView(R.layout.costom_dialog_back_key);
+
+
+//        requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         DisplayMetrics dm = new DisplayMetrics();
         getWindow().getWindowManager().getDefaultDisplay().getMetrics(dm);
@@ -33,12 +38,20 @@ public class CostomDialog extends Dialog{
 
         getWindow().setAttributes(lp);
 
-        Button costomButton = (Button) findViewById(R.id.costomDialogButton);
-        costomButton.setOnClickListener(new View.OnClickListener() {
+        Button costomButtonPositive = (Button) findViewById(R.id.costomDialogBackKeyPositiveButton);
+        Button costomButtonNegative = (Button) findViewById(R.id.costomDialogBackKeyNegativeButton);
+
+        costomButtonPositive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                CostomDialog.this.dismiss();
+                CostomDialogBackKey.this.dismiss();
                 ((Activity)mContext).finish();
+            }
+        });
+        costomButtonNegative.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CostomDialogBackKey.this.dismiss();
             }
         });
     }

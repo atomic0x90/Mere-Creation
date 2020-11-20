@@ -108,103 +108,19 @@ public class StepSelection extends AppCompatActivity {
     int lock10_7 = -1;
     int lock10_8 = -1;
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        loadGameLockALL();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_step_selection);
-
         sqliteDB = init_database();
-
-        loadGameLock1_1();
-        loadGameLock1_2();
-        loadGameLock1_3();
-        loadGameLock1_4();
-        loadGameLock1_5();
-        loadGameLock1_6();
-        loadGameLock1_7();
-        loadGameLock1_8();
-
-        loadGameLock2_1();
-        loadGameLock2_2();
-        loadGameLock2_3();
-        loadGameLock2_4();
-        loadGameLock2_5();
-        loadGameLock2_6();
-        loadGameLock2_7();
-        loadGameLock2_8();
-
-        loadGameLock3_1();
-        loadGameLock3_2();
-        loadGameLock3_3();
-        loadGameLock3_4();
-        loadGameLock3_5();
-        loadGameLock3_6();
-        loadGameLock3_7();
-        loadGameLock3_8();
-
-        loadGameLock4_1();
-        loadGameLock4_2();
-        loadGameLock4_3();
-        loadGameLock4_4();
-        loadGameLock4_5();
-        loadGameLock4_6();
-        loadGameLock4_7();
-        loadGameLock4_8();
-
-        loadGameLock5_1();
-        loadGameLock5_2();
-        loadGameLock5_3();
-        loadGameLock5_4();
-        loadGameLock5_5();
-        loadGameLock5_6();
-        loadGameLock5_7();
-        loadGameLock5_8();
-
-        loadGameLock6_1();
-        loadGameLock6_2();
-        loadGameLock6_3();
-        loadGameLock6_4();
-        loadGameLock6_5();
-        loadGameLock6_6();
-        loadGameLock6_7();
-        loadGameLock6_8();
-
-        loadGameLock7_1();
-        loadGameLock7_2();
-        loadGameLock7_3();
-        loadGameLock7_4();
-        loadGameLock7_5();
-        loadGameLock7_6();
-        loadGameLock7_7();
-        loadGameLock7_8();
-
-        loadGameLock8_1();
-        loadGameLock8_2();
-        loadGameLock8_3();
-        loadGameLock8_4();
-        loadGameLock8_5();
-        loadGameLock8_6();
-        loadGameLock8_7();
-        loadGameLock8_8();
-
-        loadGameLock9_1();
-        loadGameLock9_2();
-        loadGameLock9_3();
-        loadGameLock9_4();
-        loadGameLock9_5();
-        loadGameLock9_6();
-        loadGameLock9_7();
-        loadGameLock9_8();
-
-        loadGameLock10_1();
-        loadGameLock10_2();
-        loadGameLock10_3();
-        loadGameLock10_4();
-        loadGameLock10_5();
-        loadGameLock10_6();
-        loadGameLock10_7();
-        loadGameLock10_8();
+        loadGameLockALL();
 
         final Button Step1Button = (Button) findViewById(R.id.Step1Button);
         final Button Step2Button = (Button) findViewById(R.id.Step2Button);
@@ -369,6 +285,7 @@ public class StepSelection extends AppCompatActivity {
         });
     }
 
+
     //DB
     private SQLiteDatabase init_database() {
 
@@ -388,6 +305,98 @@ public class StepSelection extends AppCompatActivity {
         }
 
         return db ;
+    }
+
+    private void loadGameLockALL(){
+        loadGameLock1_1();
+        loadGameLock1_2();
+        loadGameLock1_3();
+        loadGameLock1_4();
+        loadGameLock1_5();
+        loadGameLock1_6();
+        loadGameLock1_7();
+        loadGameLock1_8();
+
+        loadGameLock2_1();
+        loadGameLock2_2();
+        loadGameLock2_3();
+        loadGameLock2_4();
+        loadGameLock2_5();
+        loadGameLock2_6();
+        loadGameLock2_7();
+        loadGameLock2_8();
+
+        loadGameLock3_1();
+        loadGameLock3_2();
+        loadGameLock3_3();
+        loadGameLock3_4();
+        loadGameLock3_5();
+        loadGameLock3_6();
+        loadGameLock3_7();
+        loadGameLock3_8();
+
+        loadGameLock4_1();
+        loadGameLock4_2();
+        loadGameLock4_3();
+        loadGameLock4_4();
+        loadGameLock4_5();
+        loadGameLock4_6();
+        loadGameLock4_7();
+        loadGameLock4_8();
+
+        loadGameLock5_1();
+        loadGameLock5_2();
+        loadGameLock5_3();
+        loadGameLock5_4();
+        loadGameLock5_5();
+        loadGameLock5_6();
+        loadGameLock5_7();
+        loadGameLock5_8();
+
+        loadGameLock6_1();
+        loadGameLock6_2();
+        loadGameLock6_3();
+        loadGameLock6_4();
+        loadGameLock6_5();
+        loadGameLock6_6();
+        loadGameLock6_7();
+        loadGameLock6_8();
+
+        loadGameLock7_1();
+        loadGameLock7_2();
+        loadGameLock7_3();
+        loadGameLock7_4();
+        loadGameLock7_5();
+        loadGameLock7_6();
+        loadGameLock7_7();
+        loadGameLock7_8();
+
+        loadGameLock8_1();
+        loadGameLock8_2();
+        loadGameLock8_3();
+        loadGameLock8_4();
+        loadGameLock8_5();
+        loadGameLock8_6();
+        loadGameLock8_7();
+        loadGameLock8_8();
+
+        loadGameLock9_1();
+        loadGameLock9_2();
+        loadGameLock9_3();
+        loadGameLock9_4();
+        loadGameLock9_5();
+        loadGameLock9_6();
+        loadGameLock9_7();
+        loadGameLock9_8();
+
+        loadGameLock10_1();
+        loadGameLock10_2();
+        loadGameLock10_3();
+        loadGameLock10_4();
+        loadGameLock10_5();
+        loadGameLock10_6();
+        loadGameLock10_7();
+        loadGameLock10_8();
     }
 
     private void loadGameLock1_1(){

@@ -16,8 +16,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:background="@drawable/costom_button1_2"
+        android:fontFamily="@font/imcresoojin"
         android:stateListAnimator="@null"
-
+        android:text="1234"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Line2RetryButton" />
@@ -29,13 +31,15 @@
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
         android:background="@drawable/costom_button1_3"
+        android:fontFamily="@font/imcresoojin"
+
         android:stateListAnimator="@null"
-
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toTopOf="@+id/Line2BottomButton"
-
         app:layout_constraintEnd_toStartOf="@+id/Line2MiddleButton2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Line2TopButton" />
+        app:layout_constraintTop_toBottomOf="@+id/Line2TopButton"
+        tools:text="1234" />
 
     <Button
         android:id="@+id/Line2MiddleButton2"
@@ -44,42 +48,46 @@
         android:layout_marginStart="30dp"
         android:layout_marginLeft="30dp"
         android:background="@drawable/costom_button1_3"
+        android:fontFamily="@font/imcresoojin"
+
         android:stateListAnimator="@null"
-
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toTopOf="@+id/Line2BottomButton"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/Line2MiddleButton1"
-        app:layout_constraintTop_toBottomOf="@+id/Line2TopButton" />
+        app:layout_constraintTop_toBottomOf="@+id/Line2TopButton"
+        tools:text="1234" />
 
     <Button
         android:id="@+id/Line2BottomButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/costom_button1_4"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-
-        app:layout_constraintStart_toStartOf="parent"
-
-        android:textColor="@color/textcw"
-
+        android:fontFamily="@font/imcresoojin"
         android:inputType="textEmailAddress|textNoSuggestions"
         android:stateListAnimator="@null"
-        />
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/textcw"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="1234" />
 
     <Button
         android:id="@+id/Line2RetryButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/costom_button1_1"
+        android:fontFamily="@font/imcresoojin"
         android:text="다시하기"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toTopOf="@+id/Line2TopButton"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-
-        android:background="@drawable/costom_button1_1"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

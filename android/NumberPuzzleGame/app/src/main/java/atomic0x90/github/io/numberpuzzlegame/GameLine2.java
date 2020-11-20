@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.graphics.Color;
+import android.graphics.Point;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Spannable;
@@ -14,12 +15,16 @@ import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
+import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 
 import java.io.File;
+import java.io.StringReader;
 
 public class GameLine2 extends AppCompatActivity {
 
@@ -235,27 +240,323 @@ public class GameLine2 extends AppCompatActivity {
 
         if(StrAnswer.equals("1_1")){
             IntAnswer = new int[]{1, 2, 4, 3};
-            BottomButton.setText("1|2|4|3");
+            BottomButton.setText("1,2,4,3");
         }
         else if(StrAnswer.equals("1_2")){
             IntAnswer = new int[]{1, 3, 2, 4};
-            BottomButton.setText("1|3|2|4");
+            BottomButton.setText("1,3,2,4");
         }
         else if(StrAnswer.equals("1_3")){
             IntAnswer = new int[]{2, 1, 3, 4};
-            BottomButton.setText("2|1|3|4");
+            BottomButton.setText("2,1,3,4");
         }
         else if(StrAnswer.equals("1_4")){
             IntAnswer = new int[]{2, 3, 1, 4};
-            BottomButton.setText("2|3|1|4");
+            BottomButton.setText("2,3,1,4");
         }
         else if(StrAnswer.equals("1_5")){
             IntAnswer = new int[]{3, 1, 2, 4};
-            BottomButton.setText("3|1|2|4");
+            BottomButton.setText("3,1,2,4");
         }
         else if(StrAnswer.equals("1_6")){
             IntAnswer = new int[]{3, 4, 1, 2};
-            BottomButton.setText("3|4|1|2");
+            BottomButton.setText("3,4,1,2");
+        }
+        else if(StrAnswer.equals("1_7")){
+            IntAnswer = new int[]{3,4,2,1};
+            BottomButton.setText("3,4,2,1");
+        }
+        else if(StrAnswer.equals("1_8")){
+            IntAnswer = new int[]{4,2,3,1};
+            BottomButton.setText("4,2,3,1");
+        }
+        else if(StrAnswer.equals("2_1")){
+            IntAnswer = new int[]{2,4,1,5,3};
+            BottomButton.setText("2,4,1,5,3");
+        }
+        else if(StrAnswer.equals("2_2")){
+            IntAnswer = new int[]{3,1,4,2,5};
+            BottomButton.setText("3,1,4,2,5");
+        }
+        else if(StrAnswer.equals("2_3")){
+            IntAnswer = new int[]{3,2,4,5,1};
+            BottomButton.setText("3,2,4,5,1");
+        }
+        else if(StrAnswer.equals("2_4")){
+            IntAnswer = new int[]{4,1,3,2,5};
+            BottomButton.setText("4,1,3,2,5");
+        }
+        else if(StrAnswer.equals("2_5")){
+            IntAnswer = new int[]{5,2,4,1,3};
+            BottomButton.setText("5,2,4,1,3");
+        }
+        else if(StrAnswer.equals("2_6")){
+            IntAnswer = new int[]{1,4,3,5,2};
+            BottomButton.setText("1,4,3,5,2");
+        }
+        else if(StrAnswer.equals("2_7")){
+            IntAnswer = new int[]{2,5,1,4,3};
+            BottomButton.setText("2,5,1,4,3");
+        }
+        else if(StrAnswer.equals("2_8")){
+            IntAnswer = new int[]{4,3,5,2,1};
+            BottomButton.setText("4,3,5,2,1");
+        }
+        else if(StrAnswer.equals("3_1")){
+            IntAnswer = new int[]{1,5,2,3,6,4};
+            BottomButton.setText("1,5,2,3,6,4");
+        }
+        else if(StrAnswer.equals("3_2")){
+            IntAnswer = new int[]{2,4,5,1,6,3};
+            BottomButton.setText("2,4,5,1,6,3");
+        }
+        else if(StrAnswer.equals("3_3")){
+            IntAnswer = new int[]{3,1,6,4,2,5};
+            BottomButton.setText("3,1,6,4,2,5");
+        }
+        else if(StrAnswer.equals("3_4")){
+            IntAnswer = new int[]{4,2,5,3,6,1};
+            BottomButton.setText("4,2,5,3,6,1");
+        }
+        else if(StrAnswer.equals("3_5")){
+            IntAnswer = new int[]{4,1,3,2,5,6};
+            BottomButton.setText("4,1,3,2,5,6");
+        }
+        else if(StrAnswer.equals("3_6")){
+            IntAnswer = new int[]{5,2,4,3,1,6};
+            BottomButton.setText("5,2,4,3,1,6");
+        }
+        else if(StrAnswer.equals("3_7")){
+            IntAnswer = new int[]{6,2,4,3,5,1};
+            BottomButton.setText("6,2,4,3,5,1");
+        }
+        else if(StrAnswer.equals("3_8")){
+            IntAnswer = new int[]{3,5,4,6,2,1};
+            BottomButton.setText("3,5,4,6,2,1");
+        }
+        else if(StrAnswer.equals("4_1")){
+            IntAnswer = new int[]{1,5,3,6,4,2,7};
+            BottomButton.setText("1,5,3,6,4,2,7");
+        }
+        else if(StrAnswer.equals("4_2")){
+            IntAnswer = new int[]{2,5,6,3,4,7,1};
+            BottomButton.setText("2,5,6,3,4,7,1");
+        }
+        else if(StrAnswer.equals("4_3")){
+            IntAnswer = new int[]{3,5,6,2,7,4,1};
+            BottomButton.setText("3,5,6,2,7,4,1");
+        }
+        else if(StrAnswer.equals("4_4")){
+            IntAnswer = new int[]{7,1,3,5,2,6,4};
+            BottomButton.setText("7,1,3,5,2,6,4");
+        }
+        else if(StrAnswer.equals("4_5")){
+            IntAnswer = new int[]{2,4,3,5,1,7,6};
+            BottomButton.setText("2,4,3,5,1,7,6");
+        }
+        else if(StrAnswer.equals("4_6")){
+            IntAnswer = new int[]{6,1,3,2,4,5,7};
+            BottomButton.setText("6,1,3,2,4,5,7");
+        }
+        else if(StrAnswer.equals("4_7")){
+            IntAnswer = new int[]{3,5,7,6,1,4,2};
+            BottomButton.setText("3,5,7,6,1,4,2");
+        }
+        else if(StrAnswer.equals("4_8")){
+            IntAnswer = new int[]{5,7,1,6,3,2,4};
+            BottomButton.setText("5,7,1,6,3,2,4");
+        }
+        else if(StrAnswer.equals("5_1")){
+            IntAnswer = new int[]{2,4,1,6,3,5,7,8};
+            BottomButton.setText("2,4,1,6,3,5,7,8");
+        }
+        else if(StrAnswer.equals("5_2")){
+            IntAnswer = new int[]{4,2,6,3,7,1,5,8};
+            BottomButton.setText("4,2,6,3,7,1,5,8");
+        }
+        else if(StrAnswer.equals("5_3")){
+            IntAnswer = new int[]{5,2,6,1,8,4,3,7};
+            BottomButton.setText("5,2,6,1,8,4,3,7");
+        }
+        else if(StrAnswer.equals("5_4")){
+            IntAnswer = new int[]{6,2,7,1,4,8,3,5};
+            BottomButton.setText("6,2,7,1,4,8,3,5");
+        }
+        else if(StrAnswer.equals("5_5")){
+            IntAnswer = new int[]{7,3,4,1,6,8,2,5};
+            BottomButton.setText("7,3,4,1,6,8,2,5");
+        }
+        else if(StrAnswer.equals("5_6")){
+            IntAnswer = new int[]{3,6,7,1,4,2,8,5};
+            BottomButton.setText("3,6,7,1,4,2,8,5");
+        }
+        else if(StrAnswer.equals("5_7")){
+            IntAnswer = new int[]{4,7,2,8,6,3,5,1};
+            BottomButton.setText("4,7,2,8,6,3,5,1");
+        }
+        else if(StrAnswer.equals("5_8")){
+            IntAnswer = new int[]{3,6,4,7,8,2,5,1};
+            BottomButton.setText("3,6,4,7,8,2,5,1");
+        }
+        else if(StrAnswer.equals("6_1")){
+            IntAnswer = new int[]{3,7,2,8,9,4,1,5,6};
+            BottomButton.setText("3,7,2,8,9,4,1,5,6");
+        }
+        else if(StrAnswer.equals("6_2")){
+            IntAnswer = new int[]{4,2,6,3,5,1,7,9,8};
+            BottomButton.setText("4,2,6,3,5,1,7,9,8");
+        }
+        else if(StrAnswer.equals("6_3")){
+            IntAnswer = new int[]{6,2,8,3,1,4,9,5,7};
+            BottomButton.setText("6,2,8,3,1,4,9,5,7");
+        }
+        else if(StrAnswer.equals("6_4")){
+            IntAnswer = new int[]{2,5,8,3,1,9,6,4,7};
+            BottomButton.setText("2,5,8,3,1,9,6,4,7");
+        }
+        else if(StrAnswer.equals("6_5")){
+            IntAnswer = new int[]{6,5,9,2,1,3,8,4,7};
+            BottomButton.setText("6,5,9,2,1,3,8,4,7");
+        }
+        else if(StrAnswer.equals("6_6")){
+            IntAnswer = new int[]{5,3,2,8,1,9,4,6,7};
+            BottomButton.setText("5,3,2,8,1,9,4,6,7");
+        }
+        else if(StrAnswer.equals("6_7")){
+            IntAnswer = new int[]{7,2,6,3,8,9,4,1,5};
+            BottomButton.setText("7,2,6,3,8,9,4,1,5");
+        }
+        else if(StrAnswer.equals("6_8")){
+            IntAnswer = new int[]{7,3,4,9,8,5,2,1,6};
+            BottomButton.setText("7,3,4,9,8,5,2,1,6");
+        }
+        else if(StrAnswer.equals("7_1")){
+            IntAnswer = new int[]{2,5,3,8,4,9,10,1,6,7};
+            BottomButton.setText("2,5,3,8,4,9,10,1,6,7");
+        }
+        else if(StrAnswer.equals("7_2")){
+            IntAnswer = new int[]{3,6,8,4,1,10,2,5,7,9};
+            BottomButton.setText("3,6,8,4,1,10,2,5,7,9");
+        }
+        else if(StrAnswer.equals("7_3")){
+            IntAnswer = new int[]{5,3,8,1,2,9,10,4,6,7};
+            BottomButton.setText("5,3,8,1,2,9,10,4,6,7");
+        }
+        else if(StrAnswer.equals("7_4")){
+            IntAnswer = new int[]{6,9,10,2,4,1,8,3,5,7};
+            BottomButton.setText("6,9,10,2,4,1,8,3,5,7");
+        }
+        else if(StrAnswer.equals("7_5")){
+            IntAnswer = new int[]{4,3,8,5,7,1,9,10,2,5};
+            BottomButton.setText("4,3,8,5,7,1,9,10,2,5");
+        }
+        else if(StrAnswer.equals("7_6")){
+            IntAnswer = new int[]{5,7,10,3,8,9,2,6,1,4};
+            BottomButton.setText("5,7,10,3,8,9,2,6,1,4");
+        }
+        else if(StrAnswer.equals("7_7")){
+            IntAnswer = new int[]{3,7,4,10,9,1,2,5,8,6};
+            BottomButton.setText("3,7,4,10,9,1,2,5,8,6");
+        }
+        else if(StrAnswer.equals("7_8")){
+            IntAnswer = new int[]{4,2,5,8,10,9,1,3,7,6};
+            BottomButton.setText("4,2,5,8,10,9,1,3,7,6");
+        }
+        else if(StrAnswer.equals("8_1")){
+            IntAnswer = new int[]{4,3,7,5,9,1,2,10,11,8,6};
+            BottomButton.setText("4,3,7,5,9,1,2,10,11,8,6");
+        }
+        else if(StrAnswer.equals("8_2")){
+            IntAnswer = new int[]{4,5,8,3,1,10,2,6,7,11,9};
+            BottomButton.setText("4,5,8,3,1,10,2,6,7,11,9");
+        }
+        else if(StrAnswer.equals("8_3")){
+            IntAnswer = new int[]{5,2,3,11,8,6,7,10,1,4,9};
+            BottomButton.setText("5,2,3,11,8,6,7,10,1,4,9");
+        }
+        else if(StrAnswer.equals("8_4")){
+            IntAnswer = new int[]{5,8,3,2,1,9,10,4,11,7,6};
+            BottomButton.setText("5,8,3,2,1,9,10,4,11,7,6");
+        }
+        else if(StrAnswer.equals("8_5")){
+            IntAnswer = new int[]{4,6,5,8,2,1,11,9,10,7,3};
+            BottomButton.setText("4,6,5,8,2,1,11,9,10,7,3");
+        }
+        else if(StrAnswer.equals("8_6")){
+            IntAnswer = new int[]{6,5,2,8,10,11,9,1,3,7,4};
+            BottomButton.setText("6,5,2,8,10,11,9,1,3,7,4");
+        }
+        else if(StrAnswer.equals("8_7")){
+            IntAnswer = new int[]{6,9,10,7,11,4,1,3,8,5,2};
+            BottomButton.setText("6,9,10,7,11,4,1,3,8,5,2");
+        }
+        else if(StrAnswer.equals("8_8")){
+            IntAnswer = new int[]{5,2,10,3,8,9,7,4,1,6,11};
+            BottomButton.setText("5,2,10,3,8,9,7,4,1,6,11");
+        }
+        else if(StrAnswer.equals("9_1")){
+            IntAnswer = new int[]{3,5,1,4,8,10,2,6,9,11,12,7};
+            BottomButton.setText("3,5,1,4,8,10,2,6,9,11,12,7");
+        }
+        else if(StrAnswer.equals("9_2")){
+            IntAnswer = new int[]{4,3,1,8,6,9,12,2,10,11,7,5};
+            BottomButton.setText("4,3,1,8,6,9,12,2,10,11,7,5");
+        }
+        else if(StrAnswer.equals("9_3")){
+            IntAnswer = new int[]{5,2,4,8,1,9,10,3,12,11,7,6};
+            BottomButton.setText("5,2,4,8,1,9,10,3,12,11,7,6");
+        }
+        else if(StrAnswer.equals("9_4")){
+            IntAnswer = new int[]{5,6,4,7,2,1,11,9,10,8,12,3};
+            BottomButton.setText("5,6,4,7,2,1,11,9,10,8,12,3");
+        }
+        else if(StrAnswer.equals("9_5")){
+            IntAnswer = new int[]{6,1,2,4,10,11,9,5,3,12,7,8};
+            BottomButton.setText("6,1,2,4,10,11,9,5,3,12,7,8");
+        }
+        else if(StrAnswer.equals("9_6")){
+            IntAnswer = new int[]{6,2,1,7,11,4,10,3,12,8,5,9};
+            BottomButton.setText("6,2,1,7,11,4,10,3,12,8,5,9");
+        }
+        else if(StrAnswer.equals("9_7")){
+            IntAnswer = new int[]{5,2,1,3,8,7,12,7,4,10,9,11};
+            BottomButton.setText("5,2,1,3,8,7,12,7,4,10,9,11");
+        }
+        else if(StrAnswer.equals("9_8")){
+            IntAnswer = new int[]{5,2,4,11,9,7,6,12,10,1,3,8};
+            BottomButton.setText("5,2,4,11,9,7,6,12,10,1,3,8");
+        }
+        else if(StrAnswer.equals("10_1")){
+            IntAnswer = new int[]{5,2,7,3,8,9,11,1,4,13,10,7,12};
+            BottomButton.setText("5,2,7,3,8,9,11,1,4,13,10,7,12");
+        }
+        else if(StrAnswer.equals("10_2")){
+            IntAnswer = new int[]{3,5,1,7,2,12,8,6,13,9,11,10,4};
+            BottomButton.setText("3,5,1,7,2,12,8,6,13,9,11,10,4");
+        }
+        else if(StrAnswer.equals("10_3")){
+            IntAnswer = new int[]{4,2,1,8,6,7,12,3,13,10,11,9,5};
+            BottomButton.setText("4,2,1,8,6,7,12,3,13,10,11,9,5");
+        }
+        else if(StrAnswer.equals("10_4")){
+            IntAnswer = new int[]{5,2,9,7,1,4,10,3,12,11,8,13,6};
+            BottomButton.setText("5,2,9,7,1,4,10,3,12,11,8,13,6");
+        }
+        else if(StrAnswer.equals("10_5")){
+            IntAnswer = new int[]{6,4,2,1,11,10,5,13,9,3,12,7,8};
+            BottomButton.setText("6,4,2,1,11,10,5,13,9,3,12,7,8");
+        }
+        else if(StrAnswer.equals("10_6")){
+            IntAnswer = new int[]{4,2,1,7,11,6,13,10,5,8,12,3,9};
+            BottomButton.setText("4,2,1,7,11,6,13,10,5,8,12,3,9");
+        }
+        else if(StrAnswer.equals("10_7")){
+            IntAnswer = new int[]{3,2,4,12,1,13,7,6,8,10,9,5,11};
+            BottomButton.setText("3,2,4,12,1,13,7,6,8,10,9,5,11");
+        }
+        else if(StrAnswer.equals("10_8")){
+            IntAnswer = new int[]{5,1,4,7,12,6,11,13,3,10,8,2,9};
+            BottomButton.setText("5,1,4,7,12,6,11,13,3,10,8,2,9");
         }
 
 
@@ -1168,6 +1469,14 @@ public class GameLine2 extends AppCompatActivity {
                 }
             }
         });
+    }
+    @Override
+    public void onBackPressed(){
+        CostomDialogBackKey costomDialog = new CostomDialogBackKey(GameLine2.this);
+        costomDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        costomDialog.setCancelable(false);
+        costomDialog.show();
     }
 
     //DB

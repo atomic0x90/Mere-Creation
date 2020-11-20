@@ -21,11 +21,11 @@
 
     <Button
         android:id="@+id/costomDialogButton"
-        android:layout_width="0dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/costom_menu_button3"
         android:text="알겠어요!"
         android:textColor="@color/textcw"
-        android:background="@drawable/costom_menu_button3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
