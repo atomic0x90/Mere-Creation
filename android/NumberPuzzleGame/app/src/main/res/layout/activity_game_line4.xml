@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameLine4"
+    android:background="@color/bgc">
+
+    <TextView
+        android:id="@+id/Line4Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toStartOf="@+id/Line4RetryButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        android:fontFamily="@font/imcresoojin"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/textc"/>
+
+    <Button
+        android:id="@+id/Line4RetryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/costom_button3_1"
+        android:fontFamily="@font/imcresoojin"
+        android:stateListAnimator="@null"
+        android:text="다시하기"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+
+        android:textColor="@color/textc"
+        app:layout_constraintBottom_toTopOf="@+id/Line4TopButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/Line4TopButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Line4RetryButton"
+        android:background="@drawable/costom_button3_2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:fontFamily="@font/imcresoojin"
+        android:stateListAnimator="@null"
+        android:textColor="@color/textc"/>
+
+    <Button
+        android:id="@+id/Line4MiddleButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/costom_button3_3"
+        android:fontFamily="@font/imcresoojin"
+        android:stateListAnimator="@null"
+        android:text="1234"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/textc"
+        app:layout_constraintBottom_toTopOf="@+id/Line4BottomButton"
+        app:layout_constraintEnd_toStartOf="@+id/Line4MiddleButton2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Line4TopButton" />
+
+    <Button
+        android:id="@+id/Line4MiddleButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/costom_button3_3"
+        android:fontFamily="@font/imcresoojin"
+        android:stateListAnimator="@null"
+        android:text="1234"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/textc"
+        app:layout_constraintBottom_toTopOf="@+id/Line4BottomButton"
+        app:layout_constraintEnd_toStartOf="@+id/Line4MiddleButton3"
+        app:layout_constraintStart_toEndOf="@+id/Line4MiddleButton1"
+        app:layout_constraintTop_toBottomOf="@+id/Line4TopButton" />
+
+    <Button
+        android:id="@+id/Line4MiddleButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/costom_button3_3"
+        android:fontFamily="@font/imcresoojin"
+        android:stateListAnimator="@null"
+        android:text="1234"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/textc"
+        app:layout_constraintBottom_toTopOf="@+id/Line4BottomButton"
+        app:layout_constraintEnd_toStartOf="@+id/Line4MiddleButton4"
+        app:layout_constraintStart_toEndOf="@+id/Line4MiddleButton2"
+        app:layout_constraintTop_toBottomOf="@+id/Line4TopButton" />
+
+    <Button
+        android:id="@+id/Line4MiddleButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/costom_button3_3"
+        android:fontFamily="@font/imcresoojin"
+        android:stateListAnimator="@null"
+        android:text="1234"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/textc"
+        app:layout_constraintBottom_toTopOf="@+id/Line4BottomButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Line4MiddleButton3"
+        app:layout_constraintTop_toBottomOf="@+id/Line4TopButton" />
+
+    <Button
+        android:id="@+id/Line4BottomButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        android:background="@drawable/costom_button3_4"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:fontFamily="@font/imcresoojin"
+        android:stateListAnimator="@null"
+        android:textColor="@color/textcw"
+        android:inputType="textEmailAddress|textNoSuggestions"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

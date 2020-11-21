@@ -16,13 +16,17 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:background="@drawable/costom_button1_2"
-        android:fontFamily="@font/imcresoojin"
-        android:stateListAnimator="@null"
-        android:text="1234"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Line2RetryButton" />
+        app:layout_constraintTop_toBottomOf="@+id/Line2RetryButton"
+
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:fontFamily="@font/imcresoojin"
+        android:stateListAnimator="@null"
+        android:textColor="@color/textc"
+        android:text="1234"
+        />
 
     <Button
         android:id="@+id/Line2MiddleButton1"
@@ -39,7 +43,10 @@
         app:layout_constraintEnd_toStartOf="@+id/Line2MiddleButton2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Line2TopButton"
-        tools:text="1234" />
+        tools:text="1234"
+
+        android:textColor="@color/textc"
+        />
 
     <Button
         android:id="@+id/Line2MiddleButton2"
@@ -56,7 +63,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/Line2MiddleButton1"
         app:layout_constraintTop_toBottomOf="@+id/Line2TopButton"
-        tools:text="1234" />
+        tools:text="1234"
+        android:textColor="@color/textc"/>
 
     <Button
         android:id="@+id/Line2BottomButton"
@@ -87,6 +95,21 @@
         app:layout_constraintBottom_toTopOf="@+id/Line2TopButton"
 
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/textc"/>
+
+    <TextView
+        android:id="@+id/Line2Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/imcresoojin"
+        android:text="TextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/textc"
+
+        app:layout_constraintEnd_toStartOf="@+id/Line2RetryButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

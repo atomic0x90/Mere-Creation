@@ -21,7 +21,10 @@
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+
+        android:fontFamily="@font/imcresoojin"
+        />
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -51,16 +54,10 @@
                 android:layout_gravity="center"
                 android:background="@drawable/costom_menu_button1"
 
-                android:stateListAnimator="@null"
                 android:text="튜토리얼"
-                android:textColor="@color/textc" />
-
-            <View
-                android:id="@+id/divider"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="@color/bg2"
-
+                android:textColor="@color/textc"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:fontFamily="@font/imcresoojin"
                 />
 
             <Button
@@ -69,9 +66,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:background="@drawable/costom_menu_button1"
-                android:stateListAnimator="@null"
+
                 android:text="1"
-                android:textColor="@color/textc" />
+                android:textColor="@color/textc"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:fontFamily="@font/imcresoojin"/>
 
             <LinearLayout
                 android:id="@+id/Step1Ver"
@@ -96,7 +95,8 @@
                         android:text="1-1"
                         android:background="@drawable/costom_menu_button1"
                         android:textColor="@color/textc"
-                        android:stateListAnimator="@null"/>
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
 
                     <Button
                         android:id="@+id/Step1_2"
@@ -106,7 +106,8 @@
                         android:text="1-2"
                         android:background="@drawable/costom_menu_button1"
                         android:textColor="@color/textc"
-                        android:stateListAnimator="@null"/>
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
 
                     <Button
                         android:id="@+id/Step1_3"
@@ -116,7 +117,8 @@
                         android:text="1-3"
                         android:background="@drawable/costom_menu_button1"
                         android:textColor="@color/textc"
-                        android:stateListAnimator="@null"/>
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
 
                     <Button
                         android:id="@+id/Step1_4"
@@ -126,7 +128,8 @@
                         android:text="1-4"
                         android:background="@drawable/costom_menu_button1"
                         android:textColor="@color/textc"
-                        android:stateListAnimator="@null"/>
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -143,7 +146,8 @@
                         android:text="1-5"
                         android:background="@drawable/costom_menu_button1"
                         android:textColor="@color/textc"
-                        android:stateListAnimator="@null"/>
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
 
                     <Button
                         android:id="@+id/Step1_6"
@@ -153,7 +157,8 @@
                         android:text="1-6"
                         android:background="@drawable/costom_menu_button1"
                         android:textColor="@color/textc"
-                        android:stateListAnimator="@null"/>
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
 
                     <Button
                         android:id="@+id/Step1_7"
@@ -163,7 +168,8 @@
                         android:text="1-7"
                         android:background="@drawable/costom_menu_button1"
                         android:textColor="@color/textc"
-                        android:stateListAnimator="@null"/>
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
 
                     <Button
                         android:id="@+id/Step1_8"
@@ -173,16 +179,11 @@
                         android:text="1-8"
                         android:background="@drawable/costom_menu_button1"
                         android:textColor="@color/textc"
-                        android:stateListAnimator="@null"/>
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
                 </LinearLayout>
 
             </LinearLayout>
-
-            <View
-                android:id="@+id/divider2"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="@color/bg2" />
 
             <Button
                 android:id="@+id/Step2Button"
@@ -191,9 +192,10 @@
                 android:layout_gravity="center"
 
                 android:background="@drawable/costom_menu_button2"
-                android:stateListAnimator="@null"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:fontFamily="@font/imcresoojin"
                 android:text="2"
-                android:textColor="@color/textcw" />
+                android:textColor="@color/textc" />
 
             <LinearLayout
                 android:id="@+id/Step2Ver"
@@ -216,8 +218,9 @@
                         android:layout_weight="1"
                         android:text="2-1"
                         android:background="@drawable/costom_menu_button2"
-                        android:textColor="@color/textcw"
-                        android:stateListAnimator="@null"/>
+                        android:textColor="@color/textc"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
 
                     <Button
                         android:id="@+id/Step2_2"
@@ -226,8 +229,9 @@
                         android:layout_weight="1"
                         android:text="2-2"
                         android:background="@drawable/costom_menu_button2"
-                        android:textColor="@color/textcw"
-                        android:stateListAnimator="@null"/>
+                        android:textColor="@color/textc"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
 
                     <Button
                         android:id="@+id/Step2_3"
@@ -236,8 +240,9 @@
                         android:layout_weight="1"
                         android:text="2-3"
                         android:background="@drawable/costom_menu_button2"
-                        android:textColor="@color/textcw"
-                        android:stateListAnimator="@null"/>
+                        android:textColor="@color/textc"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
 
                     <Button
                         android:id="@+id/Step2_4"
@@ -246,8 +251,9 @@
                         android:layout_weight="1"
                         android:text="2-4"
                         android:background="@drawable/costom_menu_button2"
-                        android:textColor="@color/textcw"
-                        android:stateListAnimator="@null"/>
+                        android:textColor="@color/textc"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -263,8 +269,9 @@
                         android:layout_weight="1"
                         android:text="2-5"
                         android:background="@drawable/costom_menu_button2"
-                        android:textColor="@color/textcw"
-                        android:stateListAnimator="@null"/>
+                        android:textColor="@color/textc"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
 
                     <Button
                         android:id="@+id/Step2_6"
@@ -273,8 +280,9 @@
                         android:layout_weight="1"
                         android:text="2-6"
                         android:background="@drawable/costom_menu_button2"
-                        android:textColor="@color/textcw"
-                        android:stateListAnimator="@null"/>
+                        android:textColor="@color/textc"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
 
                     <Button
                         android:id="@+id/Step2_7"
@@ -283,8 +291,9 @@
                         android:layout_weight="1"
                         android:text="2-7"
                         android:background="@drawable/costom_menu_button2"
-                        android:textColor="@color/textcw"
-                        android:stateListAnimator="@null"/>
+                        android:textColor="@color/textc"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
 
                     <Button
                         android:id="@+id/Step2_8"
@@ -293,16 +302,11 @@
                         android:layout_weight="1"
                         android:text="2-8"
                         android:background="@drawable/costom_menu_button2"
-                        android:textColor="@color/textcw"
-                        android:stateListAnimator="@null"/>
+                        android:textColor="@color/textc"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
                 </LinearLayout>
             </LinearLayout>
-
-            <View
-                android:id="@+id/divider3"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="@color/bg3" />
 
             <Button
                 android:id="@+id/Step3Button"
@@ -311,9 +315,967 @@
                 android:layout_gravity="center"
 
                 android:background="@drawable/costom_menu_button2"
-                android:stateListAnimator="@null"
+
                 android:text="3"
-                android:textColor="@color/textcw" />
+                android:textColor="@color/textc"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:fontFamily="@font/imcresoojin"/>
+
+            <LinearLayout
+                android:id="@+id/Step3Ver"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/Step3Hor1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/Step3_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="3-1"
+                        android:background="@drawable/costom_menu_button2"
+                        android:textColor="@color/textc"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"
+                        />
+
+                    <Button
+                        android:id="@+id/Step3_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="3-2"
+                        android:background="@drawable/costom_menu_button2"
+                        android:textColor="@color/textc"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step3_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="3-3"
+                        android:background="@drawable/costom_menu_button2"
+                        android:textColor="@color/textc"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step3_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="3-4"
+                        android:background="@drawable/costom_menu_button2"
+                        android:textColor="@color/textc"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Step3Hor2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/Step3_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="3-5"
+                        android:background="@drawable/costom_menu_button2"
+                        android:textColor="@color/textc"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step3_6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="3-6"
+                        android:background="@drawable/costom_menu_button2"
+                        android:textColor="@color/textc"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step3_7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="3-7"
+                        android:background="@drawable/costom_menu_button2"
+                        android:textColor="@color/textc"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"
+                        />
+
+                    <Button
+                        android:id="@+id/Step3_8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/costom_menu_button2"
+                        android:text="3-8"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"
+                        android:textColor="@color/textc" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/Step4Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="4"
+
+                android:background="@drawable/costom_menu_button3"
+                android:textColor="@color/textcw"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:fontFamily="@font/imcresoojin"
+                />
+
+            <LinearLayout
+                android:id="@+id/Step4Ver"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/Step4Hor1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/Step4_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="4-1"
+                        android:background="@drawable/costom_menu_button3"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step4_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="4-2"
+                        android:background="@drawable/costom_menu_button3"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step4_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="4-3"
+                        android:background="@drawable/costom_menu_button3"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step4_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="4-4"
+                        android:background="@drawable/costom_menu_button3"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Step4Hor2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/Step4_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="4-5"
+                        android:background="@drawable/costom_menu_button3"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step4_6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="4-6"
+                        android:background="@drawable/costom_menu_button3"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step4_7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="4-7"
+                        android:background="@drawable/costom_menu_button3"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step4_8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="4-8"
+                        android:background="@drawable/costom_menu_button3"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/Step5Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5"
+                android:background="@drawable/costom_menu_button3"
+                android:textColor="@color/textcw"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:fontFamily="@font/imcresoojin"/>
+
+            <LinearLayout
+                android:id="@+id/Step5Ver"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/Step5Hor1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/Step5_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="5-1"
+                        android:background="@drawable/costom_menu_button3"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step5_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="5-2"
+                        android:background="@drawable/costom_menu_button3"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step5_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="5-3"
+                        android:background="@drawable/costom_menu_button3"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step5_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="5-4"
+                        android:background="@drawable/costom_menu_button3"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Step5Hor2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/Step5_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="5-5"
+                        android:background="@drawable/costom_menu_button3"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step5_6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="5-6"
+                        android:background="@drawable/costom_menu_button3"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step5_7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="5-7"
+                        android:background="@drawable/costom_menu_button3"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step5_8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="5-8"
+                        android:background="@drawable/costom_menu_button3"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/Step6Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="6"
+                android:background="@drawable/costom_menu_button4"
+                android:textColor="@color/textcw"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:fontFamily="@font/imcresoojin"/>
+
+            <LinearLayout
+                android:id="@+id/Step6Ver"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/Step6Hor1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/Step6_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="6-1"
+                        android:background="@drawable/costom_menu_button4"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step6_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="6-2"
+                        android:background="@drawable/costom_menu_button4"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step6_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="6-3"
+                        android:background="@drawable/costom_menu_button4"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step6_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="6-4"
+                        android:background="@drawable/costom_menu_button4"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Step6Hor2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/Step6_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="6-5"
+                        android:background="@drawable/costom_menu_button4"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step6_6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="6-6"
+                        android:background="@drawable/costom_menu_button4"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step6_7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="6-7"
+                        android:background="@drawable/costom_menu_button4"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step6_8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="6-8"
+                        android:background="@drawable/costom_menu_button4"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/Step7Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="7"
+                android:background="@drawable/costom_menu_button4"
+                android:textColor="@color/textcw"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:fontFamily="@font/imcresoojin"/>
+
+            <LinearLayout
+                android:id="@+id/Step7Ver"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/Step7Hor1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/Step7_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="7-1"
+                        android:background="@drawable/costom_menu_button4"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step7_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="7-2"
+                        android:background="@drawable/costom_menu_button4"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step7_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="7-3"
+                        android:background="@drawable/costom_menu_button4"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step7_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="7-4"
+                        android:background="@drawable/costom_menu_button4"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Step7Hor2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/Step7_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="7-5"
+                        android:background="@drawable/costom_menu_button4"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step7_6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="7-6"
+                        android:background="@drawable/costom_menu_button4"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step7_7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="7-7"
+                        android:background="@drawable/costom_menu_button4"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step7_8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="7-8"
+                        android:background="@drawable/costom_menu_button4"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/Step8Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="8"
+                android:background="@drawable/costom_menu_button5"
+                android:textColor="@color/textcw"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:fontFamily="@font/imcresoojin"/>
+
+            <LinearLayout
+                android:id="@+id/Step8Ver"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/Step8Hor1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/Step8_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="8-1"
+                        android:background="@drawable/costom_menu_button5"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step8_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="8-2"
+                        android:background="@drawable/costom_menu_button5"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step8_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="8-3"
+                        android:background="@drawable/costom_menu_button5"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step8_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="8-4"
+                        android:background="@drawable/costom_menu_button5"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Step8Hor2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/Step8_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="8-5"
+                        android:background="@drawable/costom_menu_button5"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step8_6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="8-6"
+                        android:background="@drawable/costom_menu_button5"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step8_7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="8-7"
+                        android:background="@drawable/costom_menu_button5"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step8_8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="8-8"
+                        android:background="@drawable/costom_menu_button5"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/Step9Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/costom_menu_button5"
+                android:textColor="@color/textcw"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:fontFamily="@font/imcresoojin"
+                android:text="9" />
+
+            <LinearLayout
+                android:id="@+id/Step9Ver"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/Step9Hor1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/Step9_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="9-1"
+                        android:background="@drawable/costom_menu_button5"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step9_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="9-2"
+                        android:background="@drawable/costom_menu_button5"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step9_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="9-3"
+                        android:background="@drawable/costom_menu_button5"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step9_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="9-4"
+                        android:background="@drawable/costom_menu_button5"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Step9Hor2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/Step9_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="9-5"
+                        android:background="@drawable/costom_menu_button5"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step9_6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="9-6"
+                        android:background="@drawable/costom_menu_button5"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step9_7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="9-7"
+                        android:background="@drawable/costom_menu_button5"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step9_8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="9-8"
+                        android:background="@drawable/costom_menu_button5"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/Step10Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="10"
+                android:background="@drawable/costom_menu_button6"
+                android:textColor="@color/textcw"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:fontFamily="@font/imcresoojin"/>
+
+            <LinearLayout
+                android:id="@+id/Step10Ver"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/Step10Hor1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/Step10_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="10-1"
+                        android:background="@drawable/costom_menu_button6"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step10_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="10-2"
+                        android:background="@drawable/costom_menu_button6"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step10_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="10-3"
+                        android:background="@drawable/costom_menu_button6"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step10_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="10-4"
+                        android:background="@drawable/costom_menu_button6"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Step10Hor2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/Step10_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="10-5"
+                        android:background="@drawable/costom_menu_button6"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step10_6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="10-6"
+                        android:background="@drawable/costom_menu_button6"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step10_7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="10-7"
+                        android:background="@drawable/costom_menu_button6"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+
+                    <Button
+                        android:id="@+id/Step10_8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="10-8"
+                        android:background="@drawable/costom_menu_button6"
+                        android:textColor="@color/textcw"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:fontFamily="@font/imcresoojin"/>
+                </LinearLayout>
+
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

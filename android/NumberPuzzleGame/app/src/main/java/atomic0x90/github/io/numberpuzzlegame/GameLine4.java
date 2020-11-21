@@ -7,7 +7,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.graphics.Color;
-import android.graphics.Point;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Spannable;
@@ -15,20 +14,14 @@ import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
-import android.util.DisplayMetrics;
-import android.view.Display;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.io.File;
-import java.io.StringReader;
 
-public class GameLine2 extends AppCompatActivity {
-
+public class GameLine4 extends AppCompatActivity {
     SQLiteDatabase sqliteDB ;
 
     int lock1_1 = -1;
@@ -124,7 +117,7 @@ public class GameLine2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game_line2);
+        setContentView(R.layout.activity_game_line4);
 
         //DB
         sqliteDB = init_database();
@@ -219,13 +212,15 @@ public class GameLine2 extends AppCompatActivity {
         loadGameLock10_7();
         loadGameLock10_8();
 
-        final TextView TitleText = (TextView) findViewById(R.id.Line2Title);
-        final Button TopButton = (Button) findViewById(R.id.Line2TopButton);
-        final Button MiddleButton1 = (Button) findViewById(R.id.Line2MiddleButton1);
-        final Button MiddleButton2 = (Button) findViewById(R.id.Line2MiddleButton2);
-        final Button BottomButton = (Button) findViewById(R.id.Line2BottomButton);
+        final TextView TitleText = (TextView) findViewById(R.id.Line4Title);
+        final Button TopButton = (Button) findViewById(R.id.Line4TopButton);
+        final Button MiddleButton1 = (Button) findViewById(R.id.Line4MiddleButton1);
+        final Button MiddleButton2 = (Button) findViewById(R.id.Line4MiddleButton2);
+        final Button MiddleButton3 = (Button) findViewById(R.id.Line4MiddleButton3);
+        final Button MiddleButton4 = (Button) findViewById(R.id.Line4MiddleButton4);
+        final Button BottomButton = (Button) findViewById(R.id.Line4BottomButton);
 
-        Button RetryButton = (Button) findViewById(R.id.Line2RetryButton);
+        Button RetryButton = (Button) findViewById(R.id.Line4RetryButton);
 
         Intent nowIntent = getIntent();
         final int MaxNum = nowIntent.getIntExtra("Max",0);    //최대 숫자
@@ -239,9 +234,13 @@ public class GameLine2 extends AppCompatActivity {
         final int[] AnswerNow = {0};
         final int[] Mid1Arr = new int[100];
         final int[] Mid2Arr = new int[100];
+        final int[] Mid3Arr = new int[100];
+        final int[] Mid4Arr = new int[100];
 
         final int[] Mid1Tail = {0};
         final int[] Mid2Tail = {0};
+        final int[] Mid3Tail = {0};
+        final int[] Mid4Tail = {0};
 
         if(StrAnswer.equals("1_1")){
             IntAnswer = new int[]{1, 2, 4, 3};
@@ -565,10 +564,11 @@ public class GameLine2 extends AppCompatActivity {
         }
 
 
-
         TopButton.setText("1");
         MiddleButton1.setText("");
         MiddleButton2.setText("");
+        MiddleButton3.setText("");
+        MiddleButton4.setText("");
 
         RetryButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -576,13 +576,19 @@ public class GameLine2 extends AppCompatActivity {
                 TopButton.setText("1");
                 MiddleButton1.setText("");
                 MiddleButton2.setText("");
+                MiddleButton3.setText("");
+                MiddleButton4.setText("");
                 //bottom button 색깔 돌려놓기
                 AnswerNow[0] = 0;
                 Mid1Tail[0] = 0;
                 Mid2Tail[0] = 0;
+                Mid3Tail[0] = 0;
+                Mid4Tail[0] = 0;
                 for(int i = 0;i < 100;i++){
                     Mid1Arr[i] = 0;
                     Mid2Arr[i] = 0;
+                    Mid3Arr[i] = 0;
+                    Mid4Arr[i] = 0;
                 }
                 String content = BottomButton.getText().toString();
 
@@ -596,10 +602,14 @@ public class GameLine2 extends AppCompatActivity {
                 TopButton.setSelected(false);
                 MiddleButton1.setSelected(false);
                 MiddleButton2.setSelected(false);
+                MiddleButton3.setSelected(false);
+                MiddleButton4.setSelected(false);
                 BottomButton.setSelected(false);
                 TopButton.setEnabled(true);
                 MiddleButton1.setEnabled(true);
                 MiddleButton2.setEnabled(true);
+                MiddleButton3.setEnabled(true);
+                MiddleButton4.setEnabled(true);
                 BottomButton.setEnabled(true);
             }
         });
@@ -658,12 +668,16 @@ public class GameLine2 extends AppCompatActivity {
 
                         TopButton.setEnabled(false);
                         MiddleButton2.setEnabled(false);
+                        MiddleButton3.setEnabled(false);
+                        MiddleButton4.setEnabled(false);
                     }
                     else{
                         MiddleButton1.setSelected(false);
 
                         TopButton.setEnabled(true);
                         MiddleButton2.setEnabled(true);
+                        MiddleButton3.setEnabled(true);
+                        MiddleButton4.setEnabled(true);
                     }
                 }
             }
@@ -705,24 +719,129 @@ public class GameLine2 extends AppCompatActivity {
 
                         TopButton.setEnabled(false);
                         MiddleButton1.setEnabled(false);
+                        MiddleButton3.setEnabled(false);
+                        MiddleButton4.setEnabled(false);
                     }
                     else{
                         MiddleButton2.setSelected(false);
 
                         TopButton.setEnabled(true);
                         MiddleButton1.setEnabled(true);
+                        MiddleButton3.setEnabled(true);
+                        MiddleButton4.setEnabled(true);
                     }
                 }
             }
         });
 
+        MiddleButton3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(TopButton.isSelected()){
+                    //Top에서 선택 후 Middle로 옮길 때
+
+                    //숫자 이동 알고리즘
+                    int tmpNum = Integer.parseInt((String) TopButton.getText());
+
+                    Mid3Arr[Mid3Tail[0]] = tmpNum;
+                    Mid3Tail[0]++;
+                    tmpNum++;
+                    if(tmpNum <= MaxNum)
+                        TopButton.setText(Integer.toString(tmpNum));
+                    else
+                        TopButton.setText("-");
+
+                    String tmpString = "";
+                    for(int i = Mid3Tail[0]-1 ;i >= 0; i--){
+                        tmpString += "\n" + Mid3Arr[i];
+                    }
+                    MiddleButton3.setText(tmpString);
+
+                    //Top 버튼 선택 해제
+                    TopButton.setSelected(false);
+
+                    BottomButton.setEnabled(true);
+                }
+                else{
+                    //Middle에서 선택 후 Bottom으로 옮길 때
+                    if(!MiddleButton3.isSelected()){
+                        //선택 안됐을 때
+                        MiddleButton3.setSelected(true);
+
+                        TopButton.setEnabled(false);
+                        MiddleButton1.setEnabled(false);
+                        MiddleButton2.setEnabled(false);
+                        MiddleButton4.setEnabled(false);
+                    }
+                    else{
+                        MiddleButton3.setSelected(false);
+
+                        TopButton.setEnabled(true);
+                        MiddleButton1.setEnabled(true);
+                        MiddleButton2.setEnabled(true);
+                        MiddleButton4.setEnabled(true);
+                    }
+                }
+            }
+        });
+
+        MiddleButton4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(TopButton.isSelected()){
+                    //Top에서 선택 후 Middle로 옮길 때
+
+                    //숫자 이동 알고리즘
+                    int tmpNum = Integer.parseInt((String) TopButton.getText());
+
+                    Mid4Arr[Mid4Tail[0]] = tmpNum;
+                    Mid4Tail[0]++;
+                    tmpNum++;
+                    if(tmpNum <= MaxNum)
+                        TopButton.setText(Integer.toString(tmpNum));
+                    else
+                        TopButton.setText("-");
+
+                    String tmpString = "";
+                    for(int i = Mid4Tail[0]-1 ;i >= 0; i--){
+                        tmpString += "\n" + Mid4Arr[i];
+                    }
+                    MiddleButton4.setText(tmpString);
+
+                    //Top 버튼 선택 해제
+                    TopButton.setSelected(false);
+
+                    BottomButton.setEnabled(true);
+                }
+                else{
+                    //Middle에서 선택 후 Bottom으로 옮길 때
+                    if(!MiddleButton4.isSelected()){
+                        //선택 안됐을 때
+                        MiddleButton4.setSelected(true);
+
+                        TopButton.setEnabled(false);
+                        MiddleButton1.setEnabled(false);
+                        MiddleButton2.setEnabled(false);
+                        MiddleButton3.setEnabled(false);
+                    }
+                    else{
+                        MiddleButton3.setSelected(false);
+
+                        TopButton.setEnabled(true);
+                        MiddleButton1.setEnabled(true);
+                        MiddleButton2.setEnabled(true);
+                        MiddleButton3.setEnabled(true);
+                    }
+                }
+            }
+        });
 
         final int[] finalIntAnswer = IntAnswer;
 
         BottomButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!MiddleButton1.isSelected() && !MiddleButton2.isSelected()){
+                if(!MiddleButton1.isSelected() && !MiddleButton2.isSelected() && !MiddleButton3.isSelected() && !MiddleButton4.isSelected()){
                     //아무것도 안누르고 bottomButton 먼저 누른 경우
                 }
                 else{
@@ -758,6 +877,8 @@ public class GameLine2 extends AppCompatActivity {
 
                             TopButton.setEnabled(true);
                             MiddleButton2.setEnabled(true);
+                            MiddleButton3.setEnabled(true);
+                            MiddleButton4.setEnabled(true);
 
                             //text 설정
                             String content = BottomButton.getText().toString();
@@ -1089,7 +1210,7 @@ public class GameLine2 extends AppCompatActivity {
                                     if(lock10_8 == 1)
                                         updateGameLock10_8();
                                 }
-                                CostomDialog costomDialog = new CostomDialog(GameLine2.this);
+                                CostomDialog costomDialog = new CostomDialog(GameLine4.this);
                                 costomDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
                                 costomDialog.setCancelable(false);
@@ -1099,7 +1220,7 @@ public class GameLine2 extends AppCompatActivity {
 
                         //숫자가 틀린 경우
                     }
-                    else{
+                    else if(MiddleButton2.isSelected()){
                         //2번 줄에서 내려온 경우
                         if(Mid2Arr[0] == finalIntAnswer[AnswerNow[0]]) {
                             //숫자가 맞을 경우
@@ -1129,6 +1250,8 @@ public class GameLine2 extends AppCompatActivity {
 
                             TopButton.setEnabled(true);
                             MiddleButton1.setEnabled(true);
+                            MiddleButton3.setEnabled(true);
+                            MiddleButton4.setEnabled(true);
 
                             //text 설정
                             String content = BottomButton.getText().toString();
@@ -1460,7 +1583,751 @@ public class GameLine2 extends AppCompatActivity {
                                     if(lock10_8 == 1)
                                         updateGameLock10_8();
                                 }
-                                CostomDialog costomDialog = new CostomDialog(GameLine2.this);
+                                CostomDialog costomDialog = new CostomDialog(GameLine4.this);
+                                costomDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+                                costomDialog.setCancelable(false);
+                                costomDialog.show();
+                            }
+                        }
+
+                        //숫자가 틀린 경우
+                    }
+                    else if(MiddleButton3.isSelected()){
+                        //3번 줄에서 내려온 경우
+                        if(Mid3Arr[0] == finalIntAnswer[AnswerNow[0]]) {
+                            //숫자가 맞을 경우
+                            //text
+                            String nowAnswer = String.valueOf(finalIntAnswer[AnswerNow[0]]);
+
+
+                            //
+                            for (int i = 0; i < Mid3Tail[0]; i++) {
+                                Mid3Arr[i] = Mid3Arr[i + 1];
+                            }
+                            Mid3Arr[Mid3Tail[0]] = 0;
+
+                            Mid3Tail[0]--;
+
+                            String tmpString = "";
+                            for (int i = Mid3Tail[0] - 1; i >= 0; i--) {
+                                tmpString += "\n" + Mid3Arr[i];
+                            }
+                            MiddleButton3.setText(tmpString);
+
+                            AnswerNow[0]++;
+
+
+                            //버튼 상태
+                            MiddleButton3.setSelected(false);
+
+                            TopButton.setEnabled(true);
+                            MiddleButton1.setEnabled(true);
+                            MiddleButton2.setEnabled(true);
+                            MiddleButton4.setEnabled(true);
+
+                            //text 설정
+                            String content = BottomButton.getText().toString();
+
+                            SpannableString spannableString = new SpannableString(content);
+
+                            int start = content.indexOf(nowAnswer);
+                            int end = start + nowAnswer.length();
+                            spannableString.setSpan(new ForegroundColorSpan(Color.parseColor("#000000")), 0, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                            spannableString.setSpan(new StyleSpan(Typeface.BOLD), 0, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                            BottomButton.setText(spannableString);
+
+                            //다 맞을 경우 AnswerNow[0]++ == MaxNum
+                            if (AnswerNow[0] == MaxNum) {
+                                if(StrAnswer.equals("1_1")){
+                                    if(lock1_2 == 1)
+                                        updateGameLock1_2();
+                                }
+                                else if(StrAnswer.equals("1_2")){
+                                    if(lock1_3 == 1)
+                                        updateGameLock1_3();
+                                }
+                                else if(StrAnswer.equals("1_3")){
+                                    if(lock1_4 == 1)
+                                        updateGameLock1_4();
+                                }
+                                else if(StrAnswer.equals("1_4")){
+                                    if(lock1_5 == 1)
+                                        updateGameLock1_5();
+                                }
+                                else if(StrAnswer.equals("1_5")){
+                                    if(lock1_6 == 1)
+                                        updateGameLock1_6();
+                                }
+                                else if(StrAnswer.equals("1_6")){
+                                    if(lock1_7 == 1)
+                                        updateGameLock1_7();
+                                }
+                                else if(StrAnswer.equals("1_7")){
+                                    if(lock1_8 == 1)
+                                        updateGameLock1_8();
+                                }
+                                else if(StrAnswer.equals("1_8")){
+                                    if(lock2_1 == 1)
+                                        updateGameLock2_1();
+                                }
+                                else if(StrAnswer.equals("2_1")){
+                                    if(lock2_2 == 1)
+                                        updateGameLock2_2();
+                                }
+                                else if(StrAnswer.equals("2_2")){
+                                    if(lock2_3 == 1)
+                                        updateGameLock2_3();
+                                }
+                                else if(StrAnswer.equals("2_3")){
+                                    if(lock2_4 == 1)
+                                        updateGameLock2_4();
+                                }
+                                else if(StrAnswer.equals("2_4")){
+                                    if(lock2_5 == 1)
+                                        updateGameLock2_5();
+                                }
+                                else if(StrAnswer.equals("2_5")){
+                                    if(lock2_6 == 1)
+                                        updateGameLock2_6();
+                                }
+                                else if(StrAnswer.equals("2_6")){
+                                    if(lock2_7 == 1)
+                                        updateGameLock2_7();
+                                }
+                                else if(StrAnswer.equals("2_7")){
+                                    if(lock2_8 == 1)
+                                        updateGameLock2_8();
+                                }
+                                else if(StrAnswer.equals("2_8")){
+                                    if(lock3_1 == 1)
+                                        updateGameLock3_1();
+                                }
+                                else if(StrAnswer.equals("3_1")){
+                                    if(lock3_2 == 1)
+                                        updateGameLock3_2();
+                                }
+                                else if(StrAnswer.equals("3_2")){
+                                    if(lock3_3 == 1)
+                                        updateGameLock3_3();
+                                }
+                                else if(StrAnswer.equals("3_3")){
+                                    if(lock3_4 == 1)
+                                        updateGameLock3_4();
+                                }
+                                else if(StrAnswer.equals("3_4")){
+                                    if(lock3_5 == 1)
+                                        updateGameLock3_5();
+                                }
+                                else if(StrAnswer.equals("3_5")){
+                                    if(lock3_6 == 1)
+                                        updateGameLock3_6();
+                                }
+                                else if(StrAnswer.equals("3_6")){
+                                    if(lock3_7 == 1)
+                                        updateGameLock3_7();
+                                }
+                                else if(StrAnswer.equals("3_7")){
+                                    if(lock3_8 == 1)
+                                        updateGameLock3_8();
+                                }
+                                else if(StrAnswer.equals("3_8")){
+                                    if(lock4_1 == 1)
+                                        updateGameLock4_1();
+                                }
+                                else if(StrAnswer.equals("4_1")){
+                                    if(lock4_2 == 1)
+                                        updateGameLock4_2();
+                                }
+                                else if(StrAnswer.equals("4_2")){
+                                    if(lock4_3 == 1)
+                                        updateGameLock4_3();
+                                }
+                                else if(StrAnswer.equals("4_3")){
+                                    if(lock4_4 == 1)
+                                        updateGameLock4_4();
+                                }
+                                else if(StrAnswer.equals("4_4")){
+                                    if(lock4_5 == 1)
+                                        updateGameLock4_5();
+                                }
+                                else if(StrAnswer.equals("4_5")){
+                                    if(lock4_6 == 1)
+                                        updateGameLock4_6();
+                                }
+                                else if(StrAnswer.equals("4_6")){
+                                    if(lock4_7 == 1)
+                                        updateGameLock4_7();
+                                }
+                                else if(StrAnswer.equals("4_7")){
+                                    if(lock4_8 == 1)
+                                        updateGameLock4_8();
+                                }
+                                else if(StrAnswer.equals("4_8")){
+                                    if(lock5_1 == 1)
+                                        updateGameLock5_1();
+                                }
+                                else if(StrAnswer.equals("5_1")){
+                                    if(lock5_2 == 1)
+                                        updateGameLock5_2();
+                                }
+                                else if(StrAnswer.equals("5_2")){
+                                    if(lock5_3 == 1)
+                                        updateGameLock5_3();
+                                }
+                                else if(StrAnswer.equals("5_3")){
+                                    if(lock5_4 == 1)
+                                        updateGameLock5_4();
+                                }
+                                else if(StrAnswer.equals("5_4")){
+                                    if(lock5_5 == 1)
+                                        updateGameLock5_5();
+                                }
+                                else if(StrAnswer.equals("5_5")){
+                                    if(lock5_6 == 1)
+                                        updateGameLock5_6();
+                                }
+                                else if(StrAnswer.equals("5_6")){
+                                    if(lock5_7 == 1)
+                                        updateGameLock5_7();
+                                }
+                                else if(StrAnswer.equals("5_7")){
+                                    if(lock5_8 == 1)
+                                        updateGameLock5_8();
+                                }
+                                else if(StrAnswer.equals("5_8")){
+                                    if(lock6_1 == 1)
+                                        updateGameLock6_1();
+                                }
+                                else if(StrAnswer.equals("6_1")){
+                                    if(lock6_2 == 1)
+                                        updateGameLock6_2();
+                                }
+                                else if(StrAnswer.equals("6_2")){
+                                    if(lock6_3 == 1)
+                                        updateGameLock6_3();
+                                }
+                                else if(StrAnswer.equals("6_3")){
+                                    if(lock6_4 == 1)
+                                        updateGameLock6_4();
+                                }
+                                else if(StrAnswer.equals("6_4")){
+                                    if(lock6_5 == 1)
+                                        updateGameLock6_5();
+                                }
+                                else if(StrAnswer.equals("6_5")){
+                                    if(lock6_6 == 1)
+                                        updateGameLock6_6();
+                                }
+                                else if(StrAnswer.equals("6_6")){
+                                    if(lock6_7 == 1)
+                                        updateGameLock6_7();
+                                }
+                                else if(StrAnswer.equals("6_7")){
+                                    if(lock6_8 == 1)
+                                        updateGameLock6_8();
+                                }
+                                else if(StrAnswer.equals("6_8")){
+                                    if(lock7_1 == 1)
+                                        updateGameLock7_1();
+                                }
+                                else if(StrAnswer.equals("7_1")){
+                                    if(lock7_2 == 1)
+                                        updateGameLock7_2();
+                                }
+                                else if(StrAnswer.equals("7_2")){
+                                    if(lock7_3 == 1)
+                                        updateGameLock7_3();
+                                }
+                                else if(StrAnswer.equals("7_3")){
+                                    if(lock7_4 == 1)
+                                        updateGameLock7_4();
+                                }
+                                else if(StrAnswer.equals("7_4")){
+                                    if(lock7_5 == 1)
+                                        updateGameLock7_5();
+                                }
+                                else if(StrAnswer.equals("7_5")){
+                                    if(lock7_6 == 1)
+                                        updateGameLock7_6();
+                                }
+                                else if(StrAnswer.equals("7_6")){
+                                    if(lock7_7 == 1)
+                                        updateGameLock7_7();
+                                }
+                                else if(StrAnswer.equals("7_7")){
+                                    if(lock7_8 == 1)
+                                        updateGameLock7_8();
+                                }
+                                else if(StrAnswer.equals("7_8")){
+                                    if(lock8_1 == 1)
+                                        updateGameLock8_1();
+                                }
+                                else if(StrAnswer.equals("8_1")){
+                                    if(lock8_2 == 1)
+                                        updateGameLock8_2();
+                                }
+                                else if(StrAnswer.equals("8_2")){
+                                    if(lock8_3 == 1)
+                                        updateGameLock8_3();
+                                }
+                                else if(StrAnswer.equals("8_3")){
+                                    if(lock8_4 == 1)
+                                        updateGameLock8_4();
+                                }
+                                else if(StrAnswer.equals("8_4")){
+                                    if(lock8_5 == 1)
+                                        updateGameLock8_5();
+                                }
+                                else if(StrAnswer.equals("8_5")){
+                                    if(lock8_6 == 1)
+                                        updateGameLock8_6();
+                                }
+                                else if(StrAnswer.equals("8_6")){
+                                    if(lock8_7 == 1)
+                                        updateGameLock8_7();
+                                }
+                                else if(StrAnswer.equals("8_7")){
+                                    if(lock8_8 == 1)
+                                        updateGameLock8_8();
+                                }
+                                else if(StrAnswer.equals("8_8")){
+                                    if(lock9_1 == 1)
+                                        updateGameLock9_1();
+                                }
+                                else if(StrAnswer.equals("9_1")){
+                                    if(lock9_2 == 1)
+                                        updateGameLock9_2();
+                                }
+                                else if(StrAnswer.equals("9_2")){
+                                    if(lock9_3 == 1)
+                                        updateGameLock9_3();
+                                }
+                                else if(StrAnswer.equals("9_3")){
+                                    if(lock9_4 == 1)
+                                        updateGameLock9_4();
+                                }
+                                else if(StrAnswer.equals("9_4")){
+                                    if(lock9_5 == 1)
+                                        updateGameLock9_5();
+                                }
+                                else if(StrAnswer.equals("9_5")){
+                                    if(lock9_6 == 1)
+                                        updateGameLock9_6();
+                                }
+                                else if(StrAnswer.equals("9_6")){
+                                    if(lock9_7 == 1)
+                                        updateGameLock9_7();
+                                }
+                                else if(StrAnswer.equals("9_7")){
+                                    if(lock9_8 == 1)
+                                        updateGameLock9_8();
+                                }
+                                else if(StrAnswer.equals("9_8")){
+                                    if(lock10_1 == 1)
+                                        updateGameLock10_1();
+                                }
+                                else if(StrAnswer.equals("10_1")){
+                                    if(lock10_2 == 1)
+                                        updateGameLock10_2();
+                                }
+                                else if(StrAnswer.equals("10_2")){
+                                    if(lock10_3 == 1)
+                                        updateGameLock10_3();
+                                }
+                                else if(StrAnswer.equals("10_3")){
+                                    if(lock10_4 == 1)
+                                        updateGameLock10_4();
+                                }
+                                else if(StrAnswer.equals("10_4")){
+                                    if(lock10_5 == 1)
+                                        updateGameLock10_5();
+                                }
+                                else if(StrAnswer.equals("10_5")){
+                                    if(lock10_6 == 1)
+                                        updateGameLock10_6();
+                                }
+                                else if(StrAnswer.equals("10_6")){
+                                    if(lock10_7 == 1)
+                                        updateGameLock10_7();
+                                }
+                                else if(StrAnswer.equals("10_7")){
+                                    if(lock10_8 == 1)
+                                        updateGameLock10_8();
+                                }
+                                CostomDialog costomDialog = new CostomDialog(GameLine4.this);
+                                costomDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+                                costomDialog.setCancelable(false);
+                                costomDialog.show();
+                            }
+                        }
+                    }
+                    else if(MiddleButton4.isSelected()){
+                        //4번 줄에서 내려온 경우
+                        if(Mid4Arr[0] == finalIntAnswer[AnswerNow[0]]) {
+                            //숫자가 맞을 경우
+                            //text
+                            String nowAnswer = String.valueOf(finalIntAnswer[AnswerNow[0]]);
+
+
+                            //
+                            for (int i = 0; i < Mid4Tail[0]; i++) {
+                                Mid4Arr[i] = Mid4Arr[i + 1];
+                            }
+                            Mid4Arr[Mid4Tail[0]] = 0;
+
+                            Mid4Tail[0]--;
+
+                            String tmpString = "";
+                            for (int i = Mid4Tail[0] - 1; i >= 0; i--) {
+                                tmpString += "\n" + Mid4Arr[i];
+                            }
+                            MiddleButton4.setText(tmpString);
+
+                            AnswerNow[0]++;
+
+
+                            //버튼 상태
+                            MiddleButton4.setSelected(false);
+
+                            TopButton.setEnabled(true);
+                            MiddleButton1.setEnabled(true);
+                            MiddleButton2.setEnabled(true);
+                            MiddleButton3.setEnabled(true);
+
+                            //text 설정
+                            String content = BottomButton.getText().toString();
+
+                            SpannableString spannableString = new SpannableString(content);
+
+                            int start = content.indexOf(nowAnswer);
+                            int end = start + nowAnswer.length();
+                            spannableString.setSpan(new ForegroundColorSpan(Color.parseColor("#000000")), 0, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                            spannableString.setSpan(new StyleSpan(Typeface.BOLD), 0, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                            BottomButton.setText(spannableString);
+
+                            //다 맞을 경우 AnswerNow[0]++ == MaxNum
+                            if (AnswerNow[0] == MaxNum) {
+                                if(StrAnswer.equals("1_1")){
+                                    if(lock1_2 == 1)
+                                        updateGameLock1_2();
+                                }
+                                else if(StrAnswer.equals("1_2")){
+                                    if(lock1_3 == 1)
+                                        updateGameLock1_3();
+                                }
+                                else if(StrAnswer.equals("1_3")){
+                                    if(lock1_4 == 1)
+                                        updateGameLock1_4();
+                                }
+                                else if(StrAnswer.equals("1_4")){
+                                    if(lock1_5 == 1)
+                                        updateGameLock1_5();
+                                }
+                                else if(StrAnswer.equals("1_5")){
+                                    if(lock1_6 == 1)
+                                        updateGameLock1_6();
+                                }
+                                else if(StrAnswer.equals("1_6")){
+                                    if(lock1_7 == 1)
+                                        updateGameLock1_7();
+                                }
+                                else if(StrAnswer.equals("1_7")){
+                                    if(lock1_8 == 1)
+                                        updateGameLock1_8();
+                                }
+                                else if(StrAnswer.equals("1_8")){
+                                    if(lock2_1 == 1)
+                                        updateGameLock2_1();
+                                }
+                                else if(StrAnswer.equals("2_1")){
+                                    if(lock2_2 == 1)
+                                        updateGameLock2_2();
+                                }
+                                else if(StrAnswer.equals("2_2")){
+                                    if(lock2_3 == 1)
+                                        updateGameLock2_3();
+                                }
+                                else if(StrAnswer.equals("2_3")){
+                                    if(lock2_4 == 1)
+                                        updateGameLock2_4();
+                                }
+                                else if(StrAnswer.equals("2_4")){
+                                    if(lock2_5 == 1)
+                                        updateGameLock2_5();
+                                }
+                                else if(StrAnswer.equals("2_5")){
+                                    if(lock2_6 == 1)
+                                        updateGameLock2_6();
+                                }
+                                else if(StrAnswer.equals("2_6")){
+                                    if(lock2_7 == 1)
+                                        updateGameLock2_7();
+                                }
+                                else if(StrAnswer.equals("2_7")){
+                                    if(lock2_8 == 1)
+                                        updateGameLock2_8();
+                                }
+                                else if(StrAnswer.equals("2_8")){
+                                    if(lock3_1 == 1)
+                                        updateGameLock3_1();
+                                }
+                                else if(StrAnswer.equals("3_1")){
+                                    if(lock3_2 == 1)
+                                        updateGameLock3_2();
+                                }
+                                else if(StrAnswer.equals("3_2")){
+                                    if(lock3_3 == 1)
+                                        updateGameLock3_3();
+                                }
+                                else if(StrAnswer.equals("3_3")){
+                                    if(lock3_4 == 1)
+                                        updateGameLock3_4();
+                                }
+                                else if(StrAnswer.equals("3_4")){
+                                    if(lock3_5 == 1)
+                                        updateGameLock3_5();
+                                }
+                                else if(StrAnswer.equals("3_5")){
+                                    if(lock3_6 == 1)
+                                        updateGameLock3_6();
+                                }
+                                else if(StrAnswer.equals("3_6")){
+                                    if(lock3_7 == 1)
+                                        updateGameLock3_7();
+                                }
+                                else if(StrAnswer.equals("3_7")){
+                                    if(lock3_8 == 1)
+                                        updateGameLock3_8();
+                                }
+                                else if(StrAnswer.equals("3_8")){
+                                    if(lock4_1 == 1)
+                                        updateGameLock4_1();
+                                }
+                                else if(StrAnswer.equals("4_1")){
+                                    if(lock4_2 == 1)
+                                        updateGameLock4_2();
+                                }
+                                else if(StrAnswer.equals("4_2")){
+                                    if(lock4_3 == 1)
+                                        updateGameLock4_3();
+                                }
+                                else if(StrAnswer.equals("4_3")){
+                                    if(lock4_4 == 1)
+                                        updateGameLock4_4();
+                                }
+                                else if(StrAnswer.equals("4_4")){
+                                    if(lock4_5 == 1)
+                                        updateGameLock4_5();
+                                }
+                                else if(StrAnswer.equals("4_5")){
+                                    if(lock4_6 == 1)
+                                        updateGameLock4_6();
+                                }
+                                else if(StrAnswer.equals("4_6")){
+                                    if(lock4_7 == 1)
+                                        updateGameLock4_7();
+                                }
+                                else if(StrAnswer.equals("4_7")){
+                                    if(lock4_8 == 1)
+                                        updateGameLock4_8();
+                                }
+                                else if(StrAnswer.equals("4_8")){
+                                    if(lock5_1 == 1)
+                                        updateGameLock5_1();
+                                }
+                                else if(StrAnswer.equals("5_1")){
+                                    if(lock5_2 == 1)
+                                        updateGameLock5_2();
+                                }
+                                else if(StrAnswer.equals("5_2")){
+                                    if(lock5_3 == 1)
+                                        updateGameLock5_3();
+                                }
+                                else if(StrAnswer.equals("5_3")){
+                                    if(lock5_4 == 1)
+                                        updateGameLock5_4();
+                                }
+                                else if(StrAnswer.equals("5_4")){
+                                    if(lock5_5 == 1)
+                                        updateGameLock5_5();
+                                }
+                                else if(StrAnswer.equals("5_5")){
+                                    if(lock5_6 == 1)
+                                        updateGameLock5_6();
+                                }
+                                else if(StrAnswer.equals("5_6")){
+                                    if(lock5_7 == 1)
+                                        updateGameLock5_7();
+                                }
+                                else if(StrAnswer.equals("5_7")){
+                                    if(lock5_8 == 1)
+                                        updateGameLock5_8();
+                                }
+                                else if(StrAnswer.equals("5_8")){
+                                    if(lock6_1 == 1)
+                                        updateGameLock6_1();
+                                }
+                                else if(StrAnswer.equals("6_1")){
+                                    if(lock6_2 == 1)
+                                        updateGameLock6_2();
+                                }
+                                else if(StrAnswer.equals("6_2")){
+                                    if(lock6_3 == 1)
+                                        updateGameLock6_3();
+                                }
+                                else if(StrAnswer.equals("6_3")){
+                                    if(lock6_4 == 1)
+                                        updateGameLock6_4();
+                                }
+                                else if(StrAnswer.equals("6_4")){
+                                    if(lock6_5 == 1)
+                                        updateGameLock6_5();
+                                }
+                                else if(StrAnswer.equals("6_5")){
+                                    if(lock6_6 == 1)
+                                        updateGameLock6_6();
+                                }
+                                else if(StrAnswer.equals("6_6")){
+                                    if(lock6_7 == 1)
+                                        updateGameLock6_7();
+                                }
+                                else if(StrAnswer.equals("6_7")){
+                                    if(lock6_8 == 1)
+                                        updateGameLock6_8();
+                                }
+                                else if(StrAnswer.equals("6_8")){
+                                    if(lock7_1 == 1)
+                                        updateGameLock7_1();
+                                }
+                                else if(StrAnswer.equals("7_1")){
+                                    if(lock7_2 == 1)
+                                        updateGameLock7_2();
+                                }
+                                else if(StrAnswer.equals("7_2")){
+                                    if(lock7_3 == 1)
+                                        updateGameLock7_3();
+                                }
+                                else if(StrAnswer.equals("7_3")){
+                                    if(lock7_4 == 1)
+                                        updateGameLock7_4();
+                                }
+                                else if(StrAnswer.equals("7_4")){
+                                    if(lock7_5 == 1)
+                                        updateGameLock7_5();
+                                }
+                                else if(StrAnswer.equals("7_5")){
+                                    if(lock7_6 == 1)
+                                        updateGameLock7_6();
+                                }
+                                else if(StrAnswer.equals("7_6")){
+                                    if(lock7_7 == 1)
+                                        updateGameLock7_7();
+                                }
+                                else if(StrAnswer.equals("7_7")){
+                                    if(lock7_8 == 1)
+                                        updateGameLock7_8();
+                                }
+                                else if(StrAnswer.equals("7_8")){
+                                    if(lock8_1 == 1)
+                                        updateGameLock8_1();
+                                }
+                                else if(StrAnswer.equals("8_1")){
+                                    if(lock8_2 == 1)
+                                        updateGameLock8_2();
+                                }
+                                else if(StrAnswer.equals("8_2")){
+                                    if(lock8_3 == 1)
+                                        updateGameLock8_3();
+                                }
+                                else if(StrAnswer.equals("8_3")){
+                                    if(lock8_4 == 1)
+                                        updateGameLock8_4();
+                                }
+                                else if(StrAnswer.equals("8_4")){
+                                    if(lock8_5 == 1)
+                                        updateGameLock8_5();
+                                }
+                                else if(StrAnswer.equals("8_5")){
+                                    if(lock8_6 == 1)
+                                        updateGameLock8_6();
+                                }
+                                else if(StrAnswer.equals("8_6")){
+                                    if(lock8_7 == 1)
+                                        updateGameLock8_7();
+                                }
+                                else if(StrAnswer.equals("8_7")){
+                                    if(lock8_8 == 1)
+                                        updateGameLock8_8();
+                                }
+                                else if(StrAnswer.equals("8_8")){
+                                    if(lock9_1 == 1)
+                                        updateGameLock9_1();
+                                }
+                                else if(StrAnswer.equals("9_1")){
+                                    if(lock9_2 == 1)
+                                        updateGameLock9_2();
+                                }
+                                else if(StrAnswer.equals("9_2")){
+                                    if(lock9_3 == 1)
+                                        updateGameLock9_3();
+                                }
+                                else if(StrAnswer.equals("9_3")){
+                                    if(lock9_4 == 1)
+                                        updateGameLock9_4();
+                                }
+                                else if(StrAnswer.equals("9_4")){
+                                    if(lock9_5 == 1)
+                                        updateGameLock9_5();
+                                }
+                                else if(StrAnswer.equals("9_5")){
+                                    if(lock9_6 == 1)
+                                        updateGameLock9_6();
+                                }
+                                else if(StrAnswer.equals("9_6")){
+                                    if(lock9_7 == 1)
+                                        updateGameLock9_7();
+                                }
+                                else if(StrAnswer.equals("9_7")){
+                                    if(lock9_8 == 1)
+                                        updateGameLock9_8();
+                                }
+                                else if(StrAnswer.equals("9_8")){
+                                    if(lock10_1 == 1)
+                                        updateGameLock10_1();
+                                }
+                                else if(StrAnswer.equals("10_1")){
+                                    if(lock10_2 == 1)
+                                        updateGameLock10_2();
+                                }
+                                else if(StrAnswer.equals("10_2")){
+                                    if(lock10_3 == 1)
+                                        updateGameLock10_3();
+                                }
+                                else if(StrAnswer.equals("10_3")){
+                                    if(lock10_4 == 1)
+                                        updateGameLock10_4();
+                                }
+                                else if(StrAnswer.equals("10_4")){
+                                    if(lock10_5 == 1)
+                                        updateGameLock10_5();
+                                }
+                                else if(StrAnswer.equals("10_5")){
+                                    if(lock10_6 == 1)
+                                        updateGameLock10_6();
+                                }
+                                else if(StrAnswer.equals("10_6")){
+                                    if(lock10_7 == 1)
+                                        updateGameLock10_7();
+                                }
+                                else if(StrAnswer.equals("10_7")){
+                                    if(lock10_8 == 1)
+                                        updateGameLock10_8();
+                                }
+                                CostomDialog costomDialog = new CostomDialog(GameLine4.this);
                                 costomDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
                                 costomDialog.setCancelable(false);
@@ -1474,15 +2341,20 @@ public class GameLine2 extends AppCompatActivity {
                 }
             }
         });
+
+
     }
+
+
     @Override
     public void onBackPressed(){
-        CostomDialogBackKey costomDialog = new CostomDialogBackKey(GameLine2.this);
+        CostomDialogBackKey costomDialog = new CostomDialogBackKey(GameLine4.this);
         costomDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         costomDialog.setCancelable(false);
         costomDialog.show();
     }
+
 
     //DB
     private SQLiteDatabase init_database() {
