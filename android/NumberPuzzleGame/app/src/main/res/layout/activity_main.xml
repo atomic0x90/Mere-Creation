@@ -13,123 +13,77 @@
         android:id="@+id/GameStartButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="게임하기"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"
 
         android:background="@drawable/costom_menu_button2"
-        />
+        android:fontFamily="@font/imcresoojin"
+        android:text="게임하기"
+
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/textc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        android:soundEffectsEnabled="false"/>
 
     <Button
         android:id="@+id/developerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/costom_menu_button3"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/costom_menu_button4"
+        android:fontFamily="@font/imcresoojin"
+
         android:text="개발자 정보"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/textc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ReviewButton"
+        android:soundEffectsEnabled="false"/>
 
-        app:layout_constraintTop_toBottomOf="@+id/GameStartButton" />
+    <Button
+        android:id="@+id/ReviewButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
 
-    <TableLayout
-        android:layout_width="320dp"
-        android:layout_height="539dp"
-        android:layout_marginBottom="1dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/costom_menu_button3"
+        android:fontFamily="@font/imcresoojin"
+        android:text="리뷰하기"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/textc"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/GameStartButton"
+        android:soundEffectsEnabled="false"/>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_launcher_1" />
 
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="@drawable/costom_menu_button3"
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/imcresoojin"
+        android:gravity="center"
+        android:text="숫자 순서 퍼즐 게임\n순서 맞추기"
 
-                android:fontFamily="@font/imcresoojin"
-                android:text="1"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-                android:textColor="@color/textcw" />
-
-            <Button
-                android:id="@+id/button5"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="@drawable/costom_menu_button3"
-                android:fontFamily="@font/imcresoojin"
-                android:text="2"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-                android:textColor="@color/textcw" />
-
-            <Button
-                android:id="@+id/button10"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="@drawable/costom_menu_button3"
-                android:fontFamily="@font/imcresoojin"
-                android:text="3"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-                android:textColor="@color/textcw" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="100dp"
-                android:layout_height="100dp" />
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                app:srcCompat="@android:drawable/ic_menu_help" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <Button
-                android:id="@+id/button11"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="@drawable/costom_menu_button4"
-                android:fontFamily="@font/imcresoojin"
-                android:text="3"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-                android:textColor="@color/textcw" />
-
-            <Button
-                android:id="@+id/button12"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="@drawable/costom_menu_button4"
-                android:fontFamily="@font/imcresoojin"
-                android:text="1"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-                android:textColor="@color/textcw" />
-
-            <Button
-                android:id="@+id/button7"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="@drawable/costom_menu_button4"
-                android:fontFamily="@font/imcresoojin"
-                android:text="2"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-                android:textColor="@color/textcw" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </TableLayout>
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/textc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

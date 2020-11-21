@@ -28,6 +28,7 @@
         android:fontFamily="@font/imcresoojin"
         android:stateListAnimator="@null"
         android:textColor="@color/textc"
+        android:soundEffectsEnabled="false"
         android:text="1234"/>
 
     <Button
@@ -43,7 +44,8 @@
         app:layout_constraintBottom_toTopOf="@+id/Line3TopButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:soundEffectsEnabled="false"/>
 
     <Button
         android:id="@+id/Line3TopButton"
@@ -59,7 +61,8 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:fontFamily="@font/imcresoojin"
         android:stateListAnimator="@null"
-        android:textColor="@color/textc"/>
+        android:textColor="@color/textc"
+        android:soundEffectsEnabled="false"/>
 
     <Button
         android:id="@+id/Line3MiddleButton1"
@@ -76,6 +79,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:fontFamily="@font/imcresoojin"
         android:stateListAnimator="@null"
+        android:soundEffectsEnabled="false"
         android:textColor="@color/textc"/>
 
     <Button
@@ -92,7 +96,8 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:fontFamily="@font/imcresoojin"
         android:stateListAnimator="@null"
-        android:textColor="@color/textc"/>
+        android:textColor="@color/textc"
+        android:soundEffectsEnabled="false"/>
 
     <Button
         android:id="@+id/Line3BottomButton"
@@ -109,7 +114,8 @@
         android:textColor="@color/textcw"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:soundEffectsEnabled="false"/>
 
     <TextView
         android:id="@+id/Line3Title"

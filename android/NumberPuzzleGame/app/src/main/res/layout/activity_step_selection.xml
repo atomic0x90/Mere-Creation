@@ -58,6 +58,7 @@
                 android:textColor="@color/textc"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:fontFamily="@font/imcresoojin"
+                android:soundEffectsEnabled="false"
                 />
 
             <Button
@@ -70,7 +71,8 @@
                 android:text="1"
                 android:textColor="@color/textc"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:fontFamily="@font/imcresoojin"/>
+                android:fontFamily="@font/imcresoojin"
+                android:soundEffectsEnabled="false"/>
 
             <LinearLayout
                 android:id="@+id/Step1Ver"
@@ -96,7 +98,8 @@
                         android:background="@drawable/costom_menu_button1"
                         android:textColor="@color/textc"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step1_2"
@@ -107,7 +110,8 @@
                         android:background="@drawable/costom_menu_button1"
                         android:textColor="@color/textc"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step1_3"
@@ -118,7 +122,8 @@
                         android:background="@drawable/costom_menu_button1"
                         android:textColor="@color/textc"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step1_4"
@@ -129,7 +134,8 @@
                         android:background="@drawable/costom_menu_button1"
                         android:textColor="@color/textc"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -147,7 +153,8 @@
                         android:background="@drawable/costom_menu_button1"
                         android:textColor="@color/textc"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step1_6"
@@ -158,7 +165,8 @@
                         android:background="@drawable/costom_menu_button1"
                         android:textColor="@color/textc"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step1_7"
@@ -169,7 +177,8 @@
                         android:background="@drawable/costom_menu_button1"
                         android:textColor="@color/textc"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step1_8"
@@ -180,7 +189,8 @@
                         android:background="@drawable/costom_menu_button1"
                         android:textColor="@color/textc"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
                 </LinearLayout>
 
             </LinearLayout>
@@ -195,7 +205,8 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:fontFamily="@font/imcresoojin"
                 android:text="2"
-                android:textColor="@color/textc" />
+                android:textColor="@color/textc"
+                android:soundEffectsEnabled="false"/>
 
             <LinearLayout
                 android:id="@+id/Step2Ver"
@@ -220,7 +231,8 @@
                         android:background="@drawable/costom_menu_button2"
                         android:textColor="@color/textc"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step2_2"
@@ -231,7 +243,8 @@
                         android:background="@drawable/costom_menu_button2"
                         android:textColor="@color/textc"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step2_3"
@@ -242,7 +255,8 @@
                         android:background="@drawable/costom_menu_button2"
                         android:textColor="@color/textc"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step2_4"
@@ -253,7 +267,8 @@
                         android:background="@drawable/costom_menu_button2"
                         android:textColor="@color/textc"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -271,7 +286,8 @@
                         android:background="@drawable/costom_menu_button2"
                         android:textColor="@color/textc"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step2_6"
@@ -282,7 +298,8 @@
                         android:background="@drawable/costom_menu_button2"
                         android:textColor="@color/textc"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step2_7"
@@ -293,7 +310,8 @@
                         android:background="@drawable/costom_menu_button2"
                         android:textColor="@color/textc"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step2_8"
@@ -304,7 +322,8 @@
                         android:background="@drawable/costom_menu_button2"
                         android:textColor="@color/textc"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -319,7 +338,8 @@
                 android:text="3"
                 android:textColor="@color/textc"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:fontFamily="@font/imcresoojin"/>
+                android:fontFamily="@font/imcresoojin"
+                android:soundEffectsEnabled="false"/>
 
             <LinearLayout
                 android:id="@+id/Step3Ver"
@@ -344,6 +364,7 @@
                         android:textColor="@color/textc"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
                         android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"
                         />
 
                     <Button
@@ -355,7 +376,8 @@
                         android:background="@drawable/costom_menu_button2"
                         android:textColor="@color/textc"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step3_3"
@@ -366,7 +388,8 @@
                         android:background="@drawable/costom_menu_button2"
                         android:textColor="@color/textc"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step3_4"
@@ -377,7 +400,8 @@
                         android:background="@drawable/costom_menu_button2"
                         android:textColor="@color/textc"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -395,7 +419,8 @@
                         android:background="@drawable/costom_menu_button2"
                         android:textColor="@color/textc"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step3_6"
@@ -406,7 +431,8 @@
                         android:background="@drawable/costom_menu_button2"
                         android:textColor="@color/textc"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step3_7"
@@ -418,6 +444,7 @@
                         android:textColor="@color/textc"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
                         android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"
                         />
 
                     <Button
@@ -429,7 +456,8 @@
                         android:text="3-8"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
                         android:fontFamily="@font/imcresoojin"
-                        android:textColor="@color/textc" />
+                        android:textColor="@color/textc"
+                        android:soundEffectsEnabled="false"/>
                 </LinearLayout>
 
             </LinearLayout>
@@ -444,6 +472,7 @@
                 android:textColor="@color/textcw"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:fontFamily="@font/imcresoojin"
+                android:soundEffectsEnabled="false"
                 />
 
             <LinearLayout
@@ -468,7 +497,8 @@
                         android:background="@drawable/costom_menu_button3"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step4_2"
@@ -479,7 +509,8 @@
                         android:background="@drawable/costom_menu_button3"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step4_3"
@@ -490,7 +521,8 @@
                         android:background="@drawable/costom_menu_button3"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step4_4"
@@ -501,7 +533,8 @@
                         android:background="@drawable/costom_menu_button3"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -519,7 +552,8 @@
                         android:background="@drawable/costom_menu_button3"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step4_6"
@@ -530,7 +564,8 @@
                         android:background="@drawable/costom_menu_button3"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step4_7"
@@ -541,7 +576,8 @@
                         android:background="@drawable/costom_menu_button3"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step4_8"
@@ -552,7 +588,8 @@
                         android:background="@drawable/costom_menu_button3"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -564,7 +601,8 @@
                 android:background="@drawable/costom_menu_button3"
                 android:textColor="@color/textcw"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:fontFamily="@font/imcresoojin"/>
+                android:fontFamily="@font/imcresoojin"
+                android:soundEffectsEnabled="false"/>
 
             <LinearLayout
                 android:id="@+id/Step5Ver"
@@ -588,7 +626,8 @@
                         android:background="@drawable/costom_menu_button3"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step5_2"
@@ -599,7 +638,8 @@
                         android:background="@drawable/costom_menu_button3"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step5_3"
@@ -610,7 +650,8 @@
                         android:background="@drawable/costom_menu_button3"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step5_4"
@@ -621,7 +662,8 @@
                         android:background="@drawable/costom_menu_button3"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -639,7 +681,8 @@
                         android:background="@drawable/costom_menu_button3"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step5_6"
@@ -650,7 +693,8 @@
                         android:background="@drawable/costom_menu_button3"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step5_7"
@@ -661,7 +705,8 @@
                         android:background="@drawable/costom_menu_button3"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step5_8"
@@ -672,7 +717,8 @@
                         android:background="@drawable/costom_menu_button3"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -684,7 +730,8 @@
                 android:background="@drawable/costom_menu_button4"
                 android:textColor="@color/textcw"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:fontFamily="@font/imcresoojin"/>
+                android:fontFamily="@font/imcresoojin"
+                android:soundEffectsEnabled="false"/>
 
             <LinearLayout
                 android:id="@+id/Step6Ver"
@@ -708,7 +755,8 @@
                         android:background="@drawable/costom_menu_button4"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step6_2"
@@ -719,7 +767,8 @@
                         android:background="@drawable/costom_menu_button4"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step6_3"
@@ -730,7 +779,8 @@
                         android:background="@drawable/costom_menu_button4"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step6_4"
@@ -741,7 +791,8 @@
                         android:background="@drawable/costom_menu_button4"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -759,7 +810,8 @@
                         android:background="@drawable/costom_menu_button4"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step6_6"
@@ -770,7 +822,8 @@
                         android:background="@drawable/costom_menu_button4"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step6_7"
@@ -781,7 +834,8 @@
                         android:background="@drawable/costom_menu_button4"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step6_8"
@@ -792,7 +846,8 @@
                         android:background="@drawable/costom_menu_button4"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -804,7 +859,8 @@
                 android:background="@drawable/costom_menu_button4"
                 android:textColor="@color/textcw"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:fontFamily="@font/imcresoojin"/>
+                android:fontFamily="@font/imcresoojin"
+                android:soundEffectsEnabled="false"/>
 
             <LinearLayout
                 android:id="@+id/Step7Ver"
@@ -828,7 +884,8 @@
                         android:background="@drawable/costom_menu_button4"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step7_2"
@@ -839,7 +896,8 @@
                         android:background="@drawable/costom_menu_button4"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step7_3"
@@ -850,7 +908,8 @@
                         android:background="@drawable/costom_menu_button4"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step7_4"
@@ -861,7 +920,8 @@
                         android:background="@drawable/costom_menu_button4"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -879,7 +939,8 @@
                         android:background="@drawable/costom_menu_button4"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step7_6"
@@ -890,7 +951,8 @@
                         android:background="@drawable/costom_menu_button4"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step7_7"
@@ -901,7 +963,8 @@
                         android:background="@drawable/costom_menu_button4"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step7_8"
@@ -912,7 +975,8 @@
                         android:background="@drawable/costom_menu_button4"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -924,7 +988,8 @@
                 android:background="@drawable/costom_menu_button5"
                 android:textColor="@color/textcw"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:fontFamily="@font/imcresoojin"/>
+                android:fontFamily="@font/imcresoojin"
+                android:soundEffectsEnabled="false"/>
 
             <LinearLayout
                 android:id="@+id/Step8Ver"
@@ -948,7 +1013,8 @@
                         android:background="@drawable/costom_menu_button5"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step8_2"
@@ -959,7 +1025,8 @@
                         android:background="@drawable/costom_menu_button5"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step8_3"
@@ -970,7 +1037,8 @@
                         android:background="@drawable/costom_menu_button5"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step8_4"
@@ -981,7 +1049,8 @@
                         android:background="@drawable/costom_menu_button5"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -999,7 +1068,8 @@
                         android:background="@drawable/costom_menu_button5"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step8_6"
@@ -1010,7 +1080,8 @@
                         android:background="@drawable/costom_menu_button5"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step8_7"
@@ -1021,7 +1092,8 @@
                         android:background="@drawable/costom_menu_button5"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step8_8"
@@ -1032,7 +1104,8 @@
                         android:background="@drawable/costom_menu_button5"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -1044,7 +1117,8 @@
                 android:textColor="@color/textcw"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:fontFamily="@font/imcresoojin"
-                android:text="9" />
+                android:text="9"
+                android:soundEffectsEnabled="false"/>
 
             <LinearLayout
                 android:id="@+id/Step9Ver"
@@ -1068,7 +1142,8 @@
                         android:background="@drawable/costom_menu_button5"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step9_2"
@@ -1079,7 +1154,8 @@
                         android:background="@drawable/costom_menu_button5"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step9_3"
@@ -1090,7 +1166,8 @@
                         android:background="@drawable/costom_menu_button5"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step9_4"
@@ -1101,7 +1178,8 @@
                         android:background="@drawable/costom_menu_button5"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -1119,7 +1197,8 @@
                         android:background="@drawable/costom_menu_button5"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step9_6"
@@ -1130,7 +1209,8 @@
                         android:background="@drawable/costom_menu_button5"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step9_7"
@@ -1141,7 +1221,8 @@
                         android:background="@drawable/costom_menu_button5"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step9_8"
@@ -1152,7 +1233,8 @@
                         android:background="@drawable/costom_menu_button5"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -1164,7 +1246,8 @@
                 android:background="@drawable/costom_menu_button6"
                 android:textColor="@color/textcw"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:fontFamily="@font/imcresoojin"/>
+                android:fontFamily="@font/imcresoojin"
+                android:soundEffectsEnabled="false"/>
 
             <LinearLayout
                 android:id="@+id/Step10Ver"
@@ -1188,7 +1271,8 @@
                         android:background="@drawable/costom_menu_button6"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step10_2"
@@ -1199,7 +1283,8 @@
                         android:background="@drawable/costom_menu_button6"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step10_3"
@@ -1210,7 +1295,8 @@
                         android:background="@drawable/costom_menu_button6"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step10_4"
@@ -1221,7 +1307,8 @@
                         android:background="@drawable/costom_menu_button6"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -1239,7 +1326,8 @@
                         android:background="@drawable/costom_menu_button6"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step10_6"
@@ -1250,7 +1338,8 @@
                         android:background="@drawable/costom_menu_button6"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step10_7"
@@ -1261,7 +1350,8 @@
                         android:background="@drawable/costom_menu_button6"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
 
                     <Button
                         android:id="@+id/Step10_8"
@@ -1272,7 +1362,8 @@
                         android:background="@drawable/costom_menu_button6"
                         android:textColor="@color/textcw"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:fontFamily="@font/imcresoojin"/>
+                        android:fontFamily="@font/imcresoojin"
+                        android:soundEffectsEnabled="false"/>
                 </LinearLayout>
 
             </LinearLayout>

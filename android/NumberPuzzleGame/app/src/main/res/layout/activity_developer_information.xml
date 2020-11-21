@@ -23,7 +23,11 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+
+        android:fontFamily="@font/imcresoojin"
+
+        />
 
     <TextView
         android:id="@+id/textView2"
@@ -38,7 +42,8 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:fontFamily="@font/imcresoojin"/>
 
     <TextView
         android:id="@+id/textView3"
@@ -53,7 +58,8 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        android:fontFamily="@font/imcresoojin"/>
 
     <TextView
         android:id="@+id/DeveloperEmailadd"
@@ -68,7 +74,8 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        android:fontFamily="@font/imcresoojin"/>
 
     <TextView
         android:id="@+id/textView6"
@@ -83,7 +90,8 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/DeveloperEmailadd" />
+        app:layout_constraintTop_toBottomOf="@+id/DeveloperEmailadd"
+        android:fontFamily="@font/imcresoojin"/>
 
     <TextView
         android:id="@+id/textView8"
@@ -102,6 +110,7 @@
 
         android:autoLink="web"
         android:textColorLink="@color/bluewhitedrak"
+        android:fontFamily="@font/imcresoojin"
         />
 
     <TextView
@@ -119,7 +128,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10"
-
+        android:fontFamily="@font/imcresoojin"
         android:autoLink="web"
         />
 
@@ -137,6 +146,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView8"
 
         android:textColor="@color/bluewhite"
+        android:fontFamily="@font/imcresoojin"
         />
 
     <TextView
@@ -154,5 +164,6 @@
 
         android:textColor="@color/textc"
         android:gravity="center"
+        android:fontFamily="@font/imcresoojin"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

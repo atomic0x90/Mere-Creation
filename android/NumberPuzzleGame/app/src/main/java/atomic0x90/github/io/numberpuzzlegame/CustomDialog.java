@@ -3,6 +3,8 @@ package atomic0x90.github.io.numberpuzzlegame;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
@@ -18,7 +20,9 @@ public class CustomDialog extends Dialog{
         super(context);
         mContext = context;
     }
-
+    //Sound
+    SoundPool soundPool;
+    int soundID;
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -33,10 +37,17 @@ public class CustomDialog extends Dialog{
 
         getWindow().setAttributes(lp);
 
+
+        //Sound
+        soundPool = new SoundPool(5, AudioManager.STREAM_MUSIC,0);
+        soundID = soundPool.load(getContext(),R.raw.click_sound,1);
+
         Button costomButton = (Button) findViewById(R.id.costomDialogButton);
         costomButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 CustomDialog.this.dismiss();
                 ((Activity)mContext).finish();
             }

@@ -16,7 +16,6 @@
             android:screenOrientation="portrait"
             ></activity>
         <activity android:name=".CustomTutorial"
-            android:screenOrientation="portrait"
 
             android:theme="@style/Theme.AppCompat.Translucent"></activity>
         <activity android:name=".GameLine5"

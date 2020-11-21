@@ -19,7 +19,9 @@
 
         android:fontFamily="@font/imcresoojin"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/textc"/>
+        android:textColor="@color/textc"
+
+        />
 
     <Button
         android:id="@+id/Line4RetryButton"
@@ -35,7 +37,8 @@
         app:layout_constraintBottom_toTopOf="@+id/Line4TopButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:soundEffectsEnabled="false"/>
 
     <Button
         android:id="@+id/Line4TopButton"
@@ -50,7 +53,8 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:fontFamily="@font/imcresoojin"
         android:stateListAnimator="@null"
-        android:textColor="@color/textc"/>
+        android:textColor="@color/textc"
+        android:soundEffectsEnabled="false"/>
 
     <Button
         android:id="@+id/Line4MiddleButton1"
@@ -69,7 +73,8 @@
         app:layout_constraintBottom_toTopOf="@+id/Line4BottomButton"
         app:layout_constraintEnd_toStartOf="@+id/Line4MiddleButton2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Line4TopButton" />
+        app:layout_constraintTop_toBottomOf="@+id/Line4TopButton"
+        android:soundEffectsEnabled="false"/>
 
     <Button
         android:id="@+id/Line4MiddleButton2"
@@ -88,7 +93,8 @@
         app:layout_constraintBottom_toTopOf="@+id/Line4BottomButton"
         app:layout_constraintEnd_toStartOf="@+id/Line4MiddleButton3"
         app:layout_constraintStart_toEndOf="@+id/Line4MiddleButton1"
-        app:layout_constraintTop_toBottomOf="@+id/Line4TopButton" />
+        app:layout_constraintTop_toBottomOf="@+id/Line4TopButton"
+        android:soundEffectsEnabled="false"/>
 
     <Button
         android:id="@+id/Line4MiddleButton3"
@@ -107,7 +113,8 @@
         app:layout_constraintBottom_toTopOf="@+id/Line4BottomButton"
         app:layout_constraintEnd_toStartOf="@+id/Line4MiddleButton4"
         app:layout_constraintStart_toEndOf="@+id/Line4MiddleButton2"
-        app:layout_constraintTop_toBottomOf="@+id/Line4TopButton" />
+        app:layout_constraintTop_toBottomOf="@+id/Line4TopButton"
+        android:soundEffectsEnabled="false"/>
 
     <Button
         android:id="@+id/Line4MiddleButton4"
@@ -126,7 +133,8 @@
         app:layout_constraintBottom_toTopOf="@+id/Line4BottomButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/Line4MiddleButton3"
-        app:layout_constraintTop_toBottomOf="@+id/Line4TopButton" />
+        app:layout_constraintTop_toBottomOf="@+id/Line4TopButton"
+        android:soundEffectsEnabled="false"/>
 
     <Button
         android:id="@+id/Line4BottomButton"
@@ -143,7 +151,8 @@
         android:textColor="@color/textcw"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:soundEffectsEnabled="false"/>
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/Line4adView"

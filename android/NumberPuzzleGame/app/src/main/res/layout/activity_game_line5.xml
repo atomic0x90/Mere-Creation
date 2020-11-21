@@ -34,7 +34,8 @@
         android:text="다시하기"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
 
-        android:textColor="@color/textc"/>
+        android:textColor="@color/textc"
+        android:soundEffectsEnabled="false"/>
 
     <Button
         android:id="@+id/Line5TopButton"
@@ -49,7 +50,8 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:fontFamily="@font/imcresoojin"
         android:stateListAnimator="@null"
-        android:textColor="@color/textc"/>
+        android:textColor="@color/textc"
+        android:soundEffectsEnabled="false"/>
 
     <Button
         android:id="@+id/Line5MiddleButton1"
@@ -64,7 +66,8 @@
         app:layout_constraintBottom_toTopOf="@+id/Line5BottomButton"
         app:layout_constraintEnd_toStartOf="@+id/Line5MiddleButton2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Line5TopButton" />
+        app:layout_constraintTop_toBottomOf="@+id/Line5TopButton"
+        android:soundEffectsEnabled="false"/>
 
     <Button
         android:id="@+id/Line5MiddleButton2"
@@ -79,7 +82,8 @@
         android:fontFamily="@font/imcresoojin"
         android:stateListAnimator="@null"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/textc"/>
+        android:textColor="@color/textc"
+        android:soundEffectsEnabled="false"/>
 
     <Button
         android:id="@+id/Line5MiddleButton3"
@@ -94,7 +98,8 @@
         android:fontFamily="@font/imcresoojin"
         android:stateListAnimator="@null"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/textc"/>
+        android:textColor="@color/textc"
+        android:soundEffectsEnabled="false"/>
 
     <Button
         android:id="@+id/Line5MiddleButton4"
@@ -109,7 +114,8 @@
         android:fontFamily="@font/imcresoojin"
         android:stateListAnimator="@null"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/textc"/>
+        android:textColor="@color/textc"
+        android:soundEffectsEnabled="false"/>
 
     <Button
         android:id="@+id/Line5MiddleButton5"
@@ -124,7 +130,8 @@
         app:layout_constraintBottom_toTopOf="@+id/Line5BottomButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/Line5MiddleButton4"
-        app:layout_constraintTop_toBottomOf="@+id/Line5TopButton" />
+        app:layout_constraintTop_toBottomOf="@+id/Line5TopButton"
+        android:soundEffectsEnabled="false"/>
 
     <Button
         android:id="@+id/Line5BottomButton"
@@ -140,7 +147,8 @@
         android:textColor="@color/textcw"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:soundEffectsEnabled="false"/>
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/Line5adView"

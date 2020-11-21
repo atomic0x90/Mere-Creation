@@ -24,7 +24,8 @@
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/costomDialogBackKeyNegativeButton"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:soundEffectsEnabled="false"/>
 
     <Button
         android:id="@+id/costomDialogBackKeyNegativeButton"
@@ -39,7 +40,8 @@
         android:textColor="@color/textc"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/costomDialogBackKeyPositiveButton" />
+        app:layout_constraintStart_toEndOf="@+id/costomDialogBackKeyPositiveButton"
+        android:soundEffectsEnabled="false"/>
 
     <TextView
         android:id="@+id/costomDialogBackKeyText1"

@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableString;
@@ -17,6 +19,9 @@ import android.widget.Button;
 
 public class Tutorial extends AppCompatActivity {
 
+    //Sound
+    SoundPool soundPool;
+    int soundID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +30,9 @@ public class Tutorial extends AppCompatActivity {
         Intent intent = new Intent(Tutorial.this, CustomTutorial.class);
         startActivity(intent);
 
+//Sound
+        soundPool = new SoundPool(5, AudioManager.STREAM_MUSIC,0);
+        soundID = soundPool.load(this,R.raw.click_sound,1);
 
         final Button TopButton = (Button) findViewById(R.id.TutorialTopButton);
         final Button MiddleButton1 = (Button) findViewById(R.id.TutorialMiddleButton1);
@@ -52,6 +60,8 @@ public class Tutorial extends AppCompatActivity {
         RetryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 TopButton.setText("1");
                 MiddleButton1.setText("");
                 MiddleButton2.setText("");
@@ -86,6 +96,8 @@ public class Tutorial extends AppCompatActivity {
         TopButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(!TopButton.isSelected()) //선택 안됐을 때
                 {
                     if (!TopButton.getText().equals("-")) {
@@ -104,6 +116,8 @@ public class Tutorial extends AppCompatActivity {
         MiddleButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(TopButton.isSelected()){
                     //Top에서 선택 후 Middle로 옮길 때
 
@@ -151,6 +165,8 @@ public class Tutorial extends AppCompatActivity {
         MiddleButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(TopButton.isSelected()){
                     //Top에서 선택 후 Middle로 옮길 때
 
@@ -201,6 +217,8 @@ public class Tutorial extends AppCompatActivity {
         BottomButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(!MiddleButton1.isSelected() && !MiddleButton2.isSelected()){
                     //아무것도 안누르고 bottomButton 먼저 누른 경우
                 }

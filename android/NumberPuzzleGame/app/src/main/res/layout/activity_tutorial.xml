@@ -22,7 +22,8 @@
         android:textColor="@color/textc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TutorialRetryButton" />
+        app:layout_constraintTop_toBottomOf="@+id/TutorialRetryButton"
+        android:soundEffectsEnabled="false"/>
 
     <Button
         android:id="@+id/TutorialMiddleButton1"
@@ -38,7 +39,8 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:fontFamily="@font/imcresoojin"
         android:stateListAnimator="@null"
-        android:textColor="@color/textc"/>
+        android:textColor="@color/textc"
+        android:soundEffectsEnabled="false"/>
 
     <Button
         android:id="@+id/TutorialMiddleButton2"
@@ -54,7 +56,8 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:fontFamily="@font/imcresoojin"
         android:stateListAnimator="@null"
-        android:textColor="@color/textc"/>
+        android:textColor="@color/textc"
+        android:soundEffectsEnabled="false"/>
 
     <Button
         android:id="@+id/TutorialBottomButton"
@@ -69,7 +72,8 @@
         android:inputType="textEmailAddress|textNoSuggestions"
         android:stateListAnimator="@null"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/textcw"/>
+        android:textColor="@color/textcw"
+        android:soundEffectsEnabled="false"/>
 
     <Button
         android:id="@+id/TutorialRetryButton"
@@ -84,5 +88,6 @@
         android:textColor="@color/textcw"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:soundEffectsEnabled="false"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

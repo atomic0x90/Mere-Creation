@@ -9,11 +9,15 @@ import android.content.ServiceConnection;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.media.SoundPool;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -39,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
     private static MediaPlayer bgm;
     //private int bgmSet = 0;
 
+    //Sound
+    SoundPool soundPool;
+    int soundID;
 
     //
 /*
@@ -74,6 +81,10 @@ public class MainActivity extends AppCompatActivity {
         //DB
         sqliteDB = init_database() ;
         init_tables();
+
+        //Sound
+        soundPool = new SoundPool(5, AudioManager.STREAM_MUSIC,0);
+        soundID = soundPool.load(this,R.raw.click_sound,1);
 
         //
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
@@ -131,6 +142,9 @@ public class MainActivity extends AppCompatActivity {
         developerInformation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 Intent intent = new Intent(MainActivity.this, DeveloperInformation.class);
                 intent.addFlags(FLAG_ACTIVITY_NO_USER_ACTION);
                 startActivity(intent);
@@ -141,11 +155,29 @@ public class MainActivity extends AppCompatActivity {
         gameStartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 Intent intent = new Intent(MainActivity.this, StepSelection.class);
                 startActivity(intent);
             }
         });
 
+        Button ReviewButton = (Button) findViewById(R.id.ReviewButton);
+        ReviewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
+                final String appPackageName = getPackageName(); // getPackageName() from Context or Activity object
+                try {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
+                } catch (android.content.ActivityNotFoundException anfe) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
+                }
+            }
+        });
 
     }
 
@@ -1728,7 +1760,11 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
+        EndPopup endPopup = new EndPopup(MainActivity.this);
+        endPopup.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
+        endPopup.setCancelable(false);
+        endPopup.show();
 
     }
 

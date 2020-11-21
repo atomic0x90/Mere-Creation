@@ -8,6 +8,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableString;
@@ -26,6 +28,9 @@ import com.google.android.gms.ads.AdView;
 import java.io.File;
 
 public class GameLine2 extends AppCompatActivity {
+    //Sound
+    SoundPool soundPool;
+    int soundID;
 
     SQLiteDatabase sqliteDB ;
 
@@ -133,6 +138,11 @@ public class GameLine2 extends AppCompatActivity {
         mAdView = findViewById(R.id.Line2adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
+
+
+        //Sound
+        soundPool = new SoundPool(5, AudioManager.STREAM_MUSIC,0);
+        soundID = soundPool.load(this,R.raw.click_sound,1);
 
         //DB
         sqliteDB = init_database();
@@ -581,6 +591,8 @@ public class GameLine2 extends AppCompatActivity {
         RetryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 TopButton.setText("1");
                 MiddleButton1.setText("");
                 MiddleButton2.setText("");
@@ -615,6 +627,8 @@ public class GameLine2 extends AppCompatActivity {
         TopButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(!TopButton.isSelected()) //선택 안됐을 때
                 {
                     if (!TopButton.getText().equals("-")) {
@@ -633,6 +647,8 @@ public class GameLine2 extends AppCompatActivity {
         MiddleButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(TopButton.isSelected()){
                     //Top에서 선택 후 Middle로 옮길 때
 
@@ -680,6 +696,8 @@ public class GameLine2 extends AppCompatActivity {
         MiddleButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(TopButton.isSelected()){
                     //Top에서 선택 후 Middle로 옮길 때
 
@@ -730,6 +748,8 @@ public class GameLine2 extends AppCompatActivity {
         BottomButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(!MiddleButton1.isSelected() && !MiddleButton2.isSelected()){
                     //아무것도 안누르고 bottomButton 먼저 누른 경우
                 }

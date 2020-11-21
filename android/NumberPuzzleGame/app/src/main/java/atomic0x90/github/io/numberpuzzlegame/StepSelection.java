@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +19,9 @@ import java.io.File;
 public class StepSelection extends AppCompatActivity {
 
     SQLiteDatabase sqliteDB ;
+    //Sound
+    SoundPool soundPool;
+    int soundID;
 
     int lock1_1 = -1;
     int lock1_2 = -1;
@@ -449,6 +454,10 @@ public class StepSelection extends AppCompatActivity {
         sqliteDB = init_database();
         loadGameLockALL();
 
+//Sound
+        soundPool = new SoundPool(5, AudioManager.STREAM_MUSIC,0);
+        soundID = soundPool.load(this,R.raw.click_sound,1);
+
         final Button Step1Button = (Button) findViewById(R.id.Step1Button);
         final Button Step2Button = (Button) findViewById(R.id.Step2Button);
         final Button Step3Button = (Button) findViewById(R.id.Step3Button);
@@ -807,6 +816,8 @@ public class StepSelection extends AppCompatActivity {
         Step1Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(Step1Ver.getVisibility() == View.GONE)
                     Step1Ver.setVisibility(View.VISIBLE);
                 else
@@ -817,6 +828,8 @@ public class StepSelection extends AppCompatActivity {
         Step2Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(Step2Ver.getVisibility() == View.GONE)
                     Step2Ver.setVisibility(View.VISIBLE);
                 else
@@ -826,6 +839,8 @@ public class StepSelection extends AppCompatActivity {
         Step3Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(Step3Ver.getVisibility() == View.GONE)
                     Step3Ver.setVisibility(View.VISIBLE);
                 else
@@ -835,6 +850,8 @@ public class StepSelection extends AppCompatActivity {
         Step4Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(Step4Ver.getVisibility() == View.GONE)
                     Step4Ver.setVisibility(View.VISIBLE);
                 else
@@ -844,6 +861,8 @@ public class StepSelection extends AppCompatActivity {
         Step5Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(Step5Ver.getVisibility() == View.GONE)
                     Step5Ver.setVisibility(View.VISIBLE);
                 else
@@ -853,6 +872,8 @@ public class StepSelection extends AppCompatActivity {
         Step6Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(Step6Ver.getVisibility() == View.GONE)
                     Step6Ver.setVisibility(View.VISIBLE);
                 else
@@ -862,6 +883,8 @@ public class StepSelection extends AppCompatActivity {
         Step7Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(Step7Ver.getVisibility() == View.GONE)
                     Step7Ver.setVisibility(View.VISIBLE);
                 else
@@ -871,6 +894,8 @@ public class StepSelection extends AppCompatActivity {
         Step8Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(Step8Ver.getVisibility() == View.GONE)
                     Step8Ver.setVisibility(View.VISIBLE);
                 else
@@ -880,6 +905,8 @@ public class StepSelection extends AppCompatActivity {
         Step9Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(Step9Ver.getVisibility() == View.GONE)
                     Step9Ver.setVisibility(View.VISIBLE);
                 else
@@ -889,6 +916,8 @@ public class StepSelection extends AppCompatActivity {
         Step10Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(Step10Ver.getVisibility() == View.GONE)
                     Step10Ver.setVisibility(View.VISIBLE);
                 else
@@ -899,6 +928,8 @@ public class StepSelection extends AppCompatActivity {
         TutorialButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 Intent intent = new Intent(StepSelection.this,Tutorial.class);
                 startActivity(intent);
             }
@@ -908,6 +939,8 @@ public class StepSelection extends AppCompatActivity {
         Step1_1Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 Intent intent = new Intent(StepSelection.this,GameLine2.class);
                 intent.putExtra("Max",4);
                 intent.putExtra("Answer","1_1");
@@ -919,6 +952,7 @@ public class StepSelection extends AppCompatActivity {
         Step1_2Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
 
                 if(lock1_2 == 1){
                     //잠금
@@ -938,6 +972,7 @@ public class StepSelection extends AppCompatActivity {
         Step1_3Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
 
                 if(lock1_3 == 1){
                     //잠금
@@ -957,6 +992,7 @@ public class StepSelection extends AppCompatActivity {
         Step1_4Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
 
                 if(lock1_4 == 1){
                     //잠금
@@ -976,6 +1012,7 @@ public class StepSelection extends AppCompatActivity {
         Step1_5Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
 
                 if(lock1_5 == 1){
                     //잠금
@@ -995,6 +1032,7 @@ public class StepSelection extends AppCompatActivity {
         Step1_6Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
 
                 if(lock1_6 == 1){
                     //잠금
@@ -1014,6 +1052,7 @@ public class StepSelection extends AppCompatActivity {
         Step1_7Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
 
                 if(lock1_7 == 1){
                     //잠금
@@ -1033,6 +1072,7 @@ public class StepSelection extends AppCompatActivity {
         Step1_8Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
 
                 if(lock1_8 == 1){
                     //잠금
@@ -1052,6 +1092,8 @@ public class StepSelection extends AppCompatActivity {
         Step2_1Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock2_1 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1070,6 +1112,8 @@ public class StepSelection extends AppCompatActivity {
         Step2_2Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock2_2 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1088,6 +1132,8 @@ public class StepSelection extends AppCompatActivity {
         Step2_3Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock2_3 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1106,6 +1152,8 @@ public class StepSelection extends AppCompatActivity {
         Step2_4Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock2_4 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1124,6 +1172,8 @@ public class StepSelection extends AppCompatActivity {
         Step2_5Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock2_5 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1141,6 +1191,8 @@ public class StepSelection extends AppCompatActivity {
         Step2_6Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock2_6 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1158,6 +1210,8 @@ public class StepSelection extends AppCompatActivity {
         Step2_7Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock2_7 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1175,6 +1229,8 @@ public class StepSelection extends AppCompatActivity {
         Step2_8Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock2_8 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1193,6 +1249,8 @@ public class StepSelection extends AppCompatActivity {
         Step3_1Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock3_1 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1211,6 +1269,8 @@ public class StepSelection extends AppCompatActivity {
         Step3_2Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock3_2 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1229,6 +1289,8 @@ public class StepSelection extends AppCompatActivity {
         Step3_3Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock3_3 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1246,6 +1308,8 @@ public class StepSelection extends AppCompatActivity {
         Step3_4Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock3_4 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1263,6 +1327,8 @@ public class StepSelection extends AppCompatActivity {
         Step3_5Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock3_5 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1280,6 +1346,8 @@ public class StepSelection extends AppCompatActivity {
         Step3_6Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock3_6 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1297,6 +1365,8 @@ public class StepSelection extends AppCompatActivity {
         Step3_7Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock3_7 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1314,6 +1384,8 @@ public class StepSelection extends AppCompatActivity {
         Step3_8Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock3_8 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1332,6 +1404,8 @@ public class StepSelection extends AppCompatActivity {
         Step4_1Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock4_1 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1349,6 +1423,8 @@ public class StepSelection extends AppCompatActivity {
         Step4_2Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock4_2 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1366,6 +1442,8 @@ public class StepSelection extends AppCompatActivity {
         Step4_3Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock4_3 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1383,6 +1461,8 @@ public class StepSelection extends AppCompatActivity {
         Step4_4Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock4_4 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1400,6 +1480,8 @@ public class StepSelection extends AppCompatActivity {
         Step4_5Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock4_5 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1417,6 +1499,8 @@ public class StepSelection extends AppCompatActivity {
         Step4_6Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock4_6 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1434,6 +1518,8 @@ public class StepSelection extends AppCompatActivity {
         Step4_7Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock4_7 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1451,6 +1537,8 @@ public class StepSelection extends AppCompatActivity {
         Step4_8Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock4_8 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1469,6 +1557,8 @@ public class StepSelection extends AppCompatActivity {
         Step5_1Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock5_1 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1487,6 +1577,8 @@ public class StepSelection extends AppCompatActivity {
         Step5_2Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock5_2 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1504,6 +1596,8 @@ public class StepSelection extends AppCompatActivity {
         Step5_3Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock5_3 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1521,6 +1615,8 @@ public class StepSelection extends AppCompatActivity {
         Step5_4Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock5_4 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1538,6 +1634,8 @@ public class StepSelection extends AppCompatActivity {
         Step5_5Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                soundPool.play(soundID,1f,1f,0,0,1f);
                 if(lock5_5 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1555,6 +1653,8 @@ public class StepSelection extends AppCompatActivity {
         Step5_6Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock5_6 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1572,6 +1672,8 @@ public class StepSelection extends AppCompatActivity {
         Step5_7Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock5_7 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1589,6 +1691,8 @@ public class StepSelection extends AppCompatActivity {
         Step5_8Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock5_8 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1607,6 +1711,8 @@ public class StepSelection extends AppCompatActivity {
         Step6_1Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock6_1 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1624,6 +1730,8 @@ public class StepSelection extends AppCompatActivity {
         Step6_2Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock6_2 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1641,6 +1749,8 @@ public class StepSelection extends AppCompatActivity {
         Step6_3Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock6_3 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1658,6 +1768,8 @@ public class StepSelection extends AppCompatActivity {
         Step6_4Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock6_4 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1675,6 +1787,8 @@ public class StepSelection extends AppCompatActivity {
         Step6_5Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock6_5 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1692,6 +1806,8 @@ public class StepSelection extends AppCompatActivity {
         Step6_6Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock6_6 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1709,6 +1825,8 @@ public class StepSelection extends AppCompatActivity {
         Step6_7Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock6_7 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1726,6 +1844,8 @@ public class StepSelection extends AppCompatActivity {
         Step6_8Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock6_8 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1744,6 +1864,8 @@ public class StepSelection extends AppCompatActivity {
         Step7_1Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock7_1 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1761,6 +1883,8 @@ public class StepSelection extends AppCompatActivity {
         Step7_2Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock7_2 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1778,6 +1902,8 @@ public class StepSelection extends AppCompatActivity {
         Step7_3Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock7_3 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1795,6 +1921,8 @@ public class StepSelection extends AppCompatActivity {
         Step7_4Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock7_4 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1812,6 +1940,8 @@ public class StepSelection extends AppCompatActivity {
         Step7_5Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock7_5 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1829,6 +1959,8 @@ public class StepSelection extends AppCompatActivity {
         Step7_6Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock7_6 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1846,6 +1978,8 @@ public class StepSelection extends AppCompatActivity {
         Step7_7Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock7_7 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1863,6 +1997,8 @@ public class StepSelection extends AppCompatActivity {
         Step7_8Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock7_8 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1881,6 +2017,8 @@ public class StepSelection extends AppCompatActivity {
         Step8_1Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock8_1 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1898,6 +2036,8 @@ public class StepSelection extends AppCompatActivity {
         Step8_2Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock8_2 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1915,6 +2055,8 @@ public class StepSelection extends AppCompatActivity {
         Step8_3Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock8_3 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1932,6 +2074,8 @@ public class StepSelection extends AppCompatActivity {
         Step8_4Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock8_4 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1949,6 +2093,8 @@ public class StepSelection extends AppCompatActivity {
         Step8_5Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock8_5 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1966,6 +2112,8 @@ public class StepSelection extends AppCompatActivity {
         Step8_6Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock8_6 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -1983,6 +2131,8 @@ public class StepSelection extends AppCompatActivity {
         Step8_7Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock8_7 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -2000,6 +2150,8 @@ public class StepSelection extends AppCompatActivity {
         Step8_8Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock8_8 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -2018,6 +2170,8 @@ public class StepSelection extends AppCompatActivity {
         Step9_1Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock9_1 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -2035,6 +2189,8 @@ public class StepSelection extends AppCompatActivity {
         Step9_2Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock9_2 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -2052,6 +2208,8 @@ public class StepSelection extends AppCompatActivity {
         Step9_3Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock9_3 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -2069,6 +2227,8 @@ public class StepSelection extends AppCompatActivity {
         Step9_4Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock9_4 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -2086,6 +2246,8 @@ public class StepSelection extends AppCompatActivity {
         Step9_5Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock9_5 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -2103,6 +2265,8 @@ public class StepSelection extends AppCompatActivity {
         Step9_6Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock9_6 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -2120,6 +2284,8 @@ public class StepSelection extends AppCompatActivity {
         Step9_7Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock9_7 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -2137,6 +2303,8 @@ public class StepSelection extends AppCompatActivity {
         Step9_8Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock9_8 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -2155,6 +2323,8 @@ public class StepSelection extends AppCompatActivity {
         Step10_1Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock10_1 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -2172,6 +2342,8 @@ public class StepSelection extends AppCompatActivity {
         Step10_2Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock10_2 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -2189,6 +2361,8 @@ public class StepSelection extends AppCompatActivity {
         Step10_3Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock10_3 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -2206,6 +2380,8 @@ public class StepSelection extends AppCompatActivity {
         Step10_4Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock10_4 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -2223,6 +2399,8 @@ public class StepSelection extends AppCompatActivity {
         Step10_5Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock10_5 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -2240,6 +2418,8 @@ public class StepSelection extends AppCompatActivity {
         Step10_6Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock10_6 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -2257,6 +2437,8 @@ public class StepSelection extends AppCompatActivity {
         Step10_7Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock10_7 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
@@ -2274,6 +2456,8 @@ public class StepSelection extends AppCompatActivity {
         Step10_8Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                soundPool.play(soundID,1f,1f,0,0,1f);
+
                 if(lock10_8 == 1){
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
