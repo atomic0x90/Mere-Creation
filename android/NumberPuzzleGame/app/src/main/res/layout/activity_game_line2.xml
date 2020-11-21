@@ -70,17 +70,18 @@
         android:id="@+id/Line2BottomButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="120dp"
         android:background="@drawable/costom_button1_4"
         android:fontFamily="@font/imcresoojin"
         android:inputType="textEmailAddress|textNoSuggestions"
         android:stateListAnimator="@null"
+
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+
         android:textColor="@color/textcw"
-
         app:layout_constraintBottom_toBottomOf="parent"
-
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         tools:text="1234" />
 
@@ -112,5 +113,17 @@
         app:layout_constraintEnd_toStartOf="@+id/Line2RetryButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/Line2adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:adSize = "SMART_BANNER"
+        app:adUnitId = "@string/TEST_BANNER_AD"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

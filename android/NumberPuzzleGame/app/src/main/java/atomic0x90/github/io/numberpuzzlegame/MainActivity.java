@@ -12,11 +12,19 @@ import android.database.sqlite.SQLiteException;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
 import java.io.File;
 
@@ -56,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 */
-    //
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +74,15 @@ public class MainActivity extends AppCompatActivity {
         //DB
         sqliteDB = init_database() ;
         init_tables();
+
+        //
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {}
+        });
+
+
+
 /*
         loadBGM();
 
@@ -1709,6 +1726,11 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    @Override
+    public void onBackPressed(){
+
+
+    }
 
 
 

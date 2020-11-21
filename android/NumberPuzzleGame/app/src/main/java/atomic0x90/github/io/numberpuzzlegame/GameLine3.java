@@ -19,6 +19,9 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import java.io.File;
 
 public class GameLine3 extends AppCompatActivity {
@@ -115,10 +118,21 @@ public class GameLine3 extends AppCompatActivity {
     int lock10_7 = -1;
     int lock10_8 = -1;
 
+    //ad
+    private AdView mAdView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_line3);
+
+        //ad
+
+
+        mAdView = findViewById(R.id.Line3adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
         //DB
         sqliteDB = init_database();
 
@@ -1144,11 +1158,11 @@ public class GameLine3 extends AppCompatActivity {
                                     if(lock10_8 == 1)
                                         updateGameLock10_8();
                                 }
-                                CostomDialog costomDialog = new CostomDialog(GameLine3.this);
-                                costomDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                                CustomDialog customDialog = new CustomDialog(GameLine3.this);
+                                customDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-                                costomDialog.setCancelable(false);
-                                costomDialog.show();
+                                customDialog.setCancelable(false);
+                                customDialog.show();
                             }
                         }
 
@@ -1516,11 +1530,11 @@ public class GameLine3 extends AppCompatActivity {
                                     if(lock10_8 == 1)
                                         updateGameLock10_8();
                                 }
-                                CostomDialog costomDialog = new CostomDialog(GameLine3.this);
-                                costomDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                                CustomDialog customDialog = new CustomDialog(GameLine3.this);
+                                customDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-                                costomDialog.setCancelable(false);
-                                costomDialog.show();
+                                customDialog.setCancelable(false);
+                                customDialog.show();
                             }
                         }
 
@@ -1888,11 +1902,11 @@ public class GameLine3 extends AppCompatActivity {
                                     if(lock10_8 == 1)
                                         updateGameLock10_8();
                                 }
-                                CostomDialog costomDialog = new CostomDialog(GameLine3.this);
-                                costomDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                                CustomDialog customDialog = new CustomDialog(GameLine3.this);
+                                customDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-                                costomDialog.setCancelable(false);
-                                costomDialog.show();
+                                customDialog.setCancelable(false);
+                                customDialog.show();
                             }
                         }
                     }
@@ -1905,7 +1919,7 @@ public class GameLine3 extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-        CostomDialogBackKey costomDialog = new CostomDialogBackKey(GameLine3.this);
+        CustomDialogBackKey costomDialog = new CustomDialogBackKey(GameLine3.this);
         costomDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         costomDialog.setCancelable(false);

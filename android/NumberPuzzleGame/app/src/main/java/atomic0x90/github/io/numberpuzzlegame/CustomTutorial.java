@@ -3,20 +3,18 @@ package atomic0x90.github.io.numberpuzzlegame;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class CostomTutorial extends AppCompatActivity {
+public class CustomTutorial extends AppCompatActivity {
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.costom_tutorial);
+        setContentView(R.layout.custom_tutorial);
 
         TextView TutorialTopExplain = (TextView) findViewById(R.id.TutorialTopExplain);
         TextView TutorialMiddleExplain = (TextView) findViewById(R.id.TutorialMiddleExplain);

@@ -7,7 +7,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.graphics.Color;
-import android.graphics.Point;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Spannable;
@@ -15,17 +14,16 @@ import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
-import android.util.DisplayMetrics;
-import android.view.Display;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
+
 import java.io.File;
-import java.io.StringReader;
 
 public class GameLine2 extends AppCompatActivity {
 
@@ -121,10 +119,20 @@ public class GameLine2 extends AppCompatActivity {
     int lock10_7 = -1;
     int lock10_8 = -1;
 
+    //ad
+    private AdView mAdView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_line2);
+
+        //ad
+
+
+        mAdView = findViewById(R.id.Line2adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         //DB
         sqliteDB = init_database();
@@ -1089,11 +1097,11 @@ public class GameLine2 extends AppCompatActivity {
                                     if(lock10_8 == 1)
                                         updateGameLock10_8();
                                 }
-                                CostomDialog costomDialog = new CostomDialog(GameLine2.this);
-                                costomDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                                CustomDialog customDialog = new CustomDialog(GameLine2.this);
+                                customDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-                                costomDialog.setCancelable(false);
-                                costomDialog.show();
+                                customDialog.setCancelable(false);
+                                customDialog.show();
                             }
                         }
 
@@ -1460,11 +1468,11 @@ public class GameLine2 extends AppCompatActivity {
                                     if(lock10_8 == 1)
                                         updateGameLock10_8();
                                 }
-                                CostomDialog costomDialog = new CostomDialog(GameLine2.this);
-                                costomDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                                CustomDialog customDialog = new CustomDialog(GameLine2.this);
+                                customDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-                                costomDialog.setCancelable(false);
-                                costomDialog.show();
+                                customDialog.setCancelable(false);
+                                customDialog.show();
                             }
                         }
 
@@ -1475,9 +1483,15 @@ public class GameLine2 extends AppCompatActivity {
             }
         });
     }
+
+    //ad
+
+
+
+    ///
     @Override
     public void onBackPressed(){
-        CostomDialogBackKey costomDialog = new CostomDialogBackKey(GameLine2.this);
+        CustomDialogBackKey costomDialog = new CustomDialogBackKey(GameLine2.this);
         costomDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         costomDialog.setCancelable(false);

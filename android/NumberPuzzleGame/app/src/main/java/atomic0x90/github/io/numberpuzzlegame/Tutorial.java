@@ -22,7 +22,7 @@ public class Tutorial extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorial);
 
-        Intent intent = new Intent(Tutorial.this,CostomTutorial.class);
+        Intent intent = new Intent(Tutorial.this, CustomTutorial.class);
         startActivity(intent);
 
 
@@ -251,11 +251,11 @@ public class Tutorial extends AppCompatActivity {
                             BottomButton.setText(spannableString);
 
                             if(AnswerNow[0] == 3) {
-                                CostomDialog costomDialog = new CostomDialog(Tutorial.this);
-                                costomDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                                CustomDialog customDialog = new CustomDialog(Tutorial.this);
+                                customDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-                                costomDialog.setCancelable(false);
-                                costomDialog.show();
+                                customDialog.setCancelable(false);
+                                customDialog.show();
                             }
                         }
                     }
@@ -303,11 +303,11 @@ public class Tutorial extends AppCompatActivity {
                             BottomButton.setText(spannableString);
 
                             if(AnswerNow[0] == 3){
-                                CostomDialog costomDialog = new CostomDialog(Tutorial.this);
-                                costomDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                                CustomDialog customDialog = new CustomDialog(Tutorial.this);
+                                customDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-                                costomDialog.setCancelable(false);
-                                costomDialog.show();
+                                customDialog.setCancelable(false);
+                                customDialog.show();
                             }
                         }
                     }
@@ -324,7 +324,7 @@ public class Tutorial extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-        CostomDialogBackKey costomDialog = new CostomDialogBackKey(Tutorial.this);
+        CustomDialogBackKey costomDialog = new CustomDialogBackKey(Tutorial.this);
         costomDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         costomDialog.setCancelable(false);

@@ -98,17 +98,18 @@
         android:id="@+id/Line3BottomButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/costom_button2_4"
+        android:fontFamily="@font/imcresoojin"
+        android:inputType="textEmailAddress|textNoSuggestions"
+
+        android:stateListAnimator="@null"
         android:text="Button"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/textcw"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-
-        android:background="@drawable/costom_button2_4"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:fontFamily="@font/imcresoojin"
-        android:stateListAnimator="@null"
-        android:textColor="@color/textcw"
-        android:inputType="textEmailAddress|textNoSuggestions"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/Line3Title"
@@ -123,5 +124,18 @@
         android:fontFamily="@font/imcresoojin"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/textc"/>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/Line3adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+
+        app:adSize = "SMART_BANNER"
+        app:adUnitId = "@string/TEST_BANNER_AD"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
