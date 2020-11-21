@@ -32,18 +32,104 @@
 
         app:layout_constraintTop_toBottomOf="@+id/GameStartButton" />
 
-    <ImageButton
-        android:id="@+id/soundSetButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="43dp"
-        android:layout_marginLeft="43dp"
-        android:layout_marginTop="199dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/sound_on"
+    <TableLayout
+        android:layout_width="320dp"
+        android:layout_height="539dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-        android:background="@android:color/transparent"
-        />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/costom_menu_button3"
+
+                android:fontFamily="@font/imcresoojin"
+                android:text="1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+                android:textColor="@color/textcw" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/costom_menu_button3"
+                android:fontFamily="@font/imcresoojin"
+                android:text="2"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+                android:textColor="@color/textcw" />
+
+            <Button
+                android:id="@+id/button10"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/costom_menu_button3"
+                android:fontFamily="@font/imcresoojin"
+                android:text="3"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+                android:textColor="@color/textcw" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="100dp"
+                android:layout_height="100dp" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:srcCompat="@android:drawable/ic_menu_help" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button11"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/costom_menu_button4"
+                android:fontFamily="@font/imcresoojin"
+                android:text="3"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+                android:textColor="@color/textcw" />
+
+            <Button
+                android:id="@+id/button12"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/costom_menu_button4"
+                android:fontFamily="@font/imcresoojin"
+                android:text="1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+                android:textColor="@color/textcw" />
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/costom_menu_button4"
+                android:fontFamily="@font/imcresoojin"
+                android:text="2"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+                android:textColor="@color/textcw" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
