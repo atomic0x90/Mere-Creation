@@ -461,6 +461,8 @@ public class StepSelection extends AppCompatActivity {
         final Button Step10Button = (Button) findViewById(R.id.Step10Button);
 
 
+        Button TutorialButton = (Button) findViewById(R.id.TutorialButton);
+
         Button Step1_1Button = (Button) findViewById(R.id.Step1_1);
         Button Step1_2Button = (Button) findViewById(R.id.Step1_2);
         Button Step1_3Button = (Button) findViewById(R.id.Step1_3);
@@ -891,6 +893,14 @@ public class StepSelection extends AppCompatActivity {
                     Step10Ver.setVisibility(View.VISIBLE);
                 else
                     Step10Ver.setVisibility(View.GONE);
+            }
+        });
+
+        TutorialButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(StepSelection.this,Tutorial.class);
+                startActivity(intent);
             }
         });
 

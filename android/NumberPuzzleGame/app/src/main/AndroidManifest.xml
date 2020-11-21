@@ -12,7 +12,10 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".GameLine5"></activity>
+        <activity android:name=".Tutorial" ></activity>
+        <activity android:name=".CostomTutorial"
+            android:theme="@style/Theme.AppCompat.Translucent"></activity>
+        <activity android:name=".GameLine5" />
         <activity android:name=".GameLine4" />
         <activity android:name=".GameLine3" />
         <activity android:name=".GameLine2" />

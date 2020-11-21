@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Tutorial"
+    android:background="@color/bgc"
+    >
+
+    <Button
+        android:id="@+id/TutorialTopButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/costom_button1_2"
+        android:fontFamily="@font/imcresoojin"
+
+        android:stateListAnimator="@null"
+        android:text="Button"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/textc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TutorialRetryButton" />
+
+    <Button
+        android:id="@+id/TutorialMiddleButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintBottom_toTopOf="@+id/TutorialBottomButton"
+        app:layout_constraintEnd_toStartOf="@+id/TutorialMiddleButton2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TutorialTopButton"
+
+        android:background="@drawable/costom_button1_3"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:fontFamily="@font/imcresoojin"
+        android:stateListAnimator="@null"
+        android:textColor="@color/textc"/>
+
+    <Button
+        android:id="@+id/TutorialMiddleButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintBottom_toTopOf="@+id/TutorialBottomButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/TutorialMiddleButton1"
+        app:layout_constraintTop_toBottomOf="@+id/TutorialTopButton"
+
+        android:background="@drawable/costom_button1_3"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:fontFamily="@font/imcresoojin"
+        android:stateListAnimator="@null"
+        android:textColor="@color/textc"/>
+
+    <Button
+        android:id="@+id/TutorialBottomButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/costom_button1_4"
+        android:fontFamily="@font/imcresoojin"
+        android:inputType="textEmailAddress|textNoSuggestions"
+        android:stateListAnimator="@null"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/textcw"/>
+
+    <Button
+        android:id="@+id/TutorialRetryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/costom_button1_1"
+        android:fontFamily="@font/imcresoojin"
+        android:inputType="textEmailAddress|textNoSuggestions"
+        android:stateListAnimator="@null"
+        android:text="다시하기"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/textcw"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

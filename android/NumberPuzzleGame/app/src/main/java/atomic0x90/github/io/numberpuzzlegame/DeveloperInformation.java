@@ -23,7 +23,7 @@ public class DeveloperInformation extends AppCompatActivity {
     private BGMService.ReturnBinder mBGMService;
 
     SQLiteDatabase sqliteDB ;
-
+/*
     int loadBGMi = 0;
 
     private final ServiceConnection mConnection = new ServiceConnection() {
@@ -42,7 +42,7 @@ public class DeveloperInformation extends AppCompatActivity {
             Toast.makeText(DeveloperInformation.this,"service disconnected De",Toast.LENGTH_SHORT).show();
         }
     };
-
+*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -50,10 +50,10 @@ public class DeveloperInformation extends AppCompatActivity {
         setContentView(R.layout.activity_developer_information);
 
         sqliteDB = init_database();
-        loadBGM();
+/*        loadBGM();
         if(loadBGMi == 0)
             mIsBound = bindService(new Intent(DeveloperInformation.this,BGMService.class),mConnection, Context.BIND_AUTO_CREATE);
-
+*/
         TextView emailText = (TextView)findViewById(R.id.DeveloperEmailadd);
         Linkify.addLinks(emailText,Linkify.EMAIL_ADDRESSES);
     }
@@ -77,7 +77,7 @@ public class DeveloperInformation extends AppCompatActivity {
 
         return db ;
     }
-
+/*
     private void loadBGM(){
         if(sqliteDB != null){
             String sqlQuery = "SELECT * FROM BGM";
@@ -94,22 +94,22 @@ public class DeveloperInformation extends AppCompatActivity {
         }
         System.out.println("load BGM2 " + loadBGMi);
     }
-
+*/
     @Override
     protected void onUserLeaveHint(){
         //홈버튼
         super.onUserLeaveHint();
-
+/*
         System.out.println("홈 버튼 de");
         Toast.makeText(this,"홈버튼 De "+mIsBound,Toast.LENGTH_SHORT).show();
         if(mIsBound){
             //onUnbind(mIsBound);
         }
-    }
+  */  }
     @Override
     public void onPause(){
         super.onPause();
-        System.out.println("de pause");
+ //       System.out.println("de pause");
 
     }
 
@@ -118,17 +118,22 @@ public class DeveloperInformation extends AppCompatActivity {
     public void onResume(){
         //
         super.onResume();
-        System.out.println("onResume ");
+  //      System.out.println("onResume ");
 
-        Toast.makeText(this,"resume De",Toast.LENGTH_SHORT).show();
+   //     Toast.makeText(this,"resume De",Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onDestroy(){
         super.onDestroy();
 
-        Toast.makeText(this,"디스트로이 De",Toast.LENGTH_SHORT).show();
+   //     Toast.makeText(this,"디스트로이 De",Toast.LENGTH_SHORT).show();
     }
 
+    @Override
+    public void onBackPressed(){
+        super.onBackPressed();
+        finish();
+    }
 
 }

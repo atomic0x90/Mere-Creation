@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     //
-
+/*
     ImageView imageView = null;
     //
     private boolean mIsBound;
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this,"service disconnected",Toast.LENGTH_SHORT).show();
         }
     };
-
+*/
     //
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         //DB
         sqliteDB = init_database() ;
         init_tables();
-
+/*
         loadBGM();
 
         if(loadBGMi == 0)
@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+*/
         Button developerInformation = (Button) findViewById(R.id.developerButton);
         developerInformation.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -1716,36 +1716,37 @@ public class MainActivity extends AppCompatActivity {
     protected void onUserLeaveHint(){
         //홈버튼
         super.onUserLeaveHint();
+        /*
         if(mIsBound){
             unbindService(mConnection);
             mIsBound = false;
         }
-        Toast.makeText(this,"홈버튼",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"홈버튼",Toast.LENGTH_SHORT).show();*/
     }
 
 
     @Override
     public void onResume(){
         //
-        super.onResume();
+        super.onResume();/*
         System.out.println("onResume "+loadBGMi);
         if(loadBGMi == 0)
             mIsBound = bindService(new Intent(MainActivity.this,BGMService.class),mConnection, Context.BIND_AUTO_CREATE);
 
-        Toast.makeText(this,"resume",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"resume",Toast.LENGTH_SHORT).show();*/
     }
 
     @Override
     public void onDestroy(){
         super.onDestroy();
-        if(mIsBound){
+ /*       if(mIsBound){
             unbindService(mConnection);
             mIsBound = false;
 
         }
 
         Toast.makeText(this,"디스트로이",Toast.LENGTH_SHORT).show();
-    }
+*/    }
 
 
 }
