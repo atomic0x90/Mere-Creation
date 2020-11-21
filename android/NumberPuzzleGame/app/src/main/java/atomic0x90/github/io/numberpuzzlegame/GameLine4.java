@@ -825,7 +825,7 @@ public class GameLine4 extends AppCompatActivity {
                         MiddleButton3.setEnabled(false);
                     }
                     else{
-                        MiddleButton3.setSelected(false);
+                        MiddleButton4.setSelected(false);
 
                         TopButton.setEnabled(true);
                         MiddleButton1.setEnabled(true);

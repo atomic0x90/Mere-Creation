@@ -14,10 +14,14 @@
         android:id="@+id/costomDialogBackKeyPositiveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
         android:background="@drawable/costom_menu_button2"
+        android:fontFamily="@font/imcresoojin"
         android:text="네, 나갈래요"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/textc"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/costomDialogBackKeyNegativeButton"
         app:layout_constraintStart_toStartOf="parent" />
@@ -26,10 +30,13 @@
         android:id="@+id/costomDialogBackKeyNegativeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
         android:background="@drawable/costom_menu_button3"
+        android:fontFamily="@font/imcresoojin"
         android:text="아니요, 더 할래요"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/textc"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/costomDialogBackKeyPositiveButton" />
@@ -38,11 +45,13 @@
         android:id="@+id/costomDialogBackKeyText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/imcresoojin"
         android:gravity="center"
         android:text="게임을 나가시겠습니까?\n진행 중인 상황은 저장되지 않습니다."
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
         android:textColor="@color/textc"
         app:layout_constraintBottom_toBottomOf="parent"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

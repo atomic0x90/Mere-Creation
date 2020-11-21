@@ -203,242 +203,242 @@ public class StepSelection extends AppCompatActivity {
         Button Step10_7Button = (Button) findViewById(R.id.Step10_7);
         Button Step10_8Button = (Button) findViewById(R.id.Step10_8);
         
-        if(lock1_2 == 1){
-            Step1_2Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock1_2 == 0){
+            Step1_2Button.setBackgroundResource(R.drawable.costom_menu_button1);
         }
-        if(lock1_3 == 1){
-            Step1_3Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock1_3 == 0){
+            Step1_3Button.setBackgroundResource(R.drawable.costom_menu_button1);
         }
-        if(lock1_4 == 1){
-            Step1_4Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock1_4 == 0){
+            Step1_4Button.setBackgroundResource(R.drawable.costom_menu_button1);
         }
-        if(lock1_5 == 1){
-            Step1_5Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock1_5 == 0){
+            Step1_5Button.setBackgroundResource(R.drawable.costom_menu_button1);
         }
-        if(lock1_6 == 1){
-            Step1_6Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock1_6 == 0){
+            Step1_6Button.setBackgroundResource(R.drawable.costom_menu_button1);
         }
-        if(lock1_7 == 1){
-            Step1_7Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock1_7 == 0){
+            Step1_7Button.setBackgroundResource(R.drawable.costom_menu_button1);
         }
-        if(lock1_8 == 1){
-            Step1_8Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock1_8 == 0){
+            Step1_8Button.setBackgroundResource(R.drawable.costom_menu_button1);
         }
-        if(lock2_1 == 1){
-            Step2_1Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock2_1 == 0){
+            Step2_1Button.setBackgroundResource(R.drawable.costom_menu_button2);
         }
-        if(lock2_2 == 1){
-            Step2_2Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock2_2 == 0){
+            Step2_2Button.setBackgroundResource(R.drawable.costom_menu_button2);
         }
-        if(lock2_3 == 1){
-            Step2_3Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock2_3 == 0){
+            Step2_3Button.setBackgroundResource(R.drawable.costom_menu_button2);
         }
-        if(lock2_4 == 1){
-            Step2_4Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock2_4 == 0){
+            Step2_4Button.setBackgroundResource(R.drawable.costom_menu_button2);
         }
-        if(lock2_5 == 1){
-            Step2_5Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock2_5 == 0){
+            Step2_5Button.setBackgroundResource(R.drawable.costom_menu_button2);
         }
-        if(lock2_6 == 1){
-            Step2_6Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock2_6 == 0){
+            Step2_6Button.setBackgroundResource(R.drawable.costom_menu_button2);
         }
-        if(lock2_7 == 1){
-            Step2_7Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock2_7 == 0){
+            Step2_7Button.setBackgroundResource(R.drawable.costom_menu_button2);
         }
-        if(lock2_8 == 1){
-            Step2_8Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock2_8 == 0){
+            Step2_8Button.setBackgroundResource(R.drawable.costom_menu_button2);
         }
-        if(lock3_1 == 1){
-            Step3_1Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock3_1 == 0){
+            Step3_1Button.setBackgroundResource(R.drawable.costom_menu_button2);
         }
-        if(lock3_2 == 1){
-            Step3_2Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock3_2 == 0){
+            Step3_2Button.setBackgroundResource(R.drawable.costom_menu_button2);
         }
-        if(lock3_3 == 1){
-            Step3_3Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock3_3 == 0){
+            Step3_3Button.setBackgroundResource(R.drawable.costom_menu_button2);
         }
-        if(lock3_4 == 1){
-            Step3_4Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock3_4 == 0){
+            Step3_4Button.setBackgroundResource(R.drawable.costom_menu_button2);
         }
-        if(lock3_5 == 1){
-            Step3_5Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock3_5 == 0){
+            Step3_5Button.setBackgroundResource(R.drawable.costom_menu_button2);
         }
-        if(lock3_6 == 1){
-            Step3_6Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock3_6 == 0){
+            Step3_6Button.setBackgroundResource(R.drawable.costom_menu_button2);
         }
-        if(lock3_7 == 1){
-            Step3_7Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock3_7 == 0){
+            Step3_7Button.setBackgroundResource(R.drawable.costom_menu_button2);
         }
-        if(lock3_8 == 1){
-            Step3_8Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock3_8 == 0){
+            Step3_8Button.setBackgroundResource(R.drawable.costom_menu_button2);
         }
-        if(lock4_1 == 1){
-            Step4_1Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock4_1 == 0){
+            Step4_1Button.setBackgroundResource(R.drawable.costom_menu_button3);
         }
-        if(lock4_2 == 1){
-            Step4_2Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock4_2 == 0){
+            Step4_2Button.setBackgroundResource(R.drawable.costom_menu_button3);
         }
-        if(lock4_3 == 1){
-            Step4_3Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock4_3 == 0){
+            Step4_3Button.setBackgroundResource(R.drawable.costom_menu_button3);
         }
-        if(lock4_4 == 1){
-            Step4_4Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock4_4 == 0){
+            Step4_4Button.setBackgroundResource(R.drawable.costom_menu_button3);
         }
-        if(lock4_5 == 1){
-            Step4_5Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock4_5 == 0){
+            Step4_5Button.setBackgroundResource(R.drawable.costom_menu_button3);
         }
-        if(lock4_6 == 1){
-            Step4_6Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock4_6 == 0){
+            Step4_6Button.setBackgroundResource(R.drawable.costom_menu_button3);
         }
-        if(lock4_7 == 1){
-            Step4_7Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock4_7 == 0){
+            Step4_7Button.setBackgroundResource(R.drawable.costom_menu_button3);
         }
-        if(lock4_8 == 1){
-            Step4_8Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock4_8 == 0){
+            Step4_8Button.setBackgroundResource(R.drawable.costom_menu_button3);
         }
-        if(lock5_1 == 1){
-            Step5_1Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock5_1 == 0){
+            Step5_1Button.setBackgroundResource(R.drawable.costom_menu_button3);
         }
-        if(lock5_2 == 1){
-            Step5_2Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock5_2 == 0){
+            Step5_2Button.setBackgroundResource(R.drawable.costom_menu_button3);
         }
-        if(lock5_3 == 1){
-            Step5_3Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock5_3 == 0){
+            Step5_3Button.setBackgroundResource(R.drawable.costom_menu_button3);
         }
-        if(lock5_4 == 1){
-            Step5_4Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock5_4 == 0){
+            Step5_4Button.setBackgroundResource(R.drawable.costom_menu_button3);
         }
-        if(lock5_5 == 1){
-            Step5_5Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock5_5 == 0){
+            Step5_5Button.setBackgroundResource(R.drawable.costom_menu_button3);
         }
-        if(lock5_6 == 1){
-            Step5_6Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock5_6 == 0){
+            Step5_6Button.setBackgroundResource(R.drawable.costom_menu_button3);
         }
-        if(lock5_7 == 1){
-            Step5_7Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock5_7 == 0){
+            Step5_7Button.setBackgroundResource(R.drawable.costom_menu_button3);
         }
-        if(lock5_8 == 1){
-            Step5_8Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock5_8 == 0){
+            Step5_8Button.setBackgroundResource(R.drawable.costom_menu_button3);
         }
-        if(lock6_1 == 1){
-            Step6_1Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock6_1 == 0){
+            Step6_1Button.setBackgroundResource(R.drawable.costom_menu_button4);
         }
-        if(lock6_2 == 1){
-            Step6_2Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock6_2 == 0){
+            Step6_2Button.setBackgroundResource(R.drawable.costom_menu_button4);
         }
-        if(lock6_3 == 1){
-            Step6_3Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock6_3 == 0){
+            Step6_3Button.setBackgroundResource(R.drawable.costom_menu_button4);
         }
-        if(lock6_4 == 1){
-            Step6_4Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock6_4 == 0){
+            Step6_4Button.setBackgroundResource(R.drawable.costom_menu_button4);
         }
-        if(lock6_5 == 1){
-            Step6_5Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock6_5 == 0){
+            Step6_5Button.setBackgroundResource(R.drawable.costom_menu_button4);
         }
-        if(lock6_6 == 1){
-            Step6_6Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock6_6 == 0){
+            Step6_6Button.setBackgroundResource(R.drawable.costom_menu_button4);
         }
-        if(lock6_7 == 1){
-            Step6_7Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock6_7 == 0){
+            Step6_7Button.setBackgroundResource(R.drawable.costom_menu_button4);
         }
-        if(lock6_8 == 1){
-            Step6_8Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock6_8 == 0){
+            Step6_8Button.setBackgroundResource(R.drawable.costom_menu_button4);
         }
-        if(lock7_1 == 1){
-            Step7_1Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock7_1 == 0){
+            Step7_1Button.setBackgroundResource(R.drawable.costom_menu_button4);
         }
-        if(lock7_2 == 1){
-            Step7_2Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock7_2 == 0){
+            Step7_2Button.setBackgroundResource(R.drawable.costom_menu_button4);
         }
-        if(lock7_3 == 1){
-            Step7_3Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock7_3 == 0){
+            Step7_3Button.setBackgroundResource(R.drawable.costom_menu_button4);
         }
-        if(lock7_4 == 1){
-            Step7_4Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock7_4 == 0){
+            Step7_4Button.setBackgroundResource(R.drawable.costom_menu_button4);
         }
-        if(lock7_5 == 1){
-            Step7_5Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock7_5 == 0){
+            Step7_5Button.setBackgroundResource(R.drawable.costom_menu_button4);
         }
-        if(lock7_6 == 1){
-            Step7_6Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock7_6 == 0){
+            Step7_6Button.setBackgroundResource(R.drawable.costom_menu_button4);
         }
-        if(lock7_7 == 1){
-            Step7_7Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock7_7 == 0){
+            Step7_7Button.setBackgroundResource(R.drawable.costom_menu_button4);
         }
-        if(lock7_8 == 1){
-            Step7_8Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock7_8 == 0){
+            Step7_8Button.setBackgroundResource(R.drawable.costom_menu_button4);
         }
-        if(lock8_1 == 1){
-            Step8_1Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock8_1 == 0){
+            Step8_1Button.setBackgroundResource(R.drawable.costom_menu_button5);
         }
-        if(lock8_2 == 1){
-            Step8_2Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock8_2 == 0){
+            Step8_2Button.setBackgroundResource(R.drawable.costom_menu_button5);
         }
-        if(lock8_3 == 1){
-            Step8_3Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock8_3 == 0){
+            Step8_3Button.setBackgroundResource(R.drawable.costom_menu_button5);
         }
-        if(lock8_4 == 1){
-            Step8_4Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock8_4 == 0){
+            Step8_4Button.setBackgroundResource(R.drawable.costom_menu_button5);
         }
-        if(lock8_5 == 1){
-            Step8_5Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock8_5 == 0){
+            Step8_5Button.setBackgroundResource(R.drawable.costom_menu_button5);
         }
-        if(lock8_6 == 1){
-            Step8_6Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock8_6 == 0){
+            Step8_6Button.setBackgroundResource(R.drawable.costom_menu_button5);
         }
-        if(lock8_7 == 1){
-            Step8_7Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock8_7 == 0){
+            Step8_7Button.setBackgroundResource(R.drawable.costom_menu_button5);
         }
-        if(lock8_8 == 1){
-            Step8_8Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock8_8 == 0){
+            Step8_8Button.setBackgroundResource(R.drawable.costom_menu_button5);
         }
-        if(lock9_1 == 1){
-            Step9_1Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock9_1 == 0){
+            Step9_1Button.setBackgroundResource(R.drawable.costom_menu_button5);
         }
-        if(lock9_2 == 1){
-            Step9_2Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock9_2 == 0){
+            Step9_2Button.setBackgroundResource(R.drawable.costom_menu_button5);
         }
-        if(lock9_3 == 1){
-            Step9_3Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock9_3 == 0){
+            Step9_3Button.setBackgroundResource(R.drawable.costom_menu_button5);
         }
-        if(lock9_4 == 1){
-            Step9_4Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock9_4 == 0){
+            Step9_4Button.setBackgroundResource(R.drawable.costom_menu_button5);
         }
-        if(lock9_5 == 1){
-            Step9_5Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock9_5 == 0){
+            Step9_5Button.setBackgroundResource(R.drawable.costom_menu_button5);
         }
-        if(lock9_6 == 1){
-            Step9_6Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock9_6 == 0){
+            Step9_6Button.setBackgroundResource(R.drawable.costom_menu_button5);
         }
-        if(lock9_7 == 1){
-            Step9_7Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock9_7 == 0){
+            Step9_7Button.setBackgroundResource(R.drawable.costom_menu_button5);
         }
-        if(lock9_8 == 1){
-            Step9_8Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock9_8 == 0){
+            Step9_8Button.setBackgroundResource(R.drawable.costom_menu_button5);
         }
-        if(lock10_1 == 1){
-            Step10_1Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock10_1 == 0){
+            Step10_1Button.setBackgroundResource(R.drawable.costom_menu_button6);
         }
-        if(lock10_2 == 1){
-            Step10_2Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock10_2 == 0){
+            Step10_2Button.setBackgroundResource(R.drawable.costom_menu_button6);
         }
-        if(lock10_3 == 1){
-            Step10_3Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock10_3 == 0){
+            Step10_3Button.setBackgroundResource(R.drawable.costom_menu_button6);
         }
-        if(lock10_4 == 1){
-            Step10_4Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock10_4 == 0){
+            Step10_4Button.setBackgroundResource(R.drawable.costom_menu_button6);
         }
-        if(lock10_5 == 1){
-            Step10_5Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock10_5 == 0){
+            Step10_5Button.setBackgroundResource(R.drawable.costom_menu_button6);
         }
-        if(lock10_6 == 1){
-            Step10_6Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock10_6 == 0){
+            Step10_6Button.setBackgroundResource(R.drawable.costom_menu_button6);
         }
-        if(lock10_7 == 1){
-            Step10_7Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock10_7 == 0){
+            Step10_7Button.setBackgroundResource(R.drawable.costom_menu_button6);
         }
-        if(lock10_8 == 1){
-            Step10_8Button.setBackgroundResource(R.drawable.costom_menu_lock);
+        if(lock10_8 == 0){
+            Step10_8Button.setBackgroundResource(R.drawable.costom_menu_button6);
         }
     }
 
@@ -1020,10 +1020,40 @@ public class StepSelection extends AppCompatActivity {
             }
         });
 
-        Step2_1Button.setOnClickListener(new View.OnClickListener() {
+        Step1_8Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                if(lock1_8 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock1_8 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine3.class);
+                    intent.putExtra("Max",4);
+                    intent.putExtra("Answer","1_8");
+                    intent.putExtra("LV","1-8 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+
+        Step2_1Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock2_1 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock2_1 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine2.class);
+                    intent.putExtra("Max",5);
+                    intent.putExtra("Answer","2_1");
+                    intent.putExtra("LV","2-1 단계");
+                    startActivity(intent);
+                }
             }
         });
 
@@ -1034,8 +1064,1221 @@ public class StepSelection extends AppCompatActivity {
                     //잠금
                     Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
                 }
+                else if(lock2_2 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine2.class);
+                    intent.putExtra("Max",5);
+                    intent.putExtra("Answer","2_2");
+                    intent.putExtra("LV","2-2 단계");
+                    startActivity(intent);
+                }
             }
         });
+
+        Step2_3Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock2_3 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock2_3 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine3.class);
+                    intent.putExtra("Max",5);
+                    intent.putExtra("Answer","2_3");
+                    intent.putExtra("LV","2-3 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+
+        Step2_4Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock2_4 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock2_4 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine3.class);
+                    intent.putExtra("Max",5);
+                    intent.putExtra("Answer","2_4");
+                    intent.putExtra("LV","2-4 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+
+        Step2_5Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock2_5 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock2_5 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine3.class);
+                    intent.putExtra("Max",5);
+                    intent.putExtra("Answer","2_5");
+                    intent.putExtra("LV","2-5 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step2_6Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock2_6 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock2_6 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine3.class);
+                    intent.putExtra("Max",5);
+                    intent.putExtra("Answer","2_6");
+                    intent.putExtra("LV","2-6 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step2_7Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock2_7 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock2_7 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine3.class);
+                    intent.putExtra("Max",5);
+                    intent.putExtra("Answer","2_7");
+                    intent.putExtra("LV","2-7 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step2_8Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock2_8 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock2_8 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine4.class);
+                    intent.putExtra("Max",5);
+                    intent.putExtra("Answer","2_8");
+                    intent.putExtra("LV","2-8 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+
+        Step3_1Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock3_1 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock3_1 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine2.class);
+                    intent.putExtra("Max",6);
+                    intent.putExtra("Answer","3_1");
+                    intent.putExtra("LV","3-1 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+
+        Step3_2Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock3_2 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock3_2 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine2.class);
+                    intent.putExtra("Max",6);
+                    intent.putExtra("Answer","3_2");
+                    intent.putExtra("LV","3-2 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+
+        Step3_3Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock3_3 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock3_3 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine3.class);
+                    intent.putExtra("Max",6);
+                    intent.putExtra("Answer","3_3");
+                    intent.putExtra("LV","3-3 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step3_4Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock3_4 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock3_4 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine3.class);
+                    intent.putExtra("Max",6);
+                    intent.putExtra("Answer","3_4");
+                    intent.putExtra("LV","3-4 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step3_5Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock3_5 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock3_5 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine3.class);
+                    intent.putExtra("Max",6);
+                    intent.putExtra("Answer","3_5");
+                    intent.putExtra("LV","3-5 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step3_6Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock3_6 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock3_6 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine4.class);
+                    intent.putExtra("Max",6);
+                    intent.putExtra("Answer","3_6");
+                    intent.putExtra("LV","3-6 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step3_7Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock3_7 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock3_7 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine4.class);
+                    intent.putExtra("Max",6);
+                    intent.putExtra("Answer","3_7");
+                    intent.putExtra("LV","3-7 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step3_8Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock3_8 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock3_8 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine4.class);
+                    intent.putExtra("Max",6);
+                    intent.putExtra("Answer","3_8");
+                    intent.putExtra("LV","3-8 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+
+        Step4_1Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock4_1 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock4_1 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine3.class);
+                    intent.putExtra("Max",7);
+                    intent.putExtra("Answer","4_1");
+                    intent.putExtra("LV","4-1 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step4_2Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock4_2 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock4_2 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine3.class);
+                    intent.putExtra("Max",7);
+                    intent.putExtra("Answer","4_2");
+                    intent.putExtra("LV","4-2 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step4_3Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock4_3 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock4_3 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine3.class);
+                    intent.putExtra("Max",7);
+                    intent.putExtra("Answer","4_3");
+                    intent.putExtra("LV","4-3 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step4_4Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock4_4 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock4_4 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine3.class);
+                    intent.putExtra("Max",7);
+                    intent.putExtra("Answer","4_4");
+                    intent.putExtra("LV","4-4 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step4_5Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock4_5 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock4_5 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine3.class);
+                    intent.putExtra("Max",7);
+                    intent.putExtra("Answer","4_5");
+                    intent.putExtra("LV","4-5 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step4_6Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock4_6 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock4_6 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine3.class);
+                    intent.putExtra("Max",7);
+                    intent.putExtra("Answer","4_6");
+                    intent.putExtra("LV","4-6 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step4_7Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock4_7 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock4_7 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine4.class);
+                    intent.putExtra("Max",7);
+                    intent.putExtra("Answer","4_7");
+                    intent.putExtra("LV","4-7 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step4_8Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock4_8 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock4_8 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine4.class);
+                    intent.putExtra("Max",7);
+                    intent.putExtra("Answer","4_8");
+                    intent.putExtra("LV","4-8 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+
+        Step5_1Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock5_1 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock5_1 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine2.class);
+                    intent.putExtra("Max",8);
+                    intent.putExtra("Answer","5_1");
+                    intent.putExtra("LV","5-1 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+
+        Step5_2Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock5_2 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock5_2 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine3.class);
+                    intent.putExtra("Max",8);
+                    intent.putExtra("Answer","5_2");
+                    intent.putExtra("LV","5-2 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step5_3Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock5_3 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock5_3 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine3.class);
+                    intent.putExtra("Max",8);
+                    intent.putExtra("Answer","5_3");
+                    intent.putExtra("LV","5-3 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step5_4Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock5_4 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock5_4 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine3.class);
+                    intent.putExtra("Max",8);
+                    intent.putExtra("Answer","5_4");
+                    intent.putExtra("LV","5-4 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step5_5Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock5_5 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock5_5 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine3.class);
+                    intent.putExtra("Max",8);
+                    intent.putExtra("Answer","5_5");
+                    intent.putExtra("LV","5-5 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step5_6Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock5_6 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock5_6 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine3.class);
+                    intent.putExtra("Max",8);
+                    intent.putExtra("Answer","5_6");
+                    intent.putExtra("LV","5-6 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step5_7Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock5_7 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock5_7 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine4.class);
+                    intent.putExtra("Max",8);
+                    intent.putExtra("Answer","5_7");
+                    intent.putExtra("LV","5-7 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step5_8Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock5_8 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock5_8 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine4.class);
+                    intent.putExtra("Max",8);
+                    intent.putExtra("Answer","5_8");
+                    intent.putExtra("LV","5-8 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+
+        Step6_1Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock6_1 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock6_1 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine3.class);
+                    intent.putExtra("Max",9);
+                    intent.putExtra("Answer","6_1");
+                    intent.putExtra("LV","6-1 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step6_2Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock6_2 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock6_2 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine3.class);
+                    intent.putExtra("Max",9);
+                    intent.putExtra("Answer","6_2");
+                    intent.putExtra("LV","6-2 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step6_3Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock6_3 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock6_3 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine3.class);
+                    intent.putExtra("Max",9);
+                    intent.putExtra("Answer","6_3");
+                    intent.putExtra("LV","6-3 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step6_4Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock6_4 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock6_4 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine3.class);
+                    intent.putExtra("Max",9);
+                    intent.putExtra("Answer","6_4");
+                    intent.putExtra("LV","6-4 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step6_5Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock6_5 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock6_5 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine4.class);
+                    intent.putExtra("Max",9);
+                    intent.putExtra("Answer","6_5");
+                    intent.putExtra("LV","6-5 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step6_6Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock6_6 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock6_6 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine4.class);
+                    intent.putExtra("Max",9);
+                    intent.putExtra("Answer","6_6");
+                    intent.putExtra("LV","6-6 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step6_7Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock6_7 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock6_7 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine4.class);
+                    intent.putExtra("Max",9);
+                    intent.putExtra("Answer","6_7");
+                    intent.putExtra("LV","6-7 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step6_8Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock6_8 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock6_8 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine5.class);
+                    intent.putExtra("Max",9);
+                    intent.putExtra("Answer","6_8");
+                    intent.putExtra("LV","6-8 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+
+        Step7_1Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock7_1 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock7_1 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine3.class);
+                    intent.putExtra("Max",10);
+                    intent.putExtra("Answer","7_1");
+                    intent.putExtra("LV","7-1 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step7_2Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock7_2 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock7_2 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine3.class);
+                    intent.putExtra("Max",10);
+                    intent.putExtra("Answer","7_2");
+                    intent.putExtra("LV","7-2 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step7_3Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock7_3 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock7_3 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine3.class);
+                    intent.putExtra("Max",10);
+                    intent.putExtra("Answer","7_3");
+                    intent.putExtra("LV","7-3 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step7_4Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock7_4 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock7_4 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine3.class);
+                    intent.putExtra("Max",10);
+                    intent.putExtra("Answer","7_4");
+                    intent.putExtra("LV","7-4 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step7_5Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock7_5 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock7_5 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine3.class);
+                    intent.putExtra("Max",10);
+                    intent.putExtra("Answer","7_5");
+                    intent.putExtra("LV","7-5 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step7_6Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock7_6 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock7_6 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine4.class);
+                    intent.putExtra("Max",10);
+                    intent.putExtra("Answer","7_6");
+                    intent.putExtra("LV","7-6 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step7_7Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock7_7 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock7_7 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine4.class);
+                    intent.putExtra("Max",10);
+                    intent.putExtra("Answer","7_7");
+                    intent.putExtra("LV","7-7 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step7_8Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock7_8 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock7_8 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine4.class);
+                    intent.putExtra("Max",10);
+                    intent.putExtra("Answer","7_8");
+                    intent.putExtra("LV","7-8 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+
+        Step8_1Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock8_1 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock8_1 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine3.class);
+                    intent.putExtra("Max",11);
+                    intent.putExtra("Answer","8_1");
+                    intent.putExtra("LV","8-1 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step8_2Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock8_2 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock8_2 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine3.class);
+                    intent.putExtra("Max",11);
+                    intent.putExtra("Answer","8_2");
+                    intent.putExtra("LV","8-2 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step8_3Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock8_3 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock8_3 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine4.class);
+                    intent.putExtra("Max",11);
+                    intent.putExtra("Answer","8_3");
+                    intent.putExtra("LV","8-3 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step8_4Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock8_4 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock8_4 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine4.class);
+                    intent.putExtra("Max",11);
+                    intent.putExtra("Answer","8_4");
+                    intent.putExtra("LV","8-4 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step8_5Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock8_5 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock8_5 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine4.class);
+                    intent.putExtra("Max",11);
+                    intent.putExtra("Answer","8_5");
+                    intent.putExtra("LV","8-5 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step8_6Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock8_6 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock8_6 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine4.class);
+                    intent.putExtra("Max",11);
+                    intent.putExtra("Answer","8_6");
+                    intent.putExtra("LV","8-6 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step8_7Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock8_7 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock8_7 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine5.class);
+                    intent.putExtra("Max",11);
+                    intent.putExtra("Answer","8_5");
+                    intent.putExtra("LV","8-5 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step8_8Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock8_8 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock8_8 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine4.class);
+                    intent.putExtra("Max",11);
+                    intent.putExtra("Answer","8_8");
+                    intent.putExtra("LV","8-8 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+
+        Step9_1Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock9_1 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock9_1 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine3.class);
+                    intent.putExtra("Max",12);
+                    intent.putExtra("Answer","9_1");
+                    intent.putExtra("LV","9-1 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step9_2Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock9_2 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock9_2 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine4.class);
+                    intent.putExtra("Max",12);
+                    intent.putExtra("Answer","9_2");
+                    intent.putExtra("LV","9-2 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step9_3Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock9_3 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock9_3 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine4.class);
+                    intent.putExtra("Max",12);
+                    intent.putExtra("Answer","9_3");
+                    intent.putExtra("LV","9-3 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step9_4Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock9_4 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock9_4 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine4.class);
+                    intent.putExtra("Max",12);
+                    intent.putExtra("Answer","9_4");
+                    intent.putExtra("LV","9-4 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step9_5Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock9_5 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock9_5 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine4.class);
+                    intent.putExtra("Max",12);
+                    intent.putExtra("Answer","9_5");
+                    intent.putExtra("LV","9-5 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step9_6Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock9_6 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock9_6 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine4.class);
+                    intent.putExtra("Max",12);
+                    intent.putExtra("Answer","9_6");
+                    intent.putExtra("LV","9-6 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step9_7Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock9_7 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock9_7 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine4.class);
+                    intent.putExtra("Max",12);
+                    intent.putExtra("Answer","9_7");
+                    intent.putExtra("LV","9-7 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step9_8Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock9_8 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock9_8 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine5.class);
+                    intent.putExtra("Max",12);
+                    intent.putExtra("Answer","9_8");
+                    intent.putExtra("LV","9-8 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+
+        Step10_1Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock10_1 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock10_1 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine3.class);
+                    intent.putExtra("Max",13);
+                    intent.putExtra("Answer","10_1");
+                    intent.putExtra("LV","10-1 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step10_2Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock10_2 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock10_2 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine4.class);
+                    intent.putExtra("Max",13);
+                    intent.putExtra("Answer","10_2");
+                    intent.putExtra("LV","10-2 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step10_3Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock10_3 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock10_3 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine4.class);
+                    intent.putExtra("Max",13);
+                    intent.putExtra("Answer","10_3");
+                    intent.putExtra("LV","10-3 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step10_4Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock10_4 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock10_4 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine4.class);
+                    intent.putExtra("Max",13);
+                    intent.putExtra("Answer","10_4");
+                    intent.putExtra("LV","10-4 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step10_5Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock10_5 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock10_5 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine4.class);
+                    intent.putExtra("Max",13);
+                    intent.putExtra("Answer","10_5");
+                    intent.putExtra("LV","10-5 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step10_6Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock10_6 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock10_6 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine4.class);
+                    intent.putExtra("Max",13);
+                    intent.putExtra("Answer","10_6");
+                    intent.putExtra("LV","10-6 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step10_7Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock10_7 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock10_7 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine4.class);
+                    intent.putExtra("Max",13);
+                    intent.putExtra("Answer","10_7");
+                    intent.putExtra("LV","10-7 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+        Step10_8Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(lock10_8 == 1){
+                    //잠금
+                    Toast.makeText(StepSelection.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock10_8 == 0){
+                    //해제
+                    Intent intent = new Intent(StepSelection.this,GameLine5.class);
+                    intent.putExtra("Max",13);
+                    intent.putExtra("Answer","10_8");
+                    intent.putExtra("LV","10-8 단계");
+                    startActivity(intent);
+                }
+            }
+        });
+
     }
 
 

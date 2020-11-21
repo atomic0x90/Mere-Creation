@@ -4,8 +4,8 @@
         <shape>
             <padding
                 android:bottom="4dp"
-                android:left="8dp"
-                android:right="8dp"
+                android:left="4dp"
+                android:right="4dp"
                 android:top="4dp" />
             <gradient
                 android:angle="270"
@@ -23,10 +23,25 @@
         <shape>
             <padding
                 android:bottom="4dp"
-                android:left="8dp"
-                android:right="8dp"
+                android:left="4dp"
+                android:right="4dp"
                 android:top="4dp" />
             <solid android:color="@color/bgc4_3p" />
+            <corners
+                android:bottomLeftRadius="5dp"
+                android:bottomRightRadius="5dp"
+                android:topLeftRadius="5dp"
+                android:topRightRadius="5dp" />
+        </shape>
+    </item>
+    <item android:state_enabled="false">
+        <shape>
+            <padding
+                android:bottom="4dp"
+                android:left="4dp"
+                android:right="4dp"
+                android:top="4dp" />
+            <solid android:color="@color/bgl" />
             <corners
                 android:bottomLeftRadius="5dp"
                 android:bottomRightRadius="5dp"
@@ -38,8 +53,8 @@
         <shape>
             <padding
                 android:bottom="4dp"
-                android:left="8dp"
-                android:right="8dp"
+                android:left="4dp"
+                android:right="4dp"
                 android:top="4dp" />
             <solid android:color="@color/bgc4_3" />
             <corners
@@ -47,6 +62,10 @@
                 android:bottomRightRadius="5dp"
                 android:topLeftRadius="5dp"
                 android:topRightRadius="5dp" />
+            <stroke
+                android:width="1dp"
+                android:color="@color/bgc4_4"
+                ></stroke>
         </shape>
     </item>
 

@@ -28,7 +28,7 @@ public class CostomDialog extends Dialog{
         getWindow().getWindowManager().getDefaultDisplay().getMetrics(dm);
 
         WindowManager.LayoutParams lp = getWindow().getAttributes();
-        lp.width = (int) (dm.widthPixels*0.8);
+        lp.width = (int) (dm.widthPixels*0.9);
         lp.height = (int) (dm.heightPixels*0.3);
 
         getWindow().setAttributes(lp);
