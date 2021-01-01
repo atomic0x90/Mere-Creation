@@ -56,7 +56,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="10dp"
         android:fontFamily="@font/custom_font_1"
         android:text="hanyujun.study@gmail.com"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -70,7 +70,7 @@
         android:id="@+id/DeveoperWebPageText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="5dp"
         android:fontFamily="@font/custom_font_3"
         android:text="Web Page"
@@ -86,16 +86,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="5dp"
         android:autoLink="web"
         android:fontFamily="@font/custom_font_1"
         android:linksClickable="true"
         android:text="https://atomic0x90.github.io"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/text"
-        android:textColorLink="@color/bluewhitedrak"
-        app:layout_constraintBottom_toTopOf="@+id/DeveloperETCText"
 
+        android:textColorLink="@color/bluewhitedrak"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/DeveoperWebPageText" />
@@ -104,8 +104,8 @@
         android:id="@+id/DeveloperETCText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="40dp"
         android:fontFamily="@font/custom_font_1"
         android:gravity="center"
         android:text="문의사항이 있으면\n위의 이메일로 언제든지 연락 주세요"
@@ -114,6 +114,36 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintTop_toBottomOf="@+id/DeveloperOtherAPP" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="개발자의 다른 앱 보기"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintBottom_toTopOf="@+id/DeveloperOtherAPP"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        android:fontFamily="@font/custom_font_2"
+        android:textColor="@color/orange"/>
+
+    <TextView
+        android:id="@+id/DeveloperOtherAPP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="https://play.google.com/store/apps/developer?id=atomic0x90"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toTopOf="@+id/DeveloperETCText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        android:fontFamily="@font/custom_font_1"
+        android:autoLink="web"
+        android:gravity="center"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
