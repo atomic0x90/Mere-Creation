@@ -31,6 +31,7 @@ import java.util.Locale;
 
 public class CustomDialog extends AppCompatActivity {
 
+    int adCheck;
     int saveCoin,rewardCoin,insertResult;
     double insertAVtime;
 
@@ -58,9 +59,10 @@ public class CustomDialog extends AppCompatActivity {
         soundID = soundPool.load(this,R.raw.click_sound01,1);
 
         //AD
-        mAdView = findViewById(R.id.adView11);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+        //mAdView = findViewById(R.id.adView11);
+        //AdRequest adRequest = new AdRequest.Builder().build();
+        //mAdView.loadAd(adRequest);
+
         //Reward AD
 
         rewardedAd = new RewardedAd(this,getResources().getString(R.string.TEST_AD_REWARD_ID));
@@ -91,6 +93,7 @@ public class CustomDialog extends AppCompatActivity {
         insertAVtime = avtime;
 
         sqLiteDatabase = init_database();
+        updateAdCheck();
 
         TextView titleText = (TextView)findViewById(R.id.DialogTitle);
         TextView answerText = (TextView)findViewById(R.id.answerText);
@@ -236,13 +239,21 @@ public class CustomDialog extends AppCompatActivity {
                 else if(DataType.equals("MaxMin20_30"))
                     insertMaxMin20_30();
 
-                Toast.makeText(getApplicationContext(),"보상 획득",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"보상 획득",Toast.LENGTH_SHORT).show();
 
                 soundPool.play(soundID,1f,1f,0,0,1f);
 
-                Intent intent = new Intent(CustomDialog.this, MainActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
+                if(adCheck % 6 == 0) {
+                    Intent intent = new Intent(CustomDialog.this, SplashScreen.class);
+                    intent.putExtra("Text", "CustomDialog");
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(CustomDialog.this, MainActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }
             }
         });
 
@@ -445,6 +456,30 @@ public class CustomDialog extends AppCompatActivity {
             }
         }
     }
+
+    private void load_AdCheck(){
+        if(sqLiteDatabase != null){
+            String sqlQuery = "SELECT * FROM AdCheck";
+            Cursor cursor = null;
+
+            cursor = sqLiteDatabase.rawQuery(sqlQuery,null);
+
+            if(cursor.moveToNext()) {
+                adCheck = cursor.getInt(0);
+            }
+        }
+    }
+
+    private void updateAdCheck(){
+        if(sqLiteDatabase != null){
+            load_AdCheck();
+            System.out.println("ADCHECKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK " +adCheck);
+            adCheck += 1;
+            String sqlUpdateCoin = "UPDATE AdCheck SET adCheck=" + adCheck;
+            sqLiteDatabase.execSQL(sqlUpdateCoin);
+        }
+    }
+
 
     private void insertChAdd(){
         if(sqLiteDatabase != null){

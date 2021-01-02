@@ -70,9 +70,9 @@ public class UserStatistics extends AppCompatActivity {
         setContentView(R.layout.activity_user_statistics);
 
         //AD
-        mAdView = findViewById(R.id.adView13);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+        //mAdView = findViewById(R.id.adView13);
+        //AdRequest adRequest = new AdRequest.Builder().build();
+        //mAdView.loadAd(adRequest);
         //FULL AD
 
 

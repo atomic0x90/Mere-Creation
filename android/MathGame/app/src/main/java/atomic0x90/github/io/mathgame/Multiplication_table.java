@@ -23,9 +23,9 @@ public class Multiplication_table extends AppCompatActivity {
 
         //AD
 
-        mAdView = findViewById(R.id.adView12);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+        //mAdView = findViewById(R.id.adView12);
+        //AdRequest adRequest = new AdRequest.Builder().build();
+        //mAdView.loadAd(adRequest);
 
         TextView t1 = (TextView) findViewById(R.id.mulTable1);
         TextView t2 = (TextView) findViewById(R.id.mulTable2);
