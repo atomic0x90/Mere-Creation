@@ -2,10 +2,7 @@ package atomic0x90.github.io.numberpuzzlegame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.ComponentName;
-import android.content.Context;
 import android.content.Intent;
-import android.content.ServiceConnection;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
@@ -14,21 +11,12 @@ import android.media.MediaPlayer;
 import android.media.SoundPool;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.IBinder;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
 import java.io.File;
 
@@ -46,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     //Sound
     SoundPool soundPool;
     int soundID;
-
+    boolean loaded = false;
     //
 /*
     ImageView imageView = null;
@@ -85,13 +73,22 @@ public class MainActivity extends AppCompatActivity {
         //Sound
         soundPool = new SoundPool(5, AudioManager.STREAM_MUSIC,0);
         soundID = soundPool.load(this,R.raw.click_sound,1);
+        soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
+            @Override
+            public void onLoadComplete(SoundPool soundPool, int i, int i1) {
+                loaded = true;
+            }
+        });
 
+
+        MobileAds.initialize(this, String.valueOf(R.string.TESTAppId));
         //
+        /*
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {}
         });
-
+*/
 
 
 /*
@@ -143,7 +140,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                soundPool.play(soundID,1f,1f,0,0,1f);
+                if(loaded)
+                    soundPool.play(soundID,1f,1f,0,0,1f);
 
                 Intent intent = new Intent(MainActivity.this, DeveloperInformation.class);
                 intent.addFlags(FLAG_ACTIVITY_NO_USER_ACTION);
@@ -156,7 +154,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                soundPool.play(soundID,1f,1f,0,0,1f);
+                if(loaded)
+                    soundPool.play(soundID,1f,1f,0,0,1f);
 
                 Intent intent = new Intent(MainActivity.this, StepSelection.class);
                 startActivity(intent);
@@ -168,7 +167,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                soundPool.play(soundID,1f,1f,0,0,1f);
+                if(loaded)
+                    soundPool.play(soundID,1f,1f,0,0,1f);
 
                 final String appPackageName = getPackageName(); // getPackageName() from Context or Activity object
                 try {
@@ -221,6 +221,27 @@ public class MainActivity extends AppCompatActivity {
                 //bgm 값이 없는 경우
                 if(!cursor.moveToNext()){
                     String sqlInsert = "INSERT INTO BGM " + "(BGM)" + "VALUES (" + 1 +");";
+                    System.out.println("TEST Insert : " + sqlInsert);
+                    sqliteDB.execSQL(sqlInsert);
+                }}catch (Exception e){
+                System.out.println("FFFFFFFFFFFFFFFFFFFFFFFFFFFF "+e);
+            }
+
+            //Check AD Time
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS AdCheck (" +
+                    "adCheck "           + "INTEGER NOT NULL);";
+            System.out.println(sqlCreateTbl) ;
+
+            sqliteDB.execSQL(sqlCreateTbl) ;
+
+            sqlQuery = "SELECT * FROM AdCheck";
+            cursor = null;
+            cursor = sqliteDB.rawQuery(sqlQuery,null);
+
+            try{
+                //adCheck 값이 없는 경우
+                if(!cursor.moveToNext()){
+                    String sqlInsert = "INSERT INTO AdCheck " + "(adCheck)" + "VALUES (" + 1 +");";
                     System.out.println("TEST Insert : " + sqlInsert);
                     sqliteDB.execSQL(sqlInsert);
                 }}catch (Exception e){
