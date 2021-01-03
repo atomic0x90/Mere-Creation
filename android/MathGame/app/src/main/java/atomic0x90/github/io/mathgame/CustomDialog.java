@@ -12,7 +12,6 @@ import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -243,7 +242,7 @@ public class CustomDialog extends AppCompatActivity {
 
                 soundPool.play(soundID,1f,1f,0,0,1f);
 
-                if(adCheck % 6 == 0) {
+                if(adCheck % 5 == 0) {
                     Intent intent = new Intent(CustomDialog.this, SplashScreen.class);
                     intent.putExtra("Text", "CustomDialog");
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

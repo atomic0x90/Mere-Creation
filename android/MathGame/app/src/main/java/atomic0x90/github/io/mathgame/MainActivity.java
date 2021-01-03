@@ -1,9 +1,7 @@
 package atomic0x90.github.io.mathgame;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -16,13 +14,14 @@ import android.os.Bundle;
 
 import android.os.SystemClock;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
 
-
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 
 import java.io.File;
@@ -38,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
 
     //AD
     private AdView mAdView;
+
+    private InterstitialAd mInterstitialAd;
 
     //Inapp
     //BillingModule billingModule;
@@ -59,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
         MobileAds.initialize(this, String.valueOf(R.string.TEST_AD_BANNER_ID));
         MobileAds.initialize(this, String.valueOf(R.string.TEST_AD_REWARD_ID));
         MobileAds.initialize(this,String.valueOf(R.string.TEST_AD_FULL_ID));
+
+        MobileAds.initialize(this, String.valueOf(R.string.EXIT_AD_POPUP_ID));
 
         /*mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -217,7 +220,12 @@ public class MainActivity extends AppCompatActivity {
                 mLastClickTime = SystemClock.elapsedRealtime();
 
                 soundPool.play(soundID,1f,1f,0,0,1f);
+                EndPopup endPopup= new EndPopup(MainActivity.this);
+                endPopup.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
+                endPopup.setCancelable(false);
+                endPopup.show();
+                /*
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setMessage("정말로 종료 하시겠습니까?");
                 builder.setTitle("종료 버튼");
@@ -237,7 +245,7 @@ public class MainActivity extends AppCompatActivity {
                 AlertDialog alertDialog = builder.create();
                 alertDialog.setTitle("수학 게임 - 두뇌 트레이닝");
                 alertDialog.show();
-            }
+*/            }
         });
 
         //사용자 통계 버튼
@@ -469,6 +477,27 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println("TEST Insert : " + sqlInsert);
                 sqliteDB.execSQL(sqlInsert);
             }}catch (Exception e){
+                System.out.println("FFFFFFFFFFFFFFFFFFFFFFFFFFFF "+e);
+            }
+
+            //Check AD Time
+            sqlCreateTbl = "CREATE TABLE IF NOT EXISTS AdCheck (" +
+                    "adCheck "           + "INTEGER NOT NULL);";
+            System.out.println(sqlCreateTbl) ;
+
+            sqliteDB.execSQL(sqlCreateTbl) ;
+
+            sqlQuery = "SELECT * FROM AdCheck";
+            cursor = null;
+            cursor = sqliteDB.rawQuery(sqlQuery,null);
+
+            try{
+                //adCheck 값이 없는 경우
+                if(!cursor.moveToNext()){
+                    String sqlInsert = "INSERT INTO AdCheck " + "(adCheck)" + "VALUES (" + 1 +");";
+                    System.out.println("TEST Insert : " + sqlInsert);
+                    sqliteDB.execSQL(sqlInsert);
+                }}catch (Exception e){
                 System.out.println("FFFFFFFFFFFFFFFFFFFFFFFFFFFF "+e);
             }
 
@@ -1191,17 +1220,28 @@ public class MainActivity extends AppCompatActivity {
         // 2500 milliseconds = 2.5 seconds
         if (System.currentTimeMillis() > backKeyPressedTime + 2500) {
             backKeyPressedTime = System.currentTimeMillis();
-            toast = Toast.makeText(this, "뒤로 가기 버튼을 한 번 더 누르시면 종료됩니다.", Toast.LENGTH_SHORT);
-            toast.show();
-            return;
+            EndPopup endPopup = new EndPopup(MainActivity.this);
+            endPopup.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+            endPopup.setCancelable(false);
+            endPopup.show();
+            //toast = Toast.makeText(this, "뒤로 가기 버튼을 한 번 더 누르시면 종료됩니다.", Toast.LENGTH_SHORT);
+            //toast.show();
+            //return;
         }
         // 마지막으로 뒤로 가기 버튼을 눌렀던 시간에 2.5초를 더해 현재 시간과 비교 후
         // 마지막으로 뒤로 가기 버튼을 눌렀던 시간이 2.5초가 지나지 않았으면 종료
         if (System.currentTimeMillis() <= backKeyPressedTime + 2500) {
+
+
+//            toast.cancel();
+            /*
+            moveTaskToBack(true);
             finish();
-            toast.cancel();
-            toast = Toast.makeText(this,"이용해 주셔서 감사합니다.",Toast.LENGTH_SHORT);
-            toast.show();
+            android.os.Process.killProcess(android.os.Process.myPid());
+*/
+            //toast = Toast.makeText(this,"이용해 주셔서 감사합니다.",Toast.LENGTH_SHORT);
+            //toast.show();
         }
     }
 

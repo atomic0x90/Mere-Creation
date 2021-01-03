@@ -40,8 +40,29 @@ public class SplashScreen extends AppCompatActivity {
 
         if(goActivity.equals("Statistics"))
             textView.setText("통계 집계 중");
-        else if(goActivity.equals("multiTable"))
+        else if(goActivity.equals("multiTable") || goActivity.equals("CustomDialog"))
             textView.setText("");
+
+        waitTimer = new Timer();
+        waitTimer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                interstitialCanceled = true;
+                SplashScreen.this.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        if(goActivity.equals("Statistics"))
+                            startUserStatistics();
+                        else if(goActivity.equals("multiTable"))
+                            startMultiTable();
+                        else if(goActivity.equals("CustomDialog"))
+                            startMain();
+                        finish();
+                    }
+                });
+            }
+        }, 5000);
+
 
         interstitialAd = new InterstitialAd(this);
         interstitialAd.setAdUnitId(getResources().getString(R.string.TEST_AD_FULL_ID));
@@ -65,6 +86,8 @@ public class SplashScreen extends AppCompatActivity {
                     startUserStatistics();
                 else if(goActivity.equals("multiTable"))
                     startMultiTable();
+                else if(goActivity.equals("CustomDialog"))
+                    startMain();
 
                 finish();
 
@@ -75,31 +98,11 @@ public class SplashScreen extends AppCompatActivity {
                     startUserStatistics();
                 else if(goActivity.equals("multiTable"))
                     startMultiTable();
+                else if(goActivity.equals("CustomDialog"))
+                    startMain();
                 finish();
             }
         });
-
-
-
-        waitTimer = new Timer();
-        waitTimer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                interstitialCanceled = true;
-                SplashScreen.this.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        if(goActivity.equals("Statistics"))
-                            startUserStatistics();
-                        else if(goActivity.equals("multiTable"))
-                            startMultiTable();
-                        finish();
-                    }
-                });
-            }
-        }, 5000);
-
-
 
     }
     @Override
@@ -117,6 +120,10 @@ public class SplashScreen extends AppCompatActivity {
         } else if (interstitialCanceled) {
             if(Ac.equals("Statistics"))
                 startUserStatistics();
+            else if(Ac.equals("multiTable"))
+                startMultiTable();
+            else if(Ac.equals("CustomDialog"))
+                startMain();
         }
     }
 
@@ -132,6 +139,11 @@ public class SplashScreen extends AppCompatActivity {
         finish();
     }
 
+    private void startMain(){
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
 
 
 }
