@@ -3,14 +3,19 @@ package atomic0x90.github.io.numberpuzzlegame;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.AssetFileDescriptor;
+import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
+import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.SoundPool;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -19,6 +24,7 @@ import android.widget.Toast;
 import com.google.android.gms.ads.MobileAds;
 
 import java.io.File;
+import java.io.IOException;
 
 import static android.content.Intent.FLAG_ACTIVITY_NO_USER_ACTION;
 
@@ -28,38 +34,44 @@ public class MainActivity extends AppCompatActivity {
 
     int loadBGMi = 0;
 
-    private static MediaPlayer bgm;
+    private static MediaPlayer buttonSound;
     //private int bgmSet = 0;
 
     //Sound
-    SoundPool soundPool;
-    int soundID;
-    boolean loaded = false;
-    //
+    SoundPool soundPool = null;
+    int soundID = 0;
 /*
-    ImageView imageView = null;
-    //
-    private boolean mIsBound;
-    private BGMService.ReturnBinder mBGMService;
-
-    private final ServiceConnection mConnection = new ServiceConnection() {
-        @Override
-        public void onServiceConnected(ComponentName name, IBinder service) {
-            try{
-            mBGMService = ((BGMService.ReturnBinder)service).getService();
-            Toast.makeText(MainActivity.this,"service connected",Toast.LENGTH_SHORT).show();
-            }catch (Exception e){
-                Toast.makeText(MainActivity.this,"IBinder error",Toast.LENGTH_SHORT).show();
-            }
+    @Override
+    protected void onStart(){
+        super.onStart();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            AudioAttributes audioAttributes = new AudioAttributes.Builder()
+                    .setUsage(AudioAttributes.USAGE_NOTIFICATION)
+                    .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                    .build();
+            soundPool = new SoundPool.Builder().setAudioAttributes(audioAttributes).setMaxStreams(8).build();
         }
-
-        @Override
-        public void onServiceDisconnected(ComponentName name) {
-            Toast.makeText(MainActivity.this,"service disconnected",Toast.LENGTH_SHORT).show();
+        else {
+            soundPool = new SoundPool(8, AudioManager.STREAM_NOTIFICATION, 0);
         }
-    };
 */
+/*
+        soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
+            @Override
+            public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {
+                soundPool.play(sampleId, 1f, 1f, 0, 0, 1f);
+            }
+        });
+*/
+/*    }
+    @Override
+    protected void onStop() {
+        super.onStop();
 
+        soundPool.release();
+        soundPool = null;
+    }
+*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,78 +83,20 @@ public class MainActivity extends AppCompatActivity {
         init_tables();
 
         //Sound
-        soundPool = new SoundPool(5, AudioManager.STREAM_MUSIC,0);
+        //soundPool = new SoundPool(1,AudioManager.STREAM_MUSIC,0);
+        //soundID = soundPool.load(this,R.raw.click_sound,1);
+
+        soundPool = new SoundPool(1,AudioManager.STREAM_MUSIC,0);
         soundID = soundPool.load(this,R.raw.click_sound,1);
-        soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
-            @Override
-            public void onLoadComplete(SoundPool soundPool, int i, int i1) {
-                loaded = true;
-            }
-        });
 
-
-        MobileAds.initialize(this, String.valueOf(R.string.TESTAppId));
         //
-        /*
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {}
-        });
-*/
+        MobileAds.initialize(this, String.valueOf(R.string.TESTAppId));
 
-
-/*
-        loadBGM();
-
-        if(loadBGMi == 0)
-            mIsBound = bindService(new Intent(MainActivity.this,BGMService.class),mConnection, Context.BIND_AUTO_CREATE);
-
-
-        ImageButton sound = (ImageButton) findViewById(R.id.soundSetButton);
-        imageView = (ImageView) findViewById(R.id.soundSetButton);
-
-        if(loadBGMi == 0){
-            //on
-            imageView.setImageResource(R.drawable.sound_on);
-        }
-        else{
-            //off
-            imageView.setImageResource(R.drawable.sound_off);
-        }
-
-        sound.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                System.out.println("onclick 0 " + loadBGMi);
-                if(loadBGMi == 0){
-                    System.out.println("onclick 1 "+loadBGMi);
-                    updateBGMstart();
-                    loadBGM();
-                    unbindService(mConnection);
-                    mIsBound = false;
-
-                    imageView.setImageResource(R.drawable.sound_off);
-                }
-                else {
-                    System.out.println("onclick 2 " + loadBGMi);
-                    updateBGMstop();
-                    loadBGM();
-                    loadBGMi = 0;
-                    mIsBound = bindService(new Intent(MainActivity.this, BGMService.class), mConnection, Context.BIND_AUTO_CREATE);
-
-                    imageView.setImageResource(R.drawable.sound_on);
-                }
-            }
-        });
-*/
         Button developerInformation = (Button) findViewById(R.id.developerButton);
         developerInformation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                if(loaded)
-                    soundPool.play(soundID,1f,1f,0,0,1f);
-
+                soundPool.play(soundID,1,1,0,0,1);
                 Intent intent = new Intent(MainActivity.this, DeveloperInformation.class);
                 intent.addFlags(FLAG_ACTIVITY_NO_USER_ACTION);
                 startActivity(intent);
@@ -153,10 +107,7 @@ public class MainActivity extends AppCompatActivity {
         gameStartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                if(loaded)
-                    soundPool.play(soundID,1f,1f,0,0,1f);
-
+                soundPool.play(soundID,1,1,0,0,1);
                 Intent intent = new Intent(MainActivity.this, StepSelection.class);
                 startActivity(intent);
             }
@@ -166,10 +117,7 @@ public class MainActivity extends AppCompatActivity {
         ReviewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                if(loaded)
-                    soundPool.play(soundID,1f,1f,0,0,1f);
-
+                soundPool.play(soundID,1,1,0,0,1);
                 final String appPackageName = getPackageName(); // getPackageName() from Context or Activity object
                 try {
                     startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
