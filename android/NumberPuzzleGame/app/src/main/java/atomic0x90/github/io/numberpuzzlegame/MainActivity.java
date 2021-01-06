@@ -2,6 +2,7 @@ package atomic0x90.github.io.numberpuzzlegame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
@@ -38,36 +39,45 @@ public class MainActivity extends AppCompatActivity {
     //private int bgmSet = 0;
 
     //Sound
-    SoundPool soundPool = null;
-    int soundID = 0;
-/*
+    /*
+    private SoundPool soundPool = null;
+
     @Override
     protected void onStart(){
         super.onStart();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            AudioAttributes audioAttributes = new AudioAttributes.Builder()
-                    .setUsage(AudioAttributes.USAGE_NOTIFICATION)
-                    .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
-                    .build();
-            soundPool = new SoundPool.Builder().setAudioAttributes(audioAttributes).setMaxStreams(8).build();
+        setSoundPool();
+    }
+    @Override
+    protected void onStop(){
+        super.onStop();
+        releaseSoundPool();
+    }
+    private void setSoundPool() {
+        if (soundPool == null) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                AudioAttributes audioAttributes = new AudioAttributes.Builder()
+                        .setUsage(AudioAttributes.USAGE_NOTIFICATION)
+                        .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                        .build();
+                soundPool = new SoundPool.Builder().setAudioAttributes(audioAttributes).setMaxStreams(8).build();
+            } else {
+                // maxStream, streamType, quality
+                soundPool = new SoundPool(8, AudioManager.STREAM_MUSIC, 0);
+            }
         }
-        else {
-            soundPool = new SoundPool(8, AudioManager.STREAM_NOTIFICATION, 0);
-        }
-*/
-/*
+    }
+    public void playSound() {
+        // context, resId, priority
+        final int sound = soundPool.load(this, R.raw.click_sound, 1);
         soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
             @Override
             public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {
-                soundPool.play(sampleId, 1f, 1f, 0, 0, 1f);
+                // soundId, leftVolumn, rightVolumn, priority, loop, rate
+                soundPool.play(sound, 1f, 1f, 0, 0, 1.0f);
             }
         });
-*/
-/*    }
-    @Override
-    protected void onStop() {
-        super.onStop();
-
+    }
+    private void releaseSoundPool() {
         soundPool.release();
         soundPool = null;
     }
@@ -83,11 +93,13 @@ public class MainActivity extends AppCompatActivity {
         init_tables();
 
         //Sound
+        final SoundPool soundPool = new SoundPool(1,AudioManager.STREAM_MUSIC,0);
+        final int soundID = soundPool.load(this,R.raw.click_sound,1);
         //soundPool = new SoundPool(1,AudioManager.STREAM_MUSIC,0);
         //soundID = soundPool.load(this,R.raw.click_sound,1);
 
-        soundPool = new SoundPool(1,AudioManager.STREAM_MUSIC,0);
-        soundID = soundPool.load(this,R.raw.click_sound,1);
+        //soundPool = new SoundPool(5,AudioManager.STREAM_MUSIC,0);
+        //soundID = soundPool.load(this,R.raw.click_sound,0);
 
         //
         MobileAds.initialize(this, String.valueOf(R.string.TESTAppId));
@@ -96,7 +108,11 @@ public class MainActivity extends AppCompatActivity {
         developerInformation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+               // playSound();
                 soundPool.play(soundID,1,1,0,0,1);
+
+         //       soundPool.play(soundID,1,1,0,0,1);
+         //       soundPool.release();
                 Intent intent = new Intent(MainActivity.this, DeveloperInformation.class);
                 intent.addFlags(FLAG_ACTIVITY_NO_USER_ACTION);
                 startActivity(intent);
@@ -107,7 +123,10 @@ public class MainActivity extends AppCompatActivity {
         gameStartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+               // playSound();
                 soundPool.play(soundID,1,1,0,0,1);
+         //       soundPool.play(soundID,1,1,0,0,1);
+         //       soundPool.release();
                 Intent intent = new Intent(MainActivity.this, StepSelection.class);
                 startActivity(intent);
             }
@@ -117,7 +136,10 @@ public class MainActivity extends AppCompatActivity {
         ReviewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+               // playSound();
                 soundPool.play(soundID,1,1,0,0,1);
+         //       soundPool.play(soundID,1,1,0,0,1);
+         //       soundPool.release();
                 final String appPackageName = getPackageName(); // getPackageName() from Context or Activity object
                 try {
                     startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
