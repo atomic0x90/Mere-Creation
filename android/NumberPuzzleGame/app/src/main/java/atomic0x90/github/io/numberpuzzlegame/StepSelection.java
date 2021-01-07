@@ -456,7 +456,7 @@ public class StepSelection extends AppCompatActivity {
 
 //Sound
         soundPool = new SoundPool(5, AudioManager.STREAM_MUSIC,0);
-        soundID = soundPool.load(this,R.raw.click_sound,1);
+        soundID = soundPool.load(this,R.raw.click_sound,0);
 
         final Button Step1Button = (Button) findViewById(R.id.Step1Button);
         final Button Step2Button = (Button) findViewById(R.id.Step2Button);

@@ -1,17 +1,10 @@
 package atomic0x90.github.io.numberpuzzlegame;
 
-import android.content.ComponentName;
-import android.content.Context;
-import android.content.Intent;
-import android.content.ServiceConnection;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
-import android.os.IBinder;
 import android.text.util.Linkify;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -99,35 +92,22 @@ public class DeveloperInformation extends AppCompatActivity {
     protected void onUserLeaveHint(){
         //홈버튼
         super.onUserLeaveHint();
-/*
-        System.out.println("홈 버튼 de");
-        Toast.makeText(this,"홈버튼 De "+mIsBound,Toast.LENGTH_SHORT).show();
-        if(mIsBound){
-            //onUnbind(mIsBound);
-        }
-  */  }
+    }
     @Override
     public void onPause(){
         super.onPause();
- //       System.out.println("de pause");
-
     }
 
 
     @Override
     public void onResume(){
-        //
         super.onResume();
-  //      System.out.println("onResume ");
-
-   //     Toast.makeText(this,"resume De",Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onDestroy(){
         super.onDestroy();
 
-   //     Toast.makeText(this,"디스트로이 De",Toast.LENGTH_SHORT).show();
     }
 
     @Override

@@ -2,21 +2,14 @@ package atomic0x90.github.io.numberpuzzlegame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.res.AssetFileDescriptor;
-import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
-import android.media.AudioAttributes;
 import android.media.AudioManager;
-import android.media.MediaPlayer;
 import android.media.SoundPool;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.SystemClock;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -25,7 +18,6 @@ import android.widget.Toast;
 import com.google.android.gms.ads.MobileAds;
 
 import java.io.File;
-import java.io.IOException;
 
 import static android.content.Intent.FLAG_ACTIVITY_NO_USER_ACTION;
 
@@ -35,53 +27,6 @@ public class MainActivity extends AppCompatActivity {
 
     int loadBGMi = 0;
 
-    private static MediaPlayer buttonSound;
-    //private int bgmSet = 0;
-
-    //Sound
-    /*
-    private SoundPool soundPool = null;
-
-    @Override
-    protected void onStart(){
-        super.onStart();
-        setSoundPool();
-    }
-    @Override
-    protected void onStop(){
-        super.onStop();
-        releaseSoundPool();
-    }
-    private void setSoundPool() {
-        if (soundPool == null) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                AudioAttributes audioAttributes = new AudioAttributes.Builder()
-                        .setUsage(AudioAttributes.USAGE_NOTIFICATION)
-                        .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
-                        .build();
-                soundPool = new SoundPool.Builder().setAudioAttributes(audioAttributes).setMaxStreams(8).build();
-            } else {
-                // maxStream, streamType, quality
-                soundPool = new SoundPool(8, AudioManager.STREAM_MUSIC, 0);
-            }
-        }
-    }
-    public void playSound() {
-        // context, resId, priority
-        final int sound = soundPool.load(this, R.raw.click_sound, 1);
-        soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
-            @Override
-            public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {
-                // soundId, leftVolumn, rightVolumn, priority, loop, rate
-                soundPool.play(sound, 1f, 1f, 0, 0, 1.0f);
-            }
-        });
-    }
-    private void releaseSoundPool() {
-        soundPool.release();
-        soundPool = null;
-    }
-*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,24 +40,15 @@ public class MainActivity extends AppCompatActivity {
         //Sound
         final SoundPool soundPool = new SoundPool(1,AudioManager.STREAM_MUSIC,0);
         final int soundID = soundPool.load(this,R.raw.click_sound,1);
-        //soundPool = new SoundPool(1,AudioManager.STREAM_MUSIC,0);
-        //soundID = soundPool.load(this,R.raw.click_sound,1);
 
-        //soundPool = new SoundPool(5,AudioManager.STREAM_MUSIC,0);
-        //soundID = soundPool.load(this,R.raw.click_sound,0);
-
-        //
         MobileAds.initialize(this, String.valueOf(R.string.TESTAppId));
 
         Button developerInformation = (Button) findViewById(R.id.developerButton);
         developerInformation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // playSound();
                 soundPool.play(soundID,1,1,0,0,1);
 
-         //       soundPool.play(soundID,1,1,0,0,1);
-         //       soundPool.release();
                 Intent intent = new Intent(MainActivity.this, DeveloperInformation.class);
                 intent.addFlags(FLAG_ACTIVITY_NO_USER_ACTION);
                 startActivity(intent);
@@ -123,10 +59,7 @@ public class MainActivity extends AppCompatActivity {
         gameStartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // playSound();
                 soundPool.play(soundID,1,1,0,0,1);
-         //       soundPool.play(soundID,1,1,0,0,1);
-         //       soundPool.release();
                 Intent intent = new Intent(MainActivity.this, StepSelection.class);
                 startActivity(intent);
             }
@@ -136,10 +69,7 @@ public class MainActivity extends AppCompatActivity {
         ReviewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               // playSound();
                 soundPool.play(soundID,1,1,0,0,1);
-         //       soundPool.play(soundID,1,1,0,0,1);
-         //       soundPool.release();
                 final String appPackageName = getPackageName(); // getPackageName() from Context or Activity object
                 try {
                     startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
