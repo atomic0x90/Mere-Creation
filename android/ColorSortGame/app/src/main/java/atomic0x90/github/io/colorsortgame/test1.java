@@ -18,15 +18,7 @@ import android.widget.TextView;
 
 public class test1 extends AppCompatActivity implements View.OnTouchListener {
 
-
-    private final int START_DRAG = 0;
-    private final int END_DRAG = 1;
-    private int isMoving;
-    private float offset_x, offset_y;
-    private boolean start_yn = true;
-
-    private float dx, dy;
-
+    float oldXvalue,oldYvalue;
     int standardSize_X, standardSize_Y;
     float density;
 
@@ -64,74 +56,47 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
         button.setOnTouchListener(this);
         button1.setOnTouchListener(this);
 
-
-        /*
-        DisplayMetrics dm = new DisplayMetrics();
-        getWindow().getWindowManager().getDefaultDisplay().getMetrics(dm);
-
-        WindowManager.LayoutParams lp = getWindow().getAttributes();
-        lp.width = (int) (dm.widthPixels*0.8);
-        lp.height = (int) (dm.heightPixels*0.7);
-
-
-
-        button.setOnTouchListener(this);
-*/
     }
-
     @Override
-    public boolean onTouch(View v, MotionEvent event) {
-        switch (event.getAction()) {
-            case MotionEvent.ACTION_DOWN: {
-                offset_x = event.getX();
-                offset_y = event.getY();
-                dx = offset_x - v.getX();
-                dy = offset_y - v.getY();
+    public boolean onTouch(View v, MotionEvent event){
+
+        int parentWidth = ((ViewGroup)v.getParent()).getWidth();    // 부모 View 의 Width
+        int parentHeight = ((ViewGroup)v.getParent()).getHeight();    // 부모 View 의 Height
+
+        if(event.getAction() == MotionEvent.ACTION_DOWN){
+            // 뷰 누름
+            oldXvalue = event.getX();
+            oldYvalue = event.getY();
+            Log.d("viewTest", "oldXvalue : "+ oldXvalue + " oldYvalue : " + oldYvalue);    // View 내부에서 터치한 지점의 상대 좌표값.
+            Log.d("viewTest", "v.getX() : "+v.getX());    // View 의 좌측 상단이 되는 지점의 절대 좌표값.
+            Log.d("viewTest", "RawX : " + event.getRawX() +" RawY : " + event.getRawY());    // View 를 터치한 지점의 절대 좌표값.
+            Log.d("viewTest", "v.getHeight : " + v.getHeight() + " v.getWidth : " + v.getWidth());    // View 의 Width, Height
+
+        }else if(event.getAction() == MotionEvent.ACTION_MOVE){
+            float tmpx = v.getX() + event.getX();
+            float tmpy = v.getY() + event.getY();
+            // 뷰 이동 중
+            v.setX(v.getX() + (event.getX()) - (v.getWidth()/2));
+            v.setY(v.getY() + (event.getY()) - (v.getHeight()/2));
+
+        }else if(event.getAction() == MotionEvent.ACTION_UP){
+            // 뷰에서 손을 뗌
+
+            if(v.getX() < 0){
+                v.setX(0);
+            }else if((v.getX() + v.getWidth()) > parentWidth){
+                v.setX(parentWidth - v.getWidth());
             }
-            break;
-            case MotionEvent.ACTION_MOVE: {
-                v.setX(event.getX() - dx);
-                v.setY(event.getY() - dy);
+
+            if(v.getY() < 0){
+                v.setY(0);
+            }else if((v.getY() + v.getHeight()) > parentHeight){
+                v.setY(parentHeight - v.getHeight());
             }
-            break;
-            case MotionEvent.ACTION_UP: {
-                //your stuff
-            }
-        //    return true;
+
         }
         return true;
     }
-/*
-    @Override
-    public boolean onTouch(View v,MotionEvent event){
-        if(event.getAction() == MotionEvent.ACTION_DOWN){
-            if(start_yn){
-                offset_x = event.getRawX();
-                offset_y = event.getRawY();
-                start_yn = false;
-                //1
-                System.out.println("DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDd");
-            }
-            isMoving = START_DRAG;
-        }
-        else if(event.getAction() == MotionEvent.ACTION_UP){
-            isMoving = END_DRAG;
-            //3
-            System.out.println("UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUu");
-        }
-        else if(event.getAction() == MotionEvent.ACTION_MOVE){
-            if(isMoving == START_DRAG){
-                v.setX(event.getRawX()-offset_x);
-                v.setY(event.getRawY()-offset_y);
-                //2
-
-                System.out.println("MMMMMMMMMMMMMMMMMMMMMMMMMMMMM");
-            }
-        }
-
-        return false;
-    }
-*/
 
 
 }
