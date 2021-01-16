@@ -43,18 +43,23 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test1);
 
-        Button button = (Button) findViewById(R.id.button3);
-        Button button1 = (Button) findViewById(R.id.button4);
+        Button button3 = (Button) findViewById(R.id.button3);
+        Button button4 = (Button) findViewById(R.id.button4);
 
         getStandardSize();
 
-        button.setWidth(standardSize_X / 2);
-        button.setHeight(standardSize_Y / 2);
-        button1.setWidth(standardSize_X / 2);
-        button1.setHeight(standardSize_Y / 2);
+        button3.setWidth(standardSize_X / 4);
+        button3.setHeight(standardSize_Y / 4);
+        button4.setWidth(standardSize_X / 4);
+        button4.setHeight(standardSize_Y / 4);
 
-        button.setOnTouchListener(this);
-        button1.setOnTouchListener(this);
+        button3.setX(0);
+        button3.setY(0);
+        button4.setX(button4.getWidth());
+        button4.setY(0);
+
+        button3.setOnTouchListener(this);
+        button4.setOnTouchListener(this);
 
     }
     @Override
@@ -73,8 +78,6 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
             Log.d("viewTest", "v.getHeight : " + v.getHeight() + " v.getWidth : " + v.getWidth());    // View 의 Width, Height
 
         }else if(event.getAction() == MotionEvent.ACTION_MOVE){
-            float tmpx = v.getX() + event.getX();
-            float tmpy = v.getY() + event.getY();
             // 뷰 이동 중
             v.setX(v.getX() + (event.getX()) - (v.getWidth()/2));
             v.setY(v.getY() + (event.getY()) - (v.getHeight()/2));
