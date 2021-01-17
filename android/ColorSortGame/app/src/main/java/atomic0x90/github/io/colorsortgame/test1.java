@@ -21,6 +21,8 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
     float oldXvalue,oldYvalue;
     int standardSize_X, standardSize_Y;
     float density;
+    float saveX = -1;
+    float saveY = -1;
 
     public Point getScreenSize(Activity activity) {
         Display display = activity.getWindowManager().getDefaultDisplay();
@@ -38,35 +40,59 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
         standardSize_Y = (int) (ScreenSize.y / density);
     }
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test1);
 
+        Button button1 = (Button) findViewById(R.id.button1);
+        Button button2 = (Button) findViewById(R.id.button2);
         Button button3 = (Button) findViewById(R.id.button3);
         Button button4 = (Button) findViewById(R.id.button4);
 
         getStandardSize();
 
-        button3.setWidth(standardSize_X / 4);
-        button3.setHeight(standardSize_Y / 4);
-        button4.setWidth(standardSize_X / 4);
-        button4.setHeight(standardSize_Y / 4);
+        button1.setWidth(standardSize_X/4);
+        button1.setHeight(standardSize_X/4);
 
-        button3.setX(0);
+        button2.setWidth(standardSize_X/4);
+        button2.setHeight(standardSize_X/4);
+
+        button3.setWidth(standardSize_X / 4);
+        button3.setHeight(standardSize_X / 4);
+
+        button4.setWidth(standardSize_X / 4);
+        button4.setHeight(standardSize_X / 4);
+
+        button1.setX(0);
+        button1.setY(0);
+        button2.setX(standardSize_X/4);
+        button2.setY(0);
+        button3.setX((standardSize_X/4)*2);
         button3.setY(0);
-        button4.setX(button4.getWidth());
+        button4.setX((standardSize_X/4)*3);
         button4.setY(0);
 
+
+        button1.setOnTouchListener(this);
+        button2.setOnTouchListener(this);
         button3.setOnTouchListener(this);
         button4.setOnTouchListener(this);
 
     }
+
+
     @Override
     public boolean onTouch(View v, MotionEvent event){
 
         int parentWidth = ((ViewGroup)v.getParent()).getWidth();    // 부모 View 의 Width
         int parentHeight = ((ViewGroup)v.getParent()).getHeight();    // 부모 View 의 Height
+
+        if(saveX == -1)
+            saveX = v.getX();
+        if(saveY == -1)
+            saveY = v.getY();
 
         if(event.getAction() == MotionEvent.ACTION_DOWN){
             // 뷰 누름
@@ -77,14 +103,14 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
             Log.d("viewTest", "RawX : " + event.getRawX() +" RawY : " + event.getRawY());    // View 를 터치한 지점의 절대 좌표값.
             Log.d("viewTest", "v.getHeight : " + v.getHeight() + " v.getWidth : " + v.getWidth());    // View 의 Width, Height
 
+
         }else if(event.getAction() == MotionEvent.ACTION_MOVE){
             // 뷰 이동 중
             v.setX(v.getX() + (event.getX()) - (v.getWidth()/2));
             v.setY(v.getY() + (event.getY()) - (v.getHeight()/2));
-
         }else if(event.getAction() == MotionEvent.ACTION_UP){
             // 뷰에서 손을 뗌
-
+/*
             if(v.getX() < 0){
                 v.setX(0);
             }else if((v.getX() + v.getWidth()) > parentWidth){
@@ -96,7 +122,10 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
             }else if((v.getY() + v.getHeight()) > parentHeight){
                 v.setY(parentHeight - v.getHeight());
             }
-
+*/
+            v.setX(saveX);
+            v.setY(saveY);
+            saveX = saveY = -1;
         }
         return true;
     }
