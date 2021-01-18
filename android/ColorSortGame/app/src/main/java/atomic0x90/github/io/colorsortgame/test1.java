@@ -24,6 +24,13 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
     float saveX = -1;
     float saveY = -1;
 
+    float saveLastLine;
+    float midleX,midleY;
+    float[] buttonLayoutX = new float[5];
+    float[] buttonLayoutY = new float[5];
+    int[] buttonOrder = {0,1,2,3,4};
+    float buttonLength;
+
     public Point getScreenSize(Activity activity) {
         Display display = activity.getWindowManager().getDefaultDisplay();
         Point size = new Point();
@@ -53,25 +60,39 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
 
         getStandardSize();
 
-        button1.setWidth(standardSize_X/4);
-        button1.setHeight(standardSize_X/4);
+        buttonLength = standardSize_X/4;
+        saveLastLine = standardSize_X/4;
 
-        button2.setWidth(standardSize_X/4);
-        button2.setHeight(standardSize_X/4);
+        button1.setWidth((int)buttonLength);
+        button1.setHeight((int)buttonLength);
 
-        button3.setWidth(standardSize_X / 4);
-        button3.setHeight(standardSize_X / 4);
+        button2.setWidth((int)buttonLength);
+        button2.setHeight((int)buttonLength);
 
-        button4.setWidth(standardSize_X / 4);
-        button4.setHeight(standardSize_X / 4);
+        button3.setWidth((int)buttonLength);
+        button3.setHeight((int)buttonLength);
+
+        button4.setWidth((int)buttonLength);
+        button4.setHeight((int)buttonLength);
 
         button1.setX(0);
         button1.setY(0);
-        button2.setX(standardSize_X/4);
+        for(int i = 1;i <= 4;i++){
+            if(i >= 1 && i <= 4)
+                buttonLayoutX[i] = 0;
+            else
+                buttonLayoutX[i] = buttonLength;
+
+            buttonLayoutY[i] = buttonLength * (i-1);
+        }
+
+        button2.setX((int)buttonLength);
         button2.setY(0);
-        button3.setX((standardSize_X/4)*2);
+
+        button3.setX(((int)buttonLength)*2);
         button3.setY(0);
-        button4.setX((standardSize_X/4)*3);
+
+        button4.setX(((int)buttonLength)*3);
         button4.setY(0);
 
 
@@ -123,9 +144,50 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
                 v.setY(parentHeight - v.getHeight());
             }
 */
-            v.setX(saveX);
-            v.setY(saveY);
-            saveX = saveY = -1;
+
+            if(v.getY() > saveLastLine) {
+                v.setX(saveX);
+                v.setY(saveY);
+                saveX = saveY = -1;
+                return true;
+            }
+
+            if(buttonLayoutX[1] <= v.getX() && v.getX() < buttonLayoutX[1] + buttonLength && buttonLayoutY[1] <= v.getY() && v.getY() < buttonLayoutY[1] + buttonLength){
+                v.setX(buttonLayoutX[1]);
+                v.setY(buttonLayoutY[1]);
+                String string = "R.id.button"+buttonOrder[1];
+                Button button = (Button) findViewById(string);
+                button.setX(saveX);
+                button.setY(saveY);
+
+                int check = -1;
+                for(int i = 1;i <= 4;i++){
+                    if(buttonLayoutX[i] == saveX && buttonLayoutY[i] == saveY){
+                        check = i;
+                        break;
+                    }
+                }
+
+                button.setX(buttonLayoutX[check]);
+                button.setY(buttonLayoutY[check]);
+
+                float tmpX,tmpY;
+                tmpX = buttonLayoutX[check];
+                tmpY = buttonLayoutY[check];
+                buttonLayoutX[check] = saveX;
+                buttonLayoutY[check] = saveY;
+
+                buttonLayoutX[1] = tmpX;
+                buttonLayoutY[1] = tmpY;
+
+
+                saveX = saveY = -1;
+            }
+            else{
+                v.setX(saveX);
+                v.setY(saveY);
+                saveX = saveY = -1;
+            }
         }
         return true;
     }
