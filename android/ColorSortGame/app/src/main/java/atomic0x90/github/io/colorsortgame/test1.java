@@ -79,11 +79,11 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
         button1.setY(0);
         for(int i = 1;i <= 4;i++){
             if(i >= 1 && i <= 4)
-                buttonLayoutX[i] = 0;
+                buttonLayoutY[i] = 0;
             else
-                buttonLayoutX[i] = buttonLength;
+                buttonLayoutY[i] = buttonLength;
 
-            buttonLayoutY[i] = buttonLength * (i-1);
+            buttonLayoutX[i] = buttonLength * (i-1);
         }
 
         button2.setX((int)buttonLength);
@@ -155,10 +155,12 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
             if(buttonLayoutX[1] <= v.getX() && v.getX() < buttonLayoutX[1] + buttonLength && buttonLayoutY[1] <= v.getY() && v.getY() < buttonLayoutY[1] + buttonLength){
                 v.setX(buttonLayoutX[1]);
                 v.setY(buttonLayoutY[1]);
-                String string = "R.id.button"+buttonOrder[1];
-                Button button = (Button) findViewById(string);
-                button.setX(saveX);
-                button.setY(saveY);
+                Button button;
+                if(buttonOrder[1] == 1) {
+                    button = (Button) findViewById(R.id.button1);
+                    button.setX(saveX);
+                    button.setY(saveY);
+                }
 
                 int check = -1;
                 for(int i = 1;i <= 4;i++){
@@ -166,10 +168,13 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
                         check = i;
                         break;
                     }
-                }
 
-                button.setX(buttonLayoutX[check]);
-                button.setY(buttonLayoutY[check]);
+                    Log.d("check","buttonX "+i+": " + buttonLayoutX[i] + " buttonY "+i+": "+buttonLayoutY[i]);
+                }
+                Log.d("Touch finish","saveX : "+saveX + " saveY : "+ saveY);
+
+                //v.setX(buttonLayoutX[check]);
+                //v.setY(buttonLayoutY[check]);
 
                 float tmpX,tmpY;
                 tmpX = buttonLayoutX[check];
