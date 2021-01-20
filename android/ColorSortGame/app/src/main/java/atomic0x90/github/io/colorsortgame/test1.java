@@ -110,6 +110,12 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
         int parentWidth = ((ViewGroup)v.getParent()).getWidth();    // 부모 View 의 Width
         int parentHeight = ((ViewGroup)v.getParent()).getHeight();    // 부모 View 의 Height
 
+        Button button1 = (Button)findViewById(R.id.button1);
+        Button button2 = (Button)findViewById(R.id.button2);
+        Button button3 = (Button)findViewById(R.id.button3);
+        Button button4 = (Button)findViewById(R.id.button4);
+
+
         if(saveX == -1)
             saveX = v.getX();
         if(saveY == -1)
@@ -131,20 +137,6 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
             v.setY(v.getY() + (event.getY()) - (v.getHeight()/2));
         }else if(event.getAction() == MotionEvent.ACTION_UP){
             // 뷰에서 손을 뗌
-/*
-            if(v.getX() < 0){
-                v.setX(0);
-            }else if((v.getX() + v.getWidth()) > parentWidth){
-                v.setX(parentWidth - v.getWidth());
-            }
-
-            if(v.getY() < 0){
-                v.setY(0);
-            }else if((v.getY() + v.getHeight()) > parentHeight){
-                v.setY(parentHeight - v.getHeight());
-            }
-*/
-
             if(v.getY() > saveLastLine) {
                 v.setX(saveX);
                 v.setY(saveY);
@@ -152,40 +144,35 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
                 return true;
             }
 
-            if(buttonLayoutX[1] <= v.getX() && v.getX() < buttonLayoutX[1] + buttonLength && buttonLayoutY[1] <= v.getY() && v.getY() < buttonLayoutY[1] + buttonLength){
-                v.setX(buttonLayoutX[1]);
-                v.setY(buttonLayoutY[1]);
-                Button button;
-                if(buttonOrder[1] == 1) {
-                    button = (Button) findViewById(R.id.button1);
-                    button.setX(saveX);
-                    button.setY(saveY);
+            if(buttonLayoutX[1] <= v.getX() + v.getWidth()/2 &&
+                    v.getX()+ v.getWidth()/2 < buttonLayoutX[1] + buttonLength &&
+                    buttonLayoutY[1] <= v.getY() + v.getWidth()/2 &&
+                    v.getY() + v.getWidth()/2< buttonLayoutY[1] + buttonLength){
+
+                if(button1.getX() == buttonLayoutX[1] && button1.getY() == buttonLayoutY[1]){
+                    button1.setX(saveX);
+                    button1.setY(saveY);
+                    v.setX(buttonLayoutX[1]);
+                    v.setY(buttonLayoutY[1]);
                 }
-
-                int check = -1;
-                for(int i = 1;i <= 4;i++){
-                    if(buttonLayoutX[i] == saveX && buttonLayoutY[i] == saveY){
-                        check = i;
-                        break;
-                    }
-
-                    Log.d("check","buttonX "+i+": " + buttonLayoutX[i] + " buttonY "+i+": "+buttonLayoutY[i]);
+                else if(button2.getX() == buttonLayoutX[1] && button2.getY() == buttonLayoutY[1]){
+                    button2.setX(saveX);
+                    button2.setY(saveY);
+                    v.setX(buttonLayoutX[1]);
+                    v.setY(buttonLayoutY[1]);
                 }
-                Log.d("Touch finish","saveX : "+saveX + " saveY : "+ saveY);
-
-                //v.setX(buttonLayoutX[check]);
-                //v.setY(buttonLayoutY[check]);
-
-                float tmpX,tmpY;
-                tmpX = buttonLayoutX[check];
-                tmpY = buttonLayoutY[check];
-                buttonLayoutX[check] = saveX;
-                buttonLayoutY[check] = saveY;
-
-                buttonLayoutX[1] = tmpX;
-                buttonLayoutY[1] = tmpY;
-
-
+                else if(button3.getX() == buttonLayoutX[1] && button3.getY() == buttonLayoutY[1]){
+                    button3.setX(saveX);
+                    button3.setY(saveY);
+                    v.setX(buttonLayoutX[1]);
+                    v.setY(buttonLayoutY[1]);
+                }
+                else if(button4.getX() == buttonLayoutX[1] && button4.getY() == buttonLayoutY[1]){
+                    button4.setX(saveX);
+                    button4.setY(saveY);
+                    v.setX(buttonLayoutX[1]);
+                    v.setY(buttonLayoutY[1]);
+                }
                 saveX = saveY = -1;
             }
             else{
