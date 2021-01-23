@@ -12,6 +12,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.ScaleAnimation;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -44,8 +47,68 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
         standardSize_X = (int) (ScreenSize.x / density);
         standardSize_Y = (int) (ScreenSize.y / density);
     }
+/*
+    public static void translateAnimation(final float xStart, final float xEnd, final float yStart, final float yEnd, int duration, final Button view){
+        final TranslateAnimation translateAnimation = new TranslateAnimation(
+                xStart,
+                xEnd,
+                yStart,
+                yEnd
+        );
+        translateAnimation.setDuration(duration);
+        translateAnimation.setFillAfter(true);
 
+        translateAnimation.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
 
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                System.out.println("1 view X : "+view.getX() + " view Y : " + view.getY() + " x : "+xEnd + " y : " + yEnd);
+                view.setX(xEnd);
+                view.setY(yEnd);
+                System.out.println("2 view X : "+view.getX() + " view Y : " + view.getY() + " x : "+xEnd + " y : " + yEnd);
+
+                TranslateAnimation t = new TranslateAnimation(0,view.getX(),0,view.getY());
+                t.setDuration(0);
+                translateAnimation.setFillAfter(true);
+                view.startAnimation(t);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+        view.startAnimation(translateAnimation);
+    }*/
+
+    public static void scaleAnimation(final float x, final float y, final Button button){
+        ScaleAnimation scaleAnimation = new ScaleAnimation(0,1,0,1,x+button.getWidth()/2,y+button.getHeight()/2);
+        scaleAnimation.setFillAfter(true);
+        scaleAnimation.setDuration(750);
+        scaleAnimation.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                button.setX(x);
+                button.setY(y);
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                //button.setX(x);
+                //button.setY(y);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+        button.startAnimation(scaleAnimation);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -207,6 +270,7 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
         button14.setOnTouchListener(this);
         button15.setOnTouchListener(this);
         button16.setOnTouchListener(this);
+        System.out.println("CREATE button1 getX : " + button1.getX() + " getY : " + button1.getY());
 
     }
 
@@ -242,6 +306,7 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
         v.bringToFront();
 
         if(event.getAction() == MotionEvent.ACTION_DOWN){
+            System.out.println("button1 getX : " + button1.getX() + " getY : " + button1.getY());
             // 뷰 누름
             oldXvalue = event.getX();
             oldYvalue = event.getY();
@@ -258,6 +323,7 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
             v.setY(v.getY() + (event.getY()) - (v.getHeight()/2));
 
         }else if(event.getAction() == MotionEvent.ACTION_UP){
+            System.out.println("button1 getX : " + button1.getX() + " getY : " + button1.getY());
             // 뷰에서 손을 뗌
             System.out.println("X : "+v.getX() + " Y : "+v.getY());
             if(v.getY() > saveLastLine) {
@@ -388,10 +454,16 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
                 saveX = saveY = -1;
             }
             else if(button1.getX() == buttonLayoutX[check] && button1.getY() == buttonLayoutY[check]){
-                button1.setX(saveX);
-                button1.setY(saveY);
+                //button1.setX(saveX);
+                //button1.setY(saveY);
+                scaleAnimation(saveX,saveY,button1);
+
+                //translateAnimation(button1.getX(),saveX,button1.getY(),saveY,1000,button1);
+
                 v.setX(buttonLayoutX[check]);
                 v.setY(buttonLayoutY[check]);
+                //System.out.println("v.getX()+v.getWidth()/2,buttonLength,v.getY()+v.getHeight()/2,buttonLength*5 "+ v.getX()+v.getWidth()/2+" "+buttonLength+" "+v.getY()+v.getHeight()/2 + " "+ buttonLength*5);
+                //translateAnimation(v.getX()+v.getWidth()/2,buttonLength,v.getY()+v.getHeight()/2,buttonLength*5,3000,v);
             }
             else if(button2.getX() == buttonLayoutX[check] && button2.getY() == buttonLayoutY[check]){
                 button2.setX(saveX);
@@ -486,6 +558,7 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
 
             saveX = saveY = -1;
 
+            System.out.println("OUT button1 getX : " + button1.getX() + " getY : " + button1.getY());
         }
         return true;
     }
