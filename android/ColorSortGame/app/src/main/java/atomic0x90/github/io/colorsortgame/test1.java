@@ -239,6 +239,8 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
         if(saveY == -1)
             saveY = v.getY();
 
+        v.bringToFront();
+
         if(event.getAction() == MotionEvent.ACTION_DOWN){
             // 뷰 누름
             oldXvalue = event.getX();
@@ -254,8 +256,10 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
             // 뷰 이동 중
             v.setX(v.getX() + (event.getX()) - (v.getWidth()/2));
             v.setY(v.getY() + (event.getY()) - (v.getHeight()/2));
+
         }else if(event.getAction() == MotionEvent.ACTION_UP){
             // 뷰에서 손을 뗌
+            System.out.println("X : "+v.getX() + " Y : "+v.getY());
             if(v.getY() > saveLastLine) {
                 v.setX(saveX);
                 v.setY(saveY);
@@ -265,112 +269,112 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
             int check = -1;
             if(buttonLayoutX[1] <= v.getX() + v.getWidth()/2 &&
                 v.getX() + v.getWidth()/2 < buttonLayoutX[1] + buttonLength &&
-                buttonLayoutY[1] <= v.getY() + v.getHeight() &&
+                buttonLayoutY[1] <= v.getY() + v.getHeight()/2 &&
                 v.getY() + v.getHeight()/2 < buttonLayoutY[1] + buttonLength &&
                     (saveX != buttonLayoutX[1] || saveY != buttonLayoutY[1])){
                 check = 1;
             }
-            else if(buttonLayoutX[2] <= v.getX() + v.getWidth()/2 &&
+            else if(buttonLayoutX[2] < v.getX() + v.getWidth()/2 &&
                     v.getX() + v.getWidth()/2 < buttonLayoutX[2] + buttonLength &&
-                    buttonLayoutY[2] <= v.getY() + v.getHeight() &&
+                    buttonLayoutY[2] < v.getY() + v.getHeight()/2 &&
                     v.getY() + v.getHeight()/2 < buttonLayoutY[2] + buttonLength &&
                     (saveX != buttonLayoutX[2] || saveY != buttonLayoutY[2])){
                 check = 2;
             }
-            else if(buttonLayoutX[3] <= v.getX() + v.getWidth()/2 &&
+            else if(buttonLayoutX[3] < v.getX() + v.getWidth()/2 &&
                     v.getX() + v.getWidth()/2 < buttonLayoutX[3] + buttonLength &&
-                    buttonLayoutY[3] <= v.getY() + v.getHeight() &&
+                    buttonLayoutY[3] < v.getY() + v.getHeight()/2 &&
                     v.getY() + v.getHeight()/2 < buttonLayoutY[3] + buttonLength &&
                     (saveX != buttonLayoutX[3] || saveY != buttonLayoutY[3])){
                 check = 3;
             }
-            else if(buttonLayoutX[4] <= v.getX() + v.getWidth()/2 &&
+            else if(buttonLayoutX[4] < v.getX() + v.getWidth()/2 &&
                     v.getX() + v.getWidth()/2 <= buttonLayoutX[4] + buttonLength &&
-                    buttonLayoutY[4] <= v.getY() + v.getHeight() &&
-                    v.getY() + v.getHeight()/2 <= buttonLayoutY[4] + buttonLength &&
+                    buttonLayoutY[4] < v.getY() + v.getHeight()/2 &&
+                    v.getY() + v.getHeight()/2 < buttonLayoutY[4] + buttonLength &&
                     (saveX != buttonLayoutX[4] || saveY != buttonLayoutY[4])){
                 check = 4;
             }
-            else if(buttonLayoutX[5] <= v.getX() + v.getWidth()/2 &&
+            else if(buttonLayoutX[5] < v.getX() + v.getWidth()/2 &&
                     v.getX() + v.getWidth()/2 < buttonLayoutX[5] + buttonLength &&
-                    buttonLayoutY[5] <= v.getY() + v.getHeight() &&
+                    buttonLayoutY[5] < v.getY() + v.getHeight()/2 &&
                     v.getY() + v.getHeight()/2 < buttonLayoutY[5] + buttonLength &&
                     (saveX != buttonLayoutX[5] || saveY != buttonLayoutY[5])){
                 check = 5;
             }
-            else if(buttonLayoutX[6] <= v.getX() + v.getWidth()/2 &&
+            else if(buttonLayoutX[6] < v.getX() + v.getWidth()/2 &&
                     v.getX() + v.getWidth()/2 < buttonLayoutX[6] + buttonLength &&
-                    buttonLayoutY[6] <= v.getY() + v.getHeight() &&
+                    buttonLayoutY[6] < v.getY() + v.getHeight()/2 &&
                     v.getY() + v.getHeight()/2 < buttonLayoutY[6] + buttonLength &&
                     (saveX != buttonLayoutX[6] || saveY != buttonLayoutY[6])){
                 check = 6;
             }
-            else if(buttonLayoutX[7] <= v.getX() + v.getWidth()/2 &&
+            else if(buttonLayoutX[7] < v.getX() + v.getWidth()/2 &&
                     v.getX() + v.getWidth()/2 < buttonLayoutX[7] + buttonLength &&
-                    buttonLayoutY[7] <= v.getY() + v.getHeight() &&
+                    buttonLayoutY[7] < v.getY() + v.getHeight()/2 &&
                     v.getY() + v.getHeight()/2 < buttonLayoutY[7] + buttonLength &&
                     (saveX != buttonLayoutX[7] || saveY != buttonLayoutY[7])){
                 check = 7;
             }
-            else if(buttonLayoutX[8] <= v.getX() + v.getWidth()/2 &&
+            else if(buttonLayoutX[8] < v.getX() + v.getWidth()/2 &&
                     v.getX() + v.getWidth()/2 < buttonLayoutX[8] + buttonLength &&
-                    buttonLayoutY[8] <= v.getY() + v.getHeight() &&
+                    buttonLayoutY[8] < v.getY() + v.getHeight()/2 &&
                     v.getY() + v.getHeight()/2 < buttonLayoutY[8] + buttonLength &&
                     (saveX != buttonLayoutX[8] || saveY != buttonLayoutY[8])){
                 check = 8;
             }
-            else if(buttonLayoutX[9] <= v.getX() + v.getWidth()/2 &&
+            else if(buttonLayoutX[9] < v.getX() + v.getWidth()/2 &&
                     v.getX() + v.getWidth()/2 < buttonLayoutX[9] + buttonLength &&
-                    buttonLayoutY[9] <= v.getY() + v.getHeight() &&
+                    buttonLayoutY[9] < v.getY() + v.getHeight()/2 &&
                     v.getY() + v.getHeight()/2 < buttonLayoutY[9] + buttonLength &&
                     (saveX != buttonLayoutX[9] || saveY != buttonLayoutY[9])){
                 check = 9;
             }
-            else if(buttonLayoutX[10] <= v.getX() + v.getWidth()/2 &&
+            else if(buttonLayoutX[10] < v.getX() + v.getWidth()/2 &&
                     v.getX() + v.getWidth()/2 < buttonLayoutX[10] + buttonLength &&
-                    buttonLayoutY[10] <= v.getY() + v.getHeight() &&
+                    buttonLayoutY[10] < v.getY() + v.getHeight()/2 &&
                     v.getY() + v.getHeight()/2 < buttonLayoutY[10] + buttonLength &&
                     (saveX != buttonLayoutX[10] || saveY != buttonLayoutY[10])){
                 check = 10;
             }
-            else if(buttonLayoutX[11] <= v.getX() + v.getWidth()/2 &&
+            else if(buttonLayoutX[11] < v.getX() + v.getWidth()/2 &&
                     v.getX() + v.getWidth()/2 < buttonLayoutX[11] + buttonLength &&
-                    buttonLayoutY[11] <= v.getY() + v.getHeight() &&
+                    buttonLayoutY[11] < v.getY() + v.getHeight()/2 &&
                     v.getY() + v.getHeight()/2 < buttonLayoutY[11] + buttonLength &&
                     (saveX != buttonLayoutX[11] || saveY != buttonLayoutY[11])){
                 check = 11;
             }
-            else if(buttonLayoutX[12] <= v.getX() + v.getWidth()/2 &&
+            else if(buttonLayoutX[12] < v.getX() + v.getWidth()/2 &&
                     v.getX() + v.getWidth()/2 < buttonLayoutX[12] + buttonLength &&
-                    buttonLayoutY[12] <= v.getY() + v.getHeight() &&
+                    buttonLayoutY[12] < v.getY() + v.getHeight()/2 &&
                     v.getY() + v.getHeight()/2 < buttonLayoutY[12] + buttonLength &&
                     (saveX != buttonLayoutX[12] || saveY != buttonLayoutY[12])){
                 check = 12;
             }
-            else if(buttonLayoutX[13] <= v.getX() + v.getWidth()/2 &&
+            else if(buttonLayoutX[13] < v.getX() + v.getWidth()/2 &&
                     v.getX() + v.getWidth()/2 < buttonLayoutX[13] + buttonLength &&
-                    buttonLayoutY[13] <= v.getY() + v.getHeight() &&
+                    buttonLayoutY[13] < v.getY() + v.getHeight()/2 &&
                     v.getY() + v.getHeight()/2 < buttonLayoutY[13] + buttonLength &&
                     (saveX != buttonLayoutX[13] || saveY != buttonLayoutY[13])){
                 check = 13;
             }
-            else if(buttonLayoutX[14] <= v.getX() + v.getWidth()/2 &&
+            else if(buttonLayoutX[14] < v.getX() + v.getWidth()/2 &&
                     v.getX() + v.getWidth()/2 < buttonLayoutX[14] + buttonLength &&
-                    buttonLayoutY[14] <= v.getY() + v.getHeight() &&
+                    buttonLayoutY[14] < v.getY() + v.getHeight()/2 &&
                     v.getY() + v.getHeight()/2 < buttonLayoutY[14] + buttonLength &&
                     (saveX != buttonLayoutX[14] || saveY != buttonLayoutY[14])){
                 check = 14;
             }
-            else if(buttonLayoutX[15] <= v.getX() + v.getWidth()/2 &&
+            else if(buttonLayoutX[15] < v.getX() + v.getWidth()/2 &&
                     v.getX() + v.getWidth()/2 < buttonLayoutX[15] + buttonLength &&
-                    buttonLayoutY[15] <= v.getY() + v.getHeight() &&
+                    buttonLayoutY[15] < v.getY() + v.getHeight()/2 &&
                     v.getY() + v.getHeight()/2 < buttonLayoutY[15] + buttonLength &&
                     (saveX != buttonLayoutX[15] || saveY != buttonLayoutY[15])){
                 check = 15;
             }
-            else if(buttonLayoutX[16] <= v.getX() + v.getWidth()/2 &&
+            else if(buttonLayoutX[16] < v.getX() + v.getWidth()/2 &&
                     v.getX() + v.getWidth()/2 < buttonLayoutX[16] + buttonLength &&
-                    buttonLayoutY[16] <= v.getY() + v.getHeight() &&
+                    buttonLayoutY[16] < v.getY() + v.getHeight()/2 &&
                     v.getY() + v.getHeight()/2 < buttonLayoutY[16] + buttonLength &&
                     (saveX != buttonLayoutX[16] || saveY != buttonLayoutY[16])){
                 check = 16;
