@@ -47,35 +47,43 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
         standardSize_X = (int) (ScreenSize.x / density);
         standardSize_Y = (int) (ScreenSize.y / density);
     }
-/*
-    public static void translateAnimation(final float xStart, final float xEnd, final float yStart, final float yEnd, int duration, final Button view){
+
+    public static void translateAnimation(final float xStart, final float xEnd, final float yStart, final float yEnd, final View view){
         final TranslateAnimation translateAnimation = new TranslateAnimation(
                 xStart,
                 xEnd,
                 yStart,
                 yEnd
         );
-        translateAnimation.setDuration(duration);
+        translateAnimation.setDuration(1000);
         translateAnimation.setFillAfter(true);
 
         translateAnimation.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
-
+                //view.setX(xEnd);
+                //view.setY(yEnd);
             }
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                System.out.println("1 view X : "+view.getX() + " view Y : " + view.getY() + " x : "+xEnd + " y : " + yEnd);
+
+                /*TranslateAnimation t = new TranslateAnimation(view.getX(),xEnd, view.getY(),yEnd);
+                t.setDuration(0);
+                t.setFillAfter(true);
                 view.setX(xEnd);
                 view.setY(yEnd);
-                System.out.println("2 view X : "+view.getX() + " view Y : " + view.getY() + " x : "+xEnd + " y : " + yEnd);
-
+                view.startAnimation(t);*/
+                //System.out.println("1 view X : "+view.getX() + " view Y : " + view.getY() + " x : "+xEnd + " y : " + yEnd);
+                //view.setX(xEnd);
+                //view.setY(yEnd);
+                //System.out.println("2 view X : "+view.getX() + " view Y : " + view.getY() + " x : "+xEnd + " y : " + yEnd);
+/*
                 TranslateAnimation t = new TranslateAnimation(0,view.getX(),0,view.getY());
                 t.setDuration(0);
                 translateAnimation.setFillAfter(true);
                 view.startAnimation(t);
-            }
+  */          }
 
             @Override
             public void onAnimationRepeat(Animation animation) {
@@ -83,7 +91,7 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
             }
         });
         view.startAnimation(translateAnimation);
-    }*/
+    }
 
     public static void scaleAnimation(final float x, final float y, final Button button){
         ScaleAnimation scaleAnimation = new ScaleAnimation(0,1,0,1,x+button.getWidth()/2,y+button.getHeight()/2);
@@ -459,101 +467,82 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
                 scaleAnimation(saveX,saveY,button1);
 
                 //translateAnimation(button1.getX(),saveX,button1.getY(),saveY,1000,button1);
-
-                v.setX(buttonLayoutX[check]);
-                v.setY(buttonLayoutY[check]);
+                scaleAnimation(buttonLayoutX[check],buttonLayoutY[check], (Button) v);
+//                translateAnimation(v.getX(),buttonLayoutX[check],v.getY(),buttonLayoutY[check],v);
+                //v.setX(buttonLayoutX[check]);
+                //v.setY(buttonLayoutY[check]);
                 //System.out.println("v.getX()+v.getWidth()/2,buttonLength,v.getY()+v.getHeight()/2,buttonLength*5 "+ v.getX()+v.getWidth()/2+" "+buttonLength+" "+v.getY()+v.getHeight()/2 + " "+ buttonLength*5);
                 //translateAnimation(v.getX()+v.getWidth()/2,buttonLength,v.getY()+v.getHeight()/2,buttonLength*5,3000,v);
             }
             else if(button2.getX() == buttonLayoutX[check] && button2.getY() == buttonLayoutY[check]){
-                button2.setX(saveX);
+                /*button2.setX(saveX);
                 button2.setY(saveY);
                 v.setX(buttonLayoutX[check]);
                 v.setY(buttonLayoutY[check]);
+                */
+                scaleAnimation(saveX,saveY,button2);
+                scaleAnimation(buttonLayoutX[check],buttonLayoutY[check],(Button) v);
             }
             else if(button3.getX() == buttonLayoutX[check] && button3.getY() == buttonLayoutY[check]){
-                button3.setX(saveX);
+                /*button3.setX(saveX);
                 button3.setY(saveY);
                 v.setX(buttonLayoutX[check]);
                 v.setY(buttonLayoutY[check]);
+            */
+                scaleAnimation(saveX,saveY,button3);
+                scaleAnimation(buttonLayoutX[check],buttonLayoutY[check],(Button) v);
             }
             else if(button4.getX() == buttonLayoutX[check] && button4.getY() == buttonLayoutY[check]){
-                button4.setX(saveX);
-                button4.setY(saveY);
-                v.setX(buttonLayoutX[check]);
-                v.setY(buttonLayoutY[check]);
+                scaleAnimation(saveX,saveY,button4);
+                scaleAnimation(buttonLayoutX[check],buttonLayoutY[check],(Button) v);
             }
             else if(button5.getX() == buttonLayoutX[check] && button5.getY() == buttonLayoutY[check]){
-                button5.setX(saveX);
-                button5.setY(saveY);
-                v.setX(buttonLayoutX[check]);
-                v.setY(buttonLayoutY[check]);
+                scaleAnimation(saveX,saveY,button5);
+                scaleAnimation(buttonLayoutX[check],buttonLayoutY[check],(Button) v);
             }
             else if(button6.getX() == buttonLayoutX[check] && button6.getY() == buttonLayoutY[check]){
-                button6.setX(saveX);
-                button6.setY(saveY);
-                v.setX(buttonLayoutX[check]);
-                v.setY(buttonLayoutY[check]);
+                scaleAnimation(saveX,saveY,button6);
+                scaleAnimation(buttonLayoutX[check],buttonLayoutY[check],(Button) v);
             }
             else if(button7.getX() == buttonLayoutX[check] && button7.getY() == buttonLayoutY[check]){
-                button7.setX(saveX);
-                button7.setY(saveY);
-                v.setX(buttonLayoutX[check]);
-                v.setY(buttonLayoutY[check]);
+                scaleAnimation(saveX,saveY,button7);
+                scaleAnimation(buttonLayoutX[check],buttonLayoutY[check],(Button) v);
             }
             else if(button8.getX() == buttonLayoutX[check] && button8.getY() == buttonLayoutY[check]){
-                button8.setX(saveX);
-                button8.setY(saveY);
-                v.setX(buttonLayoutX[check]);
-                v.setY(buttonLayoutY[check]);
+                scaleAnimation(saveX,saveY,button8);
+                scaleAnimation(buttonLayoutX[check],buttonLayoutY[check],(Button) v);
             }
             else if(button9.getX() == buttonLayoutX[check] && button9.getY() == buttonLayoutY[check]){
-                button9.setX(saveX);
-                button9.setY(saveY);
-                v.setX(buttonLayoutX[check]);
-                v.setY(buttonLayoutY[check]);
+                scaleAnimation(saveX,saveY,button9);
+                scaleAnimation(buttonLayoutX[check],buttonLayoutY[check],(Button) v);
             }
             else if(button10.getX() == buttonLayoutX[check] && button10.getY() == buttonLayoutY[check]){
-                button10.setX(saveX);
-                button10.setY(saveY);
-                v.setX(buttonLayoutX[check]);
-                v.setY(buttonLayoutY[check]);
+                scaleAnimation(saveX,saveY,button10);
+                scaleAnimation(buttonLayoutX[check],buttonLayoutY[check],(Button) v);
             }
             else if(button11.getX() == buttonLayoutX[check] && button11.getY() == buttonLayoutY[check]){
-                button11.setX(saveX);
-                button11.setY(saveY);
-                v.setX(buttonLayoutX[check]);
-                v.setY(buttonLayoutY[check]);
+                scaleAnimation(saveX,saveY,button11);
+                scaleAnimation(buttonLayoutX[check],buttonLayoutY[check],(Button) v);
             }
             else if(button12.getX() == buttonLayoutX[check] && button12.getY() == buttonLayoutY[check]){
-                button12.setX(saveX);
-                button12.setY(saveY);
-                v.setX(buttonLayoutX[check]);
-                v.setY(buttonLayoutY[check]);
+                scaleAnimation(saveX,saveY,button12);
+                scaleAnimation(buttonLayoutX[check],buttonLayoutY[check],(Button) v);
             }
             else if(button13.getX() == buttonLayoutX[check] && button13.getY() == buttonLayoutY[check]){
-                button13.setX(saveX);
-                button13.setY(saveY);
-                v.setX(buttonLayoutX[check]);
-                v.setY(buttonLayoutY[check]);
+                scaleAnimation(saveX,saveY,button13);
+                scaleAnimation(buttonLayoutX[check],buttonLayoutY[check],(Button) v);
             }
             else if(button14.getX() == buttonLayoutX[check] && button14.getY() == buttonLayoutY[check]){
-                button14.setX(saveX);
-                button14.setY(saveY);
-                v.setX(buttonLayoutX[check]);
-                v.setY(buttonLayoutY[check]);
+                scaleAnimation(saveX,saveY,button14);
+                scaleAnimation(buttonLayoutX[check],buttonLayoutY[check],(Button) v);
             }
             else if(button15.getX() == buttonLayoutX[check] && button15.getY() == buttonLayoutY[check]){
-                button15.setX(saveX);
-                button15.setY(saveY);
-                v.setX(buttonLayoutX[check]);
-                v.setY(buttonLayoutY[check]);
+                scaleAnimation(saveX,saveY,button15);
+                scaleAnimation(buttonLayoutX[check],buttonLayoutY[check],(Button) v);
             }
             else if(button16.getX() == buttonLayoutX[check] && button16.getY() == buttonLayoutY[check]){
-                button16.setX(saveX);
-                button16.setY(saveY);
-                v.setX(buttonLayoutX[check]);
-                v.setY(buttonLayoutY[check]);
+                scaleAnimation(saveX,saveY,button16);
+                scaleAnimation(buttonLayoutX[check],buttonLayoutY[check],(Button) v);
             }
 
             saveX = saveY = -1;
