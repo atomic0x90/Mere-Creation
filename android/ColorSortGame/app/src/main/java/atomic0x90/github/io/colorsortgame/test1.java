@@ -5,19 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.graphics.Point;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
-import android.view.animation.TranslateAnimation;
 import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 public class test1 extends AppCompatActivity implements View.OnTouchListener {
 
@@ -48,50 +43,6 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
         standardSize_Y = (int) (ScreenSize.y / density);
     }
 
-    public static void translateAnimation(final float xStart, final float xEnd, final float yStart, final float yEnd, final View view){
-        final TranslateAnimation translateAnimation = new TranslateAnimation(
-                xStart,
-                xEnd,
-                yStart,
-                yEnd
-        );
-        translateAnimation.setDuration(1000);
-        translateAnimation.setFillAfter(true);
-
-        translateAnimation.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {
-                //view.setX(xEnd);
-                //view.setY(yEnd);
-            }
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-
-                /*TranslateAnimation t = new TranslateAnimation(view.getX(),xEnd, view.getY(),yEnd);
-                t.setDuration(0);
-                t.setFillAfter(true);
-                view.setX(xEnd);
-                view.setY(yEnd);
-                view.startAnimation(t);*/
-                //System.out.println("1 view X : "+view.getX() + " view Y : " + view.getY() + " x : "+xEnd + " y : " + yEnd);
-                //view.setX(xEnd);
-                //view.setY(yEnd);
-                //System.out.println("2 view X : "+view.getX() + " view Y : " + view.getY() + " x : "+xEnd + " y : " + yEnd);
-/*
-                TranslateAnimation t = new TranslateAnimation(0,view.getX(),0,view.getY());
-                t.setDuration(0);
-                translateAnimation.setFillAfter(true);
-                view.startAnimation(t);
-  */          }
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-
-            }
-        });
-        view.startAnimation(translateAnimation);
-    }
 
     public static void scaleAnimation(final float x, final float y, final Button button){
         ScaleAnimation scaleAnimation = new ScaleAnimation(0,1,0,1,x+button.getWidth()/2,y+button.getHeight()/2);
@@ -106,13 +57,10 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                //button.setX(x);
-                //button.setY(y);
             }
 
             @Override
             public void onAnimationRepeat(Animation animation) {
-
             }
         });
         button.startAnimation(scaleAnimation);
@@ -213,6 +161,13 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
 
             System.out.println(buttonLayoutX[i] + " " + buttonLayoutY[i]);
         }
+
+        button1.setBackgroundColor(getResources().getColor(R.color.test));
+        button2.setBackgroundColor(getResources().getColor(R.color.test));
+        button3.setBackgroundColor(getResources().getColor(R.color.test));
+        button4.setBackgroundColor(getResources().getColor(R.color.test));
+        button5.setBackgroundColor(getResources().getColor(R.color.test));
+        button6.setBackgroundColor(getResources().getColor(R.color.test));
 
         button1.setX(0);
         button1.setY(0);
@@ -462,33 +417,14 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
                 saveX = saveY = -1;
             }
             else if(button1.getX() == buttonLayoutX[check] && button1.getY() == buttonLayoutY[check]){
-                //button1.setX(saveX);
-                //button1.setY(saveY);
                 scaleAnimation(saveX,saveY,button1);
-
-                //translateAnimation(button1.getX(),saveX,button1.getY(),saveY,1000,button1);
                 scaleAnimation(buttonLayoutX[check],buttonLayoutY[check], (Button) v);
-//                translateAnimation(v.getX(),buttonLayoutX[check],v.getY(),buttonLayoutY[check],v);
-                //v.setX(buttonLayoutX[check]);
-                //v.setY(buttonLayoutY[check]);
-                //System.out.println("v.getX()+v.getWidth()/2,buttonLength,v.getY()+v.getHeight()/2,buttonLength*5 "+ v.getX()+v.getWidth()/2+" "+buttonLength+" "+v.getY()+v.getHeight()/2 + " "+ buttonLength*5);
-                //translateAnimation(v.getX()+v.getWidth()/2,buttonLength,v.getY()+v.getHeight()/2,buttonLength*5,3000,v);
             }
             else if(button2.getX() == buttonLayoutX[check] && button2.getY() == buttonLayoutY[check]){
-                /*button2.setX(saveX);
-                button2.setY(saveY);
-                v.setX(buttonLayoutX[check]);
-                v.setY(buttonLayoutY[check]);
-                */
                 scaleAnimation(saveX,saveY,button2);
                 scaleAnimation(buttonLayoutX[check],buttonLayoutY[check],(Button) v);
             }
             else if(button3.getX() == buttonLayoutX[check] && button3.getY() == buttonLayoutY[check]){
-                /*button3.setX(saveX);
-                button3.setY(saveY);
-                v.setX(buttonLayoutX[check]);
-                v.setY(buttonLayoutY[check]);
-            */
                 scaleAnimation(saveX,saveY,button3);
                 scaleAnimation(buttonLayoutX[check],buttonLayoutY[check],(Button) v);
             }
