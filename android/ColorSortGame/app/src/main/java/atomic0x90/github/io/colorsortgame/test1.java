@@ -45,9 +45,10 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
 
 
     public static void scaleAnimation(final float x, final float y, final Button button){
-        ScaleAnimation scaleAnimation = new ScaleAnimation(0,1,0,1,x+button.getWidth()/2,y+button.getHeight()/2);
+        ScaleAnimation scaleAnimation = new ScaleAnimation(0,1.2f,0,1.2f,x+button.getWidth()/2,y+button.getHeight()/2);
         scaleAnimation.setFillAfter(true);
-        scaleAnimation.setDuration(750);
+        scaleAnimation.setDuration(350);
+        button.bringToFront();
         scaleAnimation.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
@@ -57,6 +58,10 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
 
             @Override
             public void onAnimationEnd(Animation animation) {
+                ScaleAnimation s = new ScaleAnimation(1.2f,1,1.2f,1,x+button.getWidth()/2,y+button.getHeight()/2);
+                s.setFillAfter(true);
+                s.setDuration(150);
+                button.startAnimation(s);
             }
 
             @Override
