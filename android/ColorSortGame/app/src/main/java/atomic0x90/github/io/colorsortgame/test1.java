@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.graphics.Point;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.Display;
 import android.view.MotionEvent;
@@ -69,6 +70,173 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
             }
         });
         button.startAnimation(scaleAnimation);
+    }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+
+        int[] saveX = new int[17];
+        int[] saveY = new int[17];
+
+        for(int i = 1;i < 17;i++){
+
+        }
+
+
+        Button button1 = (Button) findViewById(R.id.button1);
+        Button button2 = (Button) findViewById(R.id.button2);
+        Button button3 = (Button) findViewById(R.id.button3);
+        Button button4 = (Button) findViewById(R.id.button4);
+        Button button5 = (Button) findViewById(R.id.button5);
+        Button button6 = (Button) findViewById(R.id.button6);
+        Button button7 = (Button) findViewById(R.id.button7);
+        Button button8 = (Button) findViewById(R.id.button8);
+        Button button9 = (Button) findViewById(R.id.button9);
+        Button button10 = (Button) findViewById(R.id.button10);
+        Button button11 = (Button) findViewById(R.id.button11);
+        Button button12 = (Button) findViewById(R.id.button12);
+        Button button13 = (Button) findViewById(R.id.button13);
+        Button button14 = (Button) findViewById(R.id.button14);
+        Button button15 = (Button) findViewById(R.id.button15);
+        Button button16 = (Button) findViewById(R.id.button16);
+
+        button1.setX(0);
+        button1.setY(0);
+
+        button2.setX((int)buttonLength);
+        button2.setY(0);
+
+        button3.setX(((int)buttonLength)*2);
+        button3.setY(0);
+
+        button4.setX(((int)buttonLength)*3);
+        button4.setY(0);
+
+        button5.setX(0);
+        button5.setY((int)buttonLength);
+
+        button6.setX((int)buttonLength);
+        button6.setY((int)buttonLength);
+
+        button7.setX(((int)buttonLength)*2);
+        button7.setY((int)buttonLength);
+
+        button8.setX(((int)buttonLength)*3);
+        button8.setY((int)buttonLength);
+
+        button9.setX(0);
+        button9.setY(((int)buttonLength)*2);
+
+        button10.setX((int)buttonLength);
+        button10.setY(((int)buttonLength)*2);
+
+        button11.setX(((int)buttonLength)*2);
+        button11.setY(((int)buttonLength)*2);
+
+        button12.setX(((int)buttonLength)*3);
+        button12.setY(((int)buttonLength)*2);
+
+        button13.setX(0);
+        button13.setY(((int)buttonLength)*3);
+
+        button14.setX((int)buttonLength);
+        button14.setY(((int)buttonLength)*3);
+
+        button15.setX(((int)buttonLength)*2);
+        button15.setY(((int)buttonLength)*3);
+
+        button16.setX(((int)buttonLength)*3);
+        button16.setY(((int)buttonLength)*3);
+
+        button1.setEnabled(false);
+        button2.setEnabled(false);
+        button3.setEnabled(false);
+        button4.setEnabled(false);
+        button5.setEnabled(false);
+        button6.setEnabled(false);
+        button7.setEnabled(false);
+        button8.setEnabled(false);
+        button9.setEnabled(false);
+        button10.setEnabled(false);
+        button11.setEnabled(false);
+        button12.setEnabled(false);
+        button13.setEnabled(false);
+        button14.setEnabled(false);
+        button15.setEnabled(false);
+        button16.setEnabled(false);
+
+        class startHandler implements Runnable{
+            Button button1 = (Button) findViewById(R.id.button1);
+            Button button2 = (Button) findViewById(R.id.button2);
+            Button button3 = (Button) findViewById(R.id.button3);
+            Button button4 = (Button) findViewById(R.id.button4);
+            Button button5 = (Button) findViewById(R.id.button5);
+            Button button6 = (Button) findViewById(R.id.button6);
+            Button button7 = (Button) findViewById(R.id.button7);
+            Button button8 = (Button) findViewById(R.id.button8);
+            Button button9 = (Button) findViewById(R.id.button9);
+            Button button10 = (Button) findViewById(R.id.button10);
+            Button button11 = (Button) findViewById(R.id.button11);
+            Button button12 = (Button) findViewById(R.id.button12);
+            Button button13 = (Button) findViewById(R.id.button13);
+            Button button14 = (Button) findViewById(R.id.button14);
+            Button button15 = (Button) findViewById(R.id.button15);
+            Button button16 = (Button) findViewById(R.id.button16);
+            public void run(){
+                button1.setEnabled(true);
+                button2.setEnabled(true);
+                button3.setEnabled(true);
+                button4.setEnabled(true);
+                button5.setEnabled(true);
+                button6.setEnabled(true);
+                button7.setEnabled(true);
+                button8.setEnabled(true);
+                button9.setEnabled(true);
+                button10.setEnabled(true);
+                button11.setEnabled(true);
+                button12.setEnabled(true);
+                button13.setEnabled(true);
+                button14.setEnabled(true);
+                button15.setEnabled(true);
+                button16.setEnabled(true);
+
+                scaleAnimation(0,0,button1);
+
+                scaleAnimation((int)buttonLength,0,button2);
+
+                scaleAnimation((int)buttonLength*2,0,button3);
+
+                scaleAnimation((int)buttonLength*3,0,button4);
+
+                scaleAnimation(0,(int)buttonLength,button5);
+
+                scaleAnimation((int)buttonLength,(int)buttonLength,button6);
+
+                scaleAnimation((int)buttonLength*2,(int)buttonLength,button7);
+
+                scaleAnimation((int)buttonLength*3,(int)buttonLength,button8);
+
+                scaleAnimation(0,(int)buttonLength*2,button9);
+
+                scaleAnimation((int)buttonLength,(int)buttonLength*2,button10);
+
+                scaleAnimation((int)buttonLength*2,(int)buttonLength*2,button11);
+
+                scaleAnimation((int)buttonLength*3,(int)buttonLength*2,button12);
+
+                scaleAnimation(0,(int)buttonLength*3,button13);
+
+                scaleAnimation((int)buttonLength,(int)buttonLength*3,button14);
+
+                scaleAnimation((int)buttonLength*2,(int)buttonLength*3,button15);
+
+                scaleAnimation((int)buttonLength*3,(int)buttonLength*3,button16);
+            }
+        }
+
+        Handler h = new Handler();
+        h.postDelayed(new startHandler(),1200);
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -184,53 +352,9 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
         button15.setBackgroundColor(getResources().getColor(R.color.c4_3));
         button16.setBackgroundColor(getResources().getColor(R.color.c4_4));
 
-        button1.setX(0);
-        button1.setY(0);
 
-        button2.setX((int)buttonLength);
-        button2.setY(0);
 
-        button3.setX(((int)buttonLength)*2);
-        button3.setY(0);
 
-        button4.setX(((int)buttonLength)*3);
-        button4.setY(0);
-
-        button5.setX(0);
-        button5.setY((int)buttonLength);
-
-        button6.setX((int)buttonLength);
-        button6.setY((int)buttonLength);
-
-        button7.setX(((int)buttonLength)*2);
-        button7.setY((int)buttonLength);
-
-        button8.setX(((int)buttonLength)*3);
-        button8.setY((int)buttonLength);
-
-        button9.setX(0);
-        button9.setY(((int)buttonLength)*2);
-
-        button10.setX((int)buttonLength);
-        button10.setY(((int)buttonLength)*2);
-
-        button11.setX(((int)buttonLength)*2);
-        button11.setY(((int)buttonLength)*2);
-
-        button12.setX(((int)buttonLength)*3);
-        button12.setY(((int)buttonLength)*2);
-
-        button13.setX(0);
-        button13.setY(((int)buttonLength)*3);
-
-        button14.setX((int)buttonLength);
-        button14.setY(((int)buttonLength)*3);
-
-        button15.setX(((int)buttonLength)*2);
-        button15.setY(((int)buttonLength)*3);
-
-        button16.setX(((int)buttonLength)*3);
-        button16.setY(((int)buttonLength)*3);
 
         button1.setOnTouchListener(this);
         button2.setOnTouchListener(this);
