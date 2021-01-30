@@ -11,9 +11,13 @@ import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
 import android.widget.Button;
+import android.widget.TextView;
+
+import java.util.Random;
 
 public class test1 extends AppCompatActivity implements View.OnTouchListener {
 
@@ -72,15 +76,57 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
         button.startAnimation(scaleAnimation);
     }
 
+    public void alphaAnimation(TextView textView,int duration){
+        AlphaAnimation alphaAnimation = new AlphaAnimation(1,0);
+        alphaAnimation.setDuration(duration);
+        alphaAnimation.setFillAfter(true);
+        textView.startAnimation(alphaAnimation);
+    }
+
+
     @Override
     protected void onStart(){
         super.onStart();
 
-        int[] saveX = new int[17];
-        int[] saveY = new int[17];
+        final int[] saveX = new int[17];
+        final int[] saveY = new int[17];
 
         for(int i = 1;i < 17;i++){
+            if(1 <= i && i <=4){
+                saveY[i] = 0;
+            }
+            else if(i <= 8){
+                saveY[i] = (int)buttonLength;
+            }
+            else if(i <= 12){
+                saveY[i] = (int)buttonLength*2;
+            }
+            else if(i <= 16){
+                saveY[i] = (int)buttonLength*3;
+            }
 
+            if(i % 4 == 1)
+                saveX[i] = 0;
+            else if(i % 4 == 2)
+                saveX[i] = (int)buttonLength;
+            else if(i % 4 == 3)
+                saveX[i] = (int)buttonLength*2;
+            else if(i % 4 == 0)
+                saveX[i] = (int)buttonLength*3;
+        }
+
+        Random random = new Random();
+        int tmp = 1;
+        int tmpX,tmpY;
+        for(int i = 1;i < 17;i++){
+            tmp = random.nextInt(15)+1;
+            tmpX = saveX[tmp];
+            tmpY = saveY[tmp];
+
+            saveX[tmp] = saveX[i];
+            saveY[tmp] = saveY[i];
+            saveX[i] = tmpX;
+            saveY[i] = tmpY;
         }
 
 
@@ -183,6 +229,7 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
             Button button14 = (Button) findViewById(R.id.button14);
             Button button15 = (Button) findViewById(R.id.button15);
             Button button16 = (Button) findViewById(R.id.button16);
+
             public void run(){
                 button1.setEnabled(true);
                 button2.setEnabled(true);
@@ -200,43 +247,46 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
                 button14.setEnabled(true);
                 button15.setEnabled(true);
                 button16.setEnabled(true);
+                scaleAnimation(saveX[1],saveY[1],button1);
 
-                scaleAnimation(0,0,button1);
+                scaleAnimation(saveX[2],saveY[2],button2);
 
-                scaleAnimation((int)buttonLength,0,button2);
+                scaleAnimation(saveX[3],saveY[3],button3);
 
-                scaleAnimation((int)buttonLength*2,0,button3);
+                scaleAnimation(saveX[4],saveY[4],button4);
 
-                scaleAnimation((int)buttonLength*3,0,button4);
+                scaleAnimation(saveX[5],saveY[5],button5);
 
-                scaleAnimation(0,(int)buttonLength,button5);
+                scaleAnimation(saveX[6],saveY[6],button6);
 
-                scaleAnimation((int)buttonLength,(int)buttonLength,button6);
+                scaleAnimation(saveX[7],saveY[7],button7);
 
-                scaleAnimation((int)buttonLength*2,(int)buttonLength,button7);
+                scaleAnimation(saveX[8],saveY[8],button8);
 
-                scaleAnimation((int)buttonLength*3,(int)buttonLength,button8);
+                scaleAnimation(saveX[9],saveY[9],button9);
 
-                scaleAnimation(0,(int)buttonLength*2,button9);
+                scaleAnimation(saveX[10],saveY[10],button10);
 
-                scaleAnimation((int)buttonLength,(int)buttonLength*2,button10);
+                scaleAnimation(saveX[11],saveY[11],button11);
 
-                scaleAnimation((int)buttonLength*2,(int)buttonLength*2,button11);
+                scaleAnimation(saveX[12],saveY[12],button12);
 
-                scaleAnimation((int)buttonLength*3,(int)buttonLength*2,button12);
+                scaleAnimation(saveX[13],saveY[13],button13);
 
-                scaleAnimation(0,(int)buttonLength*3,button13);
+                scaleAnimation(saveX[14],saveY[14],button14);
 
-                scaleAnimation((int)buttonLength,(int)buttonLength*3,button14);
+                scaleAnimation(saveX[15],saveY[15],button15);
 
-                scaleAnimation((int)buttonLength*2,(int)buttonLength*3,button15);
-
-                scaleAnimation((int)buttonLength*3,(int)buttonLength*3,button16);
+                scaleAnimation(saveX[16],saveY[16],button16);
+                TextView start = (TextView) findViewById(R.id.startText);
+                alphaAnimation(start,1250);
             }
         }
 
         Handler h = new Handler();
-        h.postDelayed(new startHandler(),1200);
+        TextView ready = (TextView) findViewById(R.id.readyText);
+        alphaAnimation(ready,3000);
+        h.postDelayed(new startHandler(),3100);
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
