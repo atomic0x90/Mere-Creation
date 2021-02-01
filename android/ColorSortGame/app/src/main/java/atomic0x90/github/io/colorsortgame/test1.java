@@ -76,64 +76,6 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
         });
         button.startAnimation(scaleAnimation);
 
-        Button button1 = (Button) findViewById(R.id.button1);
-        Button button2 = (Button) findViewById(R.id.button2);
-        Button button3 = (Button) findViewById(R.id.button3);
-        Button button4 = (Button) findViewById(R.id.button4);
-        Button button5 = (Button) findViewById(R.id.button5);
-        Button button6 = (Button) findViewById(R.id.button6);
-        Button button7 = (Button) findViewById(R.id.button7);
-        Button button8 = (Button) findViewById(R.id.button8);
-        Button button9 = (Button) findViewById(R.id.button9);
-        Button button10 = (Button) findViewById(R.id.button10);
-        Button button11 = (Button) findViewById(R.id.button11);
-        Button button12 = (Button) findViewById(R.id.button12);
-        Button button13 = (Button) findViewById(R.id.button13);
-        Button button14 = (Button) findViewById(R.id.button14);
-        Button button15 = (Button) findViewById(R.id.button15);
-        Button button16 = (Button) findViewById(R.id.button16);
-        int checkAnswer = 0;
-
-        if (button1.getX() == buttonLayoutX[1] && button1.getY() == buttonLayoutY[1])
-            checkAnswer++;
-        if (button2.getX() == buttonLayoutX[2] && button2.getY() == buttonLayoutY[2])
-            checkAnswer++;
-        if (button3.getX() == buttonLayoutX[3] && button3.getY() == buttonLayoutY[3])
-            checkAnswer++;
-        if (button4.getX() == buttonLayoutX[4] && button4.getY() == buttonLayoutY[4])
-            checkAnswer++;
-        if (button5.getX() == buttonLayoutX[5] && button5.getY() == buttonLayoutY[5])
-            checkAnswer++;
-        if (button6.getX() == buttonLayoutX[6] && button6.getY() == buttonLayoutY[6])
-            checkAnswer++;
-        if (button7.getX() == buttonLayoutX[7] && button7.getY() == buttonLayoutY[7])
-            checkAnswer++;
-        if (button8.getX() == buttonLayoutX[8] && button8.getY() == buttonLayoutY[8])
-            checkAnswer++;
-        if (button9.getX() == buttonLayoutX[9] && button9.getY() == buttonLayoutY[9])
-            checkAnswer++;
-        if (button10.getX() == buttonLayoutX[10] && button10.getY() == buttonLayoutY[10])
-            checkAnswer++;
-        if (button11.getX() == buttonLayoutX[11] && button11.getY() == buttonLayoutY[11])
-            checkAnswer++;
-        if (button12.getX() == buttonLayoutX[12] && button12.getY() == buttonLayoutY[12])
-            checkAnswer++;
-        if (button13.getX() == buttonLayoutX[13] && button13.getY() == buttonLayoutY[13])
-            checkAnswer++;
-        if (button14.getX() == buttonLayoutX[14] && button14.getY() == buttonLayoutY[14])
-            checkAnswer++;
-        if (button15.getX() == buttonLayoutX[15] && button15.getY() == buttonLayoutY[15])
-            checkAnswer++;
-        if (button16.getX() == buttonLayoutX[16] && button16.getY() == buttonLayoutY[16])
-            checkAnswer++;
-        System.out.println("checkAnswer  : " + checkAnswer);
-
-        if (checkAnswer >= 15) {
-            Button finishButton1 = (Button) findViewById(R.id.finishButton1);
-            finishButton1.setVisibility(View.VISIBLE);
-            finishButton1.setX(0);
-            finishButton1.setY(saveLastLine+100);
-        }
     }
 
     public void alphaAnimation(TextView textView, int duration) {
@@ -351,22 +293,69 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test1);
 
-        Button button1 = (Button) findViewById(R.id.button1);
-        Button button2 = (Button) findViewById(R.id.button2);
-        Button button3 = (Button) findViewById(R.id.button3);
-        Button button4 = (Button) findViewById(R.id.button4);
-        Button button5 = (Button) findViewById(R.id.button5);
-        Button button6 = (Button) findViewById(R.id.button6);
-        Button button7 = (Button) findViewById(R.id.button7);
-        Button button8 = (Button) findViewById(R.id.button8);
-        Button button9 = (Button) findViewById(R.id.button9);
-        Button button10 = (Button) findViewById(R.id.button10);
-        Button button11 = (Button) findViewById(R.id.button11);
-        Button button12 = (Button) findViewById(R.id.button12);
-        Button button13 = (Button) findViewById(R.id.button13);
-        Button button14 = (Button) findViewById(R.id.button14);
-        Button button15 = (Button) findViewById(R.id.button15);
-        Button button16 = (Button) findViewById(R.id.button16);
+
+        final Button button1 = (Button) findViewById(R.id.button1);
+        final Button button2 = (Button) findViewById(R.id.button2);
+        final Button button3 = (Button) findViewById(R.id.button3);
+        final Button button4 = (Button) findViewById(R.id.button4);
+        final Button button5 = (Button) findViewById(R.id.button5);
+        final Button button6 = (Button) findViewById(R.id.button6);
+        final Button button7 = (Button) findViewById(R.id.button7);
+        final Button button8 = (Button) findViewById(R.id.button8);
+        final Button button9 = (Button) findViewById(R.id.button9);
+        final Button button10 = (Button) findViewById(R.id.button10);
+        final Button button11 = (Button) findViewById(R.id.button11);
+        final Button button12 = (Button) findViewById(R.id.button12);
+        final Button button13 = (Button) findViewById(R.id.button13);
+        final Button button14 = (Button) findViewById(R.id.button14);
+        final Button button15 = (Button) findViewById(R.id.button15);
+        final Button button16 = (Button) findViewById(R.id.button16);
+
+        Button finishButton1 = (Button) findViewById(R.id.finishButton1);
+
+        finishButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int checkAnswer = 0;
+
+                if (button1.getX() == buttonLayoutX[1] && button1.getY() == buttonLayoutY[1])
+                    checkAnswer++;
+                if (button2.getX() == buttonLayoutX[2] && button2.getY() == buttonLayoutY[2])
+                    checkAnswer++;
+                if (button3.getX() == buttonLayoutX[3] && button3.getY() == buttonLayoutY[3])
+                    checkAnswer++;
+                if (button4.getX() == buttonLayoutX[4] && button4.getY() == buttonLayoutY[4])
+                    checkAnswer++;
+                if (button5.getX() == buttonLayoutX[5] && button5.getY() == buttonLayoutY[5])
+                    checkAnswer++;
+                if (button6.getX() == buttonLayoutX[6] && button6.getY() == buttonLayoutY[6])
+                    checkAnswer++;
+                if (button7.getX() == buttonLayoutX[7] && button7.getY() == buttonLayoutY[7])
+                    checkAnswer++;
+                if (button8.getX() == buttonLayoutX[8] && button8.getY() == buttonLayoutY[8])
+                    checkAnswer++;
+                if (button9.getX() == buttonLayoutX[9] && button9.getY() == buttonLayoutY[9])
+                    checkAnswer++;
+                if (button10.getX() == buttonLayoutX[10] && button10.getY() == buttonLayoutY[10])
+                    checkAnswer++;
+                if (button11.getX() == buttonLayoutX[11] && button11.getY() == buttonLayoutY[11])
+                    checkAnswer++;
+                if (button12.getX() == buttonLayoutX[12] && button12.getY() == buttonLayoutY[12])
+                    checkAnswer++;
+                if (button13.getX() == buttonLayoutX[13] && button13.getY() == buttonLayoutY[13])
+                    checkAnswer++;
+                if (button14.getX() == buttonLayoutX[14] && button14.getY() == buttonLayoutY[14])
+                    checkAnswer++;
+                if (button15.getX() == buttonLayoutX[15] && button15.getY() == buttonLayoutY[15])
+                    checkAnswer++;
+                if (button16.getX() == buttonLayoutX[16] && button16.getY() == buttonLayoutY[16])
+                    checkAnswer++;
+                
+                if (checkAnswer == 16) {
+                    finish();
+                }
+            }
+        });
 
         getStandardSize();
 
