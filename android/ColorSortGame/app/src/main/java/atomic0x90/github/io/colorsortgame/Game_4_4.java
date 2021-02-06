@@ -3,7 +3,6 @@ package atomic0x90.github.io.colorsortgame;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.os.Handler;
@@ -20,7 +19,7 @@ import android.widget.TextView;
 
 import java.util.Random;
 
-public class test1 extends AppCompatActivity implements View.OnTouchListener {
+public class Game_4_4 extends AppCompatActivity implements View.OnTouchListener {
 
     float oldXvalue, oldYvalue;
     int standardSize_X, standardSize_Y;
@@ -51,6 +50,40 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
 
 
     public void scaleAnimation(final float x, final float y, final Button button) {
+        final Button button1 = (Button) findViewById(R.id.button1);
+        final Button button2 = (Button) findViewById(R.id.button2);
+        final Button button3 = (Button) findViewById(R.id.button3);
+        final Button button4 = (Button) findViewById(R.id.button4);
+        final Button button5 = (Button) findViewById(R.id.button5);
+        final Button button6 = (Button) findViewById(R.id.button6);
+        final Button button7 = (Button) findViewById(R.id.button7);
+        final Button button8 = (Button) findViewById(R.id.button8);
+        final Button button9 = (Button) findViewById(R.id.button9);
+        final Button button10 = (Button) findViewById(R.id.button10);
+        final Button button11 = (Button) findViewById(R.id.button11);
+        final Button button12 = (Button) findViewById(R.id.button12);
+        final Button button13 = (Button) findViewById(R.id.button13);
+        final Button button14 = (Button) findViewById(R.id.button14);
+        final Button button15 = (Button) findViewById(R.id.button15);
+        final Button button16 = (Button) findViewById(R.id.button16);
+
+        button1.setEnabled(false);
+        button2.setEnabled(false);
+        button3.setEnabled(false);
+        button4.setEnabled(false);
+        button5.setEnabled(false);
+        button6.setEnabled(false);
+        button7.setEnabled(false);
+        button8.setEnabled(false);
+        button9.setEnabled(false);
+        button10.setEnabled(false);
+        button11.setEnabled(false);
+        button12.setEnabled(false);
+        button13.setEnabled(false);
+        button14.setEnabled(false);
+        button15.setEnabled(false);
+        button16.setEnabled(false);
+
         ScaleAnimation scaleAnimation = new ScaleAnimation(0, 1.2f, 0, 1.2f, x + button.getWidth() / 2, y + button.getHeight() / 2);
         scaleAnimation.setFillAfter(true);
         scaleAnimation.setDuration(350);
@@ -67,6 +100,37 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
                 ScaleAnimation s = new ScaleAnimation(1.2f, 1, 1.2f, 1, x + button.getWidth() / 2, y + button.getHeight() / 2);
                 s.setFillAfter(true);
                 s.setDuration(150);
+                s.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        button1.setEnabled(true);
+                        button2.setEnabled(true);
+                        button3.setEnabled(true);
+                        button4.setEnabled(true);
+                        button5.setEnabled(true);
+                        button6.setEnabled(true);
+                        button7.setEnabled(true);
+                        button8.setEnabled(true);
+                        button9.setEnabled(true);
+                        button10.setEnabled(true);
+                        button11.setEnabled(true);
+                        button12.setEnabled(true);
+                        button13.setEnabled(true);
+                        button14.setEnabled(true);
+                        button15.setEnabled(true);
+                        button16.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
                 button.startAnimation(s);
             }
 
@@ -291,7 +355,7 @@ public class test1 extends AppCompatActivity implements View.OnTouchListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test1);
+        setContentView(R.layout.game_4_4);
 
 
         final Button button1 = (Button) findViewById(R.id.button1);
