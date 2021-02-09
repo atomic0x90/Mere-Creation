@@ -355,7 +355,7 @@ public class Game_4_4 extends AppCompatActivity implements View.OnTouchListener 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.game_4_4);
+        setContentView(R.layout.activity_game_4_4);
 
 
         final Button button1 = (Button) findViewById(R.id.button1);

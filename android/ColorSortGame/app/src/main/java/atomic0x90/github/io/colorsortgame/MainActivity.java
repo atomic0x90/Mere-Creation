@@ -22,5 +22,24 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button button1 = (Button) findViewById(R.id.button17);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,Game_5_5.class);
+                startActivity(intent);
+            }
+        });
+
+        Button button2 = (Button) findViewById(R.id.button25);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,StepSelection.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_bottom,R.anim.slide_out_top);
+            }
+        });
     }
 }
