@@ -1,20 +1,14 @@
 package atomic0x90.github.io.colorsortgame;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.dynamicanimation.animation.DynamicAnimation;
-import androidx.dynamicanimation.animation.FlingAnimation;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Point;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.Display;
-import android.view.Gravity;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
-import android.widget.LinearLayout;
 
 import static android.content.Intent.FLAG_ACTIVITY_NO_USER_ACTION;
 
@@ -45,7 +39,7 @@ public class StepSelection extends AppCompatActivity {
 
         getStandardSize();
 
-        Button button4_4 = (Button) findViewById(R.id.button26);
+        Button button4_4 = (Button) findViewById(R.id.stepSelection4_4Button);
         button4_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
