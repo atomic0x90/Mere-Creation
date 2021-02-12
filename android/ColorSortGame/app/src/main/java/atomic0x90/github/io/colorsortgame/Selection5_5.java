@@ -6,12 +6,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.widget.Button;
 
-public class Selection4_4 extends AppCompatActivity {
+public class Selection5_5 extends AppCompatActivity {
     @Override
     protected void onStart(){
         super.onStart();
 
-        final Button button1 = (Button) findViewById(R.id.selection4_4_1);
+        final Button button1 = (Button) findViewById(R.id.selection5_5_1);
         button1.setEnabled(false);
         class startHandler implements Runnable{
 
@@ -26,7 +26,7 @@ public class Selection4_4 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_selection4_4);
+        setContentView(R.layout.activity_selection5_5);
     }
 
     @Override
