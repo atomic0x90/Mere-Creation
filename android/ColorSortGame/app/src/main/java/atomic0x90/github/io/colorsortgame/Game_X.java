@@ -196,6 +196,9 @@ public class Game_X extends AppCompatActivity implements View.OnTouchListener {
         saveX[14] = (int)buttonLength*3;
         saveY[14] = (int)buttonLength*4;
 
+        saveX[15] = (int)buttonLength*4;
+        saveY[15] = (int)buttonLength*4;
+
         Button button1 = (Button) findViewById(R.id.button1_x);
         Button button2 = (Button) findViewById(R.id.button2_x);
         Button button3 = (Button) findViewById(R.id.button3_x);
@@ -338,13 +341,13 @@ public class Game_X extends AppCompatActivity implements View.OnTouchListener {
                 scaleAnimation(saveX[14], saveY[14], button14);
                 scaleAnimation(saveX[15], saveY[15], button15);
 
-                TextView start = (TextView) findViewById(R.id.startText5_5);
+                TextView start = (TextView) findViewById(R.id.startTextX);
                 alphaAnimation(start, 1250);
             }
         }
 
         Handler h = new Handler();
-        TextView ready = (TextView) findViewById(R.id.readyText5_5);
+        TextView ready = (TextView) findViewById(R.id.readyTextX);
         alphaAnimation(ready, 3000);
         h.postDelayed(new startHandler(), 3100);
     }
@@ -464,47 +467,66 @@ public class Game_X extends AppCompatActivity implements View.OnTouchListener {
         button15.setWidth((int) buttonLength);
         button15.setHeight((int) buttonLength);
 
-        for (int i = 1; i <= 25; i++) {
-            if (i < 6)
-                buttonLayoutY[i] = 0;
-            else if (6 <= i && i < 11)
-                buttonLayoutY[i] = buttonLength;
-            else if (11 <= i && i < 16)
-                buttonLayoutY[i] = buttonLength * 2;
-            else if (16 <= i && i < 21)
-                buttonLayoutY[i] = buttonLength * 3;
-            else if(21 <= i && i < 26)
-                buttonLayoutY[i] = buttonLength*4;
+        buttonLayoutX[1] = 0;
+        buttonLayoutY[1] = 0;
 
-            if (i % 5 == 1)
-                buttonLayoutX[i] = 0;
-            else if (i % 5 == 2)
-                buttonLayoutX[i] = buttonLength;
-            else if (i % 5 == 3)
-                buttonLayoutX[i] = buttonLength * 2;
-            else if (i % 5 == 4)
-                buttonLayoutX[i] = buttonLength * 3;
-            else if(i % 5 == 0)
-                buttonLayoutX[i] = buttonLength * 4;
+        buttonLayoutX[2] = (int)buttonLength;
+        buttonLayoutY[2] = 0;
 
-            System.out.println(buttonLayoutX[i] + " " + buttonLayoutY[i]);
-        }
+        buttonLayoutX[3] = (int)buttonLength*3;
+        buttonLayoutY[3] = 0;
+
+        buttonLayoutX[4] = (int)buttonLength*4;
+        buttonLayoutY[4] = 0;
+
+        buttonLayoutX[5] = (int)buttonLength;
+        buttonLayoutY[5] = (int)buttonLength;
+
+        buttonLayoutX[6] = (int)buttonLength*2;
+        buttonLayoutY[6] = (int)buttonLength;
+
+        buttonLayoutX[7] = (int)buttonLength*3;
+        buttonLayoutY[7] = (int)buttonLength;
+
+        buttonLayoutX[8] = (int)buttonLength*2;
+        buttonLayoutY[8] = (int)buttonLength*2;
+
+        buttonLayoutX[9] = (int)buttonLength;
+        buttonLayoutY[9] = (int)buttonLength*3;
+
+        buttonLayoutX[10] = (int)buttonLength*2;
+        buttonLayoutY[10] = (int)buttonLength*3;
+
+        buttonLayoutX[11] = (int)buttonLength*3;
+        buttonLayoutY[11] = (int)buttonLength*3;
+
+        buttonLayoutX[12] = 0;
+        buttonLayoutY[12] = (int)buttonLength*4;
+
+        buttonLayoutX[13] = (int)buttonLength;
+        buttonLayoutY[13] = (int)buttonLength*4;
+
+        buttonLayoutX[14] = (int)buttonLength*3;
+        buttonLayoutY[14] = (int)buttonLength*4;
+
+        buttonLayoutX[15] = (int)buttonLength*4;
+        buttonLayoutY[15] = (int)buttonLength*4;
 
         button1.setBackgroundColor(getResources().getColor(R.color.c5_5_1_1));
         button2.setBackgroundColor(getResources().getColor(R.color.c5_5_1_2));
-        button3.setBackgroundColor(getResources().getColor(R.color.c5_5_1_3));
-        button4.setBackgroundColor(getResources().getColor(R.color.c5_5_1_4));
-        button5.setBackgroundColor(getResources().getColor(R.color.c5_5_1_5));
-        button6.setBackgroundColor(getResources().getColor(R.color.c5_5_2_1));
-        button7.setBackgroundColor(getResources().getColor(R.color.c5_5_2_2));
-        button8.setBackgroundColor(getResources().getColor(R.color.c5_5_2_3));
-        button9.setBackgroundColor(getResources().getColor(R.color.c5_5_2_4));
-        button10.setBackgroundColor(getResources().getColor(R.color.c5_5_2_5));
-        button11.setBackgroundColor(getResources().getColor(R.color.c5_5_3_1));
-        button12.setBackgroundColor(getResources().getColor(R.color.c5_5_3_2));
-        button13.setBackgroundColor(getResources().getColor(R.color.c5_5_3_3));
-        button14.setBackgroundColor(getResources().getColor(R.color.c5_5_3_4));
-        button15.setBackgroundColor(getResources().getColor(R.color.c5_5_3_5));
+        button3.setBackgroundColor(getResources().getColor(R.color.c5_5_1_4));
+        button4.setBackgroundColor(getResources().getColor(R.color.c5_5_1_5));
+        button5.setBackgroundColor(getResources().getColor(R.color.c5_5_2_2));
+        button6.setBackgroundColor(getResources().getColor(R.color.c5_5_2_3));
+        button7.setBackgroundColor(getResources().getColor(R.color.c5_5_2_4));
+        button8.setBackgroundColor(getResources().getColor(R.color.c5_5_3_3));
+        button9.setBackgroundColor(getResources().getColor(R.color.c5_5_4_2));
+        button10.setBackgroundColor(getResources().getColor(R.color.c5_5_4_3));
+        button11.setBackgroundColor(getResources().getColor(R.color.c5_5_4_4));
+        button12.setBackgroundColor(getResources().getColor(R.color.c5_5_5_1));
+        button13.setBackgroundColor(getResources().getColor(R.color.c5_5_5_2));
+        button14.setBackgroundColor(getResources().getColor(R.color.c5_5_5_3));
+        button15.setBackgroundColor(getResources().getColor(R.color.c5_5_5_4));
 
         button1.setOnTouchListener(this);
         button2.setOnTouchListener(this);
@@ -600,10 +622,7 @@ public class Game_X extends AppCompatActivity implements View.OnTouchListener {
                     buttonLayoutY[3] < v.getY() + v.getHeight() / 2 &&
                     v.getY() + v.getHeight() / 2 < buttonLayoutY[3] + buttonLength &&
                     (saveX != buttonLayoutX[3] || saveY != buttonLayoutY[3])) {
-                v.setX(saveX);
-                v.setY(saveY);
-                saveX = saveY = -1;
-                return true;
+                check = 3;
             } else if (buttonLayoutX[4] < v.getX() + v.getWidth() / 2 &&
                     v.getX() + v.getWidth() / 2 <= buttonLayoutX[4] + buttonLength &&
                     buttonLayoutY[4] < v.getY() + v.getHeight() / 2 &&
@@ -621,10 +640,7 @@ public class Game_X extends AppCompatActivity implements View.OnTouchListener {
                     buttonLayoutY[6] < v.getY() + v.getHeight() / 2 &&
                     v.getY() + v.getHeight() / 2 < buttonLayoutY[6] + buttonLength &&
                     (saveX != buttonLayoutX[6] || saveY != buttonLayoutY[6])) {
-                v.setX(saveX);
-                v.setY(saveY);
-                saveX = saveY = -1;
-                return true;
+                check = 6;
             } else if (buttonLayoutX[7] < v.getX() + v.getWidth() / 2 &&
                     v.getX() + v.getWidth() / 2 < buttonLayoutX[7] + buttonLength &&
                     buttonLayoutY[7] < v.getY() + v.getHeight() / 2 &&
@@ -648,28 +664,19 @@ public class Game_X extends AppCompatActivity implements View.OnTouchListener {
                     buttonLayoutY[10] < v.getY() + v.getHeight() / 2 &&
                     v.getY() + v.getHeight() / 2 < buttonLayoutY[10] + buttonLength &&
                     (saveX != buttonLayoutX[10] || saveY != buttonLayoutY[10])) {
-                v.setX(saveX);
-                v.setY(saveY);
-                saveX = saveY = -1;
-                return true;
+                check = 10;
             } else if (buttonLayoutX[11] < v.getX() + v.getWidth() / 2 &&
                     v.getX() + v.getWidth() / 2 < buttonLayoutX[11] + buttonLength &&
                     buttonLayoutY[11] < v.getY() + v.getHeight() / 2 &&
                     v.getY() + v.getHeight() / 2 < buttonLayoutY[11] + buttonLength &&
                     (saveX != buttonLayoutX[11] || saveY != buttonLayoutY[11])) {
-                v.setX(saveX);
-                v.setY(saveY);
-                saveX = saveY = -1;
-                return true;
+                check = 11;
             } else if (buttonLayoutX[12] < v.getX() + v.getWidth() / 2 &&
                     v.getX() + v.getWidth() / 2 < buttonLayoutX[12] + buttonLength &&
                     buttonLayoutY[12] < v.getY() + v.getHeight() / 2 &&
                     v.getY() + v.getHeight() / 2 < buttonLayoutY[12] + buttonLength &&
                     (saveX != buttonLayoutX[12] || saveY != buttonLayoutY[12])) {
-                v.setX(saveX);
-                v.setY(saveY);
-                saveX = saveY = -1;
-                return true;
+                check = 12;
             } else if (buttonLayoutX[13] < v.getX() + v.getWidth() / 2 &&
                     v.getX() + v.getWidth() / 2 < buttonLayoutX[13] + buttonLength &&
                     buttonLayoutY[13] < v.getY() + v.getHeight() / 2 &&
@@ -681,88 +688,13 @@ public class Game_X extends AppCompatActivity implements View.OnTouchListener {
                     buttonLayoutY[14] < v.getY() + v.getHeight() / 2 &&
                     v.getY() + v.getHeight() / 2 < buttonLayoutY[14] + buttonLength &&
                     (saveX != buttonLayoutX[14] || saveY != buttonLayoutY[14])) {
-                v.setX(saveX);
-                v.setY(saveY);
-                saveX = saveY = -1;
-                return true;
+                check = 14;
             } else if (buttonLayoutX[15] < v.getX() + v.getWidth() / 2 &&
                     v.getX() + v.getWidth() / 2 < buttonLayoutX[15] + buttonLength &&
                     buttonLayoutY[15] < v.getY() + v.getHeight() / 2 &&
                     v.getY() + v.getHeight() / 2 < buttonLayoutY[15] + buttonLength &&
                     (saveX != buttonLayoutX[15] || saveY != buttonLayoutY[15])) {
-                v.setX(saveX);
-                v.setY(saveY);
-                saveX = saveY = -1;
-                return true;
-            } else if (buttonLayoutX[16] < v.getX() + v.getWidth() / 2 &&
-                    v.getX() + v.getWidth() / 2 < buttonLayoutX[16] + buttonLength &&
-                    buttonLayoutY[16] < v.getY() + v.getHeight() / 2 &&
-                    v.getY() + v.getHeight() / 2 < buttonLayoutY[16] + buttonLength &&
-                    (saveX != buttonLayoutX[16] || saveY != buttonLayoutY[16])) {
-                v.setX(saveX);
-                v.setY(saveY);
-                saveX = saveY = -1;
-                return true;
-            } else if (buttonLayoutX[17] <= v.getX() + v.getWidth() / 2 &&
-                    v.getX() + v.getWidth() / 2 < buttonLayoutX[17] + buttonLength &&
-                    buttonLayoutY[17] <= v.getY() + v.getHeight() / 2 &&
-                    v.getY() + v.getHeight() / 2 < buttonLayoutY[17] + buttonLength &&
-                    (saveX != buttonLayoutX[17] || saveY != buttonLayoutY[17])) {
-                check = 17;
-            } else if (buttonLayoutX[18] <= v.getX() + v.getWidth() / 2 &&
-                    v.getX() + v.getWidth() / 2 < buttonLayoutX[18] + buttonLength &&
-                    buttonLayoutY[18] <= v.getY() + v.getHeight() / 2 &&
-                    v.getY() + v.getHeight() / 2 < buttonLayoutY[18] + buttonLength &&
-                    (saveX != buttonLayoutX[18] || saveY != buttonLayoutY[18])) {
-                check = 18;
-            } else if (buttonLayoutX[19] <= v.getX() + v.getWidth() / 2 &&
-                    v.getX() + v.getWidth() / 2 < buttonLayoutX[19] + buttonLength &&
-                    buttonLayoutY[19] <= v.getY() + v.getHeight() / 2 &&
-                    v.getY() + v.getHeight() / 2 < buttonLayoutY[19] + buttonLength &&
-                    (saveX != buttonLayoutX[19] || saveY != buttonLayoutY[19])) {
-                check = 19;
-            } else if (buttonLayoutX[20] <= v.getX() + v.getWidth() / 2 &&
-                    v.getX() + v.getWidth() / 2 < buttonLayoutX[20] + buttonLength &&
-                    buttonLayoutY[20] <= v.getY() + v.getHeight() / 2 &&
-                    v.getY() + v.getHeight() / 2 < buttonLayoutY[20] + buttonLength &&
-                    (saveX != buttonLayoutX[20] || saveY != buttonLayoutY[20])) {
-                v.setX(saveX);
-                v.setY(saveY);
-                saveX = saveY = -1;
-                return true;
-            } else if (buttonLayoutX[21] <= v.getX() + v.getWidth() / 2 &&
-                    v.getX() + v.getWidth() / 2 < buttonLayoutX[21] + buttonLength &&
-                    buttonLayoutY[21] <= v.getY() + v.getHeight() / 2 &&
-                    v.getY() + v.getHeight() / 2 < buttonLayoutY[21] + buttonLength &&
-                    (saveX != buttonLayoutX[21] || saveY != buttonLayoutY[21])) {
-                check = 21;
-            } else if (buttonLayoutX[22] <= v.getX() + v.getWidth() / 2 &&
-                    v.getX() + v.getWidth() / 2 < buttonLayoutX[22] + buttonLength &&
-                    buttonLayoutY[22] <= v.getY() + v.getHeight() / 2 &&
-                    v.getY() + v.getHeight() / 2 < buttonLayoutY[22] + buttonLength &&
-                    (saveX != buttonLayoutX[22] || saveY != buttonLayoutY[22])) {
-                check = 22;
-            } else if (buttonLayoutX[23] <= v.getX() + v.getWidth() / 2 &&
-                    v.getX() + v.getWidth() / 2 < buttonLayoutX[23] + buttonLength &&
-                    buttonLayoutY[23] <= v.getY() + v.getHeight() / 2 &&
-                    v.getY() + v.getHeight() / 2 < buttonLayoutY[23] + buttonLength &&
-                    (saveX != buttonLayoutX[23] || saveY != buttonLayoutY[23])) {
-                v.setX(saveX);
-                v.setY(saveY);
-                saveX = saveY = -1;
-                return true;
-            } else if (buttonLayoutX[24] <= v.getX() + v.getWidth() / 2 &&
-                    v.getX() + v.getWidth() / 2 < buttonLayoutX[24] + buttonLength &&
-                    buttonLayoutY[24] <= v.getY() + v.getHeight() / 2 &&
-                    v.getY() + v.getHeight() / 2 < buttonLayoutY[24] + buttonLength &&
-                    (saveX != buttonLayoutX[24] || saveY != buttonLayoutY[24])) {
-                check = 24;
-            } else if (buttonLayoutX[25] <= v.getX() + v.getWidth() / 2 &&
-                    v.getX() + v.getWidth() / 2 < buttonLayoutX[25] + buttonLength &&
-                    buttonLayoutY[25] <= v.getY() + v.getHeight() / 2 &&
-                    v.getY() + v.getHeight() / 2 < buttonLayoutY[25] + buttonLength &&
-                    (saveX != buttonLayoutX[25] || saveY != buttonLayoutY[25])) {
-                check = 25;
+                check = 15;
             }
 
 
