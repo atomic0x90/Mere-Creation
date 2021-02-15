@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Game_4_4.class);
+                Intent intent = new Intent(MainActivity.this, Game_X.class);
                 startActivity(intent);
             }
         });
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,StepSelection.class);
                 startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_bottom,R.anim.slide_out_top);
+                overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
             }
         });
     }

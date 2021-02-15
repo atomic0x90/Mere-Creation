@@ -49,6 +49,17 @@ public class StepSelection extends AppCompatActivity {
                 overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
             }
         });
+
+        Button button5_5 = (Button) findViewById(R.id.stepSelection5_5Button);
+        button5_5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(StepSelection.this,Selection5_5.class);
+                intent.addFlags(FLAG_ACTIVITY_NO_USER_ACTION);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
+            }
+        });
     }
 
     @Override
@@ -59,6 +70,6 @@ public class StepSelection extends AppCompatActivity {
     @Override
     public void finish(){
         super.finish();
-        overridePendingTransition(R.anim.slide_out_bottom,R.anim.slide_in_top);
+        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
     }
 }
