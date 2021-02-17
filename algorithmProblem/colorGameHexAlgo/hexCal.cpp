@@ -233,30 +233,47 @@ string itohAlgo(int data, int add){
 void cal44(){
 	string tmpString = "";
 
+//	int tmpr = redtmp / 10;
+//	int tmpg = greentmp / 10;
+//	int tmpb = bluetmp / 10;
+
 	for(int i = 1;i < 17;i++){
 		int j,k;
-
+		int tmp = 0;
+		if(i <= 4)
+			tmp = 20;
+		else if(i <= 8)
+			tmp = 17;
+		else if(i <= 12)
+			tmp = 14;
+		else if(i <= 16)
+			tmp = 11;
+		int tmpr = redtmp / tmp;
+		int tmpg = greentmp / tmp;
+		int tmpb = bluetmp / tmp;
 		if(i <= 4)
 			j = 0;
 		else if(i <= 8)
-			j = -17;
+			j = 1;
 		else if(i <= 12)
-			j = -34;
+			j = 2;
 		else if(i <= 16)
-			j = -51;
+			j = 3;
 
 		if(i % 4 == 1)
 			k = 0;
 		else if(i % 4 == 2)
-			k = -17;
+			k = 1;
 		else if(i % 4 == 3)
-			k = -34;
+			k = 2;
 		else if(i % 4 == 0)
-			k = -51;
+			k = 3;
 
-		tmpString = itohAlgo(redtmp + j, k);
-		tmpString += itohAlgo(greentmp + j, k);
-		tmpString += itohAlgo(bluetmp + j, k);
+		
+
+		tmpString = itohAlgo(redtmp -(tmpr*j), -(tmpr*k));
+		tmpString += itohAlgo(greentmp -(tmpg*j), -(tmpg*k));
+		tmpString += itohAlgo(bluetmp -(tmpb*j), -(tmpb*k));
 
 		t44.push_back(tmpString);
 	}
