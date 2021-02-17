@@ -7,17 +7,14 @@
 #include <algorithm>
 #include <utility>
 
-#include <tuple>
-
 using namespace std;
 
-typedef tuple <char,char,char,char,char,char> tu;
 
 ofstream fout("colorOut.out");
 
-vector <tu> t44;
-vector <tu> t55;
-vector <tu> tx;
+vector <string> t44;
+vector <string> t55;
+vector <string> tx;
 
 string inString;
 string RED,GREEN,BLUE;
@@ -31,7 +28,7 @@ int bluetmp = 0;
 char *splitString;
 
 void inFunction();
-void foutFunction(bool);
+void foutFunction(bool,char);
 void hexAlgo(char);
 void vectorSet(char);
 void vectorFree(char);
@@ -47,7 +44,7 @@ int main(){
 
 	hexAlgo(type);
 
-	foutFunction(flag);
+	foutFunction(flag,type);
 
 	vectorFree(type);
 
@@ -69,9 +66,13 @@ void inFunction(){
 	return;
 }
 
-void foutFunction(bool Tflag){
+void foutFunction(bool Tflag,char Ttype){
 	if(Tflag){
-	
+		if(Ttype == '4'){
+			for(int i = 0; i < 17;i++){
+				cout<<t44[i]<<endl;
+			}
+		}	
 		//
 		//
 
@@ -226,13 +227,40 @@ string itohAlgo(int data, int add){
 	else
 		str += to_string(tmp2);
 
-	cout<<"str "<<str<<endl;
 	return str;
 }
 
 void cal44(){
-	
-	itohAlgo(redtmp,0);
+	string tmpString = "";
+
+	for(int i = 1;i < 17;i++){
+		int j,k;
+
+		if(i <= 4)
+			j = 0;
+		else if(i <= 8)
+			j = -17;
+		else if(i <= 12)
+			j = -34;
+		else if(i <= 16)
+			j = -51;
+
+		if(i % 4 == 1)
+			k = 0;
+		else if(i % 4 == 2)
+			k = -17;
+		else if(i % 4 == 3)
+			k = -34;
+		else if(i % 4 == 0)
+			k = -51;
+
+		tmpString = itohAlgo(redtmp + j, k);
+		tmpString += itohAlgo(greentmp + j, k);
+		tmpString += itohAlgo(bluetmp + j, k);
+
+		t44.push_back(tmpString);
+	}
+
 
 
 	return;
