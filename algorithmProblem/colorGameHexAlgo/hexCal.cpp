@@ -239,7 +239,7 @@ void cal44(){
 
 	for(int i = 1;i < 17;i++){
 		int j,k;
-		int tmp = 0;
+		int tmp = 10;/*
 		if(i <= 4)
 			tmp = 20;
 		else if(i <= 8)
@@ -247,10 +247,13 @@ void cal44(){
 		else if(i <= 12)
 			tmp = 14;
 		else if(i <= 16)
-			tmp = 11;
+			tmp = 11;*/
 		int tmpr = redtmp / tmp;
 		int tmpg = greentmp / tmp;
 		int tmpb = bluetmp / tmp;
+		int tmprr = redtmp / 7;
+		int tmpgg = greentmp / 7;
+		int tmpbb = bluetmp / 7;
 		if(i <= 4)
 			j = 0;
 		else if(i <= 8)
@@ -271,9 +274,9 @@ void cal44(){
 
 		
 
-		tmpString = itohAlgo(redtmp -(tmpr*j), -(tmpr*k));
-		tmpString += itohAlgo(greentmp -(tmpg*j), -(tmpg*k));
-		tmpString += itohAlgo(bluetmp -(tmpb*j), -(tmpb*k));
+		tmpString = itohAlgo(redtmp -(tmprr*j), -(tmpr*k));
+		tmpString += itohAlgo(greentmp -(tmpgg*j), -(tmpg*k));
+		tmpString += itohAlgo(bluetmp -(tmpbb*j), -(tmpb*k));
 
 		t44.push_back(tmpString);
 	}
