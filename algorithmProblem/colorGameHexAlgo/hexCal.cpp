@@ -69,8 +69,15 @@ void inFunction(){
 void foutFunction(bool Tflag,char Ttype){
 	if(Tflag){
 		if(Ttype == '4'){
-			for(int i = 0; i < 17;i++){
-				cout<<t44[i]<<endl;
+			int tmp = 0;
+			int tmp1 = 0;
+			for(int i = 1; i < 17;i++){
+				tmp++;
+				tmp1 = (i + 3)/4;
+				cout<<"<color name=\"c4_4_"<<tmp1<<"_"<<tmp<<">#"<<t44[i-1]<<"<\\color>"<<endl;
+				if(i % 4 == 0)
+					tmp = 0;
+			
 			}
 		}	
 		//
