@@ -79,6 +79,17 @@ void foutFunction(bool Tflag,char Ttype){
 					tmp = 0;
 			
 			}
+		}
+		else if(Ttype == '5'){
+			int tmp = 0;
+			int tmp1 = 0;
+			for(int i = 1; i < 26;i++){
+				tmp++;
+				tmp1 = (i + 4)/5;
+				cout<<"<color name=\"c5_5_"<<tmp1<<"_"<<tmp<<">#"<<t55[i-1]<<"<\\color>"<<endl;
+				if(i % 5 == 0)
+					tmp = 0;
+			}
 		}	
 		//
 		//
@@ -293,6 +304,47 @@ void cal44(){
 	return;
 }
 void cal55(){
+	string tmpString = "";
+
+	for(int i = 1;i < 26;i++){
+		int j,k;
+		int tmp = 10;
+		int tmpr = redtmp / tmp;
+		int tmpg = greentmp / tmp;
+		int tmpb = bluetmp / tmp;
+		int tmprr = redtmp / 7;
+		int tmpgg = greentmp / 7;
+		int tmpbb = bluetmp / 7;
+		if(i <= 5)
+			j = 0;
+		else if(i <= 10)
+			j = 1;
+		else if(i <= 15)
+			j = 2;
+		else if(i <= 20)
+			j = 3;
+		else if(i <= 25)
+			j = 4;
+
+		if(i % 5 == 1)
+			k = 0;
+		else if(i % 5 == 2)
+			k = 1;
+		else if(i % 5 == 3)
+			k = 2;
+		else if(i % 5 == 4)
+			k = 3;
+		else if(i % 5 == 0)
+			k = 4;
+
+		
+
+		tmpString = itohAlgo(redtmp -(tmprr*j), -(tmpr*k));
+		tmpString += itohAlgo(greentmp -(tmpgg*j), -(tmpg*k));
+		tmpString += itohAlgo(bluetmp -(tmpbb*j), -(tmpb*k));
+
+		t55.push_back(tmpString);
+	}
 
 	return;
 }
