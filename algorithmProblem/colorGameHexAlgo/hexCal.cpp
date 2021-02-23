@@ -19,6 +19,7 @@ vector <string> tx;
 string inString;
 string RED,GREEN,BLUE;
 
+int num;
 bool flag = true;
 char type;
 int redtmp = 0;
@@ -54,6 +55,7 @@ int main(){
 
 void inFunction(){
 	cin>>type;
+	cin>>num;
 	cin>>inString;
 
 	splitString = (char*)inString.c_str();
@@ -74,7 +76,7 @@ void foutFunction(bool Tflag,char Ttype){
 			for(int i = 1; i < 17;i++){
 				tmp++;
 				tmp1 = (i + 3)/4;
-				cout<<"<color name=\"c4_4_"<<tmp1<<"_"<<tmp<<">#"<<t44[i-1]<<"<\\color>"<<endl;
+				cout<<"<color name=\"c4_4_"<<num<<"_"<<tmp1<<"_"<<tmp<<"\">#"<<t44[i-1]<<"</color>"<<endl;
 				if(i % 4 == 0)
 					tmp = 0;
 			
@@ -86,7 +88,7 @@ void foutFunction(bool Tflag,char Ttype){
 			for(int i = 1; i < 26;i++){
 				tmp++;
 				tmp1 = (i + 4)/5;
-				cout<<"<color name=\"c5_5_"<<tmp1<<"_"<<tmp<<">#"<<t55[i-1]<<"<\\color>"<<endl;
+				cout<<"<color name=\"c5_5_"<<num<<"_"<<tmp1<<"_"<<tmp<<"\">#"<<t55[i-1]<<"</color>"<<endl;
 				if(i % 5 == 0)
 					tmp = 0;
 			}
@@ -133,17 +135,17 @@ int htoiAlgo(int a,int b){
 		tmp += ((int)splitString[a] - 48) * 16;
 	else if(splitString[a] >= 97 && splitString[a] <= 102){
 		if(splitString[a] == 'a')
-			tmp += 16 * 1;
+			tmp += 16 * 10;
 		else if(splitString[a] == 'b')
-			tmp += 16 * 2;
+			tmp += 16 * 11;
 		else if(splitString[a] == 'c')
-			tmp += 16 * 3;
+			tmp += 16 * 12;
 		else if(splitString[a] == 'd')
-			tmp += 16 * 4;
+			tmp += 16 * 13;
 		else if(splitString[a] == 'e')
-			tmp += 16 * 5;
+			tmp += 16 * 14;
 		else if(splitString[a] == 'f')
-			tmp += 16 * 6;
+			tmp += 16 * 15;
 	}
 	
 	if(splitString[b] >= 48 && splitString[b] <= 57)
@@ -308,13 +310,14 @@ void cal55(){
 
 	for(int i = 1;i < 26;i++){
 		int j,k;
-		int tmp = 10;
-		int tmpr = redtmp / tmp;
-		int tmpg = greentmp / tmp;
-		int tmpb = bluetmp / tmp;
-		int tmprr = redtmp / 7;
-		int tmpgg = greentmp / 7;
-		int tmpbb = bluetmp / 7;
+		double tmp = 0.93;
+		double tmp1 = 0.87;
+		int tmpr = redtmp * (1 - tmp);
+		int tmpg = greentmp * (1 - tmp);
+		int tmpb = bluetmp * (1 - tmp);
+		int tmprr = redtmp * (1 - tmp1);
+		int tmpgg = greentmp * (1 - tmp1);
+		int tmpbb = bluetmp * (1 - tmp1);
 		if(i <= 5)
 			j = 0;
 		else if(i <= 10)
@@ -342,7 +345,7 @@ void cal55(){
 		tmpString = itohAlgo(redtmp -(tmprr*j), -(tmpr*k));
 		tmpString += itohAlgo(greentmp -(tmpgg*j), -(tmpg*k));
 		tmpString += itohAlgo(bluetmp -(tmpbb*j), -(tmpb*k));
-
+		
 		t55.push_back(tmpString);
 	}
 
