@@ -92,6 +92,17 @@ void foutFunction(bool Tflag,char Ttype){
 				if(i % 5 == 0)
 					tmp = 0;
 			}
+			
+			tmp = 0;
+			tmp1 = 0;
+			for(int i = 1;i < 26;i++){
+				tmp++;
+				tmp1 = (i + 4)/5;
+				cout<<"button"<<i<<".setBackgroundColor(getResources().getColor(R.color.c5_5_";
+				cout<<num<<"_"<<tmp1<<"_"<<tmp<<"));"<<endl;
+				if(i % 5 == 0)
+					tmp = 0;
+			}
 		}	
 		//
 		//
@@ -310,11 +321,56 @@ void cal55(){
 
 	for(int i = 1;i < 26;i++){
 		int j,k;
+		//93 89
+		//93 87
+		double max = 16;
+		double mid = 12;
+		double min = 8;
+
+		double r;
+		double g;
+		double b;
+		if(redtmp >= greentmp && redtmp >= bluetmp)
+		{
+			r = max;
+			if(greentmp >= bluetmp)
+			{
+				g = mid;
+				b = min;
+			}
+			else{
+				g = min;
+				b = mid;
+			}
+		}
+		else if(greentmp >= redtmp && greentmp >= bluetmp){
+			g = max;
+			if(redtmp >= bluetmp){
+				r = mid;
+				b = min;
+			}
+			else{
+				r = min;
+				b = mid;
+			}
+		}
+		else{
+			b = max;
+			if(redtmp >= greentmp){
+				r = mid;
+				g = min;
+			}
+			else{
+				r = min;
+				g = mid;
+			}
+		}
 		double tmp = 0.93;
-		double tmp1 = 0.87;
-		int tmpr = redtmp * (1 - tmp);
-		int tmpg = greentmp * (1 - tmp);
-		int tmpb = bluetmp * (1 - tmp);
+		double tmp1 = 0.83;
+
+		int tmpr = r;//redtmp * (1 - r);
+		int tmpg = g;//greentmp * (1 - g);
+		int tmpb = b;//bluetmp * (1 - b);
 		int tmprr = redtmp * (1 - tmp1);
 		int tmpgg = greentmp * (1 - tmp1);
 		int tmpbb = bluetmp * (1 - tmp1);
