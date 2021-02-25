@@ -264,27 +264,59 @@ string itohAlgo(int data, int add){
 void cal44(){
 	string tmpString = "";
 
-//	int tmpr = redtmp / 10;
-//	int tmpg = greentmp / 10;
-//	int tmpb = bluetmp / 10;
-
 	for(int i = 1;i < 17;i++){
-		int j,k;
-		int tmp = 10;/*
-		if(i <= 4)
-			tmp = 20;
-		else if(i <= 8)
-			tmp = 17;
-		else if(i <= 12)
-			tmp = 14;
-		else if(i <= 16)
-			tmp = 11;*/
-		int tmpr = redtmp / tmp;
-		int tmpg = greentmp / tmp;
-		int tmpb = bluetmp / tmp;
-		int tmprr = redtmp / 7;
-		int tmpgg = greentmp / 7;
-		int tmpbb = bluetmp / 7;
+		int j,k
+		double max = 16;
+		double mid = 12;
+		double min = 8;
+
+		double r;
+		double g;
+		double b;
+		if(redtmp >= greentmp && redtmp >= bluetmp)
+		{
+			r = max;
+			if(greentmp >= bluetmp)
+			{
+				g = mid;
+				b = min;
+			}
+			else{
+				g = min;
+				b = mid;
+			}
+		}
+		else if(greentmp >= redtmp && greentmp >= bluetmp){
+			g = max;
+			if(redtmp >= bluetmp){
+				r = mid;
+				b = min;
+			}
+			else{
+				r = min;
+				b = mid;
+			}
+		}
+		else{
+			b = max;
+			if(redtmp >= greentmp){
+				r = mid;
+				g = min;
+			}
+			else{
+				r = min;
+				g = mid;
+			}
+		}
+		double tmp = 0.93;
+		double tmp1 = 0.87;
+
+		int tmpr = r;//redtmp * (1 - r);
+		int tmpg = g;//greentmp * (1 - g);
+		int tmpb = b;//bluetmp * (1 - b);
+		int tmprr = redtmp * (1 - tmp1);
+		int tmpgg = greentmp * (1 - tmp1);
+		int tmpbb = bluetmp * (1 - tmp1);
 		if(i <= 4)
 			j = 0;
 		else if(i <= 8)
@@ -366,7 +398,7 @@ void cal55(){
 			}
 		}
 		double tmp = 0.93;
-		double tmp1 = 0.83;
+		double tmp1 = 0.87;
 
 		int tmpr = r;//redtmp * (1 - r);
 		int tmpg = g;//greentmp * (1 - g);
