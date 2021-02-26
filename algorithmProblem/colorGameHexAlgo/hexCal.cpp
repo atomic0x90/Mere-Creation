@@ -81,6 +81,17 @@ void foutFunction(bool Tflag,char Ttype){
 					tmp = 0;
 			
 			}
+
+			tmp = 0;
+			tmp1 = 0;
+			for(int i = 1;i < 17;i++){
+				tmp++;
+				tmp1 = (i + 3)/4;
+				cout<<"button"<<i<<".setBackgroundColor(getResources().getColor(R.color.c4_4_";
+				cout<<num<<"_"<<tmp1<<"_"<<tmp<<"));"<<endl;
+				if(i % 4 == 0)
+					tmp = 0;
+			}
 		}
 		else if(Ttype == '5'){
 			int tmp = 0;
@@ -440,6 +451,87 @@ void cal55(){
 	return;
 }
 void calx(){
+	string tmpString = "";
+
+	for(int i = 1;i < 26;i++)
+	{
+		int j,k;
+		double max = 16;
+		double mid = 12;
+		double min = 8;
+		double r,g,b;
+		if(redtmp >= greentmp && redtmp >= bluetmp){
+			r = max;
+			if(greentmp >= bluetmp){
+				g = mid;
+				b = min;
+			}else{
+				g = min;
+				b = mid;
+			}
+		}
+		else if(greentmp >= redtmp && greentmp >= bluetmp){
+			g = max;
+			if(redtmp >= bluetmp){
+				r = mid;
+				b = min;
+			}
+			else{
+				r = min;
+				b = mid;
+			}
+		}
+		else{
+			b = max;
+			if(redtmp >= greentmp){
+				r = mid;
+				g = min;
+			}
+			else{
+				r = min;
+				g = mid;
+			}
+		}
+		double tmp = 0.93;
+		double tmp1 = 0.87;
+
+		int tmpr = r;
+		int tmpg = g;
+		int tmpb = b;
+		int tmprr = redtmp * (1-tmp1);
+		int tmpgg = greentmp * (1-tmp1);
+		int tmpbb = bluetmp * (1-tmp1);
+
+		if(i <= 5)
+			j = 0;
+		else if(i <= 10)
+			j = 1;
+		else if(i <= 15)
+			j = 2;
+		else if(i <= 20)
+			j = 3;
+		else if(i <= 25)
+			j = 4;
+		
+		if(i % 5 == 1)
+			k = 0;
+		else if(i % 5 == 2)
+			k = 1;
+		else if(i % 5 == 3)
+			k = 2;
+		else if(i % 5 == 4)
+			k = 3;
+		else if(i % 5 == 0)
+			k = 4;
+
+		
+
+		tmpString = itohAlgo(redtmp -(tmprr*j), -(tmpr*k));
+		tmpString += itohAlgo(greentmp -(tmpgg*j), -(tmpg*k));
+		tmpString += itohAlgo(bluetmp -(tmpbb*j), -(tmpb*k));
+		
+		tx.push_back(tmpString);
+	}
 
 	return;
 }
