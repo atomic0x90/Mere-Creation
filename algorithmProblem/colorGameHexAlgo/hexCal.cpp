@@ -114,7 +114,27 @@ void foutFunction(bool Tflag,char Ttype){
 				if(i % 5 == 0)
 					tmp = 0;
 			}
-		}	
+		}
+		else if(Ttype == 'x'){
+			cout<<"<color name=\"cx_"<<num<<"_1"<<"\">#"<<tx[0]<<"</color>"<<endl;
+			cout<<"<color name=\"cx_"<<num<<"_2"<<"\">#"<<tx[1]<<"</color>"<<endl;
+			cout<<"<color name=\"cx_"<<num<<"_3"<<"\">#"<<tx[3]<<"</color>"<<endl;
+			cout<<"<color name=\"cx_"<<num<<"_4"<<"\">#"<<tx[4]<<"</color>"<<endl;
+			cout<<"<color name=\"cx_"<<num<<"_5"<<"\">#"<<tx[6]<<"</color>"<<endl;
+			cout<<"<color name=\"cx_"<<num<<"_6"<<"\">#"<<tx[7]<<"</color>"<<endl;
+			cout<<"<color name=\"cx_"<<num<<"_7"<<"\">#"<<tx[8]<<"</color>"<<endl;
+			cout<<"<color name=\"cx_"<<num<<"_8"<<"\">#"<<tx[12]<<"</color>"<<endl;
+			cout<<"<color name=\"cx_"<<num<<"_9"<<"\">#"<<tx[16]<<"</color>"<<endl;
+			cout<<"<color name=\"cx_"<<num<<"_10"<<"\">#"<<tx[17]<<"</color>"<<endl;
+			cout<<"<color name=\"cx_"<<num<<"_11"<<"\">#"<<tx[18]<<"</color>"<<endl;
+			cout<<"<color name=\"cx_"<<num<<"_12"<<"\">#"<<tx[20]<<"</color>"<<endl;
+			cout<<"<color name=\"cx_"<<num<<"_13"<<"\">#"<<tx[21]<<"</color>"<<endl;
+			cout<<"<color name=\"cx_"<<num<<"_14"<<"\">#"<<tx[23]<<"</color>"<<endl;
+			cout<<"<color name=\"cx_"<<num<<"_15"<<"\">#"<<tx[24]<<"</color>"<<endl;
+
+			for(int i = 1;i < 16;i++)
+				cout<<"button"<<i<<".setBackgroundColor(getResources().getColor(R.color.cx_"<<num<<"_"<<i<<"));"<<endl;
+		}
 		//
 		//
 
@@ -276,7 +296,7 @@ void cal44(){
 	string tmpString = "";
 
 	for(int i = 1;i < 17;i++){
-		int j,k
+		int j,k;
 		double max = 16;
 		double mid = 12;
 		double min = 8;
