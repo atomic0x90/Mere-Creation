@@ -107,18 +107,26 @@ void itoh(){
 }
 
 void color(){
-	double a = 1,b = 0;
+	double a = 1,b = 10;
 	for(int i = 0;i < 10;i++){
 		for(int j = 0;j < 10;j++){
 			rc[i][j] = a * ((double)ri + b);
 			gc[i][j] = a * ((double)gi + b);
 			bc[i][j] = a * ((double)bi + b);
 
-			b -= 5;
+			b -= 1;
 		}
 		a += 0.1;
 		b = 0;
 	}
+
+	/*
+	 * 값이 초과되는 문제가 있음
+	 * 값이 유의미하게 다른 경우가 적음
+	 * 나누는 숫자를 줄이고 5X5 행렬이 적당해 보임
+	 * 웹 페이지를 이용한 방법, 안드로이드 색 필터 설정을 이용한 방법 등을 사용하려고 함
+	 *
+	 * */
 
 	return;
 }
