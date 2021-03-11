@@ -1278,8 +1278,8 @@ public class Game_10_10_single extends AppCompatActivity {
         }
 
         Handler h = new Handler();
-        //TextView ready = (TextView) findViewById(R.id.readyText5_5);
-        //alphaAnimation(ready, 3000);
+        TextView ready = (TextView) findViewById(R.id.readyText10_10_s);
+        alphaAnimation(ready, 3000);
         h.postDelayed(new startHandler(), 3100);
     }
 
