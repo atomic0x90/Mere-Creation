@@ -1,6 +1,11 @@
 import requests
 from bs4 import BeautifulSoup
 
+print("Size")
+matrix = int(input())
+print("Number")
+number = int(input())
+print("Color")
 color = str(raw_input())
 
 suURL = "https://www.color-hex.com/color/"
@@ -22,23 +27,26 @@ for tag in soup.select('div[class=colordvconline]'):
 result = [[0 for col in range(5)] for row in range(5)]
 
 
-for i in range(0,5):
-    if(i == 0):
-        j = 0
-    elif(i == 1):
-        j = 2
-    elif(i == 2):
-        j = 4
-    elif(i == 3):
-        j = 6
-    elif(i == 4):
-        j = 8
-    result[i][0] = data[j].replace('#','#ff')
-    result[i][1] = data[j].replace('#','#d9')
-    result[i][2] = data[j].replace('#','#b3')
-    result[i][3] = data[j].replace('#','#8c')
-    result[i][4] = data[j].replace('#','#66')
+if(matrix == 5):
+    for i in range(0,5):
+        if(i == 0):
+            j = 18
+        elif(i == 1):
+            j = 15
+        elif(i == 2):
+            j = 0
+        elif(i == 3):
+            j = 5
+        elif(i == 4):
+            j = 8
+        result[i][0] = data[j].replace('#','#ff')
+        result[i][1] = data[j].replace('#','#d4')
+        result[i][2] = data[j].replace('#','#a8')
+        result[i][3] = data[j].replace('#','#7d')
+        result[i][4] = data[j].replace('#','#52')
+        # 17% down
 
-for i in range(0,5):
-    for j in range(0,5):
-        print(result[i][j])
+if(matrix == 5):
+    for i in range(0,5):
+        for j in range(0,5):
+            print("<color name=\"c5_5_"+str(number)+"_"+str(i+1)+"_"+str(j+1)+"\">"+result[i][j]+"</color>")
