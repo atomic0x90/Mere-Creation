@@ -44,9 +44,31 @@ if(matrix == 5):
         result[i][2] = data[j].replace('#','#a8')
         result[i][3] = data[j].replace('#','#7d')
         result[i][4] = data[j].replace('#','#52')
+        # 17% down 18 15 0 5 8
+elif(matrix == 4):
+    for i in range(0,4):
+        if(i == 0):
+            j = 15
+        elif(i == 1):
+            j = 0
+        elif(i == 2):
+            j = 5
+        elif(i == 3):
+            j = 7
+        result[i][0] = data[j].replace('#','#ff')
+        result[i][1] = data[j].replace('#','#d4')
+        result[i][2] = data[j].replace('#','#a8')
+        result[i][3] = data[j].replace('#','#7d')
         # 17% down
 
 if(matrix == 5):
     for i in range(0,5):
         for j in range(0,5):
             print("<color name=\"c5_5_"+str(number)+"_"+str(i+1)+"_"+str(j+1)+"\">"+result[i][j]+"</color>")
+elif(matrix == 4):
+    for i in range(0,4):
+        for j in range(0,4):
+            print("<color name=\"c4_4_"+str(number)+"_"+str(i+1)+"_"+str(j+1)+"\">"+result[i][j]+"</color>")
+
+
+
