@@ -3,6 +3,7 @@ package atomic0x90.github.io.colorsortgame;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
@@ -71,8 +72,22 @@ public class MainActivity extends AppCompatActivity {
 
     private void init_tables() {
         if(sqliteDB != null){
+            //Game Lock table 4-4-1
+            String sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_1 (" +
+                    "Lock " + "INTEGER NOT NULL)";
+            sqliteDB.execSQL(sqlCreateTbl);
 
-            
+            String sqlQuery = "SELECT * FROM GameLock4_4_1";
+            Cursor cursor = null;
+            cursor = sqliteDB.rawQuery(sqlQuery,null);
+            try {
+                if(!cursor.moveToNext()){
+                    String sqlInsert = "INSERT INTO GameLock4_4_1" + "(Lock)" + "VALUES (" + 1 + ");";
+                    sqliteDB.execSQL(sqlInsert);
+                }
+            }catch (Exception e){
+                System.out.println("Error GameLock tbl : " + e);
+            }
         }
     }
 }
