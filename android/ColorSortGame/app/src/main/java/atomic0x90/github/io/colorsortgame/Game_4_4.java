@@ -3,6 +3,7 @@ package atomic0x90.github.io.colorsortgame;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.os.Handler;
@@ -357,6 +358,8 @@ public class Game_4_4 extends AppCompatActivity implements View.OnTouchListener 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_4_4);
 
+        Intent nowIntent = getIntent();
+        int LV = nowIntent.getIntExtra("LV",0);
 
         final Button button1 = (Button) findViewById(R.id.button1);
         final Button button2 = (Button) findViewById(R.id.button2);
@@ -496,23 +499,24 @@ public class Game_4_4 extends AppCompatActivity implements View.OnTouchListener 
             System.out.println(buttonLayoutX[i] + " " + buttonLayoutY[i]);
         }
 
-        button1.setBackgroundColor(getResources().getColor(R.color.c4_4_1_1));
-        button2.setBackgroundColor(getResources().getColor(R.color.c4_4_1_2));
-        button3.setBackgroundColor(getResources().getColor(R.color.c4_4_1_3));
-        button4.setBackgroundColor(getResources().getColor(R.color.c4_4_1_4));
-        button5.setBackgroundColor(getResources().getColor(R.color.c4_4_2_1));
-        button6.setBackgroundColor(getResources().getColor(R.color.c4_4_2_2));
-        button7.setBackgroundColor(getResources().getColor(R.color.c4_4_2_3));
-        button8.setBackgroundColor(getResources().getColor(R.color.c4_4_2_4));
-        button9.setBackgroundColor(getResources().getColor(R.color.c4_4_3_1));
-        button10.setBackgroundColor(getResources().getColor(R.color.c4_4_3_2));
-        button11.setBackgroundColor(getResources().getColor(R.color.c4_4_3_3));
-        button12.setBackgroundColor(getResources().getColor(R.color.c4_4_3_4));
-        button13.setBackgroundColor(getResources().getColor(R.color.c4_4_4_1));
-        button14.setBackgroundColor(getResources().getColor(R.color.c4_4_4_2));
-        button15.setBackgroundColor(getResources().getColor(R.color.c4_4_4_3));
-        button16.setBackgroundColor(getResources().getColor(R.color.c4_4_4_4));
-
+        if(LV == 1) {
+            button1.setBackgroundColor(getResources().getColor(R.color.c4_4_1_1_1));
+            button2.setBackgroundColor(getResources().getColor(R.color.c4_4_1_1_2));
+            button3.setBackgroundColor(getResources().getColor(R.color.c4_4_1_1_3));
+            button4.setBackgroundColor(getResources().getColor(R.color.c4_4_1_1_4));
+            button5.setBackgroundColor(getResources().getColor(R.color.c4_4_1_2_1));
+            button6.setBackgroundColor(getResources().getColor(R.color.c4_4_1_2_2));
+            button7.setBackgroundColor(getResources().getColor(R.color.c4_4_1_2_3));
+            button8.setBackgroundColor(getResources().getColor(R.color.c4_4_1_2_4));
+            button9.setBackgroundColor(getResources().getColor(R.color.c4_4_1_3_1));
+            button10.setBackgroundColor(getResources().getColor(R.color.c4_4_1_3_2));
+            button11.setBackgroundColor(getResources().getColor(R.color.c4_4_1_3_3));
+            button12.setBackgroundColor(getResources().getColor(R.color.c4_4_1_3_4));
+            button13.setBackgroundColor(getResources().getColor(R.color.c4_4_1_4_1));
+            button14.setBackgroundColor(getResources().getColor(R.color.c4_4_1_4_2));
+            button15.setBackgroundColor(getResources().getColor(R.color.c4_4_1_4_3));
+            button16.setBackgroundColor(getResources().getColor(R.color.c4_4_1_4_4));
+        }
 
         button1.setOnTouchListener(this);
         button2.setOnTouchListener(this);
