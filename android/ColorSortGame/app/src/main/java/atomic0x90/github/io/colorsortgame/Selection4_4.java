@@ -222,6 +222,399 @@ public class Selection4_4 extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",2);
+                startActivity(intent);
+            }
+        });
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",3);
+                startActivity(intent);
+            }
+        });
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",4);
+                startActivity(intent);
+            }
+        });
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",5);
+                startActivity(intent);
+            }
+        });
+        button6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",6);
+                startActivity(intent);
+            }
+        });
+        button7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",7);
+                startActivity(intent);
+            }
+        });
+        button8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",8);
+                startActivity(intent);
+            }
+        });
+        button9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",9);
+                startActivity(intent);
+            }
+        });
+        button10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",10);
+                startActivity(intent);
+            }
+        });
+        button11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",11);
+                startActivity(intent);
+            }
+        });
+        button12.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",12);
+                startActivity(intent);
+            }
+        });
+        button13.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",13);
+                startActivity(intent);
+            }
+        });
+        button14.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",14);
+                startActivity(intent);
+            }
+        });
+        button15.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",15);
+                startActivity(intent);
+            }
+        });
+        button16.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",16);
+                startActivity(intent);
+            }
+        });
+        button17.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",17);
+                startActivity(intent);
+            }
+        });
+        button18.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",18);
+                startActivity(intent);
+            }
+        });
+        button19.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",19);
+                startActivity(intent);
+            }
+        });
+        button20.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",20);
+                startActivity(intent);
+            }
+        });
+        button21.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",21);
+                startActivity(intent);
+            }
+        });
+        button22.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",22);
+                startActivity(intent);
+            }
+        });
+        button23.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",23);
+                startActivity(intent);
+            }
+        });
+        button24.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",24);
+                startActivity(intent);
+            }
+        });
+        button25.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",25);
+                startActivity(intent);
+            }
+        });
+        button26.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",26);
+                startActivity(intent);
+            }
+        });
+        button27.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",27);
+                startActivity(intent);
+            }
+        });
+        button28.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",28);
+                startActivity(intent);
+            }
+        });
+        button29.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",29);
+                startActivity(intent);
+            }
+        });
+        button30.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",30);
+                startActivity(intent);
+            }
+        });
+        button31.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",31);
+                startActivity(intent);
+            }
+        });
+        button32.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",32);
+                startActivity(intent);
+            }
+        });
+        button33.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",33);
+                startActivity(intent);
+            }
+        });
+        button34.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",34);
+                startActivity(intent);
+            }
+        });
+        button35.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",35);
+                startActivity(intent);
+            }
+        });
+        button36.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",36);
+                startActivity(intent);
+            }
+        });
+        button37.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",37);
+                startActivity(intent);
+            }
+        });
+        button38.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",38);
+                startActivity(intent);
+            }
+        });
+        button39.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",39);
+                startActivity(intent);
+            }
+        });
+        button40.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",40);
+                startActivity(intent);
+            }
+        });
+        button41.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",41);
+                startActivity(intent);
+            }
+        });
+        button42.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",42);
+                startActivity(intent);
+            }
+        });
+        button43.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",43);
+                startActivity(intent);
+            }
+        });
+        button44.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",44);
+                startActivity(intent);
+            }
+        });
+        button45.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",45);
+                startActivity(intent);
+            }
+        });
+        button46.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",46);
+                startActivity(intent);
+            }
+        });
+        button47.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",47);
+                startActivity(intent);
+            }
+        });
+        button48.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",48);
+                startActivity(intent);
+            }
+        });
+        button49.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",49);
+                startActivity(intent);
+            }
+        });
+        button50.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                intent.putExtra("LV",50);
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Override
