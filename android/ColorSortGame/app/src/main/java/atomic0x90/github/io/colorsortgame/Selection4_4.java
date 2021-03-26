@@ -14,6 +14,7 @@ import android.view.Display;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ScrollView;
+import android.widget.Toast;
 
 import java.io.File;
 
@@ -327,401 +328,651 @@ public class Selection4_4 extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",1);
-                startActivity(intent);
+                if(lock1 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock1 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",1);
+                    startActivity(intent);
+                }
             }
         });
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",2);
-                startActivity(intent);
+                if(lock2 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock2 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",2);
+                    startActivity(intent);
+                }
             }
         });
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",3);
-                startActivity(intent);
+                if(lock3 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock3 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",3);
+                    startActivity(intent);
+                }
             }
         });
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",4);
-                startActivity(intent);
+                if(lock4 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock4 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",4);
+                    startActivity(intent);
+                }
             }
         });
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",5);
-                startActivity(intent);
+                if(lock5 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock5 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",5);
+                    startActivity(intent);
+                }
             }
         });
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",6);
-                startActivity(intent);
+                if(lock6 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock6 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",6);
+                    startActivity(intent);
+                }
             }
         });
         button7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",7);
-                startActivity(intent);
+                if(lock7 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock7 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",7);
+                    startActivity(intent);
+                }
             }
         });
         button8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",8);
-                startActivity(intent);
+                if(lock8 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock8 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",8);
+                    startActivity(intent);
+                }
             }
         });
         button9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",9);
-                startActivity(intent);
+                if(lock9 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock9 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",9);
+                    startActivity(intent);
+                }
             }
         });
         button10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",10);
-                startActivity(intent);
+                if(lock10 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock10 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",10);
+                    startActivity(intent);
+                }
             }
         });
         button11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",11);
-                startActivity(intent);
+                if(lock11 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock11 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",11);
+                    startActivity(intent);
+                }
             }
         });
         button12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",12);
-                startActivity(intent);
+                if(lock12 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock12 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",12);
+                    startActivity(intent);
+                }
             }
         });
         button13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",13);
-                startActivity(intent);
+                if(lock13 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock13 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",13);
+                    startActivity(intent);
+                }
             }
         });
         button14.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",14);
-                startActivity(intent);
+                if(lock14 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock14 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",14);
+                    startActivity(intent);
+                }
             }
         });
         button15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",15);
-                startActivity(intent);
+                if(lock15 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock15 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",15);
+                    startActivity(intent);
+                }
             }
         });
         button16.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",16);
-                startActivity(intent);
+                if(lock16 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock16 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",16);
+                    startActivity(intent);
+                }
             }
         });
         button17.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",17);
-                startActivity(intent);
+                if(lock17 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock17 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",17);
+                    startActivity(intent);
+                }
             }
         });
         button18.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",18);
-                startActivity(intent);
+                if(lock18 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock18 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",18);
+                    startActivity(intent);
+                }
             }
         });
         button19.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",19);
-                startActivity(intent);
+                if(lock19 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock19 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",19);
+                    startActivity(intent);
+                }
             }
         });
         button20.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",20);
-                startActivity(intent);
+                if(lock20 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock20 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",20);
+                    startActivity(intent);
+                }
             }
         });
         button21.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",21);
-                startActivity(intent);
+                if(lock21 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock21 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",21);
+                    startActivity(intent);
+                }
             }
         });
         button22.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",22);
-                startActivity(intent);
+                if(lock22 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock22 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",22);
+                    startActivity(intent);
+                }
             }
         });
         button23.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",23);
-                startActivity(intent);
+                if(lock23 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock23 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",23);
+                    startActivity(intent);
+                }
             }
         });
         button24.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",24);
-                startActivity(intent);
+                if(lock24 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock24 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",24);
+                    startActivity(intent);
+                }
             }
         });
         button25.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",25);
-                startActivity(intent);
+                if(lock25 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock25 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",25);
+                    startActivity(intent);
+                }
             }
         });
         button26.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",26);
-                startActivity(intent);
+                if(lock26 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock26 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",26);
+                    startActivity(intent);
+                }
             }
         });
         button27.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",27);
-                startActivity(intent);
+                if(lock27 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock27 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",27);
+                    startActivity(intent);
+                }
             }
         });
         button28.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",28);
-                startActivity(intent);
+                if(lock28 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock28 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",28);
+                    startActivity(intent);
+                }
             }
         });
         button29.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",29);
-                startActivity(intent);
+                if(lock29 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock29 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",29);
+                    startActivity(intent);
+                }
             }
         });
         button30.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",30);
-                startActivity(intent);
+                if(lock30 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock30 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",30);
+                    startActivity(intent);
+                }
             }
         });
         button31.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",31);
-                startActivity(intent);
+                if(lock31 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock31 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",31);
+                    startActivity(intent);
+                }
             }
         });
         button32.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",32);
-                startActivity(intent);
+                if(lock32 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock32 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",32);
+                    startActivity(intent);
+                }
             }
         });
         button33.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",33);
-                startActivity(intent);
+                if(lock33 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock33 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",33);
+                    startActivity(intent);
+                }
             }
         });
         button34.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",34);
-                startActivity(intent);
+                if(lock34 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock34 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",34);
+                    startActivity(intent);
+                }
             }
         });
         button35.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",35);
-                startActivity(intent);
+                if(lock35 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock35 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",35);
+                    startActivity(intent);
+                }
             }
         });
         button36.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",36);
-                startActivity(intent);
+                if(lock36 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock36 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",36);
+                    startActivity(intent);
+                }
             }
         });
         button37.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",37);
-                startActivity(intent);
+                if(lock37 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock37 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",37);
+                    startActivity(intent);
+                }
             }
         });
         button38.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",38);
-                startActivity(intent);
+                if(lock38 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock38 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",38);
+                    startActivity(intent);
+                }
             }
         });
         button39.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",39);
-                startActivity(intent);
+                if(lock39 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock39 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",39);
+                    startActivity(intent);
+                }
             }
         });
         button40.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",40);
-                startActivity(intent);
+                if(lock40 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock40 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",40);
+                    startActivity(intent);
+                }
             }
         });
         button41.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",41);
-                startActivity(intent);
+                if(lock41 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock41 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",41);
+                    startActivity(intent);
+                }
             }
         });
         button42.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",42);
-                startActivity(intent);
+                if(lock42 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock42 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",42);
+                    startActivity(intent);
+                }
             }
         });
         button43.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",43);
-                startActivity(intent);
+                if(lock43 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock43 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",43);
+                    startActivity(intent);
+                }
             }
         });
         button44.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",44);
-                startActivity(intent);
+                if(lock44 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock44 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",44);
+                    startActivity(intent);
+                }
             }
         });
         button45.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",45);
-                startActivity(intent);
+                if(lock45 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock45 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",45);
+                    startActivity(intent);
+                }
             }
         });
         button46.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",46);
-                startActivity(intent);
+                if(lock46 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock46 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",46);
+                    startActivity(intent);
+                }
             }
         });
         button47.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",47);
-                startActivity(intent);
+                if(lock47 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock47 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",47);
+                    startActivity(intent);
+                }
             }
         });
         button48.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",48);
-                startActivity(intent);
+                if(lock48 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock48 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",48);
+                    startActivity(intent);
+                }
             }
         });
         button49.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",49);
-                startActivity(intent);
+                if(lock49 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock49 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",49);
+                    startActivity(intent);
+                }
             }
         });
         button50.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
-                intent.putExtra("LV",50);
-                startActivity(intent);
+                if(lock50 == 1){
+                    Toast.makeText(Selection4_4.this,"이전 단계를 먼저 성공하세요!",Toast.LENGTH_SHORT).show();
+                }
+                else if(lock50 == 0){
+                    Intent intent = new Intent(Selection4_4.this,Game_4_4.class);
+                    intent.putExtra("LV",50);
+                    startActivity(intent);
+                }
             }
         });
 
