@@ -20,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        sqliteDB = init_database();
+        init_tables();
+
         Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
             cursor = sqliteDB.rawQuery(sqlQuery,null);
             try {
                 if(!cursor.moveToNext()){
-                    String sqlInsert = "INSERT INTO GameLock4_4_1" + "(Lock)" + "VALUES (" + 1 + ");";
+                    String sqlInsert = "INSERT INTO GameLock4_4_1" + "(Lock)" + "VALUES (" + 0 + ");";
                     sqliteDB.execSQL(sqlInsert);
                 }
             }catch (Exception e){
@@ -930,7 +933,7 @@ public class MainActivity extends AppCompatActivity {
             cursor = sqliteDB.rawQuery(sqlQuery,null);
             try {
                 if(!cursor.moveToNext()){
-                    String sqlInsert = "INSERT INTO GameLock5_5_1" + "(Lock)" + "VALUES (" + 1 + ");";
+                    String sqlInsert = "INSERT INTO GameLock5_5_1" + "(Lock)" + "VALUES (" + 0 + ");";
                     sqliteDB.execSQL(sqlInsert);
                 }
             }catch ( Exception e){
