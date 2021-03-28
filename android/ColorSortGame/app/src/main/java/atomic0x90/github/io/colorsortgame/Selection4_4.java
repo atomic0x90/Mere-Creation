@@ -325,6 +325,7 @@ public class Selection4_4 extends AppCompatActivity {
         button49.setHeight(standardSize_X/4);
         button50.setHeight(standardSize_X/4);
 
+        System.out.println("sssssssssssssssss : " + lock1 + " " + lock2);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -1005,17 +1006,21 @@ public class Selection4_4 extends AppCompatActivity {
             cursor = sqliteDB.rawQuery(sqlQuery,null);
             if(cursor.moveToNext()){
                 lock1 = cursor.getInt(0);
+                System.out.println("aaaaaaaaaaaaaaaa " + cursor.getInt(0) + " " + lock1);
             }
         }
     }
 
     private void loadGameLock2(){
         if(sqliteDB != null){
+            System.out.println("IN LOADGAMELOCK2");
             String sqlQuery = "SELECT * FROM GameLock4_4_2";
             Cursor cursor = null;
             cursor = sqliteDB.rawQuery(sqlQuery,null);
+            System.out.println(cursor);
             if(cursor.moveToNext()){
                 lock2 = cursor.getInt(0);
+                System.out.println("aaaaaaaaaaaaaaaa " + cursor.getInt(0) + " " + lock2);
             }
         }
     }
