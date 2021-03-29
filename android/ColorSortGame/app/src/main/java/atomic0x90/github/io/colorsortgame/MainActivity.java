@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
             }
             //Game Lock table 4-4-2
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_2 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_2";
@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-3
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_3 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_3";
@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-4
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_4 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_4";
@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-5
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_5 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_5";
@@ -158,9 +158,10 @@ public class MainActivity extends AppCompatActivity {
             }catch ( Exception e){
                 System.out.println("Error GameLock tbl : " + e);
             }
+
             //Game Lock table 4-4-6
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_6 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_6";
@@ -177,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-7
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_7 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_7";
@@ -194,7 +195,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-8
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_8 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_8";
@@ -211,7 +212,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-9
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_9 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_9";
@@ -228,7 +229,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-10
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_10 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_10";
@@ -245,7 +246,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-11
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_11 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_11";
@@ -262,7 +263,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-12
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_12 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_12";
@@ -279,7 +280,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-13
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_13 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_13";
@@ -296,7 +297,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-14
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_14 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_14";
@@ -313,7 +314,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-15
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_15 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_15";
@@ -330,7 +331,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-16
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_16 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_16";
@@ -347,7 +348,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-17
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_17 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_17";
@@ -364,7 +365,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-18
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_18 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_18";
@@ -381,7 +382,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-19
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_19 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_19";
@@ -398,7 +399,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-20
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_20 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_20";
@@ -415,7 +416,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-21
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_21 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_21";
@@ -432,7 +433,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-22
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_22 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_22";
@@ -449,7 +450,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-23
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_23 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_23";
@@ -466,7 +467,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-24
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_24 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_24";
@@ -483,7 +484,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-25
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_25 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_25";
@@ -500,7 +501,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-26
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_26 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_26";
@@ -517,7 +518,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-27
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_27 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_27";
@@ -534,7 +535,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-28
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_28 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_28";
@@ -551,7 +552,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-29
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_29 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_29";
@@ -568,7 +569,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-30
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_30 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_30";
@@ -585,7 +586,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-31
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_31 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_31";
@@ -602,7 +603,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-32
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_32 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_32";
@@ -619,7 +620,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-33
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_33 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_33";
@@ -636,7 +637,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-34
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_34 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_34";
@@ -653,7 +654,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-35
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_35 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_35";
@@ -670,7 +671,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-36
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_36 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_36";
@@ -687,7 +688,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-37
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_37 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_37";
@@ -704,7 +705,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-38
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_38 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_38";
@@ -721,7 +722,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-39
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_39 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_39";
@@ -738,7 +739,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-40
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_40 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_40";
@@ -755,7 +756,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-41
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_41 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_41";
@@ -772,7 +773,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-42
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_42 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_42";
@@ -789,7 +790,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-43
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_43 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_43";
@@ -806,7 +807,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-44
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_44 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_44";
@@ -823,7 +824,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-45
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_45 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_45";
@@ -840,7 +841,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-46
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_46 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_46";
@@ -857,7 +858,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-47
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_47 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_47";
@@ -874,7 +875,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-48
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_48 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_48";
@@ -891,7 +892,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-49
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_49 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_49";
@@ -908,7 +909,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 4-4-50
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock4_4_50 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock4_4_50";
@@ -925,7 +926,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-1
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_1 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_1";
@@ -942,7 +943,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-2
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_2 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_2";
@@ -959,7 +960,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-3
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_3 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_3";
@@ -976,7 +977,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-4
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_4 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_4";
@@ -993,7 +994,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-5
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_5 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_5";
@@ -1010,7 +1011,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-6
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_6 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_6";
@@ -1027,7 +1028,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-7
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_7 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_7";
@@ -1044,7 +1045,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-8
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_8 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_8";
@@ -1061,7 +1062,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-9
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_9 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_9";
@@ -1078,7 +1079,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-10
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_10 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_10";
@@ -1095,7 +1096,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-11
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_11 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_11";
@@ -1112,7 +1113,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-12
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_12 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_12";
@@ -1129,7 +1130,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-13
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_13 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_13";
@@ -1146,7 +1147,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-14
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_14 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_14";
@@ -1163,7 +1164,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-15
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_15 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_15";
@@ -1180,7 +1181,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-16
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_16 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_16";
@@ -1197,7 +1198,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-17
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_17 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_17";
@@ -1214,7 +1215,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-18
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_18 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_18";
@@ -1231,7 +1232,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-19
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_19 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_19";
@@ -1248,7 +1249,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-20
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_20 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_20";
@@ -1265,7 +1266,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-21
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_21 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_21";
@@ -1282,7 +1283,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-22
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_22 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_22";
@@ -1299,7 +1300,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-23
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_23 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_23";
@@ -1316,7 +1317,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-24
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_24 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_24";
@@ -1333,7 +1334,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-25
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_25 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_25";
@@ -1350,7 +1351,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-26
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_26 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_26";
@@ -1367,7 +1368,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-27
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_27 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_27";
@@ -1384,7 +1385,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-28
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_28 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_28";
@@ -1401,7 +1402,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-29
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_29 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_29";
@@ -1418,7 +1419,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-30
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_30 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_30";
@@ -1435,7 +1436,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-31
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_31 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_31";
@@ -1452,7 +1453,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-32
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_32 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_32";
@@ -1469,7 +1470,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-33
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_33 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_33";
@@ -1486,7 +1487,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-34
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_34 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_34";
@@ -1503,7 +1504,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-35
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_35 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_35";
@@ -1520,7 +1521,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-36
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_36 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_36";
@@ -1537,7 +1538,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-37
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_37 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_37";
@@ -1554,7 +1555,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-38
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_38 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_38";
@@ -1571,7 +1572,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-39
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_39 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_39";
@@ -1588,7 +1589,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-40
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_40 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_40";
@@ -1605,7 +1606,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-41
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_41 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_41";
@@ -1622,7 +1623,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-42
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_42 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_42";
@@ -1639,7 +1640,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-43
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_43 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_43";
@@ -1656,7 +1657,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-44
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_44 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_44";
@@ -1673,7 +1674,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-45
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_45 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_45";
@@ -1690,7 +1691,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-46
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_46 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_46";
@@ -1707,7 +1708,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-47
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_47 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_47";
@@ -1724,7 +1725,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-48
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_48 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_48";
@@ -1741,7 +1742,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-49
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_49 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_49";
@@ -1758,7 +1759,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Game Lock table 5-5-50
             sqlCreateTbl = "CREATE TABLE IF NOT EXISTS GameLock5_5_50 (" +
-                    "Lock" + "INTEGER NOT NULL)";
+                    "Lock " + "INTEGER NOT NULL)";
             sqliteDB.execSQL(sqlCreateTbl);
 
             sqlQuery = "SELECT * FROM GameLock5_5_50";
