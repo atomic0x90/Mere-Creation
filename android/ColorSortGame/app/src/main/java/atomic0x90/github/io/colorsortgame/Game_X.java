@@ -512,21 +512,22 @@ public class Game_X extends AppCompatActivity implements View.OnTouchListener {
         buttonLayoutX[15] = (int)buttonLength*4;
         buttonLayoutY[15] = (int)buttonLength*4;
 
-        button1.setBackgroundColor(getResources().getColor(R.color.c5_5_1_1));
-        button2.setBackgroundColor(getResources().getColor(R.color.c5_5_1_2));
-        button3.setBackgroundColor(getResources().getColor(R.color.c5_5_1_4));
-        button4.setBackgroundColor(getResources().getColor(R.color.c5_5_1_5));
-        button5.setBackgroundColor(getResources().getColor(R.color.c5_5_2_2));
-        button6.setBackgroundColor(getResources().getColor(R.color.c5_5_2_3));
-        button7.setBackgroundColor(getResources().getColor(R.color.c5_5_2_4));
-        button8.setBackgroundColor(getResources().getColor(R.color.c5_5_3_3));
-        button9.setBackgroundColor(getResources().getColor(R.color.c5_5_4_2));
-        button10.setBackgroundColor(getResources().getColor(R.color.c5_5_4_3));
-        button11.setBackgroundColor(getResources().getColor(R.color.c5_5_4_4));
-        button12.setBackgroundColor(getResources().getColor(R.color.c5_5_5_1));
-        button13.setBackgroundColor(getResources().getColor(R.color.c5_5_5_2));
-        button14.setBackgroundColor(getResources().getColor(R.color.c5_5_5_3));
-        button15.setBackgroundColor(getResources().getColor(R.color.c5_5_5_4));
+        button1.setBackgroundColor(getResources().getColor(R.color.cx_1_1));
+        button2.setBackgroundColor(getResources().getColor(R.color.cx_1_2));
+        button3.setBackgroundColor(getResources().getColor(R.color.cx_1_3));
+        button4.setBackgroundColor(getResources().getColor(R.color.cx_1_4));
+        button5.setBackgroundColor(getResources().getColor(R.color.cx_1_5));
+        button6.setBackgroundColor(getResources().getColor(R.color.cx_1_6));
+        button7.setBackgroundColor(getResources().getColor(R.color.cx_1_7));
+        button8.setBackgroundColor(getResources().getColor(R.color.cx_1_8));
+        button9.setBackgroundColor(getResources().getColor(R.color.cx_1_9));
+        button10.setBackgroundColor(getResources().getColor(R.color.cx_1_10));
+        button11.setBackgroundColor(getResources().getColor(R.color.cx_1_11));
+        button12.setBackgroundColor(getResources().getColor(R.color.cx_1_12));
+        button13.setBackgroundColor(getResources().getColor(R.color.cx_1_13));
+        button14.setBackgroundColor(getResources().getColor(R.color.cx_1_14));
+        button15.setBackgroundColor(getResources().getColor(R.color.cx_1_15));
+
 
         button1.setOnTouchListener(this);
         button2.setOnTouchListener(this);
