@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.text.util.Linkify;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
 
 public class DeveloperInformation extends AppCompatActivity {
 
