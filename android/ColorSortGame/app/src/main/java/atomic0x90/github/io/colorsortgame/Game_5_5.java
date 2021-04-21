@@ -37,6 +37,7 @@ public class Game_5_5 extends AppCompatActivity implements View.OnTouchListener 
         Point size = new Point();
         display.getSize(size);
 
+        System.out.println("size "+size);
         return size;
     }
 
@@ -46,6 +47,8 @@ public class Game_5_5 extends AppCompatActivity implements View.OnTouchListener 
 
         standardSize_X = (int) (ScreenSize.x / density);
         standardSize_Y = (int) (ScreenSize.y / density);
+
+        System.out.println("den "+density+" "+standardSize_X+" "+standardSize_Y);
     }
 
 
@@ -542,8 +545,8 @@ public class Game_5_5 extends AppCompatActivity implements View.OnTouchListener 
 
         getStandardSize();
 
-        buttonLength = standardSize_X / 5;
-        saveLastLine = (standardSize_X / 5) * 5;
+        buttonLength = (density*standardSize_X)/5;//standardSize_X / 5;
+        saveLastLine = ((density*standardSize_X)/5) * 5;//(standardSize_X / 5) * 5;
 
         button1.setWidth((int) buttonLength);
         button1.setHeight((int) buttonLength);
@@ -758,6 +761,7 @@ public class Game_5_5 extends AppCompatActivity implements View.OnTouchListener 
             v.setX(v.getX() + (event.getX()) - (v.getWidth() / 2));
             v.setY(v.getY() + (event.getY()) - (v.getHeight() / 2));
 
+            System.out.println("view "+v.getX()+" "+v.getY());
         } else if (event.getAction() == MotionEvent.ACTION_UP) {
             System.out.println("button1 getX : " + button1.getX() + " getY : " + button1.getY());
             // 뷰에서 손을 뗌
