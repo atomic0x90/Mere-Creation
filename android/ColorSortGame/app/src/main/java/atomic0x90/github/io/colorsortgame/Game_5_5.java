@@ -23,6 +23,7 @@ import java.util.Random;
 public class Game_5_5 extends AppCompatActivity implements View.OnTouchListener {
     float oldXvalue, oldYvalue;
     int standardSize_X, standardSize_Y;
+    int sizeX,sizeY;
     float density;
     float saveX = -1;
     float saveY = -1;
@@ -45,6 +46,8 @@ public class Game_5_5 extends AppCompatActivity implements View.OnTouchListener 
         Point ScreenSize = getScreenSize(this);
         density = getResources().getDisplayMetrics().density;
 
+        sizeX = (int) ScreenSize.x;
+        sizeY = (int) ScreenSize.y;
         standardSize_X = (int) (ScreenSize.x / density);
         standardSize_Y = (int) (ScreenSize.y / density);
 
@@ -545,8 +548,11 @@ public class Game_5_5 extends AppCompatActivity implements View.OnTouchListener 
 
         getStandardSize();
 
-        buttonLength = (density*standardSize_X)/5;//standardSize_X / 5;
-        saveLastLine = ((density*standardSize_X)/5) * 5;//(standardSize_X / 5) * 5;
+        //buttonLength = (density*standardSize_X)/5;//standardSize_X / 5;
+        //saveLastLine = ((density*standardSize_X)/5) * 5;//(standardSize_X / 5) * 5;
+
+        buttonLength = sizeX/5;
+        saveLastLine = sizeX;
 
         button1.setWidth((int) buttonLength);
         button1.setHeight((int) buttonLength);
