@@ -15,6 +15,7 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -22,8 +23,8 @@ import java.util.Random;
 
 public class Game_5_5 extends AppCompatActivity implements View.OnTouchListener {
     float oldXvalue, oldYvalue;
-    int standardSize_X, standardSize_Y;
-    int sizeX,sizeY;
+    //int standardSize_X, standardSize_Y;
+    float sizeX,sizeY;
     float density;
     float saveX = -1;
     float saveY = -1;
@@ -46,12 +47,12 @@ public class Game_5_5 extends AppCompatActivity implements View.OnTouchListener 
         Point ScreenSize = getScreenSize(this);
         density = getResources().getDisplayMetrics().density;
 
-        sizeX = (int) ScreenSize.x;
-        sizeY = (int) ScreenSize.y;
-        standardSize_X = (int) (ScreenSize.x / density);
-        standardSize_Y = (int) (ScreenSize.y / density);
+        sizeX = ScreenSize.x;
+        sizeY = ScreenSize.y;
+        //standardSize_X = (int) (ScreenSize.x / density);
+        //standardSize_Y = (int) (ScreenSize.y / density);
 
-        System.out.println("den "+density+" "+standardSize_X+" "+standardSize_Y);
+        //System.out.println("den "+density+" "+standardSize_X+" "+standardSize_Y);
     }
 
 
@@ -553,15 +554,21 @@ public class Game_5_5 extends AppCompatActivity implements View.OnTouchListener 
 
         buttonLength = sizeX/5;
         saveLastLine = sizeX;
-
-        button1.setWidth((int) buttonLength);
-        button1.setHeight((int) buttonLength);
+        ViewGroup.LayoutParams params = button1.getLayoutParams();
+        params.width = (int) buttonLength;
+        params.height = (int) buttonLength;
+        button1.setLayoutParams(params);
+        //button1.setWidth((int) buttonLength);
+        //button1.setHeight((int) buttonLength);
+        
+        System.out.println("sssssssssssssssssssssssssssssssssssssssssssssssssize : "+buttonLength +" "+button1.getWidth()+" "+button1.getHeight());
 
         button2.setWidth((int) buttonLength);
         button2.setHeight((int) buttonLength);
 
         button3.setWidth((int) buttonLength);
         button3.setHeight((int) buttonLength);
+        System.out.println("sssssssssssssssssssssssssssssssssssssssssssssssssize : "+buttonLength +" "+button3.getWidth()+" "+button3.getHeight());
 
         button4.setWidth((int) buttonLength);
         button4.setHeight((int) buttonLength);
