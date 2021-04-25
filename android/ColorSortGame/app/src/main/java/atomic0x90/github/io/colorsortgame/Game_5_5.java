@@ -554,87 +554,132 @@ public class Game_5_5 extends AppCompatActivity implements View.OnTouchListener 
 
         buttonLength = sizeX/5;
         saveLastLine = sizeX;
+        
         ViewGroup.LayoutParams params = button1.getLayoutParams();
         params.width = (int) buttonLength;
         params.height = (int) buttonLength;
         button1.setLayoutParams(params);
-        //button1.setWidth((int) buttonLength);
-        //button1.setHeight((int) buttonLength);
-        
-        System.out.println("sssssssssssssssssssssssssssssssssssssssssssssssssize : "+buttonLength +" "+button1.getWidth()+" "+button1.getHeight());
 
-        button2.setWidth((int) buttonLength);
-        button2.setHeight((int) buttonLength);
+        ViewGroup.LayoutParams param2 = button2.getLayoutParams();
+        param2.width = (int) buttonLength;
+        param2.height = (int) buttonLength;
+        button2.setLayoutParams(param2);
 
-        button3.setWidth((int) buttonLength);
-        button3.setHeight((int) buttonLength);
-        System.out.println("sssssssssssssssssssssssssssssssssssssssssssssssssize : "+buttonLength +" "+button3.getWidth()+" "+button3.getHeight());
+        ViewGroup.LayoutParams param3 = button3.getLayoutParams();
+        param3.width = (int) buttonLength;
+        param3.height = (int) buttonLength;
+        button3.setLayoutParams(param3);
 
-        button4.setWidth((int) buttonLength);
-        button4.setHeight((int) buttonLength);
+        ViewGroup.LayoutParams param4 = button4.getLayoutParams();
+        param4.width = (int) buttonLength;
+        param4.height = (int) buttonLength;
+        button4.setLayoutParams(param4);
 
-        button5.setWidth((int) buttonLength);
-        button5.setHeight((int) buttonLength);
+        ViewGroup.LayoutParams param5 = button5.getLayoutParams();
+        param5.width = (int) buttonLength;
+        param5.height = (int) buttonLength;
+        button5.setLayoutParams(param5);
 
-        button6.setWidth((int) buttonLength);
-        button6.setHeight((int) buttonLength);
+        ViewGroup.LayoutParams param6 = button6.getLayoutParams();
+        param6.width = (int) buttonLength;
+        param6.height = (int) buttonLength;
+        button6.setLayoutParams(param6);
 
-        button7.setWidth((int) buttonLength);
-        button7.setHeight((int) buttonLength);
+        ViewGroup.LayoutParams param7 = button7.getLayoutParams();
+        param7.width = (int) buttonLength;
+        param7.height = (int) buttonLength;
+        button7.setLayoutParams(param7);
 
-        button8.setWidth((int) buttonLength);
-        button8.setHeight((int) buttonLength);
+        ViewGroup.LayoutParams param8 = button8.getLayoutParams();
+        param8.width = (int) buttonLength;
+        param8.height = (int) buttonLength;
+        button8.setLayoutParams(param8);
 
-        button9.setWidth((int) buttonLength);
-        button9.setHeight((int) buttonLength);
+        ViewGroup.LayoutParams param9 = button9.getLayoutParams();
+        param9.width = (int) buttonLength;
+        param9.height = (int) buttonLength;
+        button9.setLayoutParams(param9);
 
-        button10.setWidth((int) buttonLength);
-        button10.setHeight((int) buttonLength);
+        ViewGroup.LayoutParams param10 = button10.getLayoutParams();
+        param10.width = (int) buttonLength;
+        param10.height = (int) buttonLength;
+        button10.setLayoutParams(param10);
 
-        button11.setWidth((int) buttonLength);
-        button11.setHeight((int) buttonLength);
+        ViewGroup.LayoutParams param11 = button11.getLayoutParams();
+        param11.width = (int) buttonLength;
+        param11.height = (int) buttonLength;
+        button11.setLayoutParams(param11);
 
-        button12.setWidth((int) buttonLength);
-        button12.setHeight((int) buttonLength);
+        ViewGroup.LayoutParams param12 = button12.getLayoutParams();
+        param12.width = (int) buttonLength;
+        param12.height = (int) buttonLength;
+        button12.setLayoutParams(param12);
 
-        button13.setWidth((int) buttonLength);
-        button13.setHeight((int) buttonLength);
+        ViewGroup.LayoutParams param13 = button13.getLayoutParams();
+        param13.width = (int) buttonLength;
+        param13.height = (int) buttonLength;
+        button13.setLayoutParams(param13);
 
-        button14.setWidth((int) buttonLength);
-        button14.setHeight((int) buttonLength);
+        ViewGroup.LayoutParams param14 = button14.getLayoutParams();
+        param14.width = (int) buttonLength;
+        param14.height = (int) buttonLength;
+        button14.setLayoutParams(param14);
 
-        button15.setWidth((int) buttonLength);
-        button15.setHeight((int) buttonLength);
+        ViewGroup.LayoutParams param15 = button15.getLayoutParams();
+        param15.width = (int) buttonLength;
+        param15.height = (int) buttonLength;
+        button15.setLayoutParams(param15);
 
-        button16.setWidth((int) buttonLength);
-        button16.setHeight((int) buttonLength);
+        ViewGroup.LayoutParams param16 = button16.getLayoutParams();
+        param16.width = (int) buttonLength;
+        param16.height = (int) buttonLength;
+        button16.setLayoutParams(param16);
 
-        button17.setWidth((int) buttonLength);
-        button17.setHeight((int) buttonLength);
+        ViewGroup.LayoutParams param17 = button17.getLayoutParams();
+        param17.width = (int) buttonLength;
+        param17.height = (int) buttonLength;
+        button17.setLayoutParams(param17);
 
-        button18.setWidth((int) buttonLength);
-        button18.setHeight((int) buttonLength);
+        ViewGroup.LayoutParams param18 = button18.getLayoutParams();
+        param18.width = (int) buttonLength;
+        param18.height = (int) buttonLength;
+        button18.setLayoutParams(param18);
 
-        button19.setWidth((int) buttonLength);
-        button19.setHeight((int) buttonLength);
+        ViewGroup.LayoutParams param19 = button19.getLayoutParams();
+        param19.width = (int) buttonLength;
+        param19.height = (int) buttonLength;
+        button19.setLayoutParams(param19);
 
-        button20.setWidth((int) buttonLength);
-        button20.setHeight((int) buttonLength);
+        ViewGroup.LayoutParams param20 = button20.getLayoutParams();
+        param20.width = (int) buttonLength;
+        param20.height = (int) buttonLength;
+        button20.setLayoutParams(param20);
 
-        button21.setWidth((int) buttonLength);
-        button21.setHeight((int) buttonLength);
+        ViewGroup.LayoutParams param21 = button21.getLayoutParams();
+        param21.width = (int) buttonLength;
+        param21.height = (int) buttonLength;
+        button21.setLayoutParams(param21);
 
-        button22.setWidth((int) buttonLength);
-        button22.setHeight((int) buttonLength);
+        ViewGroup.LayoutParams param22 = button22.getLayoutParams();
+        param22.width = (int) buttonLength;
+        param22.height = (int) buttonLength;
+        button22.setLayoutParams(param22);
 
-        button23.setWidth((int) buttonLength);
-        button23.setHeight((int) buttonLength);
+        ViewGroup.LayoutParams param23 = button23.getLayoutParams();
+        param23.width = (int) buttonLength;
+        param23.height = (int) buttonLength;
+        button23.setLayoutParams(param23);
 
-        button24.setWidth((int) buttonLength);
-        button24.setHeight((int) buttonLength);
+        ViewGroup.LayoutParams param24 = button24.getLayoutParams();
+        param24.width = (int) buttonLength;
+        param24.height = (int) buttonLength;
+        button24.setLayoutParams(param24);
 
-        button25.setWidth((int) buttonLength);
-        button25.setHeight((int) buttonLength);
+        ViewGroup.LayoutParams param25 = button25.getLayoutParams();
+        param25.width = (int) buttonLength;
+        param25.height = (int) buttonLength;
+        button25.setLayoutParams(param25);
+
 
         for (int i = 1; i <= 25; i++) {
             if (i < 6)
