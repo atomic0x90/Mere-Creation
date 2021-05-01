@@ -2,11 +2,14 @@ package atomic0x90.github.io.colorsortgame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Display;
 import android.widget.Button;
 
 import java.io.File;
@@ -67,12 +70,76 @@ public class Selection5_5 extends AppCompatActivity {
     int lock48 = -1;
     int lock49 = -1;
     int lock50 = -1;
+    public Point getScreenSize(Activity activity) {
+        Display display = activity.getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+
+        return size;
+    }
+
+    public void getStandardSize() {
+        Point ScreenSize = getScreenSize(this);
+        density = getResources().getDisplayMetrics().density;
+
+        standardSize_X = (int) (ScreenSize.x);
+        standardSize_Y = (int) (ScreenSize.y);
+    }
 
     @Override
     protected void onStart(){
         super.onStart();
 
         final Button button1 = (Button) findViewById(R.id.selection5_5_1);
+        final Button button2 = (Button) findViewById(R.id.selection5_5_2);
+        final Button button3 = (Button) findViewById(R.id.selection5_5_3);
+        final Button button4 = (Button) findViewById(R.id.selection5_5_4);
+        final Button button5 = (Button) findViewById(R.id.selection5_5_5);
+        final Button button6 = (Button) findViewById(R.id.selection5_5_6);
+        final Button button7 = (Button) findViewById(R.id.selection5_5_7);
+        final Button button8 = (Button) findViewById(R.id.selection5_5_8);
+        final Button button9 = (Button) findViewById(R.id.selection5_5_9);
+        final Button button10 = (Button) findViewById(R.id.selection5_5_10);
+        final Button button11 = (Button) findViewById(R.id.selection5_5_11);
+        final Button button12 = (Button) findViewById(R.id.selection5_5_12);
+        final Button button13 = (Button) findViewById(R.id.selection5_5_13);
+        final Button button14 = (Button) findViewById(R.id.selection5_5_14);
+        final Button button15 = (Button) findViewById(R.id.selection5_5_15);
+        final Button button16 = (Button) findViewById(R.id.selection5_5_16);
+        final Button button17 = (Button) findViewById(R.id.selection5_5_17);
+        final Button button18 = (Button) findViewById(R.id.selection5_5_18);
+        final Button button19 = (Button) findViewById(R.id.selection5_5_19);
+        final Button button20 = (Button) findViewById(R.id.selection5_5_20);
+        final Button button21 = (Button) findViewById(R.id.selection5_5_21);
+        final Button button22 = (Button) findViewById(R.id.selection5_5_22);
+        final Button button23 = (Button) findViewById(R.id.selection5_5_23);
+        final Button button24 = (Button) findViewById(R.id.selection5_5_24);
+        final Button button25 = (Button) findViewById(R.id.selection5_5_25);
+        final Button button26 = (Button) findViewById(R.id.selection5_5_26);
+        final Button button27 = (Button) findViewById(R.id.selection5_5_27);
+        final Button button28 = (Button) findViewById(R.id.selection5_5_28);
+        final Button button29 = (Button) findViewById(R.id.selection5_5_29);
+        final Button button30 = (Button) findViewById(R.id.selection5_5_30);
+        final Button button31 = (Button) findViewById(R.id.selection5_5_31);
+        final Button button32 = (Button) findViewById(R.id.selection5_5_32);
+        final Button button33 = (Button) findViewById(R.id.selection5_5_33);
+        final Button button34 = (Button) findViewById(R.id.selection5_5_34);
+        final Button button35 = (Button) findViewById(R.id.selection5_5_35);
+        final Button button36 = (Button) findViewById(R.id.selection5_5_36);
+        final Button button37 = (Button) findViewById(R.id.selection5_5_37);
+        final Button button38 = (Button) findViewById(R.id.selection5_5_38);
+        final Button button39 = (Button) findViewById(R.id.selection5_5_39);
+        final Button button40 = (Button) findViewById(R.id.selection5_5_40);
+        final Button button41 = (Button) findViewById(R.id.selection5_5_41);
+        final Button button42 = (Button) findViewById(R.id.selection5_5_42);
+        final Button button43 = (Button) findViewById(R.id.selection5_5_43);
+        final Button button44 = (Button) findViewById(R.id.selection5_5_44);
+        final Button button45 = (Button) findViewById(R.id.selection5_5_45);
+        final Button button46 = (Button) findViewById(R.id.selection5_5_46);
+        final Button button47 = (Button) findViewById(R.id.selection5_5_47);
+        final Button button48 = (Button) findViewById(R.id.selection5_5_48);
+        final Button button49 = (Button) findViewById(R.id.selection5_5_49);
+        final Button button50 = (Button) findViewById(R.id.selection5_5_50);
         button1.setEnabled(false);
         class startHandler implements Runnable{
 
@@ -89,6 +156,7 @@ public class Selection5_5 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selection5_5);
 
+        getStandardSize();
 
         sqliteDB = init_database();
         loadGameLock1();
