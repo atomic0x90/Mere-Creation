@@ -28,9 +28,6 @@ java -jar "Executable file name.jar"
 
 ---
 
-# Stack calculator
-
-Stack 을 이용한 계산기 입니다.
 
 ---
 
@@ -44,12 +41,9 @@ Stack 을 이용한 계산기 입니다.
 
 ---
 
-# Find a file
-
 
 ---
 
-# Kotlin
 
 ---
 
