@@ -326,8 +326,7 @@ public class Selection4_4 extends AppCompatActivity {
         button49.setHeight(standardSize_X/4);
         button50.setHeight(standardSize_X/4);
 
-        GradientDrawable button1G = (GradientDrawable) button1.getBackground();
-        button1G.setColor(getResources().getColor(R.color.c4_4_1_2_1));
+        button1.setBackgroundResource(R.drawable.selection4_4_1);
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
