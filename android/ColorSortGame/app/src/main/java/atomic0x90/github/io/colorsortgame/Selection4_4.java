@@ -327,6 +327,55 @@ public class Selection4_4 extends AppCompatActivity {
         button50.setHeight(standardSize_X/4);
 
         button1.setBackgroundResource(R.drawable.selection4_4_1);
+        button2.setBackgroundResource(R.drawable.selection4_4_2);
+        button3.setBackgroundResource(R.drawable.selection4_4_3);
+        button4.setBackgroundResource(R.drawable.selection4_4_4);
+        button5.setBackgroundResource(R.drawable.selection4_4_5);
+        button6.setBackgroundResource(R.drawable.selection4_4_6);
+        button7.setBackgroundResource(R.drawable.selection4_4_7);
+        button8.setBackgroundResource(R.drawable.selection4_4_8);
+        button9.setBackgroundResource(R.drawable.selection4_4_9);
+        button10.setBackgroundResource(R.drawable.selection4_4_10);
+        button11.setBackgroundResource(R.drawable.selection4_4_11);
+        button12.setBackgroundResource(R.drawable.selection4_4_12);
+        button13.setBackgroundResource(R.drawable.selection4_4_13);
+        button14.setBackgroundResource(R.drawable.selection4_4_14);
+        button15.setBackgroundResource(R.drawable.selection4_4_15);
+        button16.setBackgroundResource(R.drawable.selection4_4_16);
+        button17.setBackgroundResource(R.drawable.selection4_4_17);
+        button18.setBackgroundResource(R.drawable.selection4_4_18);
+        button19.setBackgroundResource(R.drawable.selection4_4_19);
+        button20.setBackgroundResource(R.drawable.selection4_4_20);
+        button21.setBackgroundResource(R.drawable.selection4_4_21);
+        button22.setBackgroundResource(R.drawable.selection4_4_22);
+        button23.setBackgroundResource(R.drawable.selection4_4_23);
+        button24.setBackgroundResource(R.drawable.selection4_4_24);
+        button25.setBackgroundResource(R.drawable.selection4_4_25);
+        button26.setBackgroundResource(R.drawable.selection4_4_26);
+        button27.setBackgroundResource(R.drawable.selection4_4_27);
+        button28.setBackgroundResource(R.drawable.selection4_4_28);
+        button29.setBackgroundResource(R.drawable.selection4_4_29);
+        button30.setBackgroundResource(R.drawable.selection4_4_30);
+        button31.setBackgroundResource(R.drawable.selection4_4_31);
+        button32.setBackgroundResource(R.drawable.selection4_4_32);
+        button33.setBackgroundResource(R.drawable.selection4_4_33);
+        button34.setBackgroundResource(R.drawable.selection4_4_34);
+        button35.setBackgroundResource(R.drawable.selection4_4_35);
+        button36.setBackgroundResource(R.drawable.selection4_4_36);
+        button37.setBackgroundResource(R.drawable.selection4_4_37);
+        button38.setBackgroundResource(R.drawable.selection4_4_38);
+        button39.setBackgroundResource(R.drawable.selection4_4_39);
+        button40.setBackgroundResource(R.drawable.selection4_4_40);
+        button41.setBackgroundResource(R.drawable.selection4_4_41);
+        button42.setBackgroundResource(R.drawable.selection4_4_42);
+        button43.setBackgroundResource(R.drawable.selection4_4_43);
+        button44.setBackgroundResource(R.drawable.selection4_4_44);
+        button45.setBackgroundResource(R.drawable.selection4_4_45);
+        button46.setBackgroundResource(R.drawable.selection4_4_46);
+        button47.setBackgroundResource(R.drawable.selection4_4_47);
+        button48.setBackgroundResource(R.drawable.selection4_4_48);
+        button49.setBackgroundResource(R.drawable.selection4_4_49);
+        button50.setBackgroundResource(R.drawable.selection4_4_50);
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
