@@ -7,11 +7,13 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
+import android.graphics.Color;
 import android.graphics.Point;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Display;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ScrollView;
@@ -327,6 +329,8 @@ public class Selection4_4 extends AppCompatActivity {
         button50.setHeight(standardSize_X/4);
 
         button1.setBackgroundResource(R.drawable.selection4_4_1);
+        button1.setGravity(Gravity.RIGHT);
+        button1.setTextColor(Color.BLACK);/*
         button2.setBackgroundResource(R.drawable.selection4_4_2);
         button3.setBackgroundResource(R.drawable.selection4_4_3);
         button4.setBackgroundResource(R.drawable.selection4_4_4);
@@ -376,7 +380,7 @@ public class Selection4_4 extends AppCompatActivity {
         button48.setBackgroundResource(R.drawable.selection4_4_48);
         button49.setBackgroundResource(R.drawable.selection4_4_49);
         button50.setBackgroundResource(R.drawable.selection4_4_50);
-
+*/
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
